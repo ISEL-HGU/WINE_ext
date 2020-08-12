@@ -1,5 +1,6 @@
 package edu.handong.csee.isel.fcminer.fpcollector;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -17,37 +18,30 @@ import edu.handong.csee.isel.fcminer.fpcollector.graphclassifier.NodeResolver;
 
 public class FPCollector {	
 	public void run(String sarMinerResultPath, Git git) {
-		String projectName = git.toString(); 			
+		String projectName = sarMinerResultPath.toString().replace("./", "").split("_")[0]; 					
 		
-		// 3. Get Pattern of the FPC		
-		ArrayList<ControlNode> graphs = new ArrayList<>();		
-		graphs = drawGraph(sarMinerResultPath, git);				
+		InfoCollector collector = new InfoCollector();		
+		try {
+			collector.run(sarMinerResultPath, git);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}		
 		
-		//Step 1. Get Graph Information
+		System.out.println("Step 3 CLEAR");
+		
+		//Step 4. Get Graph Information
 		ArrayList<GraphInfo> fpcGraphInfos = new ArrayList<>();
-		ArrayList<GraphInfo> tpcGraphInfos = new ArrayList<>();		
-		fpcGraphInfos = getGraphInfo(fpcGraphs);
-		tpcGraphInfos = getGraphInfo(tpcGraphs);
-		fpcGraphs = null;
-		tpcGraphs = null;		
+		ArrayList<GraphInfo> tpcGraphInfos = new ArrayList<>();
+		
+		fpcGraphInfos = getGraphInfo(collector.getFPCGraphs());
+		tpcGraphInfos = getGraphInfo(collector.getTPCGraphs());		
+		
+		System.out.println("Step 4 Clear");
 			
 		//Step 5. Graph Clustering
 		clusterGraphByNodeNum(fpcGraphInfos, tpcGraphInfos, projectName);
 		clusterGraphByNode(fpcGraphInfos, tpcGraphInfos, projectName);
 		System.out.println("Step 5 Clear");
-	}
-	
-	private ArrayList<ControlNode> drawGraph(String sarMinerResultpath, Git git) { 
-		InfoCollector collector = new InfoCollector();		
-		try {
-			collector.run(sarMinerResultpath, git);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		System.out.println("graphSize: " + collector.graphs.size());
-		
-		return collector.graphs;
 	}
 	
 	private ArrayList<GraphInfo> getGraphInfo(ArrayList<ControlNode> graphs) {

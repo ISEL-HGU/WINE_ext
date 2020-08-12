@@ -11,6 +11,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
 import edu.handong.csee.isel.fcminer.fpcollector.graphanalyzer.GraphInfo;
+import edu.handong.csee.isel.fcminer.util.GraphResult;
 
 public class GraphRankWriter {
 	public String fileName;
@@ -70,11 +71,11 @@ public class GraphRankWriter {
 	public void writeRankGraph(GraphNodeClusterer fpcGraphCompartor, GraphNodeClusterer tpcGraphCompartor, String projectName) {
 		fileName = "./" + projectName + "NodeRankGraphRepresentation.csv";
 		 
-		ArrayList<Entry<String, ArrayList<GraphInfo>>> fpcGraphs = fpcGraphCompartor.clusterByTotalNodeRank;
-		ArrayList<Entry<String, ArrayList<GraphInfo>>> tpcGraphs = tpcGraphCompartor.clusterByTotalNodeRank;
+		ArrayList<GraphResult> fpcGraphs = fpcGraphCompartor.clusterByTotalNodeRank;
+		ArrayList<GraphResult> tpcGraphs = tpcGraphCompartor.clusterByTotalNodeRank;
 		int fpcTotalSize = fpcGraphCompartor.totalGraphSize;
-		int tpcTotalSize = tpcGraphCompartor.totalGraphSize;
-		 
+		int tpcTotalSize = tpcGraphCompartor.totalGraphSize;			
+		
 		try(
 			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName));
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
@@ -85,29 +86,29 @@ public class GraphRankWriter {
 			String FPC = "";
 			String None = "None";
 			NodeInterpreter interpreter = new NodeInterpreter();
-			for (Entry<String, ArrayList<GraphInfo>> fpcGraph : fpcGraphs) {
+			for (GraphResult fpcGraph : fpcGraphs) {
 				boolean existTPC = false;
-				for (Entry<String, ArrayList<GraphInfo>> tpcGraph : tpcGraphs) {
-					if (tpcGraph.getKey().equals(fpcGraph.getKey())) {
+				for (GraphResult tpcGraph : tpcGraphs) {
+					if (tpcGraph.getGraphResult().getKey().equals(fpcGraph.getGraphResult().getKey())) {
 						existTPC = true;						
-						TPCFPC += "Pattern : "+ interpreter.interpret(fpcGraph.getKey()) 
-										+ " : (fpc: " + fpcGraph.getValue().size() 
-										+ " / " + (double)fpcGraph.getValue().size()/fpcTotalSize*100 
-										+ ") (tpc: " + tpcGraph.getValue().size() 
-										+ " / " + (double)tpcGraph.getValue().size()/tpcTotalSize*100 + ")\n";
+						TPCFPC += "Pattern : "+ interpreter.interpret(fpcGraph.getGraphResult().getKey()) 
+										+ " : (fpc: " + fpcGraph.getGraphResult().getValue().size() 
+										+ " / " + (double)fpcGraph.getGraphResult().getValue().size()/fpcTotalSize*100 
+										+ ") (tpc: " + tpcGraph.getGraphResult().getValue().size() 
+										+ " / " + (double)tpcGraph.getGraphResult().getValue().size()/tpcTotalSize*100 + ")\n";
 						tpcGraphs.remove(tpcGraph);
 						break;
 					}
 				}
 				if (!existTPC) 
-					FPC += "Pattern : "+ interpreter.interpret(fpcGraph.getKey()) 
-								+ " : (fpc: " + fpcGraph.getValue().size() 
-								+ " / " + (double)fpcGraph.getValue().size()/fpcTotalSize*100 + ")\n";
+					FPC += "Pattern : "+ interpreter.interpret(fpcGraph.getGraphResult().getKey()) 
+								+ " : (fpc: " + fpcGraph.getGraphResult().getValue().size() 
+								+ " / " + (double)fpcGraph.getGraphResult().getValue().size()/fpcTotalSize*100 + ")\n";
 			}			
-			for (Entry<String, ArrayList<GraphInfo>> tpcGraph : tpcGraphs) {
-				TPC += "Pattern : "+ interpreter.interpret(tpcGraph.getKey()) 
-							+ " : (tpc: " + tpcGraph.getValue().size() 
-							+ " / " + (double)tpcGraph.getValue().size()/tpcTotalSize*100 + ")\n";
+			for (GraphResult tpcGraph : tpcGraphs) {
+				TPC += "Pattern : "+ interpreter.interpret(tpcGraph.getGraphResult().getKey()) 
+							+ " : (tpc: " + tpcGraph.getGraphResult().getValue().size() 
+							+ " / " + (double)tpcGraph.getGraphResult().getValue().size()/tpcTotalSize*100 + ")\n";
 			}			
 			csvPrinter.printRecord("Information", TPCFPC, TPC, FPC, None);
 			writer.flush();

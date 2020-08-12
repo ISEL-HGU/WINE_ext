@@ -1,17 +1,18 @@
 package edu.handong.csee.isel.fcminer.fpcollector.graphclassifier;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
 import edu.handong.csee.isel.fcminer.fpcollector.graphanalyzer.GraphInfo;
+import edu.handong.csee.isel.fcminer.util.GraphResult;
 
-public class GraphNodeClusterer extends GraphNodeNumClusterer{
+public class GraphNodeClusterer extends GraphNodeNumClusterer {
 	public int totalGraphSize = 0;
 	
 	public HashMap <String, ArrayList<GraphInfo>> clusterByTotalNode = new HashMap<>();
-	public ArrayList<Entry<String, ArrayList<GraphInfo>>> clusterByTotalNodeRank = new ArrayList<>();
+	public ArrayList<GraphResult> clusterByTotalNodeRank = new ArrayList<>();
 	
 	public GraphNodeClusterer(ArrayList<GraphInfo> graphInfos) {
 		super(graphInfos);
@@ -44,23 +45,19 @@ public class GraphNodeClusterer extends GraphNodeNumClusterer{
 	}
 	
 	private void clusterByTotalNodeRank() {
-		for (Entry<String, ArrayList<GraphInfo>> g : clusterByTotalNode.entrySet())
-			clusterByTotalNodeRank.add(g);
+		for (Entry<String, ArrayList<GraphInfo>> g : clusterByTotalNode.entrySet()) {
+			GraphResult tempG = new GraphResult(g);
+			clusterByTotalNodeRank.add(tempG);
+		}
+		for(GraphResult g : clusterByTotalNodeRank) {
+			System.out.println(g.getGraphResult().getKey() + " " + g.getGraphResult().getValue().size());
+		}
 		
-		clusterByTotalNumRank.sort(new Comparator<Entry<Integer, ArrayList<GraphInfo>>>() {
-			@Override
-			public int compare(Entry<Integer, ArrayList<GraphInfo>> o1, Entry<Integer, ArrayList<GraphInfo>> o2) {
-				// TODO Auto-generated method stub
-				int size1 = o1.getValue().size();
-				int size2 = o2.getValue().size();
-				
-				if (size1 == size2)
-					return 0;
-				else if (size1 > size2)
-					return -1;
-				else
-					return 1;
-			}
-		});
+		Collections.sort(clusterByTotalNodeRank);
+		System.out.println("\n%%%%%%%%%%%%%%%%%%%%%%\n");
+		for(GraphResult g : clusterByTotalNodeRank) {
+			System.out.println(g.getGraphResult().getKey() + " " + g.getGraphResult().getValue().size());
+		}
+		System.out.println("\n%%%%%%%%%%%%%%%%%%%%%%\n");
 	}
 }

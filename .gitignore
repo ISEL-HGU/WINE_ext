@@ -1,10 +1,16 @@
+pmd-bin-6.25.0/
+TargetProjects/
+*.txt
+ChangedFilesList/
+FC-Miner/
 .project
 .settings/
 .classpath
 bin/
+.DS_Store
 # Ignore Gradle project-specific cache directory
 .gradle
-
+*.csv
 # Ignore Gradle build output directory
 build
 

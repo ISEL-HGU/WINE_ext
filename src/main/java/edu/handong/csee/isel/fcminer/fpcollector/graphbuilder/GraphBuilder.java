@@ -1129,7 +1129,9 @@ public class GraphBuilder {
 		parser.setResolveBindings(false);
 		parser.setCompilerOptions(options);
 		parser.setStatementsRecovery(true);
-		
+		if(info.path.equals("./TargetProjects/openmeetings/openmeetings-web/src/main/java/org/apache/openmeetings/web/admin/labels/LabelsForm.java")) {
+			System.out.println("break");
+		}
 		try {
 			final CompilationUnit unit = (CompilationUnit) parser.createAST(null);
 			cUnit = unit;
@@ -1141,9 +1143,7 @@ public class GraphBuilder {
 						ASTNode parent = node.getParent();
 						Integer lineNum = getLineNum(node.getStartPosition());
 						ASTNode tempNode = parent;		
-//						if(lineNum == 124) {
-//							System.out.println("a");
-//						}
+
 						while(!(tempNode instanceof TypeDeclaration)) {
 							tempNode = tempNode.getParent();
 							if(tempNode instanceof CompilationUnit) {
@@ -1158,10 +1158,7 @@ public class GraphBuilder {
 						if((parent instanceof VariableDeclarationFragment || parent instanceof SingleVariableDeclaration) 
 								&& !(parent.getParent() instanceof FieldDeclaration)) {
 							if(classStart <= info.start && classEnd >= info.end && !(parent.getParent() instanceof MethodDeclaration))
-								lstVariableDeclaration.add(node.getIdentifier());
-							
-//							for(String temp : lstFieldMemberDeclaration)
-//								lstVariableDeclaration.remove(temp);
+								lstVariableDeclaration.add(node.getIdentifier());														
 						}
 						
 						if(lineNum >= info.start && lineNum <= info.end && lstVariableDeclaration.contains(node.getIdentifier())) {
@@ -1178,8 +1175,10 @@ public class GraphBuilder {
 						return super.visit(node);
 					}
 					
-					public boolean visit(FieldDeclaration node) {						
-						lstFieldMemberDeclaration.add(((VariableDeclarationFragment) node.fragments().get(0)).getName().getIdentifier());											
+					public boolean visit(FieldDeclaration node) {
+						for(int i = 0 ; i < node.fragments().size(); i++) {
+							lstFieldMemberDeclaration.add(((VariableDeclarationFragment) node.fragments().get(i)).getName().getIdentifier());
+						}
 						return super.visit(node);
 					}
 					
@@ -1208,15 +1207,15 @@ public class GraphBuilder {
 						return super.visit(node);
 					}
 					
-					public boolean visit(Assignment node) {
-						ASTNode rhs = node.getRightHandSide();
-						if(rhs instanceof NullLiteral) {
-							if(!lstViolatedField.contains(node.getRightHandSide()))
-								lstViolatedField.add(node.getLeftHandSide());
-						}
-						
-						return super.visit(node);
-					}
+//					public boolean visit(Assignment node) {
+//						ASTNode rhs = node.getRightHandSide();
+//						if(rhs instanceof NullLiteral) {
+//							if(!lstViolatedField.contains(node.getRightHandSide()))
+//								lstViolatedField.add(node.getLeftHandSide());
+//						}
+//						
+//						return super.visit(node);
+//					}
 					
 				});
 			} catch (Exception e) {

@@ -13,6 +13,7 @@ import org.apache.commons.csv.CSVPrinter;
 
 import edu.handong.csee.isel.fcminer.fpcollector.graphbuilder.ControlNode;
 import edu.handong.csee.isel.fcminer.fpcollector.graphclassifier.NodeInterpreter;
+import edu.handong.csee.isel.fcminer.util.GraphResult;
 
 public class GraphWriter {
 	public String fileName;
@@ -50,7 +51,7 @@ public class GraphWriter {
 		} 
 	}
 	
-	public void writeNodeRankGraph(ArrayList<Entry<String, ArrayList<GraphInfo>>> graphs, String type, int totalSize) {
+	public void writeNodeRankGraph(ArrayList<GraphResult> graphs, String type, int totalSize) {
 //		String fileName = ;/* ./Result.csv */
 		 fileName = "./" + type + "GraphRepresentation.csv";
 		
@@ -60,18 +61,18 @@ public class GraphWriter {
 									.withHeader("Path", "Method", "Graph", "Graph Information"));
 			) {
 			String totalInfo = "";
-			for(Entry<String, ArrayList<GraphInfo>> g : graphs) {
-				totalInfo += "Number of Size "+ g.getKey() + " : " + g.getValue().size() + " (" +  (double)g.getValue().size()/totalSize*100 + ")\n";
+			for(GraphResult g : graphs) {
+				totalInfo += "Number of Size "+ g.getGraphResult().getKey() + " : " + g.getGraphResult().getValue().size() + " (" +  (double)g.getGraphResult().getValue().size()/totalSize*100 + ")\n";
 			}
 			csvPrinter.printRecord("Total", "Graph", "Information : ", totalInfo);
-			for(Entry<String, ArrayList<GraphInfo>> g : graphs) {
+			for(GraphResult g : graphs) {
 //				Integer i = g.getKey();
 //				if(totalNodeNum == 0 || totalNodeNum == 1) continue;
-				for (GraphInfo tempGraph : g.getValue()) {
+				for (GraphInfo tempGraph : g.getGraphResult().getValue()) {
 					String path = tempGraph.root.path;
 					String method = tempGraph.root.node.toString();
 					String graph = tempGraph.root.writeInfo();
-					String graphInfo = "Pattern : " + g.getKey() + "\n" + tempGraph.getNumberInfo();
+					String graphInfo = "Pattern : " + g.getGraphResult().getKey() + "\n" + tempGraph.getNumberInfo();
 		
 					csvPrinter.printRecord(path, method, graph, graphInfo);
 				}

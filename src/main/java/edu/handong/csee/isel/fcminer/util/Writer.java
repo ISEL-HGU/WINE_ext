@@ -69,11 +69,16 @@ public class Writer {
 		return changedFilesPath;
 	}
 	
-	public void initResult(ArrayList<Result> results, String projectName) {
+	public int initResult(ArrayList<Result> results, String projectName) {		
+		File f= new File("./" + projectName + "_Result.csv");
 		String fileName = "./" + projectName + "_Result.csv";
+		resultPath = "./" + projectName + "_Result.csv";
 		System.out.println("INFO: Start to Initialize Result File");
 		long start = System.currentTimeMillis();
-		try(
+		if(f.exists()) {
+			return -1;
+		}
+		try(			
 			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName));
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
 									.withHeader("Detection ID", "Latest Commit ID", "PMD Version", "Rule Name", "File Path", "Violation Introducing Commit ID", "VIC Date", "VIC Line Num.", "Latest Detection Commit ID", "LDC ID Date", "LDC Line Num.","Violation Fixed Commit ID", "VFC Date", "VFC Line Num.", "Fixed Period(day)", "Original Code", "Fixed Code", "Really Fixed?"));
@@ -90,6 +95,7 @@ public class Writer {
 		long end = System.currentTimeMillis();
 		
 		System.out.println("INFO: Finish to Initialize Result File (" + (end - start)/1000 + " sec.)");
+		return 1;
 	}
 	
 	public void writeResult(ArrayList<Result> results, String projectName, long time) {

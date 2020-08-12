@@ -92,7 +92,10 @@ public class SAResultMiner {
 		}
 		
 		//write result form and first detection		
-		writer.initResult(results, gitClone.getProjectName());
+		if(writer.initResult(results, gitClone.getProjectName()) == -1) {
+			System.out.println("Result File is Already Generated");
+			return writer.getResult();
+		}
 		
 		//get all commit size for repeating
 		int logSize = commits.size();

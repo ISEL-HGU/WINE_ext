@@ -12,6 +12,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.ResetCommand.ResetType;
 import org.eclipse.jgit.api.errors.CheckoutConflictException;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.InvalidRefNameException;
@@ -25,7 +26,8 @@ public class InfoCollector {
 	static final int FIELDNODE = 3;
 	static final int STRINGNODE = 4;
 
-	public ArrayList<ControlNode> graphs = new ArrayList<>();
+	public ArrayList<ControlNode> tpcGraphs = new ArrayList<>();
+	public ArrayList<ControlNode> fpcGraphs = new ArrayList<>();
 	
 	public void run(String resultPath, Git git) throws IOException {		
 		Reader outputFile = new FileReader(resultPath);
@@ -42,18 +44,30 @@ public class InfoCollector {
 			
 			Info info = new Info();			
 			info.path = filePath;					
-			if(label.equals("Maintained")) {
+			if(label.equals("FPC") || label.equals("Unaffected Change")) {
 				try {
-					if(LDCID.equals("")) {
-						git.checkout().setForced(true).setName(VICID).call();
-						info.start = Integer.parseInt(getScope(VICLineNum, 0, info.sourceByLine));
-						info.end = Integer.parseInt(getScope(VICLineNum, 1, info.sourceByLine));
-					}
-					else {
-						git.checkout().setForced(true).setName(LDCID).call();
+					if(label.equals("FPC")) {
+						if(LDCID.equals("")) {
+							git.reset().setMode(ResetType.HARD).call();
+							git.checkout().setForced(true).setName(VICID).call();
+							info.sourceByLine = new ArrayList<>(Arrays.asList(getSourceByLine(getSource(info.path))));
+							info.start = Integer.parseInt(getScope(VICLineNum, 0, info.sourceByLine));
+							info.end = Integer.parseInt(getScope(VICLineNum, 1, info.sourceByLine));
+						}
+						else {
+							git.reset().setMode(ResetType.HARD).call();
+							git.checkout().setForced(true).setName(LDCID).call();
+							info.sourceByLine = new ArrayList<>(Arrays.asList(getSourceByLine(getSource(info.path))));
+							info.start = Integer.parseInt(getScope(LDCLineNum, 0, info.sourceByLine));
+							info.end = Integer.parseInt(getScope(LDCLineNum, 1, info.sourceByLine));
+						}
+					} else {
+						git.reset().setMode(ResetType.HARD).call();
+						git.checkout().setForced(true).setName(VFCID).call();
+						info.sourceByLine = new ArrayList<>(Arrays.asList(getSourceByLine(getSource(info.path))));
 						info.start = Integer.parseInt(getScope(LDCLineNum, 0, info.sourceByLine));
 						info.end = Integer.parseInt(getScope(LDCLineNum, 1, info.sourceByLine));
-					}					
+					}
 				} catch (RefAlreadyExistsException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -70,44 +84,77 @@ public class InfoCollector {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}
+			} else if(label.equals("Direct Fix")) {
+				try {
+					if(LDCID.equals("")) {
+						git.reset().setMode(ResetType.HARD).call();
+						git.checkout().setForced(true).setName(VICID).call();
+						info.sourceByLine = new ArrayList<>(Arrays.asList(getSourceByLine(getSource(info.path))));
+						info.start = Integer.parseInt(getScope(VICLineNum, 0, info.sourceByLine));
+						info.end = Integer.parseInt(getScope(VICLineNum, 1, info.sourceByLine));
+					}
+					else {
+						git.reset().setMode(ResetType.HARD).call();
+						git.checkout().setForced(true).setName(LDCID).call();
+						info.sourceByLine = new ArrayList<>(Arrays.asList(getSourceByLine(getSource(info.path))));
+						info.start = Integer.parseInt(getScope(LDCLineNum, 0, info.sourceByLine));
+						info.end = Integer.parseInt(getScope(LDCLineNum, 1, info.sourceByLine));
+					}
+				} catch (RefAlreadyExistsException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (RefNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (InvalidRefNameException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (CheckoutConflictException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (GitAPIException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else continue;
 			
-			
-		    
-		    info.sourceByLine = new ArrayList<>(Arrays.asList(getSourceByLine(getSource(info.path))));		    		   
 		    //In case of String Literal
-		    info.varNames.add(getVarNameByDoubleQuotation(record.get(2)));
+//		    info.varNames.add(getVarNameByDoubleQuotation(record.get(2)));
 		    //For String Literal
-        	if(info.varNames.get(0) != null && info.varNodes.size() == 0) {
-        		info.varNodes.addAll(getStringNode(info));
-        	} 
+//        	if(info.varNames.get(0) != null && info.varNodes.size() == 0) {
+//        		info.varNodes.addAll(getStringNode(info));
+//        	} 
 		    //In case of DFA
-        	else if(info.varNames.get(0) == null) {
-		    	info.varNames.remove(0);
-		    	info.varNames.add(getVarNameBySingleQuotation(record.get(2)));
-		    	if(info.varNames.get(0) != null) {
-		    		info.varNodes.addAll(getVarList(info));
-		    		if(info.varNodes.size() == 0) {
-		    			info.fieldNames.addAll(info.varNames);
-		    			info.fieldNodes.addAll(getFieldList(info));
-		    		}
-		    	}
-		    	else {
+//        	if(info.varNames.get(0) == null) {
+//		    	info.varNames.remove(0);
+//		    	info.varNames.add(getVarNameBySingleQuotation(record.get(2)));
+//		    	if(info.varNames.get(0) != null) {
+//		    		info.varNodes.addAll(getVarList(info));
+//		    		if(info.varNodes.size() == 0) {
+//		    			info.fieldNames.addAll(info.varNames);
+//		    			info.fieldNodes.addAll(getFieldList(info));
+//		    		}
+//		    	}
+//		    	else {
 		    		//for other rules
-		    		info.varNames.remove(0);
+//		    		info.varNames.remove(0);
 	        		info.varNodes.addAll(getVarList(info));
 	            	info.fieldNodes.addAll(getFieldList(info));
 	            	info.nodesToStrings();
-		    	}
-		    }
+//		    	}
+//		    }
 		    
         	if(info.varNodes.size() == 0 && info.fieldNodes.size() == 0) {
-//        		System.out.println("Something Goes Wrong");
+        		System.out.println("Something Goes Wrong");
+        		continue;
         	}
 		    
 		    GraphBuilder graphBuilder = new GraphBuilder(info);
 			graphBuilder.run();
-			graphs.add(graphBuilder.root);
+			if(label.equals("FPC") || label.equals("Unaffected Change"))
+				fpcGraphs.add(graphBuilder.root);
+			else if(label.equals("Direct Fix"))
+				tpcGraphs.add(graphBuilder.root);
 		}
 	}	
 	
@@ -164,6 +211,7 @@ public class InfoCollector {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private String getVarNameByDoubleQuotation(String token) {		
 		int start = 0;
 		int end = 0;
@@ -190,6 +238,7 @@ public class InfoCollector {
 		return newToken;
 	}
 	
+	@SuppressWarnings("unused")
 	private String getVarNameBySingleQuotation(String token) {		
 		String[] tokenList = token.split("'");
 		if(tokenList.length == 1) {
@@ -198,6 +247,7 @@ public class InfoCollector {
 		return tokenList[3];
 	}
 	
+	@SuppressWarnings("unused")
 	private ArrayList<ASTNode> getStringNode(Info info){
 		GraphBuilder tempParser = new GraphBuilder(info);
 		return tempParser.getViolatedVariableList(String.join("\n", info.sourceByLine), STRINGNODE);
@@ -211,5 +261,13 @@ public class InfoCollector {
 	private ArrayList<ASTNode> getFieldList(Info info){
 		GraphBuilder tempParser = new GraphBuilder(info);
 		return tempParser.getViolatedVariableList(String.join("\n", info.sourceByLine), FIELD);
+	}
+	
+	public ArrayList<ControlNode> getTPCGraphs(){
+		return tpcGraphs;
+	}
+	
+	public ArrayList<ControlNode> getFPCGraphs(){
+		return fpcGraphs;
 	}
 }

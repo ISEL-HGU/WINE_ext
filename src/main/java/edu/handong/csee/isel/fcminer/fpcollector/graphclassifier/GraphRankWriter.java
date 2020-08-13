@@ -16,8 +16,8 @@ import edu.handong.csee.isel.fcminer.util.GraphResult;
 public class GraphRankWriter {
 	public String fileName;
 	
-	public void writeRankGraphTotalNum(GraphNodeNumClusterer fpcGraphCompartor, GraphNodeNumClusterer tpcGraphCompartor, String projectName) {
-		 fileName = "./" + projectName + "NumRankGraphRepresentation.csv";
+	public void writeRankGraphTotalNum(GraphNodeNumClusterer fpcGraphCompartor, GraphNodeNumClusterer tpcGraphCompartor) {
+		 fileName = "./NumRankGraphRepresentation.csv";
 		 
 		 ArrayList<Entry<Integer, ArrayList<GraphInfo>>> fpcGraphs = fpcGraphCompartor.clusterByTotalNumRank;
 		 ArrayList<Entry<Integer, ArrayList<GraphInfo>>> tpcGraphs = tpcGraphCompartor.clusterByTotalNumRank;
@@ -68,8 +68,8 @@ public class GraphRankWriter {
 		} 
 	}
 	
-	public void writeRankGraph(GraphNodeClusterer fpcGraphCompartor, GraphNodeClusterer tpcGraphCompartor, String projectName) {
-		fileName = "./" + projectName + "NodeRankGraphRepresentation.csv";
+	public void writeRankGraph(GraphNodeClusterer fpcGraphCompartor, GraphNodeClusterer tpcGraphCompartor) {
+		fileName = "./NodeRankGraphRepresentation.csv";
 		 
 		ArrayList<GraphResult> fpcGraphs = fpcGraphCompartor.clusterByTotalNodeRank;
 		ArrayList<GraphResult> tpcGraphs = tpcGraphCompartor.clusterByTotalNodeRank;

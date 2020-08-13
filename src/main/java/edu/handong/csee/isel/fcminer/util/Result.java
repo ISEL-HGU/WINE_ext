@@ -1,12 +1,13 @@
 package edu.handong.csee.isel.fcminer.util;
 
 public class Result {
-	//"Detection ID", "Latest Commit ID", "PMD Version", "Rule Name", "File Path", 
+	//"Detection ID", "projectName", "Latest Commit ID", "PMD Version", "Rule Name", "File Path", 
 	//"Violation Introducing Commit ID", "VIC Date", "VIC Line Num.", 
 	//"Latest Detection Commit ID", "LDC ID Date", "LDC Line Num.",
 	//"Violation Fixed Commit ID", "VFC Date", "VFC Line Num.", "Fixed Period(day)", 
 	//"Original Code", "Fixed Code", "Really Fixed?"
 	int detectionID = 0;
+	String prjName = "";
 	String LCID = "";
 	String PMDVer = "";
 	String ruleName = "";
@@ -22,11 +23,13 @@ public class Result {
 	String VFCLineNum = "";
 	String fixedPeriod = "";
 	String originCode = "";
-	String fixedCode = "";		
+	String fixedCode = "";	
+	String reallyFixed = "";
 	
 	//init
-	public Result(int detectionID, String LCID, String PMDVer, String ruleName, String filePath, String VICID, String VICDate, String VICLineNum, String originCode) {
+	public Result(int detectionID, String prjName, String LCID, String PMDVer, String ruleName, String filePath, String VICID, String VICDate, String VICLineNum, String originCode) {
 		this.detectionID = detectionID;
+		this.prjName = prjName;
 		this.LCID = LCID;
 		this.PMDVer = PMDVer;
 		this.ruleName = ruleName;
@@ -37,9 +40,25 @@ public class Result {
 		this.originCode = originCode;
 	}
 	
-	//getters
+	//getters setters
+	public void setReallyFixed(String reallyFixed) {
+		this.reallyFixed = reallyFixed;
+	}
+	
+	public String getReallyFixed() {
+		return reallyFixed;
+	}
+	
 	public int getDetectionID() {
 		return detectionID;
+	}
+	
+	public String getProjectName() {
+		return prjName;
+	}
+	
+	public void setProjectName(String prjName) {
+		this.prjName = prjName;
 	}
 
 	public String getLCID() {

@@ -29,18 +29,19 @@ public class InfoCollector {
 	public ArrayList<ControlNode> tpcGraphs = new ArrayList<>();
 	public ArrayList<ControlNode> fpcGraphs = new ArrayList<>();
 	
-	public void run(String resultPath, Git git) throws IOException {		
+	public void run(String resultPath, Git git, String projectName) throws IOException {		
 		Reader outputFile = new FileReader(resultPath);
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(outputFile);		
 		for (CSVRecord record : records) {			
-			if(record.get(0).equals("Detection ID")) continue;		
-			String label = record.get(17);
-			String VFCID = record.get(11);			
-			String LDCID = record.get(8);
-			String LDCLineNum = record.get(10);
-			String VICID = record.get(5);
-			String VICLineNum = record.get(7);
-			String filePath = record.get(4);
+			if(record.get(0).equals("Detection ID")) continue;
+			if(!record.get(1).equals(projectName)) continue;
+			String label = record.get(18);
+			String VFCID = record.get(12);			
+			String LDCID = record.get(9);
+			String LDCLineNum = record.get(11);
+			String VICID = record.get(6);
+			String VICLineNum = record.get(8);
+			String filePath = record.get(5);
 			
 			Info info = new Info();			
 			info.path = filePath;					

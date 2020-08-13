@@ -23,6 +23,7 @@ import edu.handong.csee.isel.fcminer.util.ResultUpdater;
 import edu.handong.csee.isel.fcminer.util.Writer;
 
 public class SAResultMiner {
+	ArrayList<Git> gits = new ArrayList<>();
 	Git git;
 	public String run(String input) {	
 		//instances related with git 
@@ -55,7 +56,9 @@ public class SAResultMiner {
 		//read input list
 		ArrayList<String> inputList = new ArrayList<>();
 		inputList.addAll(reader.readInputList(input));
+		int cnt = 0;
 		for(int k = 0 ; k < inputList.size(); k ++) {
+		cnt = k + 1;
 		long start = System.currentTimeMillis();
 		targetGitAddress = inputList.get(k);
 		//readInput test
@@ -63,7 +66,7 @@ public class SAResultMiner {
 		
 		//git clone		
 		git = gitClone.clone(targetGitAddress);
-		
+		gits.add(git);
 		//get all commit id and latest commit id
 		commits.addAll(gitLog.getAllCommitID(git));
 		String latestCommitID = gitLog.getLatestCommitId();
@@ -88,13 +91,20 @@ public class SAResultMiner {
 		alarms.addAll(reader.readReportFile(pmd.getReportPath()));
 		for(Alarm alarm : alarms) {
 			detectionID++;
-			results.add(new Result(detectionID, latestCommitID, pmdVersion, rule, alarm.getDir(), commits.get(0).getID(), commits.get(0).getTime(), alarm.getLineNum(), alarm.getCode()));
+			results.add(new Result(detectionID, gitClone.getProjectName(), latestCommitID, pmdVersion, rule, alarm.getDir(), commits.get(0).getID(), commits.get(0).getTime(), alarm.getLineNum(), alarm.getCode()));
 		}
 		
 		//write result form and first detection		
-		if(writer.initResult(results, gitClone.getProjectName()) == -1) {
+		if(writer.initResult(results, gitClone.getProjectName()) == -1) {		
 			System.out.println("Result File is Already Generated");
-			return writer.getResult();
+			if(cnt == inputList.size())
+				return writer.getResult();
+			else {
+				git.close();
+				commits.clear();
+				latestCommitID = "";
+				continue;
+			}			
 		}
 		
 		//get all commit size for repeating
@@ -104,6 +114,7 @@ public class SAResultMiner {
 		for(int i = 1; i < logSize; i ++) {			
 			for(Result result: results) {
 				if(result.getFixedCode().equals("FILE IS DELETED")) continue;
+				if(!result.getProjectName().equals(gitClone.getProjectName())) continue;
 				alarmsInResult.add(new Alarm(result));
 			}			
 			
@@ -186,21 +197,19 @@ public class SAResultMiner {
 			//"Original Code"
 			for(Alarm newAlarm : comparator.getNewGeneratedAlarms()) {	
 				detectionID++;				
-				results.add(new Result(detectionID, latestCommitID, pmdVersion, rule, newAlarm.getDir(), commits.get(i).getID(), commits.get(i).getTime(), newAlarm.getLineNum(), newAlarm.getCode()));	
+				results.add(new Result(detectionID, gitClone.getProjectName(), latestCommitID, pmdVersion, rule, newAlarm.getDir(), commits.get(i).getID(), commits.get(i).getTime(), newAlarm.getLineNum(), newAlarm.getCode()));	
 			}
 			
 			comparator.init();
 			resultUpdater.init();
-			alarms.clear();
-			latestCommitID = "";
+			alarms.clear();			
 			long end = System.currentTimeMillis();
 			//write updated pmd report and its codes
 			writer.writeResult(results, gitClone.getProjectName(), (end-start)/1000);
 		}
+		git.close();
 		commits.clear();
-		results.clear();
-		detectionID = 0;
-		
+		latestCommitID = "";		
 	}	
 		System.out.println("FINAL RESULT IS GENERATED!!" );
 		return writer.getResult();
@@ -226,7 +235,7 @@ public class SAResultMiner {
 	    }	        
 	}
 	
-	public Git getGitRepo() {
-		return git;
+	public ArrayList<Git> getGitRepo() {
+		return gits;
 	}
 }

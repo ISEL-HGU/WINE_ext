@@ -69,15 +69,11 @@ public class Writer {
 		return changedFilesPath;
 	}
 	
-	public int initResult(ArrayList<Result> results, String projectName) {		
-		File f= new File("./SAResultMiner_Result.csv");
+	public void initResult(ArrayList<Result> results, String projectName) {		
 		String fileName = "./SAResultMiner_Result.csv";
 		resultPath = fileName;
 		System.out.println("INFO: Start to Initialize Result File");
 		long start = System.currentTimeMillis();
-		if(f.exists()) {
-			return -1;
-		}
 		try(			
 			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName));
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
@@ -105,7 +101,6 @@ public class Writer {
 		long end = System.currentTimeMillis();
 		
 		System.out.println("INFO: Finish to Initialize Result File (" + (end - start)/1000 + " sec.)");
-		return 1;
 	}
 	
 	public void writeResult(ArrayList<Result> results, String projectName, long time) {

@@ -22,7 +22,7 @@ public class PMD {
 	public void execute(String rule, String commitID, String dirPath, int cnt, String projectName) {		
 		File newDir = new File("./PMDReports/" + projectName + File.separator);
 		if(!newDir.exists()) {
-			newDir.mkdir();
+			newDir.mkdirs();
 		}
 		System.out.println("INFO: PMD Start");
 		long start = System.currentTimeMillis();
@@ -54,7 +54,7 @@ public class PMD {
 	public void executeToChangedFiles(String rule, String commitID, String filePaths, int cnt, String projectName) {		
 		File newDir = new File("./PMDReports");
 		if(!newDir.exists()) {
-			newDir.mkdir();
+			newDir.mkdirs();
 		}
 		
 		Writer writer = new Writer();

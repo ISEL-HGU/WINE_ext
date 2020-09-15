@@ -14,9 +14,13 @@ import edu.handong.csee.isel.fcminer.fpcollector.graphclassifier.GraphNodeCluste
 import edu.handong.csee.isel.fcminer.fpcollector.graphclassifier.GraphNodeNumClusterer;
 import edu.handong.csee.isel.fcminer.fpcollector.graphclassifier.GraphRankWriter;
 import edu.handong.csee.isel.fcminer.fpcollector.graphclassifier.NodeResolver;
+import edu.handong.csee.isel.fcminer.util.CliCommand;
+import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
 
 public class FPCollector {	
-	public void run(String sarMinerResultPath, ArrayList<Git> gits) {
+	public void run(CliCommand command, ArrayList<Git> gits) {
+		if(command.getState().equals(RunState.SAResultMiner)) return;
+		
 		InfoCollector collector = new InfoCollector();	
 		
 		for(Git git : gits) {
@@ -24,7 +28,7 @@ public class FPCollector {
 			String projectName = fullProjectPath[fullProjectPath.length-2]; 					
 				
 			try {
-				collector.run(sarMinerResultPath, git, projectName);
+				collector.run("./SAResultMiner_Result.csv", git, projectName);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}		

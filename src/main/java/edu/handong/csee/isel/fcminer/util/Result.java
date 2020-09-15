@@ -27,11 +27,11 @@ public class Result {
 	String reallyFixed = "";
 	
 	//init
-	public Result(int detectionID, String prjName, String LCID, String PMDVer, String ruleName, String filePath, String VICID, String VICDate, String VICLineNum, String originCode) {
+	public Result(int detectionID, String prjName, String LCID, String pmd, String ruleName, String filePath, String VICID, String VICDate, String VICLineNum, String originCode) {
 		this.detectionID = detectionID;
 		this.prjName = prjName;
 		this.LCID = LCID;
-		this.PMDVer = PMDVer;
+		this.PMDVer = pmd.split("/")[1].split("-")[2];;
 		this.ruleName = ruleName;
 		this.filePath = filePath;
 		this.VICID = VICID;

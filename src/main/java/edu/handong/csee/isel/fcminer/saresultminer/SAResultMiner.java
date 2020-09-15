@@ -16,6 +16,8 @@ import edu.handong.csee.isel.fcminer.saresultminer.git.Diff;
 import edu.handong.csee.isel.fcminer.saresultminer.git.Log;
 import edu.handong.csee.isel.fcminer.saresultminer.pmd.Alarm;
 import edu.handong.csee.isel.fcminer.saresultminer.pmd.PMD;
+import edu.handong.csee.isel.fcminer.util.CliCommand;
+import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
 import edu.handong.csee.isel.fcminer.util.Comparator;
 import edu.handong.csee.isel.fcminer.util.Reader;
 import edu.handong.csee.isel.fcminer.util.Result;
@@ -25,7 +27,7 @@ import edu.handong.csee.isel.fcminer.util.Writer;
 public class SAResultMiner {
 	ArrayList<Git> gits = new ArrayList<>();
 	Git git;
-	public String run(String input) {	
+	public String run(CliCommand command) {	
 		//instances related with git 
 		Clone gitClone = new Clone();
 		Log gitLog = new Log();
@@ -38,9 +40,8 @@ public class SAResultMiner {
 		
 		//pmd instance
 		//@param pmd command location
-		PMD pmd = new PMD("./pmd-bin-6.25.0/bin/run.sh");
-		String pmdVersion = "6.25";
-		String rule = "category/java/errorprone.xml/InvalidLogMessageFormat";
+		PMD pmd = new PMD(command.getPMD());
+		String rule = command.getRule();
 		ArrayList<Alarm> alarms = new ArrayList<>();
 		
 		//utils instances
@@ -55,7 +56,7 @@ public class SAResultMiner {
 //		targetGitAddress = reader.readInput(input);
 		//read input list
 		ArrayList<String> inputList = new ArrayList<>();
-		inputList.addAll(reader.readInputList(input));
+		inputList.addAll(reader.readInputList(command.getAddressPath()));
 		int cnt = 0;
 		for(int k = 0 ; k < inputList.size(); k ++) {
 		cnt = k + 1;
@@ -85,28 +86,33 @@ public class SAResultMiner {
 		 * @param clonedPath: pmd's target direcotry
 		 * @param cnt: setting first, second, third... commit
 		 */
-		pmd.execute(rule, commits.get(0).getID(), gitClone.getClonedPath(), 0, gitClone.getProjectName());
+		if(!command.getState().equals(RunState.FPCollector)) {
+			pmd.execute(rule, commits.get(0).getID(), gitClone.getClonedPath(), 0, gitClone.getProjectName());
+			//read first pmd report
+			alarms.addAll(reader.readReportFile(pmd.getReportPath()));
+			for(Alarm alarm : alarms) {
+				detectionID++;
+				results.add(new Result(detectionID, gitClone.getProjectName(), latestCommitID, command.getPMD(), rule, alarm.getDir(), commits.get(0).getID(), commits.get(0).getTime(), alarm.getLineNum(), alarm.getCode()));
+			}
+		}		
 		
-		//read first pmd report
-		alarms.addAll(reader.readReportFile(pmd.getReportPath()));
-		for(Alarm alarm : alarms) {
-			detectionID++;
-			results.add(new Result(detectionID, gitClone.getProjectName(), latestCommitID, pmdVersion, rule, alarm.getDir(), commits.get(0).getID(), commits.get(0).getTime(), alarm.getLineNum(), alarm.getCode()));
+		//write result form and first detection
+		if(command.getState().equals(RunState.SAResultMiner) || command.getState().equals(RunState.All)) {
+			System.out.println("Run State: SAResultMiner | FC-Miner");
+			writer.initResult(results, gitClone.getProjectName());
+		} 
+		else if(command.getState().equals(RunState.FPCollector)) {
+			System.out.println("Run State: FPCollector");
+			writer.initResult(results, gitClone.getProjectName());
+			if(cnt == inputList.size())
+				return writer.getResult();
+			else {
+				git.close();
+				commits.clear();
+				latestCommitID = "";
+				continue;
+			}
 		}
-		
-		//write result form and first detection		
-		writer.initResult(results, gitClone.getProjectName());
-//		if(writer.initResult(results, gitClone.getProjectName()) == -1) {		
-//			System.out.println("Result File is Already Generated");
-//			if(cnt == inputList.size())
-//				return writer.getResult();
-//			else {
-//				git.close();
-//				commits.clear();
-//				latestCommitID = "";
-//				continue;
-//			}			
-//		}
 		
 		//get all commit size for repeating
 		int logSize = commits.size();
@@ -198,7 +204,7 @@ public class SAResultMiner {
 			//"Original Code"
 			for(Alarm newAlarm : comparator.getNewGeneratedAlarms()) {	
 				detectionID++;				
-				results.add(new Result(detectionID, gitClone.getProjectName(), latestCommitID, pmdVersion, rule, newAlarm.getDir(), commits.get(i).getID(), commits.get(i).getTime(), newAlarm.getLineNum(), newAlarm.getCode()));	
+				results.add(new Result(detectionID, gitClone.getProjectName(), latestCommitID, command.getPMD(), rule, newAlarm.getDir(), commits.get(i).getID(), commits.get(i).getTime(), newAlarm.getLineNum(), newAlarm.getCode()));	
 			}
 			
 			comparator.init();

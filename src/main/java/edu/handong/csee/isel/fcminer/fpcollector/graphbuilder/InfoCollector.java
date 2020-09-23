@@ -10,7 +10,9 @@ import java.util.Arrays;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
+import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ResetCommand.ResetType;
 import org.eclipse.jgit.api.errors.CheckoutConflictException;
@@ -18,6 +20,8 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.InvalidRefNameException;
 import org.eclipse.jgit.api.errors.RefAlreadyExistsException;
 import org.eclipse.jgit.api.errors.RefNotFoundException;
+
+import edu.handong.csee.isel.fcminer.fpcollector.gumtree.MethodFinder;
 
 public class InfoCollector {
 	static final int VAR = 0;
@@ -31,6 +35,7 @@ public class InfoCollector {
 	
 	public void run(String resultPath, Git git, String projectName) throws IOException {		
 		Reader outputFile = new FileReader(resultPath);
+		Info info = new Info();
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(outputFile);		
 		for (CSVRecord record : records) {			
 			if(record.get(0).equals("Detection ID")) continue;
@@ -43,7 +48,7 @@ public class InfoCollector {
 			String VICLineNum = record.get(8);
 			String filePath = record.get(5);
 			
-			Info info = new Info();			
+						
 			info.path = filePath;					
 			if(label.equals("FPC") || label.equals("Unaffected Change")) {
 				try {
@@ -82,6 +87,7 @@ public class InfoCollector {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (GitAPIException e) {
+					System.out.println("GitAPIException");
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -151,13 +157,34 @@ public class InfoCollector {
         	}
 		    
 		    GraphBuilder graphBuilder = new GraphBuilder(info);
-			graphBuilder.run();
+//			graphBuilder.run();
+		    MethodFinder methodFinder = new MethodFinder(info);
+		    
+		    MethodDeclaration violatedMethod;
+		    violatedMethod = methodFinder.findMethod();
+		    String method = addClass(violatedMethod);
+		    
+		    
 			if(label.equals("FPC") || label.equals("Unaffected Change"))
 				fpcGraphs.add(graphBuilder.root);
 			else if(label.equals("Direct Fix"))
 				tpcGraphs.add(graphBuilder.root);
 		}
 	}	
+	
+	private String addClass(MethodDeclaration violatedMethod) {
+		AST ast = AST.newAST(0);
+		
+		ast.newCompilationUnit();
+		
+		
+		
+		
+		
+		
+		
+		return "";
+	}
 	
 	private String getSource(String file_path) throws IOException {
 		File f = new File(file_path);

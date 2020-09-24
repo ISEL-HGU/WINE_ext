@@ -103,9 +103,9 @@ public class SAResultMiner {
 		} 
 		else if(command.getState().equals(RunState.FPCollector)) {
 			System.out.println("Run State: FPCollector");
-			writer.initResult(results, gitClone.getProjectName());
+//			writer.initResult(results, gitClone.getProjectName());
 			if(cnt == inputList.size())
-				return writer.getResult();
+				return command.getResultPath();
 			else {
 				git.close();
 				commits.clear();

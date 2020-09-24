@@ -10,7 +10,6 @@ import java.util.Arrays;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jgit.api.Git;
@@ -21,6 +20,7 @@ import org.eclipse.jgit.api.errors.InvalidRefNameException;
 import org.eclipse.jgit.api.errors.RefAlreadyExistsException;
 import org.eclipse.jgit.api.errors.RefNotFoundException;
 
+import edu.handong.csee.isel.fcminer.fpcollector.gumtree.GumTreeRunner;
 import edu.handong.csee.isel.fcminer.fpcollector.gumtree.MethodFinder;
 
 public class InfoCollector {
@@ -33,6 +33,9 @@ public class InfoCollector {
 	public ArrayList<ControlNode> tpcGraphs = new ArrayList<>();
 	public ArrayList<ControlNode> fpcGraphs = new ArrayList<>();
 	
+//	public ArrayList<ASTNode> fpcPattern = new ArrayList<>();
+//	public ArrayList<ASTNode> tpcPattern = new ArrayList<>();
+	
 	public void run(String resultPath, Git git, String projectName) throws IOException {		
 		Reader outputFile = new FileReader(resultPath);
 		Info info = new Info();
@@ -40,6 +43,7 @@ public class InfoCollector {
 		for (CSVRecord record : records) {			
 			if(record.get(0).equals("Detection ID")) continue;
 			if(!record.get(1).equals(projectName)) continue;
+			int cnt = 0;
 			String label = record.get(18);
 			String VFCID = record.get(12);			
 			String LDCID = record.get(9);
@@ -157,33 +161,52 @@ public class InfoCollector {
         	}
 		    
 		    GraphBuilder graphBuilder = new GraphBuilder(info);
-//			graphBuilder.run();
-		    MethodFinder methodFinder = new MethodFinder(info);
+			graphBuilder.run();
 		    
-		    MethodDeclaration violatedMethod;
-		    violatedMethod = methodFinder.findMethod();
-		    String method = addClass(violatedMethod);
+//		    String mockClass = prepare4GumTree(info, cnt);
+//		    cnt++;
 		    
-		    
-			if(label.equals("FPC") || label.equals("Unaffected Change"))
+		    //JC's tip: module dependency-> argumentize/enumaration "label"
+			if(label.equals("FPC") || label.equals("Unaffected Change")) {
 				fpcGraphs.add(graphBuilder.root);
-			else if(label.equals("Direct Fix"))
+//				ASTNode pattern = runGumTree(mockClass);
+//				if(pattern != null)
+//					fpcPattern.add(pattern);
+			}
+				
+			else if(label.equals("Direct Fix")) {
 				tpcGraphs.add(graphBuilder.root);
+//				ASTNode pattern = runGumTree(mockClass);
+//				if(pattern != null)
+//				tpcPattern.add(runGumTree(mockClass));
+			}
+				
 		}
 	}	
 	
-	private String addClass(MethodDeclaration violatedMethod) {
-		AST ast = AST.newAST(0);
+	private ASTNode runGumTree(String mockClass) {
+		GumTreeRunner gumTree = new GumTreeRunner(mockClass);
+		return gumTree.getPattern();
+	}
+	
+	private String prepare4GumTree(Info info, int cnt) {
+		MethodFinder methodFinder = new MethodFinder(info);
+	    MethodDeclaration violatedMethod;
+	    
+	    violatedMethod = methodFinder.findMethod();
+	    String mockClass = method2Class(violatedMethod, cnt);
+	    
+	    return mockClass;
+	}
+	
+	private String method2Class(MethodDeclaration violatedMethod, int cnt) {
+		String method2Class = violatedMethod.toString();
 		
-		ast.newCompilationUnit();
+		method2Class = "public class MockClass" + cnt
+						+ method2Class
+						+ "}";
 		
-		
-		
-		
-		
-		
-		
-		return "";
+		return method2Class;
 	}
 	
 	private String getSource(String file_path) throws IOException {

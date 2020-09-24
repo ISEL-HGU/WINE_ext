@@ -28,7 +28,7 @@ public class PMD {
 		long start = System.currentTimeMillis();
 		try {				
 		CommandLine cmdLine = new CommandLine(pmdCmd);
-		cmdLine.addArgument("pmd");
+//		cmdLine.addArgument("pmd");
 		cmdLine.addArgument("-d");
 		cmdLine.addArgument(dirPath);
 		cmdLine.addArgument("-R");
@@ -70,7 +70,7 @@ public class PMD {
 		long start = System.currentTimeMillis();
 		try {				
 		CommandLine cmdLine = new CommandLine(pmdCmd);
-		cmdLine.addArgument("pmd");
+//		cmdLine.addArgument("pmd");
 		cmdLine.addArgument("-filelist");
 		cmdLine.addArgument(filePaths);
 		cmdLine.addArgument("-R");

@@ -149,6 +149,7 @@ public class MethodFinder {
 						return super.visit(node);
 					}
 					
+					//JC's TIP***
 					public boolean visit(MethodDeclaration node) {											
 						lstMethodDeclaration.add(node);
 						return super.visit(node);

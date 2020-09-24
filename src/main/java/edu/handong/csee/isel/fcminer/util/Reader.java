@@ -85,6 +85,10 @@ public class Reader {
 			String alarm = "";		
 			
 			while((alarm = fBufReader.readLine()) != null) {
+				if(alarm.contains("C:")) {
+					alarm = alarm.replace("C:", "");
+				}
+				
 				if(alarm.split(":").length > 2) {
 					Alarm temp = new Alarm(alarm);			
 					alarms.add(temp);

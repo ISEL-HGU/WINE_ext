@@ -1,5 +1,6 @@
 package edu.handong.csee.isel.fcminer.fpcollector;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -24,7 +25,10 @@ public class FPCollector {
 		InfoCollector collector = new InfoCollector();	
 		
 		for(Git git : gits) {
-			String[] fullProjectPath = git.getRepository().getIdentifier().split("/");
+			//linux
+//			String[] fullProjectPath = git.getRepository().getIdentifier().split("/");
+			//window
+			String[] fullProjectPath = git.getRepository().getIdentifier().split("\\\\");
 			String projectName = fullProjectPath[fullProjectPath.length-2]; 					
 				
 			try {
@@ -44,7 +48,7 @@ public class FPCollector {
 		
 		System.out.println("Step 4 Clear");
 			
-		//Step 5. Graph Clustering
+//		Step 5. Graph Clustering
 		clusterGraphByNodeNum(fpcGraphInfos, tpcGraphInfos);
 		clusterGraphByNode(fpcGraphInfos, tpcGraphInfos);
 		System.out.println("Step 5 Clear");		

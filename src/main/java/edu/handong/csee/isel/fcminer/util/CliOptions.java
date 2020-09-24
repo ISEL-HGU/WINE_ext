@@ -26,7 +26,7 @@ public class CliOptions {
 					   							+"are needed as an arg.")
 			   .addOption("m", "fcminer", false, "run both SAResultMiner and FPCollector.\n"
 					   							+"TargetAddress.txt and Rule are needed as args.")
-			   .addOption("r", "rule", true, "need an argument, rule command of PMD")
+			   .addOption("R", "rule", true, "need an argument, rule command of PMD")
 			   .addOption("t", "target", true, "path of TargetAddress.txt")
 			   .addOption("e", "result", true, "path of SAResult_Result.csv")
 			   .addOption("p", "pmd", true, "path of PMD run file\n"
@@ -39,8 +39,8 @@ public class CliOptions {
 		    HelpFormatter formatter = new HelpFormatter();
 		    
 		    if(line.hasOption("s") || line.hasOption("saresult")) {
-		    	if(line.hasOption("r") && line.hasOption("t") && line.hasOption("p")) {		    		
-		    		command.setRule(line.getOptionValue("r"));
+		    	if(line.hasOption("R") && line.hasOption("t") && line.hasOption("p")) {		    		
+		    		command.setRule(line.getOptionValue("R"));
 		    		command.setAddressPath(line.getOptionValue("t"));
 		    		if(isPMDFolderExists(line.getOptionValue("p")))
 		    			command.setPMD(line.getOptionValue("p"));
@@ -64,8 +64,8 @@ public class CliOptions {
 		    	}
 		    }
 		    else if(line.hasOption("m")) {
-		    	if(line.hasOption("t") && line.hasOption("r")) {
-		    		command.setRule(line.getOptionValue("r"));
+		    	if(line.hasOption("t") && line.hasOption("R")) {
+		    		command.setRule(line.getOptionValue("R"));
 		    		command.setAddressPath(line.getOptionValue("t"));
 		    		if(isPMDFolderExists(line.getOptionValue("p")))
 		    			command.setPMD(line.getOptionValue("p"));
@@ -94,9 +94,9 @@ public class CliOptions {
 	}
 	
 	private void printHelp(HelpFormatter formatter, Options options) {
-		formatter.printHelp("only SAResultMiner: ./FC-Miner -s -r <PMD Rule Context> -t <TargetAddress.txt Path> -p <pmd runfile path>\n"+
+		formatter.printHelp("only SAResultMiner: ./FC-Miner -s -R <PMD Rule Context> -t <TargetAddress.txt Path> -p <pmd runfile path>\n"+
 				"only FPCollector  : ./FC-Miner -f -e <SAResultMiner_Result.csv Path>\n" +
-				"Both              : ./FC-Miner -m -r <PMD Rule Context> -t <TargetAddress.txt Path -p <pmd runfile path>\n\n", options);
+				"Both              : ./FC-Miner -m -R <PMD Rule Context> -t <TargetAddress.txt Path -p <pmd runfile path>\n\n", options);
 		System.exit(-1);
 	}
 }

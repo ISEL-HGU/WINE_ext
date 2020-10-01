@@ -151,7 +151,9 @@ public class MethodFinder {
 					
 					//JC's TIP***
 					public boolean visit(MethodDeclaration node) {											
-						lstMethodDeclaration.add(node);
+						if(getLineNum(node.getStartPosition()) <= info.start && info.end <= getLineNum(node.getStartPosition() + node.getLength())){
+							violatedMethod = node;
+						}
 						return super.visit(node);
 					}										
 					
@@ -620,12 +622,6 @@ public class MethodFinder {
 				System.out.println("Problem : " + e.toString());
 				e.printStackTrace();
 				System.exit(0);
-			}
-			
-			for(MethodDeclaration method :lstMethodDeclaration) {
-				if(getLineNum(method.getStartPosition()) <= info.start && info.end <= getLineNum(method.getStartPosition() + method.getLength())){
-					violatedMethod = method;
-				}
 			}
 
 		} catch (Exception e) {

@@ -9,17 +9,23 @@ import edu.handong.csee.isel.fcminer.fpcollector.graphbuilder.InfoCollector;
 import edu.handong.csee.isel.fcminer.fpcollector.gumtree.GumTreeMain;
 import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
+import edu.handong.csee.isel.fcminer.util.OSValidator;
 
 public class FPCollector {	
 	public void run(CliCommand command, ArrayList<Git> gits) {
 		if(command.getState().equals(RunState.SAResultMiner)) return;
 		InfoCollector collector = new InfoCollector();	
-		
+		String osName = OSValidator.getOS();
 		for(Git git : gits) {
+			String[] fullProjectPath;
 			//linux
-//			String[] fullProjectPath = git.getRepository().getIdentifier().split("/");
+			if(osName.equals("linux"))
+				fullProjectPath = git.getRepository().getIdentifier().split("/");
 			//window
-			String[] fullProjectPath = git.getRepository().getIdentifier().split("\\\\");
+			else if(osName.equals("window"))
+				fullProjectPath = git.getRepository().getIdentifier().split("\\\\");
+			else continue;
+			
 			String projectName = fullProjectPath[fullProjectPath.length-2]; 					
 				
 			try {

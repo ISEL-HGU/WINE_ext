@@ -8,6 +8,7 @@ import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.ExecuteException;
 import org.apache.commons.exec.ExecuteWatchdog;
 
+import edu.handong.csee.isel.fcminer.util.OSValidator;
 import edu.handong.csee.isel.fcminer.util.Reader;
 import edu.handong.csee.isel.fcminer.util.Writer;
 
@@ -21,6 +22,7 @@ public class PMD {
 	
 	public void execute(String rule, String commitID, String dirPath, int cnt, String projectName) {		
 		File newDir = new File("./PMDReports/" + projectName + File.separator);
+		String osName = OSValidator.getOS();
 		if(!newDir.exists()) {
 			newDir.mkdirs();
 		}
@@ -28,7 +30,8 @@ public class PMD {
 		long start = System.currentTimeMillis();
 		try {				
 		CommandLine cmdLine = new CommandLine(pmdCmd);
-//		cmdLine.addArgument("pmd");
+		if(osName.equals("linux"))
+			cmdLine.addArgument("pmd");
 		cmdLine.addArgument("-d");
 		cmdLine.addArgument(dirPath);
 		cmdLine.addArgument("-R");
@@ -56,7 +59,7 @@ public class PMD {
 		if(!newDir.exists()) {
 			newDir.mkdirs();
 		}
-		
+		String osName = OSValidator.getOS();
 		Writer writer = new Writer();
 		Reader reader = new Reader();
 		String changedFileList = reader.readChagnedFileList(filePaths);
@@ -70,7 +73,8 @@ public class PMD {
 		long start = System.currentTimeMillis();
 		try {				
 		CommandLine cmdLine = new CommandLine(pmdCmd);
-//		cmdLine.addArgument("pmd");
+		if(osName.equals("linux"))
+			cmdLine.addArgument("pmd");
 		cmdLine.addArgument("-filelist");
 		cmdLine.addArgument(filePaths);
 		cmdLine.addArgument("-R");

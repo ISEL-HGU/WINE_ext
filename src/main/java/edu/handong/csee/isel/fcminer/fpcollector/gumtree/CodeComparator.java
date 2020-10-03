@@ -26,17 +26,58 @@ public class CodeComparator {
 	}
 	
 	private void runGumTree() {		
-		String variableClass = gumTreeStack.pop();
-		String fixedClass = gumTreeStack.elementAt(0);
+//		String variableClass = gumTreeStack.pop();
+//		String fixedClass = gumTreeStack.elementAt(0);
 		//need to data preprocess
-//		String variableClass = "public class Main {"
-//								+ "public void main(String args[]){ int a = 1; if(a == 1) a = 3; int c= 1; }"
-//								+
-//								" }";
-//		String fixedClass = "public class Main {"
-//							+ "public void main( String args[]){ int a = 1; a = 3;}"
-//							+
-//							" }";
+		String variableClass = "public class MockClass2{\r\n" + 
+				"@Override protected void tearDown() throws Exception {\r\n" + 
+				"  if (applicationContext != null) {\r\n" + 
+				"    applicationContext.destroy();\r\n" + 
+				"  }\r\n" + 
+				"  if (server != null) {\r\n" + 
+				"    server.stop();\r\n" + 
+				"  }\r\n" + 
+				"  if (endpoint != null) {\r\n" + 
+				"    endpoint.stop();\r\n" + 
+				"  }\r\n" + 
+				"  Interceptor[] interceptors={mapVerifier,headerVerifier};\r\n" + 
+				"  removeInterceptors(staticBus.getInInterceptors(),interceptors);\r\n" + 
+				"  removeInterceptors(staticBus.getOutInterceptors(),interceptors);\r\n" + 
+				"  removeInterceptors(staticBus.getOutFaultInterceptors(),interceptors);\r\n" + 
+				"  removeInterceptors(staticBus.getInFaultInterceptors(),interceptors);\r\n" + 
+				"  mapVerifier=null;\r\n" + 
+				"  headerVerifier=null;\r\n" + 
+				"  verified=null;\r\n" + 
+				"  messageIDs.clear();\r\n" + 
+				"  super.tearDown();\r\n" + 
+				"  BusFactory.setDefaultBus(null);\r\n" + 
+				"  Thread.sleep(5000);\r\n" + 
+				"}\r\n" + 
+				"}";
+		String fixedClass = "public class MockClass1{\r\n" + 
+				"private void verify(Message message){\r\n" + 
+				"  boolean isOutbound=ContextUtils.isOutbound(message);\r\n" + 
+				"  String mapProperty=(String)mapProperties.get(isOutbound ? WSAddressingTest.OUTBOUND_KEY : WSAddressingTest.INBOUND_KEY);\r\n" + 
+				"  AddressingProperties maps=(AddressingPropertiesImpl)message.get(mapProperty);\r\n" + 
+				"  if (ContextUtils.isRequestor(message)) {\r\n" + 
+				"    if (isOutbound) {\r\n" + 
+				"      String exposeAs=getExpectedExposeAs(false);\r\n" + 
+				"      if (exposeAs != null) {\r\n" + 
+				"        maps.exposeAs(exposeAs);\r\n" + 
+				"      }\r\n" + 
+				"    }\r\n" + 
+				" else {\r\n" + 
+				"      String exposeAs=getExpectedExposeAs(true);\r\n" + 
+				"      String expected=exposeAs != null ? exposeAs : Names.WSA_NAMESPACE_NAME;\r\n" + 
+				"      if (maps.getNamespaceURI() != expected) {\r\n" + 
+				"        verificationCache.put(\"Incoming version mismatch\" + \" expected: \" + expected + \" got: \"+ maps.getNamespaceURI());\r\n" + 
+				"      }\r\n" + 
+				"      exposeAs=null;\r\n" + 
+				"    }\r\n" + 
+				"  }\r\n" + 
+				"  verificationCache.put(WSAddressingTest.verifyMAPs(maps,this));\r\n" + 
+				"}\r\n" + 
+				"}";
 		
 		//GumTree pattern comparison
 		//save patterns in File
@@ -57,6 +98,8 @@ public class CodeComparator {
 		MappingStore mapStorage = matchClass.getMappings();
 		ITree matchedTree = mapStorage.getSrc(variable);
 		System.out.println(matchedTree.toTreeString());
+		System.out.println(variableClass);
+		System.out.println(fixedClass);
 	}
 	
 	public void clear() {

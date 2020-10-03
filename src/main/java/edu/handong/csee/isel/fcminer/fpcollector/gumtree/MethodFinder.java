@@ -149,7 +149,6 @@ public class MethodFinder {
 						return super.visit(node);
 					}
 					
-					//JC's TIP***
 					public boolean visit(MethodDeclaration node) {											
 						if(getLineNum(node.getStartPosition()) <= info.start && info.end <= getLineNum(node.getStartPosition() + node.getLength())){
 							violatedMethod = node;

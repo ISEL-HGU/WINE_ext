@@ -62,11 +62,15 @@ public class ResultUpdater {
 								sameCount++;
 							}
 						}
-					}					
-					if(sameCodes.size() >= 1) {
-						alarm.setLineNum("" + sameCodes.get(sameCount));
 					}
-					unchangedAlarms.add(alarm);
+					try {
+						if(sameCodes.size() >= 1) {
+							alarm.setLineNum("" + sameCodes.get(sameCount));
+						}
+						unchangedAlarms.add(alarm);
+					} catch(IndexOutOfBoundsException e) {
+						continue;
+					}
 				}
 			}
 		}

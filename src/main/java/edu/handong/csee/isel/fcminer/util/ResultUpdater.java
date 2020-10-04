@@ -68,7 +68,8 @@ public class ResultUpdater {
 							alarm.setLineNum("" + sameCodes.get(sameCount));
 						}
 						unchangedAlarms.add(alarm);
-					} catch(IndexOutOfBoundsException e) {
+					} catch(Exception e) {
+						e.printStackTrace();
 						continue;
 					}
 				}

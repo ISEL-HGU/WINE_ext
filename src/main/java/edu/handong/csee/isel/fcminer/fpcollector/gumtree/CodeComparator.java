@@ -5,14 +5,14 @@ import java.util.Stack;
 
 import org.eclipse.jdt.core.dom.ASTNode;
 
-import com.github.gumtreediff.actions.ActionGenerator;
-import com.github.gumtreediff.actions.model.Action;
-import com.github.gumtreediff.client.Run;
-import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
-import com.github.gumtreediff.matchers.MappingStore;
-import com.github.gumtreediff.matchers.Matcher;
-import com.github.gumtreediff.matchers.Matchers;
-import com.github.gumtreediff.tree.ITree;
+import edu.handong.csee.isel.fcminer.gumtree.client.Run;
+import edu.handong.csee.isel.fcminer.gumtree.core.actions.ActionGenerator;
+import edu.handong.csee.isel.fcminer.gumtree.core.actions.model.Action;
+import edu.handong.csee.isel.fcminer.gumtree.core.matchers.MappingStore;
+import edu.handong.csee.isel.fcminer.gumtree.core.matchers.Matcher;
+import edu.handong.csee.isel.fcminer.gumtree.core.matchers.Matchers;
+import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
+import edu.handong.csee.isel.fcminer.gumtree.gen.jdt.JdtTreeGenerator;
 
 public class CodeComparator {
 	private Stack<String> gumTreeStack = new Stack<>();
@@ -83,9 +83,11 @@ public class CodeComparator {
 		//save patterns in File
 		//ex) Pattern1.csv, Pattern2.csv ...
 		
+		//GumTree Init
 		Run.initGenerators();
 		ITree variable = null;
 		ITree fixed = null;
+		
 		try {
 			variable = new JdtTreeGenerator().generateFromString(variableClass).getRoot();
 			fixed = new JdtTreeGenerator().generateFromString(fixedClass).getRoot();
@@ -95,6 +97,19 @@ public class CodeComparator {
 			
 		Matcher matchClass = Matchers.getInstance().getMatcher(fixed, variable);
 		matchClass.match();
+		matchClass.getMappings();
+		
+		ActionGenerator actionGen = new ActionGenerator(fixed, variable, matchClass.getMappings());
+		actionGen.generate();
+
+		List<Action> actions = actionGen.getActions();
+
+		for (Action action : actions) {
+			if(action.getName().toString().equals("INS") || action.getName().toString().equals("DEL")) {
+				fixed.getChildPosition(action.getNode());
+			}
+		}
+		
 		MappingStore mapStorage = matchClass.getMappings();
 		ITree matchedTree = mapStorage.getSrc(variable);
 		System.out.println(matchedTree.toTreeString());

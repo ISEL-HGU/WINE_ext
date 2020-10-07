@@ -15,17 +15,17 @@ import java.util.List;
 import java.util.Set;
 
 public class ActionGenerator {
-
+	//parsed original source code
     private ITree origSrc;
-
+    //copy version of original source code
     private ITree newSrc;
-
+    //parsed original destination code
     private ITree origDst;
-
+    //mapping node id with ITree node
     private MappingStore origMappings;
-
+    //copy version of original mapping
     private MappingStore newMappings;
-
+    
     private Set<ITree> dstInOrder;
 
     private Set<ITree> srcInOrder;
@@ -33,10 +33,16 @@ public class ActionGenerator {
     private int lastId;
 
     private List<Action> actions;
-
+    //original parsed source code map, Key: node id, value: node
     private TIntObjectMap<ITree> origSrcTrees;
-
+    //copy version parsed source code map, Key: node id, value: node
     private TIntObjectMap<ITree> cpySrcTrees;
+    
+    private ArrayList<ITree> updatedNodes = new ArrayList<>();
+    
+    private ArrayList<ITree> movedNodes = new ArrayList<>();
+    
+    private ArrayList<ITree> maintainedNodes = new ArrayList<>();
 
     public ActionGenerator(ITree src, ITree dst, MappingStore mappings) {
         this.origSrc = src;
@@ -51,59 +57,86 @@ public class ActionGenerator {
             cpySrcTrees.put(t.getId(), t);
 
         origMappings = new MappingStore();
-        for (Mapping m: mappings)
+        for (Mapping m: mappings) {
             this.origMappings.link(cpySrcTrees.get(m.getFirst().getId()), m.getSecond());
+//            System.out.println(m.getFirst());
+//            System.out.println(m.getSecond());
+        }
         this.newMappings = origMappings.copy();
     }
 
+    private enum actionStatus{
+    	UPD, MOV, MAI
+    }
+    
     public List<Action> getActions() {
         return actions;
     }
 
     public List<Action> generate() {
+    	//build fake tree of copy version of original source code
         ITree srcFakeRoot = new AbstractTree.FakeTree(newSrc);
+        //build fake tree of original destination code
         ITree dstFakeRoot = new AbstractTree.FakeTree(origDst);
+        //add fake source tree as parent to copy version of original source code
         newSrc.setParent(srcFakeRoot);
+        //add fake destination tree as parent to original destination code
         origDst.setParent(dstFakeRoot);
 
         actions = new ArrayList<>();
         dstInOrder = new HashSet<>();
         srcInOrder = new HashSet<>();
-
+        
+        //set last id as +1 of newSrc size
         lastId = newSrc.getSize() + 1;
+        //link fake trees
         newMappings.link(srcFakeRoot, dstFakeRoot);
 
+        //apply BFS to Original Destination Tree
         List<ITree> bfsDst = TreeUtils.breadthFirst(origDst);
+        
+        //x is BFS node of destination
         for (ITree x: bfsDst) {
             ITree w = null;
+            //y is parent of BFS Node x
             ITree y = x.getParent();
+            //z is mapping node which is mapped with x's parent
             ITree z = newMappings.getSrc(y);
-
+            
+            //if there is no mapped information of destination node --> it means that inserted
             if (!newMappings.hasDst(x)) {
                 int k = findPos(x);
                 // Insertion case : insert new node.
                 w = new AbstractTree.FakeTree();
+                // +1 to last ID
                 w.setId(newId());
                 // In order to use the real nodes from the second tree, we
                 // furnish x instead of w and fake that x has the newly
                 // generated ID.
+                // Insert Node(ITree Node, get Parent of x, Position)
                 Action ins = new Insert(x, origSrcTrees.get(z.getId()), k);
                 actions.add(ins);
                 //System.out.println(ins);
+                //add x to original source with new ID
                 origSrcTrees.put(w.getId(), x);
+                //mapping with w(newly inserted fake node) and x
                 newMappings.link(w, x);
                 z.getChildren().add(k, w);
                 w.setParent(z);
             } else {
                 w = newMappings.getSrc(x);
+                actionStatus status = actionStatus.MAI;
                 if (!x.equals(origDst)) { // TODO => x != origDst // Case of the root
                     ITree v = w.getParent();
                     if (!w.getLabel().equals(x.getLabel())) {
+                    	updatedNodes.add(origSrcTrees.get(w.getId()));
                         actions.add(new Update(origSrcTrees.get(w.getId()), x.getLabel()));
                         w.setLabel(x.getLabel());
+                        status = actionStatus.UPD;
                     }
                     if (!z.equals(v)) {
                         int k = findPos(x);
+                        movedNodes.add(origSrcTrees.get(w.getId()));
                         Action mv = new Move(origSrcTrees.get(w.getId()), origSrcTrees.get(z.getId()), k);
                         actions.add(mv);
                         //System.out.println(mv);
@@ -111,6 +144,10 @@ public class ActionGenerator {
                         z.getChildren().add(k, w);
                         w.getParent().getChildren().remove(oldk);
                         w.setParent(z);
+                        status = actionStatus.MOV;
+                    }
+                    if(status == actionStatus.MAI) {
+                    	maintainedNodes.add(origSrcTrees.get(w.getId()));
                     }
                 }
             }
@@ -238,4 +275,20 @@ public class ActionGenerator {
         return lcs;
     }
 
+    public MappingStore getOrigMapping() {
+    	return origMappings;
+    }
+    
+    public ArrayList<ITree> getUpdatedNodes(){
+    	return updatedNodes;
+    }
+    
+    public ArrayList<ITree> getMovedNodes(){
+    	return movedNodes;
+    }
+    
+    public ArrayList<ITree> getMaintainedNodes(){
+    	return maintainedNodes;
+    }
+    
 }

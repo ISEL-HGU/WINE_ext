@@ -98,8 +98,6 @@ import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
 import org.eclipse.jdt.core.dom.WhileStatement;
 import org.eclipse.jdt.core.dom.WildcardType;
 
-import edu.handong.csee.isel.fcminer.fpcollector.graphbuilder.Info;
-
 public class MethodFinder {
 	Info info;
 	CompilationUnit cUnit;
@@ -110,7 +108,7 @@ public class MethodFinder {
 		this.info = info;
 	}
 	
-	public MethodDeclaration findMethod(){
+	public Info findMethod(){
 		ASTParser parser = ASTParser.newParser(AST.JLS12);
 
 		parser.setKind(ASTParser.K_COMPILATION_UNIT);
@@ -627,7 +625,13 @@ public class MethodFinder {
 			System.out.println("\nError while executing compilation unit : " + e.toString());
 		}
 		
-		return violatedMethod;
+		int methodLineNum = getLineNum(violatedMethod.getStartPosition());
+		info.setViolatingMethod(violatedMethod);
+		info.setChangedLineNum(methodLineNum - 2); 
+		info.setMockStart(info.start - info.getChangedLineNum());
+		info.setMockEnd(info.end - info.getChangedLineNum());
+		
+		return info;
 	}
 	
 	public int getLineNum(int startPosition){

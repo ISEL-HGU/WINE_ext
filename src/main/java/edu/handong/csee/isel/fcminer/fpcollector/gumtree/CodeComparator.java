@@ -1,5 +1,6 @@
 package edu.handong.csee.isel.fcminer.fpcollector.gumtree;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
@@ -15,30 +16,38 @@ import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
 import edu.handong.csee.isel.fcminer.gumtree.gen.jdt.JdtTreeGenerator;
 
 public class CodeComparator {
-	private Stack<String> gumTreeStack = new Stack<>();
-	private ASTNode pattern;
+	private Stack<Info> gumTreeStack = new Stack<>();
+	private Patterns patterns = new Patterns();
 	
-	public void compare(String mockClass) {
-		if(gumTreeStack.contains(mockClass)) return;
-		gumTreeStack.add(mockClass);
+	public void compare(Info info) { 
+		if(gumTreeStack.contains(info)) return;
+		
+		gumTreeStack.add(info);
+		
 		if(gumTreeStack.size() == 1) return;
+		
 		runGumTree();
 	}
 	
 	private void runGumTree() {		
-//		String variableClass = gumTreeStack.pop();
-//		String fixedClass = gumTreeStack.elementAt(0);
-		String variableClass = "public class MockClass1{"
-				+ "public void twice(int a){"
-				+ "return a + a;"
-				+ "}"
-				+ "}";
-		String fixedClass = "public class MockClass0{"
-				+ "public void identify(int a){"
-				+ "return a;"
-				+ "}"
-				+ "}";
-		//need to data preprocess
+		//real
+		Info variableClass = gumTreeStack.pop();
+		Info fixedClass = gumTreeStack.elementAt(0);
+		patterns.setFixed(fixedClass);
+		
+		//toy
+//		String variableClass = "public class MockClass1{"
+//				+ "public void twice(int a){"
+//				+ "return a + a;"
+//				+ "}"
+//				+ "}";
+//		String fixedClass = "public class MockClass0{"
+//				+ "public void identify(int a){"
+//				+ "return a;"
+//				+ "}"
+//				+ "}";
+		
+		//test
 //		String variableClass = "public class MockClass1{" +
 //				"private void scheduleSpeculativeRead(final ScheduledExecutorService scheduler,final SpeculativeRequestExecutor requestExecutor,final int speculativeRequestTimeout){\r\n" + 
 //				"  try {\r\n" + 
@@ -72,47 +81,15 @@ public class CodeComparator {
 //				"  }\r\n" + 
 //				" }" +
 //				"}";
-//		String fixedClass = "public class MockClass0{" + 
+//		String fixedClass = "public class MockClass1{" + 
 //				"/** \r\n" + 
-//				" * Creates an instance of the specified provider class using the no-arg constructor.\r\n" + 
-//				" * @param typeName The provider type name used for log messages (e.g. \"authentication provider\")\r\n" + 
-//				" * @param providerClass The provider class to instantiate\r\n" + 
-//				" * @param < T > The provider type\r\n" + 
-//				" * @return A provider instance or null if no instance was created due to error\r\n" + 
+//				" * Logs a trace message for newly inserted entries to the stats cache.\r\n" + 
 //				" */\r\n" + 
-//				"static <T>T newInstance(String typeName,Class<? extends T> providerClass){\r\n" + 
-//				"  T instance=null;\r\n" + 
-//				"  try {\r\n" + 
-//				"    instance=providerClass.getConstructor().newInstance();\r\n" + 
+//				"void traceStatsUpdate(GuidePostsKey key,GuidePostsInfo info){\r\n" + 
+//				"  if (LOGGER.isTraceEnabled()) {\r\n" + 
+//				"    LOGGER.trace(\"Updating local TableStats cache (id={}) for {}, size={}bytes\",new Object[]{Objects.hashCode(this),key,info.getEstimatedSize()});\r\n" + 
 //				"  }\r\n" + 
-//				" catch (  NoSuchMethodException e) {\r\n" + 
-//				"    logger.error(\"The {} extension in use is not properly defined. \" + \"Please contact the developers of the extension or, if you \" + \"are the developer, turn on debug-level logging.\",typeName);\r\n" + 
-//				"    logger.debug(\"{} is missing a default constructor.\",providerClass.getName(),e);\r\n" + 
-//				"  }\r\n" + 
-//				"catch (  SecurityException e) {\r\n" + 
-//				"    logger.error(\"The Java security manager is preventing extensions \" + \"from being loaded. Please check the configuration of Java or your \" + \"servlet container.\");\r\n" + 
-//				"    logger.debug(\"Creation of {} disallowed by security manager.\",providerClass.getName(),e);\r\n" + 
-//				"  }\r\n" + 
-//				"catch (  InstantiationException e) {\r\n" + 
-//				"    logger.error(\"The {} extension in use is not properly defined. \" + \"Please contact the developers of the extension or, if you \" + \"are the developer, turn on debug-level logging.\",typeName);\r\n" + 
-//				"    logger.debug(\"{} cannot be instantiated.\",providerClass.getName(),e);\r\n" + 
-//				"  }\r\n" + 
-//				"catch (  IllegalAccessException e) {\r\n" + 
-//				"    logger.error(\"The {} extension in use is not properly defined. \" + \"Please contact the developers of the extension or, if you \" + \"are the developer, turn on debug-level logging.\");\r\n" + 
-//				"    logger.debug(\"Default constructor of {} is not public.\",typeName,e);\r\n" + 
-//				"  }\r\n" + 
-//				"catch (  IllegalArgumentException e) {\r\n" + 
-//				"    logger.error(\"The {} extension in use is not properly defined. \" + \"Please contact the developers of the extension or, if you \" + \"are the developer, turn on debug-level logging.\",typeName);\r\n" + 
-//				"    logger.debug(\"Default constructor of {} cannot accept zero arguments.\",providerClass.getName(),e);\r\n" + 
-//				"  }\r\n" + 
-//				"catch (  InvocationTargetException e) {\r\n" + 
-//				"    Throwable cause=e.getCause();\r\n" + 
-//				"    if (cause == null)     cause=new GuacamoleException(\"Error encountered during initialization.\");\r\n" + 
-//				"    logger.error(\"{} extension failed to start: {}\",typeName,cause.getMessage());\r\n" + 
-//				"    logger.debug(\"{} instantiation failed.\",providerClass.getName(),e);\r\n" + 
-//				"  }\r\n" + 
-//				"  return instance;\r\n" + 
-//				"}"+
+//				"}\r\n" + 
 //				"}";
 		
 		//GumTree pattern comparison
@@ -125,8 +102,8 @@ public class CodeComparator {
 		ITree fixed = null;
 		
 		try {
-			variable = new JdtTreeGenerator().generateFromString(variableClass).getRoot();
-			fixed = new JdtTreeGenerator().generateFromString(fixedClass).getRoot();
+			variable = new JdtTreeGenerator().generateFromString(variableClass.getMockClass()).getRoot();
+			fixed = new JdtTreeGenerator().generateFromString(fixedClass.getMockClass()).getRoot();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -136,29 +113,39 @@ public class CodeComparator {
 		
 		ActionGenerator actionGen = new ActionGenerator(fixed, variable, matchClass.getMappings());
 		actionGen.generate();
-
-		List<Action> actions = actionGen.getActions();
 		
-		for(ITree node: actionGen.getMovedNodes()) {
-			System.out.println(node.toShortString());
+		Pattern pattern = new Pattern();
+		
+		for(ITree node: actionGen.getCommonNodes()) {
+			if(fixedClass.getMockStart() <= node.getPos() && node.getPos() <= fixedClass.getMockEnd()) {
+				pattern.addNode2Pattern(node);
+			}
+			
+//			System.out.println(node.toShortString());
 		}
 		
-		for(ITree node: actionGen.getUpdatedNodes()) {
-			System.out.println(node.toShortString());
-		}
+		patterns.addPattern(pattern);
 		
-		for(ITree node: actionGen.getMaintainedNodes()) {
-			System.out.println(node.toShortString());
-		}
-		
-		MappingStore mapStorage = matchClass.getMappings();
-		ITree matchedTree = mapStorage.getSrc(variable);
-		System.out.println(matchedTree.toTreeString());
-		System.out.println(variableClass);
-		System.out.println(fixedClass);
+//		for(ITree node: actionGen.getMovedNodes()) {
+//			System.out.println(node.getType());
+//			System.out.println(node.toShortString());
+//		}
+//		
+//		for(ITree node: actionGen.getUpdatedNodes()) {
+//			System.out.println(node.toShortString());
+//		}
+//		
+//		for(ITree node: actionGen.getMaintainedNodes()) {
+//			System.out.println(node.toShortString());
+//		}
+	}
+	
+	public Patterns getPatterns(){
+		return patterns;
 	}
 	
 	public void clear() {
 		gumTreeStack.clear();
+		patterns = new Patterns();
 	}
 }

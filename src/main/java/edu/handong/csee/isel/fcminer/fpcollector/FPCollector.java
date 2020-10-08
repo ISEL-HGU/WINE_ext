@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 import org.eclipse.jgit.api.Git;
 
-import edu.handong.csee.isel.fcminer.fpcollector.graphbuilder.InfoCollector;
 import edu.handong.csee.isel.fcminer.fpcollector.gumtree.GumTreeMain;
+import edu.handong.csee.isel.fcminer.fpcollector.gumtree.InfoCollector;
 import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
 import edu.handong.csee.isel.fcminer.util.OSValidator;

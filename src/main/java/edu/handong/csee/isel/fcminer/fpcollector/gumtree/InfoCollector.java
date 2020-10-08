@@ -1,4 +1,4 @@
-package edu.handong.csee.isel.fcminer.fpcollector.graphbuilder;
+package edu.handong.csee.isel.fcminer.fpcollector.gumtree;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,9 +19,6 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.InvalidRefNameException;
 import org.eclipse.jgit.api.errors.RefAlreadyExistsException;
 import org.eclipse.jgit.api.errors.RefNotFoundException;
-
-import edu.handong.csee.isel.fcminer.fpcollector.gumtree.CodeComparator;
-import edu.handong.csee.isel.fcminer.fpcollector.gumtree.MethodFinder;
 
 public class InfoCollector {
 	static final int VAR = 0;

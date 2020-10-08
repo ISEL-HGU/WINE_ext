@@ -38,11 +38,12 @@ public class ActionGenerator {
     //copy version parsed source code map, Key: node id, value: node
     private TIntObjectMap<ITree> cpySrcTrees;
     
-    private ArrayList<ITree> updatedNodes = new ArrayList<>();
+//    private ArrayList<ITree> updatedNodes = new ArrayList<>();
     
-    private ArrayList<ITree> movedNodes = new ArrayList<>();
+//    private ArrayList<ITree> movedNodes = new ArrayList<>();
     
-    private ArrayList<ITree> maintainedNodes = new ArrayList<>();
+//    private ArrayList<ITree> maintainedNodes = new ArrayList<>();
+    private ArrayList<ITree> commonNodes = new ArrayList<>();
 
     public ActionGenerator(ITree src, ITree dst, MappingStore mappings) {
         this.origSrc = src;
@@ -129,14 +130,18 @@ public class ActionGenerator {
                 if (!x.equals(origDst)) { // TODO => x != origDst // Case of the root
                     ITree v = w.getParent();
                     if (!w.getLabel().equals(x.getLabel())) {
-                    	updatedNodes.add(origSrcTrees.get(w.getId()));
+//                    	updatedNodes.add(origSrcTrees.get(w.getId()));
+                    	if(!commonNodes.contains(origSrcTrees.get(w.getId())))
+                    		commonNodes.add(origSrcTrees.get(w.getId()));
                         actions.add(new Update(origSrcTrees.get(w.getId()), x.getLabel()));
                         w.setLabel(x.getLabel());
                         status = actionStatus.UPD;
                     }
                     if (!z.equals(v)) {
                         int k = findPos(x);
-                        movedNodes.add(origSrcTrees.get(w.getId()));
+//                        movedNodes.add(origSrcTrees.get(w.getId()));
+                        if(!commonNodes.contains(origSrcTrees.get(w.getId())))
+                        	commonNodes.add(origSrcTrees.get(w.getId()));
                         Action mv = new Move(origSrcTrees.get(w.getId()), origSrcTrees.get(z.getId()), k);
                         actions.add(mv);
                         //System.out.println(mv);
@@ -147,7 +152,9 @@ public class ActionGenerator {
                         status = actionStatus.MOV;
                     }
                     if(status == actionStatus.MAI) {
-                    	maintainedNodes.add(origSrcTrees.get(w.getId()));
+//                    	maintainedNodes.add(origSrcTrees.get(w.getId()));
+                    	if(!commonNodes.contains(origSrcTrees.get(w.getId())))
+                    		commonNodes.add(origSrcTrees.get(w.getId()));
                     }
                 }
             }
@@ -279,16 +286,20 @@ public class ActionGenerator {
     	return origMappings;
     }
     
-    public ArrayList<ITree> getUpdatedNodes(){
-    	return updatedNodes;
+    public ArrayList<ITree> getCommonNodes(){
+    	return commonNodes;
     }
     
-    public ArrayList<ITree> getMovedNodes(){
-    	return movedNodes;
-    }
-    
-    public ArrayList<ITree> getMaintainedNodes(){
-    	return maintainedNodes;
-    }
+//    public ArrayList<ITree> getUpdatedNodes(){
+//    	return updatedNodes;
+//    }
+//    
+//    public ArrayList<ITree> getMovedNodes(){
+//    	return movedNodes;
+//    }
+//    
+//    public ArrayList<ITree> getMaintainedNodes(){
+//    	return maintainedNodes;
+//    }
     
 }

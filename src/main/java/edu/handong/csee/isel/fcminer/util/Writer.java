@@ -14,7 +14,7 @@ import org.apache.commons.csv.CSVPrinter;
 public class Writer {
 	String changedFilesPath = "";
 	String resultPath = "";
-	int cnt;
+	int cnt; 
 	
 	public void writeEmptyCSVFile(String path) {
 		String fileName = path;

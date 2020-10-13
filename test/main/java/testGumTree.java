@@ -19,7 +19,7 @@ public class testGumTree {
 				"    LOGGER.trace(\"Updating local TableStats cache (id={}) for {}, size={}bytes\",new Object[]{Objects.hashCode(this),key,info.getEstimatedSize()});\r\n" + 
 				"  }\r\n" + 
 				"}\r\n" + 
-				"}";
+				"}"; 
 		int mockStart0 = mockClass0.indexOf("LOGGER.trace(\"Updating local TableStats cache (id={}) for {}, size={}bytes\",new Object[]{Objects.hashCode(this),key,info.getEstimatedSize()});");
 		System.out.println(mockStart0);
 		int mockEnd0 = mockStart0 + "LOGGER.trace(\"Updating local TableStats cache (id={}) for {}, size={}bytes\",new Object[]{Objects.hashCode(this),key,info.getEstimatedSize()});".length();

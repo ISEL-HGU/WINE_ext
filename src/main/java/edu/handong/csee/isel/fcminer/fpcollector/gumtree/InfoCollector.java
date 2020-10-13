@@ -20,7 +20,7 @@ import org.eclipse.jgit.api.errors.InvalidRefNameException;
 import org.eclipse.jgit.api.errors.RefAlreadyExistsException;
 import org.eclipse.jgit.api.errors.RefNotFoundException;
 
-public class InfoCollector {
+public class InfoCollector { 
 	static final int VAR = 0;
 	static final int FIELD = 1;
 	static final int VARNODE = 2;
@@ -31,7 +31,8 @@ public class InfoCollector {
 	public ArrayList<ASTNode> tpcPattern = new ArrayList<>();
 	ArrayList<Info> infos = new ArrayList<>();
 	
-	public void run(String resultPath, Git git, String projectName) throws IOException {		
+	public void run(String resultPath, Git git, String projectName) throws IOException {
+		System.out.println("INFO: Information Collecting is Started");
 		Reader outputFile = new FileReader(resultPath);
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(outputFile);		
 		for (CSVRecord record : records) {			
@@ -43,7 +44,7 @@ public class InfoCollector {
 			String VFCID = record.get(12);			
 			String LDCID = record.get(9);
 			String LDCLineNum = record.get(11);
-			String VICID = record.get(6);
+			String VICID = record.get(6); 
 			String VICLineNum = record.get(8);
 			String filePath = record.get(5);
 			info.path = filePath;			
@@ -53,6 +54,7 @@ public class InfoCollector {
         	
         	infos.add(info);
 		}
+		System.out.println("INFO: Information Collecting is Finished");
 	}
 	
 	public ArrayList<Info> getInfos(){

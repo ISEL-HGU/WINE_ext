@@ -12,8 +12,12 @@ public class GumTreeMain {
 	}
 	
 	public void run() {
+		System.out.println("INFO: Data pre-processing is started");
 		dataPreprocess();
+		System.out.println("INFO: Data pre-processing is finished");
+		System.out.println("INFO: Code Comparison is started");
 		codeCompare();
+		System.out.println("INFO: Code Comparison is finished");
 	}
 	
 	private void dataPreprocess() {
@@ -24,9 +28,8 @@ public class GumTreeMain {
 		}
 	}
 	
-	private Info prepare4GumTree(Info info, int cnt) {
+	private Info prepare4GumTree(Info info, int cnt) {		
 		MethodFinder methodFinder = new MethodFinder(info);
-	    
 	    info = methodFinder.findMethod();
 	    info.setMockClass(method2Class(info.getViolatingMethod(), cnt));
 
@@ -46,13 +49,23 @@ public class GumTreeMain {
 	private void codeCompare() { 
 		CodeComparator gumTreeComp = new CodeComparator();
 		PatternWriter patternWriter = new PatternWriter();
+		System.out.println("INFO: Start to get and Write FC-Miner Result File");
+		long start = System.currentTimeMillis();
 		for(int i = 0 ; i < infos.size(); i ++) {
+			if(i==0) System.out.print("Start...");
+			else if((i / infos.size()) * 100 >= 80) System.out.print("80%...");
+			else if((i / infos.size()) * 100 >= 60) System.out.print("60%...");
+			else if((i / infos.size()) * 100 >= 40) System.out.print("40%...");
+			else if((i / infos.size()) * 100 >= 20) System.out.print("20%...");
+			
 			gumTreeComp.compare(infos.get(i));
 			for(Info info : infos) {
 				gumTreeComp.compare(info);  
 			}
-			patternWriter.writePatterns(gumTreeComp.getPatterns());
+			patternWriter.writePatternsAnalysis(gumTreeComp.getPatterns());
 			gumTreeComp.clear();
 		}
+		long end = System.currentTimeMillis();		
+		System.out.println("INFO: Finish to get and Write FC-Miner Result File (" + (end - start)/1000 + " sec.)");
 	}
 }

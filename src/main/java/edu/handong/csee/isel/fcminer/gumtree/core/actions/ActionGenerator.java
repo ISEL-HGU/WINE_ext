@@ -157,7 +157,7 @@ public class ActionGenerator {
                     		commonNodes.add(origSrcTrees.get(w.getId()));
                     }
                 }
-            }
+            } 
 
             //FIXME not sure why :D
             srcInOrder.add(w);

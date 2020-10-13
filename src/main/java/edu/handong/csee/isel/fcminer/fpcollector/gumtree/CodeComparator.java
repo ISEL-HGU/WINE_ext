@@ -34,63 +34,7 @@ public class CodeComparator {
 		Info variableClass = gumTreeStack.pop();
 		Info fixedClass = gumTreeStack.elementAt(0);
 		patterns.setFixed(fixedClass);
-		
-		//toy
-//		String variableClass = "public class MockClass1{"
-//				+ "public void twice(int a){"
-//				+ "return a + a;"
-//				+ "}"
-//				+ "}";
-//		String fixedClass = "public class MockClass0{"
-//				+ "public void identify(int a){"
-//				+ "return a;"
-//				+ "}"
-//				+ "}";
-		
-		//test
-//		String variableClass = "public class MockClass1{" +
-//				"private void scheduleSpeculativeRead(final ScheduledExecutorService scheduler,final SpeculativeRequestExecutor requestExecutor,final int speculativeRequestTimeout){\r\n" + 
-//				"  try {\r\n" + 
-//				"  scheduler.schedule(new Runnable(){\r\n" + 
-//				"  @Override public void run(){\r\n" + 
-//				"  ListenableFuture<Boolean> issueNextRequest=requestExecutor.issueSpeculativeRequest();\r\n" + 
-//				"  Futures.addCallback(issueNextRequest,new FutureCallback<Boolean>(){\r\n" + 
-//				"  public void onSuccess( Boolean issueNextRequest){\r\n" + 
-//				"  if (issueNextRequest) {\r\n" + 
-//				"  scheduleSpeculativeRead(scheduler,requestExecutor,Math.min(maxSpeculativeRequestTimeout,Math.round((float)speculativeRequestTimeout * backoffMultiplier)));\r\n" + 
-//				"  }\r\n" + 
-//				"  else {\r\n" + 
-//				"  if (LOG.isTraceEnabled()) {\r\n" + 
-//				"  LOG.trace(\"Stopped issuing speculative requests for {}, \" + \"speculativeReadTimeout = {}\",requestExecutor,speculativeRequestTimeout);\r\n" + 
-//				"  }\r\n" + 
-//				"  }\r\n" + 
-//				"  }\r\n" + 
-//				"  public void onFailure( Throwable thrown){\r\n" + 
-//				"  LOG.warn(\"Failed to issue speculative request for {}, speculativeReadTimeout = {} : \",new Object[]{requestExecutor,speculativeRequestTimeout,thrown});\r\n" + 
-//				"  }\r\n" + 
-//				"  }\r\n" + 
-//				" );\r\n" + 
-//				"  }\r\n" + 
-//				"  }\r\n" + 
-//				" ,speculativeRequestTimeout,TimeUnit.MILLISECONDS);\r\n" + 
-//				"  }\r\n" + 
-//				"  catch ( RejectedExecutionException re) {\r\n" + 
-//				"  if (!scheduler.isShutdown()) {\r\n" + 
-//				"  LOG.warn(\"Failed to schedule speculative request for {}, speculativeReadTimeout = {} : \",new Object[]{requestExecutor,speculativeRequestTimeout,re});\r\n" + 
-//				"  }\r\n" + 
-//				"  }\r\n" + 
-//				" }" +
-//				"}";
-//		String fixedClass = "public class MockClass1{" + 
-//				"/** \r\n" + 
-//				" * Logs a trace message for newly inserted entries to the stats cache.\r\n" + 
-//				" */\r\n" + 
-//				"void traceStatsUpdate(GuidePostsKey key,GuidePostsInfo info){\r\n" + 
-//				"  if (LOGGER.isTraceEnabled()) {\r\n" + 
-//				"    LOGGER.trace(\"Updating local TableStats cache (id={}) for {}, size={}bytes\",new Object[]{Objects.hashCode(this),key,info.getEstimatedSize()});\r\n" + 
-//				"  }\r\n" + 
-//				"}\r\n" + 
-//				"}";
+		patterns.addVariables(variableClass);
 		
 		//GumTree pattern comparison
 		//save patterns in File
@@ -114,13 +58,12 @@ public class CodeComparator {
 		ActionGenerator actionGen = new ActionGenerator(fixed, variable, matchClass.getMappings());
 		actionGen.generate();
 		
+		//pattern generation
 		Pattern pattern = new Pattern();
-		
 		for(ITree node: actionGen.getCommonNodes()) {
-			if(fixedClass.getMockStart() <= node.getPos() && node.getPos() <= fixedClass.getMockEnd()) {
-				pattern.addNode2Pattern(node);
-			}
-			
+			if(node.getType() == 55 || node.getParent().getType() == 55 || node.getType() == 8)
+				continue;
+			pattern.addNode2Pattern(node);
 //			System.out.println(node.toShortString());
 		}
 		

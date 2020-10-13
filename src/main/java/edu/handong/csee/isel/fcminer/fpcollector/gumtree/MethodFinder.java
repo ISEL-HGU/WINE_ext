@@ -606,7 +606,7 @@ public class MethodFinder {
 				}
 				public boolean visit(final VariableDeclarationStatement node) {
 					//Log.info("VariableDeclarationStatement");
-					//Log.info(node);
+					//Log.info(node); 
 					return super.visit(node);
 				}
 				public boolean visit(final WildcardType node) {

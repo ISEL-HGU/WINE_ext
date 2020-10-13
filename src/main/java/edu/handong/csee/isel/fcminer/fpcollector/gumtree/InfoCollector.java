@@ -20,6 +20,8 @@ import org.eclipse.jgit.api.errors.InvalidRefNameException;
 import org.eclipse.jgit.api.errors.RefAlreadyExistsException;
 import org.eclipse.jgit.api.errors.RefNotFoundException;
 
+import edu.handong.csee.isel.fcminer.util.OSValidator;
+
 public class InfoCollector { 
 	static final int VAR = 0;
 	static final int FIELD = 1;
@@ -34,7 +36,8 @@ public class InfoCollector {
 	public void run(String resultPath, Git git, String projectName) throws IOException {
 		System.out.println("INFO: Information Collecting is Started");
 		Reader outputFile = new FileReader(resultPath);
-		Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(outputFile);		
+		String osName = OSValidator.getOS();
+		Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(outputFile);
 		for (CSVRecord record : records) {			
 			Info info = new Info();
 			if(record.get(0).equals("Detection ID")) continue;
@@ -47,6 +50,12 @@ public class InfoCollector {
 			String VICID = record.get(6); 
 			String VICLineNum = record.get(8);
 			String filePath = record.get(5);
+			if(filePath.contains("\\") && osName.equals("linux")) {
+				filePath.replaceAll("\\", "/");
+			} else if(filePath.contains("/") && osName.equals("window")) {
+				filePath.replaceAll("/", "\\");
+			}
+			
 			info.path = filePath;			
 			
 			info = getStartEndLineNumber(git, info, label, VFCID, LDCID, LDCLineNum, VICID, VICLineNum, filePath);

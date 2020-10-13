@@ -50,10 +50,10 @@ public class InfoCollector {
 			String VICID = record.get(6); 
 			String VICLineNum = record.get(8);
 			String filePath = record.get(5);
-			if(filePath.contains("\\") && osName.equals("linux")) {
-				filePath.replaceAll("\\", "/");
+			if(filePath.contains("\\\\") && osName.equals("linux")) {
+				filePath.replaceAll("\\\\", "/");
 			} else if(filePath.contains("/") && osName.equals("window")) {
-				filePath.replaceAll("/", "\\");
+				filePath.replaceAll("/", "\\\\");
 			}
 			
 			info.path = filePath;			

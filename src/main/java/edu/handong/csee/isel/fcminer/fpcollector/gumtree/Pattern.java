@@ -28,7 +28,7 @@ public class Pattern {
 		return pattern;
 	}
 	
-	private String type2String(int type) {
+	public String type2String(int type) {
 		switch(type) {
 			case 1: return "Anoymous_Class_Dec.";
 			case 2: return "Array_access";

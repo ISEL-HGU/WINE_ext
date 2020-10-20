@@ -1,6 +1,7 @@
 package edu.handong.csee.isel.fcminer.fpcollector.gumtree;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Stack;
 
@@ -14,6 +15,7 @@ import edu.handong.csee.isel.fcminer.gumtree.core.matchers.Matcher;
 import edu.handong.csee.isel.fcminer.gumtree.core.matchers.Matchers;
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
 import edu.handong.csee.isel.fcminer.gumtree.gen.jdt.JdtTreeGenerator;
+import edu.handong.csee.isel.fcminer.saresultminer.git.Diff;
 
 public class CodeComparator {
 	private Stack<Info> gumTreeStack = new Stack<>();
@@ -35,6 +37,8 @@ public class CodeComparator {
 		Info fixedClass = gumTreeStack.elementAt(0);
 		patterns.setFixed(fixedClass);
 		patterns.addVariables(variableClass);
+		System.out.println(fixedClass.getMockClass());
+		System.out.println(variableClass.getMockClass());
 		
 		//GumTree pattern comparison
 		//save patterns in File
@@ -51,7 +55,7 @@ public class CodeComparator {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-			
+		
 		Matcher matchClass = Matchers.getInstance().getMatcher(fixed, variable);
 		matchClass.match();
 		
@@ -66,6 +70,30 @@ public class CodeComparator {
 			pattern.addNode2Pattern(node);
 //			System.out.println(node.toShortString());
 		}
+		
+		pattern.bfsPattern.sort(new Comparator<ITree>() {
+			public int compare(ITree node1, ITree node2) {
+				if(node1.getPos() > node2.getPos()) {
+					return 1;
+				} else if(node1.getPos() == node2.getPos()) {
+					if(node1.getDepth() > node2.getDepth()) {
+						return 1;
+					} else return -1;
+				} else return -1;
+			}
+		});
+		
+		System.out.println("@->\n");
+		
+		for(ITree pa : pattern.bfsPattern) {
+			System.out.println( 
+					"node type: " + pa.getType() +"(" + pattern.type2String(pa.getType())+ ")" + 
+					" node label: " + pa.getLabel() + 
+					" node depth: " + pa.getDepth() +
+					" node position: " + pa.getPos() + "~" + pa.getEndPos());
+		}
+		
+		System.out.println("<-@\n");
 		
 		patterns.addPattern(pattern);
 		

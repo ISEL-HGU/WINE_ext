@@ -15,6 +15,7 @@ public class CliOptions {
 	}
 	
 	public CliCommand parseOptions(String[] args){
+		String os = OSValidator.getOS();
 		CliCommand command = new CliCommand();
 		CommandLineParser parser = new DefaultParser();
 		Options options = new Options();	
@@ -37,11 +38,34 @@ public class CliOptions {
 		    CommandLine line = parser.parse( options, args );
 		 // automatically generate the help statement
 		    HelpFormatter formatter = new HelpFormatter();
-		    
+		    String tempPath = "";
 		    if(line.hasOption("s") || line.hasOption("saresult")) {
 		    	if(line.hasOption("R") && line.hasOption("t") && line.hasOption("p")) {		    		
 		    		command.setRule(line.getOptionValue("R"));
 		    		command.setAddressPath(line.getOptionValue("t"));
+		    		String addressPath = command.getAddressPath();
+		    		if(os.equals("linux") && addressPath.contains("\\")) {
+		    			for(int i = 0; i < addressPath.length(); i++) {
+		    				if(addressPath.charAt(i) == '\\') {
+		    					tempPath += '/';
+		    				} else {
+		    					tempPath += addressPath.charAt(i);
+		    				}
+		    			}
+		    			command.setAddressPath(tempPath);
+		    			tempPath = "";
+		    		} else if(os.equals("window") && addressPath.contains("/")) {
+		    			for(int i = 0; i < addressPath.length(); i++) {
+		    				if(addressPath.charAt(i) == '/') {
+		    					tempPath += '\\';
+		    				} else {
+		    					tempPath += addressPath.charAt(i);
+		    				}
+		    			}
+		    			command.setAddressPath(tempPath);
+		    			tempPath = "";
+		    		}
+		    		
 		    		if(isPMDFolderExists(line.getOptionValue("p")))
 		    			command.setPMD(line.getOptionValue("p"));
 		    		else {

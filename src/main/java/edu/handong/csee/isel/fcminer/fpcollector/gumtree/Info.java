@@ -13,6 +13,8 @@ public class Info {
 	public int start;
 	public int end;
 	public int startPosition;
+	private String vLine = "";
+	private ASTNode vNode;
 	private MethodDeclaration violatingMethod;
 	private int changedLineNum;
 	private String mockClass;
@@ -20,6 +22,21 @@ public class Info {
 	private int mockEnd;
 	private int mockStartPosition;
 	
+	public void setVNode(ASTNode vNode) {
+		this.vNode = vNode;
+	}
+	
+	public ASTNode getVNode() {
+		return vNode;
+	}
+	
+	public void addVLine(String vLine) {
+		this.vLine = this.vLine + vLine.split("//")[0].trim();
+	}
+	
+	public String getVLine() {
+		return vLine;
+	}
 	
 	public void setMockClass(String mockClass) {
 		this.mockClass = mockClass;

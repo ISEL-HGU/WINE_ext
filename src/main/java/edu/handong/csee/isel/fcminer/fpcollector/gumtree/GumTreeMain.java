@@ -56,7 +56,7 @@ public class GumTreeMain {
 			else if((i / infos.size()) * 100 >= 80) System.out.print("80%...");
 			else if((i / infos.size()) * 100 >= 60) System.out.print("60%...");
 			else if((i / infos.size()) * 100 >= 40) System.out.print("40%...");
-			else if((i / infos.size()) * 100 >= 20) System.out.print("20%...");
+			else if((i / infos.size()) * 100 >= 20) System.out.print("20%...\n\r");
 			
 			gumTreeComp.compare(infos.get(i));
 			for(Info info : infos) {

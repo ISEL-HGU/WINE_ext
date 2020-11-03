@@ -133,21 +133,50 @@ public class MethodFinder {
 			try {
 				unit.accept(new ASTVisitor() {
 					public boolean visit(AnnotationTypeDeclaration node) {
-						
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(TypeDeclaration node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(EnumDeclaration node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
-					public boolean visit(MethodDeclaration node) {											
+					public boolean visit(MethodDeclaration node) {
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						if(getLineNum(node.getStartPosition()) <= info.start && info.end <= getLineNum(node.getStartPosition() + node.getLength())){
 							violatedMethod = node;
 						}
@@ -155,167 +184,405 @@ public class MethodFinder {
 					}										
 					
 					public boolean visit(Block node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(SimpleName node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(ThisExpression node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(StringLiteral node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(DoStatement node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(IfStatement node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(ConditionalExpression node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}																																																															
 					
 					public boolean visit(ForStatement node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(WhileStatement node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(EnhancedForStatement node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(TryStatement node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(CatchClause node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(SwitchStatement node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(ReturnStatement node) {						
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(ThrowStatement node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(final Assignment node) {
-						
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(final VariableDeclarationFragment node) {
-						
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(MethodInvocation node) {
-						
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}									
 
 					public boolean visit(final FieldDeclaration node) {
-						
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(final SingleVariableDeclaration node) {
-						
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(final ClassInstanceCreation node) {
-						
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(final FieldAccess node) {
-						
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(InfixExpression node) {
-						
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(final ImportDeclaration node) {
-						
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(final PackageDeclaration node) {
-						
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					
 					public boolean visit(final AnonymousClassDeclaration node) {
 						//Log.info("AnonymousClassDeclaration");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(EnumConstantDeclaration node) {
 //						list.add(node.getName().toString());
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(AssertStatement node) {
 //						list.add("AssertStatement");
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					} 
 					public boolean visit(ContinueStatement node) {
 //						list.add("ContinueStatement");
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(SwitchCase node) {
 //						list.add("SwitchCase");
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 					public boolean visit(SynchronizedStatement node) {
 //						list.add("SynchronizedStatement");
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(final ExpressionStatement node) {
-
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(final AnnotationTypeMemberDeclaration node) {
 						//Log.info("AnnotationTypeMemberDeclaration");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
@@ -323,24 +590,56 @@ public class MethodFinder {
 					public boolean visit(final ArrayAccess node) {
 						//Log.info("ArrayAccess");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(final ArrayCreation node) {
 						//Log.info("ArrayCreation");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(final ArrayInitializer node) {
 						//Log.info("ArrayInitializer");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(final ArrayType node) {
 						//Log.info("ArrayType");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
@@ -348,28 +647,58 @@ public class MethodFinder {
 					public boolean visit(final BlockComment node) {
 						//Log.info("BlockComment");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(final BooleanLiteral node) {
 						//Log.info("BooleanLiteral");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(final CastExpression node) {
 						//Log.info("CastExpression");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(final CharacterLiteral node) {
 						//Log.info("CharacterLiteral");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
-
-
 
 					public boolean visit(final CompilationUnit node) {
 						//Log.info("CompilationUnit");
@@ -377,241 +706,591 @@ public class MethodFinder {
 						return super.visit(node);
 					}
 
-					
-
 					public boolean visit(final ConstructorInvocation node) {
 						//Log.info("ConstructorInvocation");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(final CreationReference node) {
 						//Log.info("CreationReference");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(final Dimension node) {
 						//Log.info("Dimension");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 					public boolean visit(final EmptyStatement node) {
 						//Log.info("EmptyStatement");
 						//Log.info(node);
+						if(contain(info.getVLine(), node.toString())) {
+							if(info.getVNode() == null) info.setVNode(node);
+							else if(info.getVNode() != null 
+								&& info.getVNode().getStartPosition() <= node.getStartPosition()
+								&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+									>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+								info.setVNode(node);
+						}
 						return super.visit(node);
 					}
 
 				public boolean visit(final Initializer node) {
 					//Log.info("Initializer");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 
 				public boolean visit(final InstanceofExpression node) {
 					//Log.info("InstanceofExpression");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final IntersectionType node) {
 					//Log.info("IntersectionType");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final Javadoc node) {
 					//Log.info("Javadoc");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 
 				public boolean visit(final LabeledStatement node) {
 					//Log.info("LabeledStatement");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 
 				public boolean visit(final LambdaExpression node) {
 					//Log.info("LambdaExpression");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 
 				public boolean visit(final LineComment node) {
 					//Log.info("LineComment");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final MarkerAnnotation node) {
 					//Log.info("MarkerAnnotation");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final MemberRef node) {
 					//Log.info("MemberRef");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 
 				public boolean visit(final MemberValuePair node) {
 					//Log.info("MemberValuePair");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final MethodRef node) {
 					//Log.info("MethodRef");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final MethodRefParameter node) {
 					//Log.info("MethodRefParameter");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final Modifier node) {
 					//Log.info("Modifier");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final NameQualifiedType node) {
 					//Log.info("NameQualifiedType");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 
 				public boolean visit(final NormalAnnotation node) {
 					//Log.info("NormalAnnotation");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final NullLiteral node) {
 					//Log.info("NullLiteral");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final NumberLiteral node) {
 					//Log.info("NumberLiteral");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 
 				public boolean visit(final ParameterizedType node) {
 					//Log.info("ParameterizedType");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final ParenthesizedExpression node) {
 					//Log.info("ParenthesizedExpression");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final PostfixExpression node) {
 					//Log.info("PostfixExpression");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final PrefixExpression node) {
 					//Log.info("PrefixExpression");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final PrimitiveType node) {
 					//Log.info("PrimitiveType");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final QualifiedName node) {
 					//Log.info("QualifiedName");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 
 				public boolean visit(final QualifiedType node) {
 					//Log.info("QualifiedType");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 
 				public boolean visit(final SimpleType node) {
 					//Log.info("SimpleType");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final SingleMemberAnnotation node) {
 					//Log.info("SingleMemberAnnotation");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				
 				public boolean visit(final SuperConstructorInvocation node) {
 					//Log.info("SuperConstructorInvocation");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final SuperFieldAccess node) {
 					//Log.info("SuperFieldAccess");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final SuperMethodInvocation node) {
 					//Log.info("SuperMethodInvocation");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final SuperMethodReference node) {
 					//Log.info("SuperMethodReference");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final TagElement node) {
 					//Log.info("TagElement");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final TextElement node) {
 					//Log.info("TextElement");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 
 				public boolean visit(final TypeDeclarationStatement node) {
 					//Log.info("TypeDeclarationStatement");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final TypeLiteral node) {
 					//Log.info("TypeLiteral");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final TypeMethodReference node) {
 					//Log.info("TypeMethodReference");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final TypeParameter node) {
 					//Log.info("UnionType");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final UnionType node) {
 					//Log.info("UnionType");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final VariableDeclarationExpression node) {
 					//Log.info("VariableDeclarationExpression");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final VariableDeclarationStatement node) {
 					//Log.info("VariableDeclarationStatement");
 					//Log.info(node); 
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}
 				public boolean visit(final WildcardType node) {
 					//Log.info("WildcardType");
 					//Log.info(node);
+					if(contain(info.getVLine(), node.toString())) {
+						if(info.getVNode() == null) info.setVNode(node);
+						else if(info.getVNode() != null 
+							&& info.getVNode().getStartPosition() <= node.getStartPosition()
+							&& Math.abs(getLineNum(info.getVNode().getStartPosition()) - info.start) 
+								>= Math.abs(getLineNum(node.getStartPosition()) - info.start))
+							info.setVNode(node);
+					}
 					return super.visit(node);
 				}																	
 				});			
@@ -636,6 +1315,22 @@ public class MethodFinder {
 	
 	public int getLineNum(int startPosition){
 		return cUnit.getLineNumber(startPosition);
+	}
+	
+	private boolean contain(String vLine, String node) {
+		String newVLine = "";
+		String newNode = "";
+		for(int i = 0; i < vLine.length(); i ++) {
+			if(Character.isWhitespace(vLine.charAt(i))) continue;
+			newVLine = newVLine + vLine.charAt(i);
+		}
+		
+		for(int i = 0; i < node.length(); i ++) {
+			if(Character.isWhitespace(node.charAt(i))) continue;
+			newNode = newNode + node.charAt(i);
+		}
+		
+		return newNode.contains(newVLine);
 	}
 	
 }

@@ -94,6 +94,9 @@ public class InfoCollector {
 		int num = 0;
 			while((num = br.read(buf)) != -1) {
 				String readData = String.valueOf(buf, 0, num);
+				if(readData.contains("\n")) {
+					readData = readData.replace("\n", "#NL#");
+				}
 				builder.append(readData);
 			}
 		source = builder.toString();
@@ -105,7 +108,8 @@ public class InfoCollector {
 	}
 	
 	private String[] getSourceByLine(String source) {
-		return source.split("\n");
+		String[] splitted = source.split("#NL#");
+		return splitted;
 	}
 	
 	private String getScope(String scope, int op, ArrayList<String> sourceByLine) {
@@ -129,13 +133,17 @@ public class InfoCollector {
 			return (i + 2) + "";
 		} else {
 			int i = scope - 1;
+			int flag = 0;
 			while(!sourceByLine.get(i).contains(";")
 					&& !sourceByLine.get(i).contains("//")
 					&& !sourceByLine.get(i).contains("{")
 					&& !sourceByLine.get(i).contains("}")) {
 				i++;
+				flag = 1;
 			}
-			return (i + 1) + "";
+			if(flag == 0)
+				return (i + 1) + "";
+			else return i + "";
 		}
 	}
 	
@@ -148,24 +156,36 @@ public class InfoCollector {
 						git.reset().setMode(ResetType.HARD).call();
 						git.checkout().setForced(true).setName(VICID).call();
 						info.sourceByLine = new ArrayList<>(Arrays.asList(getSourceByLine(getSource(info.path))));
+						info.sourceByLine.add(0, "LineNumZero");
 						info.start = Integer.parseInt(getScope(VICLineNum, 0, info.sourceByLine));
 						info.end = Integer.parseInt(getScope(VICLineNum, 1, info.sourceByLine));
+						for(int i = info.start; i <= info.end; i++) {
+							info.addVLine(info.sourceByLine.get(i));
+						}
 						return info;
 					}
 					else {
 						git.reset().setMode(ResetType.HARD).call();
 						git.checkout().setForced(true).setName(LDCID).call();
 						info.sourceByLine = new ArrayList<>(Arrays.asList(getSourceByLine(getSource(info.path))));
+						info.sourceByLine.add(0, "LineNumZero");
 						info.start = Integer.parseInt(getScope(LDCLineNum, 0, info.sourceByLine));
 						info.end = Integer.parseInt(getScope(LDCLineNum, 1, info.sourceByLine));
+						for(int i = info.start; i <= info.end; i++) {
+							info.addVLine(info.sourceByLine.get(i));
+						}
 						return info;
 					}
 				} else {
 					git.reset().setMode(ResetType.HARD).call();
 					git.checkout().setForced(true).setName(VFCID).call();
 					info.sourceByLine = new ArrayList<>(Arrays.asList(getSourceByLine(getSource(info.path))));
+					info.sourceByLine.add(0, "LineNumZero");
 					info.start = Integer.parseInt(getScope(LDCLineNum, 0, info.sourceByLine));
 					info.end = Integer.parseInt(getScope(LDCLineNum, 1, info.sourceByLine));
+					for(int i = info.start; i <= info.end; i++) {
+						info.addVLine(info.sourceByLine.get(i));
+					}
 					return info;
 				}
 			} catch (GitAPIException e ) {
@@ -177,16 +197,24 @@ public class InfoCollector {
 					git.reset().setMode(ResetType.HARD).call();
 					git.checkout().setForced(true).setName(VICID).call();
 					info.sourceByLine = new ArrayList<>(Arrays.asList(getSourceByLine(getSource(info.path))));
+					info.sourceByLine.add(0, "LineNumZero");
 					info.start = Integer.parseInt(getScope(VICLineNum, 0, info.sourceByLine));
 					info.end = Integer.parseInt(getScope(VICLineNum, 1, info.sourceByLine));
+					for(int i = info.start; i <= info.end; i++) {
+						info.addVLine(info.sourceByLine.get(i));
+					}
 					return info;
 				}
 				else {
 					git.reset().setMode(ResetType.HARD).call();
 					git.checkout().setForced(true).setName(LDCID).call();
 					info.sourceByLine = new ArrayList<>(Arrays.asList(getSourceByLine(getSource(info.path))));
+					info.sourceByLine.add(0, "LineNumZero");
 					info.start = Integer.parseInt(getScope(LDCLineNum, 0, info.sourceByLine));
 					info.end = Integer.parseInt(getScope(LDCLineNum, 1, info.sourceByLine));
+					for(int i = info.start; i <= info.end; i++) {
+						info.addVLine(info.sourceByLine.get(i));
+					}
 					return info;
 				}
 			} catch (GitAPIException e) {

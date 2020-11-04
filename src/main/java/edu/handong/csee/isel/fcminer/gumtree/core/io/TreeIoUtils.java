@@ -12,7 +12,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayDeque;
 import java.util.Iterator;
-import java.util.Map.Entry;
 import java.util.regex.Pattern;
 
 import javax.xml.namespace.QName;
@@ -28,6 +27,7 @@ import javax.xml.stream.events.XMLEvent;
 
 import com.google.gson.stream.JsonWriter;
 
+import edu.handong.csee.isel.fcminer.fpcollector.gumtree.Info;
 import edu.handong.csee.isel.fcminer.gumtree.core.gen.Register;
 import edu.handong.csee.isel.fcminer.gumtree.core.gen.TreeGenerator;
 import edu.handong.csee.isel.fcminer.gumtree.core.matchers.MappingStore;
@@ -622,7 +622,7 @@ public final class TreeIoUtils {
         }
 
         @Override
-        protected TreeContext generate(Reader source) throws IOException {
+        protected Info generate(Reader source, Info info) throws IOException {
             XMLInputFactory fact = XMLInputFactory.newInstance();
             TreeContext context = new TreeContext();
             try {
@@ -657,12 +657,55 @@ public final class TreeIoUtils {
                     }
                 }
                 context.validate();
-                return context;
+                return info;
             } catch (Exception e) {
                 e.printStackTrace();
             }
             return null;
         }
+        
+//        @Override
+//        protected TreeContext generate(Reader source, Info info) throws IOException {
+//            XMLInputFactory fact = XMLInputFactory.newInstance();
+//            TreeContext context = new TreeContext();
+//            try {
+//                ArrayDeque<ITree> trees = new ArrayDeque<>();
+//                XMLEventReader r = fact.createXMLEventReader(source);
+//                while (r.hasNext()) {
+//                    XMLEvent e = r.nextEvent();
+//                    if (e instanceof StartElement) {
+//                        StartElement s = (StartElement) e;
+//                        if (!s.getName().getLocalPart().equals("tree")) // FIXME need to deal with options
+//                            continue;
+//                        int type = Integer.parseInt(s.getAttributeByName(TYPE).getValue());
+//
+//                        ITree t = context.createTree(type,
+//                                labelForAttribute(s, LABEL), labelForAttribute(s, TYPE_LABEL));
+//                        // FIXME this iterator has no type, due to the API. We have to cast it later
+//                        Iterator<?> it = s.getAttributes();
+//                        while (it.hasNext()) {
+//                            Attribute a = (Attribute) it.next();
+//                            unserializers.load(t, a.getName().getLocalPart(), a.getValue());
+//                        }
+//
+//                        if (trees.isEmpty())
+//                            context.setRoot(t);
+//                        else
+//                            t.setParentAndUpdateChildren(trees.peekFirst());
+//                        trees.addFirst(t);
+//                    } else if (e instanceof EndElement) {
+//                        if (!((EndElement)e).getName().getLocalPart().equals("tree")) // FIXME need to deal with options
+//                            continue;
+//                        trees.removeFirst();
+//                    }
+//                }
+//                context.validate();
+//                return context;
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//            return null;
+//        }
 
         private static String labelForAttribute(StartElement s, QName attrName) {
             Attribute attr = s.getAttributeByName(attrName);

@@ -16,19 +16,19 @@ public class Generators extends Registry<String, TreeGenerator, Register> {
         return registry;
     }
 
-    public TreeContext getTree(String file) throws UnsupportedOperationException, IOException {
-        TreeGenerator p = get(file);
-        if (p == null)
-            throw new UnsupportedOperationException("No generator found for file: " + file);
-        return p.generateFromFile(file);
-    }
-
-    public TreeContext getTree(String generator, String file) throws UnsupportedOperationException, IOException {
-        for (Entry e : entries)
-            if (e.id.equals(generator))
-                return e.instantiate(null).generateFromFile(file);
-        throw new UnsupportedOperationException("No generator \"" + generator + "\" found.");
-    }
+//    public TreeContext getTree(String file) throws UnsupportedOperationException, IOException {
+//        TreeGenerator p = get(file);
+//        if (p == null)
+//            throw new UnsupportedOperationException("No generator found for file: " + file);
+//        return p.generateFromFile(file);
+//    }
+//
+//    public TreeContext getTree(String generator, String file) throws UnsupportedOperationException, IOException {
+//        for (Entry e : entries)
+//            if (e.id.equals(generator))
+//                return e.instantiate(null).generateFromFile(file);
+//        throw new UnsupportedOperationException("No generator \"" + generator + "\" found.");
+//    }
 
     @Override
     protected Entry newEntry(Class<? extends TreeGenerator> clazz, Register annotation) {

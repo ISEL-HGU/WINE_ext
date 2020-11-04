@@ -1,20 +1,20 @@
 package edu.handong.csee.isel.fcminer.gumtree.gen.jdt;
 
-import edu.handong.csee.isel.fcminer.gumtree.core.gen.SyntaxException;
-import edu.handong.csee.isel.fcminer.gumtree.core.gen.TreeGenerator;
-import edu.handong.csee.isel.fcminer.gumtree.core.tree.TreeContext;
-import edu.handong.csee.isel.fcminer.gumtree.core.gen.TreeGenerator;
-import edu.handong.csee.isel.fcminer.gumtree.core.tree.TreeContext;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.util.Map;
+
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
+import org.eclipse.jdt.core.dom.CompilationUnit;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.Reader;
-import java.util.IllegalFormatException;
-import java.util.Map;
+import edu.handong.csee.isel.fcminer.fpcollector.gumtree.Info;
+import edu.handong.csee.isel.fcminer.gumtree.core.gen.SyntaxException;
+import edu.handong.csee.isel.fcminer.gumtree.core.gen.TreeGenerator;
+import edu.handong.csee.isel.fcminer.gumtree.core.tree.TreeContext;
 
 public abstract class AbstractJdtTreeGenerator extends TreeGenerator {
 
@@ -32,10 +32,9 @@ public abstract class AbstractJdtTreeGenerator extends TreeGenerator {
         return  fileData.toString().toCharArray();
     }
 
-    @Override
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    public TreeContext generate(Reader r) throws IOException {
-        ASTParser parser = ASTParser.newParser(AST.JLS9);
+    public Info generate(Reader r, Info info) throws IOException {
+        ASTParser parser = ASTParser.newParser(AST.JLS11);
         parser.setKind(ASTParser.K_COMPILATION_UNIT);
         Map pOptions = JavaCore.getOptions();
         pOptions.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_11);
@@ -44,13 +43,17 @@ public abstract class AbstractJdtTreeGenerator extends TreeGenerator {
         pOptions.put(JavaCore.COMPILER_DOC_COMMENT_SUPPORT, JavaCore.ENABLED);
         parser.setCompilerOptions(pOptions);
         parser.setSource(readerToCharArray(r));
-        AbstractJdtVisitor v = createVisitor();
+        AbstractJdtVisitor v = createVisitor(info);
         ASTNode node = parser.createAST(null);
+        
+        if(node.getNodeType() == 15)
+        	v.setCUnit((CompilationUnit)node);
+        
         if ((node.getFlags() & ASTNode.MALFORMED) != 0) // bitwise flag to check if the node has a syntax error
             throw new SyntaxException(this, r);
         node.accept(v);
-        return v.getTreeContext();
+        return v.getInfo();
     }
 
-    protected abstract AbstractJdtVisitor createVisitor();
+    protected abstract AbstractJdtVisitor createVisitor(Info info);
 }

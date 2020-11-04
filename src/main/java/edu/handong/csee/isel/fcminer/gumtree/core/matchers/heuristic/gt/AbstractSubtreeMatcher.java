@@ -29,13 +29,15 @@ public abstract class AbstractSubtreeMatcher extends Matcher {
     @Override
     public void match() {
         MultiMappingStore multiMappings = new MultiMappingStore();
-
+        //Init Priority Tree List with Compilation Unit Node whose index is 0
         PriorityTreeList srcTrees = new PriorityTreeList(src);
         PriorityTreeList dstTrees = new PriorityTreeList(dst);
 
         while (srcTrees.peekHeight() != -1 && dstTrees.peekHeight() != -1) {
-            while (srcTrees.peekHeight() != dstTrees.peekHeight())
+        	System.out.println("srcH: " + srcTrees.peekHeight() + "dstH: " + dstTrees.peekHeight());
+            while (srcTrees.peekHeight() != dstTrees.peekHeight()) {
                 popLarger(srcTrees, dstTrees);
+            }
 
             List<ITree> currentHeightSrcTrees = srcTrees.pop();
             List<ITree> currentHeightDstTrees = dstTrees.pop();

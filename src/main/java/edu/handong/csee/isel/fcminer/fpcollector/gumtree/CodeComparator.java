@@ -46,20 +46,11 @@ public class CodeComparator {
 		
 		//GumTree Init
 		Run.initGenerators();
-		ITree variable = null;
-		ITree fixed = null;
 		
-		try {
-			variable = new JdtTreeGenerator().generateFromString(variableClass.getMockClass()).getRoot();
-			fixed = new JdtTreeGenerator().generateFromString(fixedClass.getMockClass()).getRoot();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		Matcher matchClass = Matchers.getInstance().getMatcher(fixed, variable);
+		Matcher matchClass = Matchers.getInstance().getMatcher(fixedClass.getVMethod(), variableClass.getVMethod());
 		matchClass.match();
 		
-		ActionGenerator actionGen = new ActionGenerator(fixed, variable, matchClass.getMappings());
+		ActionGenerator actionGen = new ActionGenerator(fixedClass.getVMethod(), variableClass.getVMethod(), matchClass.getMappings());
 		actionGen.generate();
 		
 		//pattern generation

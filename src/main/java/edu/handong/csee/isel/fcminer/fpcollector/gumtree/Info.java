@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
-import org.eclipse.jdt.core.dom.SimpleName;
-import org.eclipse.jdt.core.dom.ThisExpression;
+
+import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
 
 public class Info {
 	public ArrayList<String> sourceByLine;
@@ -14,19 +14,25 @@ public class Info {
 	public int end;
 	public int startPosition;
 	private String vLine = "";
-	private ASTNode vNode;
-	private MethodDeclaration violatingMethod;
+	private ITree vNode;
+	private ITree vMethod;
+	private String vMethodString = "";
 	private int changedLineNum;
 	private String mockClass;
-	private int mockStart;
-	private int mockEnd;
-	private int mockStartPosition;
 	
-	public void setVNode(ASTNode vNode) {
+	public void setVMethod(ITree vMethod) {
+		this.vMethod = vMethod;
+	}
+	
+	public ITree getVMethod() {
+		return vMethod;
+	}
+	
+	public void setVNode(ITree vNode) {
 		this.vNode = vNode;
 	}
 	
-	public ASTNode getVNode() {
+	public ITree getVNode() {
 		return vNode;
 	}
 	
@@ -46,14 +52,6 @@ public class Info {
 		return mockClass;
 	}
 	
-	public MethodDeclaration getViolatingMethod() {
-		return violatingMethod;
-	}
-	
-	public void setViolatingMethod(MethodDeclaration method) {
-		this.violatingMethod = method;
-	}
-	
 	public void setChangedLineNum(int lineNum) {
 		this.changedLineNum = lineNum;
 	}
@@ -62,29 +60,11 @@ public class Info {
 		return changedLineNum;
 	}
 
-	public int getMockStart() {
-		return mockStart;
+	public String getVMethodString() {
+		return vMethodString;
 	}
 
-	public void setMockStart(int mockStart) {
-		this.mockStart = mockStart;
+	public void setVMethodString(String vMethodString) {
+		this.vMethodString = vMethodString;
 	}
-
-	public int getMockEnd() {
-		return mockEnd;
-	}
-
-	public void setMockEnd(int mockEnd) {
-		this.mockEnd = mockEnd;
-	}
-
-	public int getMockStartPosition() {
-		return mockStartPosition;
-	}
-
-	public void setMockStartPosition(int mockStartPosition) {
-		this.mockStartPosition = mockStartPosition;
-	}
-	
-	
 }

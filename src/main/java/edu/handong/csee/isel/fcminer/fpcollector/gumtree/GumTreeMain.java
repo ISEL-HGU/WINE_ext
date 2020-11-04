@@ -2,8 +2,6 @@ package edu.handong.csee.isel.fcminer.fpcollector.gumtree;
 
 import java.util.ArrayList;
 
-import org.eclipse.jdt.core.dom.MethodDeclaration;
-
 public class GumTreeMain {
 	ArrayList<Info> infos = new ArrayList<>();
 	
@@ -31,19 +29,18 @@ public class GumTreeMain {
 	private Info prepare4GumTree(Info info, int cnt) {		
 		MethodFinder methodFinder = new MethodFinder(info);
 	    info = methodFinder.findMethod();
-	    info.setMockClass(method2Class(info.getViolatingMethod(), cnt));
+	    info.setMockClass(method2Class(info.getVMethodString(), cnt));
 
 	    return info;
 	}
 	
-	private String method2Class(MethodDeclaration violatedMethod, int cnt) {
-		String method2Class = violatedMethod.toString();
+	private String method2Class(String vMethodString, int cnt) {
 		
-		method2Class = "public class MockClass" + cnt + "{\n"
-						+ method2Class
+		vMethodString = "public class MockClass" + cnt + "{\n"
+						+ vMethodString
 						+ "}";
 		
-		return method2Class;
+		return vMethodString;
 	}
 	
 	private void codeCompare() { 

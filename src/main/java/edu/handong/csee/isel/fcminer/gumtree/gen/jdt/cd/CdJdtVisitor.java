@@ -7,6 +7,7 @@ import edu.handong.csee.isel.fcminer.gumtree.gen.jdt.AbstractJdtVisitor;
 import org.eclipse.jdt.core.dom.*;
 
 import edu.handong.csee.isel.fcminer.gumtree.gen.jdt.AbstractJdtVisitor;
+import edu.handong.csee.isel.fcminer.fpcollector.gumtree.Info;
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.Tree;
 
@@ -22,7 +23,11 @@ public class CdJdtVisitor extends AbstractJdtVisitor {
     private static final String COLON_SPACE = ": ";
     private boolean fEmptyJavaDoc;
     private boolean fInMethodDeclaration;
-
+    
+    public CdJdtVisitor(Info info) {
+    	super(info);
+    }
+    
     @Override
     public boolean visit(Block node) {
         // skip block as it is not interesting

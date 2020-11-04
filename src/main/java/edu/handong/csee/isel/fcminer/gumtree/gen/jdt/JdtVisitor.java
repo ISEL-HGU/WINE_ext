@@ -17,11 +17,11 @@ import org.eclipse.jdt.core.dom.TextElement;
 import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 
-import edu.handong.csee.isel.fcminer.gumtree.gen.jdt.AbstractJdtVisitor;
+import edu.handong.csee.isel.fcminer.fpcollector.gumtree.Info;
 
 public class JdtVisitor  extends AbstractJdtVisitor {
-    public JdtVisitor() {
-        super();
+    public JdtVisitor(Info info) {
+        super(info);
     }
 
     @Override

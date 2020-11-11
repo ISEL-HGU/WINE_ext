@@ -1,5 +1,8 @@
 package edu.handong.csee.isel.fcminer.gumtree.gen.jdt;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.Assignment;
 import org.eclipse.jdt.core.dom.BooleanLiteral;
@@ -18,9 +21,12 @@ import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 
 import edu.handong.csee.isel.fcminer.fpcollector.gumtree.Info;
+import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
+import edu.handong.csee.isel.fcminer.gumtree.gen.jdt.AbstractJdtVisitor.Flag;
 
 public class JdtVisitor  extends AbstractJdtVisitor {
-    public JdtVisitor(Info info) {
+    
+	public JdtVisitor(Info info) {
         super(info);
     }
 
@@ -59,7 +65,24 @@ public class JdtVisitor  extends AbstractJdtVisitor {
     }
 
     @Override
-    public void postVisit(ASTNode n) {
+    public void postVisit(ASTNode n) {    	
+    	//in post visit, set depth and height
+//    	Deque<ITree> fakeTrees = new ArrayDeque<>();
+//    	if(super.getInfo().getVMethod() != null) {
+//    		int type = n.getNodeType();    	
+//            String typeName = n.getClass().getSimpleName();
+//            String label = getLabel(n);
+//            ITree t = context.createTree(type, label, typeName);
+//            t.setPos(n.getStartPosition());
+//            t.setLength(n.getLength());
+//            if (super.getTrees().isEmpty())
+//                context.setRoot(t);
+//            else {
+//                ITree parent = super.getTrees().peek();
+//                t.setParentAndUpdateChildren(parent);
+//            }
+//            fakeTrees.push(t);
+//    	}
         popNode();
     }
 }

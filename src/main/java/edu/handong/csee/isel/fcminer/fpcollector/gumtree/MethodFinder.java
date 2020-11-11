@@ -18,7 +18,6 @@ public class MethodFinder {
 	}
 	
 	public Info findMethod(){
-		
 		try {
 			this.info = new JdtTreeGenerator().generateFromInfo(info);
 		} catch (IOException e1) {

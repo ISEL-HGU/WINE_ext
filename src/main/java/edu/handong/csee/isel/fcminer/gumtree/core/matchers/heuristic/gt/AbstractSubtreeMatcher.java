@@ -4,6 +4,7 @@ import edu.handong.csee.isel.fcminer.gumtree.core.matchers.*;
 import edu.handong.csee.isel.fcminer.gumtree.core.matchers.MappingStore;
 import edu.handong.csee.isel.fcminer.gumtree.core.matchers.MultiMappingStore;
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
+import edu.handong.csee.isel.fcminer.gumtree.core.tree.TreeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,10 @@ public abstract class AbstractSubtreeMatcher extends Matcher {
     public void match() {
         MultiMappingStore multiMappings = new MultiMappingStore();
         //Init Priority Tree List with Compilation Unit Node whose index is 0
+        if(src.getDepth() == -1) {
+        	src.setDepth(0);
+        }           
+        
         PriorityTreeList srcTrees = new PriorityTreeList(src);
         PriorityTreeList dstTrees = new PriorityTreeList(dst);
 

@@ -10,6 +10,7 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 import edu.handong.csee.isel.fcminer.fpcollector.gumtree.Info;
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.TreeContext;
+import edu.handong.csee.isel.fcminer.gumtree.core.tree.hash.HashGenerator;
 import edu.handong.csee.isel.fcminer.gumtree.gen.jdt.cd.EntityType;
 
 public abstract class AbstractJdtVisitor extends ASTVisitor {
@@ -62,8 +63,8 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         Flag flag= Flag.NULL;
     	ITree t = context.createTree(type, label, typeName);
         t.setPos(startPosition);
-        t.setLength(length);
-
+        t.setLength(length);        
+        
         if (trees.isEmpty())
             context.setRoot(t);
         else {
@@ -74,7 +75,9 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         if(type == 31 &&
     			getLineNum(startPosition) <= info.start 
     			&& info.end <= getLineNum(startPosition + length)){
-			info.setVMethod(t);
+			t.setDepth(0);
+        	info.setVMethod(t);
+			
 			flag = Flag.Method;
 		}
         
@@ -97,6 +100,10 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 
     protected void popNode() {
         trees.pop();
+    }
+    
+    public Deque<ITree> getTrees(){
+    	return trees;
     }
     
 	private int getLineNum(int startPosition){

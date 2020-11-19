@@ -19,7 +19,7 @@ public abstract class AbstractTree implements ITree {
     protected int depth;
 
     protected int hash;
-
+    
     @Override
     public int getChildPosition(ITree child) {
         return getChildren().indexOf(child);
@@ -299,6 +299,26 @@ public abstract class AbstractTree implements ITree {
         }
 
         @Override
+        public int getStartLineNum() {
+        	return 0;
+        }
+        
+        @Override
+        public int getEndLineNum() {
+        	return 0;
+        }
+        
+        @Override
+        public String getNode2String() {
+        	return "";
+        }
+        
+        @Override
+        public void setNode2String(String node2String) {
+        	throw unsupportedOperation();
+        }
+        
+        @Override
         public void setChildren(List<ITree> children) {
             throw unsupportedOperation();
         }
@@ -328,6 +348,16 @@ public abstract class AbstractTree implements ITree {
             throw unsupportedOperation();
         }
 
+        @Override
+        public void setEndLineNum(int lineNum) {
+        	throw unsupportedOperation();
+        }
+        
+        @Override
+        public void setStartLineNum(int lineNum) {
+        	throw unsupportedOperation();
+        }
+        
         @Override
         public String toPrettyString(TreeContext ctx) {
             return "FakeTree";

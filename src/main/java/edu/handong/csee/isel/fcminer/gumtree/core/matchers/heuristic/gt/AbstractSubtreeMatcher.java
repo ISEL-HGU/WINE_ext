@@ -33,7 +33,7 @@ public abstract class AbstractSubtreeMatcher extends Matcher {
         //Init Priority Tree List with Compilation Unit Node whose index is 0
         if(src.getDepth() == -1) {
         	src.setDepth(0);
-        }           
+        }
         
         PriorityTreeList srcTrees = new PriorityTreeList(src);
         PriorityTreeList dstTrees = new PriorityTreeList(dst);

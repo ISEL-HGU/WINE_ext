@@ -1,10 +1,14 @@
 package edu.handong.csee.isel.fcminer.fpcollector.gumtree;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
+import edu.handong.csee.isel.fcminer.gumtree.core.tree.TreeUtils;
 
 public class GumTreeMain {
 	ArrayList<Info> infos = new ArrayList<>();
-	
+
 	public GumTreeMain(ArrayList<Info> infos) {
 		this.infos = infos;
 	}
@@ -30,8 +34,45 @@ public class GumTreeMain {
 		MethodFinder methodFinder = new MethodFinder(info);
 	    info = methodFinder.findMethod();
 	    info.setMockClass(method2Class(info.getVMethodString(), cnt));
-
+	    info.setVNode(findVNode(info));
 	    return info;
+	}
+	
+	private ITree findVNode(Info info) {
+		ITree vNode = null;
+		ITree vMethod = info.getVMethod();
+		//set vNode based on line number in ITree
+        List<ITree> currents = new ArrayList<>();
+        currents.add(vMethod);
+        while (currents.size() > 0) {        	
+            ITree c = currents.remove(0);
+            if(contain(c.getNode2String(), info.getVLine()) && 
+            		(c.getStartLineNum() <= info.start && c.getEndLineNum() >= info.end)) {        
+            	vNode = c;
+            }
+            currents.addAll(c.getChildren());
+        }
+		
+		return vNode;
+	}
+	
+	//for remove all blank and only compare characters
+	private boolean contain(String src, String test) {
+		String newSrc = "";
+		String newTest = "";
+		for(int i = 0; i < src.length(); i ++) {
+			if(!Character.isSpaceChar(src.charAt(i))) {
+				newSrc += src.charAt(i);
+			}
+		}
+		
+		for(int i = 0; i < test.length(); i ++) {
+			if(!Character.isSpaceChar(test.charAt(i))) {
+				newTest += test.charAt(i);
+			}
+		}
+		
+		return newSrc.contains(newTest);
 	}
 	
 	private String method2Class(String vMethodString, int cnt) {

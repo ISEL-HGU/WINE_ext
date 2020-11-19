@@ -2,10 +2,8 @@ package edu.handong.csee.isel.fcminer.fpcollector.gumtree;
 
 import java.util.ArrayList;
 
-import org.eclipse.jdt.core.dom.ASTNode;
-import org.eclipse.jdt.core.dom.MethodDeclaration;
-
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
+import edu.handong.csee.isel.fcminer.gumtree.core.tree.TreeContext;
 
 public class Info {
 	public ArrayList<String> sourceByLine;
@@ -19,6 +17,7 @@ public class Info {
 	private String vMethodString = "";
 	private int changedLineNum;
 	private String mockClass;
+	private TreeContext ctx;
 	
 	public void setVMethod(ITree vMethod) {
 		this.vMethod = vMethod;
@@ -66,5 +65,13 @@ public class Info {
 
 	public void setVMethodString(String vMethodString) {
 		this.vMethodString = vMethodString;
+	}
+
+	public TreeContext getCtx() {
+		return ctx;
+	}
+
+	public void setCtx(TreeContext ctx) {
+		this.ctx = ctx;
 	}
 }

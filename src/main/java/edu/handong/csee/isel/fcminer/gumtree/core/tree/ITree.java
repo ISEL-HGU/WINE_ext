@@ -18,7 +18,19 @@ public interface ITree {
     String NO_LABEL = "";
 
     int NO_VALUE = -1;
-
+    
+    void setNode2String(String node2String);
+    
+    String getNode2String();
+    
+    void setStartLineNum(int startLineNum);
+    
+    int getStartLineNum();
+    
+    void setEndLineNum(int endLineNum);
+    
+    int getEndLineNum();
+    
     /**
      * @see com.github.gumtreediff.tree.hash.HashGenerator
      * @return a hash (probably unique) representing the tree

@@ -47,48 +47,56 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
     protected void pushNode(ASTNode n, String label) {        	
         int type = n.getNodeType();
         String typeName = n.getClass().getSimpleName();
-        Flag flag = push(type, typeName, label, n.getStartPosition(), n.getLength());
+        Flag flag = push(type, typeName, label, n.getStartPosition(), n.getLength(), n.toString());
         if(flag == Flag.Method) {
-        	info.setVMethodString(n.toString());
-        }
+          	info.setVMethodString(n.toString());
+        }        
     }
 
     protected void pushFakeNode(EntityType n, int startPosition, int length) {
         int type = -n.ordinal(); // Fake types have negative types (but does it matter ?)
         String typeName = n.name();
-        push(type, typeName, "", startPosition, length);
+        push(type, typeName, "", startPosition, length, "");
     }
 
-    private Flag push(int type, String typeName, String label, int startPosition, int length) {
-        Flag flag= Flag.NULL;
+    private Flag push(int type, String typeName, String label, int startPosition, int length, String node2String) {    	
+    	Flag flag= Flag.NULL;
     	ITree t = context.createTree(type, label, typeName);
         t.setPos(startPosition);
-        t.setLength(length);        
-        
-        if (trees.isEmpty())
-            context.setRoot(t);
-        else {
-            ITree parent = trees.peek();
-            t.setParentAndUpdateChildren(parent);
+        t.setLength(length);
+        t.setStartLineNum(cUnit.getLineNumber(startPosition));
+        t.setEndLineNum(cUnit.getLineNumber(startPosition + length));
+        t.setNode2String(node2String);
+        int vMethodPos = 0;
+        int vMethodLen = 0;
+
+    	if(info.getVMethod() != null) {
+        	vMethodPos = info.getVMethod().getPos();
+        	vMethodLen = info.getVMethod().getLength();
+	
+        	if(vMethodPos <= startPosition && vMethodPos + vMethodLen >= startPosition + length){
+                    ITree parent = trees.peek();
+                    t.setParentAndUpdateChildren(parent);                
+        	}
         }
+
         //for finding violating method
         if(type == 31 &&
     			getLineNum(startPosition) <= info.start 
     			&& info.end <= getLineNum(startPosition + length)){
-			t.setDepth(0);
         	info.setVMethod(t);
-			
+        	context.setRoot(t);
 			flag = Flag.Method;
 		}
         
         //for finding violating node
-        if(info.getVNode() == null &&
-        		getLineNum(startPosition) == info.start && 
-        		getLineNum(startPosition + length) >= info.end) {
-        	info.setVNode(t);
+//        if(info.getVNode() == null &&
+//        		getLineNum(startPosition) == info.start && 
+//        		getLineNum(startPosition + length) >= info.end) {
+//        	info.setVNode(t);
 //        	if(info.getVNode() == null) info.setVNode(t);
 //        	else if(info.getVNode().getDepth() > t.getDepth()) info.setVNode(t);
-		}
+//		}
         
         trees.push(t);
         return flag;

@@ -66,23 +66,6 @@ public class JdtVisitor  extends AbstractJdtVisitor {
 
     @Override
     public void postVisit(ASTNode n) {    	
-    	//in post visit, set depth and height
-//    	Deque<ITree> fakeTrees = new ArrayDeque<>();
-//    	if(super.getInfo().getVMethod() != null) {
-//    		int type = n.getNodeType();    	
-//            String typeName = n.getClass().getSimpleName();
-//            String label = getLabel(n);
-//            ITree t = context.createTree(type, label, typeName);
-//            t.setPos(n.getStartPosition());
-//            t.setLength(n.getLength());
-//            if (super.getTrees().isEmpty())
-//                context.setRoot(t);
-//            else {
-//                ITree parent = super.getTrees().peek();
-//                t.setParentAndUpdateChildren(parent);
-//            }
-//            fakeTrees.push(t);
-//    	}
         popNode();
     }
 }

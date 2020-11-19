@@ -30,7 +30,7 @@ public abstract class TreeGenerator {
     
     public Info generateFromReader(Reader r, Info info) throws IOException {
         Info updatedInfo = generate(r, info);
-//        ctx.validate();
+        updatedInfo.getCtx().validate();
         return updatedInfo;
     }
 

@@ -33,6 +33,7 @@ public class CodeComparator {
 	
 	private void runGumTree() {		
 		//real
+
 		Info variableClass = gumTreeStack.pop();
 		Info fixedClass = gumTreeStack.elementAt(0);
 		patterns.setFixed(fixedClass);
@@ -47,10 +48,13 @@ public class CodeComparator {
 		//GumTree Init
 		Run.initGenerators();
 		
-		Matcher matchClass = Matchers.getInstance().getMatcher(fixedClass.getVMethod(), variableClass.getVMethod());
+		ITree variable = variableClass.getCtx().getRoot();
+		ITree fix = fixedClass.getCtx().getRoot();
+		
+		Matcher matchClass = Matchers.getInstance().getMatcher(fixedClass.getVNode(), variableClass.getVNode());
 		matchClass.match();
 		
-		ActionGenerator actionGen = new ActionGenerator(fixedClass.getVMethod(), variableClass.getVMethod(), matchClass.getMappings());
+		ActionGenerator actionGen = new ActionGenerator(fixedClass.getVNode(), variableClass.getVNode(), matchClass.getMappings());
 		actionGen.generate();
 		
 		//pattern generation

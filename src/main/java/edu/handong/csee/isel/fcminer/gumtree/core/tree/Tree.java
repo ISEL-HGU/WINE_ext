@@ -6,10 +6,16 @@ import java.util.List;
 import java.util.Map.Entry;
 
 public class Tree extends AbstractTree implements ITree {
-
+	
+	private int startLineNum = -1;
+	
+	private int endLineNum = -1;
+	
     private int type;
 
     private String label;
+    
+    private String node2String;
 
     // Begin position of the tree in terms of absolute character index and length
     private int pos;
@@ -101,6 +107,26 @@ public class Tree extends AbstractTree implements ITree {
     public int getType() {
         return type;
     }
+    
+    @Override
+    public int getStartLineNum() {
+    	return startLineNum;
+    }
+    
+    @Override
+    public int getEndLineNum() {
+    	return endLineNum;
+    }
+    
+    @Override
+    public String getNode2String() {
+    	return node2String;
+    }
+    
+    @Override
+    public void setNode2String(String node2String) {
+    	this.node2String = node2String;
+    }
 
     @Override
     public void setChildren(List<ITree> children) {
@@ -141,6 +167,16 @@ public class Tree extends AbstractTree implements ITree {
     @Override
     public void setType(int type) {
         this.type = type;
+    }
+    
+    @Override
+    public void setStartLineNum(int startLineNum) {
+    	this.startLineNum = startLineNum;
+    }
+    
+    @Override
+    public void setEndLineNum(int endLineNum) {
+    	this.endLineNum = endLineNum;
     }
 
     @Override

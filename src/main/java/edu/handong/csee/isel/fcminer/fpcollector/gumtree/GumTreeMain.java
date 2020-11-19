@@ -1,10 +1,10 @@
 package edu.handong.csee.isel.fcminer.fpcollector.gumtree;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
-import edu.handong.csee.isel.fcminer.gumtree.core.tree.TreeUtils;
 
 public class GumTreeMain {
 	ArrayList<Info> infos = new ArrayList<>();
@@ -35,7 +35,63 @@ public class GumTreeMain {
 	    info = methodFinder.findMethod();
 	    info.setMockClass(method2Class(info.getVMethodString(), cnt));
 	    info.setVNode(findVNode(info));
+	    divide(info);
 	    return info;
+	}
+	
+	private void divide(Info info) {		
+		List<ITree> currents = new ArrayList<>();
+		currents.add(info.getVMethod());
+        while (currents.size() > 0) {        	
+            ITree c = currents.remove(0);
+            if(c.getPos() <= info.getVNode().getPos() && c.getEndPos() <= info.getVNode().getPos()) {        
+            	info.addForwardPart(c);
+            } else if(c.getPos() >= info.getVNode().getPos() && c.getEndPos() <= info.getVNode().getEndPos()) {
+            	info.addVPart(c);
+            } else if(c.getPos() >= info.getVNode().getEndPos()) {
+            	info.addBackwardPart(c);
+            }
+            currents.addAll(c.getChildren());
+        }
+        sort(info);        
+	}
+	
+	private void sort(Info info) {
+		info.getForwardPart().sort(new Comparator<ITree>() {
+			public int compare(ITree node1, ITree node2) {
+				if(node1.getPos() > node2.getPos()) {
+					return 1;
+				} else if(node1.getPos() == node2.getPos()) {
+					if(node1.getDepth() > node2.getDepth()) {
+						return 1;
+					} else return -1;
+				} else return -1;
+			}
+		});
+		
+		info.getVPart().sort(new Comparator<ITree>() {
+			public int compare(ITree node1, ITree node2) {
+				if(node1.getPos() > node2.getPos()) {
+					return 1;
+				} else if(node1.getPos() == node2.getPos()) {
+					if(node1.getDepth() > node2.getDepth()) {
+						return 1;
+					} else return -1;
+				} else return -1;
+			}
+		});
+		
+		info.getBackwardPart().sort(new Comparator<ITree>() {
+			public int compare(ITree node1, ITree node2) {
+				if(node1.getPos() > node2.getPos()) {
+					return 1;
+				} else if(node1.getPos() == node2.getPos()) {
+					if(node1.getDepth() > node2.getDepth()) {
+						return 1;
+					} else return -1;
+				} else return -1;
+			}
+		});
 	}
 	
 	private ITree findVNode(Info info) {

@@ -6,10 +6,102 @@ import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
 
 public class Pattern {
 	ArrayList<ITree> bfsPattern = new ArrayList<>();
+	int forIdx = -1;
+	int backIdx = -1;
+	int vIdx = -1;
+	
+	public void setForIdx(int forIdx) {
+		this.forIdx = forIdx;
+	}
+	
+	public void setBackIdx(int backIdx) {
+		this.backIdx = backIdx;
+	}
+	
+	public void setVIdx(int vIdx) {
+		this.vIdx = vIdx;
+	}
+	
+	public int getForIdx() {
+		return forIdx;
+	}
+	
+	public int getBackIdx() {
+		return backIdx;
+	}
+	
+	public int getVIdx() {
+		return vIdx;
+	}
 	
 	public void addNode2Pattern(ITree node) {
 		bfsPattern.add(node);
 	} 
+	
+	public int compareForward(ArrayList<ITree> fixed, int fixedDepth,
+			ArrayList<ITree> variable, int variableDepth, int range) {
+		if(range == -1) {
+			int checkSize = variable.size();
+			boolean[] prev = new boolean[checkSize];
+			int cnt = 0;
+			for(int i = 0; i < fixed.size(); i ++) {				
+				ITree tempF = fixed.get(i);
+				for(int j = 0; j < checkSize; j++) {
+					ITree tempVar = variable.get(j);
+					if(prev[j] == false && tempF.getType() == tempVar.getType()) {						
+						addNode2Pattern(tempF);
+						cnt ++;
+						prev[j] = true;
+						break;
+					}
+				}
+			}
+			return cnt;
+		}
+		return 0;
+	}
+	
+	public int compareV(ArrayList<ITree> fixed, ArrayList<ITree> variable) {
+		int checkSize = variable.size();
+		boolean[] prev = new boolean[checkSize];
+		int cnt = 0;
+		for(int i = 0; i < fixed.size(); i ++) {				
+			ITree tempF = fixed.get(i);
+			for(int j = 0; j < checkSize; j++) {
+				ITree tempVar = variable.get(j);
+				if(prev[j] == false && tempF.getType() == tempVar.getType()) {						
+					addNode2Pattern(tempF);
+					cnt ++;
+					prev[j] = true;
+					break;
+				}
+			}
+		}
+		return cnt;
+	}
+	
+	public int compareBackward(ArrayList<ITree> fixed, int fixedDepth,
+			ArrayList<ITree> variable, int variableDepth, int range) {
+		if(range == -1) {
+			int checkSize = variable.size();
+			boolean[] prev = new boolean[checkSize];
+			int cnt = 0;
+			for(int i = 0; i < fixed.size(); i ++) {				
+				ITree tempF = fixed.get(i);
+				for(int j = 0; j < checkSize; j++) {
+					ITree tempVar = variable.get(j);
+					if(prev[j] == false && tempF.getType() == tempVar.getType()) {						
+						addNode2Pattern(tempF);
+						cnt ++;
+						prev[j] = true;
+						break;
+					}
+				}
+			}
+			return cnt;
+		}
+		return 0;
+	}
 	
 	public void printPattern() {
 		for(ITree node: bfsPattern) {

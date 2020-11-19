@@ -6,18 +6,50 @@ import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.TreeContext;
 
 public class Info {
+	//for infoCollector
 	public ArrayList<String> sourceByLine;
 	public String path;
 	public int start;
 	public int end;
 	public int startPosition;
+	
+	//for code compare
 	private String vLine = "";
 	private ITree vNode;
-	private ITree vMethod;
+	
 	private String vMethodString = "";
-	private int changedLineNum;
+	private ITree vMethod;
+
 	private String mockClass;
 	private TreeContext ctx;
+	
+	private ArrayList<ITree> forwardPart = new ArrayList<>();
+	private ArrayList<ITree> vPart = new ArrayList<>();
+	private ArrayList<ITree> backwardPart = new ArrayList<>();
+	
+	public void addForwardPart(ITree node) {
+		this.forwardPart.add(node);
+	}
+	
+	public void addVPart(ITree node) {
+		this.vPart.add(node);
+	}
+	
+	public void addBackwardPart(ITree node) {
+		this.backwardPart.add(node);
+	}
+	
+	public ArrayList<ITree> getForwardPart() {
+		return forwardPart;
+	}
+	
+	public ArrayList<ITree> getVPart() {
+		return vPart;
+	}
+	
+	public ArrayList<ITree> getBackwardPart() {
+		return backwardPart;
+	}
 	
 	public void setVMethod(ITree vMethod) {
 		this.vMethod = vMethod;
@@ -49,14 +81,6 @@ public class Info {
 	
 	public String getMockClass() {
 		return mockClass;
-	}
-	
-	public void setChangedLineNum(int lineNum) {
-		this.changedLineNum = lineNum;
-	}
-	
-	public int getChangedLineNum() {
-		return changedLineNum;
 	}
 
 	public String getVMethodString() {

@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 
 import org.atteo.classindex.IndexSubclasses;
 
-import edu.handong.csee.isel.fcminer.fpcollector.gumtree.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.Info;
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.TreeContext;
 
 @IndexSubclasses

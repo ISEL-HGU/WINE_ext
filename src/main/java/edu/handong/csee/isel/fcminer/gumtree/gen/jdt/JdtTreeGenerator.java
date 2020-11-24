@@ -1,6 +1,6 @@
 package edu.handong.csee.isel.fcminer.gumtree.gen.jdt;
 
-import edu.handong.csee.isel.fcminer.fpcollector.gumtree.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.Info;
 import edu.handong.csee.isel.fcminer.gumtree.core.gen.Register;
 import edu.handong.csee.isel.fcminer.gumtree.core.gen.Registry;
 

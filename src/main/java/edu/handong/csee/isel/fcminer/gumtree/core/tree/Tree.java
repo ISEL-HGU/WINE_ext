@@ -16,6 +16,10 @@ public class Tree extends AbstractTree implements ITree {
     private String label;
     
     private String node2String;
+    
+    private String childProps = "";
+    
+    private ArrayList<String> parentProps = new ArrayList<>();
 
     // Begin position of the tree in terms of absolute character index and length
     private int pos;
@@ -56,8 +60,8 @@ public class Tree extends AbstractTree implements ITree {
         this.depth = other.getDepth();
         this.children = new ArrayList<>();
         this.metadata = other.metadata;
-    }
-
+    }         
+    
     @Override
     public void addChild(ITree t) {
         children.add(t);
@@ -121,6 +125,28 @@ public class Tree extends AbstractTree implements ITree {
     @Override
     public String getNode2String() {
     	return node2String;
+    }
+    
+    @Override
+    public String getChildProps() {
+    	return childProps;
+    }
+    
+    
+    
+    @Override
+    public ArrayList<String> getParentProps() {
+    	return parentProps;
+    }
+    
+    @Override
+    public void setParentProps(ArrayList<String> parentProps) {
+    	this.parentProps = parentProps;
+    }
+    
+    @Override
+    public void setChildProps(String childProps) {
+    	this.childProps = childProps;
     }
     
     @Override

@@ -27,7 +27,7 @@ import javax.xml.stream.events.XMLEvent;
 
 import com.google.gson.stream.JsonWriter;
 
-import edu.handong.csee.isel.fcminer.fpcollector.gumtree.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.Info;
 import edu.handong.csee.isel.fcminer.gumtree.core.gen.Register;
 import edu.handong.csee.isel.fcminer.gumtree.core.gen.TreeGenerator;
 import edu.handong.csee.isel.fcminer.gumtree.core.matchers.MappingStore;

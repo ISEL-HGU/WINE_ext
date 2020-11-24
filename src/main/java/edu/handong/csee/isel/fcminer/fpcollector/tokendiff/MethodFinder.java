@@ -1,4 +1,4 @@
-package edu.handong.csee.isel.fcminer.fpcollector.gumtree;
+package edu.handong.csee.isel.fcminer.fpcollector.tokendiff;
 
 import java.io.IOException;
 import java.util.ArrayList;

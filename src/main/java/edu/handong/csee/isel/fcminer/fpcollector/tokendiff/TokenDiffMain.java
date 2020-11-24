@@ -1,4 +1,4 @@
-package edu.handong.csee.isel.fcminer.fpcollector.gumtree;
+package edu.handong.csee.isel.fcminer.fpcollector.tokendiff;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -6,10 +6,10 @@ import java.util.List;
 
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
 
-public class GumTreeMain {
+public class TokenDiffMain {
 	ArrayList<Info> infos = new ArrayList<>();
 
-	public GumTreeMain(ArrayList<Info> infos) {
+	public TokenDiffMain(ArrayList<Info> infos) {
 		this.infos = infos;
 	}
 	

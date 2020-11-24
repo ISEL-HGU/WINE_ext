@@ -1,4 +1,4 @@
-package edu.handong.csee.isel.fcminer.fpcollector.gumtree;
+package edu.handong.csee.isel.fcminer.fpcollector.tokendiff;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Stack;
 
 import org.eclipse.jdt.core.dom.ASTNode;
-
+import org.eclipse.jdt.core.dom.ConditionalExpression;
 
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
 //import edu.handong.csee.isel.fcminer.gumtree.client.Run;
@@ -43,6 +43,33 @@ public class CodeComparator {
 		System.out.println(variableClass.getMockClass());
 		
 		Pattern pattern = new Pattern();
+		System.out.println("Variable:");
+		for(int i = 0 ; i < variableClass.getVPart().size(); i ++) {						
+			System.out.println("[" + pattern.type2String(variableClass.getVPart().get(i).getType())+ "-" 
+								+ variableClass.getVPart().get(i).getChildProps()  + "]");
+			
+			System.out.print("[" + pattern.type2String((variableClass.getVPart().get(i).getType())) + "-");			
+			for(int j =0 ; j < variableClass.getVPart().get(i).getParentProps().size(); j ++) {
+				System.out.print("("+variableClass.getVPart().get(i).getParentProps().get(j) +" ");
+			}
+			System.out.print(")]\n\n");
+									
+			
+		}
+		
+		System.out.println("Fixed:");
+		for(int i = 0 ; i < fixedClass.getVPart().size(); i ++) {			
+			System.out.println("[" + pattern.type2String(fixedClass.getVPart().get(i).getType())+ "-" 
+					+ fixedClass.getVPart().get(i).getChildProps()  + "]");
+
+			System.out.print("[" + pattern.type2String((fixedClass.getVPart().get(i).getType())) + "-");			
+			for(int j =0 ; j < fixedClass.getVPart().get(i).getParentProps().size(); j ++) {
+				System.out.print("("+fixedClass.getVPart().get(i).getParentProps().get(j) +" ");
+			}
+			System.out.print(")]\n\n");
+		}
+		
+		
 		
 		int forIdx = pattern.compareForward(fixedClass.getForwardPart(), fixedClass.getVNode().getDepth(),
 						variableClass.getForwardPart(), variableClass.getVNode().getDepth(), -1);

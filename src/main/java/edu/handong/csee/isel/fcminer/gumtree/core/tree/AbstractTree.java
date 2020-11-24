@@ -41,7 +41,7 @@ public abstract class AbstractTree implements ITree {
         trees.remove(0);
         return trees;
     }
-
+    
     @Override
     public int getHash() {
         return hash;
@@ -266,6 +266,26 @@ public abstract class AbstractTree implements ITree {
         @Override
         public ITree deepCopy() {
             throw unsupportedOperation();
+        }
+        
+        @Override
+        public ArrayList<String> getParentProps() {
+        	throw unsupportedOperation();
+        }
+        
+        @Override
+        public void setParentProps(ArrayList<String> parentProps) {
+        	throw unsupportedOperation();
+        }
+        
+        @Override
+        public String getChildProps() {
+        	throw unsupportedOperation();
+        }
+        
+        @Override
+        public void setChildProps(String childProps) {
+        	throw unsupportedOperation();
         }
 
         @Override

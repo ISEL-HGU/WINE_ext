@@ -7,7 +7,7 @@ import edu.handong.csee.isel.fcminer.gumtree.gen.jdt.AbstractJdtVisitor;
 import org.eclipse.jdt.core.dom.*;
 
 import edu.handong.csee.isel.fcminer.gumtree.gen.jdt.AbstractJdtVisitor;
-import edu.handong.csee.isel.fcminer.fpcollector.gumtree.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.Info;
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.Tree;
 

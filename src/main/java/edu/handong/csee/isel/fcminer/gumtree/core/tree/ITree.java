@@ -1,5 +1,6 @@
 package edu.handong.csee.isel.fcminer.gumtree.core.tree;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
@@ -43,6 +44,14 @@ public interface ITree {
      * @return all the nodes contained in the tree, using a pre-order.
      */
     List<ITree> getTrees();
+    
+    String getChildProps();
+    
+    void setChildProps(String childProps);
+    
+    public ArrayList<String> getParentProps();
+    
+    public void setParentProps(ArrayList<String> parentProps);
 
     Iterable<ITree> preOrder();
 

@@ -20,7 +20,7 @@ import org.eclipse.jdt.core.dom.TextElement;
 import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 
-import edu.handong.csee.isel.fcminer.fpcollector.gumtree.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.Info;
 import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
 import edu.handong.csee.isel.fcminer.gumtree.gen.jdt.AbstractJdtVisitor.Flag;
 

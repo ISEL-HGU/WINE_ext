@@ -1,4 +1,4 @@
-package edu.handong.csee.isel.fcminer.fpcollector.gumtree;
+package edu.handong.csee.isel.fcminer.fpcollector.tokendiff;
 
 import java.io.BufferedReader;
 import java.io.File;

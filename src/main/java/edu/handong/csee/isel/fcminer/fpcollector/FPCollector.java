@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 import org.eclipse.jgit.api.Git;
 
-import edu.handong.csee.isel.fcminer.fpcollector.gumtree.GumTreeMain;
-import edu.handong.csee.isel.fcminer.fpcollector.gumtree.InfoCollector;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.TokenDiffMain;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.InfoCollector;
 import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
 import edu.handong.csee.isel.fcminer.util.OSValidator;
@@ -35,7 +35,7 @@ public class FPCollector {
 			}		
 		}
 		
-		GumTreeMain gumTree = new GumTreeMain(collector.getInfos());
+		TokenDiffMain gumTree = new TokenDiffMain(collector.getInfos());
 		gumTree.run();
 	}
 }

@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import edu.handong.csee.isel.fcminer.gumtree.core.tree.ITree;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.CodeComparator;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.MethodFinder;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.pattern.PatternWriter;
 
 public class TokenDiffMain {
 	ArrayList<Info> infos = new ArrayList<>();

@@ -29,10 +29,10 @@ public class CodeComparator {
 		
 		if(gumTreeStack.size() == 1) return;
 		
-		runGumTree();
+		runTokenDiff();
 	}
 	
-	private void runGumTree() {		
+	private void runTokenDiff() {		
 		//real
 
 		Info variableClass = gumTreeStack.pop();
@@ -42,44 +42,69 @@ public class CodeComparator {
 		System.out.println(fixedClass.getMockClass());
 		System.out.println(variableClass.getMockClass());
 		
-		Pattern pattern = new Pattern();
-		System.out.println("Variable:");
-		for(int i = 0 ; i < variableClass.getVPart().size(); i ++) {						
-			System.out.println("[" + pattern.type2String(variableClass.getVPart().get(i).getType())+ "-" 
-								+ variableClass.getVPart().get(i).getChildProps()  + "]");
-			
-			System.out.print("[" + pattern.type2String((variableClass.getVPart().get(i).getType())) + "-");			
-			for(int j =0 ; j < variableClass.getVPart().get(i).getParentProps().size(); j ++) {
-				System.out.print("("+variableClass.getVPart().get(i).getParentProps().get(j) +" ");
-			}
-			System.out.print(")]\n\n");
-									
-			
-		}
+		Matcher matcher = new Matcher(fixedClass, variableClass);				
 		
-		System.out.println("Fixed:");
-		for(int i = 0 ; i < fixedClass.getVPart().size(); i ++) {			
-			System.out.println("[" + pattern.type2String(fixedClass.getVPart().get(i).getType())+ "-" 
-					+ fixedClass.getVPart().get(i).getChildProps()  + "]");
+		//for child props: sort in depth
+//		fixedClass.getVPart().sort(new Comparator<ITree>() {
+//			public int compare(ITree node1, ITree node2) {
+//				if(node1.getDepth() < node2.getDepth()) {
+//					return -1;
+//				} else if(node1.getDepth() == node2.getDepth()) {
+//					if(node1.getPos() < node2.getPos()) {
+//						return 1;
+//					} else return 1;
+//				} else return 1;
+//			}
+//		});
+//		
+//		variableClass.getVPart().sort(new Comparator<ITree>() {
+//			public int compare(ITree node1, ITree node2) {
+//				if(node1.getDepth() < node2.getDepth()) {
+//					return -1;
+//				} else if(node1.getDepth() == node2.getDepth()) {
+//					if(node1.getPos() < node2.getPos()) {
+//						return 1;
+//					} else return 1;
+//				} else return 1;
+//			}
+//		});
+		
 
+		Pattern pattern = new Pattern();
+		System.out.println("Fixed:");
+		for(int i = 0 ; i < fixedClass.getVPart().size(); i ++) {
+			//child props
+//			System.out.print("[" + pattern.type2String(fixedClass.getVPart().get(i).getType())+ "-" 
+//					+ fixedClass.getVPart().get(i).getChildProps()  + "] ");
+			
+			//parent props
 			System.out.print("[" + pattern.type2String((fixedClass.getVPart().get(i).getType())) + "-");			
 			for(int j =0 ; j < fixedClass.getVPart().get(i).getParentProps().size(); j ++) {
 				System.out.print("("+fixedClass.getVPart().get(i).getParentProps().get(j) +" ");
 			}
-			System.out.print(")]\n\n");
+			System.out.print(")]\n");
 		}
 		
+		System.out.println("\n");
 		
+		System.out.println("Variable:");
+		for(int i = 0 ; i < variableClass.getVPart().size(); i ++) {		
+			//child props
+//			System.out.print("[" + pattern.type2String(variableClass.getVPart().get(i).getType())+ "-" 
+//								+ variableClass.getVPart().get(i).getChildProps()  + "] ");
+			
+			//parent props
+			System.out.print("[" + pattern.type2String((variableClass.getVPart().get(i).getType())) + "-");			
+			for(int j =0 ; j < variableClass.getVPart().get(i).getParentProps().size(); j ++) {
+				System.out.print("("+variableClass.getVPart().get(i).getParentProps().get(j) +" ");
+			}
+			System.out.print(")]\n");
+									
+			
+		}
+		System.out.println("\n");
 		
-		int forIdx = pattern.compareForward(fixedClass.getForwardPart(), fixedClass.getVNode().getDepth(),
-						variableClass.getForwardPart(), variableClass.getVNode().getDepth(), -1);
-		int vIdx = forIdx + pattern.compareV(fixedClass.getVPart(), variableClass.getVPart());
-		int backIdx = vIdx + pattern.compareBackward(fixedClass.getBackwardPart(), fixedClass.getVNode().getDepth(),
-						variableClass.getBackwardPart(), variableClass.getVNode().getDepth(), -1);
-		
-		pattern.setForIdx(forIdx);
-		pattern.setVIdx(vIdx);
-		pattern.setBackIdx(backIdx);
+		matcher.match();
 		
 		/*GumTree pattern comparison
 		//GumTree Init
@@ -115,19 +140,19 @@ public class CodeComparator {
 			}
 		});
  */ 
-		System.out.println("@->\n");
-		int cnt = 0;
-		for(ITree pa : pattern.bfsPattern) {
-			if(cnt <= forIdx) System.out.print("FORWARD PART: ");
-			else if(cnt <= vIdx) System.out.print("V PART: ");
-			else System.out.print("BACKWARD PART: ");
-			System.out.println( 
-					"node type: " + pa.getType() +"(" + pattern.type2String(pa.getType())+ ")" + 
-					" node label: " + pa.getLabel() + 
-					" node depth: " + pa.getDepth() +
-					" node position: " + pa.getPos() + "~" + pa.getEndPos());
-			cnt++;
-		}
+//		System.out.println("@->\n");
+//		int cnt = 0;
+//		for(ITree pa : pattern.bfsPattern) {
+//			if(cnt <= forIdx) System.out.print("FORWARD PART: ");
+//			else if(cnt <= vIdx) System.out.print("V PART: ");
+//			else System.out.print("BACKWARD PART: ");
+//			System.out.println( 
+//					"node type: " + pa.getType() +"(" + pattern.type2String(pa.getType())+ ")" + 
+//					" node label: " + pa.getLabel() + 
+//					" node depth: " + pa.getDepth() +
+//					" node position: " + pa.getPos() + "~" + pa.getEndPos());
+//			cnt++;
+//		}
 		
 		System.out.println("<-@\n");
 		

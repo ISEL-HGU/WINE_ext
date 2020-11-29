@@ -117,15 +117,17 @@ public class TokenDiffMain {
 		String newSrc = "";
 		String newTest = "";
 		for(int i = 0; i < src.length(); i ++) {
-			if(!Character.isSpaceChar(src.charAt(i))) {
-				newSrc += src.charAt(i);
+			if(Character.isSpaceChar(src.charAt(i)) || Character.isWhitespace(src.charAt(i))) {
+				continue;
 			}
+			newSrc += src.charAt(i);
 		}
 		
 		for(int i = 0; i < test.length(); i ++) {
-			if(!Character.isSpaceChar(test.charAt(i))) {
-				newTest += test.charAt(i);
+			if(Character.isSpaceChar(test.charAt(i)) || Character.isWhitespace(test.charAt(i))) {
+				continue;
 			}
+			newTest += test.charAt(i);
 		}
 		
 		return newSrc.contains(newTest);

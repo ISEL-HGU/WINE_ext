@@ -1,1 +1,1 @@
-# FC-Miner
+# FPC-Miner

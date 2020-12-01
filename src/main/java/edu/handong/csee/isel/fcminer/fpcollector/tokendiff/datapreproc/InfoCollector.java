@@ -33,6 +33,12 @@ public class InfoCollector {
 	public ArrayList<ASTNode> tpcPattern = new ArrayList<>();
 	ArrayList<Info> infos = new ArrayList<>();
 	
+	public void clear() {
+		fpcPattern = null;
+		tpcPattern = null;
+		infos = null;
+	}
+	
 	public void run(String resultPath, Git git, String projectName) throws IOException {
 		System.out.println("INFO: Information Collecting is Started");
 		Reader outputFile = new FileReader(resultPath);

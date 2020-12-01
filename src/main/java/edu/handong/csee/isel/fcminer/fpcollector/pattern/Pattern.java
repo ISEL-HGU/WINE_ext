@@ -1,35 +1,10 @@
-package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.pattern;
+package edu.handong.csee.isel.fcminer.fpcollector.pattern;
 
 import java.util.ArrayList;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 
 public class Pattern {
-	ArrayList<ITree> bfsPattern = new ArrayList<>();	
-	
-	public void addNode2Pattern(ITree node) {
-		bfsPattern.add(node);
-	} 
-	
-	
-	
-	public void printPattern() {
-		for(ITree node: bfsPattern) {
-			System.out.print(node.toShortString() + " ");
-		}
-	}
-	
-	public String getStringPattern() {
-		String pattern = "";
-		for(ITree node: bfsPattern) {
-//			String node2String =
-			String nodeType = type2String(node.getType());
-			String nodeLabel = node.getLabel();
-			pattern += nodeType + ":" + nodeLabel + " ";
-		}
-		return pattern;
-	}
-	
 	public String type2String(int type) {
 		switch(type) {
 			case 1: return "Anoymous_Class_Dec.";

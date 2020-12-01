@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
+
 /**
  * Interface to represent abstract syntax trees.
  */
@@ -49,9 +51,9 @@ public interface ITree {
     
     void setChildProps(String childProps);
     
-    public ArrayList<String> getParentProps();
+    public ArrayList<Property> getParentProps();
     
-    public void setParentProps(ArrayList<String> parentProps);
+    public void setParentProps(ArrayList<Property> parentProps);
 
     Iterable<ITree> preOrder();
 

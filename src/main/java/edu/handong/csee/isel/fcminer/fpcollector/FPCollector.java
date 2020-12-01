@@ -5,7 +5,9 @@ import java.util.ArrayList;
 
 import org.eclipse.jgit.api.Git;
 
+import edu.handong.csee.isel.fcminer.fpcollector.pattern.PatternGenerator;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.TokenDiffMain;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.InfoCollector;
 import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
@@ -16,6 +18,7 @@ public class FPCollector {
 		if(command.getState().equals(RunState.SAResultMiner)) return;
 		InfoCollector collector = new InfoCollector();	
 		String osName = OSValidator.getOS();
+		
 		for(Git git : gits) {
 			String[] fullProjectPath;
 			//linux
@@ -35,7 +38,13 @@ public class FPCollector {
 			}		
 		}
 		
-		TokenDiffMain gumTree = new TokenDiffMain(collector.getInfos());
-		gumTree.run();
+		TokenDiffMain tokenDiff = new TokenDiffMain(collector.getInfos());
+		collector.clear();		
+		ArrayList<MappingStorage> diffResult = tokenDiff.run();		
+		
+		PatternGenerator patternGen = new PatternGenerator(diffResult);
+		patternGen.collect();	
+		patternGen.writePatterns();		
+		System.out.println("DONE");
 	}
 }

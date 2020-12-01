@@ -2,6 +2,7 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast;
 
 import java.util.*;
 
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.hash.HashUtils;
 
 public abstract class AbstractTree implements ITree {
@@ -269,12 +270,12 @@ public abstract class AbstractTree implements ITree {
         }
         
         @Override
-        public ArrayList<String> getParentProps() {
+        public ArrayList<Property> getParentProps() {
         	throw unsupportedOperation();
         }
         
         @Override
-        public void setParentProps(ArrayList<String> parentProps) {
+        public void setParentProps(ArrayList<Property> parentProps) {
         	throw unsupportedOperation();
         }
         

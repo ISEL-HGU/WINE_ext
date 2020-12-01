@@ -2,7 +2,9 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare;
 
 import java.util.ArrayList;
 
+import edu.handong.csee.isel.fcminer.fpcollector.pattern.Pattern;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
 
 public class Matcher {
@@ -10,18 +12,109 @@ public class Matcher {
 	Info var;
 	
 	MappingStorage storage = new MappingStorage();
+	String tempHashString = "";
 	
 	int forIdx = -1;
 	int backIdx = -1;
 	int vIdx = -1;
 	
-	private enum Part{
+	public enum Part{
 		F, V, B
-	}
+	}		
 	
 	public Matcher(Info fixed, Info var) {
 		this.fixed = fixed;
 		this.var = var;
+	}
+	
+	public MappingStorage match() {
+		findMatchIn(fixed.getForwardPart(), var.getForwardPart(), Part.F);
+		findMatchIn(fixed.getVPart(), var.getVPart(), Part.V);
+		findMatchIn(fixed.getBackwardPart(), var.getBackwardPart(), Part.B);
+		return storage;
+	}
+	
+	private void findMatchIn(ArrayList<ITree> fixed, ArrayList<ITree> var,Part part) {
+		if(part == Part.F) {
+			
+		} 
+		else if(part == Part.V) {
+			// same type node collect
+			boolean[] varCh = new boolean[var.size()];
+			boolean[] fixedCh = new boolean[fixed.size()];
+			ArrayList<Mapping> tempMapStorage = new ArrayList<>();
+			
+			for(int i = 0; i < fixed.size(); i ++) {
+				ITree tempFNode = fixed.get(i);
+				for(int j = 0 ; j < var.size(); j ++) {
+					ITree tempVarNode = var.get(j);
+					if(varCh[j] == true) continue;
+					if(fixedCh[i] == true) break;
+					
+					if(tempFNode.getType() == tempVarNode.getType()) {
+						int ppMatchingCnt = 0;
+						int tempPPLen = 0;
+						ArrayList<Property> tempFNodePP = tempFNode.getParentProps();
+						ArrayList<Property> tempVarNodePP = tempVarNode.getParentProps();
+						
+						if(tempFNodePP.size() > tempVarNodePP.size()) {
+							tempPPLen = tempVarNodePP.size();
+						} else {
+							tempPPLen = tempFNodePP.size();
+						}
+						
+						Mapping tempMapping = new Mapping();
+						
+						for(int k = 0; k < tempPPLen; k ++) {
+							if(tempFNodePP.get(k).getNodeType() == tempVarNodePP.get(k).getNodeType()
+									&& tempFNodePP.get(k).getProp().equals(tempVarNodePP.get(k).getProp())) {
+								if(ppMatchingCnt == 0) {
+									tempMapping.setMapping(new Pair<ITree, ITree>(tempFNode, tempVarNode));
+									tempMapping.setPart(Part.V);
+								}
+								ppMatchingCnt ++;								
+								tempMapping.setMatchedParent(ppMatchingCnt);
+								tempMapping.addParentProperties(
+										new Property(tempFNodePP.get(k).getNodeType(),
+													 tempFNodePP.get(k).getTypeName(),
+													 tempFNodePP.get(k).getProp()));
+								varCh[j] = true;
+								fixedCh[i] = true;
+							} else break;
+						}
+						if(tempMapping.getMatchedParent() != -1) {
+							tempHashString += tempMapping.getMapping().getFirst().getType();
+							tempHashString += tempMapping.getMatchedParent();
+							for(int k = 0; k < tempMapping.getParentProperties().size(); k ++) {
+								tempHashString += tempMapping.getParentProperties().get(k).getNodeType(); 
+								tempHashString += tempMapping.getParentProperties().get(k).getProp(); 
+							}
+							tempMapStorage.add(tempMapping);
+						}
+					}
+				}
+			}			
+			storage.add2MappingStorageV(tempMapStorage);
+			//for print
+//			Pattern p = new Pattern();
+//			for(int i = 0; i <tempMapStorage.size(); i ++) {
+//				System.out.println(p.type2String(tempMapStorage.get(i).getMapping().getFirst().getType()) 
+//						+"(" +tempMapStorage.get(i).getMapping().getFirst().getNode2String() + ")"						
+//						+ " / " +  p.type2String(tempMapStorage.get(i).getMapping().getFirst().getType()) + "("
+//						+ tempMapStorage.get(i).getMapping().getSecond().getNode2String()+ ")");
+//				System.out.println("Matched Parent: " + tempMapStorage.get(i).getMatchedParent());
+//				System.out.print("Parent Properties: " + "[");
+//				for(int j = 0 ; j < tempMapStorage.get(i).getParentProperties().size(); j ++) {
+//					System.out.print(tempMapStorage.get(i).getParentProperties().get(j).getNodeType() 
+//							+ "(" + tempMapStorage.get(i).getParentProperties().get(j).getTypeName()
+//							+ ")-" + tempMapStorage.get(i).getParentProperties().get(j).getProp() + "$");
+//				}
+//				System.out.print("]\n\n");
+//			}
+		}
+		else if(part == Part.B) {
+			
+		}
 	}
 	
 	public void setForIdx(int forIdx) {
@@ -48,33 +141,11 @@ public class Matcher {
 		return vIdx;
 	}
 	
-	public void match() {
-		findMatchIn(fixed.getForwardPart(), var.getForwardPart(), Part.F);
-		findMatchIn(fixed.getVPart(), var.getVPart(), Part.V);
-		findMatchIn(fixed.getBackwardPart(), var.getBackwardPart(), Part.B);
+	public String getTempHashString() {
+		return tempHashString;
 	}
 	
-	private void findMatchIn(ArrayList<ITree> fixed, ArrayList<ITree> var,Part part) {
-		if(part == Part.F) {
-			
-		} 
-		else if(part == Part.V) {
-			// same type node collect
-			ArrayList<ITree> fixedNodes = new ArrayList<>();
-			ArrayList<ITree> varNodes = new ArrayList<>();
-			
-			boolean[] checkFixed = new boolean[fixed.size()];
-			boolean[] checkVar = new boolean[var.size()];
-			
-			// compare maximum same property
-			// get maximum same property as matched
-		}
-		else if(part == Part.B) {
-			
-		}
+	public MappingStorage getMappingStorage() {
+		return storage;
 	}
-	
-	
-	
-	
 }

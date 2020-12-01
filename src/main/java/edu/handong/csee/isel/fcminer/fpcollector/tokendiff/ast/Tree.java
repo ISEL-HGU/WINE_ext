@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
+
 public class Tree extends AbstractTree implements ITree {
 	
 	private int startLineNum = -1;
@@ -19,7 +21,7 @@ public class Tree extends AbstractTree implements ITree {
     
     private String childProps = "";
     
-    private ArrayList<String> parentProps = new ArrayList<>();
+    private ArrayList<Property> parentProps = new ArrayList<>();
 
     // Begin position of the tree in terms of absolute character index and length
     private int pos;
@@ -135,12 +137,12 @@ public class Tree extends AbstractTree implements ITree {
     
     
     @Override
-    public ArrayList<String> getParentProps() {
+    public ArrayList<Property> getParentProps() {
     	return parentProps;
     }
     
     @Override
-    public void setParentProps(ArrayList<String> parentProps) {
+    public void setParentProps(ArrayList<Property> parentProps) {
     	this.parentProps = parentProps;
     }
     

@@ -6,24 +6,23 @@ import java.util.List;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.CodeComparator;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.MethodFinder;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.pattern.PatternWriter;
 
 public class TokenDiffMain {
 	ArrayList<Info> infos = new ArrayList<>();
-
+	
 	public TokenDiffMain(ArrayList<Info> infos) {
 		this.infos = infos;
 	}
 	
-	public void run() {
+	public ArrayList<MappingStorage> run() {
 		System.out.println("INFO: Data pre-processing is started");
 		dataPreprocess();
 		System.out.println("INFO: Data pre-processing is finished");
 		System.out.println("INFO: Code Comparison is started");
-		codeCompare();
-		System.out.println("INFO: Code Comparison is finished");
+		return codeCompare();				
 	}
 	
 	private void dataPreprocess() {
@@ -146,26 +145,28 @@ public class TokenDiffMain {
 		return vMethodString;
 	}
 	
-	private void codeCompare() { 
-		CodeComparator gumTreeComp = new CodeComparator();
-		PatternWriter patternWriter = new PatternWriter();
+	private ArrayList<MappingStorage> codeCompare() { 
+		CodeComparator tokenDiff = new CodeComparator();
+
 		System.out.println("INFO: Start to get and Write FC-Miner Result File");
 		long start = System.currentTimeMillis();
 		for(int i = 0 ; i < infos.size(); i ++) {
+			
 			if(i==0) System.out.print("Start...");
 			else if((i / infos.size()) * 100 >= 80) System.out.print("80%...");
 			else if((i / infos.size()) * 100 >= 60) System.out.print("60%...");
 			else if((i / infos.size()) * 100 >= 40) System.out.print("40%...");
 			else if((i / infos.size()) * 100 >= 20) System.out.print("20%...\n\r");
 			
-			gumTreeComp.compare(infos.get(i));
-			for(Info info : infos) {
-				gumTreeComp.compare(info);  
+			tokenDiff.compare(infos.get(i));
+			for(int j = i ; j < infos.size(); j++) {
+				tokenDiff.compare(infos.get(j));
 			}
-			patternWriter.writePatternsAnalysis(gumTreeComp.getPatterns());
-			gumTreeComp.clear();
+
+			tokenDiff.clear();
 		}
 		long end = System.currentTimeMillis();		
 		System.out.println("INFO: Finish to get and Write FC-Miner Result File (" + (end - start)/1000 + " sec.)");
+		return tokenDiff.getMappingStorage();
 	}
 }

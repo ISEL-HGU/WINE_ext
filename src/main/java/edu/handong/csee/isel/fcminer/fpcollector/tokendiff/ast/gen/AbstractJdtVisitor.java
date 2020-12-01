@@ -56,8 +56,9 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         int len = n.getLength();
         String node2String = n.toString();
 //      
+        ArrayList<Property> propertyPath = new ArrayList<>();
+        
         String childProps = "P(";
-        String parentProp = "";
         if(info.getVMethod() != null) {
 	        //for current node description	        
 	        List list = n.structuralPropertiesForType();
@@ -72,8 +73,8 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 	        	ASTNode _n = n;
 	        	ASTNode tempParent = _n.getParent();
 	        	while(tempParent != null && tempParent.getStartPosition() >= info.getVMethod().getPos()) {
-			        int parentType = tempParent.getNodeType();
-			        parentProp += "$"+ parentType + "-";
+			        Property parentProperty = new Property();			        
+	        		int parentType = tempParent.getNodeType(); 
 			        list = tempParent.structuralPropertiesForType();
 			        for(int i = 0 ; i < list.size(); i ++) {
 			        	StructuralPropertyDescriptor prop = (StructuralPropertyDescriptor) list.get(i);
@@ -84,7 +85,10 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 			        			tempNode =  (ASTNode) ((List) child).get(j);
 			        			if(tempNode.getStartPosition() == _n.getStartPosition() 
 			        					&& tempNode.getLength() == _n.getLength()) {
-					        		parentProp += prop.getNodeClass().getSimpleName() + "-" + prop.getId() + "$";
+			        				parentProperty.setNodeType(parentType);
+			        				parentProperty.setTypeName(prop.getNodeClass().getSimpleName()); 
+			        				parentProperty.setProp(prop.getId());
+			        				propertyPath.add(parentProperty);
 					        		break;
 					        	}
 			        		}
@@ -92,7 +96,10 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 			        		tempNode = (ASTNode) child;
 			        		if(tempNode.getStartPosition() == _n.getStartPosition() 
 			        				&& tempNode.getLength() == _n.getLength()) {
-				        		parentProp += prop.getNodeClass().getSimpleName() + "-" + prop.getId() + "$";
+			        			parentProperty.setNodeType(parentType);
+		        				parentProperty.setTypeName(prop.getNodeClass().getSimpleName()); 
+		        				parentProperty.setProp(prop.getId());
+		        				propertyPath.add(parentProperty);
 				        		break;
 				        	}
 			        	}		        			        	
@@ -106,20 +113,14 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         }
 //        
         
-        Flag flag = push(type, typeName, label, startPos, len, node2String, childProps, parentProp);
+        Flag flag = push(type, typeName, label, startPos, len, node2String, childProps, propertyPath);
         if(flag == Flag.Method) {
           	info.setVMethodString(node2String);
         }        
     }
 
-//    protected void pushFakeNode(EntityType n, int startPosition, int length) {
-//        int type = -n.ordinal(); // Fake types have negative types (but does it matter ?)
-//        String typeName = n.name();
-//        push(type, typeName, "", startPosition, length, "", "", "");
-//    }
-
     private Flag push(int type, String typeName, String label, int startPosition, int length, String node2String,
-    					String childProps, String parentProp ) {    	
+    					String childProps, ArrayList<Property> propertyPath ) {    	
     	Flag flag= Flag.NULL;
     	ITree t = context.createTree(type, label, typeName);
         t.setPos(startPosition);
@@ -129,8 +130,8 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         t.setNode2String(node2String);
         t.setChildProps(childProps);
         
-        ArrayList<String> newProps = t.getParentProps();
-        newProps.add(parentProp);
+        ArrayList<Property> newProps = t.getParentProps();
+        newProps.addAll(propertyPath);
         t.setParentProps(newProps);
         
         int vMethodPos = 0;

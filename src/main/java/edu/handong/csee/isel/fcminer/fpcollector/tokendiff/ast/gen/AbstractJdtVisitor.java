@@ -154,7 +154,7 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         	info.setVMethod(t);
         	context.setRoot(t);
 			flag = Flag.Method;
-		}
+		}        
         
         //for finding violating node
 //        if(info.getVNode() == null &&

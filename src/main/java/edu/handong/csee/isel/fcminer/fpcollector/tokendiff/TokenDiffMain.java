@@ -29,6 +29,9 @@ public class TokenDiffMain {
 		int cnt =1;
 		for(Info info: infos) {
 			info = prepare4GumTree(info, cnt);
+			if(info.getVMethod() == null) {
+				info = null;
+			}
 		    cnt++;
 		}
 	}
@@ -36,6 +39,10 @@ public class TokenDiffMain {
 	private Info prepare4GumTree(Info info, int cnt) {		
 		MethodFinder methodFinder = new MethodFinder(info);
 	    info = methodFinder.findMethod();
+	  //the case when the violating line is not in a method but in static block or something.
+	    if(info.getVMethod() == null) {
+	    	return info;
+	    }
 	    info.setMockClass(method2Class(info.getVMethodString(), cnt));
 	    info.setVNode(findVNode(info));
 	    divide(info);
@@ -156,7 +163,7 @@ public class TokenDiffMain {
 		System.out.println("INFO: Start to get and Write FC-Miner Result File");
 		long start = System.currentTimeMillis();
 		for(int i = 0 ; i < infos.size(); i ++) {
-			
+			if(infos.get(i) == null) continue;
 			if(i==0) System.out.print("Start...");
 			else if((i / infos.size()) * 100 >= 80) System.out.print("80%...");
 			else if((i / infos.size()) * 100 >= 60) System.out.print("60%...");
@@ -165,6 +172,7 @@ public class TokenDiffMain {
 			
 			tokenDiff.compare(infos.get(i));
 			for(int j = i ; j < infos.size(); j++) {
+				if(infos.get(j) == null) continue;
 				tokenDiff.compare(infos.get(j));
 			}
 

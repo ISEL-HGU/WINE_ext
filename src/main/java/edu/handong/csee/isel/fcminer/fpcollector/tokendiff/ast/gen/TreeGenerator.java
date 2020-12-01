@@ -22,8 +22,10 @@ public abstract class TreeGenerator {
     
     public Info generateFromReader(Reader r, Info info) throws IOException {
         Info updatedInfo = generate(r, info);
+        
+      //the case when the violating line is not in a method but in static block or something.
         if(updatedInfo.getCtx().getRoot() == null) {
-        	System.out.println(updatedInfo.path);
+        	return updatedInfo;
         }
         updatedInfo.getCtx().validate();
         return updatedInfo;

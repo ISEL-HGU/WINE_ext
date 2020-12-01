@@ -11,7 +11,7 @@ public class Mapping {
 	int matchedParent = -1;
 	ArrayList<Property> parentProperties = new ArrayList<>();
 	Part part = null;
-
+	int hash = -1;	
 	
 	public Mapping() {
 		
@@ -19,6 +19,14 @@ public class Mapping {
 	
 	public Mapping(ITree t1, ITree t2) {
 		this.mapping = new Pair<ITree, ITree>(t1, t2);
+	}
+	
+	public void setHash(int hash) {
+		this.hash = hash;
+	}
+	
+	public int getHash() {
+		return hash;
 	}
 	
 	public void setPart(Part part) {

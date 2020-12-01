@@ -64,7 +64,6 @@ public class Matcher {
 						}
 						
 						Mapping tempMapping = new Mapping();
-						
 						for(int k = 0; k < tempPPLen; k ++) {
 							if(tempFNodePP.get(k).getNodeType() == tempVarNodePP.get(k).getNodeType()
 									&& tempFNodePP.get(k).getProp().equals(tempVarNodePP.get(k).getProp())) {
@@ -82,13 +81,19 @@ public class Matcher {
 								fixedCh[i] = true;
 							} else break;
 						}
+						String tempMappingHashString = "";
 						if(tempMapping.getMatchedParent() != -1) {
+							tempMappingHashString += tempMapping.getMapping().getFirst().getType();
+							tempMappingHashString += tempMapping.getMatchedParent();
 							tempHashString += tempMapping.getMapping().getFirst().getType();
 							tempHashString += tempMapping.getMatchedParent();
 							for(int k = 0; k < tempMapping.getParentProperties().size(); k ++) {
 								tempHashString += tempMapping.getParentProperties().get(k).getNodeType(); 
-								tempHashString += tempMapping.getParentProperties().get(k).getProp(); 
-							}
+								tempHashString += tempMapping.getParentProperties().get(k).getProp();
+								tempMappingHashString += tempMapping.getParentProperties().get(k).getNodeType(); 
+								tempMappingHashString += tempMapping.getParentProperties().get(k).getProp();
+							}							
+							tempMapping.setHash(tempMappingHashString.hashCode());
 							tempMapStorage.add(tempMapping);
 						}
 					}

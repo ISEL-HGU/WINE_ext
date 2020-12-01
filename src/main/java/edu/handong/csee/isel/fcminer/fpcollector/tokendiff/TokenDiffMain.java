@@ -44,6 +44,9 @@ public class TokenDiffMain {
 	
 	private void divide(Info info) {		
 		List<ITree> currents = new ArrayList<>();
+		
+		if(info.getVNode() == null) return;
+		
 		currents.add(info.getVMethod());
         while (currents.size() > 0) {        	
             ITree c = currents.remove(0);

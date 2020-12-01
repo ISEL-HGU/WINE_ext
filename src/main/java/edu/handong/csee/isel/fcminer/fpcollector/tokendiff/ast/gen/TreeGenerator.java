@@ -22,6 +22,9 @@ public abstract class TreeGenerator {
     
     public Info generateFromReader(Reader r, Info info) throws IOException {
         Info updatedInfo = generate(r, info);
+        if(updatedInfo.getCtx().getRoot() == null) {
+        	System.out.println(updatedInfo.path);
+        }
         updatedInfo.getCtx().validate();
         return updatedInfo;
     }

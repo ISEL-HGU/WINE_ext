@@ -121,7 +121,8 @@ public class InfoCollector {
 	private String getScope(String scope, int op, ArrayList<String> sourceByLine) {
 		String[] scopeList = scope.split("-");
 		if(scopeList.length == 1) {
-			return getOneLineScope(Integer.parseInt(scopeList[0]), op, sourceByLine);
+			return scopeList[0];
+//			return getOneLineScope(Integer.parseInt(scopeList[0]), op, sourceByLine);
 		}
 		return scopeList[op];
 	}
@@ -166,7 +167,7 @@ public class InfoCollector {
 						info.start = Integer.parseInt(getScope(VICLineNum, 0, info.sourceByLine));
 						info.end = Integer.parseInt(getScope(VICLineNum, 1, info.sourceByLine));
 						for(int i = info.start; i <= info.end; i++) {
-							info.addVLine(info.sourceByLine.get(i));
+							info.addVLine(info.sourceByLine.get(i) + "\n");
 						}
 						return info;
 					}
@@ -178,7 +179,7 @@ public class InfoCollector {
 						info.start = Integer.parseInt(getScope(LDCLineNum, 0, info.sourceByLine));
 						info.end = Integer.parseInt(getScope(LDCLineNum, 1, info.sourceByLine));
 						for(int i = info.start; i <= info.end; i++) {
-							info.addVLine(info.sourceByLine.get(i));
+							info.addVLine(info.sourceByLine.get(i) + "\n");
 						}
 						return info;
 					}
@@ -190,7 +191,7 @@ public class InfoCollector {
 					info.start = Integer.parseInt(getScope(LDCLineNum, 0, info.sourceByLine));
 					info.end = Integer.parseInt(getScope(LDCLineNum, 1, info.sourceByLine));
 					for(int i = info.start; i <= info.end; i++) {
-						info.addVLine(info.sourceByLine.get(i));
+						info.addVLine(info.sourceByLine.get(i) + "\n");
 					}
 					return info;
 				}
@@ -207,7 +208,7 @@ public class InfoCollector {
 					info.start = Integer.parseInt(getScope(VICLineNum, 0, info.sourceByLine));
 					info.end = Integer.parseInt(getScope(VICLineNum, 1, info.sourceByLine));
 					for(int i = info.start; i <= info.end; i++) {
-						info.addVLine(info.sourceByLine.get(i));
+						info.addVLine(info.sourceByLine.get(i) + "\n");
 					}
 					return info;
 				}
@@ -219,7 +220,7 @@ public class InfoCollector {
 					info.start = Integer.parseInt(getScope(LDCLineNum, 0, info.sourceByLine));
 					info.end = Integer.parseInt(getScope(LDCLineNum, 1, info.sourceByLine));
 					for(int i = info.start; i <= info.end; i++) {
-						info.addVLine(info.sourceByLine.get(i));
+						info.addVLine(info.sourceByLine.get(i) + "\n");
 					}
 					return info;
 				}

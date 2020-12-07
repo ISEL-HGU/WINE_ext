@@ -93,7 +93,7 @@ public class Matcher {
 								tempMappingHashString += tempMapping.getParentProperties().get(k).getNodeType(); 
 								tempMappingHashString += tempMapping.getParentProperties().get(k).getProp();
 							}							
-							tempMapping.setHash(tempMappingHashString.hashCode());
+							tempMapping.setHash(tempMappingHashString.hashCode());							
 							tempMapStorage.add(tempMapping);
 						}
 					}

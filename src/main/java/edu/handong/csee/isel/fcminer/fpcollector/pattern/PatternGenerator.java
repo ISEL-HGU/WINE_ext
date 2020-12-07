@@ -18,28 +18,49 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorag
 public class PatternGenerator {
 	ArrayList<MappingStorage> sto = new ArrayList<>();
 	ArrayList<Integer> hashList = new ArrayList<>();
-	HashMap<Integer, Mapping> patterns = new HashMap<>();
+	HashMap<Integer, MappingStorage> patterns = new HashMap<>();
 	HashMap<Integer, Integer> patternCnt = new HashMap<>();
 	int cnt = 0;
 	public PatternGenerator(ArrayList<MappingStorage> sto) {
 		this.sto = sto;
 	}
 	
+	//patternizing with a node
+//	public void collect() {
+//		for(int i = 0 ; i < sto.size(); i ++) {
+//			for(int j = 0 ; j < sto.get(i).getMappingStorageV().size(); j ++) {
+//				int tempHash = sto.get(i).getMappingStorageV().get(j).getHash();
+//				if(!hashList.contains(tempHash)) {
+//					hashList.add(tempHash);
+//				}
+//				Mapping tempMapping = sto.get(i).getMappingStorageV().get(j);			
+//				patterns.put(tempHash, tempMapping);
+//				
+//				if(patternCnt.containsKey(tempHash)) {
+//					patternCnt.put(tempHash, patternCnt.get(tempHash) + 1);
+//				} else {
+//					patternCnt.put(tempHash, 1);
+//				}
+//			}
+//		}	
+//	}
+	
+	//patternizing with one context
 	public void collect() {
 		for(int i = 0 ; i < sto.size(); i ++) {
-			for(int j = 0 ; j < sto.get(i).getMappingStorageV().size(); j ++) {
-				int tempHash = sto.get(i).getMappingStorageV().get(j).getHash();
-				if(!hashList.contains(tempHash)) {
-					hashList.add(tempHash);
-				}
-				Mapping tempMapping = sto.get(i).getMappingStorageV().get(j);			
-				patterns.put(tempHash, tempMapping);
-				
-				if(patternCnt.containsKey(tempHash)) {
-					patternCnt.put(tempHash, patternCnt.get(tempHash) + 1);
-				} else {
-					patternCnt.put(tempHash, 1);
-				}
+			int tempHash = sto.get(i).getHash();
+			
+			if(!hashList.contains(tempHash)) {
+				hashList.add(tempHash);
+			}
+			
+			MappingStorage tempMappingSto = sto.get(i);			
+			patterns.put(tempHash, tempMappingSto);
+			
+			if(patternCnt.containsKey(tempHash)) {
+				patternCnt.put(tempHash, patternCnt.get(tempHash) + 1);
+			} else {
+				patternCnt.put(tempHash, 1);
 			}
 		}	
 	}
@@ -60,11 +81,11 @@ public class PatternGenerator {
 				String patternID = "" + cnt;
 				int f = patternCnt.get(tempHash);
 				String frequency = "" + f;
-				String total = "" + t;
-				float r = f / t;				 				
-				String ratio = "" + (Math.round(r * 100) / 100.0);
+//				String total = "" + t;
+//				float r = f / t;				 				
+//				String ratio = "" + (Math.round(r * 100) / 100.0);
 				String pattern = mapping2String(patterns.get(tempHash));								
-				csvPrinter.printRecord(patternID, pattern, frequency, total, ratio);
+				csvPrinter.printRecord(patternID, pattern, frequency, "", "");
 			}
 			writer.flush();
 			writer.close();
@@ -73,17 +94,20 @@ public class PatternGenerator {
 		}
 	}
 	
-	private String mapping2String(Mapping mapping) {
+	private String mapping2String(MappingStorage mappingSto) {
 		Pattern p = new Pattern();
 		String tempPattern = "CommonNodes: ";
-		tempPattern += p.type2String(mapping.getMapping().getFirst().getType());
-		tempPattern += "(";
-		for(int i = 0 ; i < mapping.getParentProperties().size(); i ++) {
-			Property tempProp = mapping.getParentProperties().get(i);			
-			tempPattern += tempProp.getTypeName() + "-" + tempProp.getProp() + " ";			
+		for(int i = 0 ; i < mappingSto.getMappingStorageV().size(); i ++) {
+			Mapping tempMapping = mappingSto.getMappingStorageV().get(i);
+			tempPattern += p.type2String(tempMapping.getMapping().getFirst().getType());
+			tempPattern += "(";
+			for(int j = 0 ; j < tempMapping.getParentProperties().size(); j++) {
+				tempPattern += tempMapping.getParentProperties().get(j).getTypeName() + "-" 
+								+ tempMapping.getParentProperties().get(j).getProp() + " ";
+			}
+			tempPattern += "), ";			
 		}
-		tempPattern += "), ";
 		
-		return tempPattern;		
+		return tempPattern;
 	}
 }

@@ -20,7 +20,7 @@ public class Alarm {
 	
 	public Alarm(String alarm) {		
 			dir = alarm.split(":")[0];
-			dir = "." + dir.split("FC-Miner")[1];
+			dir = "." + dir.split("FPC-Miner")[1];
 			lineNum = alarm.split(":")[1];			
 			readFile(dir, lineNum);
 	}

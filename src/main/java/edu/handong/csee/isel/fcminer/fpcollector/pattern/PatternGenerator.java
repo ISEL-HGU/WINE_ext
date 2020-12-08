@@ -84,7 +84,8 @@ public class PatternGenerator {
 //				String total = "" + t;
 //				float r = f / t;				 				
 //				String ratio = "" + (Math.round(r * 100) / 100.0);
-				String pattern = mapping2String(patterns.get(tempHash));								
+				String pattern = mapping2String(patterns.get(tempHash));
+				if(pattern.equals("CommonNodes: ")) continue;
 				csvPrinter.printRecord(patternID, pattern, frequency, "", "");
 			}
 			writer.flush();

@@ -128,12 +128,12 @@ public class PatternGenerator {
 			//new
 			for(Pattern p : patterns) {
 				if(omittedPatterns.get(cnt) == true) continue;
-				cnt++;
-				String patternID = "" + cnt;				 
-				String f = "" + p.pattern.getFirst();
 				String pattern = "CommonNodes: ";
 				pattern += p.pattern.getSecond();
 				if(pattern.equals("CommonNodes: ")) continue;
+				cnt++;
+				String patternID = "" + cnt;				 
+				String f = "" + p.pattern.getFirst();								
 				csvPrinter.printRecord(patternID, pattern, f, "", "");
 			}
 			//old		

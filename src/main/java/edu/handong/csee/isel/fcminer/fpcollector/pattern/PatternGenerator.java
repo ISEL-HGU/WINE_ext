@@ -86,10 +86,11 @@ public class PatternGenerator {
 		for(int i = 0; i < patterns.size(); i ++) {
 			if(omittedPatterns.get(i) == true) continue;
 			
-			Pattern tempPattern = patterns.get(i);
+			Pattern tempSrcPattern = patterns.get(i);
 			
 			for(int j = i + 1; j < patterns.size(); j ++) {
-				if(tempPattern.contain(patterns.get(j).pattern.getSecond())) {
+				Pattern tempDstPattern = patterns.get(j);
+				if(tempSrcPattern.contain(tempDstPattern.pattern.getSecond())) {
 					omittedPatterns.set(j, true);
 				}
 			}

@@ -17,44 +17,25 @@ public class Pattern implements Comparable<Pattern>{
 		String p1 = this.pattern.getSecond();
 		String[] p1Nodes = p1.split(", ");
 		String[] p2Nodes = p2.split(", ");
-		
-		if(p1Nodes.length < p2Nodes.length) {
-			int matchCnt = 0;
-			int matchIdx = -1;
-			for(int i = 0; i < p1Nodes.length; i++) {								
-				int flag = 0;
-				for(int j = matchIdx+1; j < p2Nodes.length; j ++) {				
-					if(p1Nodes[i].equals(p2Nodes[j])) {
-						matchIdx = j;
-						matchCnt++;
-						flag = 1;
-						break;
-					}
-				}
-				if(flag != 1) {
+		if(p1Nodes.length <= p2Nodes.length) return false;
+		int matchCnt = 0;
+		int matchIdx = -1;
+				
+		for(int i = 0; i < p2Nodes.length; i++) {								
+			int flag = 0;
+			for(int j = matchIdx+1; j < p1Nodes.length; j ++) {				
+				if(p2Nodes[i].equals(p1Nodes[j])) {
+					matchIdx = j;
+					matchCnt++;
+					flag = 1;
 					break;
 				}
-				if(matchCnt == p1Nodes.length) return true;				
 			}
-		} else {
-			int matchCnt = 0;
-			int matchIdx = -1;
-			for(int i = 0; i < p2Nodes.length; i++) {								
-				int flag = 0;
-				for(int j = matchIdx+1; j < p1Nodes.length; j ++) {				
-					if(p2Nodes[i].equals(p1Nodes[j])) {
-						matchIdx = j;
-						matchCnt++;
-						flag = 1;
-						break;
-					}
-				}
-				if(flag != 1) {
-					break;
-				}
-				if(matchCnt == p2Nodes.length) return true;				
-			}								
-		}		
+			if(flag != 1) {
+				break;
+			}
+			if(matchCnt == p2Nodes.length) return true;				
+		}								
 		return false;
 	}
 	

@@ -22,7 +22,7 @@ public class PatternGenerator {
 	HashMap<Integer, MappingStorage> mappingHash = new HashMap<>();
 	HashMap<Integer, Integer> patternCnt = new HashMap<>();
 	ArrayList<Pattern> patterns = new ArrayList<>();
-	ArrayList<Boolean> omittedPatterns;
+	ArrayList<Boolean> omittedPatterns= new ArrayList<>();;
 	
 	int cnt = 0;
 	public PatternGenerator(ArrayList<MappingStorage> sto) {
@@ -75,7 +75,10 @@ public class PatternGenerator {
 	}
 	
 	private void omitUselessPatterns() {
-		omittedPatterns = new ArrayList<>(patterns.size());
+		for(int i = 0 ; i < patterns.size(); i ++) {
+			omittedPatterns.add(i, false);
+		}
+		
 		//need to sort first
 		Collections.sort(patterns);
 		
@@ -100,7 +103,7 @@ public class PatternGenerator {
 		//remove pattern when a pattern include another pattern with high frequency
 		for(int i = 0 ; i < t; i++) {
 			int tempHash = hashList.get(i);
-			String pattern = mapping2String(mappingHash.get(tempHash));
+			String pattern = mapping2String(mappingHash.get(tempHash));			
 			int cnt = patternCnt.get(tempHash);
 			
 			if(pattern.equals("CommonNodes: ")) continue;
@@ -157,6 +160,7 @@ public class PatternGenerator {
 	
 	private String mapping2String(MappingStorage mappingSto) {		
 		String tempPattern = "";
+		String code = "";
 		for(int i = 0 ; i < mappingSto.getMappingStorageV().size(); i ++) {
 			Mapping tempMapping = mappingSto.getMappingStorageV().get(i);
 			tempPattern += Pattern.type2String(tempMapping.getMapping().getFirst().getType());

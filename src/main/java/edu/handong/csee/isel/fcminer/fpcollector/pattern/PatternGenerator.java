@@ -126,14 +126,14 @@ public class PatternGenerator {
 			
 			//********************need to be modified******************			
 			//new
-			for(Pattern p : patterns) {
-				if(omittedPatterns.get(cnt) == true) continue;
+			for(int i = 0 ; i < patterns.size(); i ++) {
+				if(omittedPatterns.get(i) == true) continue;
 				String pattern = "CommonNodes: ";
-				pattern += p.pattern.getSecond();
+				pattern += patterns.get(i).pattern.getSecond();
 				if(pattern.equals("CommonNodes: ")) continue;
 				cnt++;
 				String patternID = "" + cnt;				 
-				String f = "" + p.pattern.getFirst();								
+				String f = "" + patterns.get(i).pattern.getFirst();								
 				csvPrinter.printRecord(patternID, pattern, f, "", "");
 			}
 			//old		

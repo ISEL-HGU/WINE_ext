@@ -72,6 +72,8 @@ public class PatternGenerator {
 		generatePattern();
 		
 		omitUselessPatterns();
+		
+		System.out.println("Omitted");
 	}
 	
 	private void omitUselessPatterns() {
@@ -92,6 +94,7 @@ public class PatternGenerator {
 				Pattern tempDstPattern = patterns.get(j);
 				if(tempSrcPattern.contain(tempDstPattern.pattern.getSecond())) {
 					omittedPatterns.set(j, true);
+					System.out.println("Omit " + j + " th element");
 				}
 			}
 			

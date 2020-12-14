@@ -84,13 +84,18 @@ public class PatternGenerator {
 		//need to sort first
 		Collections.sort(patterns);
 		
+		for(int i = 0; i < patterns.size(); i ++) {
+			System.out.println("" + i +"th element: " + patterns.get(i).pattern.getSecond() + "(" +
+					patterns.get(i).pattern.getSecond() + ")");
+		}
+		
 		//check pattern
 		for(int i = 0; i < patterns.size(); i ++) {
 			if(omittedPatterns.get(i) == true) continue;
 			
 			Pattern tempSrcPattern = patterns.get(i);
 			
-			for(int j = i + 1; j < patterns.size(); j ++) {
+			for(int j = i + 1; j < patterns.size(); j ++) {				
 				Pattern tempDstPattern = patterns.get(j);
 				if(tempSrcPattern.contain(tempDstPattern.pattern.getSecond())) {
 					omittedPatterns.set(j, true);

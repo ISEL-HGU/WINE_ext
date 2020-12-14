@@ -34,20 +34,20 @@ public class Matcher {
 		return storage;
 	}
 	
-	private void findMatchIn(ArrayList<ITree> fixed, ArrayList<ITree> var,Part part) {
+	private void findMatchIn(ArrayList<ITree> fixedLineTree, ArrayList<ITree> varLineTree,Part part) {
 		if(part == Part.F) {
 			
 		} 
 		else if(part == Part.V) {
 			// same type node collect
-			boolean[] varCh = new boolean[var.size()];
-			boolean[] fixedCh = new boolean[fixed.size()];
+			boolean[] varCh = new boolean[varLineTree.size()];
+			boolean[] fixedCh = new boolean[fixedLineTree.size()];
 			ArrayList<Mapping> tempMapStorage = new ArrayList<>();
 			
-			for(int i = 0; i < fixed.size(); i ++) {
-				ITree tempFNode = fixed.get(i);
-				for(int j = 0 ; j < var.size(); j ++) {
-					ITree tempVarNode = var.get(j);
+			for(int i = 0; i < fixedLineTree.size(); i ++) {
+				ITree tempFNode = fixedLineTree.get(i);
+				for(int j = 0 ; j < varLineTree.size(); j ++) {
+					ITree tempVarNode = varLineTree.get(j);
 					if(varCh[j] == true) continue;
 					if(fixedCh[i] == true) break;
 					
@@ -92,7 +92,9 @@ public class Matcher {
 								tempHashString += tempMapping.getParentProperties().get(k).getProp();
 								tempMappingHashString += tempMapping.getParentProperties().get(k).getNodeType(); 
 								tempMappingHashString += tempMapping.getParentProperties().get(k).getProp();
-							}							
+							}									
+							
+							tempMapping.setCode(fixed.getVLine());
 							tempMapping.setHash(tempMappingHashString.hashCode());							
 							tempMapStorage.add(tempMapping);
 						}

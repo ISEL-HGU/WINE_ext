@@ -7,9 +7,11 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.Pair;
 
 public class Pattern implements Comparable<Pattern>{
 	Pair<Integer, String> pattern;
+	String code = "";
 	
-	public Pattern(Integer cnt, String pattern) {
+	public Pattern(Integer cnt, String pattern, String code) {
 		this.pattern = new Pair<>(cnt, pattern);
+		this.code = code;
 	}
 	
 	public boolean contain(String p2) {

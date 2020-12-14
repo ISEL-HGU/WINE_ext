@@ -73,7 +73,7 @@ public class PatternGenerator {
 		
 		omitUselessPatterns();
 		
-		System.out.println("Omitted");
+//		System.out.println("Omitted");
 	}
 	
 	private void omitUselessPatterns() {
@@ -84,10 +84,10 @@ public class PatternGenerator {
 		//need to sort first
 		Collections.sort(patterns);
 		
-		for(int i = 0; i < patterns.size(); i ++) {
-			System.out.println("" + i +"th element: " + patterns.get(i).pattern.getSecond() + "(" +
-					patterns.get(i).pattern.getSecond() + ")");
-		}
+//		for(int i = 0; i < patterns.size(); i ++) {
+//			System.out.println("" + i +"th element: " + patterns.get(i).pattern.getSecond() + "(" +
+//					patterns.get(i).pattern.getSecond() + ")");
+//		}
 		
 		//check pattern
 		for(int i = 0; i < patterns.size(); i ++) {
@@ -99,7 +99,7 @@ public class PatternGenerator {
 				Pattern tempDstPattern = patterns.get(j);
 				if(tempSrcPattern.contain(tempDstPattern.pattern.getSecond())) {
 					omittedPatterns.set(j, true);
-					System.out.println("Omit " + j + " th element");
+//					System.out.println("Omit " + j + " th element with " + i);
 				}
 			}
 			
@@ -114,10 +114,12 @@ public class PatternGenerator {
 			int tempHash = hashList.get(i);
 			String pattern = mapping2String(mappingHash.get(tempHash));			
 			int cnt = patternCnt.get(tempHash);
-			
+			String code = "";
+			if(mappingHash.get(tempHash).getMappingStorageV().size() > 0)
+				code = mappingHash.get(tempHash).getMappingStorageV().get(0).getCode();
 			if(pattern.equals("CommonNodes: ")) continue;
 			
-			patterns.add(new Pattern(cnt, pattern));
+			patterns.add(new Pattern(cnt, pattern, code));
 		}
 	}
 	
@@ -127,7 +129,7 @@ public class PatternGenerator {
 		try(			
 			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
-					.withHeader("Pattern ID", "Pattern", "Frequency", "Total", "Ratio"));
+					.withHeader("Pattern ID", "Pattern", "Frequency", "Code", "Total", "Ratio"));
 			) {
 			int t = hashList.size();
 			
@@ -141,8 +143,12 @@ public class PatternGenerator {
 				if(pattern.equals("CommonNodes: ")) continue;
 				cnt++;
 				String patternID = "" + cnt;				 
-				String f = "" + patterns.get(i).pattern.getFirst();								
-				csvPrinter.printRecord(patternID, pattern, f, "", "");
+				String f = "" + patterns.get(i).pattern.getFirst();	
+				if(patterns.get(i).code.equals(""))
+					csvPrinter.printRecord(patternID, pattern, f, "EMPTY", "", "");
+				else {
+					csvPrinter.printRecord(patternID, pattern, f, patterns.get(i).code, "", "");
+				}
 			}
 			//old		
 //			for(int i = 0 ; i < t; i++) {
@@ -169,7 +175,6 @@ public class PatternGenerator {
 	
 	private String mapping2String(MappingStorage mappingSto) {		
 		String tempPattern = "";
-		String code = "";
 		for(int i = 0 ; i < mappingSto.getMappingStorageV().size(); i ++) {
 			Mapping tempMapping = mappingSto.getMappingStorageV().get(i);
 			tempPattern += Pattern.type2String(tempMapping.getMapping().getFirst().getType());

@@ -28,6 +28,12 @@ public class TokenDiffMain {
 	private void dataPreprocess() {
 		int cnt =1;
 		for(Info info: infos) {
+			if(cnt==1) System.out.print("\nStart...");
+			else if((cnt / infos.size()) * 100 >= 80) System.out.print("80%...\n");
+			else if((cnt / infos.size()) * 100 >= 60) System.out.print("60%...");
+			else if((cnt / infos.size()) * 100 >= 40) System.out.print("40%...");
+			else if((cnt / infos.size()) * 100 >= 20) System.out.print("20%...");
+			
 			info = prepare4GumTree(info, cnt);
 			if(info.getVMethod() == null) {
 				info = null;

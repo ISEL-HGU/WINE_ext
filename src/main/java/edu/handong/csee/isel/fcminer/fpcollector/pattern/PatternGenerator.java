@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 import org.apache.commons.csv.CSVFormat;
@@ -18,8 +19,11 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorag
 public class PatternGenerator {
 	ArrayList<MappingStorage> sto = new ArrayList<>();
 	ArrayList<Integer> hashList = new ArrayList<>();
-	HashMap<Integer, MappingStorage> patterns = new HashMap<>();
+	HashMap<Integer, MappingStorage> mappingHash = new HashMap<>();
 	HashMap<Integer, Integer> patternCnt = new HashMap<>();
+	ArrayList<Pattern> patterns = new ArrayList<>();
+	ArrayList<Boolean> omittedPatterns;
+	
 	int cnt = 0;
 	public PatternGenerator(ArrayList<MappingStorage> sto) {
 		this.sto = sto;
@@ -55,14 +59,54 @@ public class PatternGenerator {
 			}
 			
 			MappingStorage tempMappingSto = sto.get(i);			
-			patterns.put(tempHash, tempMappingSto);
+			mappingHash.put(tempHash, tempMappingSto);
 			
 			if(patternCnt.containsKey(tempHash)) {
 				patternCnt.put(tempHash, patternCnt.get(tempHash) + 1);
 			} else {
 				patternCnt.put(tempHash, 1);
 			}
-		}	
+		}
+		
+		
+		generatePattern();
+		
+		omitUselessPatterns();
+	}
+	
+	private void omitUselessPatterns() {
+		omittedPatterns = new ArrayList<>(patterns.size());
+		//need to sort first
+		Collections.sort(patterns);
+		
+		//check pattern
+		for(int i = 0; i < patterns.size(); i ++) {
+			if(omittedPatterns.get(i) == true) continue;
+			
+			Pattern tempPattern = patterns.get(i);
+			
+			for(int j = i + 1; j < patterns.size(); j ++) {
+				if(tempPattern.contain(patterns.get(j).pattern.getSecond())) {
+					omittedPatterns.set(j, true);
+				}
+			}
+			
+		}
+	}
+	
+	private void generatePattern() {
+		int t = hashList.size();
+		
+		//remove pattern when a pattern include another pattern with high frequency
+		for(int i = 0 ; i < t; i++) {
+			int tempHash = hashList.get(i);
+			String pattern = mapping2String(mappingHash.get(tempHash));
+			int cnt = patternCnt.get(tempHash);
+			
+			if(pattern.equals("CommonNodes: ")) continue;
+			
+			patterns.add(new Pattern(cnt, pattern));
+		}
 	}
 	
 	public void writePatterns() {
@@ -75,19 +119,35 @@ public class PatternGenerator {
 			) {
 			int t = hashList.size();
 			
-			for(int i = 0 ; i < t; i++) {
-				int tempHash = hashList.get(i);
+			
+			//********************need to be modified******************			
+			//new
+			for(Pattern p : patterns) {
+				if(omittedPatterns.get(cnt) == true) continue;
 				cnt++;
-				String patternID = "" + cnt;
-				int f = patternCnt.get(tempHash);
-				String frequency = "" + f;
+				String patternID = "" + cnt;				 
+				String f = "" + p.pattern.getFirst();
+				String pattern = "CommonNodes: ";
+				pattern += p.pattern.getSecond();
+				if(pattern.equals("CommonNodes: ")) continue;
+				csvPrinter.printRecord(patternID, pattern, f, "", "");
+			}
+			//old		
+//			for(int i = 0 ; i < t; i++) {
+//				int tempHash = hashList.get(i);
+//				cnt++;
+//				String patternID = "" + cnt;
+//				int f = patternCnt.get(tempHash);
+//				String frequency = "" + f;
 //				String total = "" + t;
 //				float r = f / t;				 				
 //				String ratio = "" + (Math.round(r * 100) / 100.0);
-				String pattern = mapping2String(patterns.get(tempHash));
-				if(pattern.equals("CommonNodes: ")) continue;
-				csvPrinter.printRecord(patternID, pattern, frequency, "", "");
-			}
+//				String pattern = "CommonNodes: ";
+//				pattern += mapping2String(mappingHash.get(tempHash));
+//				if(pattern.equals("CommonNodes: ")) continue;
+//				csvPrinter.printRecord(patternID, pattern, frequency, "", "");
+//			}
+			//********************need to be modified******************
 			writer.flush();
 			writer.close();
 		}catch(IOException e){
@@ -95,12 +155,11 @@ public class PatternGenerator {
 		}
 	}
 	
-	private String mapping2String(MappingStorage mappingSto) {
-		Pattern p = new Pattern();
-		String tempPattern = "CommonNodes: ";
+	private String mapping2String(MappingStorage mappingSto) {		
+		String tempPattern = "";
 		for(int i = 0 ; i < mappingSto.getMappingStorageV().size(); i ++) {
 			Mapping tempMapping = mappingSto.getMappingStorageV().get(i);
-			tempPattern += p.type2String(tempMapping.getMapping().getFirst().getType());
+			tempPattern += Pattern.type2String(tempMapping.getMapping().getFirst().getType());
 			tempPattern += "(";
 			for(int j = 0 ; j < tempMapping.getParentProperties().size(); j++) {
 				tempPattern += tempMapping.getParentProperties().get(j).getTypeName() + "-" 

@@ -12,7 +12,6 @@ import java.util.HashMap;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.Mapping;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
 
@@ -20,8 +19,7 @@ public class PatternGenerator {
 	ArrayList<MappingStorage> sto = new ArrayList<>();
 	ArrayList<Integer> hashList = new ArrayList<>();
 	HashMap<Integer, MappingStorage> mappingHash = new HashMap<>();
-	HashMap<Integer, Integer> patternCnt = new HashMap<>();
-	ArrayList<Pattern> patterns = new ArrayList<>();
+	HashMap<Integer, Integer> patternCnt = new HashMap<>();	
 	ArrayList<Boolean> omittedPatterns= new ArrayList<>();;
 	
 	int cnt = 0;
@@ -29,28 +27,10 @@ public class PatternGenerator {
 		this.sto = sto;
 	}
 	
-	//patternizing with a node
-//	public void collect() {
-//		for(int i = 0 ; i < sto.size(); i ++) {
-//			for(int j = 0 ; j < sto.get(i).getMappingStorageV().size(); j ++) {
-//				int tempHash = sto.get(i).getMappingStorageV().get(j).getHash();
-//				if(!hashList.contains(tempHash)) {
-//					hashList.add(tempHash);
-//				}
-//				Mapping tempMapping = sto.get(i).getMappingStorageV().get(j);			
-//				patterns.put(tempHash, tempMapping);
-//				
-//				if(patternCnt.containsKey(tempHash)) {
-//					patternCnt.put(tempHash, patternCnt.get(tempHash) + 1);
-//				} else {
-//					patternCnt.put(tempHash, 1);
-//				}
-//			}
-//		}	
-//	}
-	
 	//patternizing with one context
 	public void collect() {
+		ArrayList<Pattern> patternsL1;
+		
 		for(int i = 0 ; i < sto.size(); i ++) {
 			int tempHash = sto.get(i).getHash();
 			
@@ -69,44 +49,21 @@ public class PatternGenerator {
 		}
 		
 		
-		generatePattern();
 		
-		omitUselessPatterns();
+		patternsL1 = generatePattern();
 		
-//		System.out.println("Omitted");
-	}
-	
-	private void omitUselessPatterns() {
-		for(int i = 0 ; i < patterns.size(); i ++) {
-			omittedPatterns.add(i, false);
+		Collections.sort(patternsL1);
+		
+		for(int i = 0; i < patternsL1.size(); i ++) {
+			patternsL1.get(i).abstractL2();
+			patternsL1.get(i).abstractL3();
 		}
 		
-		//need to sort first
-		Collections.sort(patterns);
-		
-//		for(int i = 0; i < patterns.size(); i ++) {
-//			System.out.println("" + i +"th element: " + patterns.get(i).pattern.getSecond() + "(" +
-//					patterns.get(i).pattern.getSecond() + ")");
-//		}
-		
-		//check pattern
-		for(int i = 0; i < patterns.size(); i ++) {
-			if(omittedPatterns.get(i) == true) continue;
-			
-			Pattern tempSrcPattern = patterns.get(i);
-			
-			for(int j = i + 1; j < patterns.size(); j ++) {				
-				Pattern tempDstPattern = patterns.get(j);
-				if(tempSrcPattern.contain(tempDstPattern.pattern.getSecond())) {
-					omittedPatterns.set(j, true);
-//					System.out.println("Omit " + j + " th element with " + i);
-				}
-			}
-			
-		}
-	}
+		writePatterns(patternsL1);
+	}		
 	
-	private void generatePattern() {
+	private ArrayList<Pattern> generatePattern() {
+		ArrayList<Pattern> patterns = new ArrayList<>();
 		int t = hashList.size();
 		
 		//remove pattern when a pattern include another pattern with high frequency
@@ -121,9 +78,11 @@ public class PatternGenerator {
 			
 			patterns.add(new Pattern(cnt, pattern, code));
 		}
+		
+		return patterns;
 	}
 	
-	public void writePatterns() {
+	public void writePatterns(ArrayList<Pattern> patterns) {
 		String fileName = "./FC_Miner_Analysis.csv";
 		
 		try(			
@@ -131,11 +90,8 @@ public class PatternGenerator {
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
 					.withHeader("Pattern ID", "Pattern", "Frequency", "Code", "Total", "Ratio"));
 			) {
-			int t = hashList.size();
-			
-			
-			//********************need to be modified******************			
-			//new
+//			int t = hashList.size();
+
 			for(int i = 0 ; i < patterns.size(); i ++) {
 				if(omittedPatterns.get(i) == true) continue;
 				String pattern = "CommonNodes: ";
@@ -150,25 +106,10 @@ public class PatternGenerator {
 					csvPrinter.printRecord(patternID, pattern, f, patterns.get(i).code, "", "");
 				}
 			}
-			//old		
-//			for(int i = 0 ; i < t; i++) {
-//				int tempHash = hashList.get(i);
-//				cnt++;
-//				String patternID = "" + cnt;
-//				int f = patternCnt.get(tempHash);
-//				String frequency = "" + f;
-//				String total = "" + t;
-//				float r = f / t;				 				
-//				String ratio = "" + (Math.round(r * 100) / 100.0);
-//				String pattern = "CommonNodes: ";
-//				pattern += mapping2String(mappingHash.get(tempHash));
-//				if(pattern.equals("CommonNodes: ")) continue;
-//				csvPrinter.printRecord(patternID, pattern, frequency, "", "");
-//			}
-			//********************need to be modified******************
+
 			writer.flush();
 			writer.close();
-		}catch(IOException e){
+		} catch(IOException e){
 			e.printStackTrace();
 		}
 	}

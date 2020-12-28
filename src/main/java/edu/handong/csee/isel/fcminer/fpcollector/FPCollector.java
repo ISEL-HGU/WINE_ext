@@ -43,8 +43,7 @@ public class FPCollector {
 		ArrayList<MappingStorage> diffResult = tokenDiff.run();		
 		
 		PatternGenerator patternGen = new PatternGenerator(diffResult);
-		patternGen.collect();	
-		patternGen.writePatterns();		
+		patternGen.collect();					
 		System.out.println("DONE");
 	}
 }

@@ -2,16 +2,147 @@ package edu.handong.csee.isel.fcminer.fpcollector.pattern;
 
 import java.util.ArrayList;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.Pair;
 
 public class Pattern implements Comparable<Pattern>{
+	//pattern --> (Frequency, Pattern)
 	Pair<Integer, String> pattern;
+	
+	//example Code
 	String code = "";
+	
+	//Abstracted Pattern in Layer 2	
+	ArrayList<Pattern> patternL2 = new ArrayList<>();
+	
+	//Abstracted Pattern in Layer 3
+	ArrayList<Pattern> patternL3 = new ArrayList<>();
 	
 	public Pattern(Integer cnt, String pattern, String code) {
 		this.pattern = new Pair<>(cnt, pattern);
 		this.code = code;
+	}
+	
+	public void abstractL2() {		
+		String[] nodes = pattern.getSecond().split(",");		
+		int nodeNum = nodes.length - 1;								
+
+		ArrayList<String> abstractPattern = new ArrayList<>();
+		ArrayList<int[]> patternCombination = new ArrayList<>();
+		
+		//combination for abstracting
+		for(int i = 1 ; i < nodeNum; i ++) {
+			//nCj
+			patternCombination = combination(nodeNum, i);
+			
+			//generate abstract pattern
+			for(int[] comb : patternCombination) {				
+				String tempPattern = "";
+				boolean[] check = new boolean[nodeNum];				
+				
+				for(int j = 0; j < i; j++) {					
+					for(int k = 0 ; k < nodeNum; k++) {
+						if(comb[j] == k) {
+							check[k] = true;							
+						}
+						else if(check[k] != true && comb[j] != k){
+							check[k] = false;							
+						}
+					}										
+				}
+				
+				for(int j = 0 ; j < nodeNum; j ++) {
+					if(check[j] == true) {
+						tempPattern += nodes[j] + ", ";						
+					} else {
+						tempPattern += "<?>" + getParentProperty(nodes[j]) + ", ";
+					}
+				}				
+				abstractPattern.add(tempPattern);
+			}
+		}
+		
+		for(int i = 0; i < abstractPattern.size(); i ++) {
+			patternL2.add(new Pattern(pattern.getFirst(), abstractPattern.get(i), "code"));
+		}		
+	}
+	
+	public void abstractL3() {
+		String[] nodes = pattern.getSecond().split(",");
+		int nodeNum = nodes.length-1;								
+
+		ArrayList<String> abstractPattern = new ArrayList<>();
+		ArrayList<int[]> patternCombination = new ArrayList<>();
+		
+		//combination for abstracting
+		for(int i = 1 ; i < nodeNum; i ++) {
+			//nCj
+			patternCombination = combination(nodeNum, i);
+			
+			//generate abstract pattern
+			for(int[] comb : patternCombination) {				
+				String tempPattern = "";
+				boolean[] check = new boolean[nodeNum];				
+				
+				for(int j = 0; j < i; j++) {					
+					for(int k = 0 ; k < nodeNum; k++) {
+						if(comb[j] == k) {
+							check[k] = true;							
+						}
+						else if(check[k] != true && comb[j] != k){
+							check[k] = false;							
+						}
+					}										
+				}
+				
+				for(int j = 0 ; j < nodeNum; j ++) {
+					if(check[j] == true) {
+						tempPattern += nodes[j] + ", ";						
+					} else {
+						tempPattern += "<?>" + "(? - ?)" + ", ";
+					}
+				}				
+				abstractPattern.add(tempPattern);
+			}
+		}
+		
+		for(int i = 0; i < abstractPattern.size(); i ++) {
+			patternL3.add(new Pattern(pattern.getFirst(), abstractPattern.get(i), ""));
+		}
+	}
+	
+	private String getParentProperty(String pattern) {
+		String parentProperty = "";
+		boolean flag = false;
+		for(int i = 0 ; i < pattern.length(); i ++) {
+			if(flag == false && pattern.charAt(i) == '(') {
+				parentProperty += '(';
+				flag = true;
+			} else if(flag == true && pattern.charAt(i) == ')') {
+				parentProperty += ')';
+				flag = false;
+			} else if(flag == true) {
+				parentProperty += pattern.charAt(i);
+			}
+		}
+		
+		return parentProperty;
+	}
+	
+	public ArrayList<int[]> combination(int n, int r) {
+	    ArrayList<int[]> combinations = new ArrayList<>();
+	    calculate(combinations, new int[r], 0, n-1, 0);
+	    return combinations;
+	}
+	
+	private void calculate(ArrayList<int[]> combinations, int data[], int start, int end, int index) {
+	    if (index == data.length) {
+	        int[] combination = data.clone();
+	        combinations.add(combination);
+	    } else if (start <= end) {
+	        data[index] = start;
+	        calculate(combinations, data, start + 1, end, index + 1);
+	        calculate(combinations, data, start + 1, end, index);
+	    }
 	}
 	
 	public boolean contain(String p2) {
@@ -52,6 +183,18 @@ public class Pattern implements Comparable<Pattern>{
 		} else {
 			return 0;
 		}		
+	}
+	
+	public ArrayList<Pattern> getPatternL2(){
+		return patternL2;
+	}
+	
+	public ArrayList<Pattern> getPatternL3(){
+		return patternL3;
+	}
+	
+	public Pair<Integer, String> getPattern() {
+		return pattern;
 	}
 	
 	public static String type2String(int type) {

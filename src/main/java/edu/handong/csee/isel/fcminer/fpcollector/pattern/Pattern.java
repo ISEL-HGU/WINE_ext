@@ -11,6 +11,10 @@ public class Pattern implements Comparable<Pattern>{
 	//example Code
 	String code = "";
 	
+	//hash
+	
+	int hash = -1;
+	
 	//Abstracted Pattern in Layer 2	
 	ArrayList<Pattern> patternL2 = new ArrayList<>();
 	
@@ -20,6 +24,11 @@ public class Pattern implements Comparable<Pattern>{
 	public Pattern(Integer cnt, String pattern, String code) {
 		this.pattern = new Pair<>(cnt, pattern);
 		this.code = code;
+	}
+	
+	public Pattern(Integer cnt, String pattern, int hash) {
+		this.pattern = new Pair<>(cnt, pattern);		
+		this.hash = hash;
 	}
 	
 	public void abstractL2() {		
@@ -62,7 +71,7 @@ public class Pattern implements Comparable<Pattern>{
 		}
 		
 		for(int i = 0; i < abstractPattern.size(); i ++) {
-			patternL2.add(new Pattern(pattern.getFirst(), abstractPattern.get(i), "code"));
+			patternL2.add(new Pattern(pattern.getFirst(), abstractPattern.get(i), abstractPattern.get(i).hashCode()));
 		}		
 	}
 	
@@ -106,7 +115,7 @@ public class Pattern implements Comparable<Pattern>{
 		}
 		
 		for(int i = 0; i < abstractPattern.size(); i ++) {
-			patternL3.add(new Pattern(pattern.getFirst(), abstractPattern.get(i), ""));
+			patternL3.add(new Pattern(pattern.getFirst(), abstractPattern.get(i), abstractPattern.get(i).hashCode()));
 		}
 	}
 	

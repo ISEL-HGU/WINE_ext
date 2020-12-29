@@ -30,6 +30,8 @@ public class PatternGenerator {
 	//patternizing with one context
 	public void collect() {
 		ArrayList<Pattern> patternsL1;
+		ArrayList<Pattern> patternsL2;
+		ArrayList<Pattern> patternsL3;
 		
 		for(int i = 0 ; i < sto.size(); i ++) {
 			int tempHash = sto.get(i).getHash();
@@ -59,8 +61,68 @@ public class PatternGenerator {
 			patternsL1.get(i).abstractL3();
 		}
 		
-		writePatterns(patternsL1);
-	}		
+		patternsL2 = maxPoolingL2(patternsL1);
+		patternsL3 = maxPoolingL3(patternsL1);
+		
+		
+		writePatterns(patternsL1);		
+	}
+	
+	public ArrayList<Pattern> maxPoolingL2(ArrayList<Pattern> patterns) {
+		ArrayList<Pattern> patternsL2 = new ArrayList<>();
+		ArrayList<Integer> hashList = new ArrayList<>();
+		HashMap<Integer, String> patternHashMap = new HashMap<>();
+		HashMap<Integer, Integer> patternCntHashMap = new HashMap<>();
+		
+		for(Pattern p : patterns) {
+			for(Pattern pL2 : p.getPatternL2()) {
+				if(patternHashMap.containsKey(pL2.hash)) {
+					if(patternCntHashMap.get(pL2.hash) < pL2.pattern.getFirst()) {
+						patternCntHashMap.put(pL2.hash, pL2.pattern.getFirst());
+					}
+				} 
+				else {
+					hashList.add(pL2.hash);
+					patternCntHashMap.put(pL2.hash, pL2.pattern.getFirst());
+					patternHashMap.put(pL2.hash, pL2.pattern.getSecond());
+				}								
+			}
+		}
+		
+		for(Integer hash : hashList) {
+			patternsL2.add(new Pattern(patternCntHashMap.get(hash), patternHashMap.get(hash), ""));
+		}
+		
+		return patternsL2;
+	}
+	
+	public ArrayList<Pattern> maxPoolingL3(ArrayList<Pattern> patterns) {
+		ArrayList<Pattern> patternsL3 = new ArrayList<>();
+		ArrayList<Integer> hashList = new ArrayList<>();
+		HashMap<Integer, String> patternHashMap = new HashMap<>();
+		HashMap<Integer, Integer> patternCntHashMap = new HashMap<>();
+		
+		for(Pattern p : patterns) {
+			for(Pattern pL3 : p.getPatternL3()) {
+				if(patternHashMap.containsKey(pL3.hash)) {
+					if(patternCntHashMap.get(pL3.hash) < pL3.pattern.getFirst()) {
+						patternCntHashMap.put(pL3.hash, pL3.pattern.getFirst());
+					}
+				} 
+				else {
+					hashList.add(pL3.hash);
+					patternCntHashMap.put(pL3.hash, pL3.pattern.getFirst());
+					patternHashMap.put(pL3.hash, pL3.pattern.getSecond());
+				}								
+			}
+		}
+		
+		for(Integer hash : hashList) {
+			patternsL3.add(new Pattern(patternCntHashMap.get(hash), patternHashMap.get(hash), ""));
+		}
+		
+		return patternsL3;
+	}
 	
 	private ArrayList<Pattern> generatePattern() {
 		ArrayList<Pattern> patterns = new ArrayList<>();

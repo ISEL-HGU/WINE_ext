@@ -32,15 +32,13 @@ public class testPatternAbstraction {
 //		for(Pattern pa : p1.getPatternL3()) {
 //			System.out.println("L3 : " + pa.getPattern().getSecond());
 //		}
+				
 		
-		pL2 = pg.maxPoolingL2(ps);
-		pL3 = pg.maxPoolingL3(ps);
-		
-		for(Pattern p: pL2) {
+		for(Pattern p: p1.getPatternL2()) {
 			System.out.println("(L2)Frq: " + p.getPattern().getFirst() + " Pattern: " + p.getPattern().getSecond());
 		}
 		
-		for(Pattern p: pL3) {
+		for(Pattern p: p1.getPatternL3()) {
 			System.out.println("(L3)Frq: " + p.getPattern().getFirst() + " Pattern: " + p.getPattern().getSecond());
 		}
 		

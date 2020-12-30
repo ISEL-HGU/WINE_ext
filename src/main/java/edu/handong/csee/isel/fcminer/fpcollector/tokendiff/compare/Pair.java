@@ -2,7 +2,7 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare;
 
 public class Pair<T1, T2> {
 
-    public final T1 first;
+    public T1 first;
 
     public final T2 second;
 
@@ -13,6 +13,10 @@ public class Pair<T1, T2> {
 
     public T1 getFirst() {
         return first;
+    }
+    
+    public void setFirst(T1 first) {
+    	this.first = first;
     }
 
     public T2 getSecond() {

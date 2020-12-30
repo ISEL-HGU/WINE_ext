@@ -53,76 +53,65 @@ public class PatternGenerator {
 		
 		
 		patternsL1 = generatePattern();
+		hashList = null;
+		mappingHash = null;
+		patternCnt = null;
+		sto = null;
 		
 		Collections.sort(patternsL1);
+		writePatterns(patternsL1, "L1");
 		
 		for(int i = 0; i < patternsL1.size(); i ++) {
-			patternsL1.get(i).abstractL2();
-			patternsL1.get(i).abstractL3();
+			if(i%10 == 0)
+				System.out.println("" + i);
+			if(i*100/patternsL1.size() == 20) {
+				System.out.print("20%...");
+			}
+			else if(i*100/patternsL1.size() == 40) {
+				System.out.print("40%...");
+			}
+			else if(i*100/patternsL1.size() == 60) {
+				System.out.print("60%...");
+			}
+			else if(i*100/patternsL1.size() == 80) {
+				System.out.print("80%...");
+			}
+			else if(i*100/patternsL1.size() >= 95) {
+				System.out.print("done\n");
+			}			
+			
+			patternsL1.get(i).abstractL2();			
 		}
 		
-		patternsL2 = maxPoolingL2(patternsL1);
-		patternsL3 = maxPoolingL3(patternsL1);
+		Collections.sort(patternsL1.get(0).getPatternL2());
+		writePatterns(patternsL1.get(0).getPatternL2(), "L2");
+		patternsL1.get(0).clearL2();
 		
-		
-		writePatterns(patternsL1);		
+		for(int i = 0; i < patternsL1.size(); i ++) {
+			if(i*100/patternsL1.size() == 20) {
+				System.out.print("20%...");
+			}
+			else if(i*100/patternsL1.size() == 40) {
+				System.out.print("40%...");
+			}
+			else if(i*100/patternsL1.size() == 60) {
+				System.out.print("60%...");
+			}
+			else if(i*100/patternsL1.size() == 80) {
+				System.out.print("80%...");
+			}
+			else if(i*100/patternsL1.size() >= 95) {
+				System.out.print("done\n");
+			}		
+			
+			patternsL1.get(i).abstractL3();			
+		}
+				
+		Collections.sort(patternsL1.get(0).getPatternL3());		
+		writePatterns(patternsL1.get(0).getPatternL3(), "L3");
 	}
 	
-	public ArrayList<Pattern> maxPoolingL2(ArrayList<Pattern> patterns) {
-		ArrayList<Pattern> patternsL2 = new ArrayList<>();
-		ArrayList<Integer> hashList = new ArrayList<>();
-		HashMap<Integer, String> patternHashMap = new HashMap<>();
-		HashMap<Integer, Integer> patternCntHashMap = new HashMap<>();
-		
-		for(Pattern p : patterns) {
-			for(Pattern pL2 : p.getPatternL2()) {
-				if(patternHashMap.containsKey(pL2.hash)) {
-					if(patternCntHashMap.get(pL2.hash) < pL2.pattern.getFirst()) {
-						patternCntHashMap.put(pL2.hash, pL2.pattern.getFirst());
-					}
-				} 
-				else {
-					hashList.add(pL2.hash);
-					patternCntHashMap.put(pL2.hash, pL2.pattern.getFirst());
-					patternHashMap.put(pL2.hash, pL2.pattern.getSecond());
-				}								
-			}
-		}
-		
-		for(Integer hash : hashList) {
-			patternsL2.add(new Pattern(patternCntHashMap.get(hash), patternHashMap.get(hash), ""));
-		}
-		
-		return patternsL2;
-	}
 	
-	public ArrayList<Pattern> maxPoolingL3(ArrayList<Pattern> patterns) {
-		ArrayList<Pattern> patternsL3 = new ArrayList<>();
-		ArrayList<Integer> hashList = new ArrayList<>();
-		HashMap<Integer, String> patternHashMap = new HashMap<>();
-		HashMap<Integer, Integer> patternCntHashMap = new HashMap<>();
-		
-		for(Pattern p : patterns) {
-			for(Pattern pL3 : p.getPatternL3()) {
-				if(patternHashMap.containsKey(pL3.hash)) {
-					if(patternCntHashMap.get(pL3.hash) < pL3.pattern.getFirst()) {
-						patternCntHashMap.put(pL3.hash, pL3.pattern.getFirst());
-					}
-				} 
-				else {
-					hashList.add(pL3.hash);
-					patternCntHashMap.put(pL3.hash, pL3.pattern.getFirst());
-					patternHashMap.put(pL3.hash, pL3.pattern.getSecond());
-				}								
-			}
-		}
-		
-		for(Integer hash : hashList) {
-			patternsL3.add(new Pattern(patternCntHashMap.get(hash), patternHashMap.get(hash), ""));
-		}
-		
-		return patternsL3;
-	}
 	
 	private ArrayList<Pattern> generatePattern() {
 		ArrayList<Pattern> patterns = new ArrayList<>();
@@ -144,8 +133,8 @@ public class PatternGenerator {
 		return patterns;
 	}
 	
-	public void writePatterns(ArrayList<Pattern> patterns) {
-		String fileName = "./FC_Miner_Analysis.csv";
+	public void writePatterns(ArrayList<Pattern> patterns, String label) {
+		String fileName = "./FPC_Patterns_" + label + ".csv";
 		
 		try(			
 			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
@@ -154,8 +143,7 @@ public class PatternGenerator {
 			) {
 //			int t = hashList.size();
 
-			for(int i = 0 ; i < patterns.size(); i ++) {
-				if(omittedPatterns.get(i) == true) continue;
+			for(int i = 0 ; i < patterns.size(); i ++) {				
 				String pattern = "CommonNodes: ";
 				pattern += patterns.get(i).pattern.getSecond();
 				if(pattern.equals("CommonNodes: ")) continue;

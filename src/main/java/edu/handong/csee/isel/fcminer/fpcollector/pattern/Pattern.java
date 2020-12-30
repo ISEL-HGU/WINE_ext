@@ -1,6 +1,7 @@
 package edu.handong.csee.isel.fcminer.fpcollector.pattern;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.Pair;
 
@@ -16,10 +17,10 @@ public class Pattern implements Comparable<Pattern>{
 	int hash = -1;
 	
 	//Abstracted Pattern in Layer 2	
-	ArrayList<Pattern> patternL2 = new ArrayList<>();
+	static ArrayList<Pattern> patternL2 = new ArrayList<>();
 	
 	//Abstracted Pattern in Layer 3
-	ArrayList<Pattern> patternL3 = new ArrayList<>();
+	static ArrayList<Pattern> patternL3 = new ArrayList<>();
 	
 	public Pattern(Integer cnt, String pattern, String code) {
 		this.pattern = new Pair<>(cnt, pattern);
@@ -31,11 +32,66 @@ public class Pattern implements Comparable<Pattern>{
 		this.hash = hash;
 	}
 	
+//	static public ArrayList<Pattern> maxPoolingL2(ArrayList<Pattern> patterns) {
+//		ArrayList<Pattern> patternsL2 = new ArrayList<>();
+//		ArrayList<Integer> hashList = new ArrayList<>();
+//		HashMap<Integer, String> patternHashMap = new HashMap<>();
+//		HashMap<Integer, Integer> patternCntHashMap = new HashMap<>();
+//		
+//		for(Pattern p : patterns) {
+//			for(Pattern pL2 : p.getPatternL2()) {
+//				if(patternHashMap.containsKey(pL2.hash)) {
+//					if(patternCntHashMap.get(pL2.hash) < pL2.pattern.getFirst()) {
+//						patternCntHashMap.put(pL2.hash, pL2.pattern.getFirst());
+//					}
+//				} 
+//				else {
+//					hashList.add(pL2.hash);
+//					patternCntHashMap.put(pL2.hash, pL2.pattern.getFirst());
+//					patternHashMap.put(pL2.hash, pL2.pattern.getSecond());
+//				}								
+//			}
+//		}
+//		
+//		for(Integer hash : hashList) {
+//			patternsL2.add(new Pattern(patternCntHashMap.get(hash), patternHashMap.get(hash), ""));
+//		}
+//		
+//		return patternsL2;
+//	}
+	
+//	static public ArrayList<Pattern> maxPoolingL3(ArrayList<Pattern> patterns) {
+//		ArrayList<Pattern> patternsL3 = new ArrayList<>();
+//		ArrayList<Integer> hashList = new ArrayList<>();
+//		HashMap<Integer, String> patternHashMap = new HashMap<>();
+//		HashMap<Integer, Integer> patternCntHashMap = new HashMap<>();
+//		
+//		for(Pattern p : patterns) {
+//			for(Pattern pL3 : p.getPatternL3()) {
+//				if(patternHashMap.containsKey(pL3.hash)) {
+//					if(patternCntHashMap.get(pL3.hash) < pL3.pattern.getFirst()) {
+//						patternCntHashMap.put(pL3.hash, pL3.pattern.getFirst());
+//					}
+//				} 
+//				else {
+//					hashList.add(pL3.hash);
+//					patternCntHashMap.put(pL3.hash, pL3.pattern.getFirst());
+//					patternHashMap.put(pL3.hash, pL3.pattern.getSecond());
+//				}								
+//			}
+//		}
+//		
+//		for(Integer hash : hashList) {
+//			patternsL3.add(new Pattern(patternCntHashMap.get(hash), patternHashMap.get(hash), ""));
+//		}
+//		
+//		return patternsL3;
+//	}
+	
 	public void abstractL2() {		
 		String[] nodes = pattern.getSecond().split(",");		
 		int nodeNum = nodes.length - 1;								
-
-		ArrayList<String> abstractPattern = new ArrayList<>();
+		
 		ArrayList<int[]> patternCombination = new ArrayList<>();
 		
 		//combination for abstracting
@@ -65,21 +121,30 @@ public class Pattern implements Comparable<Pattern>{
 					} else {
 						tempPattern += "<?>" + getParentProperty(nodes[j]) + ", ";
 					}
-				}				
-				abstractPattern.add(tempPattern);
+				}								
+				
+				int flag = 0;
+				for(Pattern p : patternL2) {
+					if(p.pattern.getSecond().equals(tempPattern)) {
+						if(p.pattern.getFirst() < pattern.getFirst()) {
+							p.pattern.setFirst(pattern.getFirst());
+						}
+						flag = 1;
+						break;
+					}				
+				}
+				
+				if(flag == 0)
+					patternL2.add(new Pattern(pattern.getFirst(), tempPattern, ""));
+				
 			}
-		}
-		
-		for(int i = 0; i < abstractPattern.size(); i ++) {
-			patternL2.add(new Pattern(pattern.getFirst(), abstractPattern.get(i), abstractPattern.get(i).hashCode()));
-		}		
+		}					
 	}
 	
 	public void abstractL3() {
 		String[] nodes = pattern.getSecond().split(",");
 		int nodeNum = nodes.length-1;								
-
-		ArrayList<String> abstractPattern = new ArrayList<>();
+		
 		ArrayList<int[]> patternCombination = new ArrayList<>();
 		
 		//combination for abstracting
@@ -109,13 +174,22 @@ public class Pattern implements Comparable<Pattern>{
 					} else {
 						tempPattern += "<?>" + "(? - ?)" + ", ";
 					}
-				}				
-				abstractPattern.add(tempPattern);
+				}								
+				
+				int flag = 0;
+				for(Pattern p : patternL3) {
+					if(p.pattern.getSecond().equals(tempPattern)) {
+						if(p.pattern.getFirst() < pattern.getFirst()) {
+							p.pattern.setFirst(pattern.getFirst());
+						}
+						flag = 1;
+						break;
+					}				
+				}
+				
+				if(flag == 0)
+					patternL3.add(new Pattern(pattern.getFirst(), tempPattern, ""));
 			}
-		}
-		
-		for(int i = 0; i < abstractPattern.size(); i ++) {
-			patternL3.add(new Pattern(pattern.getFirst(), abstractPattern.get(i), abstractPattern.get(i).hashCode()));
 		}
 	}
 	
@@ -204,6 +278,13 @@ public class Pattern implements Comparable<Pattern>{
 	
 	public Pair<Integer, String> getPattern() {
 		return pattern;
+	}
+	
+	public void clearL2() {
+		patternL2 = null;
+	}
+	public void clearL3() {
+		patternL3 = null;
 	}
 	
 	public static String type2String(int type) {

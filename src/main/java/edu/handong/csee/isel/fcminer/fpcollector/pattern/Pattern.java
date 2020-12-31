@@ -13,185 +13,18 @@ public class Pattern implements Comparable<Pattern>{
 	String code = "";
 	
 	//hash
-	
-	int hash = -1;
-	
-	//Abstracted Pattern in Layer 2	
-	static ArrayList<Pattern> patternL2 = new ArrayList<>();
-	
-	//Abstracted Pattern in Layer 3
-	static ArrayList<Pattern> patternL3 = new ArrayList<>();
+	int hash = -1;	
 	
 	public Pattern(Integer cnt, String pattern, String code) {
 		this.pattern = new Pair<>(cnt, pattern);
 		this.code = code;
+		this.hash = pattern.hashCode();
 	}
 	
 	public Pattern(Integer cnt, String pattern, int hash) {
 		this.pattern = new Pair<>(cnt, pattern);		
 		this.hash = hash;
-	}
-	
-//	static public ArrayList<Pattern> maxPoolingL2(ArrayList<Pattern> patterns) {
-//		ArrayList<Pattern> patternsL2 = new ArrayList<>();
-//		ArrayList<Integer> hashList = new ArrayList<>();
-//		HashMap<Integer, String> patternHashMap = new HashMap<>();
-//		HashMap<Integer, Integer> patternCntHashMap = new HashMap<>();
-//		
-//		for(Pattern p : patterns) {
-//			for(Pattern pL2 : p.getPatternL2()) {
-//				if(patternHashMap.containsKey(pL2.hash)) {
-//					if(patternCntHashMap.get(pL2.hash) < pL2.pattern.getFirst()) {
-//						patternCntHashMap.put(pL2.hash, pL2.pattern.getFirst());
-//					}
-//				} 
-//				else {
-//					hashList.add(pL2.hash);
-//					patternCntHashMap.put(pL2.hash, pL2.pattern.getFirst());
-//					patternHashMap.put(pL2.hash, pL2.pattern.getSecond());
-//				}								
-//			}
-//		}
-//		
-//		for(Integer hash : hashList) {
-//			patternsL2.add(new Pattern(patternCntHashMap.get(hash), patternHashMap.get(hash), ""));
-//		}
-//		
-//		return patternsL2;
-//	}
-	
-//	static public ArrayList<Pattern> maxPoolingL3(ArrayList<Pattern> patterns) {
-//		ArrayList<Pattern> patternsL3 = new ArrayList<>();
-//		ArrayList<Integer> hashList = new ArrayList<>();
-//		HashMap<Integer, String> patternHashMap = new HashMap<>();
-//		HashMap<Integer, Integer> patternCntHashMap = new HashMap<>();
-//		
-//		for(Pattern p : patterns) {
-//			for(Pattern pL3 : p.getPatternL3()) {
-//				if(patternHashMap.containsKey(pL3.hash)) {
-//					if(patternCntHashMap.get(pL3.hash) < pL3.pattern.getFirst()) {
-//						patternCntHashMap.put(pL3.hash, pL3.pattern.getFirst());
-//					}
-//				} 
-//				else {
-//					hashList.add(pL3.hash);
-//					patternCntHashMap.put(pL3.hash, pL3.pattern.getFirst());
-//					patternHashMap.put(pL3.hash, pL3.pattern.getSecond());
-//				}								
-//			}
-//		}
-//		
-//		for(Integer hash : hashList) {
-//			patternsL3.add(new Pattern(patternCntHashMap.get(hash), patternHashMap.get(hash), ""));
-//		}
-//		
-//		return patternsL3;
-//	}
-	
-	public void abstractL2() {		
-		String[] nodes = pattern.getSecond().split(",");		
-		int nodeNum = nodes.length - 1;								
-		
-		ArrayList<int[]> patternCombination = new ArrayList<>();
-		
-		//combination for abstracting
-		for(int i = 1 ; i < nodeNum; i ++) {
-			//nCj
-			patternCombination = combination(nodeNum, i);
-			
-			//generate abstract pattern
-			for(int[] comb : patternCombination) {				
-				String tempPattern = "";
-				boolean[] check = new boolean[nodeNum];				
-				
-				for(int j = 0; j < i; j++) {					
-					for(int k = 0 ; k < nodeNum; k++) {
-						if(comb[j] == k) {
-							check[k] = true;							
-						}
-						else if(check[k] != true && comb[j] != k){
-							check[k] = false;							
-						}
-					}										
-				}
-				
-				for(int j = 0 ; j < nodeNum; j ++) {
-					if(check[j] == true) {
-						tempPattern += nodes[j] + ", ";						
-					} else {
-						tempPattern += "<?>" + getParentProperty(nodes[j]) + ", ";
-					}
-				}								
-				
-				int flag = 0;
-				for(Pattern p : patternL2) {
-					if(p.pattern.getSecond().equals(tempPattern)) {
-						if(p.pattern.getFirst() < pattern.getFirst()) {
-							p.pattern.setFirst(pattern.getFirst());
-						}
-						flag = 1;
-						break;
-					}				
-				}
-				
-				if(flag == 0)
-					patternL2.add(new Pattern(pattern.getFirst(), tempPattern, ""));
-				
-			}
-		}					
-	}
-	
-	public void abstractL3() {
-		String[] nodes = pattern.getSecond().split(",");
-		int nodeNum = nodes.length-1;								
-		
-		ArrayList<int[]> patternCombination = new ArrayList<>();
-		
-		//combination for abstracting
-		for(int i = 1 ; i < nodeNum; i ++) {
-			//nCj
-			patternCombination = combination(nodeNum, i);
-			
-			//generate abstract pattern
-			for(int[] comb : patternCombination) {				
-				String tempPattern = "";
-				boolean[] check = new boolean[nodeNum];				
-				
-				for(int j = 0; j < i; j++) {					
-					for(int k = 0 ; k < nodeNum; k++) {
-						if(comb[j] == k) {
-							check[k] = true;							
-						}
-						else if(check[k] != true && comb[j] != k){
-							check[k] = false;							
-						}
-					}										
-				}
-				
-				for(int j = 0 ; j < nodeNum; j ++) {
-					if(check[j] == true) {
-						tempPattern += nodes[j] + ", ";						
-					} else {
-						tempPattern += "<?>" + "(? - ?)" + ", ";
-					}
-				}								
-				
-				int flag = 0;
-				for(Pattern p : patternL3) {
-					if(p.pattern.getSecond().equals(tempPattern)) {
-						if(p.pattern.getFirst() < pattern.getFirst()) {
-							p.pattern.setFirst(pattern.getFirst());
-						}
-						flag = 1;
-						break;
-					}				
-				}
-				
-				if(flag == 0)
-					patternL3.add(new Pattern(pattern.getFirst(), tempPattern, ""));
-			}
-		}
-	}
+	}	
 	
 	private String getParentProperty(String pattern) {
 		String parentProperty = "";
@@ -257,6 +90,10 @@ public class Pattern implements Comparable<Pattern>{
 		return false;
 	}
 	
+	public Pair<Integer, String> getPattern() {
+		return pattern;
+	}
+	
 	@Override
 	public int compareTo(Pattern p) {
 		if(this.pattern.getFirst() > p.pattern.getFirst()) {
@@ -266,25 +103,6 @@ public class Pattern implements Comparable<Pattern>{
 		} else {
 			return 0;
 		}		
-	}
-	
-	public ArrayList<Pattern> getPatternL2(){
-		return patternL2;
-	}
-	
-	public ArrayList<Pattern> getPatternL3(){
-		return patternL3;
-	}
-	
-	public Pair<Integer, String> getPattern() {
-		return pattern;
-	}
-	
-	public void clearL2() {
-		patternL2 = null;
-	}
-	public void clearL3() {
-		patternL3 = null;
 	}
 	
 	public static String type2String(int type) {

@@ -19,8 +19,7 @@ public class PatternGenerator {
 	ArrayList<MappingStorage> sto = new ArrayList<>();
 	ArrayList<Integer> hashList = new ArrayList<>();
 	HashMap<Integer, MappingStorage> mappingHash = new HashMap<>();
-	HashMap<Integer, Integer> patternCnt = new HashMap<>();	
-	ArrayList<Boolean> omittedPatterns= new ArrayList<>();;
+	HashMap<Integer, Integer> patternCnt = new HashMap<>();		
 	
 	int cnt = 0;
 	public PatternGenerator(ArrayList<MappingStorage> sto) {
@@ -30,8 +29,7 @@ public class PatternGenerator {
 	//patternizing with one context
 	public void collect() {
 		ArrayList<Pattern> patternsL1;
-		ArrayList<Pattern> patternsL2;
-		ArrayList<Pattern> patternsL3;
+		ArrayList<Pattern> patternsSumUp;
 		
 		for(int i = 0 ; i < sto.size(); i ++) {
 			int tempHash = sto.get(i).getHash();
@@ -57,60 +55,62 @@ public class PatternGenerator {
 		mappingHash = null;
 		patternCnt = null;
 		sto = null;
+				
+		patternsSumUp = patternSumUp(patternsL1);		
 		
 		Collections.sort(patternsL1);
+		Collections.sort(patternsSumUp);
 		writePatterns(patternsL1, "L1");
-		
-		for(int i = 0; i < patternsL1.size(); i ++) {
-			if(i%10 == 0)
-				System.out.println("" + i);
-			if(i*100/patternsL1.size() == 20) {
-				System.out.print("20%...");
-			}
-			else if(i*100/patternsL1.size() == 40) {
-				System.out.print("40%...");
-			}
-			else if(i*100/patternsL1.size() == 60) {
-				System.out.print("60%...");
-			}
-			else if(i*100/patternsL1.size() == 80) {
-				System.out.print("80%...");
-			}
-			else if(i*100/patternsL1.size() >= 95) {
-				System.out.print("done\n");
-			}			
-			
-			patternsL1.get(i).abstractL2();			
-		}
-		
-		Collections.sort(patternsL1.get(0).getPatternL2());
-		writePatterns(patternsL1.get(0).getPatternL2(), "L2");
-		patternsL1.get(0).clearL2();
-		
-		for(int i = 0; i < patternsL1.size(); i ++) {
-			if(i*100/patternsL1.size() == 20) {
-				System.out.print("20%...");
-			}
-			else if(i*100/patternsL1.size() == 40) {
-				System.out.print("40%...");
-			}
-			else if(i*100/patternsL1.size() == 60) {
-				System.out.print("60%...");
-			}
-			else if(i*100/patternsL1.size() == 80) {
-				System.out.print("80%...");
-			}
-			else if(i*100/patternsL1.size() >= 95) {
-				System.out.print("done\n");
-			}		
-			
-			patternsL1.get(i).abstractL3();			
-		}
-				
-		Collections.sort(patternsL1.get(0).getPatternL3());		
-		writePatterns(patternsL1.get(0).getPatternL3(), "L3");
+		writePatterns(patternsSumUp, "SumUp");		
 	}
 	
+	public ArrayList<Pattern> patternSumUp(ArrayList<Pattern> patterns) {
+		ArrayList<Pattern> patternSumUp = new ArrayList<>();
+		
+		for(int i = 0 ; i < patterns.size(); i ++) {
+			String tempPattern1 = patterns.get(i).pattern.getSecond();
+			String[] tempNodes1 = tempPattern1.split(", ");
+			
+			int add = 0;
+			for(int j = i+1; j < patterns.size(); j ++) {				
+				String tempPattern2 = patterns.get(j).pattern.getSecond();
+				String[] tempNodes2 = tempPattern2.split(", ");
+				boolean[] check = new boolean[tempNodes2.length];
+				if(tempNodes2.length >= tempNodes1.length) {
+					continue;
+				}
+				
+				if(nodeContain(tempNodes1, tempNodes2, check)) {
+					add += patterns.get(j).pattern.getFirst();
+				}
+				
+			}
+			patternSumUp.add(new Pattern(patterns.get(i).pattern.getFirst() + add, tempPattern1, patterns.get(i).code));
+		}
+		
+		return patternSumUp;
+	}
+	
+	private boolean nodeContain(String[] nodes1, String[] nodes2, boolean[] check) {
+		for(int i = 0; i < nodes1.length; i ++) {
+			String node1 = nodes1[i];
+			for(int j = 0 ; j < nodes2.length; j ++) {
+				String node2 = nodes2[j];
+				
+				if(node1.equals(node2)) {
+					check[j] = true;
+					break;
+				}
+			}
+		}
+		
+		for(int i = 0 ; i < check.length; i ++) {
+			if(check[i] == false)
+				return false;
+		}
+		
+		return true;
+	}
 	
 	
 	private ArrayList<Pattern> generatePattern() {

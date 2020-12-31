@@ -11,37 +11,24 @@ public class testPatternAbstraction {
 	public void patternAbstractTester() {
 		PatternGenerator pg = new PatternGenerator(null);
 		ArrayList<Pattern> ps = new ArrayList<>();
-		ArrayList<Pattern> pL2 ;
-		ArrayList<Pattern> pL3 ;
+		ArrayList<Pattern> pSum ;
+		
 		
 		Pattern p1 = new Pattern(5, "A(a), B(b), C(c), ", "something");
 		Pattern p2 = new Pattern(3, "A(a), D(d), C(c), ", "something");
+		Pattern p3 = new Pattern(2, "A(a), C(c), ", "something");
 		
 		ps.add(p1);
-		ps.add(p2);		
+		ps.add(p2);
+		ps.add(p3);
 		
-		p1.abstractL2();
-		p1.abstractL3();
-		p2.abstractL2();
-		p2.abstractL3();
+		pSum = pg.patternSumUp(ps);
 		
-//		for(Pattern pa : p1.getPatternL2()) {			
-//			System.out.println("L2: " + pa.getPattern().getSecond());		
-//		}
-//		
-//		for(Pattern pa : p1.getPatternL3()) {
-//			System.out.println("L3 : " + pa.getPattern().getSecond());
-//		}
-				
-		
-		for(Pattern p: p1.getPatternL2()) {
-			System.out.println("(L2)Frq: " + p.getPattern().getFirst() + " Pattern: " + p.getPattern().getSecond());
+		for(int i = 0 ; i < ps.size(); i ++) {
+			System.out.println("Frq: " + pSum.get(i).getPattern().getFirst() + ", Pat: " + pSum.get(i).getPattern().getSecond());
 		}
-		
-		for(Pattern p: p1.getPatternL3()) {
-			System.out.println("(L3)Frq: " + p.getPattern().getFirst() + " Pattern: " + p.getPattern().getSecond());
-		}
-		
+
+
 		
 		System.out.println();
 		

@@ -19,9 +19,6 @@ public class CodeComparator {
 		Info variableClass = gumTreeStack.pop();
 		Info fixedClass = gumTreeStack.elementAt(0);
 		
-		System.out.println(fixedClass.getVLine());
-		System.out.println(variableClass.getVLine());
-		
 		Matcher matcher = new Matcher(fixedClass, variableClass);
 		MappingStorage tempMappingSto = new MappingStorage();
 		tempMappingSto = matcher.match();

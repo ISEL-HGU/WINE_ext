@@ -12,7 +12,13 @@ public class Main {
     	CliOptions cliReader = new CliOptions();
     	
     	CliCommand command = cliReader.parseOptions(args);
-    	analyzer.run(command);        
-    	fpCollector.run(command, analyzer.getGitRepo());
+    	System.out.println("----------------------SARMiner Start----------------------");
+    	analyzer.run(command);
+    	System.out.println("\n----------------------SAResult.csv is Generated----------------------");
+    	System.out.println("                      # of Alarms: "+ analyzer.getNumOfAlarm());
+    	
+    	System.out.println("\n----------------------FPCollector Start----------------------");
+    	fpCollector.run(command, analyzer.getNumOfAlarm());
+    	System.out.println("\n----------------------FPC_Patterns are Generated----------------------");
     }
 }

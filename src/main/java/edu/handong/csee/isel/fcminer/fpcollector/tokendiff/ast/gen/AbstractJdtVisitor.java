@@ -2,19 +2,16 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Deque;
 import java.util.List;
 
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTVisitor;
-import org.eclipse.jdt.core.dom.ChildListPropertyDescriptor;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.StructuralPropertyDescriptor;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.TreeContext;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.hash.HashGenerator;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
 
 public abstract class AbstractJdtVisitor extends ASTVisitor {

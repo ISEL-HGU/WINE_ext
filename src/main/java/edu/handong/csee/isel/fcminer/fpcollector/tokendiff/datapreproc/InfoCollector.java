@@ -14,48 +14,88 @@ import org.eclipse.jgit.api.Git;
 
 import edu.handong.csee.isel.fcminer.util.OSValidator;
 
-public class InfoCollector { 
-	static final int VAR = 0;
-	static final int FIELD = 1;
-	static final int VARNODE = 2;
-	static final int FIELDNODE = 3;
-	static final int STRINGNODE = 4;
-	
-	public ArrayList<ASTNode> fpcPattern = new ArrayList<>();
-	public ArrayList<ASTNode> tpcPattern = new ArrayList<>();
+public class InfoCollector { 	
 	ArrayList<Info> infos = new ArrayList<>();
+	int numOfAlarms = 0;
 	
-	public void clear() {
-		fpcPattern = null;
-		tpcPattern = null;
+	public int getNumOfAlarms () {
+		return numOfAlarms;
+	}
+	
+	public void clear() {		
 		infos = null;
 	}
 	
-	public void run(String resultPath, Git git, String projectName) {		
+	public void run(String resultPath, int numOfAlarmFromSARM) {		
 		try {
 			Reader outputFile = new FileReader(resultPath);
 			
 			Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(outputFile);
+			int cnt = 0;
 			
-			for (CSVRecord record : records) {						
-				if(record.get(0).equals("Detection ID")) continue;
-				if(!record.get(1).equals(projectName)) continue;
-				
+			for (CSVRecord record : records) {									
+				if(record.get(0).equals("Detection ID")) continue;				
+				cnt ++;
 				Info info = new Info();			
 	
-				String filePath = record.get(-1);
+				String filePath = record.get(1);
 				String newFilePath = modifyFilePathToOS(filePath);	
-				
 				info.setPath(newFilePath);
-				info.setStart(record.get(-1));
-				info.setEnd(record.get(-1));
+				
+				String startNEnd = record.get(2);
+				String[] startEnd = startNEnd.split("-");
+				if(startEnd.length > 1) {
+					info.setStart(startEnd[0]);
+					info.setEnd(startEnd[1]);
+				} else {
+					info.setStart(startEnd[0]);
+					info.setEnd(startEnd[0]);
+				}
+				
 				info = getSrcFromPath(newFilePath, info);				
 	        	
 				infos.add(info);
-			}	
+				
+				if(numOfAlarmFromSARM != 0)
+					printProgress(cnt, numOfAlarmFromSARM);
+			}
+			numOfAlarms = cnt;
 		} catch(IOException e) {
 			e.printStackTrace();
+		}		
+	}
+	
+	private void printProgress(int cnt, int total) {
+		if(total / 10 == cnt) {
+			System.out.print("10%...");
 		}
+		else if(total * 2 / 10 == cnt) {
+			System.out.print("20%...");
+		}
+		else if(total * 3 / 10 == cnt) {
+			System.out.print("30%...");
+		}
+		else if(total * 4 / 10 == cnt) {
+			System.out.print("40%...");
+		}
+		else if(total * 5/ 10 == cnt) {
+			System.out.print("50%...");
+		}
+		else if(total * 6 / 10 == cnt) {
+			System.out.print("60%...");
+		}
+		else if(total * 7 / 10 == cnt) {
+			System.out.print("70%...");
+		}
+		else if(total * 8 / 10 == cnt) {
+			System.out.print("80%...");
+		}
+		else if(total * 9 / 10 == cnt) {
+			System.out.print("90%...");
+		}
+		else if(total-1 == cnt) {
+			System.out.print("done!\n");
+		}		
 	}
 	
 	private Info getSrcFromPath(String path, Info info) {
@@ -69,9 +109,9 @@ public class InfoCollector {
 			int cnt = 0;
 			while((str = fBufReader.readLine()) != null) {
 				cnt++;
-				src += str;
-				if(info.getStart() <= cnt && info.getEnd() <= cnt) {
-					info.addVLine(str);
+				src += (str + "\n");
+				if(info.getStart() <= cnt && cnt <= info.getEnd()) {
+					info.addVLine(str + "\n");
 				}
 			}
 			fBufReader.close();
@@ -108,7 +148,7 @@ public class InfoCollector {
 			}
 		}
 		
-		return newFilePath;
+		return filePath;
 	}
 
 	public ArrayList<Info> getInfos(){

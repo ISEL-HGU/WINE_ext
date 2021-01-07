@@ -24,7 +24,7 @@ public class Writer {
 		try(			
 			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName));
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
-					.withHeader("Detection ID", "Path", "Detection Line Num"));
+					.withHeader("Detection ID", "Path", "Detection Line Num", "Code"));
 			) {			
 			writer.flush();
 			writer.close();
@@ -44,14 +44,15 @@ public class Writer {
 			String idx = "";
 			String path = "";
 			String lineNum = "";			
+			String code = "";
 			
 			for(Alarm alarm : alarms) {
 				detectionID ++;
 				idx = "" + detectionID;
 				path = alarm.getDir();
 				lineNum = alarm.getLineNum();
-				
-				csvPrinter.printRecord(idx, path, lineNum);
+				code = alarm.getCode();
+				csvPrinter.printRecord(idx, path, lineNum, code);
 			}
 			
 			writer.flush();

@@ -30,7 +30,7 @@ public class Info {
 	}
 
 	public void setStart(String start) {		
-		this.start = Integer.getInteger(start);
+		this.start = Integer.valueOf(start);
 	}
 
 	public int getEnd() {
@@ -38,7 +38,7 @@ public class Info {
 	}
 
 	public void setEnd(String end) {
-		this.end = Integer.getInteger(end);
+		this.end = Integer.valueOf(end);
 	}
 	
 	public void addForwardPart(ITree node) {

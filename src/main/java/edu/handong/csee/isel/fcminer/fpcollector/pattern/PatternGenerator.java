@@ -4,7 +4,6 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -49,13 +48,14 @@ public class PatternGenerator {
 		}
 		
 		
-		
+		System.out.println("INFO: Pattern Generation is Started");
 		patternsL1 = generatePattern();
 		hashList = null;
 		mappingHash = null;
 		patternCnt = null;
 		sto = null;
-				
+		
+		System.out.println("INFO: Pattern Boosting is Started");
 		patternsSumUp = patternSumUp(patternsL1);		
 		
 		Collections.sort(patternsL1);
@@ -68,6 +68,7 @@ public class PatternGenerator {
 		ArrayList<Pattern> patternSumUp = new ArrayList<>();
 		
 		for(int i = 0 ; i < patterns.size(); i ++) {
+			printProgress(i, patterns.size());
 			String tempPattern1 = patterns.get(i).pattern.getSecond();
 			String[] tempNodes1 = tempPattern1.split(", ");
 			
@@ -119,6 +120,7 @@ public class PatternGenerator {
 		
 		//remove pattern when a pattern include another pattern with high frequency
 		for(int i = 0 ; i < t; i++) {
+			printProgress(i, t);
 			int tempHash = hashList.get(i);
 			String pattern = mapping2String(mappingHash.get(tempHash));			
 			int cnt = patternCnt.get(tempHash);
@@ -134,10 +136,10 @@ public class PatternGenerator {
 	}
 	
 	public void writePatterns(ArrayList<Pattern> patterns, String label) {
-		String fileName = "./FPC_Patterns_" + label + ".csv";
+		String fileName = "./FPC_Patterns_" + label + ".csv";				
 		
 		try(			
-			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName));
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
 					.withHeader("Pattern ID", "Pattern", "Frequency", "Code", "Total", "Ratio"));
 			) {
@@ -178,5 +180,38 @@ public class PatternGenerator {
 		}
 		
 		return tempPattern;
+	}
+	
+	private void printProgress(int cnt, int total) {
+		if(total / 10 == cnt) {
+			System.out.print("10%...");
+		}
+		else if(total * 2 / 10 == cnt) {
+			System.out.print("20%...");
+		}
+		else if(total * 3 / 10 == cnt) {
+			System.out.print("30%...");
+		}
+		else if(total * 4 / 10 == cnt) {
+			System.out.print("40%...");
+		}
+		else if(total * 5/ 10 == cnt) {
+			System.out.print("50%...");
+		}
+		else if(total * 6 / 10 == cnt) {
+			System.out.print("60%...");
+		}
+		else if(total * 7 / 10 == cnt) {
+			System.out.print("70%...");
+		}
+		else if(total * 8 / 10 == cnt) {
+			System.out.print("80%...");
+		}
+		else if(total * 9 / 10 == cnt) {
+			System.out.print("90%...");
+		}
+		else if(total-1 == cnt) {
+			System.out.print("done!\n");
+		}		
 	}
 }

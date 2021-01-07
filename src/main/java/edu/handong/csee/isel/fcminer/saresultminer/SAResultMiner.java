@@ -18,6 +18,11 @@ import edu.handong.csee.isel.fcminer.util.Writer;
 public class SAResultMiner {
 	ArrayList<Git> gits = new ArrayList<>();
 	Git git;
+	int numOfAlarm = 0;
+	
+	public int getNumOfAlarm() {
+		return numOfAlarm;
+	}
 	
 	public String run(CliCommand command) {
 		//utils instances
@@ -78,21 +83,19 @@ public class SAResultMiner {
 		 * with Path, Start Line, End Line.
 		 */
 		writer.initResult();
-		int cnt = 0;
 		for(int i = 0 ; i < reportInfo.size(); i ++) {
-			readReportThenWrite(reportInfo.get(i), writer, cnt);
+			readReportThenWrite(reportInfo.get(i), writer);
 		}
 		
 		
 		return writer.getResultPath();
 	}
 	
-	private void readReportThenWrite(String reportPath, Writer writer, int cnt) {
+	private void readReportThenWrite(String reportPath, Writer writer) {
 		Reader reader = new Reader();		
 		ArrayList<Alarm> alarms = reader.readReportFile(reportPath);		
-		writer.writeResult(alarms);				
-		cnt += alarms.size();
-		System.out.println(cnt);
+		writer.writeResult(alarms);	
+		numOfAlarm += alarms.size();
 	}
 
 	private ArrayList<String> collectRawData(CliCommand command, ArrayList<String> cloneInfo) {

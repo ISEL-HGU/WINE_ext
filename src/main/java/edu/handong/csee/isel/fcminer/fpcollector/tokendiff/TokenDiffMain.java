@@ -18,29 +18,25 @@ public class TokenDiffMain {
 	}
 	
 	public ArrayList<MappingStorage> run() {
-		System.out.println("INFO: Data pre-processing is started");
+		System.out.println("INFO: Data Pre-Processing is Started");
 		dataPreprocess();
-		System.out.println("INFO: Data pre-processing is finished");
-		System.out.println("INFO: Code Comparison is started");
+		System.out.println("INFO: Data Pre-Processing is Finished");
+		System.out.println("INFO: Code Comparison is Started");
 		return codeCompare();				
 	}
 	
 	private void dataPreprocess() {
-		int cnt =1;
-		for(Info info: infos) {
-			if(cnt==1) System.out.print("\nStart...");
-			else if((cnt / infos.size()) * 100 >= 80) System.out.print("80%...\n");
-			else if((cnt / infos.size()) * 100 >= 60) System.out.print("60%...");
-			else if((cnt / infos.size()) * 100 >= 40) System.out.print("40%...");
-			else if((cnt / infos.size()) * 100 >= 20) System.out.print("20%...");
-			
+		int cnt =0;
+		for(Info info: infos) {			
 			info = prepare4GumTree(info, cnt);
 			
 			//the case when the violating line is not in a method but in static block or something.
 			if(info.getVMethod() == null) {
 				info = null;
 			}
+			
 		    cnt++;
+		    printProgress(cnt, infos.size());
 		}
 	}
 	
@@ -59,12 +55,10 @@ public class TokenDiffMain {
 	    return info;
 	}
 	
+	
+	
 	private void divide(Info info) {		
 		List<ITree> currents = new ArrayList<>();
-		
-//		if(info.getVNode() == null) {
-//			System.out.println(info.path);
-//		}
 		
 		currents.add(info.getVMethod());
         while (currents.size() > 0) {        	
@@ -168,17 +162,10 @@ public class TokenDiffMain {
 	}
 	
 	private ArrayList<MappingStorage> codeCompare() { 
-		CodeComparator tokenDiff = new CodeComparator();
-
-		System.out.println("INFO: Start to get and Write FC-Miner Result File");
-		long start = System.currentTimeMillis();
+		CodeComparator tokenDiff = new CodeComparator();		
 		for(int i = 0 ; i < infos.size(); i ++) {
 			if(infos.get(i) == null) continue;
-			if(i==0) System.out.print("Start...");
-			else if((i / infos.size()) * 100 >= 80) System.out.print("80%...");
-			else if((i / infos.size()) * 100 >= 60) System.out.print("60%...");
-			else if((i / infos.size()) * 100 >= 40) System.out.print("40%...");
-			else if((i / infos.size()) * 100 >= 20) System.out.print("20%...\n\r");
+			printProgress(i, infos.size());
 			
 			tokenDiff.compare(infos.get(i));
 			for(int j = i ; j < infos.size(); j++) {
@@ -187,9 +174,40 @@ public class TokenDiffMain {
 			}
 
 			tokenDiff.clear();
-		}
-		long end = System.currentTimeMillis();		
-		System.out.println("INFO: Finish to get and Write FC-Miner Result File (" + (end - start)/1000 + " sec.)");
+		}				
 		return tokenDiff.getMappingStorage();
+	}
+	
+	private void printProgress(int cnt, int total) {
+		if(total / 10 == cnt) {
+			System.out.print("10%...");
+		}
+		else if(total * 2 / 10 == cnt) {
+			System.out.print("20%...");
+		}
+		else if(total * 3 / 10 == cnt) {
+			System.out.print("30%...");
+		}
+		else if(total * 4 / 10 == cnt) {
+			System.out.print("40%...");
+		}
+		else if(total * 5/ 10 == cnt) {
+			System.out.print("50%...");
+		}
+		else if(total * 6 / 10 == cnt) {
+			System.out.print("60%...");
+		}
+		else if(total * 7 / 10 == cnt) {
+			System.out.print("70%...");
+		}
+		else if(total * 8 / 10 == cnt) {
+			System.out.print("80%...");
+		}
+		else if(total * 9 / 10 == cnt) {
+			System.out.print("90%...");
+		}
+		else if(total-1 == cnt) {
+			System.out.print("done!\n");
+		}		
 	}
 }

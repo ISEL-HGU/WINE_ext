@@ -9,8 +9,6 @@ import org.apache.commons.exec.ExecuteException;
 import org.apache.commons.exec.ExecuteWatchdog;
 
 import edu.handong.csee.isel.fcminer.util.OSValidator;
-import edu.handong.csee.isel.fcminer.util.Reader;
-import edu.handong.csee.isel.fcminer.util.Writer;
 
 public class PMD {	
 	String pmdCmd = "";
@@ -20,16 +18,41 @@ public class PMD {
 		this.pmdCmd = pmdCmd;
 	}
 	
-	public void execute(String rule, String commitID, String dirPath, int cnt, String projectName) {		
-		File newDir = new File("./PMDReports/" + projectName + File.separator);
-		String osName = OSValidator.getOS();
+	public void execute(String rule, String clonedPath, int cnt, String projectName) {		
+		File newDir = new File("./PMDReports/");
+		reportPath = "./PMDReports/" + cnt + "_" + projectName + ".csv";		
+		
 		if(!newDir.exists()) {
 			newDir.mkdirs();
 		}
+		
 		System.out.println("INFO: PMD Start");
 		long start = System.currentTimeMillis();
-		try {				
+		
+		try {						
+		CommandLine cmdLine = setArgs(clonedPath, rule, cnt, projectName);
+		DefaultExecutor executor = new DefaultExecutor();
+		int[] exitValues = {0, 1, 4};
+				
+		executor.setExitValues(exitValues);
+		ExecuteWatchdog watchdog = new ExecuteWatchdog(60000);
+		executor.setWatchdog(watchdog);		
+		
+		int exitValue = executor.execute(cmdLine);		
+		} catch (ExecuteException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		long end = System.currentTimeMillis();
+		
+		System.out.println("INFO: "+ reportPath + " is Generated"+ " ("+(end-start)/1000 + " sec.)");
+	}
+	
+	private CommandLine setArgs(String dirPath, String rule, int cnt, String projectName) {
 		CommandLine cmdLine = new CommandLine(pmdCmd);
+		String osName = OSValidator.getOS();
+		
 		if(osName.equals("linux"))
 			cmdLine.addArgument("pmd");
 		cmdLine.addArgument("-d");
@@ -37,64 +60,9 @@ public class PMD {
 		cmdLine.addArgument("-R");
 		cmdLine.addArgument(rule);
 		cmdLine.addArgument("-reportfile");
-		cmdLine.addArgument("./PMDReports/" + projectName + File.separator + cnt + "_" + commitID+".csv");
-		DefaultExecutor executor = new DefaultExecutor();
-		int[] exitValues = {0, 1, 4};
-		executor.setExitValues(exitValues);
-		ExecuteWatchdog watchdog = new ExecuteWatchdog(60000);
-		executor.setWatchdog(watchdog);		
-		int exitValue = executor.execute(cmdLine);		
-		} catch (ExecuteException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		long end = System.currentTimeMillis();
-		reportPath = "./PMDReports/" + projectName + File.separator + cnt + "_" + commitID + ".csv";
-		System.out.println("INFO: PMD Report Is Generated Commit ID: " + commitID + "(" + (end-start)/1000 + " sec.)");
-	}
-	
-	public void executeToChangedFiles(String rule, String commitID, String filePaths, int cnt, String projectName) {		
-		File newDir = new File("./PMDReports");
-		if(!newDir.exists()) {
-			newDir.mkdirs();
-		}
-		String osName = OSValidator.getOS();
-		Writer writer = new Writer();
-		Reader reader = new Reader();
-		String changedFileList = reader.readChagnedFileList(filePaths);
-		if(changedFileList.equals("Empty")) {
-			writer.writeEmptyCSVFile("./PMDReports/"+projectName+ File.separator + cnt + "_" + commitID+".csv");
-			reportPath = "./PMDReports/"+ projectName + File.separator + cnt + "_" + commitID+ ".csv";
-			return;
-		}
+		cmdLine.addArgument(reportPath);
 		
-		System.out.println("INFO: PMD Start");
-		long start = System.currentTimeMillis();
-		try {				
-		CommandLine cmdLine = new CommandLine(pmdCmd);
-		if(osName.equals("linux"))
-			cmdLine.addArgument("pmd");
-		cmdLine.addArgument("-filelist");
-		cmdLine.addArgument(filePaths);
-		cmdLine.addArgument("-R");
-		cmdLine.addArgument(rule);
-		cmdLine.addArgument("-reportfile");
-		cmdLine.addArgument("./PMDReports/"+projectName+ File.separator + cnt + "_" + commitID+".csv");
-		DefaultExecutor executor = new DefaultExecutor();
-		int[] exitValues = {0, 1, 4};
-		executor.setExitValues(exitValues);
-		ExecuteWatchdog watchdog = new ExecuteWatchdog(60000);
-		executor.setWatchdog(watchdog);		
-		int exitValue = executor.execute(cmdLine);		
-		} catch (ExecuteException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		long end = System.currentTimeMillis();
-		reportPath = "./PMDReports/"+ projectName + File.separator + cnt + "_" + commitID+ ".csv";
-		System.out.println("INFO: PMD Report Is Generated Commit ID: " + commitID + "(" + (end-start)/1000 + " sec.)");
+		return cmdLine;
 	}
 	
 	public String getReportPath() {

@@ -35,6 +35,8 @@ public class TokenDiffMain {
 			else if((cnt / infos.size()) * 100 >= 20) System.out.print("20%...");
 			
 			info = prepare4GumTree(info, cnt);
+			
+			//the case when the violating line is not in a method but in static block or something.
 			if(info.getVMethod() == null) {
 				info = null;
 			}
@@ -45,10 +47,12 @@ public class TokenDiffMain {
 	private Info prepare4GumTree(Info info, int cnt) {		
 		MethodFinder methodFinder = new MethodFinder(info);
 	    info = methodFinder.findMethod();
-	  //the case when the violating line is not in a method but in static block or something.
+	    
+	    //the case when the violating line is not in a method but in static block or something.
 	    if(info.getVMethod() == null) {
 	    	return info;
 	    }
+	    
 	    info.setMockClass(method2Class(info.getVMethodString(), cnt));
 	    info.setVNode(findVNode(info));
 	    divide(info);
@@ -124,7 +128,7 @@ public class TokenDiffMain {
         while (currents.size() > 0) {        	
             ITree c = currents.remove(0);
             if(contain(c.getNode2String(), info.getVLine()) && 
-            		(c.getStartLineNum() <= info.start && c.getEndLineNum() >= info.end)) {        
+            		(c.getStartLineNum() <= info.getStart() && c.getEndLineNum() >= info.getEnd())) {        
             	vNode = c;
             }
             currents.addAll(c.getChildren());

@@ -7,16 +7,14 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.TreeContext;
 
 public class Info {
 	//for infoCollector
-	public ArrayList<String> sourceByLine;
-	public String path;
-	public int start;
-	public int end;
-	public int startPosition;
+	private String src;
+	private String path;
+	private int start;
+	private int end;
 	
 	//for code compare
 	private String vLine = "";
 	private ITree vNode;
-	
 	private String vMethodString = "";
 	private ITree vMethod;
 
@@ -26,6 +24,22 @@ public class Info {
 	private ArrayList<ITree> forwardPart = new ArrayList<>();
 	private ArrayList<ITree> vPart = new ArrayList<>();
 	private ArrayList<ITree> backwardPart = new ArrayList<>();
+
+	public int getStart() {
+		return start;
+	}
+
+	public void setStart(String start) {		
+		this.start = Integer.getInteger(start);
+	}
+
+	public int getEnd() {
+		return end;
+	}
+
+	public void setEnd(String end) {
+		this.end = Integer.getInteger(end);
+	}
 	
 	public void addForwardPart(ITree node) {
 		this.forwardPart.add(node);
@@ -97,5 +111,21 @@ public class Info {
 
 	public void setCtx(TreeContext ctx) {
 		this.ctx = ctx;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public String getSrc() {
+		return src;
+	}
+
+	public void setSrc(String src) {
+		this.src = src;
 	}
 }

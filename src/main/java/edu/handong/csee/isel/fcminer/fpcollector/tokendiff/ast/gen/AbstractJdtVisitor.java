@@ -69,11 +69,11 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 	        childProps += ")";
 	        
 	        //for get where the current node belongs to parent's property
-	        if(getLineNum(n.getStartPosition()) >= info.start && getLineNum(n.getStartPosition()) <= info.end) {
+	        if(getLineNum(n.getStartPosition()) >= info.getStart() && getLineNum(n.getStartPosition()) <= info.getEnd()) {
 	        	ASTNode _n = n;
 	        	ASTNode tempParent = _n.getParent();
-	        	while(getLineNum(tempParent.getStartPosition())>= info.start 
-	        			&& getLineNum(tempParent.getStartPosition())<= info.end) {
+	        	while(getLineNum(tempParent.getStartPosition())>= info.getStart() 
+	        			&& getLineNum(tempParent.getStartPosition())<= info.getEnd()) {
 			        Property parentProperty = new Property();			        
 	        		int parentType = tempParent.getNodeType(); 
 			        list = tempParent.structuralPropertiesForType();
@@ -150,8 +150,8 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 
         //for finding violating method
         if(type == 31 &&
-    			getLineNum(startPosition) <= info.start 
-    			&& info.end <= getLineNum(startPosition + length)){
+    			getLineNum(startPosition) <= info.getStart()
+    			&& info.getEnd() <= getLineNum(startPosition + length)){
         	info.setVMethod(t);
         	context.setRoot(t);
 			flag = Flag.Method;

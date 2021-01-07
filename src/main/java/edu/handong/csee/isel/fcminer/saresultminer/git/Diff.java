@@ -90,7 +90,8 @@ public class Diff {
 	    AbstractTreeIterator oldTreeIterator = getOldCanonicalTreeParser(git);
 	    AbstractTreeIterator newTreeIterator = getNewCanonicalTreeParser(git);	    
 	    OutputStream outputStream = new ByteArrayOutputStream();
-	    try {	    	
+	    try {
+	    	
 			git.diff().setOldTree(oldTreeIterator).setNewTree(newTreeIterator).setOutputStream(outputStream).call();
 		} catch (GitAPIException e) {
 			e.printStackTrace();
@@ -138,6 +139,7 @@ public class Diff {
 		
 		return newTreeIter;
 	}
+	
 	private ArrayList<ChangeInfo> getChangeInfos(String[] codeChangeSplitByNewLine, String projectName) {
 		ArrayList<ChangeInfo> changeInfo = new ArrayList<>();
 	    Status status = Status.idle;

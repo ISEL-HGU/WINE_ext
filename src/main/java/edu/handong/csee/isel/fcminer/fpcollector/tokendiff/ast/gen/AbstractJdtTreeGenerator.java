@@ -11,7 +11,6 @@ import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.TreeContext;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
 
 public abstract class AbstractJdtTreeGenerator extends TreeGenerator {
@@ -53,7 +52,6 @@ public abstract class AbstractJdtTreeGenerator extends TreeGenerator {
         info = v.getInfo();
         info.setCtx(v.getTreeContext());
         return info;
-//        return v.getTreeContext();
     }
 
     protected abstract AbstractJdtVisitor createVisitor(Info info);

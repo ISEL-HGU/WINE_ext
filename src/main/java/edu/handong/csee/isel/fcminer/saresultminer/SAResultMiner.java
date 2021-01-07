@@ -1,6 +1,5 @@
 package edu.handong.csee.isel.fcminer.saresultminer;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -8,218 +7,130 @@ import java.util.Date;
 
 import org.eclipse.jgit.api.Git;
 
-import edu.handong.csee.isel.fcminer.saresultminer.git.ChangeInfo;
-import edu.handong.csee.isel.fcminer.saresultminer.git.Checkout;
 import edu.handong.csee.isel.fcminer.saresultminer.git.Clone;
-import edu.handong.csee.isel.fcminer.saresultminer.git.Commit;
-import edu.handong.csee.isel.fcminer.saresultminer.git.Diff;
-import edu.handong.csee.isel.fcminer.saresultminer.git.Log;
 import edu.handong.csee.isel.fcminer.saresultminer.pmd.Alarm;
 import edu.handong.csee.isel.fcminer.saresultminer.pmd.PMD;
 import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
-import edu.handong.csee.isel.fcminer.util.Comparator;
 import edu.handong.csee.isel.fcminer.util.Reader;
-import edu.handong.csee.isel.fcminer.util.Result;
-import edu.handong.csee.isel.fcminer.util.ResultUpdater;
 import edu.handong.csee.isel.fcminer.util.Writer;
 
 public class SAResultMiner {
 	ArrayList<Git> gits = new ArrayList<>();
 	Git git;
-	public String run(CliCommand command) {	
-		//instances related with git 
-		Clone gitClone = new Clone();
-		Log gitLog = new Log();
-		Checkout gitCheckout = new Checkout();
-		Diff gitDiff = new Diff();				
-		String targetGitAddress = "";
-		ArrayList<Commit> commits = new ArrayList<>();
-		ArrayList<ChangeInfo> changeInfo = new ArrayList<>();
-		ArrayList<Alarm> alarmsInResult = new ArrayList<>();
+	
+	public String run(CliCommand command) {
+		//utils instances
+		Reader reader = new Reader();				
+		Writer writer = new Writer();
 		
+		//1. read input list
+		ArrayList<String> inputList = new ArrayList<>();
+		inputList.addAll(reader.readInputList(command.getAddressPath()));		
+		
+		/*
+		 * Array list for clone information.
+		 * Each Element contains cloned Path and Project name.
+		 */
+		ArrayList<String> cloneInfo = new ArrayList<>();
+		
+		/*
+		 * Array list for PMD report information.
+		 * Each Element contains report path of each input project.
+		 */
+		ArrayList<String> reportInfo = new ArrayList<>();
+		
+		//2. clone
+		for(String project : inputList) {
+			cloneInfo.add(clone(project));			
+		}
+		
+		/*
+		 * If the run state is FPCollector,
+		 * it is not needed to run SAResultMiner Part.
+		 * Because SAResult_result.csv file already exist.
+		 */
+		if(command.getState().equals(RunState.FPCollector)) {
+			System.out.println("Run State: FPCollector");
+			return command.getResultPath(); 
+		}
+		/*
+		 * Else the run state is SAResultMiner or All Sequences,
+		 * it is needed to get SAResultMiner's result data.
+		 */
+		else {
+			/*
+			 * 3. Run PMD to All input projects
+			 * to get raw PMD alarm data 
+			 * @param CliCommand command: command line input
+			 * @param ArrayList<String> cloneInfo: ArrayList for Cloned Path and Project name
+			 */
+			reportInfo.addAll(collectRawData(command, cloneInfo));
+			
+			if(reportInfo.size() == 0) {
+				System.out.println("ERROR in Raw Data Collecting Step");
+				System.exit(-1);
+			}
+		}				
+		
+		/*
+		 * 4. Aggregate All reports in One file to fit FP Collector
+		 * with Path, Start Line, End Line.
+		 */
+		writer.initResult();
+		int cnt = 0;
+		for(int i = 0 ; i < reportInfo.size(); i ++) {
+			readReportThenWrite(reportInfo.get(i), writer, cnt);
+		}
+		
+		
+		return writer.getResultPath();
+	}
+	
+	private void readReportThenWrite(String reportPath, Writer writer, int cnt) {
+		Reader reader = new Reader();		
+		ArrayList<Alarm> alarms = reader.readReportFile(reportPath);		
+		writer.writeResult(alarms);				
+		cnt += alarms.size();
+		System.out.println(cnt);
+	}
+
+	private ArrayList<String> collectRawData(CliCommand command, ArrayList<String> cloneInfo) {
+		//report Paths
+		ArrayList<String> reportPaths = new ArrayList<>();
+				
 		//pmd instance
 		//@param pmd command location
 		PMD pmd = new PMD(command.getPMD());
-		String rule = command.getRule();
-		ArrayList<Alarm> alarms = new ArrayList<>();
-		
-		//utils instances
-		Writer writer = new Writer();
-		Reader reader = new Reader();
-		Comparator comparator = new Comparator();
-		ResultUpdater resultUpdater = new ResultUpdater();
-		ArrayList<Result> results = new ArrayList<>();
-		int detectionID = 0;
-				
-		//read input
-//		targetGitAddress = reader.readInput(input);
-		//read input list
-		ArrayList<String> inputList = new ArrayList<>();
-		inputList.addAll(reader.readInputList(command.getAddressPath()));
+		String rule = command.getRule();									
+
 		int cnt = 0;
-		for(int k = 0 ; k < inputList.size(); k ++) {
-		cnt = k + 1;
-		long start = System.currentTimeMillis();
-		targetGitAddress = inputList.get(k);
-		//readInput test
-		System.out.println("INFO: Target Project is " + targetGitAddress);		
-		
+		for(int k = 0 ; k < cloneInfo.size(); k ++) {
+			cnt = k + 1;
+			
+			String clonePathWithProjectName = cloneInfo.get(k);
+			String[] pathAndName = clonePathWithProjectName.split(", ");
+			String clonedPath = pathAndName[0];
+			String projectName = pathAndName[1];
+					
+			//Progress
+			System.out.println("INFO: Target Project is " + projectName + ", " + cnt + " / " + cloneInfo.size() + " (Current / Total)");
+			System.out.println("Run State: SAResultMiner | FC-Miner");
+			pmd.execute(rule, clonedPath, cnt, projectName);
+			reportPaths.add(pmd.getReportPath());
+		}	
+				
+		return reportPaths;
+	}
+	
+	private String clone(String targetGitAddress) {
 		//git clone		
+		Clone gitClone = new Clone();
 		git = gitClone.clone(targetGitAddress);
 		gits.add(git);
-		//get all commit id and latest commit id
-		commits.addAll(gitLog.getAllCommitID(git));
-		String latestCommitID = gitLog.getLatestCommitId();
-		/*
-		 * checkout to first version
-		 * @param git: a cloned git repository 		 
-		 * @param commitID: Commit ID from List of all commit ID
-		 * @param cnt: setting first, second, third... commit
-		 */		
-		gitCheckout.checkout(git, commits.get(0).getID(), 0);
-		
-		/*
-		 * apply pmd to init version 
-		 * @param rule
-		 * @param commitID
-		 * @param clonedPath: pmd's target direcotry
-		 * @param cnt: setting first, second, third... commit
-		 */
-		if(!command.getState().equals(RunState.FPCollector)) {
-			pmd.execute(rule, commits.get(0).getID(), gitClone.getClonedPath(), 0, gitClone.getProjectName());
-			//read first pmd report
-			alarms.addAll(reader.readReportFile(pmd.getReportPath()));
-			for(Alarm alarm : alarms) {
-				detectionID++;
-				results.add(new Result(detectionID, gitClone.getProjectName(), latestCommitID, command.getPMD(), rule, alarm.getDir(), commits.get(0).getID(), commits.get(0).getTime(), alarm.getLineNum(), alarm.getCode()));
-			}
-		}		
-		
-		//write result form and first detection
-		if(command.getState().equals(RunState.SAResultMiner) || command.getState().equals(RunState.All)) {
-			System.out.println("Run State: SAResultMiner | FC-Miner");
-			writer.initResult(results, gitClone.getProjectName());
-		} 
-		else if(command.getState().equals(RunState.FPCollector)) {
-			System.out.println("Run State: FPCollector");
-//			writer.initResult(results, gitClone.getProjectName());
-			if(cnt == inputList.size())
-				return command.getResultPath();
-			else {
-				git.close();
-				commits.clear();
-				latestCommitID = "";
-				continue;
-			}
-		}
-		
-		//get all commit size for repeating
-		int logSize = commits.size();
-		
-		//repeat until checking all commits
-		for(int i = 1; i < logSize; i ++) {			
-			for(Result result: results) {
-				if(result.getFixedCode().equals("FILE IS DELETED")) continue;
-				if(!result.getProjectName().equals(gitClone.getProjectName())) continue;
-				alarmsInResult.add(new Alarm(result));
-			}			
-			
-			//checkout current +1			
-			gitCheckout.checkout(git, commits.get(i).getID(), i);			
-			
-			//1. find there are intersections between chagnedFiles and PMD reports			
-			//1-1. find their directory and changed info
-			//diff: get code of files which were changed
-			try {				
-				changeInfo = gitDiff.diffCommit(git, gitClone.getProjectName());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			//***** not have been tested 1-2. *****
-			//1-2. update original result line num and get changed alarms and unchanged alarms		
-			resultUpdater.updateResultLineNum(alarmsInResult, changeInfo);
-			alarmsInResult.clear();
-			ArrayList<Alarm> changedAlarms = resultUpdater.getChangedAlarms();
-			ArrayList<Alarm> unchangedAlarms = resultUpdater.getUnchangedAlarms();						
-			
-			//2-1. if in intersections, check pmd report after changed
-			//diff: get list of files which were changed
-			String changedFiles = "";
-			for(ChangeInfo change : changeInfo) {
-				if(change.getChangeType().equals("D")) continue;
-				if(change.getDir().equals("")) continue;
-				if(changedFiles.contains(change.getDir())) continue;
-				changedFiles += change.getDir() + ",";
-			}
-
-			//write a file which contains a comma delimited changed files list
-			String changedFilesListPath = writer.writeChangedFiles(changedFiles, commits.get(i).getID(), i, gitClone.getProjectName());
-						
-			//apply pmd to changed files						
-			pmd.executeToChangedFiles(rule, commits.get(i).getID(), changedFilesListPath, i, gitClone.getProjectName());
-			alarms = new ArrayList<Alarm>();
-			alarms.addAll(reader.readReportFile(pmd.getReportPath()));
-			
-			//compare alarms and alarmsInResult which contains updated line Num
-			//2-2. if pmd alarm is existing, newly generated			
-			comparator.compareAlarms(alarms, changedAlarms, unchangedAlarms);			
-			
-			//fixed  
-			//"Violation Fixed Commit ID", "VFC Date", "VFC Line Num.", "Fixed Period(day)", 
-			//"Fixed Code"	
-			for(Alarm fixedAlarm : comparator.getFixedAlarms()) {
-				for(int j = 0 ; j < results.size(); j ++ ) {
-					Result tempResult = results.get(j);
-					if(tempResult.getDetectionID() == fixedAlarm.getDetectionIDInResult()) {
-						tempResult.setVFCID(commits.get(i).getID());
-						tempResult.setVFCLineNum(fixedAlarm.getLineNum());
-						tempResult.setVFCDate(commits.get(i).getTime());
-						tempResult.setFixedPeriod(calDate(tempResult.getVFCDate(), tempResult.getVICDate()));
-						tempResult.setFixedCode(fixedAlarm.getCode());	
-						results.set(j, tempResult);
-						break;
-					}
-				}
-			}			
-			
-			//maintained  
-			//"Latest Detection Commit ID", "LDC ID Date", "LDC Line Num.", 
-			for(Alarm maintainedAlarm : comparator.getMaintainedAlarms()) {
-				for(int j = 0 ; j < results.size(); j ++ ) {
-					Result tempResult = results.get(j);
-					if(tempResult.getDetectionID() == maintainedAlarm.getDetectionIDInResult()) {
-						tempResult.setLDCID(commits.get(i).getID());
-						tempResult.setLDCLineNum(maintainedAlarm.getLineNum());
-						tempResult.setLDCDate(commits.get(i).getTime());	
-						results.set(j, tempResult);
-						break;
-					}
-				}
-			}	
-			
-			//newly generated
-			//"Detection ID", "Latest Commit ID", "PMD Version", "Rule Name", "File Path", 
-			//"Violation Introducing Commit ID", "VIC Date", "VIC Line Num.",  
-			//"Original Code"
-			for(Alarm newAlarm : comparator.getNewGeneratedAlarms()) {	
-				detectionID++;				
-				results.add(new Result(detectionID, gitClone.getProjectName(), latestCommitID, command.getPMD(), rule, newAlarm.getDir(), commits.get(i).getID(), commits.get(i).getTime(), newAlarm.getLineNum(), newAlarm.getCode()));	
-			}
-			
-			comparator.init();
-			resultUpdater.init();
-			alarms.clear();			
-			long end = System.currentTimeMillis();
-			//write updated pmd report and its codes
-			writer.writeResult(results, gitClone.getProjectName(), (end-start)/1000);
-		}
 		git.close();
-		commits.clear();
-		latestCommitID = "";		
-	}	
-		System.out.println("FINAL RESULT IS GENERATED!!" );
-		return writer.getResult();
+		
+		return gitClone.getClonedPath() + ", " + gitClone.getProjectName();
 	}
 	
 	public String calDate(String date1, String date2){	 

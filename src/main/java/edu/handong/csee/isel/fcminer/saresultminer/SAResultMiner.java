@@ -132,6 +132,7 @@ public class SAResultMiner {
 		git = gitClone.clone(targetGitAddress);
 		gits.add(git);
 		git.close();
+		System.out.println("INFO: TargetProjects is " + gitClone.getProjectName());
 		
 		return gitClone.getClonedPath() + ", " + gitClone.getProjectName();
 	}

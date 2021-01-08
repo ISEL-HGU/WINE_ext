@@ -32,7 +32,7 @@ public class InfoCollector {
 			
 			Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(outputFile);
 			int cnt = 0;
-			
+			long startTime = System.currentTimeMillis();
 			for (CSVRecord record : records) {									
 				if(record.get(0).equals("Detection ID")) continue;				
 				cnt ++;
@@ -58,11 +58,24 @@ public class InfoCollector {
 				
 				if(numOfAlarmFromSARM != 0)
 					printProgress(cnt, numOfAlarmFromSARM);
+				else {
+					long currentTime = System.currentTimeMillis();
+					printProgressPerTenMin(cnt, startTime, currentTime);
+				}
 			}
 			numOfAlarms = cnt;
 		} catch(IOException e) {
 			e.printStackTrace();
 		}		
+	}
+	
+	private void printProgressPerTenMin(int cnt, long startTime, long currentTime) {
+		long sec = (currentTime - startTime) / 100;
+		
+		if(sec % 600 == 0) {
+			System.out.println("INFO: "+ sec + "sec. is passed, and Current Progress is "  + cnt);
+		}
+			
 	}
 	
 	private void printProgress(int cnt, int total) {

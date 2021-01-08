@@ -18,6 +18,12 @@ public class InfoCollector {
 	ArrayList<Info> infos = new ArrayList<>();
 	int numOfAlarms = 0;
 	
+	/*
+	 * set interval between print progress
+	 * unit: second
+	 */
+	private static final int timeInterval = 60;
+	
 	public int getNumOfAlarms () {
 		return numOfAlarms;
 	}
@@ -58,9 +64,9 @@ public class InfoCollector {
 				infos.add(info);
 				
 				long currentTime = System.currentTimeMillis();
-				long sec = (currentTime - startTime) / 100;
+				long sec = (currentTime - startTime) / 1000;
 				
-				if(sec > 600)
+				if(sec > timeInterval)
 					timerFlag = true;
 					
 				if(numOfAlarmFromSARM != 0)
@@ -68,7 +74,7 @@ public class InfoCollector {
 				else if(timerFlag == true){
 					startTime = System.currentTimeMillis();
 					timerFlag = false;
-					printProgressPerTenMin(cnt);
+					printProgress(cnt);
 				}
 			}
 			numOfAlarms = cnt;
@@ -77,7 +83,7 @@ public class InfoCollector {
 		}		
 	}
 	
-	private void printProgressPerTenMin(int cnt) {		
+	private void printProgress(int cnt) {		
 			System.out.println("INFO: Current Progress is "  + cnt);	
 	}
 	

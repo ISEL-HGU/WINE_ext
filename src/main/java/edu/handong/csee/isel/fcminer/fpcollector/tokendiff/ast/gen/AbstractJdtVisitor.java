@@ -24,7 +24,7 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
     
     private RawData rawData;
     
-    private ProcessedData pData;
+    private ProcessedData pData = new ProcessedData();
     
     private CompilationUnit cUnit;
     

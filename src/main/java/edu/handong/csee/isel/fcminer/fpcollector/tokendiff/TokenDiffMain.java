@@ -61,7 +61,7 @@ public class TokenDiffMain {
 				cDatas.add(cData);
 
 		    cnt++;
-//		    System.out.println("" + cnt);
+		    System.out.println("" + cnt);
 		    printProgress(cnt, rawDatas.size());
 		}
 		

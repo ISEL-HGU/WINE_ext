@@ -41,7 +41,8 @@ public class TokenDiffMain {
 			rawData = null;
 			if(cData != null)
 				cDatas.add(cData);
-			printProgress(cnt, rawDatas.size());			
+			printProgress(cnt, rawDatas.size());	
+			System.out.println("" + cnt);
 		}
 		rawDatas = null;
 		end = System.currentTimeMillis();

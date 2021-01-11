@@ -59,7 +59,7 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 //      
         ArrayList<Property> propertyPath = new ArrayList<>();
                
-        if(pData.getVMethod() != null) {
+        if(pData != null && pData.getVMethod() != null) {
 	        //for current node description	        
 	        List list = n.structuralPropertiesForType();
 	        
@@ -132,7 +132,7 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         int vMethodPos = 0;
         int vMethodLen = 0;
 
-    	if(pData.getVMethod() != null) {
+    	if(pData != null && pData.getVMethod() != null) {
         	vMethodPos = pData.getVMethod().getPos();
         	vMethodLen = pData.getVMethod().getLength();
 	

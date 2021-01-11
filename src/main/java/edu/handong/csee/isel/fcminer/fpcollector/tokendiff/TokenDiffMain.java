@@ -1,5 +1,9 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -8,25 +12,38 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.CodeComparator;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawDataCollector;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.MethodFinder;
 
 public class TokenDiffMain {
-	ArrayList<Info> infos = new ArrayList<>();
 	
-	public TokenDiffMain(ArrayList<Info> infos) {
-		this.infos = infos;
-	}
-	
-	public ArrayList<MappingStorage> run() {
-		System.out.println("INFO: Data Pre-Processing is Started");
-		dataPreprocess();
+	public ArrayList<MappingStorage> run(String resultPath, int numOfAlarms) {
+		System.out.println("INFO: Raw Data Collecting is Started");
+		//collect violating file path, line number, violating code line
+		ArrayList<Info> infos = dataCollecting(resultPath, numOfAlarms);
+		System.out.println("INFO: Raw Data Collecting is Finished");
+		
+		//get violating method, violating node
+		System.out.println("INFO: Data Pre-Processing is Started");		
+		infos = dataPreprocess(infos);		
 		System.out.println("INFO: Data Pre-Processing is Finished");
+		
+		//compare by using v part, forward part backward part
 		System.out.println("INFO: Code Comparison is Started");
-		return codeCompare();				
+		return codeCompare(infos);				
 	}
 	
-	private void dataPreprocess() {
-		int cnt =0;
+	private ArrayList<Info> dataCollecting(String resultPath, int numOfAlarms) {
+		RawDataCollector collector = new RawDataCollector();	
+		System.out.println("Info: Data Collecting is Started");
+		collector.run(resultPath, numOfAlarms);				
+		System.out.println("Info: Data Collecting is Finished, # of Alamrs: " + collector.getNumOfAlarms());
+		return collector.getInfos();
+	}
+	
+	private ArrayList<Info> dataPreprocess(ArrayList<Info> infos) {
+		int cnt =0;				
+		
 		for(Info info: infos) {			
 			info = prepare4GumTree(info, cnt);
 			
@@ -38,9 +55,13 @@ public class TokenDiffMain {
 		    cnt++;
 		    printProgress(cnt, infos.size());
 		}
+		
+		return infos;
 	}
 	
-	private Info prepare4GumTree(Info info, int cnt) {		
+	private Info prepare4GumTree(Info info, int cnt) {
+		info.setSrc(getSrcFromPath(info.getPath()));
+		
 		MethodFinder methodFinder = new MethodFinder(info);
 	    info = methodFinder.findMethod();
 	    
@@ -48,11 +69,32 @@ public class TokenDiffMain {
 	    if(info.getVMethod() == null) {
 	    	return info;
 	    }
-	    
-	    info.setMockClass(method2Class(info.getVMethodString(), cnt));
+	   	    
 	    info.setVNode(findVNode(info));
 	    divide(info);
+	    info.clearRawData();
 	    return info;
+	}
+	
+	private String getSrcFromPath(String path) {
+		StringBuilder builder = new StringBuilder();
+		try {
+			FileInputStream fs = new FileInputStream(path);			
+			BufferedReader reader = new BufferedReader(new InputStreamReader(fs));
+			
+			char[] buf = new char[8192];
+			int read;
+					
+			while((read = reader.read(buf, 0, buf.length)) > 0) {				
+				builder.append(buf, 0, read);
+			}
+			reader.close();
+		} 
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return builder.toString();				
 	}
 	
 	
@@ -152,16 +194,7 @@ public class TokenDiffMain {
 		return newSrc.contains(newTest);
 	}
 	
-	private String method2Class(String vMethodString, int cnt) {
-		
-		vMethodString = "public class MockClass" + cnt + "{\n"
-						+ vMethodString
-						+ "}";
-		
-		return vMethodString;
-	}
-	
-	private ArrayList<MappingStorage> codeCompare() { 
+	private ArrayList<MappingStorage> codeCompare(ArrayList<Info> infos) { 
 		CodeComparator tokenDiff = new CodeComparator();		
 		for(int i = 0 ; i < infos.size(); i ++) {
 			if(infos.get(i) == null) continue;

@@ -1,22 +1,16 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import org.eclipse.jdt.core.dom.ASTNode;
-import org.eclipse.jgit.api.Git;
 
 import edu.handong.csee.isel.fcminer.util.OSValidator;
 
-public class InfoCollector { 	
+public class RawDataCollector { 	
 	ArrayList<Info> infos = new ArrayList<>();
 	int numOfAlarms = 0;
 	
@@ -63,7 +57,7 @@ public class InfoCollector {
 				
 				info.addVLine(record.get(3));
 				
-				info.setSrc(getSrcFromPath(newFilePath, info));				
+//				info.setSrc(getSrcFromPath(newFilePath, info));				
 	        	
 				infos.add(info);
 				
@@ -122,27 +116,6 @@ public class InfoCollector {
 		else if(total-1 == cnt) {
 			System.out.print("done!\n");
 		}		
-	}
-	
-	private String getSrcFromPath(String path, Info info) {
-		StringBuilder builder = new StringBuilder();
-		try {
-			FileInputStream fs = new FileInputStream(path);			
-			BufferedReader reader = new BufferedReader(new InputStreamReader(fs));
-			
-			char[] buf = new char[8192];
-			int read;
-					
-			while((read = reader.read(buf, 0, buf.length)) > 0) {				
-				builder.append(buf, 0, read);
-			}
-			reader.close();
-		} 
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		return builder.toString();				
 	}
 
 	private String modifyFilePathToOS(String filePath) {

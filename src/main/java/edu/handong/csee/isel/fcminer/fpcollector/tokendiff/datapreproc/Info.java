@@ -6,25 +6,32 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.TreeContext;
 
 public class Info {
-	//for infoCollector
-	private String src;
+	//Raw Data	
 	private String path;
 	private int start;
 	private int end;
-	
-	//for code compare
 	private String vLine = "";
+	private String src;	
+	
+	//preprocessed data
 	private ITree vNode;
 	private String vMethodString = "";
 	private ITree vMethod;
-
-	private String mockClass;
 	private TreeContext ctx;
 	
+	//compare data
 	private ArrayList<ITree> forwardPart = new ArrayList<>();
 	private ArrayList<ITree> vPart = new ArrayList<>();
 	private ArrayList<ITree> backwardPart = new ArrayList<>();
 
+	public void clearRawData() {
+		path = null;
+		start = -1;
+		end = -1;
+		vLine =  null;
+		src = null;
+	}
+	
 	public int getStart() {
 		return start;
 	}
@@ -87,14 +94,6 @@ public class Info {
 	
 	public String getVLine() {
 		return vLine;
-	}
-	
-	public void setMockClass(String mockClass) {
-		this.mockClass = mockClass;
-	}
-	
-	public String getMockClass() {
-		return mockClass;
 	}
 
 	public String getVMethodString() {

@@ -82,7 +82,7 @@ public class TokenDiffMain {
 	    pData.setVNode(findVNode(rawData, pData.getVMethod()));
 	    rawData = null;
 	    CompareData cData = divide(pData);	    
-	    
+	    pData = null;
 	    return cData;
 	}
 	

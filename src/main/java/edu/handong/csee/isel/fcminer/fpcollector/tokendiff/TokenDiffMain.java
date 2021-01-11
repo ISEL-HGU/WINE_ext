@@ -74,6 +74,7 @@ public class TokenDiffMain {
 	    info.setVNode(findVNode(info));
 	    divide(info);
 	    info.clearRawData();
+	    info.clearPreprocessedData();
 	    return info;
 	}
 	

@@ -24,6 +24,13 @@ public class Info {
 	private ArrayList<ITree> vPart = new ArrayList<>();
 	private ArrayList<ITree> backwardPart = new ArrayList<>();
 
+	public void clearPreprocessedData() {
+		vNode = null;
+		vMethodString = null;
+		vMethod = null;
+		ctx = null;
+	}
+	
 	public void clearRawData() {
 		path = null;
 		start = -1;

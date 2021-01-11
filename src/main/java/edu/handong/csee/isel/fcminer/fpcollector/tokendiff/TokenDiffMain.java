@@ -32,7 +32,7 @@ public class TokenDiffMain {
 		System.out.println("INFO: Data Pre-Processing is Started");	
 		start = System.currentTimeMillis();
 		ArrayList<CompareData> cDatas = dataPreprocess(rawDatas);	
-		rawDatas.clear();
+		rawDatas = null;
 		end = System.currentTimeMillis();
 		time = (end - start) / 100;
 		System.out.println("INFO: Data Pre-Processing is Finished - " + time + " sec.");
@@ -61,7 +61,7 @@ public class TokenDiffMain {
 				cDatas.add(cData);
 
 		    cnt++;
-		    System.out.println("" + cnt);
+//		    System.out.println("" + cnt);
 		    printProgress(cnt, rawDatas.size());
 		}
 		
@@ -80,6 +80,7 @@ public class TokenDiffMain {
 	    }
 	   	    
 	    pData.setVNode(findVNode(rawData, pData.getVMethod()));
+	    rawData = null;
 	    CompareData cData = divide(pData);	    
 	    
 	    return cData;

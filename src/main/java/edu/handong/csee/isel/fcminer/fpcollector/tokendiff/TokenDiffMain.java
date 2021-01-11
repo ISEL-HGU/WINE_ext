@@ -31,11 +31,22 @@ public class TokenDiffMain {
 		//get violating method, violating node
 		System.out.println("INFO: Data Pre-Processing is Started");	
 		start = System.currentTimeMillis();
-		ArrayList<CompareData> cDatas = dataPreprocess(rawDatas);	
+		ArrayList<CompareData> cDatas = new ArrayList<>();
+		int cnt =0;		
+		for(RawData rawData: rawDatas) {
+			cnt ++;
+			//the case when the violating line is not in a method but in static block or something.
+			CompareData cData = new CompareData();
+			cData = dataPreprocess(rawData);
+			rawData = null;
+			if(cData != null)
+				cDatas.add(cData);
+			printProgress(cnt, rawDatas.size());			
+		}
 		rawDatas = null;
 		end = System.currentTimeMillis();
 		time = (end - start) / 100;
-		System.out.println("INFO: Data Pre-Processing is Finished - " + time + " sec.");
+		System.out.println("INFO: Data Pre-Processing is Finished - " + time + " sec.");		
 		
 		//compare by using v part, forward part backward part
 		System.out.println("INFO: Code Comparison is Started");
@@ -50,40 +61,19 @@ public class TokenDiffMain {
 		return collector.getRawDatas();
 	}
 	
-	private ArrayList<CompareData> dataPreprocess(ArrayList<RawData> rawDatas) {
-		int cnt =0;				
-		ArrayList<CompareData> cDatas = new ArrayList<>();
-		for(RawData rawData: rawDatas) {			
-			CompareData cData = prepare4GumTree(rawData, cnt);  
-			rawData = null;
-			//the case when the violating line is not in a method but in static block or something.
-			if(cData != null)
-				cDatas.add(cData);
-
-		    cnt++;
-		    System.out.println("" + cnt);
-		    printProgress(cnt, rawDatas.size());
-		}
-		
-		return cDatas;
-	}
-	
-	private CompareData prepare4GumTree(RawData rawData, int cnt) {
+	private CompareData dataPreprocess(RawData rawData) {					
 		rawData.setSrc(getSrcFromPath(rawData.getPath()));
 		
 		MethodFinder methodFinder = new MethodFinder();
 	    ProcessedData pData = methodFinder.findMethod(rawData);
 	    
 	    //the case when the violating line is not in a method but in static block or something.
-	    if(pData.getVMethod() == null) {
-	    	return null;
+	    if(pData.getVMethod() != null) {
+	    	pData.setVNode(findVNode(rawData, pData.getVMethod()));
+	    	return divide(pData);
 	    }
-	   	    
-	    pData.setVNode(findVNode(rawData, pData.getVMethod()));
-	    rawData = null;
-	    CompareData cData = divide(pData);	    
-	    pData = null;
-	    return cData;
+	    
+	    else return null;
 	}
 	
 	private String getSrcFromPath(String path) {

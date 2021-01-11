@@ -10,7 +10,6 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.JdtTreeGenera
 
 public class MethodFinder {
 	CompilationUnit cUnit;
-	ArrayList<MethodDeclaration> lstMethodDeclaration = new ArrayList<>();
 	
 	public ProcessedData findMethod(RawData rawData){
 		ProcessedData pData = null;

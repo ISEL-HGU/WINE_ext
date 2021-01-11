@@ -20,15 +20,22 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawDataCo
 public class TokenDiffMain {
 	
 	public ArrayList<MappingStorage> run(String resultPath, int numOfAlarms) {
-		System.out.println("INFO: Raw Data Collecting is Started");
 		//collect violating file path, line number, violating code line
+		System.out.println("INFO: Raw Data Collecting is Started");
+		long start = System.currentTimeMillis();
 		ArrayList<RawData> rawDatas = dataCollecting(resultPath, numOfAlarms);
-		System.out.println("INFO: Raw Data Collecting is Finished");
+		long end = System.currentTimeMillis();
+		long time = (end - start) / 100;
+		System.out.println("INFO: Raw Data Collecting is Finished - " + time + " sec.");
 		
 		//get violating method, violating node
-		System.out.println("INFO: Data Pre-Processing is Started");		
-		ArrayList<CompareData> cDatas = dataPreprocess(rawDatas);		
-		System.out.println("INFO: Data Pre-Processing is Finished");
+		System.out.println("INFO: Data Pre-Processing is Started");	
+		start = System.currentTimeMillis();
+		ArrayList<CompareData> cDatas = dataPreprocess(rawDatas);	
+		rawDatas.clear();
+		end = System.currentTimeMillis();
+		time = (end - start) / 100;
+		System.out.println("INFO: Data Pre-Processing is Finished - " + time + " sec.");
 		
 		//compare by using v part, forward part backward part
 		System.out.println("INFO: Code Comparison is Started");
@@ -36,7 +43,7 @@ public class TokenDiffMain {
 	}
 	
 	private ArrayList<RawData> dataCollecting(String resultPath, int numOfAlarms) {
-		RawDataCollector collector = new RawDataCollector();	
+		RawDataCollector collector = new RawDataCollector();			
 		System.out.println("Info: Data Collecting is Started");
 		collector.run(resultPath, numOfAlarms);				
 		System.out.println("Info: Data Collecting is Finished, # of Alamrs: " + collector.getNumOfAlarms());
@@ -48,7 +55,7 @@ public class TokenDiffMain {
 		ArrayList<CompareData> cDatas = new ArrayList<>();
 		for(RawData rawData: rawDatas) {			
 			CompareData cData = prepare4GumTree(rawData, cnt);  
-			
+			rawData = null;
 			//the case when the violating line is not in a method but in static block or something.
 			if(cData != null)
 				cDatas.add(cData);

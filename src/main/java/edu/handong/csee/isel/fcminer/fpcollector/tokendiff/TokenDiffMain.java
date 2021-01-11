@@ -53,6 +53,7 @@ public class TokenDiffMain {
 			}
 			
 		    cnt++;
+		    System.out.println("" + cnt);
 		    printProgress(cnt, infos.size());
 		}
 		

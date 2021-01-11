@@ -280,16 +280,6 @@ public abstract class AbstractTree implements ITree {
         }
         
         @Override
-        public String getChildProps() {
-        	throw unsupportedOperation();
-        }
-        
-        @Override
-        public void setChildProps(String childProps) {
-        	throw unsupportedOperation();
-        }
-
-        @Override
         public List<ITree> getChildren() {
             return children;
         }

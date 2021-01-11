@@ -11,7 +11,9 @@ import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.ProcessedData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawData;
 
 public abstract class AbstractJdtTreeGenerator extends TreeGenerator {
 
@@ -30,7 +32,7 @@ public abstract class AbstractJdtTreeGenerator extends TreeGenerator {
     }
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    public Info generate(Reader r, Info info) throws IOException {
+    public ProcessedData generate(Reader r, RawData rawData) throws IOException {
         ASTParser parser = ASTParser.newParser(AST.JLS11);
         parser.setKind(ASTParser.K_COMPILATION_UNIT);
         Map pOptions = JavaCore.getOptions();
@@ -40,7 +42,7 @@ public abstract class AbstractJdtTreeGenerator extends TreeGenerator {
         pOptions.put(JavaCore.COMPILER_DOC_COMMENT_SUPPORT, JavaCore.ENABLED);
         parser.setCompilerOptions(pOptions);
         parser.setSource(readerToCharArray(r));
-        AbstractJdtVisitor v = createVisitor(info);
+        AbstractJdtVisitor v = createVisitor(rawData);
         ASTNode node = parser.createAST(null);
         
         if(node.getNodeType() == 15)
@@ -49,10 +51,10 @@ public abstract class AbstractJdtTreeGenerator extends TreeGenerator {
         if ((node.getFlags() & ASTNode.MALFORMED) != 0) // bitwise flag to check if the node has a syntax error
             throw new SyntaxException(this, r);
         node.accept(v);
-        info = v.getInfo();
-        info.setCtx(v.getTreeContext());
-        return info;
+        ProcessedData pData = v.getPreprocessedData();
+        pData.setCtx(v.getTreeContext());        
+        return pData;
     }
 
-    protected abstract AbstractJdtVisitor createVisitor(Info info);
+    protected abstract AbstractJdtVisitor createVisitor(RawData rawData);
 }

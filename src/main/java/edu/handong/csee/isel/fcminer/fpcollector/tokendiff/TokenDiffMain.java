@@ -11,71 +11,71 @@ import java.util.List;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.CodeComparator;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawDataCollector;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.MethodFinder;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.ProcessedData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawDataCollector;
 
 public class TokenDiffMain {
 	
 	public ArrayList<MappingStorage> run(String resultPath, int numOfAlarms) {
 		System.out.println("INFO: Raw Data Collecting is Started");
 		//collect violating file path, line number, violating code line
-		ArrayList<Info> infos = dataCollecting(resultPath, numOfAlarms);
+		ArrayList<RawData> rawDatas = dataCollecting(resultPath, numOfAlarms);
 		System.out.println("INFO: Raw Data Collecting is Finished");
 		
 		//get violating method, violating node
 		System.out.println("INFO: Data Pre-Processing is Started");		
-		infos = dataPreprocess(infos);		
+		ArrayList<CompareData> cDatas = dataPreprocess(rawDatas);		
 		System.out.println("INFO: Data Pre-Processing is Finished");
 		
 		//compare by using v part, forward part backward part
 		System.out.println("INFO: Code Comparison is Started");
-		return codeCompare(infos);				
+		return codeCompare(cDatas);				
 	}
 	
-	private ArrayList<Info> dataCollecting(String resultPath, int numOfAlarms) {
+	private ArrayList<RawData> dataCollecting(String resultPath, int numOfAlarms) {
 		RawDataCollector collector = new RawDataCollector();	
 		System.out.println("Info: Data Collecting is Started");
 		collector.run(resultPath, numOfAlarms);				
 		System.out.println("Info: Data Collecting is Finished, # of Alamrs: " + collector.getNumOfAlarms());
-		return collector.getInfos();
+		return collector.getRawDatas();
 	}
 	
-	private ArrayList<Info> dataPreprocess(ArrayList<Info> infos) {
+	private ArrayList<CompareData> dataPreprocess(ArrayList<RawData> rawDatas) {
 		int cnt =0;				
-		
-		for(Info info: infos) {			
-			info = prepare4GumTree(info, cnt);
+		ArrayList<CompareData> cDatas = new ArrayList<>();
+		for(RawData rawData: rawDatas) {			
+			CompareData cData = prepare4GumTree(rawData, cnt);  
 			
 			//the case when the violating line is not in a method but in static block or something.
-			if(info.getVMethod() == null) {
-				info = null;
-			}
-			
+			if(cData != null)
+				cDatas.add(cData);
+
 		    cnt++;
 		    System.out.println("" + cnt);
-		    printProgress(cnt, infos.size());
+		    printProgress(cnt, rawDatas.size());
 		}
 		
-		return infos;
+		return cDatas;
 	}
 	
-	private Info prepare4GumTree(Info info, int cnt) {
-		info.setSrc(getSrcFromPath(info.getPath()));
+	private CompareData prepare4GumTree(RawData rawData, int cnt) {
+		rawData.setSrc(getSrcFromPath(rawData.getPath()));
 		
-		MethodFinder methodFinder = new MethodFinder(info);
-	    info = methodFinder.findMethod();
+		MethodFinder methodFinder = new MethodFinder();
+	    ProcessedData pData = methodFinder.findMethod(rawData);
 	    
 	    //the case when the violating line is not in a method but in static block or something.
-	    if(info.getVMethod() == null) {
-	    	return info;
+	    if(pData.getVMethod() == null) {
+	    	return null;
 	    }
 	   	    
-	    info.setVNode(findVNode(info));
-	    divide(info);
-	    info.clearRawData();
-	    info.clearPreprocessedData();
-	    return info;
+	    pData.setVNode(findVNode(rawData, pData.getVMethod()));
+	    CompareData cData = divide(pData);	    
+	    
+	    return cData;
 	}
 	
 	private String getSrcFromPath(String path) {
@@ -101,26 +101,30 @@ public class TokenDiffMain {
 	
 	
 	
-	private void divide(Info info) {		
+	private CompareData divide(ProcessedData pData) {	
+		CompareData cData = new CompareData();
+		
 		List<ITree> currents = new ArrayList<>();
 		
-		currents.add(info.getVMethod());
+		currents.add(pData.getVMethod());
         while (currents.size() > 0) {        	
             ITree c = currents.remove(0);
-            if(c.getPos() <= info.getVNode().getPos() && c.getEndPos() <= info.getVNode().getPos()) {        
-            	info.addForwardPart(c);
-            } else if(c.getPos() >= info.getVNode().getPos() && c.getEndPos() <= info.getVNode().getEndPos()) {
-            	info.addVPart(c);
-            } else if(c.getPos() >= info.getVNode().getEndPos()) {
-            	info.addBackwardPart(c);
+            if(c.getPos() <= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getPos()) {        
+            	cData.addForwardPart(c);
+            } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
+            	cData.addVPart(c);
+            } else if(c.getPos() >= pData.getVNode().getEndPos()) {
+            	cData.addBackwardPart(c);
             }
             currents.addAll(c.getChildren());
         }
-        sort(info);        
+        sort(cData);
+        
+        return cData;
 	}
 	
-	private void sort(Info info) {
-		info.getForwardPart().sort(new Comparator<ITree>() {
+	private void sort(CompareData cData) {
+		cData.getForwardPart().sort(new Comparator<ITree>() {
 			public int compare(ITree node1, ITree node2) {
 				if(node1.getPos() > node2.getPos()) {
 					return 1;
@@ -132,7 +136,7 @@ public class TokenDiffMain {
 			}
 		});
 		
-		info.getVPart().sort(new Comparator<ITree>() {
+		cData.getVPart().sort(new Comparator<ITree>() {
 			public int compare(ITree node1, ITree node2) {
 				if(node1.getPos() > node2.getPos()) {
 					return 1;
@@ -144,7 +148,7 @@ public class TokenDiffMain {
 			}
 		});
 		
-		info.getBackwardPart().sort(new Comparator<ITree>() {
+		cData.getBackwardPart().sort(new Comparator<ITree>() {
 			public int compare(ITree node1, ITree node2) {
 				if(node1.getPos() > node2.getPos()) {
 					return 1;
@@ -157,16 +161,15 @@ public class TokenDiffMain {
 		});
 	}
 	
-	private ITree findVNode(Info info) {
+	private ITree findVNode(RawData rawData, ITree vMethod) {
 		ITree vNode = null;
-		ITree vMethod = info.getVMethod();
 		//set vNode based on line number in ITree
         List<ITree> currents = new ArrayList<>();
         currents.add(vMethod);
         while (currents.size() > 0) {        	
             ITree c = currents.remove(0);
-            if(contain(c.getNode2String(), info.getVLine()) && 
-            		(c.getStartLineNum() <= info.getStart() && c.getEndLineNum() >= info.getEnd())) {        
+            if(contain(c.getNode2String(), rawData.getVLine()) && 
+            		(c.getStartLineNum() <= rawData.getStart() && c.getEndLineNum() >= rawData.getEnd())) {        
             	vNode = c;
             }
             currents.addAll(c.getChildren());
@@ -196,7 +199,7 @@ public class TokenDiffMain {
 		return newSrc.contains(newTest);
 	}
 	
-	private ArrayList<MappingStorage> codeCompare(ArrayList<Info> infos) { 
+	private ArrayList<MappingStorage> codeCompare(ArrayList<CompareData> infos) { 
 		CodeComparator tokenDiff = new CodeComparator();		
 		for(int i = 0 ; i < infos.size(); i ++) {
 			if(infos.get(i) == null) continue;

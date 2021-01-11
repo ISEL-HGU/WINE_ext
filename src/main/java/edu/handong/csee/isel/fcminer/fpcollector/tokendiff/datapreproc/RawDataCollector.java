@@ -11,7 +11,7 @@ import org.apache.commons.csv.CSVRecord;
 import edu.handong.csee.isel.fcminer.util.OSValidator;
 
 public class RawDataCollector { 	
-	ArrayList<Info> infos = new ArrayList<>();
+	ArrayList<RawData> rawDatas = new ArrayList<>();
 	int numOfAlarms = 0;
 	
 	/*
@@ -25,7 +25,7 @@ public class RawDataCollector {
 	}
 	
 	public void clear() {		
-		infos = null;
+		rawDatas = null;
 	}
 	
 	public void run(String resultPath, int numOfAlarmFromSARM) {		
@@ -39,27 +39,27 @@ public class RawDataCollector {
 			for (CSVRecord record : records) {									
 				if(record.get(0).equals("Detection ID")) continue;				
 				cnt ++;
-				Info info = new Info();			
+				RawData rawData = new RawData();			
 	
 				String filePath = record.get(1);
 				String newFilePath = modifyFilePathToOS(filePath);	
-				info.setPath(newFilePath);
+				rawData.setPath(newFilePath);
 				
 				String startNEnd = record.get(2);
 				String[] startEnd = startNEnd.split("-");
 				if(startEnd.length > 1) {
-					info.setStart(startEnd[0]);
-					info.setEnd(startEnd[1]);
+					rawData.setStart(startEnd[0]);
+					rawData.setEnd(startEnd[1]);
 				} else {
-					info.setStart(startEnd[0]);
-					info.setEnd(startEnd[0]);
+					rawData.setStart(startEnd[0]);
+					rawData.setEnd(startEnd[0]);
 				}
 				
-				info.addVLine(record.get(3));
+				rawData.addVLine(record.get(3));
 				
 //				info.setSrc(getSrcFromPath(newFilePath, info));				
 	        	
-				infos.add(info);
+				rawDatas.add(rawData);
 				
 				long currentTime = System.currentTimeMillis();
 				long sec = (currentTime - startTime) / 1000;
@@ -144,8 +144,8 @@ public class RawDataCollector {
 		return filePath;
 	}
 
-	public ArrayList<Info> getInfos(){
-		return infos;
+	public ArrayList<RawData> getRawDatas(){
+		return rawDatas;
 	}
 	
 }

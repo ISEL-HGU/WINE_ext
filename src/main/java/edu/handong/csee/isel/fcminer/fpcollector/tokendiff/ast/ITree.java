@@ -47,10 +47,6 @@ public interface ITree {
      */
     List<ITree> getTrees();
     
-    String getChildProps();
-    
-    void setChildProps(String childProps);
-    
     public ArrayList<Property> getParentProps();
     
     public void setParentProps(ArrayList<Property> parentProps);

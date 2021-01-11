@@ -9,22 +9,18 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.JdtTreeGenerator;
 
 public class MethodFinder {
-	Info info;
 	CompilationUnit cUnit;
 	ArrayList<MethodDeclaration> lstMethodDeclaration = new ArrayList<>();
 	
-	public MethodFinder(Info info) {
-		this.info = info;
-	}
-	
-	public Info findMethod(){
+	public ProcessedData findMethod(RawData rawData){
+		ProcessedData pData = null;
 		try {
-			this.info = new JdtTreeGenerator().generateFromInfo(info);
+			pData = new JdtTreeGenerator().generateFromInfo(rawData);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
 		
-		return info;
+		return pData;
 	}
 	
 	public int getLineNum(int startPosition){

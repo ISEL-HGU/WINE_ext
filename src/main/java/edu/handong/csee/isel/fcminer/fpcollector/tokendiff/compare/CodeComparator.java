@@ -3,21 +3,21 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 
 public class CodeComparator {
-	private Stack<Info> gumTreeStack = new Stack<>();
+	private Stack<CompareData> gumTreeStack = new Stack<>();
 	private ArrayList<MappingStorage> storage = new ArrayList<>();
 	
-	public void compare(Info info) { 
+	public void compare(CompareData info) { 
 		if(gumTreeStack.contains(info)) return;
 		
 		gumTreeStack.add(info);
 		
 		if(gumTreeStack.size() == 1) return;
 		
-		Info variableClass = gumTreeStack.pop();
-		Info fixedClass = gumTreeStack.elementAt(0);
+		CompareData variableClass = gumTreeStack.pop();
+		CompareData fixedClass = gumTreeStack.elementAt(0);
 		
 		Matcher matcher = new Matcher(fixedClass, variableClass);
 		MappingStorage tempMappingSto = new MappingStorage();

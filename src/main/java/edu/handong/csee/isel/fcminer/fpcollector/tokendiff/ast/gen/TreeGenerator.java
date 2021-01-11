@@ -6,26 +6,28 @@ import java.io.StringReader;
 
 import org.atteo.classindex.IndexSubclasses;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.ProcessedData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawData;
 
 @IndexSubclasses
 public abstract class TreeGenerator {
 
-    protected abstract Info generate(Reader r, Info info) throws IOException;
+    protected abstract ProcessedData generate(Reader r, RawData rawData) throws IOException;
     
-    public Info generateFromReader(Reader r, Info info) throws IOException {
-        Info updatedInfo = generate(r, info);
+    public ProcessedData generateFromReader(Reader r, RawData rawData) throws IOException {
+        ProcessedData pData = generate(r, rawData);
         
       //the case when the violating line is not in a method but in static block or something.
-        if(updatedInfo.getCtx().getRoot() == null) {
-        	return updatedInfo;
+        if(pData.getCtx().getRoot() == null) {
+        	return pData;
         }
         
-        updatedInfo.getCtx().validate();
-        return updatedInfo;
+        pData.getCtx().validate();
+        return pData;
     }
     
-    public Info generateFromInfo(Info info) throws IOException {    	
-        return generateFromReader(new StringReader(info.getSrc()), info);
+    public ProcessedData generateFromInfo(RawData rawData) throws IOException {
+        return generateFromReader(new StringReader(rawData.getSrc()), rawData);
     }
 }

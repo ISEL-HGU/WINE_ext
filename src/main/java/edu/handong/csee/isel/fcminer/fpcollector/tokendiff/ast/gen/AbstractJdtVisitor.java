@@ -12,7 +12,9 @@ import org.eclipse.jdt.core.dom.StructuralPropertyDescriptor;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.TreeContext;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.ProcessedData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawData;
 
 public abstract class AbstractJdtVisitor extends ASTVisitor {
 
@@ -20,7 +22,9 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 
     private Deque<ITree> trees = new ArrayDeque<>();
     
-    private Info info;
+    private RawData rawData;
+    
+    private ProcessedData pData;
     
     private CompilationUnit cUnit;
     
@@ -28,17 +32,17 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
     	Method, NULL
     }
     
-    public AbstractJdtVisitor(Info info) {
+    public AbstractJdtVisitor(RawData rawData) {
     	super(true);
-    	this.info = info;
+    	this.rawData = rawData;
     }
 
     public void setCUnit(CompilationUnit cUnit) {
     	this.cUnit = cUnit;
     }
     
-    public Info getInfo() {
-    	return info;
+    public ProcessedData getPreprocessedData() {
+    	return pData;
     }
     
     public TreeContext getTreeContext() {
@@ -54,23 +58,17 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         String node2String = n.toString();
 //      
         ArrayList<Property> propertyPath = new ArrayList<>();
-        
-        String childProps = "P(";
-        if(info.getVMethod() != null) {
+               
+        if(pData.getVMethod() != null) {
 	        //for current node description	        
 	        List list = n.structuralPropertiesForType();
-	        for(int i = 0 ; i < list.size(); i ++) {
-	        	StructuralPropertyDescriptor prop = (StructuralPropertyDescriptor) list.get(i);
-	        	childProps += prop.getId() + " ";
-	        }                
-	        childProps += ")";
 	        
 	        //for get where the current node belongs to parent's property
-	        if(getLineNum(n.getStartPosition()) >= info.getStart() && getLineNum(n.getStartPosition()) <= info.getEnd()) {
+	        if(getLineNum(n.getStartPosition()) >= rawData.getStart() && getLineNum(n.getStartPosition()) <= rawData.getEnd()) {
 	        	ASTNode _n = n;
 	        	ASTNode tempParent = _n.getParent();
-	        	while(getLineNum(tempParent.getStartPosition())>= info.getStart() 
-	        			&& getLineNum(tempParent.getStartPosition())<= info.getEnd()) {
+	        	while(getLineNum(tempParent.getStartPosition())>= rawData.getStart() 
+	        			&& getLineNum(tempParent.getStartPosition())<= rawData.getEnd()) {
 			        Property parentProperty = new Property();			        
 	        		int parentType = tempParent.getNodeType(); 
 			        list = tempParent.structuralPropertiesForType();
@@ -111,14 +109,14 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         }
 //        
         
-        Flag flag = push(type, typeName, label, startPos, len, node2String, childProps, propertyPath);
+        Flag flag = push(type, typeName, label, startPos, len, node2String, propertyPath);
         if(flag == Flag.Method) {
-          	info.setVMethodString(node2String);
+          	pData.setVMethodString(node2String);
         }        
     }
 
     private Flag push(int type, String typeName, String label, int startPosition, int length, String node2String,
-    					String childProps, ArrayList<Property> propertyPath ) {    	
+    					ArrayList<Property> propertyPath ) {    	
     	Flag flag= Flag.NULL;
     	ITree t = context.createTree(type, label, typeName);
         t.setPos(startPosition);
@@ -126,7 +124,6 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         t.setStartLineNum(cUnit.getLineNumber(startPosition));
         t.setEndLineNum(cUnit.getLineNumber(startPosition + length));
         t.setNode2String(node2String);
-        t.setChildProps(childProps);
         
         ArrayList<Property> newProps = t.getParentProps();
         newProps.addAll(propertyPath);
@@ -135,9 +132,9 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         int vMethodPos = 0;
         int vMethodLen = 0;
 
-    	if(info.getVMethod() != null) {
-        	vMethodPos = info.getVMethod().getPos();
-        	vMethodLen = info.getVMethod().getLength();
+    	if(pData.getVMethod() != null) {
+        	vMethodPos = pData.getVMethod().getPos();
+        	vMethodLen = pData.getVMethod().getLength();
 	
         	if(vMethodPos <= startPosition && vMethodPos + vMethodLen >= startPosition + length){
                     ITree parent = trees.peek();
@@ -147,9 +144,9 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 
         //for finding violating method
         if(type == 31 &&
-    			getLineNum(startPosition) <= info.getStart()
-    			&& info.getEnd() <= getLineNum(startPosition + length)){
-        	info.setVMethod(t);
+    			getLineNum(startPosition) <= rawData.getStart()
+    			&& rawData.getEnd() <= getLineNum(startPosition + length)){
+        	pData.setVMethod(t);
         	context.setRoot(t);
 			flag = Flag.Method;
 		}        

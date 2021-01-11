@@ -22,12 +22,13 @@ import org.eclipse.jdt.core.dom.TypeDeclaration;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.AbstractJdtVisitor.Flag;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawData;
 
 public class JdtVisitor  extends AbstractJdtVisitor {
     
-	public JdtVisitor(Info info) {
-        super(info);
+	public JdtVisitor(RawData rawData) {
+        super(rawData);
     }
 
     @Override

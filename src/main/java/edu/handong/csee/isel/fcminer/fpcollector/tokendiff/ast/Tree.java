@@ -19,8 +19,6 @@ public class Tree extends AbstractTree implements ITree {
     
     private String node2String;
     
-    private String childProps = "";
-    
     private ArrayList<Property> parentProps = new ArrayList<>();
 
     // Begin position of the tree in terms of absolute character index and length
@@ -127,14 +125,7 @@ public class Tree extends AbstractTree implements ITree {
     @Override
     public String getNode2String() {
     	return node2String;
-    }
-    
-    @Override
-    public String getChildProps() {
-    	return childProps;
-    }
-    
-    
+    }        
     
     @Override
     public ArrayList<Property> getParentProps() {
@@ -144,11 +135,6 @@ public class Tree extends AbstractTree implements ITree {
     @Override
     public void setParentProps(ArrayList<Property> parentProps) {
     	this.parentProps = parentProps;
-    }
-    
-    @Override
-    public void setChildProps(String childProps) {
-    	this.childProps = childProps;
     }
     
     @Override

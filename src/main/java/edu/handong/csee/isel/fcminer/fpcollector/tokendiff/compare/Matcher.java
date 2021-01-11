@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import edu.handong.csee.isel.fcminer.fpcollector.pattern.Pattern;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Info;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 
 public class Matcher {
-	Info fixed;
-	Info var;
+	CompareData fixed;
+	CompareData var;
 	
 	MappingStorage storage = new MappingStorage();
 	String tempHashString = "";
@@ -22,7 +22,7 @@ public class Matcher {
 		F, V, B
 	}		
 	
-	public Matcher(Info fixed, Info var) {
+	public Matcher(CompareData fixed, CompareData var) {
 		this.fixed = fixed;
 		this.var = var;
 	}
@@ -93,8 +93,7 @@ public class Matcher {
 								tempMappingHashString += tempMapping.getParentProperties().get(k).getNodeType(); 
 								tempMappingHashString += tempMapping.getParentProperties().get(k).getProp();
 							}									
-							
-							tempMapping.setCode(fixed.getVLine());
+														
 							tempMapping.setHash(tempMappingHashString.hashCode());							
 							tempMapStorage.add(tempMapping);
 						}

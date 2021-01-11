@@ -2,8 +2,10 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 
@@ -59,7 +61,9 @@ public class InfoCollector {
 					info.setEnd(startEnd[0]);
 				}
 				
-				info = getSrcFromPath(newFilePath, info);				
+				info.addVLine(record.get(3));
+				
+				info.setSrc(getSrcFromPath(newFilePath, info));				
 	        	
 				infos.add(info);
 				
@@ -120,31 +124,25 @@ public class InfoCollector {
 		}		
 	}
 	
-	private Info getSrcFromPath(String path, Info info) {
-		String src = "";
-		
-		File f = new File(path);
+	private String getSrcFromPath(String path, Info info) {
+		StringBuilder builder = new StringBuilder();
 		try {
-			FileReader fReader =new FileReader(f);
-			BufferedReader fBufReader = new BufferedReader(fReader);
-			String str = "";
-			int cnt = 0;
-			while((str = fBufReader.readLine()) != null) {
-				cnt++;
-				src += (str + "\n");
-				if(info.getStart() <= cnt && cnt <= info.getEnd()) {
-					info.addVLine(str + "\n");
-				}
+			FileInputStream fs = new FileInputStream(path);			
+			BufferedReader reader = new BufferedReader(new InputStreamReader(fs));
+			
+			char[] buf = new char[8192];
+			int read;
+					
+			while((read = reader.read(buf, 0, buf.length)) > 0) {				
+				builder.append(buf, 0, read);
 			}
-			fBufReader.close();
+			reader.close();
 		} 
 		catch (IOException e) {
-				e.printStackTrace();
+			e.printStackTrace();
 		}
-		info.setSrc(src);
 		
-		
-		return info;
+		return builder.toString();				
 	}
 
 	private String modifyFilePathToOS(String filePath) {

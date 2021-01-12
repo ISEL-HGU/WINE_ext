@@ -31,20 +31,31 @@ public class TokenDiffMain {
 		//get violating method, violating node
 		System.out.println("INFO: Data Pre-Processing is Started");	
 		start = System.currentTimeMillis();
+		ArrayList<ProcessedData> pDatas = new ArrayList<>();
 		ArrayList<CompareData> cDatas = new ArrayList<>();
 		int cnt =0;		
+		MethodFinder methodFinder = new MethodFinder();
 		for(RawData rawData: rawDatas) {
-			cnt ++;
-			//the case when the violating line is not in a method but in static block or something.
-			CompareData cData = new CompareData();
-			cData = dataPreprocess(rawData);
+			cnt ++;			
+			ProcessedData pData = new ProcessedData();
+			pData = dataPreprocess(rawData, methodFinder);			
 			rawData = null;
-			if(cData != null)
-				cDatas.add(cData);
+			//the case when the violating line is not in a method but in static block or something.
+			if(pData != null)
+				pDatas.add(pData);
 			printProgress(cnt, rawDatas.size());	
 			System.out.println("" + cnt);
 		}
 		rawDatas = null;
+		
+		cnt =0;		
+		for(ProcessedData pData: pDatas) {
+			cnt ++;
+			cDatas.add(compareDataProcess(pData));
+			printProgress(cnt, pDatas.size());
+			System.out.println("" + cnt);
+		}
+		
 		end = System.currentTimeMillis();
 		time = (end - start) / 100;
 		System.out.println("INFO: Data Pre-Processing is Finished - " + time + " sec.");		
@@ -62,20 +73,29 @@ public class TokenDiffMain {
 		return collector.getRawDatas();
 	}
 	
-	private CompareData dataPreprocess(RawData rawData) {					
-		MethodFinder methodFinder = new MethodFinder();
-	    ProcessedData pData = getProcessedData(rawData, methodFinder); 
-	    
-	    //the case when the violating line is not in a method but in static block or something.
-	    if(pData.getVMethod() != null) {
-	    	pData.setVNode(findVNode(rawData, pData.getVMethod()));
-	    	return divide(pData);
-	    }
-	    
-	    else return null;
+	private CompareData compareDataProcess(ProcessedData pData) {
+		CompareData cData = new CompareData();
+		
+		List<ITree> currents = new ArrayList<>();
+		
+		currents.add(pData.getVMethod());
+        while (currents.size() > 0) {        	
+            ITree c = currents.remove(0);
+            if(c.getPos() <= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getPos()) {        
+//            	cData.addForwardPart(c);
+            } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
+            	cData.addVPart(c);
+            } else if(c.getPos() >= pData.getVNode().getEndPos()) {
+//            	cData.addBackwardPart(c);
+            }
+            currents.addAll(c.getChildren());
+        }
+        sort(cData);
+        
+        return cData;
 	}
 	
-	private ProcessedData getProcessedData(RawData rawData, MethodFinder methodFinder) {
+	private ProcessedData dataPreprocess(RawData rawData, MethodFinder methodFinder) {							
 		StringBuilder builder = new StringBuilder();
 		try {
 			FileInputStream fs = new FileInputStream(rawData.getPath());			
@@ -93,32 +113,11 @@ public class TokenDiffMain {
 			e.printStackTrace();
 		}
 		rawData.setSrc(builder.toString());
+		builder = null;
 		return methodFinder.findMethod(rawData);				
-	}
-	
-	
-	
-	private CompareData divide(ProcessedData pData) {	
-		CompareData cData = new CompareData();
-		
-		List<ITree> currents = new ArrayList<>();
-		
-		currents.add(pData.getVMethod());
-        while (currents.size() > 0) {        	
-            ITree c = currents.remove(0);
-            if(c.getPos() <= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getPos()) {        
-            	cData.addForwardPart(c);
-            } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
-            	cData.addVPart(c);
-            } else if(c.getPos() >= pData.getVNode().getEndPos()) {
-            	cData.addBackwardPart(c);
-            }
-            currents.addAll(c.getChildren());
-        }
-        sort(cData);
-        
-        return cData;
-	}
+
+
+	}		
 	
 	private void sort(CompareData cData) {
 		cData.getForwardPart().sort(new Comparator<ITree>() {

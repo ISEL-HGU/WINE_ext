@@ -1,8 +1,5 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.Assignment;
 import org.eclipse.jdt.core.dom.BooleanLiteral;
@@ -20,9 +17,6 @@ import org.eclipse.jdt.core.dom.TextElement;
 import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.AbstractJdtVisitor.Flag;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawData;
 
 public class JdtVisitor  extends AbstractJdtVisitor {

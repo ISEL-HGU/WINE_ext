@@ -15,21 +15,6 @@ public final class TreeUtils {
     }
 
     /**
-     * Compute the depth of every node of the tree. The size is set
-     * directly on the nodes and is then accessible using {@link Tree#getSize()}.
-     * @param tree a Tree
-     */
-    public static void computeSize(ITree tree) {
-        for (ITree t: tree.postOrder()) {
-            int size = 1;
-            if (!t.isLeaf())
-                for (ITree c: t.getChildren())
-                    size += c.getSize();
-            t.setSize(size);
-        }
-    }
-
-    /**
      * Compute the depth of every node of the tree. The depth is set
      * directly on the nodes and is then accessible using {@link Tree#getDepth()}.
      * @param tree a Tree
@@ -40,25 +25,6 @@ public final class TreeUtils {
             int depth = 0;
             if (!t.isRoot()) depth = t.getParent().getDepth() + 1;
             t.setDepth(depth);
-        }
-    }
-
-    /**
-     * Compute the height of every node of the tree. The height is set
-     * directly on the nodes and is then accessible using {@link Tree#getHeight()}.
-     * @param tree a Tree.
-     */
-    public static void computeHeight(ITree tree) {
-        for (ITree t: tree.postOrder()) {
-            int height = 0;
-            if (!t.isLeaf()) {
-                for (ITree c: t.getChildren()) {
-                    int cHeight = c.getHeight();
-                    if (cHeight > height) height = cHeight;
-                }
-                height++;
-            }
-            t.setHeight(height);
         }
     }
 

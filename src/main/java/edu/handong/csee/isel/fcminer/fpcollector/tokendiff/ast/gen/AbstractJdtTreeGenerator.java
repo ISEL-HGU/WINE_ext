@@ -11,7 +11,6 @@ import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.ProcessedData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawData;
 

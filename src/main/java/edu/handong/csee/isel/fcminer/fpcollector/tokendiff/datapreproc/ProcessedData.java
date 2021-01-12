@@ -6,7 +6,6 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.TreeContext;
 public class ProcessedData {
 	//preprocessed data
 	private ITree vNode;
-	private String vMethodString = "";
 	private ITree vMethod;
 	private TreeContext ctx;
 	
@@ -24,14 +23,6 @@ public class ProcessedData {
 	
 	public ITree getVNode() {
 		return vNode;
-	}
-
-	public String getVMethodString() {
-		return vMethodString;
-	}
-
-	public void setVMethodString(String vMethodString) {
-		this.vMethodString = vMethodString;
 	}
 
 	public TreeContext getCtx() {

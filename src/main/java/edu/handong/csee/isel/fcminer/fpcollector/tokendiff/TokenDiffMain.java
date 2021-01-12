@@ -31,31 +31,21 @@ public class TokenDiffMain {
 		//get violating method, violating node
 		System.out.println("INFO: Data Pre-Processing is Started");	
 		start = System.currentTimeMillis();
-		ArrayList<ProcessedData> pDatas = new ArrayList<>();
 		ArrayList<CompareData> cDatas = new ArrayList<>();
 		int cnt =0;		
 		MethodFinder methodFinder = new MethodFinder();
 		for(RawData rawData: rawDatas) {
-			cnt ++;			
-			ProcessedData pData = new ProcessedData();
-			pData = dataPreprocess(rawData, methodFinder);			
-			rawData = null;
+			cnt ++;
 			//the case when the violating line is not in a method but in static block or something.
-			if(pData != null)
-				pDatas.add(pData);
+			CompareData cData = new CompareData();
+			cData = dataPreprocess(rawData, methodFinder);
+			rawData = null;
+			if(cData != null)
+				cDatas.add(cData);
 			printProgress(cnt, rawDatas.size());	
 			System.out.println("" + cnt);
 		}
 		rawDatas = null;
-		
-		cnt =0;		
-		for(ProcessedData pData: pDatas) {
-			cnt ++;
-			cDatas.add(compareDataProcess(pData));
-			printProgress(cnt, pDatas.size());
-			System.out.println("" + cnt);
-		}
-		
 		end = System.currentTimeMillis();
 		time = (end - start) / 100;
 		System.out.println("INFO: Data Pre-Processing is Finished - " + time + " sec.");		
@@ -73,7 +63,44 @@ public class TokenDiffMain {
 		return collector.getRawDatas();
 	}
 	
-	private CompareData compareDataProcess(ProcessedData pData) {
+	private CompareData dataPreprocess(RawData rawData, MethodFinder methodFinder) {							
+	    ProcessedData pData = getProcessedData(rawData, methodFinder); 
+	   
+	    //the case when the violating line is not in a method but in static block or something.
+	    if(pData.getVMethod() != null) {
+	    	pData.setVNode(findVNode(rawData, pData.getVMethod()));
+	    	rawData =null;
+	    	return divide(pData);
+	    }
+	    
+	    else return null;
+	}
+	
+	private ProcessedData getProcessedData(RawData rawData, MethodFinder methodFinder) {
+		StringBuilder builder = new StringBuilder();
+		try {
+			FileInputStream fs = new FileInputStream(rawData.getPath());			
+			BufferedReader reader = new BufferedReader(new InputStreamReader(fs));
+			
+			char[] buf = new char[8192];
+			int read;
+					
+			while((read = reader.read(buf, 0, buf.length)) > 0) {				
+				builder.append(buf, 0, read);
+			}
+			reader.close();
+		} 
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		rawData.setSrc(builder.toString());
+		builder = null;
+		return methodFinder.findMethod(rawData);				
+	}
+	
+	
+	
+	private CompareData divide(ProcessedData pData) {	
 		CompareData cData = new CompareData();
 		
 		List<ITree> currents = new ArrayList<>();
@@ -94,30 +121,6 @@ public class TokenDiffMain {
         
         return cData;
 	}
-	
-	private ProcessedData dataPreprocess(RawData rawData, MethodFinder methodFinder) {							
-		StringBuilder builder = new StringBuilder();
-		try {
-			FileInputStream fs = new FileInputStream(rawData.getPath());			
-			BufferedReader reader = new BufferedReader(new InputStreamReader(fs));
-			
-			char[] buf = new char[8192];
-			int read;
-					
-			while((read = reader.read(buf, 0, buf.length)) > 0) {				
-				builder.append(buf, 0, read);
-			}
-			reader.close();
-		} 
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-		rawData.setSrc(builder.toString());
-		builder = null;
-		return methodFinder.findMethod(rawData);				
-
-
-	}		
 	
 	private void sort(CompareData cData) {
 		cData.getForwardPart().sort(new Comparator<ITree>() {

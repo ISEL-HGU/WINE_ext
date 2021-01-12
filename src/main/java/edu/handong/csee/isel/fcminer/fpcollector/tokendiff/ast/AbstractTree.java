@@ -3,7 +3,6 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast;
 import java.util.*;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.hash.HashUtils;
 
 public abstract class AbstractTree implements ITree {
 
@@ -12,15 +11,9 @@ public abstract class AbstractTree implements ITree {
     protected ITree parent;
 
     protected List<ITree> children;
-
-    protected int height;
-
-    protected int size;
-
+    
     protected int depth;
 
-    protected int hash;
-    
     @Override
     public int getChildPosition(ITree child) {
         return getChildren().indexOf(child);
@@ -41,16 +34,6 @@ public abstract class AbstractTree implements ITree {
         List<ITree> trees = TreeUtils.preOrder(this);
         trees.remove(0);
         return trees;
-    }
-    
-    @Override
-    public int getHash() {
-        return hash;
-    }
-
-    @Override
-    public int getHeight() {
-        return height;
     }
 
     @Override
@@ -84,30 +67,10 @@ public abstract class AbstractTree implements ITree {
         }
         return parents;
     }
-
-    @Override
-    public int getSize() {
-        return size;
-    }
-
+    
     @Override
     public List<ITree> getTrees() {
         return TreeUtils.preOrder(this);
-    }
-
-    private String indent(ITree t) {
-        StringBuilder b = new StringBuilder();
-        for (int i = 0; i < t.getDepth(); i++)
-            b.append("\t");
-        return b.toString();
-    }
-
-    @Override
-    public boolean isIsomorphicTo(ITree tree) {
-        if (this.getHash() != tree.getHash())
-            return false;
-        else
-            return this.toStaticHashString().equals(tree.toStaticHashString());
     }
 
     @Override
@@ -175,10 +138,7 @@ public abstract class AbstractTree implements ITree {
 
     @Override
     public void refresh() {
-        TreeUtils.computeSize(this);
         TreeUtils.computeDepth(this);
-        TreeUtils.computeHeight(this);
-        HashUtils.DEFAULT_HASH_GENERATOR.hash(this);
     }
 
     @Override
@@ -187,23 +147,8 @@ public abstract class AbstractTree implements ITree {
     }
 
     @Override
-    public void setHash(int digest) {
-        this.hash = digest;
-    }
-
-    @Override
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    @Override
     public void setId(int id) {
         this.id = id;
-    }
-
-    @Override
-    public void setSize(int size) {
-        this.size = size;
     }
 
     @Override
@@ -226,22 +171,6 @@ public abstract class AbstractTree implements ITree {
     @Override
     public String toShortString() {
         return String.format("%d%s%s", getType(), SEPARATE_SYMBOL, getLabel());
-    }
-
-    @Override
-    public String toTreeString() {
-        StringBuilder b = new StringBuilder();
-        for (ITree t : TreeUtils.preOrder(this))
-            b.append(indent(t) + t.toShortString() + "\n");
-        return b.toString();
-    }
-
-    @Override
-    public String toPrettyString(TreeContext ctx) {
-        if (hasLabel())
-            return ctx.getTypeLabel(this) + ": " + getLabel();
-        else
-            return ctx.getTypeLabel(this);
     }
 
     public static class FakeTree extends AbstractTree {
@@ -368,46 +297,7 @@ public abstract class AbstractTree implements ITree {
         public void setStartLineNum(int lineNum) {
         	throw unsupportedOperation();
         }
-        
-        @Override
-        public String toPrettyString(TreeContext ctx) {
-            return "FakeTree";
-        }
 
-        /**
-         * fake nodes have no metadata
-         */
-        @Override
-        public Object getMetadata(String key) {
-            return null;
-        }
-
-        /**
-         * fake node store no metadata
-         */
-        @Override
-        public Object setMetadata(String key, Object value) {
-            return null;
-        }
-
-        /**
-         * Since they have no metadata they do not iterate on nothing
-         */
-//        @Override
-//        public Iterator<Map.Entry<String, Object>> getMetadata() {
-//            return new EmptyEntryIterator();
-//        }
     }
 
-//    protected static class EmptyEntryIterator implements Iterator<Map.Entry<String, Object>> {
-//        @Override
-//        public boolean hasNext() {
-//            return false;
-//        }
-
-//        @Override
-//        public Map.Entry<String, Object> next() {
-//            throw new NoSuchElementException();
-//        }
-//    }
 }

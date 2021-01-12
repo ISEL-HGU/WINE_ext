@@ -6,7 +6,6 @@ import java.io.StringReader;
 
 import org.atteo.classindex.IndexSubclasses;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.ProcessedData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawData;
 

@@ -2,7 +2,6 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare;
 
 import java.util.ArrayList;
 
-import edu.handong.csee.isel.fcminer.fpcollector.pattern.Pattern;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
@@ -12,7 +11,7 @@ public class Matcher {
 	CompareData var;
 	
 	MappingStorage storage = new MappingStorage();
-	String tempHashString = "";
+	StringBuilder tempHashString = new StringBuilder();
 	
 	int forIdx = -1;
 	int backIdx = -1;
@@ -81,42 +80,26 @@ public class Matcher {
 								fixedCh[i] = true;
 							} else break;
 						}
-						String tempMappingHashString = "";
+						StringBuilder tempMappingHashString = new StringBuilder();
 						if(tempMapping.getMatchedParent() != -1) {
-							tempMappingHashString += tempMapping.getMapping().getFirst().getType();
-							tempMappingHashString += tempMapping.getMatchedParent();
-							tempHashString += tempMapping.getMapping().getFirst().getType();
-							tempHashString += tempMapping.getMatchedParent();
+							tempMappingHashString.append(tempMapping.getMapping().getFirst().getType()); 
+							tempMappingHashString.append(tempMapping.getMatchedParent());
+							tempHashString.append(tempMapping.getMapping().getFirst().getType());
+							tempHashString.append(tempMapping.getMatchedParent());
 							for(int k = 0; k < tempMapping.getParentProperties().size(); k ++) {
-								tempHashString += tempMapping.getParentProperties().get(k).getNodeType(); 
-								tempHashString += tempMapping.getParentProperties().get(k).getProp();
-								tempMappingHashString += tempMapping.getParentProperties().get(k).getNodeType(); 
-								tempMappingHashString += tempMapping.getParentProperties().get(k).getProp();
+								tempHashString.append(tempMapping.getParentProperties().get(k).getNodeType()); 
+								tempHashString.append(tempMapping.getParentProperties().get(k).getProp());
+								tempMappingHashString.append(tempMapping.getParentProperties().get(k).getNodeType()); 
+								tempMappingHashString.append(tempMapping.getParentProperties().get(k).getProp());
 							}									
 														
-							tempMapping.setHash(tempMappingHashString.hashCode());							
+							tempMapping.setHash(tempMappingHashString.toString().hashCode());							
 							tempMapStorage.add(tempMapping);
 						}
 					}
 				}
 			}			
 			storage.add2MappingStorageV(tempMapStorage);
-			//for print
-//			Pattern p = new Pattern();
-//			for(int i = 0; i <tempMapStorage.size(); i ++) {
-//				System.out.println(p.type2String(tempMapStorage.get(i).getMapping().getFirst().getType()) 
-//						+"(" +tempMapStorage.get(i).getMapping().getFirst().getNode2String() + ")"						
-//						+ " / " +  p.type2String(tempMapStorage.get(i).getMapping().getFirst().getType()) + "("
-//						+ tempMapStorage.get(i).getMapping().getSecond().getNode2String()+ ")");
-//				System.out.println("Matched Parent: " + tempMapStorage.get(i).getMatchedParent());
-//				System.out.print("Parent Properties: " + "[");
-//				for(int j = 0 ; j < tempMapStorage.get(i).getParentProperties().size(); j ++) {
-//					System.out.print(tempMapStorage.get(i).getParentProperties().get(j).getNodeType() 
-//							+ "(" + tempMapStorage.get(i).getParentProperties().get(j).getTypeName()
-//							+ ")-" + tempMapStorage.get(i).getParentProperties().get(j).getProp() + "$");
-//				}
-//				System.out.print("]\n\n");
-//			}
 		}
 		else if(part == Part.B) {
 			
@@ -148,7 +131,7 @@ public class Matcher {
 	}
 	
 	public String getTempHashString() {
-		return tempHashString;
+		return tempHashString.toString();
 	}
 	
 	public MappingStorage getMappingStorage() {

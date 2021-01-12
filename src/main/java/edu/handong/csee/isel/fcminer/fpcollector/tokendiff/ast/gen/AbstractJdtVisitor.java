@@ -12,7 +12,6 @@ import org.eclipse.jdt.core.dom.StructuralPropertyDescriptor;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.TreeContext;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.ProcessedData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawData;
 
@@ -109,10 +108,7 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         }
 //        
         
-        Flag flag = push(type, typeName, label, startPos, len, node2String, propertyPath);
-        if(flag == Flag.Method) {
-          	pData.setVMethodString(node2String);
-        }        
+        Flag flag = push(type, typeName, label, startPos, len, node2String, propertyPath);    
     }
 
     private Flag push(int type, String typeName, String label, int startPosition, int length, String node2String,

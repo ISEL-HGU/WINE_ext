@@ -1,9 +1,7 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map.Entry;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 
@@ -34,14 +32,6 @@ public interface ITree {
     
     int getEndLineNum();
     
-    /**
-     * @see com.github.gumtreediff.tree.hash.HashGenerator
-     * @return a hash (probably unique) representing the tree
-     */
-    int getHash();
-
-    void setHash(int hash);
-
     /**
      * @return all the nodes contained in the tree, using a pre-order.
      */
@@ -137,14 +127,6 @@ public interface ITree {
     void setDepth(int depth);
 
     /**
-     * @see TreeUtils#computeHeight(ITree)
-     * @return the height of the tree, defined as the maximal depth of its descendants.
-     */
-    int getHeight();
-
-    void setHeight(int height);
-
-    /**
      * @see TreeUtils#numbering(Iterable)
      * @see TreeUtils#preOrderNumbering(ITree)
      * @see TreeUtils#postOrderNumbering(ITree)
@@ -176,14 +158,6 @@ public interface ITree {
         return getPos() + getLength();
     }
 
-    /**
-     * @see TreeUtils#computeSize(ITree)
-     * @return the number of all nodes contained in the tree
-     */
-    int getSize();
-
-    void setSize(int size);
-
     int getType();
 
     void setType(int type);
@@ -192,14 +166,6 @@ public interface ITree {
      * @return a boolean indicating if the trees have the same type.
      */
     boolean hasSameType(ITree t);
-
-    /**
-     * @see #toStaticHashString()
-     * @see #getHash()
-     * @return a boolean indicating if the two trees are isomorphics, defined has
-     *     having the same hash and the same hash serialization.
-     */
-    boolean isIsomorphicTo(ITree tree);
 
     /**
      * Indicate whether or not the tree is similar to the given tree.
@@ -219,14 +185,4 @@ public interface ITree {
     String toStaticHashString();
 
     String toShortString();
-
-    String toTreeString();
-
-    String toPrettyString(TreeContext ctx);
-
-    Object getMetadata(String key);
-
-    Object setMetadata(String key, Object value);
-
-//    Iterator<Entry<String, Object>> getMetadata();
 }

@@ -1,9 +1,7 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map.Entry;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 
@@ -26,8 +24,6 @@ public class Tree extends AbstractTree implements ITree {
     private int length;
     // End position
 
-    private AssociationMap metadata;
-
     /**
      * Constructs a new node. If you need type labels corresponding to the integer
      * @see TreeContext#createTree(int, String, String)
@@ -36,11 +32,6 @@ public class Tree extends AbstractTree implements ITree {
         this.type = type;
         this.label = (label == null) ? NO_LABEL : label.intern();
         this.id = NO_ID;
-        this.depth = NO_VALUE;
-        this.hash = NO_VALUE;
-        this.height = NO_VALUE;
-        this.depth = NO_VALUE;
-        this.size = NO_VALUE;
         this.pos = NO_VALUE;
         this.length = NO_VALUE;
         this.children = new ArrayList<>();
@@ -53,13 +44,7 @@ public class Tree extends AbstractTree implements ITree {
         this.id = other.getId();
         this.pos = other.getPos();
         this.length = other.getLength();
-        this.height = other.getHeight();
-        this.size = other.getSize();
-        this.depth = other.getDepth();
-        this.hash = other.getHash();
-        this.depth = other.getDepth();
         this.children = new ArrayList<>();
-        this.metadata = other.metadata;
     }         
     
     @Override
@@ -192,31 +177,4 @@ public class Tree extends AbstractTree implements ITree {
     public void setEndLineNum(int endLineNum) {
     	this.endLineNum = endLineNum;
     }
-
-    @Override
-    public Object getMetadata(String key) {
-        if (metadata == null)
-            return null;
-        return metadata.get(key);
-    }
-
-    @Override
-    public Object setMetadata(String key, Object value) {
-        if (value == null) {
-            if (metadata == null)
-                return null;
-            else
-                return metadata.remove(key);
-        }
-        if (metadata == null)
-            metadata = new AssociationMap();
-        return metadata.set(key, value);
-    }
-
-//    @Override
-//    public Iterator<Entry<String, Object>> getMetadata() {
-//        if (metadata == null)
-//            return new EmptyEntryIterator();
-//        return metadata.iterator();
-//    }
 }

@@ -6,19 +6,18 @@ public class RawDatasStorage {
 	ArrayList<RawDatas> rawDatas = new ArrayList<>();
 	
 	public void saveRawDatas(ArrayList<RawData> rawDatas) {
-		ArrayList<RawData> tempRawDatas = new ArrayList<>();
-		int dataSize = rawDatas.size();
+		ArrayList<RawData> tempRawDatas = new ArrayList<>();		
 		
-		for(int i = 0 ; i < rawDatas.size(); i ++) {
+		for(int i = 0 ; i < rawDatas.size(); i ++) {			
+			tempRawDatas.add(rawDatas.get(i));
 			if((i+1) % 100 == 0) {
 				this.rawDatas.add(new RawDatas(tempRawDatas));
 				tempRawDatas.clear();
-				dataSize -= 100;
-			} else if(dataSize < 100) {
+				
+			} else if(i == rawDatas.size() - 1) {
 				this.rawDatas.add(new RawDatas(tempRawDatas));
 				tempRawDatas.clear();
 			}
-			tempRawDatas.add(rawDatas.get(i));
 		}		
 	}
 	

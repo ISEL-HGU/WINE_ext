@@ -6,7 +6,7 @@ public class RawDatas {
 	ArrayList<RawData> rawDatas = new ArrayList<>();
 	
 	public RawDatas(ArrayList<RawData> rawDatas) {
-		this.rawDatas = rawDatas;
+		this.rawDatas.addAll(rawDatas);
 	}
 	
 	public ArrayList<RawData> getRawDatas(){

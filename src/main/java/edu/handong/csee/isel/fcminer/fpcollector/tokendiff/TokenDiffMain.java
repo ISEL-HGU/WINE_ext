@@ -63,10 +63,8 @@ public class TokenDiffMain {
 	}
 	
 	private CompareData dataPreprocess(RawData rawData) {					
-		rawData.setSrc(getSrcFromPath(rawData.getPath()));
-		
 		MethodFinder methodFinder = new MethodFinder();
-	    ProcessedData pData = methodFinder.findMethod(rawData);
+	    ProcessedData pData = getProcessedData(rawData, methodFinder); 
 	    
 	    //the case when the violating line is not in a method but in static block or something.
 	    if(pData.getVMethod() != null) {
@@ -77,10 +75,10 @@ public class TokenDiffMain {
 	    else return null;
 	}
 	
-	private String getSrcFromPath(String path) {
+	private ProcessedData getProcessedData(RawData rawData, MethodFinder methodFinder) {
 		StringBuilder builder = new StringBuilder();
 		try {
-			FileInputStream fs = new FileInputStream(path);			
+			FileInputStream fs = new FileInputStream(rawData.getPath());			
 			BufferedReader reader = new BufferedReader(new InputStreamReader(fs));
 			
 			char[] buf = new char[8192];
@@ -94,8 +92,8 @@ public class TokenDiffMain {
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		return builder.toString();				
+		rawData.setSrc(builder.toString());
+		return methodFinder.findMethod(rawData);				
 	}
 	
 	

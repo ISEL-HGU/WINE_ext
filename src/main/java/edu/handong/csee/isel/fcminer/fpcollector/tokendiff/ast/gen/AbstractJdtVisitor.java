@@ -147,15 +147,6 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 			flag = Flag.Method;
 		}        
         
-        //for finding violating node
-//        if(info.getVNode() == null &&
-//        		getLineNum(startPosition) == info.start && 
-//        		getLineNum(startPosition + length) >= info.end) {
-//        	info.setVNode(t);
-//        	if(info.getVNode() == null) info.setVNode(t);
-//        	else if(info.getVNode().getDepth() > t.getDepth()) info.setVNode(t);
-//		}
-        
         trees.push(t);
         return flag;
     }

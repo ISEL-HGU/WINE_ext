@@ -16,14 +16,18 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.MethodFin
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.ProcessedData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawDataCollector;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawDatas;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawDatasStorage;
 
 public class TokenDiffMain {
-	
+		
 	public ArrayList<MappingStorage> run(String resultPath, int numOfAlarms) {
 		//collect violating file path, line number, violating code line
 		System.out.println("INFO: Raw Data Collecting is Started");
 		long start = System.currentTimeMillis();
-		ArrayList<RawData> rawDatas = dataCollecting(resultPath, numOfAlarms);
+		RawDatasStorage rawDataSto = new RawDatasStorage();
+		rawDataSto.saveRawDatas(dataCollecting(resultPath, numOfAlarms));				
+		
 		long end = System.currentTimeMillis();
 		long time = (end - start) / 100;
 		System.out.println("INFO: Raw Data Collecting is Finished - " + time + " sec.");
@@ -34,18 +38,22 @@ public class TokenDiffMain {
 		ArrayList<CompareData> cDatas = new ArrayList<>();
 		int cnt =0;		
 		MethodFinder methodFinder = new MethodFinder();
-		for(RawData rawData: rawDatas) {
-			cnt ++;
-			//the case when the violating line is not in a method but in static block or something.
-			CompareData cData = new CompareData();
-			cData = dataPreprocess(rawData, methodFinder);
-			rawData = null;
-			if(cData != null)
-				cDatas.add(cData);
-			printProgress(cnt, rawDatas.size());	
-			System.out.println("" + cnt);
+		
+		for(RawDatas rDatas : rawDataSto.getRawDatas()) {
+			for(RawData rawData : rDatas.getRawDatas()) {
+				cnt ++;
+				//the case when the violating line is not in a method but in static block or something.
+				CompareData cData = new CompareData();
+				cData = dataPreprocess(rawData, methodFinder);
+				rawData = null;
+				if(cData != null)
+					cDatas.add(cData);
+					
+				System.out.println("" + cnt);
+			}			
+			printProgress(cnt, rawDataSto.getRawDatas().size());
 		}
-		rawDatas = null;
+		
 		end = System.currentTimeMillis();
 		time = (end - start) / 100;
 		System.out.println("INFO: Data Pre-Processing is Finished - " + time + " sec.");		

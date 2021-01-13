@@ -1,18 +1,29 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.util.OSValidator;
 
 public class RawDataCollector { 	
-	ArrayList<RawData> rawDatas = new ArrayList<>();
 	int numOfAlarms = 0;
+	
+	ArrayList<CompareData> cDatas = new ArrayList<>();
+	
+	public ArrayList<CompareData> getCompareDatas(){
+		return cDatas;
+	}
 	
 	/*
 	 * set interval between print progress
@@ -24,15 +35,12 @@ public class RawDataCollector {
 		return numOfAlarms;
 	}
 	
-	public void clear() {		
-		rawDatas = null;
-	}
-	
 	public void run(String resultPath, int numOfAlarmFromSARM) {		
 		try {
 			Reader outputFile = new FileReader(resultPath);
-			
+			MethodFinder methodFinder = new MethodFinder();
 			Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(outputFile);
+			
 			int cnt = 0;
 			long startTime = System.currentTimeMillis();
 			boolean timerFlag = false;
@@ -55,12 +63,11 @@ public class RawDataCollector {
 					rawData.setEnd(startEnd[0]);
 				}
 				
-				rawData.addVLine(record.get(3));
+				rawData.addVLine(record.get(3));					        					
 				
-//				info.setSrc(getSrcFromPath(newFilePath, info));				
-	        	
-				rawDatas.add(rawData);
-				
+				CompareData cData = new CompareData();
+				cData = dataPreprocess(rawData, methodFinder);
+				cDatas.add(cData);
 				long currentTime = System.currentTimeMillis();
 				long sec = (currentTime - startTime) / 1000;
 				
@@ -74,11 +81,146 @@ public class RawDataCollector {
 					timerFlag = false;
 					printProgress(cnt);
 				}
+				
+				System.out.println("" + cnt);
 			}
 			numOfAlarms = cnt;
 		} catch(IOException e) {
 			e.printStackTrace();
 		}		
+	}
+	
+	private CompareData dataPreprocess(RawData rawData, MethodFinder methodFinder) {							
+	    ProcessedData pData = getProcessedData(rawData, methodFinder); 
+	   
+	    //the case when the violating line is not in a method but in static block or something.
+	    if(pData.getVMethod() != null) {
+	    	pData.setVNode(findVNode(rawData, pData.getVMethod()));
+	    	rawData =null;
+	    	return divide(pData);
+	    }
+	    
+	    else return null;
+	}
+	
+	private ProcessedData getProcessedData(RawData rawData, MethodFinder methodFinder) {
+		StringBuilder builder = new StringBuilder();
+		try {
+			FileInputStream fs = new FileInputStream(rawData.getPath());			
+			BufferedReader reader = new BufferedReader(new InputStreamReader(fs));
+			
+			char[] buf = new char[8192];
+			int read;
+					
+			while((read = reader.read(buf, 0, buf.length)) > 0) {				
+				builder.append(buf, 0, read);
+			}
+			reader.close();
+		} 
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		rawData.setSrc(builder.toString());
+		builder = null;
+		return methodFinder.findMethod(rawData);				
+	}
+	
+	private ITree findVNode(RawData rawData, ITree vMethod) {
+		ITree vNode = null;
+		//set vNode based on line number in ITree
+        List<ITree> currents = new ArrayList<>();
+        currents.add(vMethod);
+        while (currents.size() > 0) {        	
+            ITree c = currents.remove(0);
+            if(contain(c.getNode2String(), rawData.getVLine()) && 
+            		(c.getStartLineNum() <= rawData.getStart() && c.getEndLineNum() >= rawData.getEnd())) {        
+            	vNode = c;
+            }
+            currents.addAll(c.getChildren());
+        }
+		
+		return vNode;
+	}
+	
+	//for remove all blank and only compare characters
+	private boolean contain(String src, String test) {
+		String newSrc = "";
+		String newTest = "";
+		for(int i = 0; i < src.length(); i ++) {
+			if(Character.isSpaceChar(src.charAt(i)) || Character.isWhitespace(src.charAt(i))) {
+				continue;
+			}
+			newSrc += src.charAt(i);
+		}
+		
+		for(int i = 0; i < test.length(); i ++) {
+			if(Character.isSpaceChar(test.charAt(i)) || Character.isWhitespace(test.charAt(i))) {
+				continue;
+			}
+			newTest += test.charAt(i);
+		}
+		
+		return newSrc.contains(newTest);
+	}
+		
+	private CompareData divide(ProcessedData pData) {	
+		CompareData cData = new CompareData();
+		
+		List<ITree> currents = new ArrayList<>();
+		
+		currents.add(pData.getVMethod());
+	    while (currents.size() > 0) {        	
+	        ITree c = currents.remove(0);
+	        if(c.getPos() <= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getPos()) {        
+//	            	cData.addForwardPart(c);
+	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
+	        	cData.addVPart(c);
+	        } else if(c.getPos() >= pData.getVNode().getEndPos()) {
+//	            	cData.addBackwardPart(c);
+	        }
+	        currents.addAll(c.getChildren());
+	    }
+	    sort(cData);
+	        
+	    return cData;
+	}
+	
+	private void sort(CompareData cData) {
+		cData.getForwardPart().sort(new Comparator<ITree>() {
+			public int compare(ITree node1, ITree node2) {
+				if(node1.getPos() > node2.getPos()) {
+					return 1;
+				} else if(node1.getPos() == node2.getPos()) {
+					if(node1.getDepth() > node2.getDepth()) {
+						return 1;
+					} else return -1;
+				} else return -1;
+			}
+		});
+		
+		cData.getVPart().sort(new Comparator<ITree>() {
+			public int compare(ITree node1, ITree node2) {
+				if(node1.getPos() > node2.getPos()) {
+					return 1;
+				} else if(node1.getPos() == node2.getPos()) {
+					if(node1.getDepth() > node2.getDepth()) {
+						return 1;
+					} else return -1;
+				} else return -1;
+			}
+		});
+		
+		cData.getBackwardPart().sort(new Comparator<ITree>() {
+			public int compare(ITree node1, ITree node2) {
+				if(node1.getPos() > node2.getPos()) {
+					return 1;
+				} else if(node1.getPos() == node2.getPos()) {
+					if(node1.getDepth() > node2.getDepth()) {
+						return 1;
+					} else return -1;
+				} else return -1;
+			}
+		});
 	}
 	
 	private void printProgress(int cnt) {		
@@ -142,10 +284,5 @@ public class RawDataCollector {
 		}
 		
 		return filePath;
-	}
-
-	public ArrayList<RawData> getRawDatas(){
-		return rawDatas;
-	}
-	
+	}	
 }

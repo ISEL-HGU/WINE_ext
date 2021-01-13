@@ -2,7 +2,7 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare;
 
 import java.util.ArrayList;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 
 public class MappingStorage {
 	ArrayList<Mapping> mappingStorageF = new ArrayList<>();
@@ -18,7 +18,7 @@ public class MappingStorage {
 		return hash;
 	}
 	
-	public void add2MappingStorageF(ITree t1, ITree t2) {
+	public void add2MappingStorageF(CompareData t1, CompareData t2) {
 		this.mappingStorageF.add(new Mapping(t1, t2));
 	}
 
@@ -26,7 +26,7 @@ public class MappingStorage {
 		this.mappingStorageV.addAll(storageV);
 	}
 	
-	public void add2MappingStorageB(ITree t1, ITree t2) {
+	public void add2MappingStorageB(CompareData t1, CompareData t2) {
 		this.mappingStorageB.add(new Mapping(t1, t2));
 	}
 	

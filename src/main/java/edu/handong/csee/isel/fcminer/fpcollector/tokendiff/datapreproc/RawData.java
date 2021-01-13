@@ -14,6 +14,13 @@ public class RawData {
 		src = null;		
 	}
 	
+	public RawData(String path, String start, String end, String vLine){
+		this.path = path;
+		this.start = Integer.valueOf(start);
+		this.end = Integer.valueOf(end);
+		this.vLine = this.vLine + vLine.split("//")[0].trim();
+	}
+	
 	public int getStart() {
 		return start;
 	}

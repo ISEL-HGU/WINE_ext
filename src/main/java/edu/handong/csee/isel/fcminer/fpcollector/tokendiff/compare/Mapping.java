@@ -5,9 +5,10 @@ import java.util.ArrayList;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.Matcher.Part;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 
 public class Mapping {
-	Pair<ITree, ITree> mapping;
+	Pair<CompareData, CompareData> mapping;
 	int matchedParent = -1;
 	ArrayList<Property> parentProperties = new ArrayList<>();
 	Part part = null;
@@ -18,8 +19,8 @@ public class Mapping {
 		
 	}
 	
-	public Mapping(ITree t1, ITree t2) {
-		this.mapping = new Pair<ITree, ITree>(t1, t2);
+	public Mapping(CompareData t1, CompareData t2) {
+		this.mapping = new Pair<CompareData, CompareData>(t1, t2);
 	}
 	
 	public void setCode(String code) {
@@ -46,11 +47,11 @@ public class Mapping {
 		return part;
 	}
 
-	public Pair<ITree, ITree> getMapping() {
+	public Pair<CompareData, CompareData> getMapping() {
 		return mapping;
 	}
 
-	public void setMapping(Pair<ITree, ITree> mapping) {
+	public void setMapping(Pair<CompareData, CompareData> mapping) {
 		this.mapping = mapping;
 	}
 

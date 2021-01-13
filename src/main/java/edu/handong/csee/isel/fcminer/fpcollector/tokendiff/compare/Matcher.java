@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareDatas;
 
 public class Matcher {
-	CompareData fixed;
-	CompareData var;
+	CompareDatas fixed;
+	CompareDatas var;
 	
 	MappingStorage storage = new MappingStorage();
 	StringBuilder tempHashString = new StringBuilder();
@@ -21,19 +22,19 @@ public class Matcher {
 		F, V, B
 	}		
 	
-	public Matcher(CompareData fixed, CompareData var) {
+	public Matcher(CompareDatas fixed, CompareDatas var) {
 		this.fixed = fixed;
 		this.var = var;
 	}
 	
 	public MappingStorage match() {
-		findMatchIn(fixed.getForwardPart(), var.getForwardPart(), Part.F);
-		findMatchIn(fixed.getVPart(), var.getVPart(), Part.V);
-		findMatchIn(fixed.getBackwardPart(), var.getBackwardPart(), Part.B);
+//		findMatchIn(fixed.getForwardPart(), var.getForwardPart(), Part.F);
+		findMatchIn(fixed.getCompareDatas(), var.getCompareDatas(), Part.V);
+//		findMatchIn(fixed.getBackwardPart(), var.getBackwardPart(), Part.B);
 		return storage;
 	}
 	
-	private void findMatchIn(ArrayList<ITree> fixedLineTree, ArrayList<ITree> varLineTree,Part part) {
+	private void findMatchIn(ArrayList<CompareData> fixedLineTree, ArrayList<CompareData> varLineTree,Part part) {
 		if(part == Part.F) {
 			
 		} 
@@ -44,17 +45,17 @@ public class Matcher {
 			ArrayList<Mapping> tempMapStorage = new ArrayList<>();
 			
 			for(int i = 0; i < fixedLineTree.size(); i ++) {
-				ITree tempFNode = fixedLineTree.get(i);
+				CompareData tempFNode = fixedLineTree.get(i);
 				for(int j = 0 ; j < varLineTree.size(); j ++) {
-					ITree tempVarNode = varLineTree.get(j);
+					CompareData tempVarNode = varLineTree.get(j);
 					if(varCh[j] == true) continue;
 					if(fixedCh[i] == true) break;
 					
 					if(tempFNode.getType() == tempVarNode.getType()) {
 						int ppMatchingCnt = 0;
 						int tempPPLen = 0;
-						ArrayList<Property> tempFNodePP = tempFNode.getParentProps();
-						ArrayList<Property> tempVarNodePP = tempVarNode.getParentProps();
+						ArrayList<Property> tempFNodePP = tempFNode.getParentProperty();
+						ArrayList<Property> tempVarNodePP = tempVarNode.getParentProperty();
 						
 						if(tempFNodePP.size() > tempVarNodePP.size()) {
 							tempPPLen = tempVarNodePP.size();
@@ -67,7 +68,7 @@ public class Matcher {
 							if(tempFNodePP.get(k).getNodeType() == tempVarNodePP.get(k).getNodeType()
 									&& tempFNodePP.get(k).getProp().equals(tempVarNodePP.get(k).getProp())) {
 								if(ppMatchingCnt == 0) {
-									tempMapping.setMapping(new Pair<ITree, ITree>(tempFNode, tempVarNode));
+									tempMapping.setMapping(new Pair<CompareData, CompareData>(tempFNode, tempVarNode));
 									tempMapping.setPart(Part.V);
 								}
 								ppMatchingCnt ++;								

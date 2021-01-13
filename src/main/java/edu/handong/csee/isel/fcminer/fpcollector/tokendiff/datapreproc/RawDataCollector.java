@@ -19,9 +19,9 @@ import edu.handong.csee.isel.fcminer.util.OSValidator;
 public class RawDataCollector { 	
 	int numOfAlarms = 0;
 	
-	ArrayList<CompareData> cDatas = new ArrayList<>();
+	ArrayList<CompareDatas> cDatas = new ArrayList<>();
 	
-	public ArrayList<CompareData> getCompareDatas(){
+	public ArrayList<CompareDatas> getCompareDatas(){
 		return cDatas;
 	}
 	
@@ -44,30 +44,22 @@ public class RawDataCollector {
 			int cnt = 0;
 			long startTime = System.currentTimeMillis();
 			boolean timerFlag = false;
+			
 			for (CSVRecord record : records) {									
 				if(record.get(0).equals("Detection ID")) continue;				
-				cnt ++;
-				RawData rawData = new RawData();			
-	
+				cnt ++;						
+				
 				String filePath = record.get(1);
-				String newFilePath = modifyFilePathToOS(filePath);	
-				rawData.setPath(newFilePath);
+				String newFilePath = modifyFilePathToOS(filePath);									
+				String startLineNum = record.get(2);
+				String endLineNum = record.get(2);
+								
+				cDatas.add(dataPreprocess(new RawData(newFilePath, startLineNum, endLineNum, record.get(3)), methodFinder));				
+				filePath = null;
+				newFilePath = null;
+				startLineNum = null;
+				endLineNum = null;
 				
-				String startNEnd = record.get(2);
-				String[] startEnd = startNEnd.split("-");
-				if(startEnd.length > 1) {
-					rawData.setStart(startEnd[0]);
-					rawData.setEnd(startEnd[1]);
-				} else {
-					rawData.setStart(startEnd[0]);
-					rawData.setEnd(startEnd[0]);
-				}
-				
-				rawData.addVLine(record.get(3));					        					
-				
-				CompareData cData = new CompareData();
-				cData = dataPreprocess(rawData, methodFinder);
-				cDatas.add(cData);
 				long currentTime = System.currentTimeMillis();
 				long sec = (currentTime - startTime) / 1000;
 				
@@ -90,7 +82,7 @@ public class RawDataCollector {
 		}		
 	}
 	
-	private CompareData dataPreprocess(RawData rawData, MethodFinder methodFinder) {							
+	private CompareDatas dataPreprocess(RawData rawData, MethodFinder methodFinder) {							
 	    ProcessedData pData = getProcessedData(rawData, methodFinder); 
 	   
 	    //the case when the violating line is not in a method but in static block or something.
@@ -163,31 +155,44 @@ public class RawDataCollector {
 		return newSrc.contains(newTest);
 	}
 		
-	private CompareData divide(ProcessedData pData) {	
-		CompareData cData = new CompareData();
-		
+	private CompareDatas divide(ProcessedData pData) {					
 		List<ITree> currents = new ArrayList<>();
-		
+		CompareDatas cDatas = new CompareDatas();
 		currents.add(pData.getVMethod());
 	    while (currents.size() > 0) {        	
 	        ITree c = currents.remove(0);
-	        if(c.getPos() <= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getPos()) {        
+//	        if(c.getPos() <= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getPos()) {        
 //	            	cData.addForwardPart(c);
-	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
-	        	cData.addVPart(c);
-	        } else if(c.getPos() >= pData.getVNode().getEndPos()) {
-//	            	cData.addBackwardPart(c);
+//	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
+	        if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {	        	
+	        	cDatas.addCompareData(new CompareData(c.getParentProps(), c.getType(), c.getPos(), c.getDepth()));
 	        }
+//	        	cData.addVPart(c);
+//	        } else if(c.getPos() >= pData.getVNode().getEndPos()) {
+//	            	cData.addBackwardPart(c);
+//	        }
 	        currents.addAll(c.getChildren());
 	    }
-	    sort(cData);
+	    sort(cDatas);
 	        
-	    return cData;
+	    return cDatas;
 	}
 	
-	private void sort(CompareData cData) {
-		cData.getForwardPart().sort(new Comparator<ITree>() {
-			public int compare(ITree node1, ITree node2) {
+	private void sort(CompareDatas cDatas) {
+//		cData.getForwardPart().sort(new Comparator<ITree>() {
+//			public int compare(ITree node1, ITree node2) {
+//				if(node1.getPos() > node2.getPos()) {
+//					return 1;
+//				} else if(node1.getPos() == node2.getPos()) {
+//					if(node1.getDepth() > node2.getDepth()) {
+//						return 1;
+//					} else return -1;
+//				} else return -1;
+//			}
+//		});
+		
+		cDatas.getCompareDatas().sort(new Comparator<CompareData>() {
+			public int compare(CompareData node1, CompareData node2) {
 				if(node1.getPos() > node2.getPos()) {
 					return 1;
 				} else if(node1.getPos() == node2.getPos()) {
@@ -198,29 +203,17 @@ public class RawDataCollector {
 			}
 		});
 		
-		cData.getVPart().sort(new Comparator<ITree>() {
-			public int compare(ITree node1, ITree node2) {
-				if(node1.getPos() > node2.getPos()) {
-					return 1;
-				} else if(node1.getPos() == node2.getPos()) {
-					if(node1.getDepth() > node2.getDepth()) {
-						return 1;
-					} else return -1;
-				} else return -1;
-			}
-		});
-		
-		cData.getBackwardPart().sort(new Comparator<ITree>() {
-			public int compare(ITree node1, ITree node2) {
-				if(node1.getPos() > node2.getPos()) {
-					return 1;
-				} else if(node1.getPos() == node2.getPos()) {
-					if(node1.getDepth() > node2.getDepth()) {
-						return 1;
-					} else return -1;
-				} else return -1;
-			}
-		});
+//		cData.getBackwardPart().sort(new Comparator<ITree>() {
+//			public int compare(ITree node1, ITree node2) {
+//				if(node1.getPos() > node2.getPos()) {
+//					return 1;
+//				} else if(node1.getPos() == node2.getPos()) {
+//					if(node1.getDepth() > node2.getDepth()) {
+//						return 1;
+//					} else return -1;
+//				} else return -1;
+//			}
+//		});
 	}
 	
 	private void printProgress(int cnt) {		

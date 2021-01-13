@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.CodeComparator;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareDatas;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawDataCollector;
 
 public class TokenDiffMain {
@@ -13,7 +14,7 @@ public class TokenDiffMain {
 		//collect violating file path, line number, violating code line
 		
 		long start = System.currentTimeMillis();
-		ArrayList<CompareData> cDatas = new ArrayList<>();
+		ArrayList<CompareDatas> cDatas = new ArrayList<>();
 		
 		cDatas.addAll(dataCollecting(resultPath, numOfAlarms));				
 		
@@ -23,7 +24,7 @@ public class TokenDiffMain {
 		return codeCompare(cDatas);				
 	}
 	
-	private ArrayList<CompareData> dataCollecting(String resultPath, int numOfAlarms) {
+	private ArrayList<CompareDatas> dataCollecting(String resultPath, int numOfAlarms) {
 		RawDataCollector collector = new RawDataCollector();			
 		System.out.println("Info: Data Collecting is Started");
 		collector.run(resultPath, numOfAlarms);				
@@ -31,7 +32,7 @@ public class TokenDiffMain {
 		return collector.getCompareDatas();
 	}
 	
-	private ArrayList<MappingStorage> codeCompare(ArrayList<CompareData> infos) { 
+	private ArrayList<MappingStorage> codeCompare(ArrayList<CompareDatas> infos) { 
 		CodeComparator tokenDiff = new CodeComparator();		
 		for(int i = 0 ; i < infos.size(); i ++) {
 			if(infos.get(i) == null) continue;

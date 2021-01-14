@@ -53,7 +53,9 @@ public class RawDataCollector {
 				String newFilePath = modifyFilePathToOS(filePath);									
 				String startLineNum = record.get(2);
 				String endLineNum = record.get(2);
-								
+				if(cnt == 917) {
+					System.out.println();
+				}
 				cDatas.add(dataPreprocess(new RawData(newFilePath, startLineNum, endLineNum, record.get(3)), methodFinder));				
 				filePath = null;
 				newFilePath = null;

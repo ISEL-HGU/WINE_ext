@@ -1,10 +1,13 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -17,13 +20,7 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.util.OSValidator;
 
 public class RawDataCollector { 	
-	int numOfAlarms = 0;
-	
-	ArrayList<CompareDatas> cDatas = new ArrayList<>();
-	
-	public ArrayList<CompareDatas> getCompareDatas(){
-		return cDatas;
-	}
+	int numOfAlarms = 0;	
 	
 	/*
 	 * set interval between print progress
@@ -56,7 +53,10 @@ public class RawDataCollector {
 				if(cnt == 917) {
 					System.out.println();
 				}
-				cDatas.add(dataPreprocess(new RawData(newFilePath, startLineNum, endLineNum, record.get(3)), methodFinder));				
+				
+				
+				writeObjectFile(dataPreprocess(new RawData(newFilePath, startLineNum, endLineNum, record.get(3)), methodFinder), cnt);								
+								
 				filePath = null;
 				newFilePath = null;
 				startLineNum = null;
@@ -80,6 +80,29 @@ public class RawDataCollector {
 			}
 			numOfAlarms = cnt;
 		} catch(IOException e) {
+			e.printStackTrace();
+		}		
+	}
+	
+	private void writeObjectFile(CompareDatas cDatas, int cnt) {
+		ObjectOutputStream objOut = null;
+		FileOutputStream fileOut = null;
+		File f = new File("./CompareDatasObjects");
+		if(!f.exists()) {
+			f.mkdir();
+		}
+		
+		String path = f.getPath() + "/cDatas_" + cnt +".ser";
+		
+		try{
+			fileOut = new FileOutputStream(path);
+			objOut = new ObjectOutputStream (fileOut);
+			objOut.writeObject(cDatas);
+			if (objOut!=null){
+				objOut.close();
+			}
+		}
+		catch(IOException e) {
 			e.printStackTrace();
 		}		
 	}

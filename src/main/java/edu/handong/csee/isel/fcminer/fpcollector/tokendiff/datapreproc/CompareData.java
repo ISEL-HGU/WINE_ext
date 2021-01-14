@@ -1,11 +1,12 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 
-public class CompareData {		
+public class CompareData implements Serializable{		
 	//compare data
 //	private ArrayList<ITree> forwardPart = new ArrayList<>();
 //	private ArrayList<ITree> vPart = new ArrayList<>();

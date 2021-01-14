@@ -1,6 +1,9 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen;
 
-public class Property {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class Property implements Serializable{
 	int nodeType = -1;
 	String typeName = "";
 	String prop = "";

@@ -16,7 +16,7 @@ public class TokenDiffMain {
 		long start = System.currentTimeMillis();
 		ArrayList<CompareDatas> cDatas = new ArrayList<>();
 		
-		cDatas.addAll(dataCollecting(resultPath, numOfAlarms));				
+		dataCollecting(resultPath, numOfAlarms);				
 		
 		long end = System.currentTimeMillis();
 		long time = (end - start) / 100;	
@@ -24,12 +24,11 @@ public class TokenDiffMain {
 		return codeCompare(cDatas);				
 	}
 	
-	private ArrayList<CompareDatas> dataCollecting(String resultPath, int numOfAlarms) {
+	private void dataCollecting(String resultPath, int numOfAlarms) {
 		RawDataCollector collector = new RawDataCollector();			
 		System.out.println("Info: Data Collecting is Started");
 		collector.run(resultPath, numOfAlarms);				
-		System.out.println("Info: Data Collecting is Finished, # of Alamrs: " + collector.getNumOfAlarms());
-		return collector.getCompareDatas();
+		System.out.println("Info: Data Collecting is Finished, # of Alamrs: " + collector.getNumOfAlarms());		
 	}
 	
 	private ArrayList<MappingStorage> codeCompare(ArrayList<CompareDatas> infos) { 

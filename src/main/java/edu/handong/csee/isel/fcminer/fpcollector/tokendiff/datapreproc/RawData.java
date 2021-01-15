@@ -18,6 +18,7 @@ public class RawData {
 		this.path = path;
 		this.start = Integer.valueOf(start);
 		this.end = Integer.valueOf(end);
+		vLine = vLine.replaceAll("(?s)/\\*(.)*?\\*/", "");
 		this.vLine = this.vLine + vLine.split("//")[0].trim();
 	}
 	

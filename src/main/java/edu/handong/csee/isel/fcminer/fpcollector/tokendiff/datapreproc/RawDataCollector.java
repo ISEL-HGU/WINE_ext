@@ -48,9 +48,7 @@ public class RawDataCollector {
 			for (CSVRecord record : records) {									
 				if(record.get(0).equals("Detection ID")) continue;
 				
-				cnt ++;						
-				
-				if(cnt <16020) continue;
+				cnt ++;										
 				
 				String filePath = record.get(1);
 				String newFilePath = modifyFilePathToOS(filePath);									

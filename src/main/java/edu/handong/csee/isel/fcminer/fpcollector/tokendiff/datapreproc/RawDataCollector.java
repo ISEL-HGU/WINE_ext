@@ -89,6 +89,7 @@ public class RawDataCollector {
 	    //the case when the violating line is not in a method but in static block or something.
 	    if(pData.getVMethod() != null) {
 	    	pData.setVNode(findVNode(rawData, pData.getVMethod()));
+	    	pData.setCode(rawData.getVLine());
 	    	rawData =null;
 	    	return divide(pData);
 	    }
@@ -166,7 +167,7 @@ public class RawDataCollector {
 //	            	cData.addForwardPart(c);
 //	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
 	        if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {	        	
-	        	cDatas.addCompareData(new CompareData(c.getParentProps(), c.getType(), c.getPos(), c.getDepth()));
+	        	cDatas.addCompareData(new CompareData(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), pData.getCode()));
 	        }
 //	        	cData.addVPart(c);
 //	        } else if(c.getPos() >= pData.getVNode().getEndPos()) {

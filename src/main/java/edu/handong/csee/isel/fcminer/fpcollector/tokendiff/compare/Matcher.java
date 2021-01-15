@@ -73,6 +73,7 @@ public class Matcher {
 								}
 								ppMatchingCnt ++;								
 								tempMapping.setMatchedParent(ppMatchingCnt);
+								tempMapping.setCode(tempFNode.getCode());
 								tempMapping.addParentProperties(
 										new Property(tempFNodePP.get(k).getNodeType(),
 													 tempFNodePP.get(k).getTypeName(),

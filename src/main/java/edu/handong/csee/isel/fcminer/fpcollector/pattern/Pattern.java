@@ -12,6 +12,10 @@ public class Pattern implements Comparable<Pattern>{
 	//example Code
 	String code = "";
 	
+	public String getCode() {
+		return code;
+	}
+	
 	//hash
 	int hash = -1;	
 	

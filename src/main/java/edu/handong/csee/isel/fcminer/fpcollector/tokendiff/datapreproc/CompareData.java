@@ -15,12 +15,18 @@ public class CompareData {
 	private int type = -1;
 	private int pos = -1;
 	private int depth = -1;
+	private String code = "";
 	
-	public CompareData(ArrayList<Property> parentProperty, int type, int pos, int depth) {
+	public CompareData(ArrayList<Property> parentProperty, int type, int pos, int depth, String code) {
 		this.parentProperty.addAll(parentProperty);
 		this.type = type;
 		this.pos = pos;
 		this.depth = depth;
+		this.code = code;
+	}
+	
+	public String getCode() {
+		return code;
 	}
 	
 	public int getDepth() {

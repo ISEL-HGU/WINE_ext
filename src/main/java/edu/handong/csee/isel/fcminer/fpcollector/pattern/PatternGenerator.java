@@ -46,9 +46,7 @@ public class PatternGenerator {
 				patternCnt.put(tempHash, 1);
 			}
 		}
-		
-		
-		System.out.println("INFO: Pattern Generation is Started");
+				
 		patternsL1 = generatePattern();
 		hashList = null;
 		mappingHash = null;
@@ -124,7 +122,7 @@ public class PatternGenerator {
 			int tempHash = hashList.get(i);
 			String pattern = mapping2String(mappingHash.get(tempHash));			
 			int cnt = patternCnt.get(tempHash);
-			String code = "";
+			String code ="";
 			if(mappingHash.get(tempHash).getMappingStorageV().size() > 0)
 				code = mappingHash.get(tempHash).getMappingStorageV().get(0).getCode();
 			if(pattern.equals("CommonNodes: ")) continue;

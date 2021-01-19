@@ -19,4 +19,12 @@ public class Cluster {
 		cnt++;
 		elements.add(ms);
 	}
+	
+	public Integer getCnt() {
+		return cnt;
+	}
+	
+	public ArrayList<MappingStorage> getElements(){
+		return elements;
+	}
 }

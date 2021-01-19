@@ -2,7 +2,6 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare;
 
 import java.util.ArrayList;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareDatas;
@@ -72,9 +71,7 @@ public class Matcher {
 									tempMapping.setPart(Part.V);
 								}
 								ppMatchingCnt ++;								
-								tempMapping.setMatchedParent(ppMatchingCnt);
-//								tempMapping.setVLineCodes(tempFixedCompareData.getVLineCode(), tempVarCompareData.getVLineCode());
-//								tempMapping.setVNodeCodes(tempFixedCompareData.getVNodeCode(), tempVarCompareData.getVNodeCode());								
+								tempMapping.setMatchedParent(ppMatchingCnt);							
 								tempMapping.addParentProperties(
 										new Property(tempFNodePP.get(k).getNodeType(),
 													 tempFNodePP.get(k).getTypeName(),

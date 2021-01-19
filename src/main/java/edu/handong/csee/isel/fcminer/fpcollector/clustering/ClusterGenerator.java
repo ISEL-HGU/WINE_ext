@@ -8,8 +8,11 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorag
 public class ClusterGenerator {					
 	ArrayList<Integer> hashList = new ArrayList<>();
 	
-	//patternizing with one context
-	public void clusterGenerate(ArrayList<MappingStorage> sto) {
+	public ArrayList<Integer> getHashList(){
+		return hashList;
+	}
+	
+	public HashMap<Integer, Cluster> clusterGenerate(ArrayList<MappingStorage> sto) {
 		
 		HashMap<Integer, Cluster> clusterHashMap = new HashMap<>();		
 		
@@ -28,7 +31,9 @@ public class ClusterGenerator {
 			} else {
 				clusterHashMap.get(tempHash).addElement(tempMappingSto);
 			}
-		}		
+		}
+		
+		return clusterHashMap;
 	}	
 	
 	private void printProgress(int cnt, int total) {

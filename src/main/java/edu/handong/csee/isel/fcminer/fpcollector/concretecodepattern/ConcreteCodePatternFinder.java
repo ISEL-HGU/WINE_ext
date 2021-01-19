@@ -17,8 +17,11 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorag
 
 public class ConcreteCodePatternFinder {
 	public void find(HashMap<Integer, Cluster> cluster, ArrayList<Integer> hashedPatternList) {
+		System.out.println("INFO: <Code, Code> -> Code1, Code2 | Spliting Code Pair is Started");
 		ArrayList<CodePatternPair> pairs = splitCodePair(cluster, hashedPatternList);
+		System.out.println("INFO: Code - {Pattern Set} | Pattern Set Finding is Started");
 		ArrayList<CodePatternSet> sets = generatePatternSetIncludeCode(pairs);
+		System.out.println("INFO: Subset Removing is Started");
 		sets = removeSubset(sets);
 //		sets = sortByFrequency(sets);
 		writeConcreteCodePattern(sets);
@@ -26,8 +29,10 @@ public class ConcreteCodePatternFinder {
 	
 	private ArrayList<CodePatternPair> splitCodePair(HashMap<Integer, Cluster> cluster, ArrayList<Integer> hashedPatternList) {
 		ArrayList<CodePatternPair> ps = new ArrayList<>();
-		
-		for(Integer hashedPattern : hashedPatternList) {			
+		int cnt = 0;
+		for(Integer hashedPattern : hashedPatternList) {
+			cnt ++;
+			printProgress(cnt, hashedPatternList.size());
 			for(MappingStorage ms : cluster.get(hashedPattern).getElements()) {
 				ps.add(new CodePatternPair(hashedPattern, ms.getVLineCodes().getFirst()));
 				ps.add(new CodePatternPair(hashedPattern, ms.getVLineCodes().getSecond()));
@@ -42,8 +47,10 @@ public class ConcreteCodePatternFinder {
 		HashMap<Integer, Integer> codeMap = new HashMap<>();
 		
 		int idx = -1;
-		
+		int cnt = 0;
 		for(CodePatternPair p : ps) {
+			cnt ++;
+			printProgress(cnt, ps.size());
 			int hashedCode =  p.getCode().hashCode();
 			
 			if(!codeMap.containsKey(hashedCode)) {
@@ -66,7 +73,9 @@ public class ConcreteCodePatternFinder {
 	private ArrayList<CodePatternSet> removeSubset(ArrayList<CodePatternSet> sets){		
 		boolean[] removeIdx = new boolean[sets.size()];
 		
-		for(int i = 0; i < sets.size(); i ++) {
+		for(int i = 0; i < sets.size(); i ++) {			
+			printProgress(i, sets.size());
+			
 			CodePatternSet tempSet1 = sets.get(i);
 			
 			for(int j = 0; j < sets.size(); j ++) {
@@ -143,5 +152,38 @@ public class ConcreteCodePatternFinder {
 		} catch(IOException e){
 			e.printStackTrace();
 		}
+	}
+	
+	private void printProgress(int cnt, int total) {
+		if(total / 10 == cnt) {
+			System.out.print("10%...");
+		}
+		else if(total * 2 / 10 == cnt) {
+			System.out.print("20%...");
+		}
+		else if(total * 3 / 10 == cnt) {
+			System.out.print("30%...");
+		}
+		else if(total * 4 / 10 == cnt) {
+			System.out.print("40%...");
+		}
+		else if(total * 5/ 10 == cnt) {
+			System.out.print("50%...");
+		}
+		else if(total * 6 / 10 == cnt) {
+			System.out.print("60%...");
+		}
+		else if(total * 7 / 10 == cnt) {
+			System.out.print("70%...");
+		}
+		else if(total * 8 / 10 == cnt) {
+			System.out.print("80%...");
+		}
+		else if(total * 9 / 10 == cnt) {
+			System.out.print("90%...");
+		}
+		else if(total-1 == cnt) {
+			System.out.print("done!\n");
+		}		
 	}
 }

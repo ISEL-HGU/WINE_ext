@@ -83,7 +83,7 @@ public class ConcreteCodePatternFinder {
 		
 		for(int i = 0; i < removeIdx.length; i ++) {
 			if(removeIdx[i]) {
-				sets.remove(i);
+				sets.set(i, null);
 			}
 		}
 		
@@ -129,10 +129,12 @@ public class ConcreteCodePatternFinder {
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
 					.withHeader("Pattern ID", "Pattern"));
 			) {
-
-			for(int i = 0 ; i < sets.size(); i ++) {								
-				String pattern = sets.get(i).getCode();						
-				String patternID = "" + (i+1);			 				
+			int cnt = 0;
+			for(int i = 0 ; i < sets.size(); i ++) {
+				if(sets.get(i) == null) continue;
+				String pattern = sets.get(i).getCode();
+				cnt++;
+				String patternID = "" + cnt; 			 				
 				csvPrinter.printRecord(patternID, pattern);				
 			}
 

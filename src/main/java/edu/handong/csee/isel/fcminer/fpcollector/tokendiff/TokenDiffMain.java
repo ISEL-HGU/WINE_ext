@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.CodeComparator;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareDatas;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawDataCollector;
 
@@ -42,8 +41,7 @@ public class TokenDiffMain {
 			for(int j = i ; j < infos.size(); j++) {
 				if(infos.get(j) == null) continue;
 				tokenDiff.compare(infos.get(j));
-			}
-
+			}			
 			tokenDiff.clear();
 		}				
 		return tokenDiff.getMappingStorage();

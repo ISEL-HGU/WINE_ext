@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -54,7 +55,7 @@ public class RawDataCollector {
 				String newFilePath = modifyFilePathToOS(filePath);									
 				String startLineNum = record.get(2);
 				String endLineNum = record.get(2);
-
+				
 				cDatas.add(dataPreprocess(new RawData(newFilePath, startLineNum, endLineNum, record.get(3)), methodFinder));				
 				filePath = null;
 				newFilePath = null;
@@ -132,7 +133,7 @@ public class RawDataCollector {
             }
             currents.addAll(c.getChildren());
         }
-		
+        
 		return vNode;
 	}
 	

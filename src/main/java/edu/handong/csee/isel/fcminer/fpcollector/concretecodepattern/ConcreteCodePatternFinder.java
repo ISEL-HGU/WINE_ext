@@ -1,9 +1,19 @@
 package edu.handong.csee.isel.fcminer.fpcollector.concretecodepattern;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
+
 import edu.handong.csee.isel.fcminer.fpcollector.clustering.Cluster;
+import edu.handong.csee.isel.fcminer.fpcollector.pattern.Pattern;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
 
 public class ConcreteCodePatternFinder {
@@ -11,9 +21,8 @@ public class ConcreteCodePatternFinder {
 		ArrayList<CodePatternPair> pairs = splitCodePair(cluster, hashedPatternList);
 		ArrayList<CodePatternSet> sets = generatePatternSetIncludeCode(pairs);
 		sets = removeSubset(sets);
-//		findFrequency(sets);
-//		sort(sets);
-//		writeConcreteCodePattern(sets);
+		sets = sortByFrequency(sets);
+		writeConcreteCodePattern(sets);
 	}
 	
 	private ArrayList<CodePatternPair> splitCodePair(HashMap<Integer, Cluster> cluster, ArrayList<Integer> hashedPatternList) {
@@ -100,5 +109,39 @@ public class ConcreteCodePatternFinder {
 			else 
 				return false;
 		}			
+	}
+	
+	private ArrayList<CodePatternSet> sortByFrequency(ArrayList<CodePatternSet> sets){
+		Collections.sort(sets, new Comparator<CodePatternSet>() {
+			@Override
+			public int compare(CodePatternSet set1, CodePatternSet set2) {
+				return set1.getPatterns().size() - set2.getPatterns().size();
+			}
+			
+		});
+		return sets;
+	}
+	
+	public void writeConcreteCodePattern(ArrayList<CodePatternSet> sets) {
+		String fileName = "./FPC_Patterns_ConcreteCode.csv";				
+		
+		try(			
+			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName));
+			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
+					.withHeader("Pattern ID", "Pattern", "Frequency"));
+			) {
+
+			for(int i = 0 ; i < sets.size(); i ++) {								
+				String pattern = sets.get(i).getCode();						
+				String patternID = "" + (i+1);			 
+				String f = "" + sets.get(i).getPatterns().size();	
+				csvPrinter.printRecord(patternID, pattern, f);				
+			}
+
+			writer.flush();
+			writer.close();
+		} catch(IOException e){
+			e.printStackTrace();
+		}
 	}
 }

@@ -2,6 +2,7 @@ package edu.handong.csee.isel.fcminer.fpcollector;
 
 import java.util.ArrayList;
 
+import edu.handong.csee.isel.fcminer.fpcollector.clustering.ClusterGenerator;
 import edu.handong.csee.isel.fcminer.fpcollector.pattern.PatternGenerator;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.TokenDiffMain;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
@@ -17,10 +18,12 @@ public class FPCollector {
 		ArrayList<MappingStorage> diffResult = tokenDiff.run(command.getResultPath(), numOfAlarms);		
 		tokenDiff = null;
 		
-		System.out.println("INFO: Pattern Generating is Started");
+		ClusterGenerator clusterGen = new ClusterGenerator();
+		clusterGen.clusterGenerate(diffResult);
+		
+//		System.out.println("INFO: Pattern Generating is Started");
 		//Generating pattern from Diff Algorithm Result
-		PatternGenerator patternGen = new PatternGenerator(diffResult);
-		diffResult = null;
-		patternGen.collect();		
+//		PatternGenerator patternGen = new PatternGenerator();		
+//		patternGen.collect(diffResult);		
 	}
 }

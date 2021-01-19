@@ -31,20 +31,31 @@ public class TokenDiffMain {
 		return collector.getCompareDatas();
 	}
 	
-	private ArrayList<MappingStorage> codeCompare(ArrayList<CompareDatas> infos) { 
-		CodeComparator tokenDiff = new CodeComparator();		
-		for(int i = 0 ; i < infos.size(); i ++) {
-			if(infos.get(i) == null) continue;
-			printProgress(i, infos.size());
+	private ArrayList<MappingStorage> codeCompare(ArrayList<CompareDatas> cDatas) { 
+		CodeComparator tokenDiff = new CodeComparator();
+		ArrayList<MappingStorage> tempMappingStos = new ArrayList<>();
+		for(int i = 0 ; i < cDatas.size(); i ++) {
+			if(cDatas.get(i) == null) continue;
+			printProgress(i, cDatas.size());
 			
-			tokenDiff.compare(infos.get(i));
-			for(int j = i ; j < infos.size(); j++) {
-				if(infos.get(j) == null) continue;
-				tokenDiff.compare(infos.get(j));
+			MappingStorage tempMappingSto;
+			
+			tokenDiff.compare(cDatas.get(i));
+			
+			for(int j = i ; j < cDatas.size(); j++) {
+				if(cDatas.get(j) == null) continue;		
+				
+				tempMappingSto = tokenDiff.compare(cDatas.get(j));
+				
+				if(tempMappingSto != null) {
+					tempMappingStos.add(tempMappingSto);
+					tempMappingSto = null;
+				}
 			}			
+			
 			tokenDiff.clear();
 		}				
-		return tokenDiff.getMappingStorage();
+		return tempMappingStos;
 	}
 	
 	private void printProgress(int cnt, int total) {

@@ -10,18 +10,21 @@ public class Pattern implements Comparable<Pattern>{
 	Pair<Integer, String> pattern;
 	
 	//example Code
-	String code = "";
+	String vLineCode = "";
+	
+	String vNodeCode = "";
 	
 	public String getCode() {
-		return code;
+		return vLineCode;
 	}
 	
 	//hash
 	int hash = -1;	
 	
-	public Pattern(Integer cnt, String pattern, String code) {
+	public Pattern(Integer cnt, String pattern, String vLineCode, String vNodeCode) {
 		this.pattern = new Pair<>(cnt, pattern);
-		this.code = code;
+		this.vLineCode = vLineCode;
+		this.vNodeCode = vNodeCode;
 		this.hash = pattern.hashCode();
 	}
 	

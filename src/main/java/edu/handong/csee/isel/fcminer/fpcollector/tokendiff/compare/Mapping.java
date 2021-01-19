@@ -13,7 +13,6 @@ public class Mapping {
 	ArrayList<Property> parentProperties = new ArrayList<>();
 	Part part = null;
 	int hash = -1;
-	String code = "";
 	
 	public Mapping() {
 		
@@ -22,15 +21,7 @@ public class Mapping {
 	public Mapping(CompareData t1, CompareData t2) {
 		this.mapping = new Pair<CompareData, CompareData>(t1, t2);
 	}
-	
-	public void setCode(String code) {
-		this.code = code;
-	}
-	
-	public String getCode() {
-		return code;
-	}
-	
+
 	public void setHash(int hash) {
 		this.hash = hash;
 	}

@@ -7,12 +7,10 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareDatas;
 
+//one node matching <-> in MappingStore, there are nodes which are matched
 public class Matcher {
 	CompareDatas fixed;
 	CompareDatas var;
-	
-	MappingStorage storage = new MappingStorage();
-	StringBuilder tempHashString = new StringBuilder();
 	
 	int forIdx = -1;
 	int backIdx = -1;
@@ -27,35 +25,37 @@ public class Matcher {
 		this.var = var;
 	}
 	
-	public MappingStorage match() {
+	public MappingStorage matchInVLine() {
 //		findMatchIn(fixed.getForwardPart(), var.getForwardPart(), Part.F);
-		findMatchIn(fixed.getCompareDatas(), var.getCompareDatas(), Part.V);
-//		findMatchIn(fixed.getBackwardPart(), var.getBackwardPart(), Part.B);
-		return storage;
+		return findMatchIn(fixed.getCompareDatas(), var.getCompareDatas(), Part.V);
+//		findMatchIn(fixed.getBackwardPart(), var.getBackwardPart(), Part.B);		
 	}
 	
-	private void findMatchIn(ArrayList<CompareData> fixedLineTree, ArrayList<CompareData> varLineTree,Part part) {
+	private MappingStorage findMatchIn(ArrayList<CompareData> fixedCompareDatas, ArrayList<CompareData> varCompareDatas,Part part) {
+		MappingStorage storage = new MappingStorage();
+		StringBuilder tempHashString = new StringBuilder();
+		
 		if(part == Part.F) {
-			
+			return null;
 		} 
 		else if(part == Part.V) {
 			// same type node collect
-			boolean[] varCh = new boolean[varLineTree.size()];
-			boolean[] fixedCh = new boolean[fixedLineTree.size()];
-			ArrayList<Mapping> tempMapStorage = new ArrayList<>();
+			boolean[] varCh = new boolean[varCompareDatas.size()];
+			boolean[] fixedCh = new boolean[fixedCompareDatas.size()];
+			MappingStorage tempMapStorage = new MappingStorage();
 			
-			for(int i = 0; i < fixedLineTree.size(); i ++) {
-				CompareData tempFNode = fixedLineTree.get(i);
-				for(int j = 0 ; j < varLineTree.size(); j ++) {
-					CompareData tempVarNode = varLineTree.get(j);
+			for(int i = 0; i < fixedCompareDatas.size(); i ++) {
+				CompareData tempFixedCompareData = fixedCompareDatas.get(i);
+				for(int j = 0 ; j < varCompareDatas.size(); j ++) {
+					CompareData tempVarCompareData = varCompareDatas.get(j);
 					if(varCh[j] == true) continue;
 					if(fixedCh[i] == true) break;
 					
-					if(tempFNode.getType() == tempVarNode.getType()) {
+					if(tempFixedCompareData.getType() == tempVarCompareData.getType()) {
 						int ppMatchingCnt = 0;
 						int tempPPLen = 0;
-						ArrayList<Property> tempFNodePP = tempFNode.getParentProperty();
-						ArrayList<Property> tempVarNodePP = tempVarNode.getParentProperty();
+						ArrayList<Property> tempFNodePP = tempFixedCompareData.getParentProperty();
+						ArrayList<Property> tempVarNodePP = tempVarCompareData.getParentProperty();
 						
 						if(tempFNodePP.size() > tempVarNodePP.size()) {
 							tempPPLen = tempVarNodePP.size();
@@ -68,12 +68,13 @@ public class Matcher {
 							if(tempFNodePP.get(k).getNodeType() == tempVarNodePP.get(k).getNodeType()
 									&& tempFNodePP.get(k).getProp().equals(tempVarNodePP.get(k).getProp())) {
 								if(ppMatchingCnt == 0) {
-									tempMapping.setMapping(new Pair<CompareData, CompareData>(tempFNode, tempVarNode));
+									tempMapping.setMapping(new Pair<CompareData, CompareData>(tempFixedCompareData, tempVarCompareData));
 									tempMapping.setPart(Part.V);
 								}
 								ppMatchingCnt ++;								
 								tempMapping.setMatchedParent(ppMatchingCnt);
-								tempMapping.setCode(tempFNode.getCode());
+//								tempMapping.setVLineCodes(tempFixedCompareData.getVLineCode(), tempVarCompareData.getVLineCode());
+//								tempMapping.setVNodeCodes(tempFixedCompareData.getVNodeCode(), tempVarCompareData.getVNodeCode());								
 								tempMapping.addParentProperties(
 										new Property(tempFNodePP.get(k).getNodeType(),
 													 tempFNodePP.get(k).getTypeName(),
@@ -96,16 +97,20 @@ public class Matcher {
 							}									
 														
 							tempMapping.setHash(tempMappingHashString.toString().hashCode());							
-							tempMapStorage.add(tempMapping);
+							tempMapStorage.add2MappingStorageV(tempMapping);
+							tempMapStorage.setVLineCodes(tempFixedCompareData.getVLineCode(), tempVarCompareData.getVLineCode());
+							tempMapStorage.setVNodeCodes(tempFixedCompareData.getVNodeCode(), tempVarCompareData.getVNodeCode());	
+							tempMapStorage.setHash(tempHashString.toString().hashCode());
 						}
 					}
 				}
 			}			
-			storage.add2MappingStorageV(tempMapStorage);
+			return tempMapStorage;
 		}
 		else if(part == Part.B) {
-			
+			return null;
 		}
+		return null;
 	}
 	
 	public void setForIdx(int forIdx) {
@@ -130,13 +135,5 @@ public class Matcher {
 	
 	public int getVIdx() {
 		return vIdx;
-	}
-	
-	public String getTempHashString() {
-		return tempHashString.toString();
-	}
-	
-	public MappingStorage getMappingStorage() {
-		return storage;
 	}
 }

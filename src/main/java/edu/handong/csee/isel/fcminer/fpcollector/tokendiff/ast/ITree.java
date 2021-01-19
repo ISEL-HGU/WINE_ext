@@ -18,7 +18,7 @@ public interface ITree {
 
     String NO_LABEL = "";
 
-    int NO_VALUE = -1;
+    int NO_VALUE = -1;        
     
     void setNode2String(String node2String);
     

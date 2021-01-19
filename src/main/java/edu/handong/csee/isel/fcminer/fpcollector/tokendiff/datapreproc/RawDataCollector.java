@@ -168,7 +168,9 @@ public class RawDataCollector {
 //	            	cData.addForwardPart(c);
 //	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
 	        if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {	        	
-	        	cDatas.addCompareData(new CompareData(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), pData.getCode()));
+	        	cDatas.addCompareData(new CompareData
+	        			(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), 
+	        					pData.getVNode().getNode2String(), pData.getCode()));
 	        }
 //	        	cData.addVPart(c);
 //	        } else if(c.getPos() >= pData.getVNode().getEndPos()) {

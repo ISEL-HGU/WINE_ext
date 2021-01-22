@@ -101,8 +101,10 @@ public class Matcher {
 						}
 					}
 				}
-			}			
-			return tempMapStorage;
+			}
+			if(tempMapStorage.getMappingStorageV().size() != 0)
+				return tempMapStorage;
+			else return null;
 		}
 		else if(part == Part.B) {
 			return null;

@@ -10,15 +10,10 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawDataCo
 public class TokenDiffMain {
 		
 	public ArrayList<MappingStorage> run(String resultPath, int numOfAlarms) {
-		//collect violating file path, line number, violating code line
-		
-		long start = System.currentTimeMillis();
+		//collect violating file path, line number, violating code line		
 		ArrayList<CompareDatas> cDatas = new ArrayList<>();
 		
-		cDatas.addAll(dataCollecting(resultPath, numOfAlarms));				
-		
-		long end = System.currentTimeMillis();
-		long time = (end - start) / 100;	
+		cDatas.addAll(dataCollecting(resultPath, numOfAlarms));					
 		
 		return codeCompare(cDatas);				
 	}

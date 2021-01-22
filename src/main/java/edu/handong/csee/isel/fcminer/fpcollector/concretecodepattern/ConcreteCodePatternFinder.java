@@ -100,7 +100,9 @@ public class ConcreteCodePatternFinder {
 		
 		return sets;
 	}
-	
+	//*****Fix Point*****
+	//edit this point to remove all subset clearly: should consider parent properties
+	//to check it surely, print all patterns corresponding each Concrete Lines of Cods.
 	private boolean subset(CodePatternSet set1, CodePatternSet set2) {
 		int set1Size = set1.getPatterns().size();
 		int set2Size = set2.getPatterns().size();

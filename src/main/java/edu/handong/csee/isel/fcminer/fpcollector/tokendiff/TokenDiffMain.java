@@ -37,8 +37,8 @@ public class TokenDiffMain {
 			
 			tokenDiff.compare(cDatas.get(i));
 			
-			for(int j = i ; j < cDatas.size(); j++) {
-				if(cDatas.get(j) == null) continue;		
+			for(int j = 0 ; j < cDatas.size(); j++) {
+				if(i == j) continue;					
 				
 				tempMappingSto = tokenDiff.compare(cDatas.get(j));
 				

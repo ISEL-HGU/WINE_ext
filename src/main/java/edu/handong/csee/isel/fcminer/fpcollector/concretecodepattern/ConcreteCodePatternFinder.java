@@ -90,9 +90,11 @@ public class ConcreteCodePatternFinder {
 			}			
 		}
 		
+		ArrayList<CodePatternSet> tempSets = new ArrayList<>();		
+		
 		for(int i = 0; i < removeIdx.length; i ++) {
-			if(removeIdx[i]) {
-				sets.set(i, null);
+			if(!removeIdx[i]) {
+				tempSets.add(sets.get(i));
 			}
 		}
 		
@@ -120,13 +122,14 @@ public class ConcreteCodePatternFinder {
 	}
 	
 	private ArrayList<CodePatternSet> sortByLowFrequency(ArrayList<CodePatternSet> sets){
-		for(CodePatternSet s : sets) {
+		for(CodePatternSet s : sets) {		
 			s.findLowFrequency();
-		}
+		}		
 		
 		Collections.sort(sets, new Comparator<CodePatternSet>() {
 			@Override
 			public int compare(CodePatternSet set1, CodePatternSet set2) {
+				if(set1 == null || set2 == null) return -1;
 				return set1.getLowFrequency() - set2.getLowFrequency();
 			}
 			

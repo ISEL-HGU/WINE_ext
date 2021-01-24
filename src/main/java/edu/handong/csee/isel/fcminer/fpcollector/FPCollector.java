@@ -21,8 +21,7 @@ public class FPCollector {
 		tokenDiff = null;
 		
 		ClusterGenerator clusterGen = new ClusterGenerator();
-		HashMap<Integer, Cluster> clusterResult = clusterGen.clusterGenerate(diffResult);
-		
+		HashMap<Integer, Cluster> clusterResult = clusterGen.clusterGenerate(diffResult);		
 		ConcreteCodePatternFinder codePatternFinder = new ConcreteCodePatternFinder();		
 		codePatternFinder.find(clusterResult, clusterGen.getHashList());
 	}

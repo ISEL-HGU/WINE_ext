@@ -21,18 +21,18 @@ public class ClusterGenerator {
 			int tempHash = sto.get(i).getHash();
 						
 			if(!hashList.contains(tempHash)) {
-				hashList.add(tempHash);
+				hashList.add(tempHash);				
 			}
 			
 			MappingStorage tempMappingSto = sto.get(i);
 			//code String omitted in here
 			if(!clusterHashMap.containsKey(tempHash)) {
-				clusterHashMap.put(tempHash, new Cluster(tempMappingSto));
+				clusterHashMap.put(tempHash, new Cluster(tempMappingSto));				
 			} else {
 				clusterHashMap.get(tempHash).addElement(tempMappingSto);
 			}
 		}
-		
+		System.out.println("INFO: # of Pattern: " + hashList.size());
 		return clusterHashMap;
 	}	
 	

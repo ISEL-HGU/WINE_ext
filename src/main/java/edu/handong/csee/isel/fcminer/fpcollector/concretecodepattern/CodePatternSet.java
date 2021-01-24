@@ -12,8 +12,10 @@ public class CodePatternSet {
 		patterns.add(hashedPattern);
 	}
 	
-	public void addPattern(HashedPattern hasedPattern) {
-		patterns.add(hasedPattern);
+	public void addPattern(HashedPattern hashedPattern) {
+		if(!getOnlyPatternHash().contains(hashedPattern.getHash())) {
+			patterns.add(hashedPattern);
+		}			
 	}
 	
 	public String getCode() {

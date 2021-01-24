@@ -7,7 +7,7 @@ public class CodePatternSet {
 	private ArrayList<HashedPattern> patterns = new ArrayList<>();
 	private int lowFrequency = 999999999;
 	
-	public CodePatternSet(String code, HashedPattern hashedPattern) {
+	public CodePatternSet(String code, HashedPattern hashedPattern) {		
 		this.code = code;
 		patterns.add(hashedPattern);
 	}

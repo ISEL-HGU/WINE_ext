@@ -27,6 +27,11 @@ public class CodePatternSet {
 	}
 	
 	public void findLowFrequency() {
+		if(patterns.size() == 1) {
+			lowFrequency = 0;
+			return ;
+		}
+		
 		for(HashedPattern hp : patterns) {
 			if(hp.getFrequency() < lowFrequency)
 				lowFrequency = hp.getFrequency();

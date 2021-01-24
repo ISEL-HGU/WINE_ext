@@ -30,8 +30,7 @@ public class Matcher {
 //		findMatchIn(fixed.getBackwardPart(), var.getBackwardPart(), Part.B);		
 	}
 	
-	private MappingStorage findMatchIn(ArrayList<CompareData> fixedCompareDatas, ArrayList<CompareData> varCompareDatas,Part part) {
-		MappingStorage storage = new MappingStorage();
+	private MappingStorage findMatchIn(ArrayList<CompareData> fixedCompareDatas, ArrayList<CompareData> varCompareDatas,Part part) {		
 		StringBuilder tempHashString = new StringBuilder();
 		
 		if(part == Part.F) {
@@ -97,14 +96,23 @@ public class Matcher {
 							tempMapStorage.add2MappingStorageV(tempMapping);
 							tempMapStorage.setVLineCodes(tempFixedCompareData.getVLineCode(), tempVarCompareData.getVLineCode());
 							tempMapStorage.setVNodeCodes(tempFixedCompareData.getVNodeCode(), tempVarCompareData.getVNodeCode());	
-							tempMapStorage.setHash(tempHashString.toString().hashCode());
+							tempMapStorage.setHash(tempHashString.toString().hashCode());							
+						}
+						else {							
+							tempMapStorage.setVLineCodes(tempFixedCompareData.getVLineCode(), null);
+							tempMapStorage.setVNodeCodes(tempFixedCompareData.getVNodeCode(), null);							
 						}
 					}
 				}
 			}
-			if(tempMapStorage.getMappingStorageV().size() != 0)
+			if(tempMapStorage.getMappingStorageV().size() != 0) {
+				tempMapStorage.setMatchingStatus(MappingStorage.MatchingStatus.Matched);
 				return tempMapStorage;
-			else return null;
+			}				
+			else {
+				tempMapStorage.setMatchingStatus(MappingStorage.MatchingStatus.Mismatched);
+				return tempMapStorage;
+			}
 		}
 		else if(part == Part.B) {
 			return null;

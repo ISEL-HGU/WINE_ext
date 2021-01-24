@@ -23,7 +23,7 @@ public class ClusterGenerator {
 			if(!hashList.contains(tempHash)) {
 				hashList.add(tempHash);				
 			}
-			
+
 			MappingStorage tempMappingSto = sto.get(i);
 			//code String omitted in here
 			if(!clusterHashMap.containsKey(tempHash)) {

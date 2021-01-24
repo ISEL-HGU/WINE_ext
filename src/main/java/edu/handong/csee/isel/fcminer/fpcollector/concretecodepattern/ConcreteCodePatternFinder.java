@@ -46,7 +46,8 @@ public class ConcreteCodePatternFinder {
 			printProgress(cnt, hashedPatternList.size());
 			for(MappingStorage ms : cluster.get(hashedPattern).getElements()) {
 				ps.add(new CodePatternPair(hashedPattern, cluster.get(hashedPattern).getCnt(), ms.getVLineCodes().getFirst()));
-				ps.add(new CodePatternPair(hashedPattern, cluster.get(hashedPattern).getCnt(), ms.getVLineCodes().getSecond()));			
+				if(ms.getVLineCodes().getSecond() != null)
+					ps.add(new CodePatternPair(hashedPattern, cluster.get(hashedPattern).getCnt(), ms.getVLineCodes().getSecond()));			
 			}
 		}
 		

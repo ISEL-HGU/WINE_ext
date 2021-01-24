@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 
 public class MappingStorage {
+	public enum MatchingStatus {
+		Matched, Mismatched;
+	}
+	
 	ArrayList<Mapping> mappingStorageF = new ArrayList<>();
 	
 	ArrayList<Mapping> mappingStorageV = new ArrayList<>();
@@ -16,6 +20,16 @@ public class MappingStorage {
 	Pair<String, String> vLineCodePair;
 	
 	Pair<String, String> vNodeCodePair;
+	
+	private MatchingStatus ms = MatchingStatus.Mismatched;  
+	
+	public MatchingStatus getMatchingStatus() {
+		return ms; 
+	}
+	
+	public void setMatchingStatus(MatchingStatus ms) {
+		this.ms = ms;
+	}
 	
 	public void setHash(int hash) {
 		this.hash = hash;	

@@ -28,29 +28,50 @@ public class TokenDiffMain {
 	
 	private ArrayList<MappingStorage> codeCompare(ArrayList<CompareDatas> cDatas) { 
 		CodeComparator tokenDiff = new CodeComparator();
-		ArrayList<MappingStorage> tempMappingStos = new ArrayList<>();
+		ArrayList<MappingStorage> mappingStos = new ArrayList<>();
+		int mismatchedPattern = 0;
 		for(int i = 0 ; i < cDatas.size(); i ++) {
 			if(cDatas.get(i) == null) continue;
 			printProgress(i, cDatas.size());
 			
+			ArrayList<MappingStorage> tempMappingStos = new ArrayList<>();
 			MappingStorage tempMappingSto;
 			
 			tokenDiff.compare(cDatas.get(i));
 			
 			for(int j = 0 ; j < cDatas.size(); j++) {
-				if(i == j) continue;					
+				if(i == j) continue;
+				if(cDatas.get(j) == null) continue;
 				
 				tempMappingSto = tokenDiff.compare(cDatas.get(j));
 				
 				if(tempMappingSto != null) {
-					tempMappingStos.add(tempMappingSto);
-					tempMappingSto = null;
+					tempMappingStos.add(tempMappingSto);					
 				}
-			}			
+			}
+			
+			MappingStorage.MatchingStatus status = MappingStorage.MatchingStatus.Mismatched;
+			
+			for(MappingStorage ms : tempMappingStos) {
+				if(ms.getMatchingStatus() != status) {
+					status = MappingStorage.MatchingStatus.Matched;
+					break;
+				}
+			}
+			
+			if(status == MappingStorage.MatchingStatus.Mismatched) {
+				String tempHash = "" + i;
+				tempMappingStos.get(0).setHash(tempHash.hashCode());
+				mappingStos.add(tempMappingStos.get(0));
+				mismatchedPattern++;
+			} else {
+				mappingStos.addAll(tempMappingStos);
+			}
 			
 			tokenDiff.clear();
-		}				
-		return tempMappingStos;
+		}
+		System.out.println("INFO: Number of Mismatched Pattern: " + mismatchedPattern);
+		return mappingStos;
 	}
 	
 	private void printProgress(int cnt, int total) {

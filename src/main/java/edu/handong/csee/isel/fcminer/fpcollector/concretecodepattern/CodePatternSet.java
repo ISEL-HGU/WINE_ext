@@ -18,6 +18,10 @@ public class CodePatternSet {
 		}			
 	}
 	
+	public void setPatterns(ArrayList<HashedPattern> patterns) {
+		this.patterns = patterns;
+	}
+	
 	public String getCode() {
 		return code;
 	}
@@ -49,5 +53,14 @@ public class CodePatternSet {
 		}
 		
 		return ps;
+	}
+	
+	public Integer getFrequencyOfPattern(Integer pattern) {
+		for(HashedPattern hp: patterns) {
+			if(hp.getHash() == pattern) {
+				return hp.getFrequency();
+			}
+		}
+		return -1;
 	}
 }

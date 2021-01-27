@@ -31,6 +31,10 @@ public class SubsetGenerator {
 				
 				CompareDatas lineData2 = cDatas.get(j);												
 				
+				if(lineData1.getCompareDatas().get(0).getVLineCode().equals("this.currentDatabase=getClass().getSimpleName().toLowerCase();\n")
+						&& lineData2.getCompareDatas().get(0).getVLineCode().equals("this.currentDatabase=getClass().getSimpleName();\n"))
+					System.out.println("");
+				
 				Relation relation = findRelation(lineData2, lineData1);
 				//lineData2 is subset of lineData1
 				if(relation == Relation.Subset) {
@@ -47,10 +51,16 @@ public class SubsetGenerator {
 			supersets.add(tempSuperset);
 		}
 		
+		for(Superset sup : supersets) {
+			if(sup.getSubsets().size() == 0 && sup.getEqualsets().size() == 0) {
+				System.out.println(sup.getCode());
+			}
+		}
+		
 		return supersets;
 	}
 	
-	private Relation findRelation(CompareDatas line1, CompareDatas line2) {
+	private Relation findRelation(CompareDatas line2, CompareDatas line1) {
 		int nodeNumInLine1 = line1.getCompareDatas().size();
 		int nodeNumInLine2 = line2.getCompareDatas().size();				
 		
@@ -61,7 +71,7 @@ public class SubsetGenerator {
 		else return Relation.NULL;
 	}
 	
-	private Relation isSubset(CompareDatas line1, CompareDatas line2) {		
+	private Relation isSubset(CompareDatas line2, CompareDatas line1) {		
 		int numOfNodeLine1 = line1.getCompareDatas().size();
 		int numOfNodeLine2 = line2.getCompareDatas().size();
 		

@@ -41,4 +41,8 @@ public class Superset {
 		frequency++;
 	}
 	
+	public ArrayList<Subset> getEqualsets() {
+		return equalsets;
+	}
+	
 }

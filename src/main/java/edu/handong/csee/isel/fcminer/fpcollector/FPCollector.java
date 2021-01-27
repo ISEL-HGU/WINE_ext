@@ -1,13 +1,12 @@
 package edu.handong.csee.isel.fcminer.fpcollector;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-import edu.handong.csee.isel.fcminer.fpcollector.clustering.Cluster;
-import edu.handong.csee.isel.fcminer.fpcollector.clustering.ClusterGenerator;
 import edu.handong.csee.isel.fcminer.fpcollector.concretecodepattern.ConcreteCodePatternFinder;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.TokenDiffMain;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
+import edu.handong.csee.isel.fcminer.fpcollector.subset.SubsetGenerator;
+import edu.handong.csee.isel.fcminer.fpcollector.subset.Superset;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.DataCollector;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareDatas;
 import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
 
@@ -15,14 +14,15 @@ public class FPCollector {
 	public void run(CliCommand command, int numOfAlarms) {
 		if(command.getState().equals(RunState.SAResultMiner)) return;
 		
-		TokenDiffMain tokenDiff = new TokenDiffMain();				
+		DataCollector dataCollector = new DataCollector();				
 		//Run Diff Algorithm
-		ArrayList<MappingStorage> diffResult = tokenDiff.run(command.getResultPath(), numOfAlarms);		
-		tokenDiff = null;
+		ArrayList<CompareDatas> compareDatas = dataCollector.run(command.getResultPath(), numOfAlarms);				
 		
-		ClusterGenerator clusterGen = new ClusterGenerator();
-		HashMap<Integer, Cluster> clusterResult = clusterGen.clusterGenerate(diffResult);		
+		SubsetGenerator subsetGen = new SubsetGenerator();
+		
+		ArrayList<Superset> supersets = subsetGen.subsetGenerate(compareDatas);
+		
 		ConcreteCodePatternFinder codePatternFinder = new ConcreteCodePatternFinder();		
-		codePatternFinder.find(clusterResult, clusterGen.getHashList());
+//		codePatternFinder.find(supersets);
 	}
 }

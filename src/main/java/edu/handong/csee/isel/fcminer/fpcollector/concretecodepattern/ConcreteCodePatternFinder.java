@@ -12,7 +12,7 @@ import java.util.HashMap;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
-import edu.handong.csee.isel.fcminer.fpcollector.clustering.Cluster;
+import edu.handong.csee.isel.fcminer.fpcollector.subset.Cluster;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
 
 public class ConcreteCodePatternFinder {
@@ -30,7 +30,7 @@ public class ConcreteCodePatternFinder {
 		System.out.println("INFO: Subset Removing is Started");
 		
 		sets = removeSubset(sets);
-		
+		System.out.println("Set size: " + sets.size());
 		sets = sortByLowFrequency(sets);
 		
 		sets = removeInSet(sets);										
@@ -90,24 +90,33 @@ public class ConcreteCodePatternFinder {
 			printProgress(i, sets.size());
 			
 			CodePatternSet tempSet1 = sets.get(i);
+			Subset[] isInSet = new Subset[tempSet1.getOnlyPatternHash().size()];
 			
 			for(int j = 0; j < sets.size(); j ++) {
 				if(i == j) continue;
-				if(removeIdx[i] == Subset.Dup) continue;
+				if(removeIdx[i] == Subset.Dup) break;
+				if(removeIdx[i] == Subset.Yes) break;
+
 				CodePatternSet tempSet2 = sets.get(j);
 				
-				Subset isSub = subset(tempSet1, tempSet2);
+				//check for whole sets
+				isInSet = subset(tempSet1, tempSet2, isInSet);
+				
 				//Meaning: Is tempSet1 a subset of tempSet2?
+				Subset isSub = subset(tempSet1, tempSet2);
+				
 				if(isSub == Subset.Yes) {
 					removeIdx[i] = Subset.Yes;
-					break;
 				} 
 				else if(isSub == Subset.Dup) {
 					removeIdx[i] = Subset.No;
 					removeIdx[j] = Subset.Dup;
 				}
-				else {
-					removeIdx[i] = Subset.No;
+				else if(isSub == Subset.No) {
+					if(checkInTotalSet(isInSet)) {
+						removeIdx[i] = Subset.Yes;
+					}
+					else removeIdx[i] = Subset.No;
 				}
 			}			
 		}			
@@ -118,11 +127,34 @@ public class ConcreteCodePatternFinder {
 			if(removeIdx[i] == Subset.No) {				
 				tempSets.add(sets.get(i));
 			}						
-		}		
+		}
 		
 		return tempSets;
 	}
+	
+	private boolean checkInTotalSet(Subset[] isInSet) {
+		for(Subset s : isInSet) {
+			if(s == null)
+				return false;
+		}
+		return true;
+	}
 
+	private Subset[] subset(CodePatternSet set1, CodePatternSet set2, Subset[] isInSet) {
+		int set1Size = set1.getPatterns().size();
+		int set2Size = set2.getPatterns().size();
+		//problem in tie breaking
+		if(set1Size < set2Size) {
+			for(int i = 0; i < set1Size; i ++) {								
+				if(set2.getOnlyPatternHash().contains(set1.getOnlyPatternHash().get(i))) {			
+					isInSet[i] = Subset.Yes;
+				}
+			}
+		}
+
+		return isInSet;
+	}
+	
 	private Subset subset(CodePatternSet set1, CodePatternSet set2) {
 		int set1Size = set1.getPatterns().size();
 		int set2Size = set2.getPatterns().size();

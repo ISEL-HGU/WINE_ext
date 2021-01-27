@@ -18,6 +18,10 @@ public class CompareData {
 	private String vLineCode = "";
 	private String vNodeCode = "";
 	
+	public CompareData() {
+		
+	}
+	
 	public CompareData(ArrayList<Property> parentProperty, int type, int pos, int depth, String code, String node) {
 		this.parentProperty.addAll(parentProperty);
 		this.type = type;

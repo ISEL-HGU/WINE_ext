@@ -1,4 +1,4 @@
-package edu.handong.csee.isel.fcminer.fpcollector.clustering;
+package edu.handong.csee.isel.fcminer.fpcollector.subset;
 
 import java.util.ArrayList;
 

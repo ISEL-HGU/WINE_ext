@@ -91,6 +91,7 @@ public class RawDataCollector {
 	    if(pData.getVMethod() != null) {
 	    	pData.setVNode(findVNode(rawData, pData.getVMethod()));
 	    	pData.setCode(rawData.getVLine());
+	    	pData.setViolationLineNum(rawData.getStart());
 	    	rawData =null;
 	    	return divide(pData);
 	    }
@@ -168,9 +169,10 @@ public class RawDataCollector {
 //	            	cData.addForwardPart(c);
 //	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
 	        if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {	        	
-	        	cDatas.addCompareData(new CompareData
-	        			(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), 
-	        					pData.getVNode().getNode2String(), pData.getCode()));
+	        	if(c.getStartLineNum() == pData.getViolationLineNum() && c.getEndLineNum() == pData.getViolationLineNum())
+	        		cDatas.addCompareData(new CompareData
+	        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), pData.getCode(), 
+	        						pData.getVNode().getNode2String()));
 	        }
 //	        	cData.addVPart(c);
 //	        } else if(c.getPos() >= pData.getVNode().getEndPos()) {

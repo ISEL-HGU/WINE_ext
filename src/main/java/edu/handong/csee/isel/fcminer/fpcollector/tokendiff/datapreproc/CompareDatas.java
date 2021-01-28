@@ -39,7 +39,7 @@ public class CompareDatas {
 			
 			if(cData.getType() == node.getType()) {
 				int propCnt = 0;
-				
+				//may be fixed
 				for(Property p : node.getParentProperty()) {
 					if(containProperty(cData, p))
 						propCnt++;					

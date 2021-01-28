@@ -9,7 +9,16 @@ public class ProcessedData {
 	private ITree vMethod;
 	private TreeContext ctx;
 	private String code = "";
+	private int violationLineNum = -1;
 	
+	public int getViolationLineNum() {
+		return violationLineNum;
+	}
+
+	public void setViolationLineNum(int violationLineNum) {
+		this.violationLineNum = violationLineNum;
+	}
+
 	public void setCode(String code) {
 		this.code = code;
 	}

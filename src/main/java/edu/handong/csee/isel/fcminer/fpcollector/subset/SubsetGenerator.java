@@ -1,9 +1,7 @@
 package edu.handong.csee.isel.fcminer.fpcollector.subset;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareDatas;
 
@@ -23,17 +21,14 @@ public class SubsetGenerator {
 		for(int i = 0; i < cDatas.size(); i ++) {
 			printProgress(i, cDatas.size());
 			CompareDatas lineData1 = cDatas.get(i); 
-			
+			if(lineData1 == null) continue;
 			Superset tempSuperset = new Superset(lineData1.getCompareDatas().get(0).getVLineCode(), lineData1);
 			
 			for(int j = 0; j < cDatas.size(); j ++) {
 				if(i == j) continue;				
 				
 				CompareDatas lineData2 = cDatas.get(j);												
-				
-				if(lineData1.getCompareDatas().get(0).getVLineCode().equals("this.currentDatabase=getClass().getSimpleName().toLowerCase();\n")
-						&& lineData2.getCompareDatas().get(0).getVLineCode().equals("this.currentDatabase=getClass().getSimpleName();\n"))
-					System.out.println("");
+				if(lineData2 == null) continue;
 				
 				Relation relation = findRelation(lineData2, lineData1);
 				//lineData2 is subset of lineData1
@@ -50,12 +45,6 @@ public class SubsetGenerator {
 			
 			supersets.add(tempSuperset);
 		}
-		
-//		for(Superset sup : supersets) {
-//			if(sup.getSubsets().size() == 0 && sup.getEqualsets().size() == 0) {
-//				System.out.println(sup.getCode());
-//			}
-//		}
 		
 		return supersets;
 	}

@@ -2,8 +2,6 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff;
 
 import java.util.ArrayList;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.CodeComparator;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareDatas;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawDataCollector;
 

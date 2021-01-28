@@ -7,15 +7,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
-import edu.handong.csee.isel.fcminer.fpcollector.subset.Cluster;
 import edu.handong.csee.isel.fcminer.fpcollector.subset.Subset;
 import edu.handong.csee.isel.fcminer.fpcollector.subset.Superset;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.compare.MappingStorage;
 
 public class ConcreteCodePatternFinder {	
 	public void find(ArrayList<Superset> supersets) {

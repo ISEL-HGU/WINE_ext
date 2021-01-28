@@ -23,6 +23,6 @@ public class FPCollector {
 		ArrayList<Superset> supersets = subsetGen.subsetGenerate(compareDatas);
 		
 		ConcreteCodePatternFinder codePatternFinder = new ConcreteCodePatternFinder();		
-//		codePatternFinder.find(supersets);
+		codePatternFinder.find(supersets);
 	}
 }

@@ -51,11 +51,11 @@ public class SubsetGenerator {
 			supersets.add(tempSuperset);
 		}
 		
-		for(Superset sup : supersets) {
-			if(sup.getSubsets().size() == 0 && sup.getEqualsets().size() == 0) {
-				System.out.println(sup.getCode());
-			}
-		}
+//		for(Superset sup : supersets) {
+//			if(sup.getSubsets().size() == 0 && sup.getEqualsets().size() == 0) {
+//				System.out.println(sup.getCode());
+//			}
+//		}
 		
 		return supersets;
 	}

@@ -50,6 +50,9 @@ public class RawDataCollector {
 				
 				cnt ++;														
 				
+				if(cnt == 544)
+					System.out.println();
+				
 				String filePath = record.get(1);
 				String newFilePath = modifyFilePathToOS(filePath);									
 				String startLineNum = record.get(2);

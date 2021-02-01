@@ -19,16 +19,16 @@ public class SubsetGenerator {
 		ArrayList<Superset> supersets = new ArrayList<>();
 		
 		for(int i = 0; i < cDatas.size(); i ++) {
-			printProgress(i, cDatas.size());
+			printProgress(i, cDatas.size());			
 			CompareDatas lineData1 = cDatas.get(i); 
-			if(lineData1 == null) continue;
+			if(lineData1 == null || lineData1.getCompareDatas().size() == 0) continue;
 			Superset tempSuperset = new Superset(lineData1.getCompareDatas().get(0).getVLineCode(), lineData1);
 			
 			for(int j = 0; j < cDatas.size(); j ++) {
 				if(i == j) continue;				
 				
 				CompareDatas lineData2 = cDatas.get(j);												
-				if(lineData2 == null) continue;
+				if(lineData2 == null || lineData2.getCompareDatas().size() == 0) continue;
 				
 				Relation relation = findRelation(lineData2, lineData1);
 				//lineData2 is subset of lineData1

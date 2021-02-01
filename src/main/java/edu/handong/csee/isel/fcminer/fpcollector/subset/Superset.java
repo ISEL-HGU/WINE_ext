@@ -31,7 +31,6 @@ public class Superset {
 	}
 	public void addSubset(Subset subset) {
 		subsets.add(subset);
-		frequency++;
 	}
 	public int getFrequency() {
 		return frequency;

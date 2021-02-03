@@ -49,10 +49,7 @@ public class RawDataCollector {
 				if(record.get(0).equals("Detection ID")) continue;
 				
 				cnt ++;			
-				if(cnt != 18110) continue;
-				else
-					System.out.println();
-				
+
 				String filePath = record.get(1);
 				String newFilePath = modifyFilePathToOS(filePath);									
 				String startLineNum = record.get(2);

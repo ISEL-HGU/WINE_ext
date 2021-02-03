@@ -48,7 +48,10 @@ public class RawDataCollector {
 			for (CSVRecord record : records) {									
 				if(record.get(0).equals("Detection ID")) continue;
 				
-				cnt ++;																		
+				cnt ++;			
+				if(cnt != 18110) continue;
+				else
+					System.out.println();
 				
 				String filePath = record.get(1);
 				String newFilePath = modifyFilePathToOS(filePath);									
@@ -156,8 +159,6 @@ public class RawDataCollector {
 			newTest += test.charAt(i);
 		}
 		
-		newSrc = newSrc.replaceAll("(?s)/\\*(.)*?\\*/", "");
-		newSrc = newSrc.replaceAll("/\\*.*", "");
 		if(newSrc.length() >= newTest.length() && newTest.contains("},") && !newSrc.contains(newTest)) {
 			newTest = newTest.replace("},", "}}");
 			return newSrc.contains(newTest);

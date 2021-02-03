@@ -103,7 +103,7 @@ public class ConcreteCodePatternFinder {
 		try(			
 			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName));
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
-					.withHeader("Pattern ID", "Pattern", "Low Frequency"));
+					.withHeader("Pattern ID", "Pattern", "Context", "Low Frequency"));
 			) {
 			int cnt = 0;
 			
@@ -111,11 +111,12 @@ public class ConcreteCodePatternFinder {
 			for(int i = 0 ; i < sets.size(); i ++) {
 				if(sets.get(i) == null) continue;
 				String pattern = sets.get(i).getCode();
+				String context = sets.get(i).getContextCode();
 				cnt++;
 				String patternID = "" + cnt; 			 	
 				String f = "" + sets.get(i).getFrequency();				
 				
-				csvPrinter.printRecord(patternID, pattern, f);				
+				csvPrinter.printRecord(patternID, pattern, context, f);				
 			}
 
 			writer.flush();

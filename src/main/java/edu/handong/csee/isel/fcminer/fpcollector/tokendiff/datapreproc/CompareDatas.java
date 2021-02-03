@@ -7,7 +7,25 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 public class CompareDatas {
 	ArrayList<CompareData> cDatas = new ArrayList<>();
 	CompareData root;
+	private String vLineCode = "";
+	private String vNodeCode = "";
 	
+	public String getvLineCode() {
+		return vLineCode;
+	}
+
+	public void setvLineCode(String vLineCode) {
+		this.vLineCode = vLineCode;
+	}
+
+	public String getvNodeCode() {
+		return vNodeCode;
+	}
+
+	public void setvNodeCode(String vNodeCode) {
+		this.vNodeCode = vNodeCode;
+	}
+
 	public void addCompareData(CompareData cData) {		
 		if(cDatas.size() == 0)
 			root = cData;

@@ -169,6 +169,8 @@ public class RawDataCollector {
 	private CompareDatas divide(ProcessedData pData) {					
 		List<ITree> currents = new ArrayList<>();
 		CompareDatas cDatas = new CompareDatas();
+		String vLineCode = "";
+		String vNodeCode = "";
 		currents.add(pData.getVMethod());
 	    while (currents.size() > 0) {        	
 	        ITree c = currents.remove(0);
@@ -176,10 +178,12 @@ public class RawDataCollector {
 //	            	cData.addForwardPart(c);
 //	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
 	        if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {	        	
-	        	if(c.getStartLineNum() == pData.getViolationLineNum() && c.getEndLineNum() == pData.getViolationLineNum())
+	        	if(c.getStartLineNum() == pData.getViolationLineNum() && c.getEndLineNum() == pData.getViolationLineNum()) {
+	        		vLineCode = pData.getCode();
+	        		vNodeCode = pData.getVNode().getNode2String();
 	        		cDatas.addCompareData(new CompareData
-	        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), pData.getCode(), 
-	        						pData.getVNode().getNode2String()));
+	        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth()));
+	        	}
 	        }
 //	        	cData.addVPart(c);
 //	        } else if(c.getPos() >= pData.getVNode().getEndPos()) {
@@ -187,6 +191,8 @@ public class RawDataCollector {
 //	        }
 	        currents.addAll(c.getChildren());
 	    }
+	    cDatas.setvLineCode(vLineCode);
+	    cDatas.setvNodeCode(vNodeCode);
 	    sort(cDatas);
 	        
 	    return cDatas;

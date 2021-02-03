@@ -15,28 +15,16 @@ public class CompareData {
 	private int type = -1;
 	private int pos = -1;
 	private int depth = -1;
-	private String vLineCode = "";
-	private String vNodeCode = "";
 	
 	public CompareData() {
 		
 	}
 	
-	public CompareData(ArrayList<Property> parentProperty, int type, int pos, int depth, String code, String node) {
+	public CompareData(ArrayList<Property> parentProperty, int type, int pos, int depth) {
 		this.parentProperty.addAll(parentProperty);
 		this.type = type;
 		this.pos = pos;
-		this.depth = depth;
-		this.vLineCode = code;
-		this.vNodeCode = node;
-	}
-	
-	public String getVNodeCode() {
-		return vNodeCode;
-	}
-	
-	public String getVLineCode() {
-		return vLineCode;
+		this.depth = depth;		
 	}
 	
 	public int getDepth() {

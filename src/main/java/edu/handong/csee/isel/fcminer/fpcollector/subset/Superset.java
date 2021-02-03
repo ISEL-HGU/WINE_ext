@@ -6,16 +6,26 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareDa
 
 public class Superset {
 	private String code = "";
+	private String contextCode = "";
 	private CompareDatas lineNodes = new CompareDatas();
 	private ArrayList<Subset> subsets = new ArrayList<>();
 	private ArrayList<Subset> equalsets = new ArrayList<>();
 	private int frequency = 0;
 	
-	public Superset(String code, CompareDatas lineNodes) {
+	public Superset(String code, String contextCode, CompareDatas lineNodes) {
 		this.code = code;
+		this.contextCode = contextCode;
 		this.lineNodes = lineNodes;
 	}
 	
+	public String getContextCode() {
+		return contextCode;
+	}
+
+	public void setContextCode(String contextCode) {
+		this.contextCode = contextCode;
+	}
+
 	public CompareDatas getLineNodes() {
 		return lineNodes;
 	}

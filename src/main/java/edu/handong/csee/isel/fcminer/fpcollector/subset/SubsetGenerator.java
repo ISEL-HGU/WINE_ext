@@ -22,7 +22,7 @@ public class SubsetGenerator {
 			printProgress(i, cDatas.size());			
 			CompareDatas lineData1 = cDatas.get(i); 
 			if(lineData1 == null || lineData1.getCompareDatas().size() == 0) continue;
-			Superset tempSuperset = new Superset(lineData1.getCompareDatas().get(0).getVLineCode(), lineData1);
+			Superset tempSuperset = new Superset(lineData1.getvLineCode(), lineData1.getvNodeCode(),lineData1);
 			
 			for(int j = 0; j < cDatas.size(); j ++) {
 				if(i == j) continue;				
@@ -33,12 +33,12 @@ public class SubsetGenerator {
 				Relation relation = findRelation(lineData2, lineData1);
 				//lineData2 is subset of lineData1
 				if(relation == Relation.Subset) {
-					Subset tempSubset = new Subset(lineData2.getCompareDatas().get(0).getVLineCode(), lineData2);
+					Subset tempSubset = new Subset(lineData2.getvLineCode(), lineData2);
 					tempSuperset.addSubset(tempSubset);					
 				}
 				//lineData1 and lineData2 are the same
 				else if(relation == Relation.Equivalent) {				
-					Subset tempSubset = new Subset(lineData2.getCompareDatas().get(0).getVLineCode(), lineData2);
+					Subset tempSubset = new Subset(lineData2.getvLineCode(), lineData2);
 					tempSuperset.addEqualset(tempSubset);			
 				}
 			}

@@ -20,6 +20,7 @@ public class RawData {
 		this.end = Integer.valueOf(end);
 		vLine = vLine.replaceAll("(?s)/\\*(.)*?\\*/", "");
 		vLine = vLine.replaceAll("/\\*.*", "");
+		
 		this.vLine = this.vLine + vLine.split("//")[0].trim();
 	}
 	

@@ -57,14 +57,14 @@ public class CompareDatas {
 			
 			if(cData.getType() == node.getType()) {
 				int propCnt = 0;
-				
-				for(Property p : node.getParentProperty()) {
-					if(containProperty(cData, p))
+				int propIdx = -1;
+				for(Property p : node.getParentProperty()) {					
+					propIdx = containProperty(cData, p, propIdx);		
+					if(propIdx != -1)
 						propCnt++;					
 				}
 				if(propCnt == propSize) {
-					curIdx = i;
-					return curIdx;
+					return i;
 				} 				
 			}
 		}
@@ -72,15 +72,17 @@ public class CompareDatas {
 		return -1;
 	}
 	
-	private boolean containProperty(CompareData cData, Property p) {		
-		for(Property prop : cData.getParentProperty()) {
-			if(prop.getNodeType() == p.getNodeType()) {
-				if(prop.getProp().equals(p.getProp())) {
-					return true;
+	private int containProperty(CompareData cData, Property p, int propIdx) {		
+		ArrayList<Property> props = cData.getParentProperty();
+		
+		for(int i = propIdx + 1; i < props.size(); i ++) {
+			if(props.get(i).getNodeType() == p.getNodeType()) {
+				if(props.get(i).getProp().equals(p.getProp())) {
+					return i;
 				}
 			}
 		}
 		
-		return false;
+		return -1;
 	}
 }

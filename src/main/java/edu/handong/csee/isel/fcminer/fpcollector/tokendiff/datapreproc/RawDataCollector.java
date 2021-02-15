@@ -46,9 +46,7 @@ public class RawDataCollector {
 			boolean timerFlag = false;
 			
 			for (CSVRecord record : records) {									
-				if(record.get(0).equals("Detection ID")) continue;
-				
-				cnt ++;			
+				if(record.get(0).equals("Detection ID")) continue;					
 				
 				String filePath = record.get(1);
 				String newFilePath = modifyFilePathToOS(filePath);									
@@ -74,7 +72,7 @@ public class RawDataCollector {
 					timerFlag = false;
 					printProgress(cnt);
 				}
-				
+				cnt ++;
 				System.out.println("" + cnt);
 			}
 			numOfAlarms = cnt;

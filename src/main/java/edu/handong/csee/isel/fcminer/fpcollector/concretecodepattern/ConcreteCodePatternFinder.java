@@ -16,6 +16,7 @@ import edu.handong.csee.isel.fcminer.fpcollector.subset.Superset;
 
 public class ConcreteCodePatternFinder {	
 	public void find(ArrayList<Superset> supersets) {
+		int warningsInMethod = supersets.size();
 		System.out.println("INFO: Subset Removal Starts");
 		supersets = removeSubset(supersets);				
 		
@@ -26,7 +27,7 @@ public class ConcreteCodePatternFinder {
 		
 		supersets = sortByLowFrequency(supersets);
 		
-		writeConcreteCodePattern(supersets);
+		writeConcreteCodePattern(supersets, warningsInMethod);
 	}		
 	
 	private ArrayList<Superset> removeSubset(ArrayList<Superset> supersets) {
@@ -97,26 +98,29 @@ public class ConcreteCodePatternFinder {
 		return supersets;
 	}
 	
-	public void writeConcreteCodePattern(ArrayList<Superset> sets) {
+	public void writeConcreteCodePattern(ArrayList<Superset> sets, int warningsInMethod) {
 		String fileName = "./FPC_Patterns_ConcreteCode.csv";				
 		
 		try(			
 			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName));
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
-					.withHeader("Pattern ID", "Pattern", "Context", "Low Frequency"));
+					.withHeader("Pattern ID", "Pattern", "Context", "Low Frequency", "Num of Warnings in Method"));
 			) {
 			int cnt = 0;
 			
 			
-			for(int i = 0 ; i < sets.size(); i ++) {
+			for(int i = 0 ; i < sets.size(); i ++) {				
 				if(sets.get(i) == null) continue;
+				
 				String pattern = sets.get(i).getCode();
 				String context = sets.get(i).getContextCode();
 				cnt++;
 				String patternID = "" + cnt; 			 	
 				String f = "" + sets.get(i).getFrequency();				
-				
-				csvPrinter.printRecord(patternID, pattern, context, f);				
+				if(cnt == 1)
+					csvPrinter.printRecord(patternID, pattern, context, f, "" + warningsInMethod);
+				else
+					csvPrinter.printRecord(patternID, pattern, context, f, "");
 			}
 
 			writer.flush();

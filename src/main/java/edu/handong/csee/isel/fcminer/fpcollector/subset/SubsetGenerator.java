@@ -21,14 +21,14 @@ public class SubsetGenerator {
 		for(int i = 0; i < cDatas.size(); i ++) {
 			printProgress(i, cDatas.size());			
 			CompareDatas lineData1 = cDatas.get(i); 
-			if(lineData1 == null || lineData1.getCompareDatas().size() == 0) continue;
-			Superset tempSuperset = new Superset(lineData1.getvLineCode(), lineData1.getvNodeCode(),lineData1);
+			if(lineData1 == null || lineData1.getCompareDatas().size() == 0) continue;	
 			
+			Superset tempSuperset = new Superset(lineData1.getvLineCode(), lineData1.getvNodeCode(),lineData1);			
 			for(int j = 0; j < cDatas.size(); j ++) {
 				if(i == j) continue;				
 				
 				CompareDatas lineData2 = cDatas.get(j);												
-				if(lineData2 == null || lineData2.getCompareDatas().size() == 0) continue;
+				if(lineData2 == null || lineData2.getCompareDatas().size() == 0) continue;				
 				
 				Relation relation = findRelation(lineData2, lineData1);
 				//lineData2 is subset of lineData1
@@ -71,7 +71,7 @@ public class SubsetGenerator {
 		for(int i = 0; i < numOfNodeLine2; i ++) {	
 			CompareData node = line2.getCompareDatas().get(i);			
 			
-			if(i == 0) {
+			if(numOfNodeLine2 != 1 && i == 0) {
 				int rootIdx = line1.containRoot(node); 
 				if(rootIdx >= 0) {
 					curIdx =  rootIdx;

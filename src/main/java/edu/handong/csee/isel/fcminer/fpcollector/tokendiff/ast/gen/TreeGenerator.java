@@ -18,7 +18,7 @@ public abstract class TreeGenerator {
         ProcessedData pData = generate(r, rawData);
         
       //the case when the violating line is not in a method but in static block or something.
-        if(pData.getCtx().getRoot() == null) {
+        if(pData == null || pData.getCtx().getRoot() == null) {
         	return pData;
         }
         

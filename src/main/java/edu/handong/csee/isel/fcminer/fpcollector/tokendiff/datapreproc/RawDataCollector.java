@@ -49,7 +49,7 @@ public class RawDataCollector {
 				if(record.get(0).equals("Detection ID")) continue;
 				
 				cnt ++;			
-
+				
 				String filePath = record.get(1);
 				String newFilePath = modifyFilePathToOS(filePath);									
 				String startLineNum = record.get(2);
@@ -88,7 +88,7 @@ public class RawDataCollector {
 	    ProcessedData pData = getProcessedData(rawData, methodFinder); 
 	   
 	    //the case when the violating line is not in a method but in static block or something.
-	    if(pData.getVMethod() != null) {
+	    if(pData != null && pData.getVMethod() != null) {
 	    	pData.setVNode(findVNode(rawData, pData.getVMethod()));
 	    	pData.setCode(rawData.getVLine());
 	    	pData.setViolationLineNum(rawData.getStart());
@@ -175,7 +175,8 @@ public class RawDataCollector {
 //	        if(c.getPos() <= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getPos()) {        
 //	            	cData.addForwardPart(c);
 //	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
-	        if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {	        	
+	        if(pData.getVNode() != null &&
+	        		c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {	        	
 	        	if(c.getStartLineNum() == pData.getViolationLineNum() && c.getEndLineNum() == pData.getViolationLineNum()) {
 	        		vLineCode = pData.getCode();
 	        		vNodeCode = pData.getVNode().getNode2String();

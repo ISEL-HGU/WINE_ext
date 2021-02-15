@@ -48,8 +48,11 @@ public abstract class AbstractJdtTreeGenerator extends TreeGenerator {
         if(node.getNodeType() == 15)
         	v.setCUnit((CompilationUnit)node);
         
-        if ((node.getFlags() & ASTNode.MALFORMED) != 0) // bitwise flag to check if the node has a syntax error
-            throw new SyntaxException(this, r);
+        if ((node.getFlags() & ASTNode.MALFORMED) != 0) { // bitwise flag to check if the node has a syntax error
+        	return null;
+//            throw new SyntaxException(this, r);
+        }
+        	
         node.accept(v);
         ProcessedData pData = v.getPreprocessedData();
         pData.setCtx(v.getTreeContext());        

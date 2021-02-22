@@ -127,7 +127,7 @@ public class RawDataCollector {
         while (currents.size() > 0) {        	
             ITree c = currents.remove(0);
             if(contain(c.getNode2String(), rawData.getVLine()) && 
-            		(c.getStartLineNum() <= rawData.getStart() && c.getEndLineNum() >= rawData.getEnd())) {        
+            		(c.getStartLineNum() == rawData.getStart())) {        
             	vNode = c;
             }
             currents.addAll(c.getChildren());
@@ -175,7 +175,7 @@ public class RawDataCollector {
 //	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
 	        if(pData.getVNode() != null &&
 	        		c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {	        	
-	        	if(c.getStartLineNum() == pData.getViolationLineNum() && c.getEndLineNum() == pData.getViolationLineNum()) {
+	        	if(c.getStartLineNum() == pData.getViolationLineNum()) {
 	        		vLineCode = pData.getCode();
 	        		vNodeCode = pData.getVNode().getNode2String();
 	        		cDatas.addCompareData(new CompareData

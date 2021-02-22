@@ -63,11 +63,10 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 	        List list = n.structuralPropertiesForType();
 	        
 	        //for get where the current node belongs to parent's property
-	        if(getLineNum(n.getStartPosition()) >= rawData.getStart() && getLineNum(n.getStartPosition()) <= rawData.getEnd()) {
+	        if(getLineNum(n.getStartPosition()) == rawData.getStart()) {
 	        	ASTNode _n = n;
 	        	ASTNode tempParent = _n.getParent();
-	        	while(getLineNum(tempParent.getStartPosition())>= rawData.getStart() 
-	        			&& getLineNum(tempParent.getStartPosition())<= rawData.getEnd()) {
+	        	while(getLineNum(tempParent.getStartPosition())== rawData.getStart()) {
 			        Property parentProperty = new Property();			        
 	        		int parentType = tempParent.getNodeType(); 
 			        list = tempParent.structuralPropertiesForType();

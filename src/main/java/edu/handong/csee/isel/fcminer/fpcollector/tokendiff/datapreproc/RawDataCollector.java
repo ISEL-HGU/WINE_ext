@@ -208,13 +208,13 @@ public class RawDataCollector {
 //				} else return -1;
 //			}
 //		});
-		
+
 		cDatas.getCompareDatas().sort(new Comparator<CompareData>() {
 			public int compare(CompareData node1, CompareData node2) {
 				if(node1.getPos() > node2.getPos()) {
 					return 1;
 				} else if(node1.getPos() == node2.getPos()) {
-					if(node1.getDepth() > node2.getDepth()) {
+					if(node1.getDepth() >= node2.getDepth()) {
 						return 1;
 					} else return -1;
 				} else return -1;

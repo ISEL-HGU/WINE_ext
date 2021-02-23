@@ -55,10 +55,7 @@ public abstract class AbstractJdtTreeGenerator extends TreeGenerator {
         	
         node.accept(v);
         ProcessedData pData = v.getPreprocessedData();
-        pData.setCtx(v.getTreeContext());     
-        if(pData.getVNode() == null)
-        	System.out.println();
-        
+        pData.setCtx(v.getTreeContext());             
         return pData;
     }
 

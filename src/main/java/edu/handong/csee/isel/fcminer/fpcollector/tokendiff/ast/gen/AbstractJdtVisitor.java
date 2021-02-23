@@ -136,8 +136,7 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
     		ITree parent = trees.peek();
             t.setParentAndUpdateChildren(parent);
     	}
-    	if(t.getStartLineNum() == 755)
-    		System.out.println();
+    	
         if(pData.getVNode() == null && (t.getStartLineNum() == rawData.getStart())) {        
         	pData.setVNode(t);
         } 

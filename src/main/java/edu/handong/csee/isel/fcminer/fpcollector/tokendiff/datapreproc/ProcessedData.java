@@ -6,7 +6,6 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.TreeContext;
 public class ProcessedData {
 	//preprocessed data
 	private ITree vNode;
-	private ITree vMethod;
 	private TreeContext ctx;
 	private String code = "";
 	private int violationLineNum = -1;
@@ -25,14 +24,6 @@ public class ProcessedData {
 	
 	public String getCode() {
 		return code;
-	}
-	
-	public void setVMethod(ITree vMethod) {
-		this.vMethod = vMethod;
-	}
-	
-	public ITree getVMethod() {
-		return vMethod;
 	}
 	
 	public void setVNode(ITree vNode) {

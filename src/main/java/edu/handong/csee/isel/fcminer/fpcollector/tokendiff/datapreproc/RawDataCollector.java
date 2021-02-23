@@ -84,17 +84,18 @@ public class RawDataCollector {
 	
 	private CompareDatas dataPreprocess(RawData rawData, MethodFinder methodFinder) {							
 	    ProcessedData pData = getProcessedData(rawData, methodFinder); 
-	   
+	    
 	    //the case when the violating line is not in a method but in static block or something.
-	    if(pData != null && pData.getVMethod() != null) {
-	    	pData.setVNode(findVNode(rawData, pData.getVMethod()));
+	    if(pData != null && pData.getVNode() != null) {	    	
 	    	pData.setCode(rawData.getVLine());
 	    	pData.setViolationLineNum(rawData.getStart());
 	    	rawData =null;
 	    	return divide(pData);
 	    }
 	    
-	    else return null;
+	    else {	    	
+	    	return null;
+	    }
 	}
 	
 	private ProcessedData getProcessedData(RawData rawData, MethodFinder methodFinder) {
@@ -167,14 +168,14 @@ public class RawDataCollector {
 		CompareDatas cDatas = new CompareDatas();
 		String vLineCode = "";
 		String vNodeCode = "";
-		currents.add(pData.getVMethod());
+		currents.add(pData.getVNode());
 	    while (currents.size() > 0) {        	
 	        ITree c = currents.remove(0);
 //	        if(c.getPos() <= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getPos()) {        
 //	            	cData.addForwardPart(c);
 //	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
-	        if(pData.getVNode() != null &&
-	        		c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {	        	
+	        if(pData.getVNode() != null && c.getPos() >= pData.getVNode().getPos() 
+	        		/*&& c.getEndPos() <= pData.getVNode().getEndPos()*/) {	        	
 	        	if(c.getStartLineNum() == pData.getViolationLineNum()) {
 	        		vLineCode = pData.getCode();
 	        		vNodeCode = pData.getVNode().getNode2String();

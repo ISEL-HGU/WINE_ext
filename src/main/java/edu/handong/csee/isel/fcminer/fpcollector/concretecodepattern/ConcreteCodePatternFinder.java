@@ -104,7 +104,7 @@ public class ConcreteCodePatternFinder {
 		try(			
 			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName));
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
-					.withHeader("Pattern ID", "Pattern", "Context", "Low Frequency", "# of nodes", "Num of Warnings in Method"));
+					.withHeader("Pattern ID", "Pattern", "Context", "# of Eq list",  "# of Frq", "complexity", "Num of Warnings in Method"));
 			) {
 			int cnt = 0;
 			
@@ -116,12 +116,13 @@ public class ConcreteCodePatternFinder {
 				String context = sets.get(i).getContextCode();
 				cnt++;
 				String patternID = "" + cnt; 			 	
-				String f = "" + sets.get(i).getFrequency();				
+				String eqNum = "" + sets.get(i).getFrequency();				
+				String f = "" + (sets.get(i).getEqualsets().size() + sets.get(i).getSubsets().size());
 				String complexity = "" + sets.get(i).getLineNodes().getCompareDatas().size();
 				if(cnt == 1)
-					csvPrinter.printRecord(patternID, pattern, context, f, complexity, "" + warningsInMethod);
+					csvPrinter.printRecord(patternID, pattern, context, eqNum, f, complexity, "" + warningsInMethod);
 				else
-					csvPrinter.printRecord(patternID, pattern, context, f, complexity, "");
+					csvPrinter.printRecord(patternID, pattern, context, eqNum, f, complexity, "");
 			}
 
 			writer.flush();

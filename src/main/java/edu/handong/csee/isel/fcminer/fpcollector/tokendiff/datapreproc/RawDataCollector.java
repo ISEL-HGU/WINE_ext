@@ -138,7 +138,7 @@ public class RawDataCollector {
 	}
 	
 	//for remove all blank and only compare characters
-	private boolean contain(String src, String test) {
+	private boolean contain(String src, String test) {				
 		String newSrc = "";
 		String newTest = "";
 		for(int i = 0; i < src.length(); i ++) {

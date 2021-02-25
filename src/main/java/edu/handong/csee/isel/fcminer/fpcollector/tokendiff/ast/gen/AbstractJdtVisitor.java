@@ -132,10 +132,9 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 //        	}
 //        }
         
-    	if(t.getStartLineNum() == rawData.getStart()) {
-    		ITree parent = trees.peek();
-            t.setParentAndUpdateChildren(parent);
-    	}
+    	
+    	ITree parent = trees.peek();
+        t.setParentAndUpdateChildren(parent);    	
     	
         if(pData.getVNode() == null && (t.getStartLineNum() == rawData.getStart())) {        
         	pData.setVNode(t);

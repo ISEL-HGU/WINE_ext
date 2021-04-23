@@ -74,7 +74,7 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 			        		tempNode =  (ASTNode) ((List) child).get(j);
 			        		if(tempNode.getStartPosition() == _n.getStartPosition() 
 			        				&& tempNode.getLength() == _n.getLength()) {
-			        			parentProperty.setNodeType(parentType);
+			        			parentProperty.setNodeType(parentType);			        			
 			        			parentProperty.setTypeName(prop.getNodeClass().getSimpleName()); 
 			        			parentProperty.setProp(prop.getId());
 			        			propertyPath.add(parentProperty);

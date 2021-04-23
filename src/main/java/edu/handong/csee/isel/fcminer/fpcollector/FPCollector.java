@@ -11,8 +11,8 @@ import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
 
 public class FPCollector {	
-	public void run(CliCommand command, int numOfAlarms) {
-		if(command.getState().equals(RunState.SAResultMiner)) return;
+	public ArrayList<Superset> run(CliCommand command, int numOfAlarms) {
+		if(command.getState().equals(RunState.SAResultMiner)) return null;
 		
 		DataCollector dataCollector = new DataCollector();				
 		//Run Diff Algorithm
@@ -23,6 +23,6 @@ public class FPCollector {
 		ArrayList<Superset> supersets = subsetGen.subsetGenerate(compareDatas);
 		
 		ConcreteCodePatternFinder codePatternFinder = new ConcreteCodePatternFinder();		
-		codePatternFinder.find(supersets);
+		return codePatternFinder.find(supersets);
 	}
 }

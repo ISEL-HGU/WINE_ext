@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
+import edu.handong.csee.isel.fcminer.clustergen.ExtractedResult;
 import edu.handong.csee.isel.fcminer.saresultminer.pmd.Alarm;
 
 public class Reader {
@@ -116,6 +117,27 @@ public class Reader {
 			    String lineNum = record.get(Headers.VICLine);
 			    String code = record.get(Headers.OriginalCode);
 			    temp.add(new Alarm(id, lineNum, code));
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return temp;
+	}
+	
+	public ArrayList<ExtractedResult> readExtractedResult(String path){
+		ArrayList<ExtractedResult> temp = new ArrayList<>();
+		try {
+			FileReader in = new FileReader(path);
+			Iterable<CSVRecord> records;			
+			records = CSVFormat.RFC4180.withHeader(Headers.class).parse(in);
+			int cnt = 0;
+			for (CSVRecord record : records) {
+				if(cnt == 0) { cnt++; continue; }
+			    String id = record.get(Headers.VICID);
+			    String lineNum = record.get(Headers.VICLine);
+			    String code = record.get(Headers.OriginalCode);
+//			    temp.add(new Alarm(id, lineNum, code));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

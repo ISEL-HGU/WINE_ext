@@ -10,12 +10,15 @@ import java.util.Comparator;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
+import org.eclipse.jdt.core.dom.ASTNode;
 
 import edu.handong.csee.isel.fcminer.fpcollector.subset.Subset;
 import edu.handong.csee.isel.fcminer.fpcollector.subset.Superset;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
 
 public class ConcreteCodePatternFinder {	
-	public void find(ArrayList<Superset> supersets) {
+	public ArrayList<Superset> find(ArrayList<Superset> supersets) {
 		int warningsInMethod = supersets.size();
 		System.out.println("INFO: Subset Removal Starts");
 		supersets = removeSubset(supersets);				
@@ -24,10 +27,12 @@ public class ConcreteCodePatternFinder {
 		supersets = removeEqualset(supersets);			
 		
 		System.out.println("INFO: Sorting in low frequency order");
-		
+		Integer.valueOf("0");
 		supersets = sortByLowFrequency(supersets);
 		
 		writeConcreteCodePattern(supersets, warningsInMethod);
+		
+		return supersets;
 	}		
 	
 	private ArrayList<Superset> removeSubset(ArrayList<Superset> supersets) {
@@ -104,13 +109,25 @@ public class ConcreteCodePatternFinder {
 		try(			
 			BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName));
 			CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
-					.withHeader("Pattern ID", "Pattern", "Context", "# of Eq list",  "# of Frq", "complexity", "Num of Warnings in Method"));
+					.withHeader("Pattern ID", "Pattern", "Context", "# of Eq list",  "# of Frq", "complexity", "Num of Warnings in Method", "NCL"));
 			) {
 			int cnt = 0;
 			
 			
 			for(int i = 0 ; i < sets.size(); i ++) {				
 				if(sets.get(i) == null) continue;
+				
+				ArrayList<CompareData> cds = sets.get(i).getLineNodes().getCompareDatas();  
+				StringBuilder ncl = new StringBuilder();
+				for(int j = 0; j < cds.size(); j ++) {					
+					ncl.append(ASTNode.nodeClassForType(cds.get(j).getType()).getSimpleName()+"(");
+					ArrayList<Property> pp = cds.get(j).getParentProperty();
+					for(int k = 0; k < pp.size(); k ++) {
+						ncl.append(pp.get(k).getTypeName() + "-" + pp.get(k).getProp());
+						ncl.append(", ");
+					}
+					ncl.append("), ");
+				}
 				
 				String pattern = sets.get(i).getCode();
 				String context = sets.get(i).getContextCode();
@@ -120,9 +137,9 @@ public class ConcreteCodePatternFinder {
 				String f = "" + (sets.get(i).getEqualsets().size() + sets.get(i).getSubsets().size());
 				String complexity = "" + sets.get(i).getLineNodes().getCompareDatas().size();
 				if(cnt == 1)
-					csvPrinter.printRecord(patternID, pattern, context, eqNum, f, complexity, "" + warningsInMethod);
+					csvPrinter.printRecord(patternID, pattern, context, eqNum, f, complexity, "" + warningsInMethod, ncl.toString());
 				else
-					csvPrinter.printRecord(patternID, pattern, context, eqNum, f, complexity, "");
+					csvPrinter.printRecord(patternID, pattern, context, eqNum, f, complexity, "", ncl.toString());
 			}
 
 			writer.flush();

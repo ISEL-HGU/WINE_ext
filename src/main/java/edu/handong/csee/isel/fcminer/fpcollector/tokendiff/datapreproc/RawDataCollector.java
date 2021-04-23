@@ -168,6 +168,7 @@ public class RawDataCollector {
 		CompareDatas cDatas = new CompareDatas();
 		String vLineCode = "";
 		String vNodeCode = "";
+		String vNodeStr = "";
 		currents.add(pData.getVNode());
 	    while (currents.size() > 0) {        	
 	        ITree c = currents.remove(0);
@@ -179,8 +180,9 @@ public class RawDataCollector {
 	        	if(c.getStartLineNum() == pData.getViolationLineNum()) {
 	        		vLineCode = pData.getCode();
 	        		vNodeCode = pData.getVNode().getNode2String();
+	        		vNodeStr = c.getNode2String();
 	        		cDatas.addCompareData(new CompareData
-	        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth()));
+	        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), vNodeStr));
 	        	}
 	        }
 //	        	cData.addVPart(c);

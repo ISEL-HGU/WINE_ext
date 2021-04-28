@@ -169,9 +169,9 @@ public class RawDataCollector {
 		String vLineCode = "";
 		String vNodeCode = "";
 		String vNodeStr = "";
-		currents.add(pData.getVNode());
+		currents.add(pData.getVNode());		
 	    while (currents.size() > 0) {        	
-	        ITree c = currents.remove(0);
+	        ITree c = currents.remove(0);	        
 //	        if(c.getPos() <= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getPos()) {        
 //	            	cData.addForwardPart(c);
 //	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
@@ -181,8 +181,13 @@ public class RawDataCollector {
 	        		vLineCode = pData.getCode();
 	        		vNodeCode = pData.getVNode().getNode2String();
 	        		vNodeStr = c.getNode2String();
-	        		cDatas.addCompareData(new CompareData
-	        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), vNodeStr));
+	        		if(c.isLeaf()) {
+	        			cDatas.addCompareData(new CompareData
+	        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), vNodeStr, true));
+	        		}
+	        		else
+	        			cDatas.addCompareData(new CompareData
+		        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), vNodeStr, false));
 	        	}
 	        }
 //	        	cData.addVPart(c);

@@ -15,18 +15,24 @@ public class CompareData {
 	private int type = -1;
 	private int pos = -1;
 	private int depth = -1;
-	private String vNodeStr = "";
+	private String vNodeStr = "";	
+	private boolean leaf = false;
 	
 	public CompareData() {
 		
 	}
 	
-	public CompareData(ArrayList<Property> parentProperty, int type, int pos, int depth, String vNodeStr) {
+	public CompareData(ArrayList<Property> parentProperty, int type, int pos, int depth, String vNodeStr, boolean leaf) {
 		this.parentProperty.addAll(parentProperty);
 		this.type = type;
 		this.pos = pos;
 		this.depth = depth;		
 		this.vNodeStr = vNodeStr;
+		this.leaf = leaf;
+	}
+	
+	public boolean isLeaf() {
+		return leaf;	
 	}
 	
 	public String getVNodeStr() {

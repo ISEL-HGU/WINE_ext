@@ -3,12 +3,12 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.TreeContext;
 
-public class ProcessedData {
+public class ProcessedData {	
 	//preprocessed data
 	private ITree vNode;
 	private TreeContext ctx;
 	private String code = "";
-	private int violationLineNum = -1;
+	private int violationLineNum = -1;	
 	
 	public int getViolationLineNum() {
 		return violationLineNum;

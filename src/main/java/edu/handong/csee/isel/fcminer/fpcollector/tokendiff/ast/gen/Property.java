@@ -4,6 +4,8 @@ public class Property {
 	int nodeType = -1;
 	String typeName = "";
 	String prop = "";
+	String label = "";
+	int pos = -1;
 	
 	public Property() {
 			

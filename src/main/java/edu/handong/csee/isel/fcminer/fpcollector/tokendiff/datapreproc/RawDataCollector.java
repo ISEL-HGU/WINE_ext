@@ -183,7 +183,7 @@ public class RawDataCollector {
 	        		vNodeStr = c.getNode2String();
 	        		if(c.isLeaf()) {
 	        			cDatas.addCompareData(new CompareData
-	        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), vNodeStr, true));
+	        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), vNodeStr, true, c.getLabel()));
 	        		}
 	        		else
 	        			cDatas.addCompareData(new CompareData

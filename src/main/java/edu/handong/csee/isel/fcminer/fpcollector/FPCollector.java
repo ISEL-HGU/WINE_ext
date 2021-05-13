@@ -15,7 +15,7 @@ public class FPCollector {
 		if(command.getState().equals(RunState.SAResultMiner)) return null;
 		
 		DataCollector dataCollector = new DataCollector();				
-		//Run Diff Algorithm
+		
 		ArrayList<CompareDatas> compareDatas = dataCollector.run(command.getResultPath(), numOfAlarms);				
 		
 		SubsetGenerator subsetGen = new SubsetGenerator();

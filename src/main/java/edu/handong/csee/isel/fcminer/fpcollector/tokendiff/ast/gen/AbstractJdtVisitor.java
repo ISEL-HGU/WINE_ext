@@ -46,22 +46,22 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 
     @SuppressWarnings("rawtypes")
 	protected void pushNode(ASTNode n, String label) {        	
-        int type = n.getNodeType();
+        int type = n.getNodeType();        
         String typeName = n.getClass().getSimpleName();
         int startPos = n.getStartPosition();
         int len = n.getLength();
         String node2String = n.toString();
 
         ArrayList<Property> propertyPath = new ArrayList<>();
-               
-        if(getLineNum(n.getStartPosition()) == rawData.getStart()) {
+
+        if(rawData.getStart() <= getLineNum(n.getStartPosition()) && getLineNum(n.getStartPosition() + n.getLength()) <= rawData.getEnd()) {
 	        //for current node description	        
 	        List list = n.structuralPropertiesForType();
 	        
 	        //for get where the current node belongs to parent's property	        
 	        ASTNode _n = n;
 	        ASTNode tempParent = _n.getParent();
-	        while(getLineNum(tempParent.getStartPosition())== rawData.getStart()) {
+	        while(rawData.getStart() <= getLineNum(_n.getStartPosition()) && rawData.getStart() <= getLineNum(tempParent.getStartPosition())) {
 	        	Property parentProperty = new Property();			        
 	        	int parentType = tempParent.getNodeType(); 
 			    list = tempParent.structuralPropertiesForType();
@@ -96,7 +96,7 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 			    _n = tempParent;
 			    tempParent = tempParent.getParent();
 			    if(tempParent == null)
-			    	System.out.println("Null");
+			    	break;
 	        }	    
         }
 //        
@@ -105,15 +105,19 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
     }
 
     private void push(int type, String typeName, String label, int startPosition, int length, String node2String,
-    					ArrayList<Property> propertyPath ) {    	    	
+    					ArrayList<Property> propertyPath ) {    	        	
+    	if(rawData.getPath().equals("./TargetProjects/netbeans/nbi/engine/tests/org/server/impl/DefaultJettyServer.java")) {
+    		
+    	}
     	ITree t = context.createTree(type, label, typeName);
         t.setPos(startPosition);
         t.setLength(length);
-        if(cUnit.getLineNumber(startPosition) == rawData.getStart()) {
+        
+//        if(cUnit.getLineNumber(startPosition) >= rawData.getStart() && cUnit.getLineNumber(startPosition) <= rawData.getEnd()) {
         	t.setStartLineNum(cUnit.getLineNumber(startPosition));
         	t.setEndLineNum(cUnit.getLineNumber(startPosition + length));
         	t.setNode2String(node2String);
-        }
+//        }
         
         ArrayList<Property> newProps = t.getParentProps();
         newProps.addAll(propertyPath);
@@ -132,12 +136,14 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 //        	}
 //        }
         
-    	
     	ITree parent = trees.peek();
         t.setParentAndUpdateChildren(parent);    	
-    	
-        if(pData.getVNode() == null && (t.getStartLineNum() == rawData.getStart())) {        
-        	pData.setVNode(t);
+        
+        if(t.getStartLineNum() >= rawData.getStart()) {
+        	if(pData.getVNode() != null && pData.getVNode().getDepth() > t.getDepth())
+        		pData.setVNode(t);
+        	else if(pData.getVNode() == null)
+        		pData.setVNode(t);
         } 
         
         trees.push(t);        

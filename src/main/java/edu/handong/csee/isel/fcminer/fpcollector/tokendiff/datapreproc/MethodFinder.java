@@ -19,6 +19,10 @@ public class MethodFinder {
 			e1.printStackTrace();
 		}
 		
+		if(pData.getVNode() == null) {
+			System.out.println("Null");
+		}
+		
 		return pData;
 	}
 	

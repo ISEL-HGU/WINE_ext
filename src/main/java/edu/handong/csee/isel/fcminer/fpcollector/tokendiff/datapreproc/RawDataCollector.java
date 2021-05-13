@@ -1,10 +1,7 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -14,6 +11,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 import edu.handong.csee.isel.fcminer.util.OSValidator;
 
 public class RawDataCollector { 	
@@ -53,7 +51,9 @@ public class RawDataCollector {
 				String startLineNum = record.get(2);
 				String endLineNum = record.get(2);
 				
-				cDatas.add(dataPreprocess(new RawData(newFilePath, startLineNum, endLineNum, record.get(3)), methodFinder));				
+				//get compare data through process data by using raw data
+				cDatas.add(dataPreprocess(new RawData(newFilePath, startLineNum, endLineNum, record.get(3)), methodFinder));
+				
 				filePath = null;
 				newFilePath = null;
 				startLineNum = null;
@@ -83,12 +83,12 @@ public class RawDataCollector {
 	}
 	
 	private CompareDatas dataPreprocess(RawData rawData, MethodFinder methodFinder) {							
-	    ProcessedData pData = getProcessedData(rawData, methodFinder); 
+	    ProcessedData pData = methodFinder.findMethod(rawData); 
 	    
 	    //the case when the violating line is not in a method but in static block or something.
-	    if(pData != null && pData.getVNode() != null) {	    	
+	    if(pData.getVNode() != null) {	    	
 	    	pData.setCode(rawData.getVLine());
-	    	pData.setViolationLineNum(rawData.getStart());
+	    	pData.setStartEnd(rawData.getStart(), rawData.getEnd(), rawData.getVLineNum());
 	    	rawData =null;
 	    	return divide(pData);
 	    }
@@ -96,28 +96,6 @@ public class RawDataCollector {
 	    else {	    	
 	    	return null;
 	    }
-	}
-	
-	private ProcessedData getProcessedData(RawData rawData, MethodFinder methodFinder) {
-		StringBuilder builder = new StringBuilder();
-		try {
-			FileInputStream fs = new FileInputStream(rawData.getPath());			
-			BufferedReader reader = new BufferedReader(new InputStreamReader(fs));
-			
-			char[] buf = new char[8192];
-			int read;
-					
-			while((read = reader.read(buf, 0, buf.length)) > 0) {				
-				builder.append(buf, 0, read);
-			}
-			reader.close();
-		} 
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-		rawData.setSrc(builder.toString());
-		builder = null;
-		return methodFinder.findMethod(rawData);				
 	}
 	
 	private ITree findVNode(RawData rawData, ITree vMethod) {
@@ -169,38 +147,89 @@ public class RawDataCollector {
 		String vLineCode = "";
 		String vNodeCode = "";
 		String vNodeStr = "";
-		currents.add(pData.getVNode());		
-	    while (currents.size() > 0) {        	
-	        ITree c = currents.remove(0);	        
-//	        if(c.getPos() <= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getPos()) {        
-//	            	cData.addForwardPart(c);
-//	        } else if(c.getPos() >= pData.getVNode().getPos() && c.getEndPos() <= pData.getVNode().getEndPos()) {
-	        if(pData.getVNode() != null && c.getPos() >= pData.getVNode().getPos() 
-	        		/*&& c.getEndPos() <= pData.getVNode().getEndPos()*/) {	        	
-	        	if(c.getStartLineNum() == pData.getViolationLineNum()) {
-	        		vLineCode = pData.getCode();
-	        		vNodeCode = pData.getVNode().getNode2String();
-	        		vNodeStr = c.getNode2String();
-	        		if(c.isLeaf()) {
-	        			cDatas.addCompareData(new CompareData
-	        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), vNodeStr, true, c.getLabel()));
-	        		}
-	        		else
-	        			cDatas.addCompareData(new CompareData
-		        				(c.getParentProps(), c.getType(), c.getPos(), c.getDepth(), vNodeStr, false));
-	        	}
-	        }
-//	        	cData.addVPart(c);
-//	        } else if(c.getPos() >= pData.getVNode().getEndPos()) {
-//	            	cData.addBackwardPart(c);
-//	        }
-	        currents.addAll(c.getChildren());
-	    }
+
+		currents.add(pData.getVNode());
+
+		//collect all leaves
+		List<ITree> leaves = new ArrayList<>();
+		while(currents.size() > 0){
+			int leafFlag = 0;
+			ITree c = currents.remove(0);
+			if(c.isLeaf())
+				leaves.add(c);
+			currents.addAll(c.getChildren());
+		}
+
+		sortLeaves(leaves, pData.getVLineNum());
+
+		for(int i = 0; i < leaves.size(); i ++){
+			ITree l = leaves.get(i);
+
+			if(pData.getStart() <= l.getStartLineNum() && l.getEndLineNum() <= pData.getEnd()) {
+				vLineCode = pData.getCode();
+				vNodeCode = pData.getVNode().getNode2String();
+				vNodeStr = l.getNode2String();
+				if(l.getStartLineNum() == pData.getVLineNum()) {
+					cDatas.addCompareData(new CompareData
+							(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), vNodeStr, true, l.getLabel()));
+					sort(cDatas);
+				}
+				else if (l.getStartLineNum() > pData.getVLineNum()) {
+					ArrayList<Property> pp = l.getParentProps();
+					ArrayList<CompareData> cDataList = cDatas.getCompareDatas();
+					ArrayList<Property> cDataProperty = cDatas.getCompareDatas().get(cDataList.size() - 1).getParentProperty();
+					//c's last parent property
+					Property currentLastProperty = pp.get(pp.size()-1);
+					Property cDataLastProperty = cDataProperty.get(cDataProperty.size() - 1);
+
+					if(currentLastProperty.getNodeType() == cDataLastProperty.getNodeType() &&
+							currentLastProperty.getProp().equals(cDataLastProperty.getProp())) {
+						cDatas.addCompareData(new CompareData
+								(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), vNodeStr, true, l.getLabel()));
+						sort(cDatas);
+					}
+				}
+				else if (l.isLeaf() && l.getStartLineNum() < pData.getVLineNum()) {
+					ArrayList<Property> pp = l.getParentProps();
+					ArrayList<CompareData> cDataList = cDatas.getCompareDatas();
+					ArrayList<Property> cDataProperty = cDatas.getCompareDatas().get(0).getParentProperty();
+					//c's last parent property
+					Property currentLastProperty = pp.get(pp.size()-1);
+					Property cDataLastProperty = cDataProperty.get(cDataProperty.size() - 1);
+
+					if(currentLastProperty.getNodeType() == cDataLastProperty.getNodeType() &&
+							currentLastProperty.getProp().equals(cDataLastProperty.getProp())) {
+						cDatas.addCompareData(new CompareData
+								(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), vNodeStr, true, l.getLabel()));
+						sort(cDatas);
+					}
+				}
+			}
+		}
 	    cDatas.setvLineCode(vLineCode);
 	    cDatas.setvNodeCode(vNodeCode);
-	    sort(cDatas);
 	        
 	    return cDatas;
+	}
+	
+	private void sortLeaves (List<ITree> currents, int vLineNum) {
+		currents.sort(new Comparator<ITree>() {
+        	public int compare(ITree t1, ITree t2) {
+        		if(Math.abs(t1.getStartLineNum() - vLineNum) > Math.abs(t2.getStartLineNum() - vLineNum)){
+        			return 1;
+				}
+        		else if (Math.abs(t1.getStartLineNum() - vLineNum) == Math.abs(t2.getStartLineNum() - vLineNum)){
+					if(t1.getPos() > t2.getPos()) {
+						return 1;
+					} else if(t1.getPos() == t2.getPos()) {
+						if(t1.getDepth() >= t2.getDepth()) {
+							return 1;
+						} else return -1;
+					} else return -1;
+				}
+        		else return -1;
+        	}
+        });
 	}
 	
 	private void sort(CompareDatas cDatas) {

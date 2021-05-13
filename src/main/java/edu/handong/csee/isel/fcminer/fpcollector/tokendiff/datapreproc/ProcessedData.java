@@ -8,16 +8,26 @@ public class ProcessedData {
 	private ITree vNode;
 	private TreeContext ctx;
 	private String code = "";
-	private int violationLineNum = -1;	
+	private int start = -1;
+	private int end = -1;
+	private int vLineNum = -1;
 	
-	public int getViolationLineNum() {
-		return violationLineNum;
+	public int getStart() {
+		return start;
+	}
+	
+	public int getEnd() {
+		return end;
 	}
 
-	public void setViolationLineNum(int violationLineNum) {
-		this.violationLineNum = violationLineNum;
+	public void setStartEnd(int start, int end, int vLineNum) {
+		this.start = start;
+		this.end = end;
+		this.vLineNum = vLineNum;
 	}
-
+	public int getVLineNum(){
+		return vLineNum;
+	}
 	public void setCode(String code) {
 		this.code = code;
 	}

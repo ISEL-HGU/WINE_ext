@@ -21,7 +21,9 @@ public class SubsetGenerator {
 		for(int i = 0; i < cDatas.size(); i ++) {
 			printProgress(i, cDatas.size());			
 			CompareDatas lineData1 = cDatas.get(i); 
-			if(lineData1 == null || lineData1.getCompareDatas().size() == 0) continue;	
+			if(lineData1 == null || lineData1.getCompareDatas().size() == 0) {				
+				continue;	
+			}
 			
 			Superset tempSuperset = new Superset(lineData1.getvLineCode(), lineData1.getvNodeCode(),lineData1);			
 			for(int j = 0; j < cDatas.size(); j ++) {

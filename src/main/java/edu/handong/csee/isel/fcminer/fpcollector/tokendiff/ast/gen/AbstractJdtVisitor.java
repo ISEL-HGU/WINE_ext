@@ -16,7 +16,7 @@ import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Processed
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.RawData;
 
 public abstract class AbstractJdtVisitor extends ASTVisitor {
-
+	final static int BLOCK = 8;
     protected TreeContext context = new TreeContext();
 
     private Deque<ITree> trees = new ArrayDeque<>();
@@ -95,7 +95,7 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 			       }
 			    _n = tempParent;
 			    tempParent = tempParent.getParent();
-			    if(tempParent == null)
+			    if(tempParent == null || tempParent.getNodeType() == BLOCK)
 			    	break;
 	        }	    
         }
@@ -105,19 +105,14 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
     }
 
     private void push(int type, String typeName, String label, int startPosition, int length, String node2String,
-    					ArrayList<Property> propertyPath ) {    	        	
-    	if(rawData.getPath().equals("./TargetProjects/netbeans/nbi/engine/tests/org/server/impl/DefaultJettyServer.java")) {
-    		
-    	}
+    					ArrayList<Property> propertyPath ) {
     	ITree t = context.createTree(type, label, typeName);
         t.setPos(startPosition);
         t.setLength(length);
-        
-//        if(cUnit.getLineNumber(startPosition) >= rawData.getStart() && cUnit.getLineNumber(startPosition) <= rawData.getEnd()) {
-        	t.setStartLineNum(cUnit.getLineNumber(startPosition));
-        	t.setEndLineNum(cUnit.getLineNumber(startPosition + length));
-        	t.setNode2String(node2String);
-//        }
+       	t.setStartLineNum(cUnit.getLineNumber(startPosition));
+       	t.setEndLineNum(cUnit.getLineNumber(startPosition + length));
+       	t.setNode2String(node2String);
+
         
         ArrayList<Property> newProps = t.getParentProps();
         newProps.addAll(propertyPath);

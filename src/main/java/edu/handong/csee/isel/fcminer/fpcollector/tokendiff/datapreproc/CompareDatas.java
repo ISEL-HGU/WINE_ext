@@ -52,7 +52,7 @@ public class CompareDatas {
 	public int contain(CompareData node, int curIdx) {
 		int propSize = node.getParentProperty().size();		
 		
-		for(int i = curIdx + 1; i < cDatas.size(); i ++) {
+		for(int i = curIdx; i < cDatas.size(); i ++) {
 			CompareData cData = cDatas.get(i);
 			
 			if(cData.getType() == node.getType()) {

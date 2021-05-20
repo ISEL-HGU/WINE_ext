@@ -71,24 +71,14 @@ public class SubsetGenerator {
 		int curIdx = 0;
 		
 		for(int i = 0; i < numOfNodeLine2; i ++) {	
-			CompareData node = line2.getCompareDatas().get(i);			
-			
-			if(numOfNodeLine2 != 1 && i == 0) {
-				int rootIdx = line1.containRoot(node);
-				if(rootIdx >= 0) {
-					curIdx =  rootIdx;
-					included[i] = true;
-				}
-				else return Relation.NULL;
-			}
+			CompareData node = line2.getCompareDatas().get(i);
+			curIdx = line1.contain(node, curIdx);
+			if(curIdx == -1)
+				return Relation.NULL;
 			else {
-				curIdx = line1.contain(node, curIdx);
-				if(curIdx == -1)
-					return Relation.NULL;
-				else {
-					included[i] = true;										
-				}
+				included[i] = true;
 			}
+
 		}
 		
 		for(boolean b : included) {

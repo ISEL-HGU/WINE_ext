@@ -74,13 +74,13 @@ public class SubsetGenerator {
 			CompareData node = line2.getCompareDatas().get(i);			
 			
 			if(numOfNodeLine2 != 1 && i == 0) {
-				int rootIdx = line1.containRoot(node); 
+				int rootIdx = line1.containRoot(node);
 				if(rootIdx >= 0) {
 					curIdx =  rootIdx;
 					included[i] = true;
-				}					
+				}
 				else return Relation.NULL;
-			}			
+			}
 			else {
 				curIdx = line1.contain(node, curIdx);
 				if(curIdx == -1)
@@ -99,8 +99,6 @@ public class SubsetGenerator {
 			return Relation.Equivalent;
 		else 
 			return Relation.Subset;
-		
-
 	}	
 	
 	private void printProgress(int cnt, int total) {

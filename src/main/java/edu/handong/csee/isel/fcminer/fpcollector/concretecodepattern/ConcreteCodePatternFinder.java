@@ -126,7 +126,7 @@ public class ConcreteCodePatternFinder {
 						ncl.append(pp.get(k).getTypeName() + "-" + pp.get(k).getProp());
 						ncl.append(", ");
 					}
-					ncl.append("), ");
+					ncl.append("),\n");
 				}
 				
 				String pattern = sets.get(i).getCode();

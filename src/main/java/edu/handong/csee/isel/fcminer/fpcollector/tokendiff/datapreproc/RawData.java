@@ -74,7 +74,7 @@ public class RawData {
 				tmpCode = splitByNewLine.get(tmpStart).trim();
 				if(tmpCode.length() > 0)
 					lastIdx = tmpCode.charAt(tmpCode.length()-1);
-			} while(lastIdx != ';' && lastIdx != '}');
+			} while(lastIdx != ';' && lastIdx != '}' && !tmpCode.endsWith("*/") && !tmpCode.startsWith("//"));
 			
 			//if previous line has a terminate character --> current line is enough to analyze
 			if(tmpStart == Integer.parseInt(start) - 2) {
@@ -96,7 +96,7 @@ public class RawData {
 				tmpCode = splitByNewLine.get(tmpEnd).trim();
 				if(tmpCode.length() > 0)
 					lastIdx = tmpCode.charAt(tmpCode.length()-1);
-			} while(lastIdx != ';' && lastIdx != '}');
+			} while(lastIdx != ';' && lastIdx != '}' && !tmpCode.endsWith("*/") && !tmpCode.startsWith("//"));
 			
 			//if backward line has a terminate character --> the statement is terminated in tmpEnd line 
 			this.end = tmpEnd + 1;
@@ -120,12 +120,20 @@ public class RawData {
 		this.start = Integer.valueOf(start);
 	}
 
+	public void setStart(int start) {
+		this.start = start;
+	}
+
 	public int getEnd() {
 		return end;
 	}
 
 	public void setEnd(String end) {
 		this.end = Integer.valueOf(end);
+	}
+
+	public void setEnd(int end) {
+		this.end = end;
 	}
 	
 	public void addVLine(String vLine) {

@@ -5,10 +5,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-import org.eclipse.jdt.core.dom.ASTNode;
-import org.eclipse.jdt.core.dom.ASTVisitor;
-import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.StructuralPropertyDescriptor;
+import org.eclipse.jdt.core.dom.*;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.TreeContext;
@@ -51,61 +48,26 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         int startPos = n.getStartPosition();
         int len = n.getLength();
         String node2String = n.toString();
+        boolean stmtFlag = false;
 
         ArrayList<Property> propertyPath = new ArrayList<>();
 
-        if(rawData.getStart() <= getLineNum(n.getStartPosition()) && getLineNum(n.getStartPosition() + n.getLength()) <= rawData.getEnd()) {
-	        //for current node description	        
-	        List list = n.structuralPropertiesForType();
-	        
-	        //for get where the current node belongs to parent's property	        
-	        ASTNode _n = n;
-	        ASTNode tempParent = _n.getParent();
-	        while(rawData.getStart() <= getLineNum(_n.getStartPosition()) && rawData.getStart() <= getLineNum(tempParent.getStartPosition())) {
-	        	Property parentProperty = new Property();			        
-	        	int parentType = tempParent.getNodeType(); 
-			    list = tempParent.structuralPropertiesForType();
-			    for(int i = 0 ; i < list.size(); i ++) {
-			    	StructuralPropertyDescriptor prop = (StructuralPropertyDescriptor) list.get(i);
-			        Object child = tempParent.getStructuralProperty(prop);
-			        ASTNode tempNode;
-			        if(child instanceof List) {
-			        	for(int j = 0; j < ((List) child).size(); j ++) {
-			        		tempNode =  (ASTNode) ((List) child).get(j);
-			        		if(tempNode.getStartPosition() == _n.getStartPosition() 
-			        				&& tempNode.getLength() == _n.getLength()) {
-			        			parentProperty.setNodeType(parentType);			        			
-			        			parentProperty.setTypeName(prop.getNodeClass().getSimpleName()); 
-			        			parentProperty.setProp(prop.getId());
-			        			propertyPath.add(parentProperty);
-					        	break;
-					        }
-			        	}
-			        } else if (child instanceof ASTNode) {
-			        	tempNode = (ASTNode) child;
-			        	if(tempNode.getStartPosition() == _n.getStartPosition() 
-			        			&& tempNode.getLength() == _n.getLength()) {
-			        		parentProperty.setNodeType(parentType);
-		        			parentProperty.setTypeName(prop.getNodeClass().getSimpleName()); 
-		        			parentProperty.setProp(prop.getId());
-		        			propertyPath.add(parentProperty);
-				        	break;
-				        }
-			        }		        			        	
-			       }
-			    _n = tempParent;
-			    tempParent = tempParent.getParent();
-			    if(tempParent == null || tempParent.getNodeType() == BLOCK)
-			    	break;
-	        }	    
+        if(pData.getVNode() != null){
+        	rawData.setStart(pData.getVNode().getStartLineNum());
+			rawData.setEnd(pData.getVNode().getEndLineNum());
+		}
+
+        if(pData.getVNode() != null && rawData.getStart() <= getLineNum(n.getStartPosition()) && getLineNum(n.getStartPosition() + n.getLength()) <= rawData.getEnd()) {
+	        propertyPath.addAll(parseProperty(n));
         }
-//        
-        
-        push(type, typeName, label, startPos, len, node2String, propertyPath);    
+		if(n instanceof Statement || n instanceof ImportDeclaration || n instanceof PackageDeclaration)
+			stmtFlag = true;
+
+        push(type, typeName, label, startPos, len, node2String, propertyPath, stmtFlag);
     }
 
     private void push(int type, String typeName, String label, int startPosition, int length, String node2String,
-    					ArrayList<Property> propertyPath ) {
+    					ArrayList<Property> propertyPath, boolean stmtFlag) {
     	ITree t = context.createTree(type, label, typeName);
         t.setPos(startPosition);
         t.setLength(length);
@@ -113,37 +75,84 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
        	t.setEndLineNum(cUnit.getLineNumber(startPosition + length));
        	t.setNode2String(node2String);
 
-        
         ArrayList<Property> newProps = t.getParentProps();
         newProps.addAll(propertyPath);
         t.setParentProps(newProps);
         
-//        int vMethodPos = 0;
-//        int vMethodLen = 0;
-
-//    	if(pData != null && pData.getVMethod() != null) {
-//        	vMethodPos = pData.getVMethod().getPos();
-//        	vMethodLen = pData.getVMethod().getLength();
-//	
-//        	if(vMethodPos <= startPosition && vMethodPos + vMethodLen >= startPosition + length){
-//                    ITree parent = trees.peek();
-//                    t.setParentAndUpdateChildren(parent);                
-//        	}
-//        }
-        
     	ITree parent = trees.peek();
         t.setParentAndUpdateChildren(parent);    	
         
-        if(t.getStartLineNum() >= rawData.getStart()) {
-        	if(pData.getVNode() != null && pData.getVNode().getDepth() > t.getDepth())
-        		pData.setVNode(t);
-        	else if(pData.getVNode() == null)
-        		pData.setVNode(t);
-        } 
-        
-        trees.push(t);        
+//        if(t.getStartLineNum() >= rawData.getStart()) {
+//        	if(pData.getVNode() != null && pData.getVNode().getDepth() > t.getDepth()
+//					&& pData.getVNode().getStartLineNum() <= rawData.getVLineNum() && rawData.getVLineNum() <= pData.getVNode().getEndLineNum())
+//        		pData.setVNode(t);
+//        	else if(pData.getVNode() == null && t.getStartLineNum() <= rawData.getVLineNum() && rawData.getVLineNum() <= t.getEndLineNum() && stmtFlag == true)
+//        		pData.setVNode(t);
+//        }
+		if(t.getStartLineNum() <= rawData.getVLineNum() && rawData.getVLineNum() <= t.getEndLineNum()){
+			System.out.print("");
+		}
+
+		if(t.getStartLineNum() <= rawData.getVLineNum() && rawData.getVLineNum() <= t.getEndLineNum() && stmtFlag == true && t.getType() != BLOCK) {
+			if(pData.getVNode() == null)
+				pData.setVNode(t);
+			else if(pData.getVNode() != null && (pData.getVNode().getStartLineNum() != rawData.getVLineNum() || pData.getVNode().getEndLineNum() != rawData.getVLineNum()))
+				pData.setVNode(t);
+		}
+        trees.push(t);
     }
-    
+
+    private ArrayList<Property> parseProperty(ASTNode n){
+		ASTNode _n = n;
+		ASTNode tempParent = _n.getParent();
+		ArrayList<Property> propertyPath = new ArrayList<>();
+		while(rawData.getStart() <= getLineNum(_n.getStartPosition()) && rawData.getStart() <= getLineNum(tempParent.getStartPosition())) {
+//			if(_n.getNodeType() == BLOCK){
+//				_n = tempParent;
+//				tempParent = tempParent.getParent();
+//				continue;
+//			}
+
+			List list = tempParent.structuralPropertiesForType();
+			Property parentProperty = new Property();
+			int parentType = tempParent.getNodeType();
+			for(int i = 0 ; i < list.size(); i ++) {
+				StructuralPropertyDescriptor prop = (StructuralPropertyDescriptor) list.get(i);
+				Object child = tempParent.getStructuralProperty(prop);
+				ASTNode tempNode;
+				if(child instanceof List) {
+					for(int j = 0; j < ((List) child).size(); j ++) {
+						tempNode =  (ASTNode) ((List) child).get(j);
+						if(tempNode.getStartPosition() == _n.getStartPosition()
+								&& tempNode.getLength() == _n.getLength()) {
+							parentProperty.setNodeType(parentType);
+							parentProperty.setTypeName(prop.getNodeClass().getSimpleName());
+							parentProperty.setProp(prop.getId());
+							propertyPath.add(parentProperty);
+							break;
+						}
+					}
+				} else if (child instanceof ASTNode) {
+					tempNode = (ASTNode) child;
+					if(tempNode.getStartPosition() == _n.getStartPosition()
+							&& tempNode.getLength() == _n.getLength()) {
+						parentProperty.setNodeType(parentType);
+						parentProperty.setTypeName(prop.getNodeClass().getSimpleName());
+						parentProperty.setProp(prop.getId());
+						propertyPath.add(parentProperty);
+						break;
+					}
+				}
+			}
+			_n = tempParent;
+			tempParent = tempParent.getParent();
+			if(tempParent == null) break;
+					//|| tempParent.getNodeType() == BLOCK)
+
+		}
+		return propertyPath;
+	}
+
     private boolean contain(String src, String test) {
 		String newSrc = "";
 		String newTest = "";

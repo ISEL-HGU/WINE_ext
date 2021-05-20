@@ -86,16 +86,16 @@ public class RawDataCollector {
 	    ProcessedData pData = methodFinder.findMethod(rawData); 
 	    
 	    //the case when the violating line is not in a method but in static block or something.
-	    if(pData.getVNode() != null) {	    	
-	    	pData.setCode(rawData.getVLine());
-	    	pData.setStartEnd(rawData.getStart(), rawData.getEnd(), rawData.getVLineNum());
-	    	rawData =null;
-	    	return divide(pData);
-	    }
-	    
-	    else {	    	
-	    	return null;
-	    }
+		try {
+			pData.setCode(rawData.getVLine());
+			pData.setStartEnd(rawData.getStart(), rawData.getEnd(), rawData.getVLineNum());
+			rawData = null;
+			return divide(pData);
+		} catch (NullPointerException e){
+			e.printStackTrace();
+			System.exit(-1);
+			return null;
+		}
 	}
 	
 	private ITree findVNode(RawData rawData, ITree vMethod) {
@@ -152,11 +152,17 @@ public class RawDataCollector {
 
 		//collect all leaves
 		List<ITree> leaves = new ArrayList<>();
+		int stmtDepth = currents.get(0).getDepth();
+		int currentDepth = -1;
+
 		while(currents.size() > 0){
 			int leafFlag = 0;
 			ITree c = currents.remove(0);
-			if(c.isLeaf())
+			currentDepth = c.getDepth() - stmtDepth;
+			if(c.isLeaf()) {
 				leaves.add(c);
+
+			}
 			currents.addAll(c.getChildren());
 		}
 

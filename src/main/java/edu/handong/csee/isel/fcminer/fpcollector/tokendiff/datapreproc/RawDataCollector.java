@@ -93,7 +93,6 @@ public class RawDataCollector {
 			return divide(pData);
 		} catch (NullPointerException e){
 			e.printStackTrace();
-			System.exit(-1);
 			return null;
 		}
 	}

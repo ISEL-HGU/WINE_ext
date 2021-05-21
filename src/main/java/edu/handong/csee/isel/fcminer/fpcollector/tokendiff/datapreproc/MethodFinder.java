@@ -18,9 +18,10 @@ public class MethodFinder {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
+		if(pData == null)
+			return null;
 		if(pData.getVNode() == null) {
-			System.out.println("Null");
+			return null;
 		}
 		
 		return pData;

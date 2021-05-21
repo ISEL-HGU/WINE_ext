@@ -60,7 +60,8 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         if(pData.getVNode() != null && rawData.getStart() <= getLineNum(n.getStartPosition()) && getLineNum(n.getStartPosition() + n.getLength()) <= rawData.getEnd()) {
 	        propertyPath.addAll(parseProperty(n));
         }
-		if(n instanceof Statement || n instanceof ImportDeclaration || n instanceof PackageDeclaration)
+		if(n instanceof Statement || n instanceof ImportDeclaration || n instanceof PackageDeclaration
+				|| n instanceof FieldDeclaration )
 			stmtFlag = true;
 
         push(type, typeName, label, startPos, len, node2String, propertyPath, stmtFlag);

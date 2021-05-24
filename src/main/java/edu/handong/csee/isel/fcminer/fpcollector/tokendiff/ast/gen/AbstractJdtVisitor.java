@@ -64,10 +64,10 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 				|| n instanceof FieldDeclaration )
 			stmtFlag = true;
 
-        push(type, typeName, label, startPos, len, node2String, propertyPath, stmtFlag);
+        push(n, type, typeName, label, startPos, len, node2String, propertyPath, stmtFlag);
     }
 
-    private void push(int type, String typeName, String label, int startPosition, int length, String node2String,
+    private void push(ASTNode n, int type, String typeName, String label, int startPosition, int length, String node2String,
     					ArrayList<Property> propertyPath, boolean stmtFlag) {
     	ITree t = context.createTree(type, label, typeName);
         t.setPos(startPosition);
@@ -95,10 +95,18 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 		}
 
 		if(t.getStartLineNum() <= rawData.getVLineNum() && rawData.getVLineNum() <= t.getEndLineNum() && stmtFlag == true && t.getType() != BLOCK) {
-			if(pData.getVNode() == null)
+			if (pData.getVNode() == null) {
 				pData.setVNode(t);
-			else if(pData.getVNode() != null && (pData.getVNode().getStartLineNum() != rawData.getVLineNum() || pData.getVNode().getEndLineNum() != rawData.getVLineNum()))
-				pData.setVNode(t);
+				if (n instanceof IfStatement && t.getStartLineNum() == rawData.getVLineNum()) {
+					ASTNode exp = ((IfStatement) n).getExpression();
+					pData.getVNode().setStartLineNum(getLineNum(exp.getStartPosition()));
+					pData.getVNode().setEndLineNum(getLineNum(exp.getStartPosition() + exp.getLength()));
+				}
+			}
+			else {
+				if ((pData.getVNode().getStartLineNum() != rawData.getVLineNum() || pData.getVNode().getEndLineNum() != rawData.getVLineNum()))
+					pData.setVNode(t);
+			}
 		}
         trees.push(t);
     }

@@ -8,102 +8,101 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import edu.handong.csee.isel.fcminer.fpcollector.subset.SuperWarning;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.eclipse.jdt.core.dom.ASTNode;
 
-import edu.handong.csee.isel.fcminer.fpcollector.subset.Subset;
-import edu.handong.csee.isel.fcminer.fpcollector.subset.Superset;
+import edu.handong.csee.isel.fcminer.fpcollector.subset.SubWarning;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareData;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.Node;
 
 public class ConcreteCodePatternFinder {	
-	public ArrayList<Superset> find(ArrayList<Superset> supersets) {
-		int warningsInMethod = supersets.size();
-		System.out.println("INFO: Subset Removal Starts");
-		supersets = removeSubset(supersets);				
-		
-		System.out.println("INFO: Equalset Removal Starts");
-		supersets = removeEqualset(supersets);			
+	public ArrayList<SuperWarning> find(ArrayList<SuperWarning> superWarnings) {
+		int warningsInMethod = superWarnings.size();
+//		System.out.println("INFO: Subset Removal Starts");
+//		superWarnings = removeSubset(superWarnings);
+
+//		System.out.println("INFO: Equalset Removal Starts");
+//		superWarnings = removeEqualset(superWarnings);
 		
 		System.out.println("INFO: Sorting in low frequency order");
-		Integer.valueOf("0");
-		supersets = sortByLowFrequency(supersets);
+		superWarnings = sortByLowFrequency(superWarnings);
 		
-		writeConcreteCodePattern(supersets, warningsInMethod);
+		writeConcreteCodePattern(superWarnings, warningsInMethod);
 		
-		return supersets;
+		return superWarnings;
 	}		
 	
-	private ArrayList<Superset> removeSubset(ArrayList<Superset> supersets) {
-		boolean[] removeIdx = new boolean[supersets.size()];
-		
-		for(int i = 0; i < supersets.size(); i ++) {
-			printProgress(i, supersets.size());
-			removeIdx[i] = isRemovable(supersets.get(i), supersets);
-		}		
-		
-		ArrayList<Superset> newSupersets = new ArrayList<>();
-		for(int i = 0; i < removeIdx.length; i ++) {			
-			if(removeIdx[i] == true) continue;
-			else newSupersets.add(supersets.get(i));
-		}
-		
-		return newSupersets;
-	}
+//	private ArrayList<SuperWarning> removeSubset(ArrayList<SuperWarning> superWarnings) {
+//		boolean[] removeIdx = new boolean[superWarnings.size()];
+//
+//		for(int i = 0; i < superWarnings.size(); i ++) {
+//			printProgress(i, superWarnings.size());
+//			removeIdx[i] = isRemovable(superWarnings.get(i), superWarnings);
+//		}
+//
+//		ArrayList<SuperWarning> newSuperWarnings = new ArrayList<>();
+//		for(int i = 0; i < removeIdx.length; i ++) {
+//			if(removeIdx[i] == true) continue;
+//			else newSuperWarnings.add(superWarnings.get(i));
+//		}
+//
+//		return newSuperWarnings;
+//	}
 	
-	private boolean isRemovable(Superset superset, ArrayList<Superset> supersets) {
-		for(Superset tempSuperset : supersets) {
-			for(Subset subset : tempSuperset.getSubsets()) {
-				if(subset.getCode().equals(superset.getCode()))
-						return true;
-			}			
-		}				
-		return false;
-	}
+//	private boolean isRemovable(SuperWarning superWarning, ArrayList<SuperWarning> superWarnings) {
+//		for(SuperWarning tempSuperWarnings : superWarnings) {
+//			for(SubWarning subset : tempSuperWarnings.getSubsets()) {
+//				if(subset.getCode().equals(superWarning.getCode()))
+//						return true;
+//			}
+//		}
+//		return false;
+//	}
 	
-	private ArrayList<Superset> removeEqualset(ArrayList<Superset> supersets) {
-		boolean[] removeIdx = new boolean[supersets.size()];
-		
-		for(int i = 0; i < supersets.size(); i ++) {
-			printProgress(i, supersets.size());
-			removeIdx = isRemovableEqualset(supersets.get(i), supersets, i, removeIdx);			 
-		}		
-		
-		ArrayList<Superset> newSupersets = new ArrayList<>();
-		for(int i = 0; i < removeIdx.length; i ++) {			
-			if(removeIdx[i] == true) continue;
-			else newSupersets.add(supersets.get(i));
-		}
-		
-		return newSupersets;
-	}
+//	private ArrayList<SuperWarning> removeEqualset(ArrayList<SuperWarning> superWarnings) {
+//		boolean[] removeIdx = new boolean[superWarnings.size()];
+//
+//		for(int i = 0; i < superWarnings.size(); i ++) {
+//			printProgress(i, superWarnings.size());
+//			removeIdx = isRemovableEqualset(superWarnings.get(i), superWarnings, i, removeIdx);
+//		}
+//
+//		ArrayList<SuperWarning> newSuperWarnings = new ArrayList<>();
+//		for(int i = 0; i < removeIdx.length; i ++) {
+//			if(removeIdx[i] == true) continue;
+//			else newSuperWarnings.add(superWarnings.get(i));
+//		}
+//
+//		return newSuperWarnings;
+//	}
 	
-	private boolean[] isRemovableEqualset(Superset superset, ArrayList<Superset> supersets, int curIdx, boolean[] removeIdx) {
-				
-		for(Subset subset : superset.getEqualsets()) {
-			for(int i = curIdx+1; i < supersets.size(); i++ ) {
-				if(removeIdx[i] == true) continue;
-				if(subset.getCode().equals(supersets.get(i).getCode())){
-					removeIdx[i] = true;
-				}
-			}			
-		}				
-		return removeIdx;
-	}
+//	private boolean[] isRemovableEqualset(SuperWarning superWarning, ArrayList<SuperWarning> superWarnings, int curIdx, boolean[] removeIdx) {
+//
+//		for(SubWarning subset : superWarning.getEqualsets()) {
+//			for(int i = curIdx+1; i < superWarnings.size(); i++ ) {
+//				if(removeIdx[i] == true) continue;
+//				if(subset.getCode().equals(superWarnings.get(i).getCode())){
+//					removeIdx[i] = true;
+//				}
+//			}
+//		}
+//		return removeIdx;
+//	}
 	
-	private ArrayList<Superset> sortByLowFrequency(ArrayList<Superset> supersets){				
-		Collections.sort(supersets, new Comparator<Superset>() {
+	private ArrayList<SuperWarning> sortByLowFrequency(ArrayList<SuperWarning> superWarnings){
+		Collections.sort(superWarnings, new Comparator<SuperWarning>() {
 			@Override
-			public int compare(Superset set1, Superset set2) {				
-				return set1.getFrequency() - set2.getFrequency();
+			public int compare(SuperWarning set1, SuperWarning set2) {
+				return set1.getNumOfEqualWarnings() - set2.getNumOfEqualWarnings();
 			}
 			
 		});
-		return supersets;
+		return superWarnings;
 	}
 	
-	public void writeConcreteCodePattern(ArrayList<Superset> sets, int warningsInMethod) {
+	public void writeConcreteCodePattern(ArrayList<SuperWarning> sets, int warningsInMethod) {
 		String fileName = "./FPC_Patterns_ConcreteCode.csv";				
 		
 		try(			
@@ -117,7 +116,7 @@ public class ConcreteCodePatternFinder {
 			for(int i = 0 ; i < sets.size(); i ++) {				
 				if(sets.get(i) == null) continue;
 				
-				ArrayList<CompareData> cds = sets.get(i).getLineNodes().getCompareDatas();  
+				ArrayList<Node> cds = sets.get(i).getLineNodes().getNodeList();
 				StringBuilder ncl = new StringBuilder();
 				for(int j = 0; j < cds.size(); j ++) {					
 					ncl.append(ASTNode.nodeClassForType(cds.get(j).getType()).getSimpleName()+"(");
@@ -133,9 +132,9 @@ public class ConcreteCodePatternFinder {
 				String context = sets.get(i).getContextCode();
 				cnt++;
 				String patternID = "" + cnt; 			 	
-				String eqNum = "" + sets.get(i).getFrequency();				
-				String f = "" + (sets.get(i).getEqualsets().size() + sets.get(i).getSubsets().size());
-				String complexity = "" + sets.get(i).getLineNodes().getCompareDatas().size();
+				String eqNum = "" + sets.get(i).getNumOfEqualWarnings();
+				String f = "" + (sets.get(i).getNumOfEqualWarnings() + sets.get(i).getNumOfSubWarnings());
+				String complexity = "" + sets.get(i).getLineNodes().getNodeList().size();
 				if(cnt == 1)
 					csvPrinter.printRecord(patternID, pattern, context, eqNum, f, complexity, "" + warningsInMethod, ncl.toString());
 				else

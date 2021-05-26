@@ -5,12 +5,8 @@ import java.util.ArrayList;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 
-public class CompareData {		
+public class Node {
 	//compare data
-//	private ArrayList<ITree> forwardPart = new ArrayList<>();
-//	private ArrayList<ITree> vPart = new ArrayList<>();
-//	private ArrayList<ITree> backwardPart = new ArrayList<>();
-	
 	private ArrayList<Property> parentProperty = new ArrayList<>();
 	private int type = -1;
 	private int pos = -1;
@@ -19,11 +15,11 @@ public class CompareData {
 	private String label = "";
 	private boolean leaf = false;
 	
-	public CompareData() {
+	public Node() {
 		
 	}
 	
-	public CompareData(ArrayList<Property> parentProperty, int type, int pos, int depth, String vNodeStr, boolean leaf, String label) {
+	public Node(ArrayList<Property> parentProperty, int type, int pos, int depth, String vNodeStr, boolean leaf, String label) {
 		this.parentProperty.addAll(parentProperty);
 		this.type = type;
 		this.pos = pos;
@@ -33,7 +29,7 @@ public class CompareData {
 		this.label = label;
 	}
 	
-	public CompareData(ArrayList<Property> parentProperty, int type, int pos, int depth, String vNodeStr, boolean leaf) {
+	public Node(ArrayList<Property> parentProperty, int type, int pos, int depth, String vNodeStr, boolean leaf) {
 		this.parentProperty.addAll(parentProperty);
 		this.type = type;
 		this.pos = pos;
@@ -69,28 +65,4 @@ public class CompareData {
 	public int getType() {
 		return type;
 	}
-	
-//	public void addForwardPart(ITree node) {
-//		this.forwardPart.add(node);
-//	}
-//	
-//	public void addVPart(ITree node) {
-//		this.vPart.add(node);
-//	}
-//	
-//	public void addBackwardPart(ITree node) {
-//		this.backwardPart.add(node);
-//	}
-//	
-//	public ArrayList<ITree> getForwardPart() {
-//		return forwardPart;
-//	}
-//	
-//	public ArrayList<ITree> getVPart() {
-//		return vPart;
-//	}
-//	
-//	public ArrayList<ITree> getBackwardPart() {
-//		return backwardPart;
-//	}
 }

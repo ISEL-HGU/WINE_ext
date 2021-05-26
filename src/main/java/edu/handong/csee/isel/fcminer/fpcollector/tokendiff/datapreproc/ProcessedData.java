@@ -7,7 +7,6 @@ public class ProcessedData {
 	//preprocessed data
 	private ITree vNode;
 	private TreeContext ctx;
-	private String code = "";
 	private int start = -1;
 	private int end = -1;
 	private int vLineNum = -1;
@@ -27,13 +26,6 @@ public class ProcessedData {
 	}
 	public int getVLineNum(){
 		return vLineNum;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	
-	public String getCode() {
-		return code;
 	}
 	
 	public void setVNode(ITree vNode) {

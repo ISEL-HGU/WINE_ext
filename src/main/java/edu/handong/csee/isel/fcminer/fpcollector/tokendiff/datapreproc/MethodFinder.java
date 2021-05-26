@@ -9,8 +9,6 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.JdtTreeGenerator;
 
 public class MethodFinder {
-	CompilationUnit cUnit;
-	
 	public ProcessedData findMethod(RawData rawData){
 		ProcessedData pData = null;
 		try {
@@ -26,9 +24,4 @@ public class MethodFinder {
 		
 		return pData;
 	}
-	
-	public int getLineNum(int startPosition){
-		return cUnit.getLineNumber(startPosition);
-	}
-	
 }

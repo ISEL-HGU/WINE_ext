@@ -1,12 +1,12 @@
 package edu.handong.csee.isel.fcminer.fpcollector.subset;
 
-import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.CompareDatas;
+import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc.NodeList;
 
-public class Subset {	
+public class SubWarning {
 	private String code = "";
-	private CompareDatas lineNodes= new CompareDatas();
+	private NodeList lineNodes= new NodeList();
 	
-	public Subset(String code, CompareDatas lineNodes) {
+	public SubWarning(String code, NodeList lineNodes) {
 		this.code = code;
 		this.lineNodes = lineNodes;
 	}
@@ -18,11 +18,11 @@ public class Subset {
 		this.code = code;
 	}
 
-	public CompareDatas getLineNodes() {
+	public NodeList getLineNodes() {
 		return lineNodes;
 	}
 
-	public void setLineNodes(CompareDatas lineNodes) {
+	public void setLineNodes(NodeList lineNodes) {
 		this.lineNodes = lineNodes;
 	}
 	

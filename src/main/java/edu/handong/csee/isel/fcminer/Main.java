@@ -2,9 +2,8 @@ package edu.handong.csee.isel.fcminer;
 
 import java.util.ArrayList;
 
-import edu.handong.csee.isel.fcminer.clustergen.ClusterGenerator;
 import edu.handong.csee.isel.fcminer.fpcollector.FPCollector;
-import edu.handong.csee.isel.fcminer.fpcollector.subset.Superset;
+import edu.handong.csee.isel.fcminer.fpcollector.subset.SuperWarning;
 import edu.handong.csee.isel.fcminer.saresultminer.SAResultMiner;
 import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions;
@@ -22,7 +21,7 @@ public class Main {
     	System.out.println("                      # of Alarms: "+ analyzer.getNumOfAlarm());
     	
     	System.out.println("\n----------------------FPCollector Start----------------------");
-    	ArrayList<Superset> superSet = fpCollector.run(command, analyzer.getNumOfAlarm());
+    	ArrayList<SuperWarning> superSet = fpCollector.run(command, analyzer.getNumOfAlarm());
     	System.out.println("\n----------------------FPC_Patterns are Generated----------------------");
     	
 //    	System.out.println("\n----------------------ClusterGenerator Start----------------------");

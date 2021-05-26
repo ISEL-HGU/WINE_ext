@@ -81,18 +81,7 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
         t.setParentProps(newProps);
         
     	ITree parent = trees.peek();
-        t.setParentAndUpdateChildren(parent);    	
-        
-//        if(t.getStartLineNum() >= rawData.getStart()) {
-//        	if(pData.getVNode() != null && pData.getVNode().getDepth() > t.getDepth()
-//					&& pData.getVNode().getStartLineNum() <= rawData.getVLineNum() && rawData.getVLineNum() <= pData.getVNode().getEndLineNum())
-//        		pData.setVNode(t);
-//        	else if(pData.getVNode() == null && t.getStartLineNum() <= rawData.getVLineNum() && rawData.getVLineNum() <= t.getEndLineNum() && stmtFlag == true)
-//        		pData.setVNode(t);
-//        }
-		if(t.getStartLineNum() <= rawData.getVLineNum() && rawData.getVLineNum() <= t.getEndLineNum()){
-			System.out.print("");
-		}
+        t.setParentAndUpdateChildren(parent);
 
 		if(t.getStartLineNum() <= rawData.getVLineNum() && rawData.getVLineNum() <= t.getEndLineNum() && stmtFlag == true && t.getType() != BLOCK) {
 			if (pData.getVNode() == null) {
@@ -116,12 +105,6 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 		ASTNode tempParent = _n.getParent();
 		ArrayList<Property> propertyPath = new ArrayList<>();
 		while(rawData.getStart() <= getLineNum(_n.getStartPosition()) && rawData.getStart() <= getLineNum(tempParent.getStartPosition())) {
-//			if(_n.getNodeType() == BLOCK){
-//				_n = tempParent;
-//				tempParent = tempParent.getParent();
-//				continue;
-//			}
-
 			List list = tempParent.structuralPropertiesForType();
 			Property parentProperty = new Property();
 			int parentType = tempParent.getNodeType();

@@ -27,26 +27,11 @@ public class NodeList {
 	}
 
 	public void addNode(Node n) {
-//		if(cDatas.size() == 0)
-//			root = cData;
-//
 		nodeList.add(n);
 	}
 	
 	public ArrayList<Node> getNodeList(){
 		return nodeList;
-	}
-	
-	public int containRoot(Node node) {
-		int rootIdx = 0;
-		for(Node cData : nodeList) {
-			if(cData.getType() == node.getType()) {
-				return rootIdx;				
-			}
-			rootIdx++;
-		}
-		rootIdx = -1;
-		return rootIdx;
 	}
 	
 	public int contain(Node node2, int curIdx) {
@@ -72,8 +57,8 @@ public class NodeList {
 		return -1;
 	}
 	
-	private int containProperty(Node cData, Property p, int propIdx) {
-		ArrayList<Property> props = cData.getParentProperty();
+	private int containProperty(Node node, Property p, int propIdx) {
+		ArrayList<Property> props = node.getParentProperty();
 		
 		for(int i = propIdx + 1; i < props.size(); i ++) {
 			if(props.get(i).getNodeType() == p.getNodeType()) {
@@ -82,7 +67,6 @@ public class NodeList {
 				}
 			}
 		}
-		
 		return -1;
 	}
 }

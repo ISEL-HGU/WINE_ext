@@ -1,57 +1,69 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc;
 
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import edu.handong.csee.isel.fcminer.fpcollector.subset.SubWarningGenerator;
+import edu.handong.csee.isel.fcminer.fpcollector.subset.SuperWarning;
 import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 import edu.handong.csee.isel.fcminer.util.OSValidator;
+import org.eclipse.jdt.core.dom.ASTNode;
 
-public class RawDataCollector { 	
-	int numOfAlarms = 0;
-	
-	ArrayList<NodeList> nodeLists = new ArrayList<>();
-	
-	public ArrayList<NodeList> getNodeLists(){
-		return nodeLists;
+public class RawDataCollector {
+	private enum Relation {
+		NULL, SubWarning, Equivalent;
 	}
-	
+	int numOfAlarms = 0;
+	ArrayList<NodeList> nodeLists = new ArrayList<>();
 	/*
 	 * set interval between print progress
 	 * unit: second
 	 */
 	private static final int timeInterval = 60;
 	
-	public int getNumOfAlarms () {
-		return numOfAlarms;
-	}
-	
-	public void run(String resultPath, int numOfAlarmFromSARM) {		
+	public void run(String resultPath, int numOfAlarmFromSARM) {
+		ArrayList<SuperWarning> superWarnings = new ArrayList<>();
 		try {
 			Reader outputFile = new FileReader(resultPath);
 			Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(outputFile);
-			
+
 			int cnt = 0;
 			long startTime = System.currentTimeMillis();
 			boolean timerFlag = false;
 			
 			for (CSVRecord record : records) {									
 				if(record.get(0).equals("Detection ID")) continue;					
-				
+
 				String filePath = record.get(1);
 				String newFilePath = modifyFilePathToOS(filePath);									
 				String startLineNum = record.get(2);
 				String endLineNum = record.get(2);
-				
+
+				NodeList tmpNodeList = dataPreprocess(new RawData(newFilePath, startLineNum, endLineNum, record.get(3)));
+				if(tmpNodeList == null) continue;
+
 				//get compare data through process data by using raw data
-				nodeLists.add(dataPreprocess(new RawData(newFilePath, startLineNum, endLineNum, record.get(3))));
+				if(superWarnings.size() == 0){
+					superWarnings.add(new SuperWarning(tmpNodeList.getvLineCode(), tmpNodeList.getvNodeCode(), tmpNodeList));
+				}
+				else{
+					generateSubWarning(tmpNodeList, superWarnings);
+				}
+
+				System.out.println(superWarnings.size());
 
 				long currentTime = System.currentTimeMillis();
 				long sec = (currentTime - startTime) / 1000;
@@ -66,6 +78,7 @@ public class RawDataCollector {
 					timerFlag = false;
 					printProgress(cnt);
 				}
+
 				cnt ++;
 				System.out.println("" + cnt);
 			}
@@ -73,15 +86,146 @@ public class RawDataCollector {
 		} catch(IOException e) {
 			e.printStackTrace();
 			System.exit(-1);
-		}		
+		}
+
+		superWarnings = sortByLowFrequency(superWarnings);
+		writeConcreteCodePattern(superWarnings, numOfAlarms);
 	}
-	
+
+	private ArrayList<SuperWarning> sortByLowFrequency(ArrayList<SuperWarning> superWarnings){
+		Collections.sort(superWarnings, new Comparator<SuperWarning>() {
+			@Override
+			public int compare(SuperWarning set1, SuperWarning set2) {
+				return set1.getNumOfEqualWarnings() - set2.getNumOfEqualWarnings();
+			}
+
+		});
+		return superWarnings;
+	}
+
+	public void writeConcreteCodePattern(ArrayList<SuperWarning> sets, int warningsInMethod) {
+		String fileName = "./FPC_Patterns_ConcreteCode.csv";
+
+		try(
+				BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileName));
+				CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
+						.withHeader("Pattern ID", "Pattern", "Context", "# of Eq list",  "# of Frq", "complexity", "Num of Warnings in Method", "NCL"));
+		) {
+			int cnt = 0;
+
+
+			for(int i = 0 ; i < sets.size(); i ++) {
+				if(sets.get(i) == null) continue;
+
+				ArrayList<Node> cds = sets.get(i).getLineNodes().getNodeList();
+				StringBuilder ncl = new StringBuilder();
+				for(int j = 0; j < cds.size(); j ++) {
+					ncl.append(ASTNode.nodeClassForType(cds.get(j).getType()).getSimpleName()+"(");
+					ArrayList<Property> pp = cds.get(j).getParentProperty();
+					for(int k = 0; k < pp.size(); k ++) {
+						ncl.append(pp.get(k).getTypeName() + "-" + pp.get(k).getProp());
+						ncl.append(", ");
+					}
+					ncl.append("),\n");
+				}
+
+				String pattern = sets.get(i).getCode();
+				String context = sets.get(i).getContextCode();
+				cnt++;
+				String patternID = "" + cnt;
+				String eqNum = "" + sets.get(i).getNumOfEqualWarnings();
+				String f = "" + (sets.get(i).getNumOfEqualWarnings() + sets.get(i).getNumOfSubWarnings());
+				String complexity = "" + sets.get(i).getLineNodes().getNodeList().size();
+				if(cnt == 1)
+					csvPrinter.printRecord(patternID, pattern, context, eqNum, f, complexity, "" + warningsInMethod, ncl.toString());
+				else
+					csvPrinter.printRecord(patternID, pattern, context, eqNum, f, complexity, "", ncl.toString());
+			}
+
+			writer.flush();
+			writer.close();
+		} catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
+	private void generateSubWarning(NodeList nodeList, ArrayList<SuperWarning> superWarnings) {
+		for(int i = 0; i < superWarnings.size(); i ++) {
+			SuperWarning superWarning = superWarnings.get(i);
+			if(superWarning == null || superWarning.getLineNodes().getNodeList().size() == 0 || nodeList == null || nodeList.getNodeList().size() == 0) {
+				continue;
+			}
+			Relation relation = findRelation(superWarning.getLineNodes(), nodeList);
+			//superWarning is subset of nodeList
+			if(relation == Relation.SubWarning) {
+				SuperWarning tmpSW = new SuperWarning(nodeList.getvLineCode(), nodeList.getvNodeCode(), nodeList);
+				tmpSW.addSubWarning();
+				tmpSW.addSubWarnings(superWarning.getNumOfSubWarnings());
+				superWarnings.set(i, tmpSW);
+				return;
+			}
+			//nodeList and superWarning are the same
+			else if(relation == Relation.Equivalent) {
+				superWarning.addEqualWarning();
+				return;
+			}
+			//nodeList is subset of superWarning
+			relation = findRelation(nodeList, superWarning.getLineNodes());
+			if(relation == Relation.SubWarning) {
+				superWarning.addSubWarning();
+				return;
+			}
+		}
+
+		if(nodeList != null)
+			superWarnings.add(new SuperWarning(nodeList.getvLineCode(), nodeList.getvNodeCode(), nodeList));
+	}
+
+	private Relation findRelation(NodeList line2, NodeList line1) {
+		int nodeNumInLine1 = line1.getNodeList().size();
+		int nodeNumInLine2 = line2.getNodeList().size();
+
+		//is line2 subet of line1?
+		if(nodeNumInLine1 >= nodeNumInLine2) {
+			return isSubset(line2, line1);
+		}
+		else return Relation.NULL;
+	}
+
+	private Relation isSubset(NodeList line2, NodeList line1) {
+		int numOfNodeLine1 = line1.getNodeList().size();
+		int numOfNodeLine2 = line2.getNodeList().size();
+
+		boolean[] included = new boolean[numOfNodeLine2];
+
+		int curIdx = 0;
+
+		for(int i = 0; i < numOfNodeLine2; i ++) {
+			Node node = line2.getNodeList().get(i);
+			curIdx = line1.contain(node, curIdx);
+			if(curIdx == -1)
+				return Relation.NULL;
+			else {
+				included[i] = true;
+			}
+		}
+
+		for(boolean b : included) {
+			if(b == false) return Relation.NULL;
+		}
+
+		if(numOfNodeLine1 == numOfNodeLine2)
+			return Relation.Equivalent;
+		else
+			return Relation.SubWarning;
+	}
+
 	private NodeList dataPreprocess(RawData rawData) {
 		ProcessedData pData = new MethodFinder().findMethod(rawData);
 
 		try {
 			pData.setStartEnd(rawData.getStart(), rawData.getEnd(), rawData.getVLineNum());
-			return divide(pData);
+			return divide(pData, rawData.getVLine());
 		} catch (NullPointerException e){
 			e.printStackTrace();
 			return null;
@@ -131,13 +275,9 @@ public class RawDataCollector {
 		 
 	}
 		
-	private NodeList divide(ProcessedData pData) {
+	private NodeList divide(ProcessedData pData, String violatedLine) {
 		List<ITree> currents = new ArrayList<>();
 		NodeList nodeList = new NodeList();
-		String vLineCode = "";
-		String vNodeCode = "";
-		String vNodeStr = "";
-
 		//collect all leaves
 		currents.add(pData.getVNode());
 		List<ITree> leaves = new ArrayList<>();
@@ -156,7 +296,7 @@ public class RawDataCollector {
 			if(pData.getStart() <= l.getStartLineNum() && l.getEndLineNum() <= pData.getEnd()) {
 				if(l.getStartLineNum() == pData.getVLineNum()) {
 					nodeList.addNode(new Node
-							(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), vNodeStr, true, l.getLabel()));
+							(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), pData.getVNode().getNode2String(), true, l.getLabel()));
 					sort(nodeList);
 				}
 				else if (l.getStartLineNum() > pData.getVLineNum()) {
@@ -170,7 +310,7 @@ public class RawDataCollector {
 					if(currentLastProperty.getNodeType() == cDataLastProperty.getNodeType() &&
 							currentLastProperty.getProp().equals(cDataLastProperty.getProp())) {
 						nodeList.addNode(new Node
-								(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), vNodeStr, true, l.getLabel()));
+								(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), pData.getVNode().getNode2String(), true, l.getLabel()));
 						sort(nodeList);
 					}
 				}
@@ -185,14 +325,15 @@ public class RawDataCollector {
 					if(currentLastProperty.getNodeType() == cDataLastProperty.getNodeType() &&
 							currentLastProperty.getProp().equals(cDataLastProperty.getProp())) {
 						nodeList.addNode(new Node
-								(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), vNodeStr, true, l.getLabel()));
+								(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), pData.getVNode().getNode2String(), true, l.getLabel()));
 						sort(nodeList);
 					}
 				}
 			}
 		}
-	    nodeList.setvLineCode(vLineCode);
-	    nodeList.setvNodeCode(vNodeCode);
+
+	    nodeList.setvLineCode(violatedLine);
+	    nodeList.setvNodeCode(pData.getVNode().getNode2String());
 	        
 	    return nodeList;
 	}

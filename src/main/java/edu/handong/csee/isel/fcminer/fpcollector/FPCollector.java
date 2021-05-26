@@ -11,18 +11,10 @@ import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
 
 public class FPCollector {	
-	public ArrayList<SuperWarning> run(CliCommand command, int numOfAlarms) {
-		if(command.getState().equals(RunState.SAResultMiner)) return null;
+	public void run(CliCommand command, int numOfAlarms) {
+		if(command.getState().equals(RunState.SAResultMiner)) return;
 		
 		DataCollector dataCollector = new DataCollector();				
-		
-		ArrayList<NodeList> compareDatas = dataCollector.run(command.getResultPath(), numOfAlarms);
-		
-		SubWarningGenerator subsetGen = new SubWarningGenerator();
-		
-		ArrayList<SuperWarning> superWarnings = subsetGen.generateSubWarning(compareDatas);
-		
-		ConcreteCodePatternFinder codePatternFinder = new ConcreteCodePatternFinder();		
-		return codePatternFinder.find(superWarnings);
+		dataCollector.run(command.getResultPath(), numOfAlarms);
 	}
 }

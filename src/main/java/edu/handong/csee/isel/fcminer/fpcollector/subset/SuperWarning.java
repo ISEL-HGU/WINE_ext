@@ -24,8 +24,15 @@ public class SuperWarning {
 		numOfSubWarnings++;
 	}
 
+	public void addSubWarnings(int num) {
+		numOfSubWarnings += num;
+	}
 	public void addEqualWarning(){
 		numOfEqualWarnings++;
+	}
+
+	public void addEqualWarnings(int num){
+		numOfEqualWarnings += num;
 	}
 
 	public int getNumOfSubWarnings(){

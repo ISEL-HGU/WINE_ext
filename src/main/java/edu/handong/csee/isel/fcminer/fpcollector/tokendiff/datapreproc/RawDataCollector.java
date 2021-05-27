@@ -1,21 +1,16 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc;
 
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
-import edu.handong.csee.isel.fcminer.fpcollector.subset.SubWarningGenerator;
 import edu.handong.csee.isel.fcminer.fpcollector.subset.SuperWarning;
 import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
+
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
@@ -27,69 +22,98 @@ public class RawDataCollector {
 		NULL, SubWarning, Equivalent;
 	}
 	int numOfAlarms = 0;
-	ArrayList<NodeList> nodeLists = new ArrayList<>();
 	/*
 	 * set interval between print progress
 	 * unit: second
 	 */
-	private static final int timeInterval = 60;
-	
-	public void run(String resultPath, int numOfAlarmFromSARM) {
+	private static final int timeInterval = 5;
+
+	public void run(String filePath, int numOfAlarmFromSARM) {
 		ArrayList<SuperWarning> superWarnings = new ArrayList<>();
-		try {
-			Reader outputFile = new FileReader(resultPath);
-			Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(outputFile);
 
-			int cnt = 0;
-			long startTime = System.currentTimeMillis();
-			boolean timerFlag = false;
-			
-			for (CSVRecord record : records) {									
-				if(record.get(0).equals("Detection ID")) continue;					
+		ArrayList<CSVRecord> records = readReport(filePath);
 
-				String filePath = record.get(1);
-				String newFilePath = modifyFilePathToOS(filePath);									
-				String startLineNum = record.get(2);
-				String endLineNum = record.get(2);
+		long startTime = System.currentTimeMillis();
+		boolean timerFlag = false;
 
-				NodeList tmpNodeList = dataPreprocess(new RawData(newFilePath, startLineNum, endLineNum, record.get(3)));
-				if(tmpNodeList == null) continue;
+		int cnt = 0;
 
-				//get compare data through process data by using raw data
-				if(superWarnings.size() == 0){
-					superWarnings.add(new SuperWarning(tmpNodeList.getvLineCode(), tmpNodeList.getvNodeCode(), tmpNodeList));
-				}
-				else{
-					generateSubWarning(tmpNodeList, superWarnings);
-				}
+		for(CSVRecord record: records) {
+			if (record.get(0).equals("Detection ID")) continue;
 
-				System.out.println(superWarnings.size());
+			RawData tmpData = new RawData(modifyFilePathToOS(record.get(1)), record.get(2), record.get(2), record.get(3));
 
-				long currentTime = System.currentTimeMillis();
-				long sec = (currentTime - startTime) / 1000;
-				
-				if(sec > timeInterval)
-					timerFlag = true;
-					
-				if(numOfAlarmFromSARM != 0)
-					printProgress(cnt, numOfAlarmFromSARM);
-				else if(timerFlag == true){
-					startTime = System.currentTimeMillis();
-					timerFlag = false;
-					printProgress(cnt);
-				}
+			if (tmpData.isPass()) continue;
 
-				cnt ++;
-				System.out.println("" + cnt);
+			cnt++;
+
+			NodeList tmpNodeList = divide(tmpData);
+
+			//get compare data through process data by using raw data
+			if (superWarnings.size() == 0) {
+				superWarnings.add(new SuperWarning(tmpNodeList.getvLineCode(), tmpNodeList.getvNodeCode(), tmpNodeList));
 			}
-			numOfAlarms = cnt;
+			else {
+				generateSubWarning(tmpNodeList, superWarnings);
+			}
+
+			long currentTime = System.currentTimeMillis();
+			long sec = (currentTime - startTime) / 1000;
+
+			if (sec > timeInterval)
+				timerFlag = true;
+
+			if (numOfAlarmFromSARM != 0)
+				printProgress(cnt, superWarnings.size(), numOfAlarmFromSARM);
+			else if (timerFlag == true) {
+				startTime = System.currentTimeMillis();
+				timerFlag = false;
+				printProgress(cnt, superWarnings.size());
+			}
+		}
+		numOfAlarms = cnt;
+		System.out.println("INFO: Finished to mining representative warnings");
+		System.out.println("INFO: [Inspected # of warnings, # of super warnings]: ["  + cnt + ",  " + superWarnings.size() + "]");
+
+		superWarnings = sortByLowFrequency(superWarnings);
+		writeConcreteCodePattern(superWarnings, numOfAlarms);
+	}
+
+	private ArrayList<CSVRecord> readReport(String filePath){
+		ArrayList<CSVRecord> records = new ArrayList<>();
+		try {
+			Reader outputFile = new FileReader(filePath);
+			CSVParser parser = CSVFormat.EXCEL.parse(outputFile);
+			records = new ArrayList<>(parser.getRecords());
 		} catch(IOException e) {
 			e.printStackTrace();
 			System.exit(-1);
 		}
+		return records;
+	}
 
-		superWarnings = sortByLowFrequency(superWarnings);
-		writeConcreteCodePattern(superWarnings, numOfAlarms);
+	private ArrayList<RawData> deserializeReport(int fileCount) {
+		String objectName = "record";
+		ArrayList<RawData> rawDatas = new ArrayList<>();
+		try
+		{
+			FileInputStream fis = new FileInputStream("record" + fileCount);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			rawDatas = (ArrayList<RawData>) ois.readObject();
+			ois.close();
+			fis.close();
+		}catch(IOException ioe){
+			ioe.printStackTrace();
+			System.exit(-1);
+			return null;
+
+		}catch(ClassNotFoundException c){
+			System.out.println("Class not found");
+			c.printStackTrace();
+			System.exit(-1);
+			return null;
+		}
+		return rawDatas;
 	}
 
 	private ArrayList<SuperWarning> sortByLowFrequency(ArrayList<SuperWarning> superWarnings){
@@ -101,6 +125,32 @@ public class RawDataCollector {
 
 		});
 		return superWarnings;
+	}
+
+	private String modifyFilePathToOS(String filePath) {
+		String osName = OSValidator.getOS();
+		String newFilePath = "";
+
+		if(filePath.contains("\\") && osName.equals("linux")) {
+			for(int i = 0; i < filePath.length(); i++) {
+				if(filePath.charAt(i) == '\\'){
+					newFilePath += '/';
+				} else {
+					newFilePath += filePath.charAt(i);
+				}
+			}
+			filePath = "" + newFilePath;
+		} else if(filePath.contains("/") && osName.equals("window")) {
+			for(int i = 0; i < filePath.length(); i++) {
+				if(filePath.charAt(i) == '/'){
+					newFilePath += '\\';
+				} else {
+					newFilePath += filePath.charAt(i);
+				}
+			}
+		}
+
+		return filePath;
 	}
 
 	public void writeConcreteCodePattern(ArrayList<SuperWarning> sets, int warningsInMethod) {
@@ -219,18 +269,6 @@ public class RawDataCollector {
 		else
 			return Relation.SubWarning;
 	}
-
-	private NodeList dataPreprocess(RawData rawData) {
-		ProcessedData pData = new MethodFinder().findMethod(rawData);
-
-		try {
-			pData.setStartEnd(rawData.getStart(), rawData.getEnd(), rawData.getVLineNum());
-			return divide(pData, rawData.getVLine());
-		} catch (NullPointerException e){
-			e.printStackTrace();
-			return null;
-		}
-	}
 	
 	private ITree findVNode(RawData rawData, ITree vMethod) {
 		ITree vNode = null;
@@ -275,11 +313,11 @@ public class RawDataCollector {
 		 
 	}
 		
-	private NodeList divide(ProcessedData pData, String violatedLine) {
+	private NodeList divide(RawData rawData) {
 		List<ITree> currents = new ArrayList<>();
 		NodeList nodeList = new NodeList();
 		//collect all leaves
-		currents.add(pData.getVNode());
+		currents.add(rawData.getVNode());
 		List<ITree> leaves = new ArrayList<>();
 		while(currents.size() > 0){
 			ITree c = currents.remove(0);
@@ -288,18 +326,18 @@ public class RawDataCollector {
 			}
 			currents.addAll(c.getChildren());
 		}
-		sortLeaves(leaves, pData.getVLineNum());
+		sortLeaves(leaves, rawData.getVLineNum());
 
 		for(int i = 0; i < leaves.size(); i ++){
 			ITree l = leaves.get(i);
 
-			if(pData.getStart() <= l.getStartLineNum() && l.getEndLineNum() <= pData.getEnd()) {
-				if(l.getStartLineNum() == pData.getVLineNum()) {
+			if(rawData.getStart() <= l.getStartLineNum() && l.getEndLineNum() <= rawData.getEnd()) {
+				if(l.getStartLineNum() == rawData.getVLineNum()) {
 					nodeList.addNode(new Node
-							(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), pData.getVNode().getNode2String(), true, l.getLabel()));
+							(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), rawData.getVNode().getNode2String(), true, l.getLabel()));
 					sort(nodeList);
 				}
-				else if (l.getStartLineNum() > pData.getVLineNum()) {
+				else if (l.getStartLineNum() > rawData.getVLineNum()) {
 					ArrayList<Property> pp = l.getParentProps();
 					ArrayList<Node> cDataList = nodeList.getNodeList();
 					ArrayList<Property> cDataProperty = nodeList.getNodeList().get(cDataList.size() - 1).getParentProperty();
@@ -310,11 +348,11 @@ public class RawDataCollector {
 					if(currentLastProperty.getNodeType() == cDataLastProperty.getNodeType() &&
 							currentLastProperty.getProp().equals(cDataLastProperty.getProp())) {
 						nodeList.addNode(new Node
-								(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), pData.getVNode().getNode2String(), true, l.getLabel()));
+								(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), rawData.getVNode().getNode2String(), true, l.getLabel()));
 						sort(nodeList);
 					}
 				}
-				else if (l.isLeaf() && l.getStartLineNum() < pData.getVLineNum()) {
+				else if (l.isLeaf() && l.getStartLineNum() < rawData.getVLineNum()) {
 					ArrayList<Property> pp = l.getParentProps();
 					ArrayList<Node> cDataList = nodeList.getNodeList();
 					ArrayList<Property> cDataProperty = nodeList.getNodeList().get(0).getParentProperty();
@@ -325,15 +363,15 @@ public class RawDataCollector {
 					if(currentLastProperty.getNodeType() == cDataLastProperty.getNodeType() &&
 							currentLastProperty.getProp().equals(cDataLastProperty.getProp())) {
 						nodeList.addNode(new Node
-								(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), pData.getVNode().getNode2String(), true, l.getLabel()));
+								(l.getParentProps(), l.getType(), l.getPos(), l.getDepth(), rawData.getVNode().getNode2String(), true, l.getLabel()));
 						sort(nodeList);
 					}
 				}
 			}
 		}
 
-	    nodeList.setvLineCode(violatedLine);
-	    nodeList.setvNodeCode(pData.getVNode().getNode2String());
+	    nodeList.setvLineCode(rawData.getVLine());
+	    nodeList.setvNodeCode(rawData.getVNode().getNode2String());
 	        
 	    return nodeList;
 	}
@@ -372,11 +410,11 @@ public class RawDataCollector {
 		});
 	}
 	
-	private void printProgress(int cnt) {		
-			System.out.println("INFO: Current Progress is "  + cnt);	
+	private void printProgress(int cnt, int numSuperWarnings) {
+			System.out.println("INFO: [Current Progress, # of super warnings]: ["  + cnt + ",  " + numSuperWarnings + "]");
 	}
 	
-	private void printProgress(int cnt, int total) {
+	private void printProgress(int cnt, int numSuperWarnings, int total) {
 		if(total / 10 == cnt) {
 			System.out.print("10%...");
 		}
@@ -408,30 +446,4 @@ public class RawDataCollector {
 			System.out.print("done!\n");
 		}		
 	}
-
-	private String modifyFilePathToOS(String filePath) {
-		String osName = OSValidator.getOS();
-		String newFilePath = "";
-		
-		if(filePath.contains("\\") && osName.equals("linux")) {
-			for(int i = 0; i < filePath.length(); i++) {
-				if(filePath.charAt(i) == '\\'){
-					newFilePath += '/';
-				} else {
-					newFilePath += filePath.charAt(i);
-				}
-			}
-			filePath = "" + newFilePath;
-		} else if(filePath.contains("/") && osName.equals("window")) {
-			for(int i = 0; i < filePath.length(); i++) {
-				if(filePath.charAt(i) == '/'){
-					newFilePath += '\\';
-				} else {
-					newFilePath += filePath.charAt(i);
-				}
-			}
-		}
-		
-		return filePath;
-	}	
 }

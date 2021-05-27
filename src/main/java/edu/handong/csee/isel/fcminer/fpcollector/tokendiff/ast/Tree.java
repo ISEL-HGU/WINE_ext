@@ -1,11 +1,12 @@
 package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.Property;
 
-public class Tree extends AbstractTree implements ITree {
+public class Tree extends AbstractTree implements ITree, Serializable {
 	
 	private int startLineNum = -1;
 	

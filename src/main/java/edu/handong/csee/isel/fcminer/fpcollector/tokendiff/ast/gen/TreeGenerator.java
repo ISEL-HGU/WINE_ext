@@ -26,7 +26,7 @@ public abstract class TreeGenerator {
         return pData;
     }
     
-    public ProcessedData generateFromInfo(RawData rawData) throws IOException {
-        return generateFromReader(new StringReader(rawData.getSrc()), rawData);
+    public ProcessedData generateFromInfo(RawData rawData, String src) throws IOException {
+        return generateFromReader(new StringReader(src), rawData);
     }
 }

@@ -3,14 +3,16 @@ package edu.handong.csee.isel.fcminer.fpcollector.tokendiff.datapreproc;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.ITree;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.TreeContext;
 
-public class ProcessedData {	
+import java.io.Serializable;
+
+public class ProcessedData implements Serializable {
 	//preprocessed data
 	private ITree vNode;
 	private TreeContext ctx;
 	private int start = -1;
 	private int end = -1;
 	private int vLineNum = -1;
-	
+
 	public int getStart() {
 		return start;
 	}

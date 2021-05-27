@@ -9,10 +9,10 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 import edu.handong.csee.isel.fcminer.fpcollector.tokendiff.ast.gen.JdtTreeGenerator;
 
 public class MethodFinder {
-	public ProcessedData findMethod(RawData rawData){
+	public ProcessedData findMethod(RawData rawData, String src){
 		ProcessedData pData = null;
 		try {
-			pData = new JdtTreeGenerator().generateFromInfo(rawData);
+			pData = new JdtTreeGenerator().generateFromInfo(rawData, src);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

@@ -21,14 +21,6 @@ public class Main {
     	System.out.println("                      # of Alarms: "+ analyzer.getNumOfAlarm());
     	
     	System.out.println("\n----------------------FPCollector Start----------------------");
-//    	ArrayList<SuperWarning> superSet =
 		fpCollector.run(command, analyzer.getNumOfAlarm());
-//    	System.out.println("\n----------------------FPC_Patterns are Generated----------------------");
-    	
-//    	System.out.println("\n----------------------ClusterGenerator Start----------------------");
-//    	ClusterGenerator cg = new ClusterGenerator();
-//    	if(superSet != null)
-//    		cg.cluster(superSet);    	
-//    	System.out.println("\n----------------------Clusters are generated----------------------");
     }
 }

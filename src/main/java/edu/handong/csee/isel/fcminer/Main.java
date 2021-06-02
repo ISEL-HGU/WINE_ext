@@ -1,9 +1,6 @@
 package edu.handong.csee.isel.fcminer;
 
-import java.util.ArrayList;
-
-import edu.handong.csee.isel.fcminer.fpcollector.FPCollector;
-import edu.handong.csee.isel.fcminer.fpcollector.subset.SuperWarning;
+import edu.handong.csee.isel.fcminer.fpcollector.SuperWarningCollector;
 import edu.handong.csee.isel.fcminer.saresultminer.SAResultMiner;
 import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions;
@@ -11,7 +8,7 @@ import edu.handong.csee.isel.fcminer.util.CliOptions;
 public class Main {
     public static void main(String[] args) {
     	SAResultMiner analyzer = new SAResultMiner();
-    	FPCollector fpCollector = new FPCollector();
+    	SuperWarningCollector superWarningCollector = new SuperWarningCollector();
     	CliOptions cliReader = new CliOptions();
     	
     	CliCommand command = cliReader.parseOptions(args);
@@ -21,6 +18,6 @@ public class Main {
     	System.out.println("                      # of Alarms: "+ analyzer.getNumOfAlarm());
     	
     	System.out.println("\n----------------------FPCollector Start----------------------");
-		fpCollector.run(command, analyzer.getNumOfAlarm());
+		superWarningCollector.run(command, analyzer.getNumOfAlarm());
     }
 }

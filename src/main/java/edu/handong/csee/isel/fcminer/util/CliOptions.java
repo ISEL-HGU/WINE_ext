@@ -132,9 +132,7 @@ public class CliOptions {
 			}
 			return tempPath;
 		}
-		System.out.println("ERROR: path is incorrect");
-		System.exit(-1);
-		return tempPath;
+		return path;
 	}
 	
 	private boolean isPMDFolderExists(String path) {

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import edu.handong.csee.isel.fcminer.saresultminer.sat.SATRunner;
+import edu.handong.csee.isel.fcminer.saresultminer.sat.semgrep.Semgrep;
 import org.eclipse.jgit.api.Git;
 
 import edu.handong.csee.isel.fcminer.saresultminer.git.Clone;
@@ -99,29 +100,36 @@ public class SAResultMiner {
 	}
 
 	private ArrayList<String> collectRawData(CliCommand command, ArrayList<String> cloneInfo) {
+		SATRunner satRunner = null;
 		//report Paths
 		ArrayList<String> reportPaths = new ArrayList<>();
-		SATRunner satRunner = new PMD(command.getPMD());
-		//pmd instance
-		//@param pmd command location
-		String rule = command.getRule();									
+
+		//static analysis tools can be constructed via interface SATRunner
+		if(command.getSemgrep() == false) {
+			satRunner = new PMD(command.getPMD());
+		} else if(command.getSemgrep() == true){
+			satRunner = new Semgrep();
+		}
+		
+		String rule = command.getRule();
 
 		int cnt = 0;
-		for(int k = 0 ; k < cloneInfo.size(); k ++) {
+		for (int k = 0; k < cloneInfo.size(); k++) {
 			cnt = k + 1;
-			
+
 			String clonePathWithProjectName = cloneInfo.get(k);
 			String[] pathAndName = clonePathWithProjectName.split(", ");
 			String clonedPath = pathAndName[0];
 			String projectName = pathAndName[1];
-					
+
 			//Progress
 			System.out.println("INFO: Target Project is " + projectName + ", " + cnt + " / " + cloneInfo.size() + " (Current / Total)");
 			System.out.println("Run State: SAResultMiner | FC-Miner");
-			satRunner.execute(rule, clonedPath, cnt, projectName);
-			reportPaths.add(satRunner.getReportPath());
-		}	
-				
+			if(satRunner != null) {
+				satRunner.execute(rule, clonedPath, cnt, projectName);
+				reportPaths.add(satRunner.getReportPath());
+			}
+		}
 		return reportPaths;
 	}
 	

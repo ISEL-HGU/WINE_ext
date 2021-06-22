@@ -54,7 +54,7 @@ public class CliCommand {
 		this.semgrep = semgrep;
 	}
 
-	public boolean getSemgrep(boolean semgrep){
+	public boolean getSemgrep(){
 		return semgrep;
 	}
 }

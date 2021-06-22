@@ -7,6 +7,7 @@ public class CliCommand {
 	private String addressPath = "";
 	private String resultPath = "";
 	private String pmd = "";
+	private boolean semgrep = false;
 	private RunState state;
 	
 	public void setRule(String rule) {
@@ -47,5 +48,13 @@ public class CliCommand {
 	
 	public RunState getState() {
 		return state;
+	}
+
+	public void setSemgrep(boolean semgrep){
+		this.semgrep = semgrep;
+	}
+
+	public boolean getSemgrep(boolean semgrep){
+		return semgrep;
 	}
 }

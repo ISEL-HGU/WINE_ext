@@ -1,8 +1,9 @@
-package edu.handong.csee.isel.fcminer.saresultminer.pmd;
+package edu.handong.csee.isel.fcminer.saresultminer.sat.pmd;
 
 import java.io.File;
 import java.io.IOException;
 
+import edu.handong.csee.isel.fcminer.saresultminer.sat.SATRunner;
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.ExecuteException;
@@ -10,7 +11,7 @@ import org.apache.commons.exec.ExecuteWatchdog;
 
 import edu.handong.csee.isel.fcminer.util.OSValidator;
 
-public class PMD {	
+public class PMD implements SATRunner {
 	String pmdCmd = "";
 	String reportPath = "";
 	

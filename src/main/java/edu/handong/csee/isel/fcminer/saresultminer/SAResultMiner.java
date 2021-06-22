@@ -5,11 +5,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import edu.handong.csee.isel.fcminer.saresultminer.sat.SATRunner;
 import org.eclipse.jgit.api.Git;
 
 import edu.handong.csee.isel.fcminer.saresultminer.git.Clone;
-import edu.handong.csee.isel.fcminer.saresultminer.pmd.Alarm;
-import edu.handong.csee.isel.fcminer.saresultminer.pmd.PMD;
+import edu.handong.csee.isel.fcminer.saresultminer.sat.pmd.Alarm;
+import edu.handong.csee.isel.fcminer.saresultminer.sat.pmd.PMD;
 import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
 import edu.handong.csee.isel.fcminer.util.Reader;
@@ -87,7 +88,6 @@ public class SAResultMiner {
 			readReportThenWrite(reportInfo.get(i), writer);
 		}
 		
-		
 		return writer.getResultPath();
 	}
 	
@@ -101,10 +101,9 @@ public class SAResultMiner {
 	private ArrayList<String> collectRawData(CliCommand command, ArrayList<String> cloneInfo) {
 		//report Paths
 		ArrayList<String> reportPaths = new ArrayList<>();
-				
+		SATRunner satRunner = new PMD(command.getPMD());
 		//pmd instance
 		//@param pmd command location
-		PMD pmd = new PMD(command.getPMD());
 		String rule = command.getRule();									
 
 		int cnt = 0;
@@ -119,8 +118,8 @@ public class SAResultMiner {
 			//Progress
 			System.out.println("INFO: Target Project is " + projectName + ", " + cnt + " / " + cloneInfo.size() + " (Current / Total)");
 			System.out.println("Run State: SAResultMiner | FC-Miner");
-			pmd.execute(rule, clonedPath, cnt, projectName);
-			reportPaths.add(pmd.getReportPath());
+			satRunner.execute(rule, clonedPath, cnt, projectName);
+			reportPaths.add(satRunner.getReportPath());
 		}	
 				
 		return reportPaths;

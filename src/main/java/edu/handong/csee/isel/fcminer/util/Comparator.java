@@ -2,7 +2,7 @@ package edu.handong.csee.isel.fcminer.util;
 
 import java.util.ArrayList;
 
-import edu.handong.csee.isel.fcminer.saresultminer.pmd.Alarm;
+import edu.handong.csee.isel.fcminer.saresultminer.sat.pmd.Alarm;
 
 public class Comparator {
 	ArrayList<Alarm> fixedAlarms = new ArrayList<>();

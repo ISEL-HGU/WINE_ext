@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
-import edu.handong.csee.isel.fcminer.saresultminer.pmd.Alarm;
+import edu.handong.csee.isel.fcminer.saresultminer.sat.pmd.Alarm;
 
 public class Writer {
 	String changedFilesPath = "";

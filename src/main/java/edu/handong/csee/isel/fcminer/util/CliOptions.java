@@ -13,9 +13,14 @@ public class CliOptions {
 	public enum RunState{
 		SAResultMiner, FPCollector, All
 	}
-	
+	/*
+	@param mode: s) static analysis result miner, f) representative warnings miner, m) both 1) and 2) : String
+	@param rule: r) a rule of static analysis tool : String
+	@param target: t) a list  of target addresses of open source projects : text file
+	@param result: e) result file path : csv format file name
+	@param static analysis tool: p) pmd and g) semgrep
+	 */
 	public CliCommand parseOptions(String[] args){
-		String os = OSValidator.getOS();
 		CliCommand command = new CliCommand();
 		CommandLineParser parser = new DefaultParser();
 		Options options = new Options();	
@@ -27,50 +32,43 @@ public class CliOptions {
 					   							+"are needed as an arg.")
 			   .addOption("m", "fcminer", false, "run both SAResultMiner and FPCollector.\n"
 					   							+"TargetAddress.txt and Rule are needed as args.")
-			   .addOption("R", "rule", true, "need an argument, rule command of PMD")
+			   .addOption("R", "rule", true, "need an argument, rule command of a static analysis tool")
 			   .addOption("t", "target", true, "path of TargetAddress.txt")
 			   .addOption("e", "result", true, "path of SAResult_Result.csv")
 			   .addOption("p", "pmd", true, "path of PMD run file\n"
-					   						+"ex) ./pmd-bin-6.25.0/bin/run.sh");
+					   						+"ex) ./pmd-bin-6.25.0/bin/run.sh")
+			   .addOption("g", "semgrep", false, "run semgrep");
 		
 		try {
 		    // parse the command line arguments
 		    CommandLine line = parser.parse( options, args );
 		 // automatically generate the help statement
 		    HelpFormatter formatter = new HelpFormatter();
-		    String tempPath = "";
+
 		    if(line.hasOption("s") || line.hasOption("saresult")) {
-		    	if(line.hasOption("R") && line.hasOption("t") && line.hasOption("p")) {		    		
+		    	if((line.hasOption("R") || line.hasOption("rule"))&& (line.hasOption("t") || line.hasOption("target"))) {
 		    		command.setRule(line.getOptionValue("R"));
+					if(command.getRule() == null)
+		    			command.setRule(line.getOptionValue("rule"));
+
 		    		command.setAddressPath(line.getOptionValue("t"));
-		    		String addressPath = command.getAddressPath();
-		    		if(os.equals("linux") && addressPath.contains("\\")) {
-		    			for(int i = 0; i < addressPath.length(); i++) {
-		    				if(addressPath.charAt(i) == '\\') {
-		    					tempPath += '/';
-		    				} else {
-		    					tempPath += addressPath.charAt(i);
-		    				}
-		    			}
-		    			command.setAddressPath(tempPath);
-		    			tempPath = "";
-		    		} else if(os.equals("window") && addressPath.contains("/")) {
-		    			for(int i = 0; i < addressPath.length(); i++) {
-		    				if(addressPath.charAt(i) == '/') {
-		    					tempPath += '\\';
-		    				} else {
-		    					tempPath += addressPath.charAt(i);
-		    				}
-		    			}
-		    			command.setAddressPath(tempPath);
-		    			tempPath = "";
-		    		}
-		    		
-		    		if(isPMDFolderExists(line.getOptionValue("p")))
-		    			command.setPMD(line.getOptionValue("p"));
-		    		else {
-		    			printHelp(formatter, options);
-		    		}
+		    		if(command.getAddressPath() == null){
+		    			command.setRule(line.getOptionValue("target"));
+					}
+		    		command.setAddressPath(changePathBasedOnOS(command.getAddressPath()));
+
+		    		if((line.hasOption("p") || line.hasOption("pmd"))){
+						if(isPMDFolderExists(line.getOptionValue("p")))
+							command.setPMD(line.getOptionValue("p"));
+						else {
+							printHelp(formatter, options);
+						}
+					}
+
+					if(line.hasOption("g") || line.hasOption("semgrep")){
+						command.setSemgrep(true);
+					}
+
 		    		command.setState(RunState.SAResultMiner);
 		    		return command;
 		    	} else {
@@ -110,6 +108,33 @@ public class CliOptions {
 		    System.out.println( "Unexpected exception:" + exp.getMessage() );
 		}
 		return command;
+	}
+
+	private String changePathBasedOnOS(String path) {
+		String os = OSValidator.getOS();
+		String tempPath = "";
+		if(os.equals("linux") && path.contains("\\")) {
+			for(int i = 0; i < path.length(); i++) {
+				if(path.charAt(i) == '\\') {
+					tempPath += '/';
+				} else {
+					tempPath += path.charAt(i);
+				}
+			}
+			return tempPath;
+		} else if(os.equals("window") && path.contains("/")) {
+			for(int i = 0; i < path.length(); i++) {
+				if(path.charAt(i) == '/') {
+					tempPath += '\\';
+				} else {
+					tempPath += path.charAt(i);
+				}
+			}
+			return tempPath;
+		}
+		System.out.println("ERROR: path is incorrect");
+		System.exit(-1);
+		return tempPath;
 	}
 	
 	private boolean isPMDFolderExists(String path) {

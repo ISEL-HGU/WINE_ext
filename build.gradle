@@ -22,20 +22,14 @@ repositories {
 }
 
 dependencies {
+	// https://mvnrepository.com/artifact/org.json/json
+	implementation group: 'org.json', name: 'json', version: '20210307'
+
 	// https://mvnrepository.com/artifact/org.apache.commons/commons-csv
 	compile group: 'org.apache.commons', name: 'commons-csv', version: '1.7'
 
 	// https://mvnrepository.com/artifact/com.opencsv/opencsv
 	implementation group: 'com.opencsv', name: 'opencsv', version: '5.4'
-
-	// https://mvnrepository.com/artifact/com.github.gumtreediff/core
-	//runtime group: 'com.github.gumtreediff', name: 'core', version: '2.1.2'
-	
-	// https://mvnrepository.com/artifact/com.github.gumtreediff/client
-	//compile group: 'com.github.gumtreediff', name: 'client', version: '2.1.2'
-	
-	// https://mvnrepository.com/artifact/com.github.gumtreediff/gen.jdt
-	//compile group: 'com.github.gumtreediff', name: 'gen.jdt', version: '2.1.2'
 	
 	// https://mvnrepository.com/artifact/org.atteo.classindex/classindex
 	compile group: 'org.atteo.classindex', name: 'classindex', version: '3.9'

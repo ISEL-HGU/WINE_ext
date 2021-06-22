@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
-import edu.handong.csee.isel.fcminer.clustergen.ExtractedResult;
-import edu.handong.csee.isel.fcminer.saresultminer.pmd.Alarm;
+import edu.handong.csee.isel.fcminer.saresultminer.sat.pmd.Alarm;
 
 public class Reader {
 	enum Headers{

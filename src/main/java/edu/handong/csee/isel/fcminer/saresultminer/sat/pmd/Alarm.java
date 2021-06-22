@@ -1,4 +1,4 @@
-package edu.handong.csee.isel.fcminer.saresultminer.pmd;
+package edu.handong.csee.isel.fcminer.saresultminer.sat.pmd;
 
 import java.io.BufferedReader;
 import java.io.File;

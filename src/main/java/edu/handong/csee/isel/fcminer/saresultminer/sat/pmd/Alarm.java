@@ -11,6 +11,7 @@ public class Alarm {
 	int detectionIDInResult = 0;
 	String dir = "";
 	String lineNum = "";
+	String endNum = "";
 	String code = "";
 	String status = "";
 	
@@ -53,7 +54,11 @@ public class Alarm {
 		this.lineNum = lineNum;
 		this.code = code;
 	}
-	
+
+	public String getEndNum(){
+		return endNum;
+	}
+
 	public String getStatus() {
 		return status;
 	}

@@ -30,6 +30,7 @@ public class SAResultMiner {
 		//utils instances
 		Reader reader = new Reader();				
 		Writer writer = new Writer();
+		SATRunner satRunner = selectedSAT(command);
 		
 		//1. read input list
 		ArrayList<String> inputList = new ArrayList<>();
@@ -67,12 +68,12 @@ public class SAResultMiner {
 		 */
 		else {
 			/*
-			 * 3. Run PMD to All input projects
-			 * to get raw PMD alarm data 
+			 * 3. Run a static analysis tool to All input projects
+			 * to get raw alarm data
 			 * @param CliCommand command: command line input
 			 * @param ArrayList<String> cloneInfo: ArrayList for Cloned Path and Project name
 			 */
-			reportInfo.addAll(collectRawData(command, cloneInfo));
+			reportInfo.addAll(collectRawData(satRunner, command, cloneInfo));
 			
 			if(reportInfo.size() == 0) {
 				System.out.println("ERROR in Raw Data Collecting Step");
@@ -86,23 +87,14 @@ public class SAResultMiner {
 		 */
 		writer.initResult();
 		for(int i = 0 ; i < reportInfo.size(); i ++) {
-			readReportThenWrite(reportInfo.get(i), writer);
+			readReportThenWrite(satRunner, reportInfo.get(i), writer);
 		}
 		
 		return writer.getResultPath();
 	}
-	
-	private void readReportThenWrite(String reportPath, Writer writer) {
-		Reader reader = new Reader();		
-		ArrayList<Alarm> alarms = reader.readReportFile(reportPath);		
-		writer.writeResult(alarms);	
-		numOfAlarm += alarms.size();
-	}
 
-	private ArrayList<String> collectRawData(CliCommand command, ArrayList<String> cloneInfo) {
+	private SATRunner selectedSAT(CliCommand command){
 		SATRunner satRunner = null;
-		//report Paths
-		ArrayList<String> reportPaths = new ArrayList<>();
 
 		//static analysis tools can be constructed via interface SATRunner
 		if(command.getSemgrep() == false) {
@@ -110,11 +102,25 @@ public class SAResultMiner {
 		} else if(command.getSemgrep() == true){
 			satRunner = new Semgrep();
 		}
+
+		return satRunner;
+	}
+
+	private void readReportThenWrite(SATRunner satRunner, String reportPath, Writer writer) {
+		Reader reader = new Reader();		
+		ArrayList<Alarm> alarms = satRunner.readReportFile(reportPath);
+		writer.writeResult(alarms);	
+		numOfAlarm += alarms.size();
+	}
+
+	private ArrayList<String> collectRawData(SATRunner satRunner, CliCommand command, ArrayList<String> cloneInfo) {
+		//report Paths
+		ArrayList<String> reportPaths = new ArrayList<>();
 		
 		String rule = command.getRule();
 
 		int cnt = 0;
-		for (int k = 0; k < cloneInfo.size(); k++) {
+		for (int k = 0; k < 1/*cloneInfo.size()*/; k++) {
 			cnt = k + 1;
 
 			String clonePathWithProjectName = cloneInfo.get(k);

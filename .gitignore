@@ -1,3 +1,5 @@
+SemgrepReports/*
+*.json
 infer-*
 .idea
 *.log

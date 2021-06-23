@@ -1,7 +1,10 @@
 package edu.handong.csee.isel.fcminer.saresultminer.sat.pmd;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import edu.handong.csee.isel.fcminer.saresultminer.sat.SATRunner;
 import org.apache.commons.exec.CommandLine;
@@ -64,6 +67,34 @@ public class PMD implements SATRunner {
 		cmdLine.addArgument(reportPath);
 		
 		return cmdLine;
+	}
+
+	public ArrayList<Alarm> readReportFile(String path){
+		File f = new File(path);
+		ArrayList<Alarm> alarms = new ArrayList<>();
+
+		try {
+			FileReader fReader =new FileReader(f);
+			BufferedReader fBufReader = new BufferedReader(fReader);
+			String alarm = "";
+
+			while((alarm = fBufReader.readLine()) != null) {
+				if(alarm.contains("C:")) {
+					alarm = alarm.replace("C:", "");
+				}
+
+				if(alarm.split(":").length > 2) {
+					Alarm temp = new Alarm(alarm);
+					alarms.add(temp);
+				}
+			}
+			fBufReader.close();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return alarms;
 	}
 	
 	public String getReportPath() {

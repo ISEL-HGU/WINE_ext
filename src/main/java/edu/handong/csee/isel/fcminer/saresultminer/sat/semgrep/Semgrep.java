@@ -65,7 +65,6 @@ public class Semgrep implements SATRunner {
 
         cmdLine.addArgument("--config=" + rule);
         cmdLine.addArgument("--lang=java");
-        cmdLine.addArgument("--exclude='*.js'");
         cmdLine.addArgument(dirPath);
         cmdLine.addArgument("--json");
         cmdLine.addArgument("-o");

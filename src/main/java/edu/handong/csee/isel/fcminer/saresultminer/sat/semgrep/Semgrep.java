@@ -94,8 +94,10 @@ public class Semgrep implements SATRunner {
                 rule = (String) result.get("check_id");
                 startLineNum = (long) ((JSONObject) result.get("start")).get("line");
                 endLineNum = (long) ((JSONObject) result.get("end")).get("line");
-                Alarm temp = new Alarm(warningPath, startLineNum, endLineNum, rule);
-                alarms.add(temp);
+                if(!rule.contains("javascript")) {
+                    Alarm temp = new Alarm(warningPath, startLineNum, endLineNum, rule);
+                    alarms.add(temp);
+                }
             }
             fReader.close();
         }

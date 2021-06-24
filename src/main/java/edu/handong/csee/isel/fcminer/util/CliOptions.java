@@ -34,7 +34,7 @@ public class CliOptions {
 					   							+"TargetAddress.txt and Rule are needed as args.")
 			   .addOption("R", "rule", true, "need an argument, rule command of a static analysis tool")
 			   .addOption("t", "target", true, "path of TargetAddress.txt")
-			   .addOption("e", "result", true, "path of SAResult_Result.csv")
+			   .addOption("o", "out", true, "path of output")
 			   .addOption("p", "pmd", true, "path of PMD run file\n"
 					   						+"ex) ./pmd-bin-6.25.0/bin/run.sh")
 			   .addOption("g", "semgrep", false, "run semgrep");
@@ -69,6 +69,10 @@ public class CliOptions {
 						command.setSemgrep(true);
 					}
 
+					if(line.hasOption("o") || line.hasOption("output")){
+						command.setOutputPath(line.getOptionValue("o"));
+					}
+
 		    		command.setState(RunState.SAResultMiner);
 		    		return command;
 		    	} else {
@@ -77,7 +81,7 @@ public class CliOptions {
 		    } 
 		    else if(line.hasOption("f") || line.hasOption("fpcollector")) {
 		    	if(line.hasOption("e") && line.hasOption("t")) {
-		    		command.setResultPath(line.getOptionValue("e"));
+		    		command.setOutputPath(line.getOptionValue("e"));
 		    		command.setAddressPath(line.getOptionValue("t"));
 		    		command.setState(RunState.FPCollector);
 		    		return command;

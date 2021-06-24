@@ -5,7 +5,7 @@ import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
 public class CliCommand {
 	private String rule = "";
 	private String addressPath = "";
-	private String resultPath = "";
+	private String outputPath = "";
 	private String pmd = "";
 	private boolean semgrep = false;
 	private RunState state;
@@ -26,12 +26,12 @@ public class CliCommand {
 		return addressPath;
 	}
 	
-	public void setResultPath(String resultPath) {
-		this.resultPath = resultPath;
+	public void setOutputPath(String outputPath) {
+		this.outputPath = outputPath;
 	}
 	
-	public String getResultPath() {
-		return resultPath;
+	public String getOutputPath() {
+		return outputPath;
 	}
 	
 	public void setPMD(String pmd) {

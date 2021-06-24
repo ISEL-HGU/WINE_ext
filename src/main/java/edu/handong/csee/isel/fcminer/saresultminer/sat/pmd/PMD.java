@@ -1,12 +1,14 @@
 package edu.handong.csee.isel.fcminer.saresultminer.sat.pmd;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
 import edu.handong.csee.isel.fcminer.saresultminer.sat.SATRunner;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.ExecuteException;
@@ -96,7 +98,49 @@ public class PMD implements SATRunner {
 
 		return alarms;
 	}
-	
+
+	public void initResult(String outputPath) {
+		try(
+				BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputPath));
+				CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
+						.withHeader("Detection ID", "Path", "Start Line Num", "End Line Num", "Code"));
+		) {
+			writer.flush();
+			writer.close();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
+	public void writeResult(ArrayList<Alarm> alarms, String outputPath) {
+		int detectionID = 0;
+		try(
+				BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputPath), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+				CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT);
+		) {
+			String idx = "";
+			String path = "";
+			String startLineNum = "";
+			String endLineNum = "";
+			String code = "";
+
+			for(Alarm alarm : alarms) {
+				detectionID ++;
+				idx = "" + detectionID;
+				path = alarm.getDir();
+				startLineNum = alarm.getStartLineNum();
+				endLineNum = alarm.getEndNum();
+				code = alarm.getCode();
+				csvPrinter.printRecord(idx, path, startLineNum, endLineNum, code);
+			}
+
+			writer.flush();
+			writer.close();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+
 	public String getReportPath() {
 		return reportPath;
 	}

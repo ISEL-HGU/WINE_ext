@@ -10,4 +10,8 @@ public interface SATRunner {
     public String getReportPath();
 
     public ArrayList<Alarm> readReportFile(String path);
+
+    public void initResult(String resultPath);
+
+    public void writeResult(ArrayList<Alarm> alarms, String outputPath);
 }

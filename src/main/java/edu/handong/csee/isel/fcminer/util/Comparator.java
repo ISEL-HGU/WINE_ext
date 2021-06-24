@@ -21,7 +21,7 @@ public class Comparator {
 		tempAlarms.addAll(changedAlarms);
 		int idx = 0;
 		for(Alarm fixedAlarm : tempAlarms) {
-			if(fixedAlarm.getLineNum().equals("-1") || fixedAlarm.getLineNum().equals("0")) {
+			if(fixedAlarm.getStartLineNum().equals("-1") || fixedAlarm.getStartLineNum().equals("0")) {
 				fixedAlarms.add(fixedAlarm);
 				changedAlarms.remove(idx);
 				idx--;
@@ -37,7 +37,7 @@ public class Comparator {
 		for(Alarm alarm : tempAlarms) {
 			for(Alarm changedAlarm : changedAlarms) {
 				if(alarm.getDir().trim().equals(changedAlarm.getDir().trim())) {
-					if(alarm.getLineNum().equals(changedAlarm.getLineNum())) {
+					if(alarm.getStartLineNum().equals(changedAlarm.getStartLineNum())) {
 						maintainedAlarms.add(changedAlarm);
 						newAlarms.remove(idx);
 						idx--;
@@ -55,7 +55,7 @@ public class Comparator {
 		tempAlarms.addAll(newAlarms);
 		for(Alarm alarm : tempAlarms) {
 			for(Alarm unchangedAlarm : unchangedAlarms) {
-				if(alarm.getDir().trim().equals(unchangedAlarm.getDir().trim()) && alarm.getLineNum().trim().equals(unchangedAlarm.getLineNum().trim())) {
+				if(alarm.getDir().trim().equals(unchangedAlarm.getDir().trim()) && alarm.getStartLineNum().trim().equals(unchangedAlarm.getStartLineNum().trim())) {
 					maintainedAlarms.add(unchangedAlarm);					
 					newAlarms.remove(idx);				
 					idx--;

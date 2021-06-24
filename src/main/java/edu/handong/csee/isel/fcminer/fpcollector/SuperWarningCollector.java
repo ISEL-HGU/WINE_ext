@@ -33,7 +33,7 @@ public class SuperWarningCollector {
 
 		final int timeInterval = 5;
 		ArrayList<SuperWarning> superWarnings = new ArrayList<>();
-		ArrayList<CSVRecord> records = readReport(command.getResultPath());
+		ArrayList<CSVRecord> records = readReport(command.getOutputPath());
 		long startTime = System.currentTimeMillis();
 		boolean timerFlag = false;
 		int cnt = 0;

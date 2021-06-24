@@ -15,7 +15,6 @@ import edu.handong.csee.isel.fcminer.saresultminer.sat.pmd.PMD;
 import edu.handong.csee.isel.fcminer.util.CliCommand;
 import edu.handong.csee.isel.fcminer.util.CliOptions.RunState;
 import edu.handong.csee.isel.fcminer.util.Reader;
-import edu.handong.csee.isel.fcminer.util.Writer;
 
 public class SAResultMiner {
 	ArrayList<Git> gits = new ArrayList<>();
@@ -28,8 +27,7 @@ public class SAResultMiner {
 	
 	public String run(CliCommand command) {
 		//utils instances
-		Reader reader = new Reader();				
-		Writer writer = new Writer();
+		Reader reader = new Reader();
 		SATRunner satRunner = selectedSAT(command);
 		
 		//1. read input list
@@ -60,7 +58,7 @@ public class SAResultMiner {
 		 */
 		if(command.getState().equals(RunState.FPCollector)) {
 			System.out.println("Run State: FPCollector");
-			return command.getResultPath(); 
+			return command.getOutputPath();
 		}
 		/*
 		 * Else the run state is SAResultMiner or All Sequences,
@@ -85,12 +83,11 @@ public class SAResultMiner {
 		 * 4. Aggregate All reports in One file to fit FP Collector
 		 * with Path, Start Line, End Line.
 		 */
-		writer.initResult();
-		for(int i = 0 ; i < reportInfo.size(); i ++) {
-			readReportThenWrite(satRunner, reportInfo.get(i), writer);
+		satRunner.initResult(command.getOutputPath());
+		for(int i = 0 ; i < 1/*reportInfo.size()*/; i ++) {
+			readReportThenWrite(satRunner, reportInfo.get(i), command.getOutputPath());
 		}
-		
-		return writer.getResultPath();
+		return command.getOutputPath();
 	}
 
 	private SATRunner selectedSAT(CliCommand command){
@@ -106,10 +103,9 @@ public class SAResultMiner {
 		return satRunner;
 	}
 
-	private void readReportThenWrite(SATRunner satRunner, String reportPath, Writer writer) {
-		Reader reader = new Reader();		
+	private void readReportThenWrite(SATRunner satRunner, String reportPath, String outputPath) {
 		ArrayList<Alarm> alarms = satRunner.readReportFile(reportPath);
-		writer.writeResult(alarms);	
+		satRunner.writeResult(alarms, outputPath);
 		numOfAlarm += alarms.size();
 	}
 

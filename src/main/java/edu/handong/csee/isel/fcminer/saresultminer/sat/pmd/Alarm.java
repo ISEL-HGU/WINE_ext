@@ -10,10 +10,11 @@ import edu.handong.csee.isel.fcminer.util.Result;
 public class Alarm {
 	int detectionIDInResult = 0;
 	String dir = "";
-	String lineNum = "";
+	String startNum = "";
 	String endNum = "";
 	String code = "";
 	String status = "";
+	String rule = "";
 	
 	public Alarm() {
 		
@@ -22,18 +23,18 @@ public class Alarm {
 	public Alarm(String alarm) {		
 			dir = alarm.split(":")[0];
 			dir = "." + dir.split("FPC_Miner")[1];
-			lineNum = alarm.split(":")[1];			
-			readFile(dir, lineNum);
+			startNum = alarm.split(":")[1];
+			readFile(dir, startNum);
 	}
 	
 	public Alarm(Result result) {
 		detectionIDInResult = result.getDetectionID();
 		dir =result.getFilePath();
 		if(!result.getLDCLineNum().equals("")) {
-			lineNum = result.getLDCLineNum();
+			startNum = result.getLDCLineNum();
 			status = "LDC";
 		}
-		else lineNum = result.getVICLineNum();
+		else startNum = result.getVICLineNum();
 		
 		if(!result.getVFCID().equals("")) {
 			status = "VFC";
@@ -44,19 +45,31 @@ public class Alarm {
 	public Alarm(Alarm alarm) {
 		this.detectionIDInResult = alarm.getDetectionIDInResult();
 		this.dir = alarm.dir;
-		this.lineNum = alarm.lineNum;
+		this.startNum = alarm.startNum;
 		this.code = alarm.code;
 		this.status = alarm.status;
 	}
 	
 	public Alarm(String path, String lineNum, String code) {
 		dir = path;
-		this.lineNum = lineNum;
+		this.startNum = lineNum;
 		this.code = code;
+	}
+
+	public Alarm(String path, long sNum, long eNum, String rule){
+		dir = path;
+		this.startNum = "" + sNum;
+		this.endNum = "" + eNum;
+		this.rule = rule;
+		readMultiLines(dir, startNum, endNum);
 	}
 
 	public String getEndNum(){
 		return endNum;
+	}
+
+	public String getRule(){
+		return rule;
 	}
 
 	public String getStatus() {
@@ -83,8 +96,8 @@ public class Alarm {
 		this.dir = dir;
 	}
 	
-	public String getLineNum() {
-		return lineNum;
+	public String getStartLineNum() {
+		return startNum;
 	}
 	
 	public String getCode() {
@@ -96,10 +109,31 @@ public class Alarm {
 	}
 	
 	public void setLineNum(String num) {
-		this.lineNum = num;
+		this.startNum = num;
 	}
-	
-	private void readFile(String dir, String lineNum) {
+
+	private void readFile(String dir, String startNum) {
+		File f = new File(dir);
+		try {
+			FileReader fReader =new FileReader(f);
+			BufferedReader fBufReader = new BufferedReader(fReader);
+			String str = "";
+			int num = 1;
+			while((str = fBufReader.readLine()) != null) {
+				if(Integer.parseInt(startNum) == num) {
+					code = str;
+					break;
+				}
+				num++;
+			}
+			fBufReader.close();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void readMultiLines(String dir, String startNum, String endNum) {
 		File f = new File(dir);
 		try {
 			FileReader fReader =new FileReader(f);
@@ -107,8 +141,10 @@ public class Alarm {
 			String str = "";
 			int num = 1;
 			while((str = fBufReader.readLine()) != null) {				
-				if(num == Integer.parseInt(lineNum)) {
-					code = str;
+				if(Integer.parseInt(startNum) <= num && Integer.parseInt(endNum) <= num) {
+					code += str + "\n";
+				}
+				else if(num > Integer.parseInt(endNum)){
 					break;
 				}
 				num++;

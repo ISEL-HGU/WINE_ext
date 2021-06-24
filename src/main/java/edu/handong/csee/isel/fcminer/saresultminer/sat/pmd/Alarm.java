@@ -141,7 +141,7 @@ public class Alarm {
 			String str = "";
 			int num = 1;
 			while((str = fBufReader.readLine()) != null) {				
-				if(Integer.parseInt(startNum) <= num && Integer.parseInt(endNum) <= num) {
+				if(Integer.parseInt(startNum) <= num && num <= Integer.parseInt(endNum)) {
 					code += str + "\n";
 				}
 				else if(num > Integer.parseInt(endNum)){

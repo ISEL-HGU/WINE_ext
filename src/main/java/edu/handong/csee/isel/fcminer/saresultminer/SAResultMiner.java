@@ -116,7 +116,7 @@ public class SAResultMiner {
 		String rule = command.getRule();
 
 		int cnt = 0;
-		for (int k = 0; k < 1/*cloneInfo.size()*/; k++) {
+		for (int k = 0; k < cloneInfo.size(); k++) {
 			cnt = k + 1;
 
 			String clonePathWithProjectName = cloneInfo.get(k);

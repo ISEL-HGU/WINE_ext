@@ -20,10 +20,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Semgrep implements SATRunner {
     String reportPath = "";
+    int detectionID = 0;
+    ArrayList<String> rules = new ArrayList<>();
 
     public void execute(String rule, String clonedPath, int cnt, String projectName) {
         File newDir = new File("./SemgrepReports/");
@@ -88,13 +91,16 @@ public class Semgrep implements SATRunner {
             long endLineNum = -1;
             String warningPath = "";
             String rule = "";
+            String[] fullNameOfRule;
             for(Object resultObj : resultArray){
                 JSONObject result = (JSONObject) resultObj;
-                warningPath = (String) result.get("path");
-                rule = (String) result.get("check_id");
-                startLineNum = (long) ((JSONObject) result.get("start")).get("line");
-                endLineNum = (long) ((JSONObject) result.get("end")).get("line");
-                if(!rule.contains("javascript")) {
+                if(!((String)result.get("check_id")).contains("javascript")) {
+                    warningPath = (String) result.get("path");
+                    fullNameOfRule = ((String) result.get("check_id")).split("\\.");
+                    rule = fullNameOfRule[fullNameOfRule.length - 2] + "_" + fullNameOfRule[fullNameOfRule.length - 1];
+                    startLineNum = (long) ((JSONObject) result.get("start")).get("line");
+                    endLineNum = (long) ((JSONObject) result.get("end")).get("line");
+
                     Alarm temp = new Alarm(warningPath, startLineNum, endLineNum, rule);
                     alarms.add(temp);
                 }
@@ -108,13 +114,11 @@ public class Semgrep implements SATRunner {
         return alarms;
     }
 
-    //todo: result writer module implement
-
     public void initResult(String outputPath) {
         try(
                 BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputPath));
                 CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
-                        .withHeader("Detection ID", "Rule", "Path", "Start Line Num", "End Line Num", "Code"));
+                        .withHeader("Detection ID", "Path", "Start Line Num", "End Line Num", "Code"));
         ) {
             writer.flush();
             writer.close();
@@ -124,33 +128,29 @@ public class Semgrep implements SATRunner {
     }
 
     public void writeResult(ArrayList<Alarm> alarms, String outputPath) {
-        int detectionID = 0;
-        try(
-                BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputPath), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
-                CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT);
-        ) {
-            String idx = "";
-            String path = "";
-            String startLineNum = "";
-            String endLineNum = "";
-            String code = "";
-            String rule = "";
+        String pathName = "./SemgrepRules/";
 
-            for(Alarm alarm : alarms) {
-                detectionID ++;
-                idx = "" + detectionID;
-                path = alarm.getDir();
-                startLineNum = alarm.getStartLineNum();
-                endLineNum = alarm.getEndNum();
-                code = alarm.getCode();
-                rule = alarm.getRule();
-                csvPrinter.printRecord(idx, rule, path, startLineNum, endLineNum, code);
+        for(Alarm alarm : alarms){
+            File newDir = new File(pathName);
+            if(!newDir.exists()){
+                newDir.mkdirs();
             }
-
-            writer.flush();
-            writer.close();
-        }catch(IOException e){
-            e.printStackTrace();
+            outputPath = pathName + alarm.getRule() + ".csv";
+            if(!rules.contains(alarm.getRule())){
+                rules.add(alarm.getRule());
+                initResult(outputPath);
+            }
+            try(
+                    BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputPath), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+                    CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT);
+            ) {
+                    detectionID ++;
+                    csvPrinter.printRecord("" + detectionID, alarm.getDir(), alarm.getStartLineNum(), alarm.getEndNum(), alarm.getCode());
+                writer.flush();
+                writer.close();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
         }
     }
 

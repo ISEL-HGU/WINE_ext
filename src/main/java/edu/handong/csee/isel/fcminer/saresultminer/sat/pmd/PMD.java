@@ -19,7 +19,7 @@ import edu.handong.csee.isel.fcminer.util.OSValidator;
 public class PMD implements SATRunner {
 	String pmdCmd = "";
 	String reportPath = "";
-	
+	int detectionID = 0;
 	public PMD(String pmdCmd) {
 		this.pmdCmd = pmdCmd;
 	}
@@ -113,7 +113,6 @@ public class PMD implements SATRunner {
 	}
 
 	public void writeResult(ArrayList<Alarm> alarms, String outputPath) {
-		int detectionID = 0;
 		try(
 				BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputPath), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
 				CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT);

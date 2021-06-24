@@ -83,10 +83,13 @@ public class SAResultMiner {
 		 * 4. Aggregate All reports in One file to fit FP Collector
 		 * with Path, Start Line, End Line.
 		 */
-		satRunner.initResult(command.getOutputPath());
-		for(int i = 0 ; i < 1/*reportInfo.size()*/; i ++) {
+		if(satRunner instanceof PMD)
+			satRunner.initResult(command.getOutputPath());
+
+		for(int i = 0 ; i < reportInfo.size(); i ++) {
 			readReportThenWrite(satRunner, reportInfo.get(i), command.getOutputPath());
 		}
+
 		return command.getOutputPath();
 	}
 
@@ -116,7 +119,7 @@ public class SAResultMiner {
 		String rule = command.getRule();
 
 		int cnt = 0;
-		for (int k = 0; k < cloneInfo.size(); k++) {
+		for (int k = 0; k < 1/*cloneInfo.size()*/; k++) {
 			cnt = k + 1;
 
 			String clonePathWithProjectName = cloneInfo.get(k);

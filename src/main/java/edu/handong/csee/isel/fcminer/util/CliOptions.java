@@ -80,8 +80,8 @@ public class CliOptions {
 		    	}
 		    } 
 		    else if(line.hasOption("f") || line.hasOption("fpcollector")) {
-		    	if(line.hasOption("e") && line.hasOption("t")) {
-		    		command.setOutputPath(line.getOptionValue("e"));
+		    	if(line.hasOption("o") && line.hasOption("t")) {
+		    		command.setOutputPath(line.getOptionValue("o"));
 		    		command.setAddressPath(line.getOptionValue("t"));
 		    		command.setState(RunState.FPCollector);
 		    		return command;

@@ -41,7 +41,7 @@ public class SuperWarningCollector {
 		for(CSVRecord record: records) {
 			if (record.get(0).equals("Detection ID")) continue;
 
-			RawData tmpData = new RawData(modifyFilePathToOS(record.get(1)), record.get(2), record.get(2), record.get(3));
+			RawData tmpData = new RawData(modifyFilePathToOS(record.get(1)), record.get(2), record.get(3), record.get(4));
 			if (tmpData.isPass()) continue;
 
 			cnt++;

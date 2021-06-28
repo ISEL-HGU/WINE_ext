@@ -52,9 +52,8 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 
         ArrayList<Property> propertyPath = new ArrayList<>();
 
-        if(pData.getVNode() != null){
-        	rawData.setStart(pData.getVNode().getStartLineNum());
-			rawData.setEnd(pData.getVNode().getEndLineNum());
+        if(rawData.getPath().equals("TargetProjects/netbeans/platform/o.n.bootstrap/src/org/netbeans/ModuleManager.java") && rawData.getStart() == 759){
+//        	System.out.println("");
 		}
 
         if(pData.getVNode() != null && rawData.getStart() <= getLineNum(n.getStartPosition()) && getLineNum(n.getStartPosition() + n.getLength()) <= rawData.getEnd()) {
@@ -86,6 +85,8 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 		if(t.getStartLineNum() <= rawData.getVLineNum() && rawData.getVLineNum() <= t.getEndLineNum() && stmtFlag == true && t.getType() != BLOCK) {
 			if (pData.getVNode() == null) {
 				pData.setVNode(t);
+				pData.getVNode().setStartLineNum(t.getStartLineNum());
+				pData.getVNode().setEndLineNum(t.getEndLineNum());
 				if (n instanceof IfStatement && t.getStartLineNum() == rawData.getVLineNum()) {
 					ASTNode exp = ((IfStatement) n).getExpression();
 					pData.getVNode().setStartLineNum(getLineNum(exp.getStartPosition()));
@@ -93,8 +94,18 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 				}
 			}
 			else {
-				if ((pData.getVNode().getStartLineNum() != rawData.getVLineNum() || pData.getVNode().getEndLineNum() != rawData.getVLineNum()))
+				if ((pData.getVNode().getStartLineNum() != rawData.getStart() || pData.getVNode().getEndLineNum() != rawData.getEnd())) {
 					pData.setVNode(t);
+					if (n instanceof IfStatement && t.getStartLineNum() == rawData.getVLineNum()) {
+						ASTNode exp = ((IfStatement) n).getExpression();
+						pData.getVNode().setStartLineNum(getLineNum(exp.getStartPosition()));
+						pData.getVNode().setEndLineNum(getLineNum(exp.getStartPosition() + exp.getLength()));
+					}
+					else {
+						pData.getVNode().setStartLineNum(t.getStartLineNum());
+						pData.getVNode().setEndLineNum(t.getEndLineNum());
+					}
+				}
 			}
 		}
         trees.push(t);

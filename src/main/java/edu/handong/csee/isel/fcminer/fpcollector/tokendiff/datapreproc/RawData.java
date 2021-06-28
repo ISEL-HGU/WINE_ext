@@ -24,15 +24,14 @@ public class RawData {
 	public RawData(String path, String start, String end, String vLine){
 		this.path = path;
 		this.vLineNum = Integer.parseInt(start);
+		this.start = Integer.parseInt(start);
+		this.end = Integer.parseInt(end);
 		String src = readSrc();
 		if(src == null){
 			pass = true;
 		}
+
 		if(pass == false) {
-			setStartEnd(start, end, src);
-			vLine = vLine.replaceAll("(?s)/\\*(.)*?\\*/", "");
-			vLine = vLine.replaceAll("/\\*.*", "");
-			this.vLine = this.vLine + vLine.split("//")[0].trim();
 			ProcessedData pData = new MethodFinder().findMethod(this, src);
 			if (pData == null)
 				this.pass = true;
@@ -67,11 +66,6 @@ public class RawData {
 					return null;
 				}
 			}
-//			String tmpCode="";
-//			if(builder.toString().length() > 300000) {
-//				tmpCode = builder.toString();
-//				System.out.println(tmpCode);
-//			}
 
 			reader.close();
 		}

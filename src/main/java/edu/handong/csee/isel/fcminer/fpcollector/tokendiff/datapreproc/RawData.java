@@ -74,7 +74,6 @@ public class RawData {
 		}
 		
 		catch (IOException e) {
-			e.printStackTrace();
 		}
 		return builder.toString();
 	}

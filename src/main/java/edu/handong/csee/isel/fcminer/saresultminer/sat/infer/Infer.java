@@ -39,14 +39,17 @@ public class Infer implements SATRunner {
             String sNum = "";
             String rule = "";
             String code = "";
+            int idx = path.split("/").length;
+            String projectName = path.split("/")[idx - 1].split("\\.")[0];
             while((str = fBufReader.readLine()) != null) {
                 if(s == Status.INIT && str.matches("#[0-9]*")){
                     s = Status.NUMBER;
                 } else if (s == Status.NUMBER && str.split(":").length == 4){
                     s = Status.DETECTION;
-                    reportedPath = "TargetProjects/" + str.split(":")[0];
+                    reportedPath = "./TargetProjects/" + projectName + "/" + str.split(":")[0];
                     sNum = str.split(":")[1];
                     rule = str.split(":")[3];
+                    rule = rule.trim().replaceAll(" ", "_");
                 } else if (s == Status.DETECTION){
                     s = Status.DESCRIPTION;
                 } else if (s == Status.DESCRIPTION){

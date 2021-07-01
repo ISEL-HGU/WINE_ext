@@ -27,6 +27,9 @@ public class RawData {
 		this.start = Integer.parseInt(start);
 		this.end = Integer.parseInt(end);
 		String src = readSrc();
+		vLine = vLine.replaceAll("(?s)/\\*(.)*?\\*/", "");
+		vLine = vLine.replaceAll("/\\*.*", "");
+		this.vLine = this.vLine + vLine.split("//")[0].trim();
 		if(src == null){
 			pass = true;
 		}

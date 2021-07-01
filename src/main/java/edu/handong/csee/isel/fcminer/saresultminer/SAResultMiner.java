@@ -1,11 +1,16 @@
 package edu.handong.csee.isel.fcminer.saresultminer;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 import edu.handong.csee.isel.fcminer.saresultminer.sat.SATRunner;
+import edu.handong.csee.isel.fcminer.saresultminer.sat.infer.Infer;
 import edu.handong.csee.isel.fcminer.saresultminer.sat.semgrep.Semgrep;
 import org.eclipse.jgit.api.Git;
 
@@ -67,12 +72,19 @@ public class SAResultMiner {
 		else {
 			/*
 			 * 3. Run a static analysis tool to All input projects
-			 * to get raw alarm data
+			 * to get raw alarm data.
+			 * If SAT is PMD or Semgrep, this can run the SAT.
+			 * If SAT is Infer, ErrorProne, or FindBugs, this just return report paths
 			 * @param CliCommand command: command line input
 			 * @param ArrayList<String> cloneInfo: ArrayList for Cloned Path and Project name
 			 */
-			reportInfo.addAll(collectRawData(satRunner, command, cloneInfo));
-			
+			if(satRunner instanceof Infer){
+				reportInfo.addAll(readReportPaths(command.getInferReportPaths()));
+			}
+			else {
+				reportInfo.addAll(collectRawData(satRunner, command, cloneInfo));
+			}
+
 			if(reportInfo.size() == 0) {
 				System.out.println("ERROR in Raw Data Collecting Step");
 				System.exit(-1);
@@ -97,13 +109,35 @@ public class SAResultMiner {
 		SATRunner satRunner = null;
 
 		//static analysis tools can be constructed via interface SATRunner
-		if(command.getSemgrep() == false) {
+		if(command.getPMD().length() > 0) {
 			satRunner = new PMD(command.getPMD());
 		} else if(command.getSemgrep() == true){
 			satRunner = new Semgrep();
+		} else if(command.getInfer() == true){
+			satRunner = new Infer();
 		}
 
 		return satRunner;
+	}
+
+	private ArrayList<String> readReportPaths(String path){
+		ArrayList<String> reportPaths = new ArrayList<>();
+
+		File f = new File(path);
+		try {
+			FileReader fReader =new FileReader(f);
+			BufferedReader fBufReader = new BufferedReader(fReader);
+			String str = "";
+			while((str = fBufReader.readLine()) != null) {
+				reportPaths.add(str);
+			}
+			fBufReader.close();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return reportPaths;
 	}
 
 	private void readReportThenWrite(SATRunner satRunner, String reportPath, String outputPath) {

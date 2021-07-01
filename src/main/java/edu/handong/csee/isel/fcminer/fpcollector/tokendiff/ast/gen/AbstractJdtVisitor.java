@@ -52,10 +52,6 @@ public abstract class AbstractJdtVisitor extends ASTVisitor {
 
         ArrayList<Property> propertyPath = new ArrayList<>();
 
-        if(rawData.getPath().equals("TargetProjects/netbeans/platform/o.n.bootstrap/src/org/netbeans/ModuleManager.java") && rawData.getStart() == 759){
-//        	System.out.println("");
-		}
-
         if(pData.getVNode() != null && rawData.getStart() <= getLineNum(n.getStartPosition()) && getLineNum(n.getStartPosition() + n.getLength()) <= rawData.getEnd()) {
 	        propertyPath.addAll(parseProperty(n));
         }

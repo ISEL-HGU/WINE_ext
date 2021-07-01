@@ -8,6 +8,8 @@ public class CliCommand {
 	private String outputPath = "";
 	private String pmd = "";
 	private boolean semgrep = false;
+	private boolean infer = false;
+	private String inferReportPaths = "";
 	private RunState state;
 	
 	public void setRule(String rule) {
@@ -56,5 +58,21 @@ public class CliCommand {
 
 	public boolean getSemgrep(){
 		return semgrep;
+	}
+
+	public void setInfer(boolean infer){
+		this.infer = infer;
+	}
+
+	public boolean getInfer(){
+		return infer;
+	}
+
+	public void setInferReportPaths(String path){
+		this.inferReportPaths = path;
+	}
+
+	public String getInferReportPaths(){
+		return inferReportPaths;
 	}
 }

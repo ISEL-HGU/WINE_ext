@@ -37,8 +37,9 @@ public class CliOptions {
 			   .addOption("o", "out", true, "path of output")
 			   .addOption("p", "pmd", true, "path of PMD run file\n"
 					   						+"ex) ./pmd-bin-6.25.0/bin/run.sh")
-			   .addOption("g", "semgrep", false, "run semgrep");
-		
+			   .addOption("g", "semgrep", false, "run semgrep and cluster reports based on each rule")
+		       .addOption("i", "infer", true, "analyze infer report.txt and cluster reports based on each rule");
+
 		try {
 		    // parse the command line arguments
 		    CommandLine line = parser.parse( options, args );
@@ -46,15 +47,18 @@ public class CliOptions {
 		    HelpFormatter formatter = new HelpFormatter();
 
 		    if(line.hasOption("s") || line.hasOption("saresult")) {
-		    	if((line.hasOption("R") || line.hasOption("rule"))&& (line.hasOption("t") || line.hasOption("target"))) {
-		    		command.setRule(line.getOptionValue("R"));
-					if(command.getRule() == null)
-		    			command.setRule(line.getOptionValue("rule"));
-
-		    		command.setAddressPath(line.getOptionValue("t"));
-		    		if(command.getAddressPath() == null){
-		    			command.setRule(line.getOptionValue("target"));
+		    	if((line.hasOption("t") || line.hasOption("target"))) {
+					command.setAddressPath(line.getOptionValue("t"));
+					if(command.getAddressPath() == null){
+						command.setRule(line.getOptionValue("target"));
 					}
+
+		    		if(line.hasOption("R") || line.hasOption("rule")) {
+						command.setRule(line.getOptionValue("R"));
+						if (command.getRule() == null)
+							command.setRule(line.getOptionValue("rule"));
+					}
+
 		    		command.setAddressPath(changePathBasedOnOS(command.getAddressPath()));
 
 		    		if((line.hasOption("p") || line.hasOption("pmd"))){
@@ -67,6 +71,11 @@ public class CliOptions {
 
 					if(line.hasOption("g") || line.hasOption("semgrep")){
 						command.setSemgrep(true);
+					}
+
+					if(line.hasOption("i") || line.hasOption("infer")){
+						command.setInfer(true);
+						command.setInferReportPaths(line.getOptionValue("i"));
 					}
 
 					if(line.hasOption("o") || line.hasOption("output")){

@@ -64,6 +64,14 @@ public class Alarm {
 		readMultiLines(dir, startNum, endNum);
 	}
 
+	public Alarm(String path, String sNum, String eNum, String rule, String code){
+		dir = path;
+		startNum = sNum;
+		endNum = eNum;
+		this.rule = rule;
+		this.code = code;
+	}
+
 	public String getEndNum(){
 		return endNum;
 	}

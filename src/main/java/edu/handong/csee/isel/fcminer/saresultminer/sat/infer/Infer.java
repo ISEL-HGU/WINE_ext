@@ -2,15 +2,20 @@ package edu.handong.csee.isel.fcminer.saresultminer.sat.infer;
 
 import edu.handong.csee.isel.fcminer.saresultminer.sat.SATRunner;
 import edu.handong.csee.isel.fcminer.saresultminer.sat.pmd.Alarm;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
 public class Infer implements SATRunner {
     enum Status {INIT, NUMBER, DETECTION, DESCRIPTION, CODE}
+    ArrayList<String> rules = new ArrayList<>();
+    int detectionID = 0;
+
     public void execute(String rule, String clonedPath, int cnt, String projectName) {
         System.out.println("Wrong trial: Cannot execute infer in WINE");
         System.exit(-1);
@@ -68,11 +73,43 @@ public class Infer implements SATRunner {
         return alarms;
     }
 
-    public void initResult(String resultPath) {
-
+    public void initResult(String outputPath) {
+        try(
+                BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputPath));
+                CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
+                        .withHeader("Detection ID", "Path", "Start Line Num", "End Line Num", "Code"));
+        ) {
+            writer.flush();
+            writer.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     public void writeResult(ArrayList<Alarm> alarms, String outputPath) {
+        String pathName = "./InferRules/";
 
+        for(Alarm alarm : alarms){
+            File newDir = new File(pathName);
+            if(!newDir.exists()){
+                newDir.mkdirs();
+            }
+            outputPath = pathName + alarm.getRule() + ".csv";
+            if(!rules.contains(alarm.getRule())){
+                rules.add(alarm.getRule());
+                initResult(outputPath);
+            }
+            try(
+                    BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputPath), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+                    CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT);
+            ) {
+                detectionID ++;
+                csvPrinter.printRecord("" + detectionID, alarm.getDir(), alarm.getStartLineNum(), alarm.getEndNum(), alarm.getCode());
+                writer.flush();
+                writer.close();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+        }
     }
 }

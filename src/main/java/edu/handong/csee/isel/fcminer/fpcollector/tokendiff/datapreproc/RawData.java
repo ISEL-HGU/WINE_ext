@@ -25,7 +25,12 @@ public class RawData {
 		this.path = path;
 		this.vLineNum = Integer.parseInt(start);
 		this.start = Integer.parseInt(start);
-		this.end = Integer.parseInt(end);
+		if(end.equals("")){
+			this.end = this.start;
+		}
+		else {
+			this.end = Integer.parseInt(end);
+		}
 		String src = readSrc();
 		vLine = vLine.replaceAll("(?s)/\\*(.)*?\\*/", "");
 		vLine = vLine.replaceAll("/\\*.*", "");

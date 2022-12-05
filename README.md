@@ -1,1 +1,1 @@
-# FPC-Miner
+# WINE: Warning mINEr for improving bug finders

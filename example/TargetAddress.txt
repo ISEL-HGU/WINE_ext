@@ -1,0 +1,4 @@
+https://github.com/apache/ant.git
+https://github.com/apache/commons-cli.git
+https://github.com/apache/commons-math.git
+https://github.com/apache/isis.git

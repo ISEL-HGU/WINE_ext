@@ -3,9 +3,7 @@ SemgrepReports/*
 infer-*
 .idea
 *.log
-*.sh
 TargetProjects/
-*.txt
 ChangedFilesList/
 FC-Miner/
 .project

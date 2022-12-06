@@ -23,11 +23,12 @@ output: a csv file, which contains the representative warnings
 ```
 
 ## Usage:
-only SAResultMiner: ./WINE_ext -s -R <PMD Rule Context> -t
-            <TargetAddress.txt Path> -p <pmd runfile path>
-only FPCollector  : ./WINE_ext -f -e <SAResultMiner_Result.csv Path>
-Both              : ./WINE_ext -m -R <PMD Rule Context> -t
-            <TargetAddress.txt Path -p <pmd runfile path>
+- only SAResultMiner: ./WINE_ext -s -R \<PMD Rule Context> -t \<TargetAddress.txt Path> -p \<pmd runfile path>
+
+- only FPCollector  : ./WINE_ext -f -e \<SAResultMiner_Result.csv Path> 
+              
+- Both              : ./WINE_ext -m -R \<PMD Rule Context> -t \<TargetAddress.txt Path> -p \<pmd runfile path>
+  
 ```
  -f,--fpcollector    run only False Positive candidate Collector.
                      SAResultMiner_Result.csv and TargetAddress.txt

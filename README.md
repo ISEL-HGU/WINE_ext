@@ -66,4 +66,4 @@ Based on the results, we suggest that WINE could be adopted to improve the bug f
 
 ## Contact:
 - Yoon-ho Choi (yhchoi@handong.ac.kr)
-- Jaechang Nam (jcnam@handong.ac.kr)
+- Jaechang Nam (jcnam@handong.edu)

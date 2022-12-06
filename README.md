@@ -9,6 +9,44 @@
 - **Result** : the patternized representative warnings are located in ```patterns``` folders located in the ```selectedRulesResult```, ```allRuleResult```, ResultFromPMDs```.
 - **misc** : Various versions of PMD could be found in ```pmds```.
 
+## Implementations
+There are two modules: 
+1) SAResultMiner runs a bug finder and collects warnings. Then, it processes warnings to extract ```path, start line number, end line num, and code``` information from the report of the bug finder.
+```
+input: PMD rule, GitHub address of the target projects, executable file of PMD
+output: a csv file, which has columns named as detection id, path, start line number, end line number, and code
+```
+2) FPCollector read the result of SAResultMiner, then generate warning patterns, and extract the ```representative warnings```.
+```
+input: a csv file, which is the result of SAResultMiner
+output: a csv file, which contains the representative warnings
+```
+
+## Usage:
+only SAResultMiner: ./WINE_ext -s -R <PMD Rule Context> -t
+            <TargetAddress.txt Path> -p <pmd runfile path>
+only FPCollector  : ./WINE_ext -f -e <SAResultMiner_Result.csv Path>
+Both              : ./WINE_ext -m -R <PMD Rule Context> -t
+            <TargetAddress.txt Path -p <pmd runfile path>
+```
+ -f,--fpcollector    run only False Positive candidate Collector.
+                     SAResultMiner_Result.csv and TargetAddress.txt
+                     are needed as an arg.
+ -g,--semgrep        run semgrep and cluster reports based on each rule
+ -i,--infer <arg>    analyze infer report.txt and cluster reports based on
+                     each rule
+ -m,--fcminer        run both SAResultMiner and FPCollector.
+                     TargetAddress.txt and Rule are needed as args.
+ -o,--out <arg>      path of output
+ -p,--pmd <arg>      path of PMD run file
+                     ex) ./pmd-bin-6.25.0/bin/run.sh
+ -R,--rule <arg>     need an argument, rule command of a static analysis
+                     tool
+ -s,--saresult       run only Static Analysis Result Miner.
+                     TargetAddress.txt and Rule are needed as args.
+ -t,--target <arg>   path of TargetAddress.txt
+```
+
 ## Abstract:
 - Context:
 Bug finders have been actively used to efficiently detect bugs. However, developers and researchers found that the bug finders show high false positive rate. The false positives can be caused by two major reasons: (1) users rejecting warnings and (2) false-positive inducing issues (FPI), i.e., incorrect or incomplete rule implementations.

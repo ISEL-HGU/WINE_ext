@@ -11,12 +11,12 @@
 
 ## Implementations
 There are two modules: 
-1) SAResultMiner runs a bug finder and collects warnings. Then, it processes warnings to extract ```path, start line number, end line num, and code``` information from the report of the bug finder.
+1) **SAResultMiner** runs a bug finder and collects warnings. Then, it processes warnings to extract ```path, start line number, end line num, and code``` information from the report of the bug finder.
 ```
 input: PMD rule, GitHub address of the target projects, executable file of PMD
 output: a csv file, which has columns named as detection id, path, start line number, end line number, and code
 ```
-2) FPCollector read the result of SAResultMiner, then generate warning patterns, and extract the ```representative warnings```.
+2) **FPCollector** read the result of SAResultMiner, then generate warning patterns, and extract the ```representative warnings```.
 ```
 input: a csv file, which is the result of SAResultMiner
 output: a csv file, which contains the representative warnings

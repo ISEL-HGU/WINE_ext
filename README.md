@@ -33,9 +33,6 @@ output: a csv file, which contains the representative warnings
  -f,--fpcollector    run only False Positive candidate Collector.
                      SAResultMiner_Result.csv and TargetAddress.txt
                      are needed as an arg.
- -g,--semgrep        run semgrep and cluster reports based on each rule
- -i,--infer <arg>    analyze infer report.txt and cluster reports based on
-                     each rule
  -m,--fcminer        run both SAResultMiner and FPCollector.
                      TargetAddress.txt and Rule are needed as args.
  -o,--out <arg>      path of output
@@ -47,6 +44,9 @@ output: a csv file, which contains the representative warnings
                      TargetAddress.txt and Rule are needed as args.
  -t,--target <arg>   path of TargetAddress.txt
 ```
+
+### Example:
+Example scripts are included in ```example``` directory.
 
 ## Abstract:
 - Context:

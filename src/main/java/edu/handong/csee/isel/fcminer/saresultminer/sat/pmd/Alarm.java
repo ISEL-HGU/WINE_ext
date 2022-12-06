@@ -22,7 +22,7 @@ public class Alarm {
 	
 	public Alarm(String alarm) {		
 			dir = alarm.split(":")[0];
-			dir = "." + dir.split("FPC_Miner")[1];
+			dir = "./TargetProjects" + dir.split("TargetProjects")[1];
 			startNum = alarm.split(":")[1];
 			readFile(dir, startNum);
 	}

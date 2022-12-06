@@ -1,0 +1,1422 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,switch (((ASTNode) command.getChild(0)).getToken().getType()) {,"switch (((ASTNode)command.getChild(0)).getToken().getType()) {
+case HiveParser.TOK_TABLESKEWED:
+  desc=handleAlterTableSkewedBy(command,tableName,table);
+break;
+case HiveParser.TOK_STOREDASDIRS:
+desc=handleAlterTableDisableStoredAsDirs(tableName,table);
+break;
+default :
+assert false;
+}
+",0,135,6,5435,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+"
+2,switch (InstancesSummaryResult.InstanceSummaryFilterFields.valueOf(pair.getKey().toUpperCase())) {,"switch (InstancesSummaryResult.InstanceSummaryFilterFields.valueOf(pair.getKey().toUpperCase())) {
+case CLUSTER:
+  if (instance.getCluster() == null || !containsIgnoreCase(pair.getValue(),instance.getCluster())) {
+    isInstanceFiltered=true;
+  }
+break;
+case STATUS:
+if (newSummaryMap == null) {
+newSummaryMap=new HashMap<>();
+}
+if (instance.getSummaryMap() == null || instance.getSummaryMap().isEmpty()) {
+isInstanceFiltered=true;
+}
+ else {
+for (Map.Entry<String,Long> entry : instance.getSummaryMap().entrySet()) {
+if (containsIgnoreCase(pair.getValue(),entry.getKey())) {
+  newSummaryMap.put(entry.getKey(),entry.getValue());
+}
+}
+}
+break;
+default :
+isInstanceFiltered=true;
+}
+",0,177,5,,"QualifiedName(MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+3,switch ((char)buffer[offset + i]) {,"switch ((char)buffer[offset + i]) {
+case '\r':
+{
+    System.out.print(""\\r"");
+    break;
+  }
+case '\n':
+{
+  System.out.print(""\\n"");
+  break;
+}
+default :
+{
+System.out.print((char)buffer[offset + i]);
+}
+}
+",0,84,4,,"PrimitiveType(CastExpression-type, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-array, CastExpression-expression, SwitchStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, CastExpression-expression, SwitchStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ArrayAccess-index, CastExpression-expression, SwitchStatement-expression, ),
+"
+4,switch (slice.length - relativeOffset) {,"switch (slice.length - relativeOffset) {
+case 15:
+  k2^=(long)(slice.buffer[absoluteOffset + 14] & UNSIGNED_MASK) << 48;
+case 14:
+k2^=(long)(slice.buffer[absoluteOffset + 13] & UNSIGNED_MASK) << 40;
+case 13:
+k2^=(long)(slice.buffer[absoluteOffset + 12] & UNSIGNED_MASK) << 32;
+case 12:
+k2^=(long)(slice.buffer[absoluteOffset + 11] & UNSIGNED_MASK) << 24;
+case 11:
+k2^=(long)(slice.buffer[absoluteOffset + 10] & UNSIGNED_MASK) << 16;
+case 10:
+k2^=(long)(slice.buffer[absoluteOffset + 9] & UNSIGNED_MASK) << 8;
+case 9:
+k2^=slice.buffer[absoluteOffset + 8] & UNSIGNED_MASK;
+case 8:
+k1^=getLong(slice,absoluteOffset);
+break;
+case 7:
+k1^=(long)(slice.buffer[absoluteOffset + 6] & UNSIGNED_MASK) << 48;
+case 6:
+k1^=(long)(slice.buffer[absoluteOffset + 5] & UNSIGNED_MASK) << 40;
+case 5:
+k1^=(long)(slice.buffer[absoluteOffset + 4] & UNSIGNED_MASK) << 32;
+case 4:
+k1^=(long)(slice.buffer[absoluteOffset + 3] & UNSIGNED_MASK) << 24;
+case 3:
+k1^=(long)(slice.buffer[absoluteOffset + 2] & UNSIGNED_MASK) << 16;
+case 2:
+k1^=(long)(slice.buffer[absoluteOffset + 1] & UNSIGNED_MASK) << 8;
+case 1:
+k1^=slice.buffer[absoluteOffset] & UNSIGNED_MASK;
+break;
+default :
+throw new AssertionError(""Code should not reach here!"");
+}
+",0,0,2,,"QualifiedName(InfixExpression-leftOperand, SwitchStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, SwitchStatement-expression, ),
+"
+5,switch (itemsInstallMode!=null ? itemsInstallMode :,"switch (itemsInstallMode != null ? itemsInstallMode : CatalogItemsInstallationMode.BUNDLE_BUT_NOT_STARTED) {
+case ADD_YAML_ITEMS_UNBUNDLED:
+  super.addCatalogItems(catalogYaml);
+break;
+case BUNDLE_BUT_NOT_STARTED:
+skipStart=true;
+case USUAL_OSGI_WAY_AS_BUNDLE_WITH_DEFAULT_NAME:
+String bundle=bundleName();
+String version=bundleVersion();
+Map<?,?> cy=(Map<?,?>)Yamls.parseAll(catalogYaml).iterator().next();
+cy=(Map<?,?>)cy.get(""brooklyn.catalog"");
+if (cy.containsKey(""bundle"")) bundle=(String)cy.get(""bundle"");
+if (cy.containsKey(""version"")) version=(String)cy.get(""version"");
+if (skipStart) {
+addCatalogItemsAsOsgiWithoutStartingBundles(mgmt(),catalogYaml,new VersionedName(bundle,version),isForceUpdate());
+}
+ else {
+addCatalogItemsAsOsgiInUsualWay(mgmt(),catalogYaml,new VersionedName(bundle,version),isForceUpdate());
+}
+break;
+case USUAL_OSGI_WAY_AS_ZIP_NO_MANIFEST_NAME_MAYBE_IN_BOM:
+addCatalogItemsAsOsgiInUsualWay(mgmt(),catalogYaml,null,isForceUpdate());
+break;
+}
+",0,0,3,,"SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, SwitchStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, SwitchStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, SwitchStatement-expression, ),
+"
+6,switch (r.nextInt(type.isNullable() ? 3 : 2)) {,"switch (r.nextInt(type.isNullable() ? 3 : 2)) {
+case 0:
+  if (type.getSqlTypeName() == SqlTypeName.BOOLEAN) {
+    res=rexBuilder.makeLiteral(true);
+  }
+ else   if (type.getSqlTypeName() == SqlTypeName.INTEGER) {
+    res=rexBuilder.makeLiteral(1,type,true);
+  }
+break;
+case 1:
+if (type.getSqlTypeName() == SqlTypeName.BOOLEAN) {
+res=rexBuilder.makeLiteral(false);
+}
+ else if (type.getSqlTypeName() == SqlTypeName.INTEGER) {
+res=rexBuilder.makeLiteral(0,type,true);
+}
+break;
+case 2:
+res=rexBuilder.makeNullLiteral(type);
+}
+",0,0,6,,"SimpleName(MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-expression, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-expression, MethodInvocation-arguments, SwitchStatement-expression, ),
+NumberLiteral(ConditionalExpression-thenExpression, MethodInvocation-arguments, SwitchStatement-expression, ),
+NumberLiteral(ConditionalExpression-elseExpression, MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+7,switch (this.b[v++] & 0xFF) {,"switch (this.b[v++] & 0xFF) {
+case 'B':
+  byte[] bv=new byte[size];
+for (i=0; i < size; i++) {
+  bv[i]=(byte)readInt(items[readUnsignedShort(v)]);
+  v+=3;
+}
+av.visit(name,bv);
+--v;
+break;
+case 'Z':
+boolean[] zv=new boolean[size];
+for (i=0; i < size; i++) {
+zv[i]=readInt(items[readUnsignedShort(v)]) != 0;
+v+=3;
+}
+av.visit(name,zv);
+--v;
+break;
+case 'S':
+short[] sv=new short[size];
+for (i=0; i < size; i++) {
+sv[i]=(short)readInt(items[readUnsignedShort(v)]);
+v+=3;
+}
+av.visit(name,sv);
+--v;
+break;
+case 'C':
+char[] cv=new char[size];
+for (i=0; i < size; i++) {
+cv[i]=(char)readInt(items[readUnsignedShort(v)]);
+v+=3;
+}
+av.visit(name,cv);
+--v;
+break;
+case 'I':
+int[] iv=new int[size];
+for (i=0; i < size; i++) {
+iv[i]=readInt(items[readUnsignedShort(v)]);
+v+=3;
+}
+av.visit(name,iv);
+--v;
+break;
+case 'J':
+long[] lv=new long[size];
+for (i=0; i < size; i++) {
+lv[i]=readLong(items[readUnsignedShort(v)]);
+v+=3;
+}
+av.visit(name,lv);
+--v;
+break;
+case 'F':
+float[] fv=new float[size];
+for (i=0; i < size; i++) {
+fv[i]=Float.intBitsToFloat(readInt(items[readUnsignedShort(v)]));
+v+=3;
+}
+av.visit(name,fv);
+--v;
+break;
+case 'D':
+double[] dv=new double[size];
+for (i=0; i < size; i++) {
+dv[i]=Double.longBitsToDouble(readLong(items[readUnsignedShort(v)]));
+v+=3;
+}
+av.visit(name,dv);
+--v;
+break;
+default :
+v=readAnnotationValues(v - 3,buf,false,av.visitArray(name));
+}
+",0,7,4,,"ThisExpression(FieldAccess-expression, ArrayAccess-array, InfixExpression-leftOperand, SwitchStatement-expression, ),
+SimpleName(FieldAccess-name, ArrayAccess-array, InfixExpression-leftOperand, SwitchStatement-expression, ),
+SimpleName(PostfixExpression-operand, ArrayAccess-index, InfixExpression-leftOperand, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, SwitchStatement-expression, ),
+"
+8,switch ( Integer.parseInt( (String) this.tags.get( loc ))) {,"switch (Integer.parseInt((String)this.tags.get(loc))) {
+case INCLUDE_ELEM:
+  ServiceSelector r3sc=null;
+try {
+  r3sc=(ServiceSelector)this.manager.lookup(Web3DataSource.ROLE + ""Selector"");
+  this.web3source=(Web3DataSource)r3sc.select(this.backend);
+  this.connection=this.web3source.getWeb3Client();
+  this.repository=(JCO.Repository)this.connection.getRepository();
+  this.functionT=this.repository.getFunctionTemplate(a.getValue(Web3.INCLUDE_NAME_ATTR));
+  this.streamer=(null == a.getValue(Web3.INCLUDE_CLASS_ATTR)) ? ""default"" : a.getValue(Web3.INCLUDE_CLASS_ATTR);
+  this.function=this.functionT.getFunction();
+}
+ catch (Exception ex) {
+  String error=""Problems getting client for backend: '"" + this.backend + ""'"";
+  getLogger().error(error,ex);
+  error=ex.getMessage();
+  this.attributes.clear();
+  super.startElement(uri,loc,raw,a);
+  super.startElement(uri,Web3.PROCESSING_X_ELEM,Web3.PROCESSING_X_ELEM,this.attributes);
+  super.characters(error.toCharArray(),0,error.length());
+  super.endElement(uri,Web3.PROCESSING_X_ELEM,Web3.PROCESSING_X_ELEM);
+  this.error=true;
+}
+ finally {
+  this.manager.release(r3sc);
+}
+break;
+case IMPORT_ELEM:
+this.importParameterList=this.function.getImportParameterList();
+this.theRecord=this.importParameterList;
+break;
+case FIELD_ELEM:
+this.fillMe=this.theRecord.getField(a.getValue(Web3.FIELD_NAME_ATTR));
+break;
+case STRUCTURE_ELEM:
+this.theRecord=this.importParameterList.getStructure(a.getValue(Web3.STRUCTURE_NAME_ATTR));
+break;
+case TABLES_ELEM:
+this.tablesParameterList=this.function.getTableParameterList();
+break;
+case TABLE_ELEM:
+this.theRecord=this.tablesParameterList.getTable(a.getValue(Web3.TABLE_NAME_ATTR));
+break;
+case ROW_ELEM:
+if (null != this.theRecord) {
+try {
+JCO.Table tmpTable=(JCO.Table)this.theRecord;
+tmpTable.appendRow();
+}
+ catch (ClassCastException x) {
+getLogger().error(""Not a table! "" + x.getMessage(),x);
+}
+}
+break;
+default :
+getLogger().error(""Invalid element "" + loc);
+}
+",0,39,7,,"SimpleName(MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, MethodInvocation-arguments, SwitchStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-expression, CastExpression-expression, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, CastExpression-expression, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-arguments, CastExpression-expression, MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+9,switch (c) {,"case 0:
+",0,0,1,,"NumberLiteral(SwitchCase-expression, ),
+"
+10,switch (c) {,"case ' ':
+",0,0,1,,"CharacterLiteral(SwitchCase-expression, ),
+"
+11,"switch ( cellJustif[Math.min( cellCount, cellJustif.length - 1 )] )","switch (cellJustif[Math.min(cellCount,cellJustif.length - 1)]) {
+case JUSTIFY_LEFT:
+  justif=""left"";
+break;
+case JUSTIFY_RIGHT:
+justif=""right"";
+break;
+case JUSTIFY_CENTER:
+default :
+justif=""center"";
+}
+",0,3,6,,"SimpleName(ArrayAccess-array, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, ArrayAccess-index, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayAccess-index, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ArrayAccess-index, SwitchStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, MethodInvocation-arguments, ArrayAccess-index, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ArrayAccess-index, SwitchStatement-expression, ),
+"
+12,switch ((e % 4 + 4) % 4) {,"switch ((e % 4 + 4) % 4) {
+case 0:
+  break;
+case 1:
+d=d.multiply(10);
+break;
+case 2:
+d=d.multiply(100);
+break;
+default :
+d=d.multiply(1000);
+}
+",0,0,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, SwitchStatement-expression, ),
+"
+13,switch (x.mant[mant.length - 1] / 2000) {,"switch (x.mant[mant.length - 1] / 2000) {
+case 0:
+  x.mant[mant.length - 1]=x.mant[mant.length - 1] / 2 + 1;
+break;
+case 2:
+x.mant[mant.length - 1]=1500;
+break;
+case 3:
+x.mant[mant.length - 1]=2200;
+break;
+default :
+x.mant[mant.length - 1]=3000;
+}
+",0,0,4,,"QualifiedName(ArrayAccess-array, InfixExpression-leftOperand, SwitchStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, ArrayAccess-index, InfixExpression-leftOperand, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, InfixExpression-leftOperand, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, SwitchStatement-expression, ),
+"
+14,switch (this.typeCode.kind().value()) {,"switch (this.typeCode.kind().value()) {
+case TCKind._tk_boolean:
+  data=((Boolean)value).toString();
+break;
+case TCKind._tk_char:
+char charValue=((Character)value).charValue();
+data=Byte.toString((byte)(charValue > Byte.MAX_VALUE ? charValue - UNSIGNED_MAX : charValue));
+break;
+case TCKind._tk_wchar:
+data=((Character)value).toString();
+break;
+case TCKind._tk_octet:
+data=((Byte)value).toString();
+break;
+case TCKind._tk_short:
+data=((Short)value).toString();
+break;
+case TCKind._tk_ushort:
+data=((Integer)value).toString();
+break;
+case TCKind._tk_long:
+data=((Integer)value).toString();
+break;
+case TCKind._tk_longlong:
+data=((Long)value).toString();
+break;
+case TCKind._tk_ulong:
+data=((Long)value).toString();
+break;
+case TCKind._tk_ulonglong:
+data=((java.math.BigInteger)value).toString();
+break;
+case TCKind._tk_float:
+if (((Float)value).equals(Float.NEGATIVE_INFINITY)) {
+data=""-INF"";
+}
+ else if (((Float)value).equals(Float.POSITIVE_INFINITY)) {
+data=""INF"";
+}
+ else {
+data=((Float)value).toString();
+}
+break;
+case TCKind._tk_double:
+if (((Double)value).equals(Double.NEGATIVE_INFINITY)) {
+data=""-INF"";
+}
+ else if (((Double)value).equals(Double.POSITIVE_INFINITY)) {
+data=""INF"";
+}
+ else {
+data=((Double)value).toString();
+}
+break;
+case TCKind._tk_string:
+case TCKind._tk_wstring:
+data=(String)value;
+break;
+default :
+data=value.toString();
+}
+",0,0,4,,"ThisExpression(FieldAccess-expression, MethodInvocation-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+"
+15,switch (buffer.charAt(--i)) {,"switch (buffer.charAt(--i)) {
+case '0':
+  continue;
+case '.':
+buffer.setLength(i);
+default :
+return;
+}
+",0,1,3,,"SimpleName(MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+SimpleName(PrefixExpression-operand, MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+16,switch (args[i].charAt(1)) {,"switch (args[i].charAt(1)) {
+case 'g':
+  tester.fGenerate=true;
+if (args.length > i + 1 && args[i + 1].charAt(0) != '-') {
+  try {
+    Integer.parseInt(args[i + 1]);
+    tester.setLogFile(System.err);
+  }
+ catch (  NumberFormatException e) {
+    tester.fOutputDirectory=args[++i];
+  }
+}
+break;
+case 'h':
+printUsage();
+return;
+case 'f':
+if (args.length > i + 1 && args[i + 1].charAt(0) != '-') {
+try {
+Integer.parseInt(args[i + 1]);
+tester.setLogFile(System.err);
+}
+ catch (NumberFormatException e) {
+try {
+tester.setLogFile(new PrintStream(new FileOutputStream(args[++i])));
+}
+ catch (IOException ioe) {
+System.err.println(""Couldn't open log file: "" + args[i]);
+}
+}
+}
+ else {
+tester.setLogFile(System.err);
+}
+break;
+default :
+System.err.println(""Unrecognized option: "" + args[i]);
+}
+",0,1,4,,"SimpleName(ArrayAccess-array, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+17,"switch (oaInterface_.findByKey(profileInfo.key, ior)) {","switch (oaInterface_.findByKey(profileInfo.key,ior)) {
+case org.apache.yoko.orb.OB.OAInterface.UNKNOWN_OBJECT:
+  down.setSystemException(new org.omg.CORBA.OBJECT_NOT_EXIST());
+break;
+case org.apache.yoko.orb.OB.OAInterface.OBJECT_HERE:
+org.apache.yoko.orb.CORBA.InputStream in=new org.apache.yoko.orb.CORBA.InputStream(buf,0,false);
+down.setNoException(in);
+break;
+case org.apache.yoko.orb.OB.OAInterface.OBJECT_FORWARD:
+down.setLocationForward(ior.value,false);
+break;
+case org.apache.yoko.orb.OB.OAInterface.OBJECT_FORWARD_PERM:
+down.setLocationForward(ior.value,true);
+break;
+default :
+Assert._OB_assert(false);
+}
+",0,4,4,,"SimpleName(MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+18,switch ((int)m_ceGetType.invoke(args[0])) {,"switch ((int)m_ceGetType.invoke(args[0])) {
+case 2:
+  m_loggerAdmin.updateConfiguration(configName,null);
+break;
+default :
+Object configObj=m_caGetConfiguration.invoke(m_ca,pid,location);
+Object propertiesObj=getProperties(configObj);
+m_loggerAdmin.updateConfiguration(configName,(Dictionary<String,Object>)propertiesObj);
+}
+",0,9,5,,"PrimitiveType(CastExpression-type, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, CastExpression-expression, SwitchStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-arguments, CastExpression-expression, SwitchStatement-expression, ),
+"
+19,switch (ioe instanceof SCMException ? ((SCMException) ioe).getResult() :,"switch (ioe instanceof SCMException ? ((SCMException)ioe).getResult() : IO_EXCEPTION) {
+case SAFE_MODE_EXCEPTION:
+  resultCode=ScmBlockLocationProtocolProtos.DeleteScmBlockResult.Result.safeMode;
+break;
+case FAILED_TO_FIND_BLOCK:
+resultCode=ScmBlockLocationProtocolProtos.DeleteScmBlockResult.Result.errorNotFound;
+break;
+default :
+resultCode=ScmBlockLocationProtocolProtos.DeleteScmBlockResult.Result.unknownFailure;
+}
+",0,0,5,,"SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, SwitchStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, SwitchStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, SwitchStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, SwitchStatement-expression, ),
+"
+20,switch(rows.rsMeta.getColumnType(i+1)) {,"switch (rows.rsMeta.getColumnType(i + 1)) {
+case Types.TINYINT:
+case Types.SMALLINT:
+case Types.INTEGER:
+case Types.BIGINT:
+case Types.REAL:
+case Types.FLOAT:
+case Types.DOUBLE:
+case Types.DECIMAL:
+case Types.NUMERIC:
+case Types.ROWID:
+  generator.writeNumber(vals[i]);
+break;
+case Types.BINARY:
+case Types.BLOB:
+case Types.VARBINARY:
+case Types.LONGVARBINARY:
+generator.writeString(vals[i]);
+break;
+case Types.NULL:
+generator.writeNull();
+break;
+case Types.BOOLEAN:
+generator.writeBoolean(Boolean.parseBoolean(vals[i]));
+break;
+default :
+generator.writeString(vals[i]);
+}
+",0,0,4,,"QualifiedName(MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+21,switch ((int)vals[i]) {,"switch ((int)vals[i]) {
+case INCOMPLETE:
+  assertTrue(result instanceof IncompleteCb);
+break;
+case DRL:
+assertFalse(result instanceof IncompleteCb);
+break;
+default :
+fail();
+}
+",0,0,3,,"PrimitiveType(CastExpression-type, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-array, CastExpression-expression, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-index, CastExpression-expression, SwitchStatement-expression, ),
+"
+22,switch (getWhenClauseOperation(whenClauses.get(whenClauseIdx)).getType()) {,"switch (getWhenClauseOperation(whenClauses.get(whenClauseIdx)).getType()) {
+case HiveParser.TOK_INSERT:
+  rewrittenCtx.addDestNamePrefix(insClauseIdx,Context.DestClausePrefix.INSERT);
+break;
+case HiveParser.TOK_UPDATE:
+if (!splitUpdateEarly) {
+rewrittenCtx.addDestNamePrefix(insClauseIdx,Context.DestClausePrefix.UPDATE);
+}
+ else {
+rewrittenCtx.addDestNamePrefix(insClauseIdx,Context.DestClausePrefix.INSERT);
+rewrittenCtx.addDestNamePrefix(++insClauseIdx,Context.DestClausePrefix.DELETE);
+}
+break;
+case HiveParser.TOK_DELETE:
+rewrittenCtx.addDestNamePrefix(insClauseIdx,Context.DestClausePrefix.DELETE);
+break;
+default :
+assert false;
+}
+",0,0,5,,"SimpleName(MethodInvocation-name, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+"
+23,switch ((String)ig.cluster().localNode().attribute(GRP_ATTR)) {,"switch ((String)ig.cluster().localNode().attribute(GRP_ATTR)) {
+case EVEN_GRP:
+  assertEquals(""Unexpected state"",EVICTED,locPart.state());
+break;
+case ODD_GRP:
+assertEquals(""Unexpected state"",OWNING,locPart.state());
+break;
+default :
+fail();
+}
+",0,0,6,,"SimpleName(SimpleType-name, CastExpression-type, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, CastExpression-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-arguments, CastExpression-expression, SwitchStatement-expression, ),
+"
+24,"switch (a.checkRetain(1, null)) {","switch (a.checkRetain(1,null)) {
+case INVALID_DOCUMENT:
+  assert a.checkFinish(null).isValid();
+return null;
+case VALID:
+distance=a.maxRetainItemCount();
+assert distance > 0;
+assert !a.checkFinish(null).isValid();
+break;
+case INVALID_SCHEMA:
+case ILL_FORMED:
+assert false;
+default :
+throw new RuntimeException(""Unexpected validation result"");
+}
+",0,0,4,,"SimpleName(MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, SwitchStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+25,"switch (bundle.getString(prefix + ""HorizontalAlignment"").toLowerCase(Locale.US)) {","switch (bundle.getString(prefix + ""HorizontalAlignment"").toLowerCase(Locale.US)) {
+case ""left"":
+  horizontalAlignment=SwingConstants.LEFT;
+break;
+case ""center"":
+horizontalAlignment=SwingConstants.CENTER;
+break;
+case ""right"":
+horizontalAlignment=SwingConstants.RIGHT;
+break;
+default :
+Util.err.warning(""Invalid horizontal alignment for splash screen text box"");
+}
+",0,2,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, MethodInvocation-expression, SwitchStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+26,switch ( getXMLLiteralContentState(getStringLiteral(exprs.elementAt(i-1)) ) ),"switch (getXMLLiteralContentState(getStringLiteral(exprs.elementAt(i - 1)))) {
+case TagStart:
+  result[i]=XMLContentState.TagName;
+break;
+case Attr:
+result[i]=XMLContentState.Value;
+break;
+case Value:
+result[i]=XMLContentState.Attr;
+break;
+default :
+result[i]=XMLContentState.ContentExpression;
+}
+",0,1,6,,"SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+27,switch(getCurrentPath().getParentPath().getLeaf().getKind()) {,"switch (getCurrentPath().getParentPath().getLeaf().getKind()) {
+case IF:
+  spaceWithinParens=cs.spaceWithinIfParens();
+break;
+case FOR_LOOP:
+spaceWithinParens=cs.spaceWithinForParens();
+break;
+case DO_WHILE_LOOP:
+case WHILE_LOOP:
+spaceWithinParens=cs.spaceWithinWhileParens();
+break;
+case SWITCH:
+spaceWithinParens=cs.spaceWithinSwitchParens();
+break;
+case SYNCHRONIZED:
+spaceWithinParens=cs.spaceWithinSynchronizedParens();
+break;
+case VARIABLE:
+spaceWithinParens=cs.spaceWithinSwitchParens();
+break;
+default :
+spaceWithinParens=cs.spaceWithinParens();
+if (cs.alignMultilineParenthesized()) {
+indent=col;
+continuationIndent=false;
+}
+}
+",0,0,4,,"SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+"
+28,switch (Arrays.asList(knownLFs).indexOf(UIManager.getLookAndFeel().getID())) {,"switch (Arrays.asList(knownLFs).indexOf(UIManager.getLookAndFeel().getID())) {
+case 1:
+  if (UIUtils.isXPLF()) {
+    if (isWindows8() || isWindows10()) {
+      result=new Windows8LFCustoms();
+    }
+ else     if (isWindowsVista() || isWindows7()) {
+      result=new VistaLFCustoms();
+    }
+ else {
+      result=new XPLFCustoms();
+    }
+  }
+ else {
+    result=new WindowsLFCustoms();
+  }
+break;
+case 0:
+result=new MetalLFCustoms();
+break;
+case 2:
+result=new AquaLFCustoms();
+break;
+case 3:
+result=new GtkLFCustoms();
+break;
+case 4:
+result=new NimbusLFCustoms();
+break;
+default :
+if (UIUtils.isXPLF()) {
+if (isWindows8() || isWindows10()) {
+result=new Windows8LFCustoms();
+}
+ else if (isWindowsVista() || isWindows7()) {
+result=new VistaLFCustoms();
+}
+ else {
+result=new XPLFCustoms();
+}
+}
+ else {
+if (UIManager.getLookAndFeel() instanceof MetalLookAndFeel) {
+result=new MetalLFCustoms();
+}
+ else {
+result=new WindowsLFCustoms();
+}
+}
+}
+",0,1,7,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+29,switch (p - empty[d]) {,"switch (p - empty[d]) {
+case 0:
+  continue;
+case 1:
+source[d]=size[d] - cornerSize;
+}
+",0,0,3,,"SimpleName(InfixExpression-leftOperand, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-rightOperand, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-rightOperand, SwitchStatement-expression, ),
+"
+30,switch (end - start - length) {,"switch (end - start - length) {
+case 0:
+{
+    isRecognized=true;
+    isLegacy=LEGACY_MASK;
+    break;
+  }
+case 1:
+{
+  final char c=code.charAt(end - 1);
+  isRecognized=(c >= '1' && c <= '2');
+  if (c == '1') {
+    isLegacy=LEGACY_MASK;
+  }
+}
+}
+",0,0,3,,"SimpleName(InfixExpression-leftOperand, SwitchStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, SwitchStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, SwitchStatement-expression, ),
+"
+31,switch (t & Frame.BASE_KIND) {,"switch (t & Frame.BASE_KIND) {
+case Frame.OBJECT:
+  stackMap.putByte(7).putShort(cw.newClass(cw.typeTable[v].strVal1));
+break;
+case Frame.UNINITIALIZED:
+stackMap.putByte(8).putShort(cw.typeTable[v].intVal);
+break;
+default :
+stackMap.putByte(v);
+}
+",0,0,2,,"SimpleName(InfixExpression-leftOperand, SwitchStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, SwitchStatement-expression, ),
+"
+32,switch (fNodeType[i][CHUNK_SIZE]) {,"switch (fNodeType[i][CHUNK_SIZE]) {
+case DocumentImpl.ELEMENT_DEFINITION_NODE:
+{
+    System.out.print(""EDef"");
+    break;
+  }
+case Node.DOCUMENT_NODE:
+{
+  System.out.print(""Doc"");
+  break;
+}
+case Node.DOCUMENT_TYPE_NODE:
+{
+System.out.print(""DType"");
+break;
+}
+case Node.COMMENT_NODE:
+{
+System.out.print(""Com"");
+break;
+}
+case Node.PROCESSING_INSTRUCTION_NODE:
+{
+System.out.print(""PI"");
+break;
+}
+case Node.ELEMENT_NODE:
+{
+System.out.print(""Elem"");
+break;
+}
+case Node.ENTITY_NODE:
+{
+System.out.print(""Ent"");
+break;
+}
+case Node.ENTITY_REFERENCE_NODE:
+{
+System.out.print(""ERef"");
+break;
+}
+case Node.TEXT_NODE:
+{
+System.out.print(""Text"");
+break;
+}
+case Node.ATTRIBUTE_NODE:
+{
+System.out.print(""Attr"");
+break;
+}
+case DeferredNode.TYPE_NODE:
+{
+System.out.print(""TypeInfo"");
+break;
+}
+default :
+{
+System.out.print(""?"" + fNodeType[i][CHUNK_SIZE]);
+}
+}
+",0,0,3,,"SimpleName(ArrayAccess-array, ArrayAccess-array, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-index, ArrayAccess-array, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-index, SwitchStatement-expression, ),
+"
+33,"switch (hashType.substring(hashType.indexOf(""-"")+1)) {","switch (hashType.substring(hashType.indexOf(""-"") + 1)) {
+case ""SHA256"":
+  hashType=""PBKDF2WithHmacSHA256"";
+break;
+case ""SHA384"":
+hashType=""PBKDF2WithHmacSHA384"";
+break;
+case ""SHA512"":
+hashType=""PBKDF2WithHmacSHA512"";
+break;
+default :
+hashType=""PBKDF2WithHmacSHA1"";
+}
+",1,4649,6,,"SimpleName(MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, SwitchStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+34,switch (transformer.getQuery(query_index - 1).current_state) {,"switch (transformer.getQuery(query_index - 1).current_state) {
+case LDAPTransformer.STATE_INSIDE_FILTER_ELEMENT:
+  StringBuffer temp=new StringBuffer(transformer.getQuery(query_index - 1).filter);
+if (temp.length() > 0) {
+  temp.append("", "");
+}
+temp.append(attrID).append(""="").append(attrVal);
+transformer.getQuery(query_index - 1).filter=temp.toString();
+break;
+default :
+transformer.start(attrID,attr);
+}
+",1,3,5,,"SimpleName(MethodInvocation-expression, FieldAccess-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, FieldAccess-expression, SwitchStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, FieldAccess-expression, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, FieldAccess-expression, SwitchStatement-expression, ),
+SimpleName(FieldAccess-name, SwitchStatement-expression, ),
+"
+35,"switch (first = Character.digit(pattern[index], 8)) {","switch (first=Character.digit(pattern[index],8)) {
+case -1:
+  throw new PatternSyntaxException(Messages.getString(""regex.19""),this.toString(),index);
+default :
+{
+  if (first > 3)   max--;
+  nextIndex();
+  res=first;
+}
+}
+",1,5,6,,"SimpleName(Assignment-leftHandSide, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, Assignment-rightHandSide, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-arguments, Assignment-rightHandSide, SwitchStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, Assignment-rightHandSide, SwitchStatement-expression, ),
+"
+36,switch ((int)i.id) {,"switch ((int)i.id) {
+case PC_ID:
+  if (!STRING.equals(i.optionalString)) {
+    fail(ASSERTION_FAILED,""Wrong string value: "" + i.optionalString);
+  }
+break;
+case PC_EMPTY_ID:
+case PC_NULL_ID:
+case REFERENCED_PC1_ID:
+case REFERENCED_PC2_ID:
+assertEquals(""NotPresent"",i.optionalString);
+break;
+default :
+fail(ASSERTION_FAILED,""Wrong object id: "" + i.id);
+}
+",1,1,2,,"PrimitiveType(CastExpression-type, SwitchStatement-expression, ),
+QualifiedName(CastExpression-expression, SwitchStatement-expression, ),
+"
+37,switch (((FilterPredicate<C>) child).matches(evaluator)) {,"switch (((FilterPredicate<C>)child).matches(evaluator)) {
+case NONE:
+  return RowsMatch.NONE;
+case SOME:
+resultMatch=RowsMatch.SOME;
+default :
+}
+",1,1,5,,"SimpleName(SimpleType-name, ParameterizedType-type, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-arguments, SwitchStatement-expression, ),
+"
+38,for (JavaEEProfile sdkProfile : sdkProfiles) switch(sdkProfile) {,"switch (sdkProfile) {
+case v1_2:
+  size--;
+}
+",1,1,1,,"SimpleName(SwitchStatement-expression, EnhancedForStatement-body, ),
+"
+39,switch (coefficients != null ? coefficients.length : -1) {,"switch (coefficients != null ? coefficients.length : -1) {
+case 2:
+  scale=coefficients[1];
+case 1:
+offset=coefficients[0];
+case 0:
+break;
+default :
+throw new IncommensurableException(Resources.format(Resources.Keys.NonLinearUnitConversion_2,sourceUnit,targetUnit));
+}
+",1,1,4,,"SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, SwitchStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, SwitchStatement-expression, ),
+QualifiedName(ConditionalExpression-thenExpression, SwitchStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, ConditionalExpression-elseExpression, SwitchStatement-expression, ),
+"
+40,switch (status[0].getCode()) {,"switch (status[0].getCode()) {
+case IStatus.CANCEL:
+  return true;
+case IStatus.OK:
+case IStatus.INFO:
+IvyDEMessage.info(""Successful resolve of "" + request);
+break;
+case IStatus.ERROR:
+IvyDEMessage.warn(""Error on resolve of "" + request + "": ""+ status[0].getMessage());
+request.setResolveFailed(true);
+errorsStatus.add(status[0]);
+break;
+default :
+IvyPlugin.logWarn(""Unknown IStatus: "" + status[0].getCode());
+}
+",2,11,3,,"SimpleName(ArrayAccess-array, MethodInvocation-expression, SwitchStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+"
+41,switch ((int)length & 15) {,"switch ((int)length & 15) {
+case 15:
+  k2=(PlatformDependent.getByte(roundedEnd + 14) & 0xffL) << 48;
+case 14:
+k2^=(PlatformDependent.getByte(roundedEnd + 13) & 0xffL) << 40;
+case 13:
+k2^=(PlatformDependent.getByte(roundedEnd + 12) & 0xffL) << 32;
+case 12:
+k2^=(PlatformDependent.getByte(roundedEnd + 11) & 0xffL) << 24;
+case 11:
+k2^=(PlatformDependent.getByte(roundedEnd + 10) & 0xffL) << 16;
+case 10:
+k2^=(PlatformDependent.getByte(roundedEnd + 9) & 0xffL) << 8;
+case 9:
+k2^=(PlatformDependent.getByte(roundedEnd + 8) & 0xffL);
+k2*=c2;
+k2=Long.rotateLeft(k2,33);
+k2*=c1;
+h2^=k2;
+case 8:
+k1=(long)PlatformDependent.getByte(roundedEnd + 7) << 56;
+case 7:
+k1^=(PlatformDependent.getByte(roundedEnd + 6) & 0xffL) << 48;
+case 6:
+k1^=(PlatformDependent.getByte(roundedEnd + 5) & 0xffL) << 40;
+case 5:
+k1^=(PlatformDependent.getByte(roundedEnd + 4) & 0xffL) << 32;
+case 4:
+k1^=(PlatformDependent.getByte(roundedEnd + 3) & 0xffL) << 24;
+case 3:
+k1^=(PlatformDependent.getByte(roundedEnd + 2) & 0xffL) << 16;
+case 2:
+k1^=(PlatformDependent.getByte(roundedEnd + 1) & 0xffL) << 8;
+case 1:
+k1^=(PlatformDependent.getByte(roundedEnd) & 0xffL);
+k1*=c1;
+k1=Long.rotateLeft(k1,31);
+k1*=c2;
+h1^=k1;
+}
+",2,5,3,,"PrimitiveType(CastExpression-type, InfixExpression-leftOperand, SwitchStatement-expression, ),
+SimpleName(CastExpression-expression, InfixExpression-leftOperand, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, SwitchStatement-expression, ),
+"
+42,switch ((char)key.getBytes()[0]) {,"switch ((char)key.getBytes()[0]) {
+case 'A':
+  vlen=getValLen(++aKey,nMaps) - 128;
+vcCheck=aKey;
+break;
+case 'B':
+vlen=getValLen(++bKey,nMaps);
+vcCheck=bKey;
+break;
+default :
+vlen=vcCheck=-1;
+fail(""Unexpected tag on record: "" + ((char)key.getBytes()[24]));
+}
+",2,2,4,,"PrimitiveType(CastExpression-type, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, ArrayAccess-array, CastExpression-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayAccess-array, CastExpression-expression, SwitchStatement-expression, ),
+NumberLiteral(ArrayAccess-index, CastExpression-expression, SwitchStatement-expression, ),
+"
+43,"switch (((Integer) elementNames.get(name, defaultElement)).intValue()) {","switch (((Integer)elementNames.get(name,defaultElement)).intValue()) {
+case ELEMENT_INPUT:
+  this.startInputElement(uri,name,raw,attr);
+break;
+case ELEMENT_SELECT:
+this.startSelectElement(uri,name,raw,attr);
+break;
+case ELEMENT_OPTION:
+this.startOptionElement(uri,name,raw,attr);
+break;
+case ELEMENT_TXTAREA:
+this.startTextareaElement(uri,name,raw,attr);
+break;
+case ELEMENT_ERROR:
+this.startErrorElement(uri,name,raw,attr);
+break;
+case ELEMENT_FORM:
+this.startFormElement(uri,name,raw,attr);
+break;
+case ELEMENT_REPEAT:
+this.startRepeatElement(uri,name,raw,attr);
+break;
+default :
+this.relayStartElement(uri,name,raw,attr);
+}
+",3,12,6,,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-arguments, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-arguments, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+"
+44,switch (argDesc_[i].mode) {,"switch (argDesc_[i].mode) {
+case 0:
+  pl[i].mode=org.omg.CORBA.ParameterMode.PARAM_IN;
+fillAny(pl[i].argument,argDesc_[i]);
+break;
+case 1:
+pl[i].mode=org.omg.CORBA.ParameterMode.PARAM_OUT;
+if (resultAvail_) fillAny(pl[i].argument,argDesc_[i]);
+break;
+case 2:
+pl[i].mode=org.omg.CORBA.ParameterMode.PARAM_INOUT;
+fillAny(pl[i].argument,argDesc_[i]);
+break;
+default :
+org.apache.yoko.orb.OB.Assert._OB_assert(false);
+}
+",3,3,3,,"SimpleName(ArrayAccess-array, FieldAccess-expression, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-index, FieldAccess-expression, SwitchStatement-expression, ),
+SimpleName(FieldAccess-name, SwitchStatement-expression, ),
+"
+45,switch (offset + length - index) {,"switch (offset + length - index) {
+case 3:
+  k1^=data[index + 2] << 16;
+case 2:
+k1^=data[index + 1] << 8;
+case 1:
+k1^=data[index];
+k1*=C1_32;
+k1=Integer.rotateLeft(k1,R1_32);
+k1*=C2_32;
+hash^=k1;
+}
+",5,5,3,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, SwitchStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, SwitchStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, SwitchStatement-expression, ),
+"
+46,switch (record.get(Field.REGION_NAME).asString()) {,"switch (record.get(Field.REGION_NAME).asString()) {
+case ""table1,,1.00000000000000000000000000000000."":
+  assertRecordInRegionMode(record,""default"",""1"","""",""table1"",""00000000000000000000000000000000"",""host1:1000"",""host1.apache.com,1000,1"",0L,0L,0L,0L,new Size(100,Size.Unit.MEGABYTE),new Size(200,Size.Unit.MEGABYTE),1,new Size(100,Size.Unit.MEGABYTE),0.1f,"""",100L,100L,100f,""2019-07-22 00:00:00"");
+break;
+case ""table1,1,4.00000000000000000000000000000003."":
+assertRecordInRegionMode(record,""default"",""4"","""",""table1"",""00000000000000000000000000000003"",""host2:1001"",""host2.apache.com,1001,2"",0L,0L,0L,0L,new Size(100,Size.Unit.MEGABYTE),new Size(200,Size.Unit.MEGABYTE),1,new Size(100,Size.Unit.MEGABYTE),0.4f,""1"",100L,50L,50f,""2019-07-22 00:00:03"");
+break;
+case ""table2,,5.00000000000000000000000000000004."":
+assertRecordInRegionMode(record,""default"",""5"","""",""table2"",""00000000000000000000000000000004"",""host2:1001"",""host2.apache.com,1001,2"",0L,0L,0L,0L,new Size(200,Size.Unit.MEGABYTE),new Size(400,Size.Unit.MEGABYTE),2,new Size(200,Size.Unit.MEGABYTE),0.5f,"""",200L,150L,75f,""2019-07-22 00:00:04"");
+break;
+case ""table2,1,2.00000000000000000000000000000001."":
+assertRecordInRegionMode(record,""default"",""2"","""",""table2"",""00000000000000000000000000000001"",""host1:1000"",""host1.apache.com,1000,1"",0L,0L,0L,0L,new Size(200,Size.Unit.MEGABYTE),new Size(400,Size.Unit.MEGABYTE),2,new Size(200,Size.Unit.MEGABYTE),0.2f,""1"",200L,50L,25f,""2019-07-22 00:00:01"");
+break;
+case ""namespace:table3,,6.00000000000000000000000000000005."":
+assertRecordInRegionMode(record,""namespace"",""6"","""",""table3"",""00000000000000000000000000000005"",""host2:1001"",""host2.apache.com,1001,2"",0L,0L,0L,0L,new Size(300,Size.Unit.MEGABYTE),new Size(600,Size.Unit.MEGABYTE),3,new Size(300,Size.Unit.MEGABYTE),0.6f,"""",300L,200L,66.66667f,""2019-07-22 00:00:05"");
+break;
+case ""namespace:table3,,3_0001.00000000000000000000000000000002."":
+assertRecordInRegionMode(record,""namespace"",""3"",""1"",""table3"",""00000000000000000000000000000002"",""host1:1000"",""host1.apache.com,1000,1"",0L,0L,0L,0L,new Size(300,Size.Unit.MEGABYTE),new Size(600,Size.Unit.MEGABYTE),3,new Size(300,Size.Unit.MEGABYTE),0.3f,"""",300L,100L,33.333336f,""2019-07-22 00:00:02"");
+break;
+default :
+fail();
+}
+",5,5,4,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, SwitchStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+"
+47,case START: switch (cl) {,"case START:
+",5,5,1,,"SimpleName(SwitchCase-expression, ),
+"
+48,switch((Integer)t.get(0)),"switch ((Integer)t.get(0)) {
+case 1:
+  Assert.assertEquals(1,t.get(1));
+break;
+case 2:
+Assert.assertEquals(2,t.get(1));
+break;
+case 3:
+Assert.assertEquals(3,t.get(1));
+break;
+case 4:
+Assert.assertEquals(null,t.get(1));
+break;
+case 5:
+Assert.assertEquals(1,t.get(1));
+break;
+case 6:
+Assert.assertEquals(1,t.get(1));
+break;
+default :
+Assert.fail(""Did not expect: "" + t.get(1));
+}
+",6,6,4,,"SimpleName(SimpleType-name, CastExpression-type, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, SwitchStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, CastExpression-expression, SwitchStatement-expression, ),
+"
+49,switch (tableColumnTypes[column -1]),"switch (tableColumnTypes[column - 1]) {
+case java.sql.Types.BLOB:
+  colType=java.sql.Types.BLOB;
+break;
+case java.sql.Types.CLOB:
+colType=java.sql.Types.CLOB;
+break;
+case java.sql.Types.LONGVARBINARY:
+colType=java.sql.Types.LONGVARBINARY;
+break;
+case java.sql.Types.VARBINARY:
+colType=java.sql.Types.VARBINARY;
+break;
+case java.sql.Types.BINARY:
+colType=java.sql.Types.BINARY;
+break;
+case java.sql.Types.JAVA_OBJECT:
+colType=java.sql.Types.JAVA_OBJECT;
+break;
+default :
+colType=java.sql.Types.VARCHAR;
+}
+",9,9,3,,"SimpleName(ArrayAccess-array, SwitchStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, SwitchStatement-expression, ),
+"
+50,switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {,"switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
+case 4:
+{
+    sb=null;
+    sb=new StringBuilder();
+    yybegin(STRING_BEGIN);
+  }
+case 24:
+break;
+case 11:
+{
+sb.append(yytext());
+}
+case 25:
+break;
+case 5:
+{
+return new Yytoken(Yytoken.Types.LEFT_BRACE,null);
+}
+case 26:
+break;
+case 16:
+{
+sb.append('\b');
+}
+case 27:
+break;
+case 23:
+{
+try {
+int ch=Integer.parseInt(yytext().substring(2),16);
+sb.append((char)ch);
+}
+ catch (Exception e) {
+throw new DeserializationException(yychar,DeserializationException.Problems.UNEXPECTED_EXCEPTION,e);
+}
+}
+case 28:
+break;
+case 22:
+{
+Boolean val=Boolean.valueOf(yytext());
+return new Yytoken(Yytoken.Types.DATUM,val);
+}
+case 29:
+break;
+case 12:
+{
+sb.append('\\');
+}
+case 30:
+break;
+case 10:
+{
+return new Yytoken(Yytoken.Types.COLON,null);
+}
+case 31:
+break;
+case 9:
+{
+return new Yytoken(Yytoken.Types.COMMA,null);
+}
+case 32:
+break;
+case 21:
+{
+return new Yytoken(Yytoken.Types.DATUM,null);
+}
+case 33:
+break;
+case 19:
+{
+sb.append('\r');
+}
+case 34:
+break;
+case 15:
+{
+sb.append('/');
+}
+case 35:
+break;
+case 2:
+{
+java.math.BigDecimal val=new java.math.BigDecimal(yytext());
+return new Yytoken(Yytoken.Types.DATUM,val);
+}
+case 36:
+break;
+case 14:
+{
+sb.append('""');
+}
+case 37:
+break;
+case 8:
+{
+return new Yytoken(Yytoken.Types.RIGHT_SQUARE,null);
+}
+case 38:
+break;
+case 17:
+{
+sb.append('\f');
+}
+case 39:
+break;
+case 1:
+{
+throw new DeserializationException(yychar,DeserializationException.Problems.UNEXPECTED_CHARACTER,new Character(yycharat(0)));
+}
+case 40:
+break;
+case 6:
+{
+return new Yytoken(Yytoken.Types.RIGHT_BRACE,null);
+}
+case 41:
+break;
+case 20:
+{
+sb.append('\t');
+}
+case 42:
+break;
+case 7:
+{
+return new Yytoken(Yytoken.Types.LEFT_SQUARE,null);
+}
+case 43:
+break;
+case 18:
+{
+sb.append('\n');
+}
+case 44:
+break;
+case 13:
+{
+yybegin(YYINITIAL);
+return new Yytoken(Yytoken.Types.DATUM,sb.toString());
+}
+case 45:
+break;
+case 3:
+{
+}
+case 46:
+break;
+default :
+if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
+zzAtEOF=true;
+return null;
+}
+ else {
+zzScanError(ZZ_NO_MATCH);
+}
+}
+",18,18,5,,"SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, SwitchStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, SwitchStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-array, ConditionalExpression-elseExpression, SwitchStatement-expression, ),
+SimpleName(ArrayAccess-index, ConditionalExpression-elseExpression, SwitchStatement-expression, ),
+"
+51,switch(5 - l.size()),"switch (5 - l.size()) {
+case 0:
+  o.setDeliveryCount((UnsignedInteger)l.get(4));
+case 1:
+o.setFirstAcquirer((Boolean)l.get(3));
+case 2:
+o.setTtl((UnsignedInteger)l.get(2));
+case 3:
+o.setPriority((UnsignedByte)l.get(1));
+case 4:
+o.setDurable((Boolean)l.get(0));
+}
+",20,20,3,,"NumberLiteral(InfixExpression-leftOperand, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, SwitchStatement-expression, ),
+"
+52,switch ((jj_ntk == -1) ? jj_ntk() : jj_ntk) {,"switch ((jj_ntk == -1) ? jj_ntk() : jj_ntk) {
+case PARAMETER_NAME:
+  name=ParameterName();
+jj_consume_token(1);
+break;
+default :
+jj_la1[3]=jj_gen;
+;
+}
+",100,101,4,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, SwitchStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, SwitchStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, SwitchStatement-expression, ),
+"

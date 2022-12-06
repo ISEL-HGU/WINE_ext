@@ -1,0 +1,262 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"Assert.assertFalse(new Ternary<String, String, String>(""a"", ""b"", ""c"").equals(null));","Assert.assertFalse(new Ternary<String,String,String>(""a"",""b"",""c"").equals(null));
+",0,379,11,581,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,Predicate predicate = new PredicateBuilder(),"Predicate predicate=new PredicateBuilder().property(RequestResourceProvider.REQUEST_CLUSTER_NAME_PROPERTY_ID).equals(""foo_cluster"").and().property(RequestResourceProvider.REQUEST_ID_PROPERTY_ID).equals(null).and().property(RequestResourceProvider.REQUEST_STATUS_PROPERTY_ID).equals(null).toPredicate();
+",0,0,3,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+3,"assertThat( ""simpleComposite is not equal to null"", simpleComposite.equals( null ), equalTo( false ) );","assertThat(""simpleComposite is not equal to null"",simpleComposite.equals(null),equalTo(false));
+",0,21,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+4,if (null != reqHead && !reqHead.equals(null)) {,"if (null != reqHead && !reqHead.equals(null)) {
+  resp.header(""Access-Control-Allow-Headers"",reqHead);
+}
+",0,7,5,,"NullLiteral(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+5,"assertTrue(""equals(null) returned true."", !getMap().equals(null));","assertTrue(""equals(null) returned true."",!getMap().equals(null));
+",0,85,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+6,assertTrue(inv0.equals(null) == false);,"assertTrue(inv0.equals(null) == false);
+",0,0,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+7,Assert.assertFalse(OAuth2TokenPersistenceTest.accessToken.equals(null));,"Assert.assertFalse(OAuth2TokenPersistenceTest.accessToken.equals(null));
+",0,1,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+8,assertTrue(!new ComparableComparator<Integer>().equals(null));,"assertTrue(!new ComparableComparator<Integer>().equals(null));
+",0,0,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-expression, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+9,"assertTrue(!((CompositeBinaryFunction<?,?,?>)f).equals(null));","assertTrue(!((CompositeBinaryFunction<?,?,?>)f).equals(null));
+",0,1,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+WildcardType(ParameterizedType-typeArguments, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+WildcardType(ParameterizedType-typeArguments, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+WildcardType(ParameterizedType-typeArguments, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+10,"Assertions.assertFalse(obj.equals(null), ""Object should not equal null"");","Assertions.assertFalse(obj.equals(null),""Object should not equal null"");
+",0,0,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+11,"assertFalse( new IdName( 1, ""foo"" ).equals( null ) );","assertFalse(new IdName(1,""foo"").equals(null));
+",0,2,6,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+12,final boolean result = requestMock.equals(null);,"final boolean result=requestMock.equals(null);
+",0,1,6,,"Modifier(VariableDeclarationStatement-modifiers, ),
+PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+13,"MatcherAssert.assertThat(tv1.equals(null), CoreMatchers.equalTo(false));","MatcherAssert.assertThat(tv1.equals(null),CoreMatchers.equalTo(false));
+",0,1,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+14,"TUnit.assertThat(() -> gm.findPerNodeGossipData(myId, key)).equals(null);","TUnit.assertThat(() -> gm.findPerNodeGossipData(myId,key)).equals(null);
+",0,1,8,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, LambdaExpression-body, MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, LambdaExpression-body, MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, LambdaExpression-body, MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, LambdaExpression-body, MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+15,"assertFalse( I[0] + "" should not equal null"", I[0].equals( null ) );","assertFalse(I[0] + "" should not equal null"",I[0].equals(null));
+",0,3,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+16,"assertEquals(""triple, null"",   triples[0].equals(null), false);","assertEquals(""triple, null"",triples[0].equals(null),false);
+",0,0,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+17,"assertFalse( newArtifactVersion( ""1"" ).equals( null ) );","assertFalse(newArtifactVersion(""1"").equals(null));
+",0,0,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+18,return v == null || v.equals(null) ? 0 : 1;,"return v == null || v.equals(null) ? 0 : 1;
+",0,1,7,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+NumberLiteral(ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+19,"if(adminUsername.equals(null) || adminUsername.equals("""") || adminPassword.equals(null) || adminPassword.equals("""")){","if (adminUsername.equals(null) || adminUsername.equals("""") || adminPassword.equals(null)|| adminPassword.equals("""")) {
+  throw new WookieConnectorException(""Either the wookie username or password is not defined in portal.properties"",null);
+}
+",1,1,12,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, IfStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-extendedOperands, IfStatement-expression, ),
+"
+20,assert (!o1.equals(null));,"assert (!o1.equals(null));
+",1,1,3,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, ParenthesizedExpression-expression, AssertStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, ParenthesizedExpression-expression, AssertStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, PrefixExpression-operand, ParenthesizedExpression-expression, AssertStatement-expression, ),
+"
+21,"assertEquals(exception, assertThrows(UncheckedIOException.class, () -> brokenWriter.equals(null)).getCause());","assertEquals(exception,assertThrows(UncheckedIOException.class,() -> brokenWriter.equals(null)).getCause());
+",1,10,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, LambdaExpression-body, MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, LambdaExpression-body, MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, LambdaExpression-body, MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+22,"if (value == null || value.equals(null)) { return ""null""; }","if (value == null || value.equals(null)) {
+  return ""null"";
+}
+",1,2,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(ReturnStatement-expression, Block-statements, IfStatement-thenStatement, ),
+"
+23,Shape outline1 = equals[0].getOutline(null);,"Shape outline1=equals[0].getOutline(null);
+",1,1,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+24,"assertTrue(""return true for null comparison"", !u1.equals(null));","assertTrue(""return true for null comparison"",!u1.equals(null));
+",1,1,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+25,assertFalse(new ECFieldFp(BigInteger.valueOf(23L)).equals(null));,"assertFalse(new ECFieldFp(BigInteger.valueOf(23L)).equals(null));
+",1,4,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+26,else if(!user.equals(null)&& !password.equals(null)){,"if (!user.equals(null) && !password.equals(null)) {
+  credsProvider.setCredentials(AuthScope.ANY,new UsernamePasswordCredentials(user,password));
+}
+ else if (!auth.equals(null)) {
+}
+",1,1,6,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+27,if (array1.equals(null) || array2.equals(null)),"if (array1.equals(null) || array2.equals(null)) return false;
+",1,1,6,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+28,final boolean result = OAuth2ClientTest.client1.equals(null);,"final boolean result=OAuth2ClientTest.client1.equals(null);
+",1,1,6,,"Modifier(VariableDeclarationStatement-modifiers, ),
+PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+QualifiedName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+29,"Assert.assertFalse(""Object should not be equals to NULL"", bucket.equals(null));","Assert.assertFalse(""Object should not be equals to NULL"",bucket.equals(null));
+",3,3,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+30,"assertEquals(false, obj.equals(null));","assertEquals(false,obj.equals(null));
+",7,7,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

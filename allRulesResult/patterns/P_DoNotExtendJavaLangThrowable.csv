@@ -1,0 +1,9 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"static class Mc009\u0576\u06C0\u06F1 extends Throwable implements java.io.Serializable, Cloneable {private static final long serialVersionUID = 0L;};","private static final long serialVersionUID=0L;
+",0,0,6,1,"Modifier(FieldDeclaration-modifiers, TypeDeclaration-bodyDeclarations, ),
+Modifier(FieldDeclaration-modifiers, TypeDeclaration-bodyDeclarations, ),
+Modifier(FieldDeclaration-modifiers, TypeDeclaration-bodyDeclarations, ),
+PrimitiveType(FieldDeclaration-type, TypeDeclaration-bodyDeclarations, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, TypeDeclaration-bodyDeclarations, ),
+NumberLiteral(VariableDeclarationFragment-initializer, FieldDeclaration-fragments, TypeDeclaration-bodyDeclarations, ),
+"

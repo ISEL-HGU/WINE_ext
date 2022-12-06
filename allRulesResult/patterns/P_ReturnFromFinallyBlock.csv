@@ -1,0 +1,75 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"return new StopAnswer(command, ""Stop VM "" + vmName + "" Succeed"", platformstring, true);","return new StopAnswer(command,""Stop VM "" + vmName + "" Succeed"",platformstring,true);
+",0,53,7,180,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+BooleanLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+2,if (this.closed) return;,"if (this.closed) return;
+",0,42,3,,"ThisExpression(FieldAccess-expression, IfStatement-expression, ),
+SimpleName(FieldAccess-name, IfStatement-expression, ),
+ReturnStatement(IfStatement-thenStatement, ),
+"
+3,"return delegate.handleResponse(httpResponse, trafficCop);","return delegate.handleResponse(httpResponse,trafficCop);
+",0,12,4,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+4,"return new LoadedSnapshot(snapshot, settings, null, profiledProject);","return new LoadedSnapshot(snapshot,settings,null,profiledProject);
+",0,3,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NullLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+5,"return new TaskResult(TaskResult.Status.FAILED,""Cannot delete jobs mapping for job : "" + jobUri);","return new TaskResult(TaskResult.Status.FAILED,""Cannot delete jobs mapping for job : "" + jobUri);
+",0,0,4,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+6,return (runner.getException() instanceof AbortProcessingException);,"return (runner.getException() instanceof AbortProcessingException);
+",0,0,3,,"SimpleName(MethodInvocation-expression, InstanceofExpression-leftOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InstanceofExpression-leftOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+"
+7,return new byte[0];,"return new byte[0];
+",1,2,3,,"PrimitiveType(ArrayType-elementType, ArrayCreation-type, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, ReturnStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, ReturnStatement-expression, ),
+"
+8,if (currentFileRead != null) return;,"if (currentFileRead != null) return;
+",1,1,3,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+ReturnStatement(IfStatement-thenStatement, ),
+"
+9,"return ""Connection error: "" + e.getMessage();","return ""Connection error: "" + e.getMessage();
+",1,1,3,,"StringLiteral(InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+10,"return new Response(RpcType.CATALOGS, respBuilder.build());","return new Response(RpcType.CATALOGS,respBuilder.build());
+",3,4,4,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+11,finally             { return false; },"return false;
+",5,5,1,,"BooleanLiteral(ReturnStatement-expression, Block-statements, ),
+"
+12,try { p1.shutdown(); } catch(SecurityException ok) { return; },"try {
+  p1.shutdown();
+}
+ catch (SecurityException ok) {
+  return;
+}
+",17,19,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+ReturnStatement(Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+"

@@ -1,0 +1,115 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,if (replyTo != null && consumer.getEndpoint().getDestinationName().equals(replyTo)) {,"if (replyTo != null && consumer.getEndpoint().getDestinationName().equals(replyTo)) {
+  throw new IllegalArgumentException(""Invalid Endpoint configuration: "" + consumer.getEndpoint() + "". ReplyTo=""+ replyTo+ "" cannot be the same as the destination name on the JmsConsumer as that""+ "" would lead to the consumer sending reply messages to itself in an endless loop."");
+}
+",0,26,7,61,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+2,if (user != null && curPerson.getString(Person.Field.ID.toString()).equals(user)) {,"if (user != null && curPerson.getString(Person.Field.ID.toString()).equals(user)) {
+  JSONObject jsonPerson=convertToJson(person);
+  for (  String key : JSONObject.getNames(jsonPerson)) {
+    curPerson.put(key,jsonPerson.get(key));
+  }
+  people.put(i,curPerson);
+  return Futures.immediateFuture(converter.convertToObject(curPerson.toString(),Person.class));
+}
+",0,7,8,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+3,if (plannerName != null && this.getName().equals(plannerName)) {,"if (plannerName != null && this.getName().equals(plannerName)) {
+  implicitPlannerUsed=true;
+}
+",0,0,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+4,if (snashotPaPaPaUuid != null && prevSnashotPaUuid != null && prevSnashotPaUuid.equals(snashotPaPaPaUuid)) {,"if (snashotPaPaPaUuid != null && prevSnashotPaUuid != null && prevSnashotPaUuid.equals(snashotPaPaPaUuid)) {
+  fullbackup=false;
+}
+ else {
+  fullbackup=true;
+}
+",0,0,7,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+5,&& cazeActionRef.equals(actionRef) && cazeOutcome.equals(outcome)),"if (actionRef != null && outcome != null && cazeActionRef.equals(actionRef) && cazeOutcome.equals(outcome)) {
+  if (cazeIf != null) {
+    if (ifMatches) {
+      firstCaseIf=caze;
+    }
+    continue;
+  }
+ else {
+    firstCase=caze;
+  }
+}
+",0,0,6,,"SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(MethodInvocation-arguments, ),
+"
+6,if (driverDelegate != null && StdJDBCDelegate.class.getName().equals(driverDelegate)) {,"if (driverDelegate != null && StdJDBCDelegate.class.getName().equals(driverDelegate)) {
+  properties.put(""org.apache.openejb.quartz.jobStore.driverDelegateClass"",PatchedStdJDBCDelegate.class.getName());
+}
+ else if (driverDelegate != null) {
+  log.info(""You use "" + driverDelegate + "" driver delegate with quartz, ensure it doesn't use ObjectInputStream otherwise your custom TimerData can induce some issues"");
+}
+",0,0,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+7,return code!=null && new Integer(expectedResponseCode).equals(code);,"return code != null && new Integer(expectedResponseCode).equals(code);
+",1,3,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+8,_ajaxRequest = (requestType != null && PARTIAL_AJAX.equals(requestType));,"_ajaxRequest=(requestType != null && PARTIAL_AJAX.equals(requestType));
+",1,1,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+9,if (null != eventPhaseId && event.getPhaseId().equals(eventPhaseId)),"if (null != eventPhaseId && event.getPhaseId().equals(eventPhaseId)) {
+  if (after && render) {
+    event.getFacesContext().renderResponse();
+  }
+ else   if (after && complete) {
+    event.getFacesContext().responseComplete();
+  }
+}
+",1,1,6,,"NullLiteral(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"

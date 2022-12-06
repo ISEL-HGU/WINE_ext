@@ -1,0 +1,153 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"log.error(Messages.getMessage(""noValue00"", """" + e));","log.error(Messages.getMessage(""noValue00"","""" + e));
+",0,177,7,1489,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,"log.info(Messages.getMessage(""error00"") + "":"" + e);","log.info(Messages.getMessage(""error00"") + "":"" + e);
+",0,10,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+3,"log.error(""Unable to update widget: ""+this.id+"" ""+ExceptionUtil.getStackTrace(e));","log.error(""Unable to update widget: "" + this.id + "" ""+ ExceptionUtil.getStackTrace(e));
+",0,5,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+4,"LOG.warn((second ? ""Second "" : ""First "") +","LOG.warn((second ? ""Second "" : ""First "") + ""Verification failed for "" + block+ "". Exception : ""+ StringUtils.stringifyException(e));
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-expression, ParenthesizedExpression-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ConditionalExpression-thenExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ConditionalExpression-elseExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+5,"LOG.warn(bpReg + "":Failed to transfer "" + b + "" to "" + targets[0].getName()","LOG.warn(bpReg + "":Failed to transfer "" + b+ "" to ""+ targets[0].getName()+ "" got ""+ StringUtils.stringifyException(ie));
+",0,0,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+6,"LOG.info(getName() + "" caught: "" + StringUtils.stringifyException(e));","LOG.info(getName() + "" caught: "" + StringUtils.stringifyException(e));
+",0,0,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+7,"logger.error(""Function is not valid: "" + apply.getFunctionId() + "" argument: "" + argument + "" "" + e);","logger.error(""Function is not valid: "" + apply.getFunctionId() + "" argument: ""+ argument+ "" ""+ e);
+",0,1,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+8,LOG.error(IMPORT_FAILED_ERROR_MSG + StringUtils.stringifyException(ioe));,"LOG.error(IMPORT_FAILED_ERROR_MSG + StringUtils.stringifyException(ioe));
+",0,1,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+9,"log.error(sm.getString(""persistentManager.serializeError"", session.getIdInternal(), e));","log.error(sm.getString(""persistentManager.serializeError"",session.getIdInternal(),e));
+",0,1,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+10,"log.fatal(""TransactionInHandler: Activity ID :""+context.getCoordinationContext().getActivityID()+"" : ""+e);","log.fatal(""TransactionInHandler: Activity ID :"" + context.getCoordinationContext().getActivityID() + "" : ""+ e);
+",1,1202,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+11,"LOG.warn(""Trash caught: ""+e+"". Skipping ""+home.getPath()+""."");","LOG.warn(""Trash caught: "" + e + "". Skipping ""+ home.getPath()+ ""."");
+",1,1,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+12,"LOG.info(Thread.currentThread().getName() + "":Exception in closing listener socket. "" + e);","LOG.info(Thread.currentThread().getName() + "":Exception in closing listener socket. "" + e);
+",1,1,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+13,"LOG.warn(this.getClass().getSimpleName() + "" interrupted: "" + ie);","LOG.warn(this.getClass().getSimpleName() + "" interrupted: "" + ie);
+",1,2,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+14,"LOG.warn(""Error deleting path "" + context.fullPath + "": "" + e);","LOG.warn(""Error deleting path "" + context.fullPath + "": ""+ e);
+",1,4,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+15,"log.fatal(""WS_BA : "" + baContext.getCoordinationContext().getActivityID()","log.fatal(""WS_BA : "" + baContext.getCoordinationContext().getActivityID() + "" : completeOperation : ""+ e1);
+",7,7,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+16,"LOG.warn("" Could not read or failed to veirfy checksum for data"" +","LOG.warn("" Could not read or failed to veirfy checksum for data"" + "" at offset "" + offset + "" for block ""+ block+ "" got : ""+ StringUtils.stringifyException(e));
+",12,12,3,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+17,"LOG.fatal(""Caught: "" + StringUtils.stringifyException(e));","LOG.fatal(""Caught: "" + StringUtils.stringifyException(e));
+",29,29,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

@@ -1,0 +1,27 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"return new StopAnswer(command, ""Stop VM "" + vmName + "" Succeed"", platformstring, true);","return new StopAnswer(command,""Stop VM "" + vmName + "" Succeed"",platformstring,true);
+",0,10,7,21,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+BooleanLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+2,"return delegate.handleResponse(httpResponse, trafficCop);","return delegate.handleResponse(httpResponse,trafficCop);
+",0,0,4,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+3,return (runner.getException() instanceof AbortProcessingException);,"return (runner.getException() instanceof AbortProcessingException);
+",0,0,3,,"SimpleName(MethodInvocation-expression, InstanceofExpression-leftOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InstanceofExpression-leftOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+"
+4,return null;,"return null;
+",1,1,1,,"NullLiteral(ReturnStatement-expression, ),
+"
+5,return;,"return;
+",5,5,1,,"ReturnStatement(),
+"

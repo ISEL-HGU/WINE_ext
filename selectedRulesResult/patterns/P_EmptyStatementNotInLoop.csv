@@ -1,0 +1,375 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"String path = jarFile.substring(0, jarFile.lastIndexOf('/'));;","String path=jarFile.substring(0,jarFile.lastIndexOf('/'));
+",0,7,8,508,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+CharacterLiteral(MethodInvocation-arguments, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+2,while(taskTags.remove(contextTag)) {};,"while (taskTags.remove(contextTag)) {
+}
+",0,0,4,,"SimpleName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+3,"entity.config().set(TestEntity.CONF_MAP_THING, ImmutableMap.of(""bkey"",""bval""));;","entity.config().set(TestEntity.CONF_MAP_THING,ImmutableMap.of(""bkey"",""bval""));
+",0,4,8,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+4,"watcher.assertHasEvent(matchingRegexes("".*"" + app.getApplicationId() + "".*Hello world.*""));;","watcher.assertHasEvent(matchingRegexes("".*"" + app.getApplicationId() + "".*Hello world.*""));
+",0,2,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+5,long offeringRootDiskSize = 10l * GiB_TO_BYTES;;,"long offeringRootDiskSize=10l * GiB_TO_BYTES;
+",0,3,4,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+6,jwtDecoder.setClaimSetConverter(new KeycloakUsernameSubClaimAdapter(getProvider().getUserNameAttribute()));;,"jwtDecoder.setClaimSetConverter(new KeycloakUsernameSubClaimAdapter(getProvider().getUserNameAttribute()));
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+7,"List<ArtGroup> results = ObjectSelect.query(ArtGroup.class, ArtGroup.NAME.eq(""g1"")).select(context);;","List<ArtGroup> results=ObjectSelect.query(ArtGroup.class,ArtGroup.NAME.eq(""g1"")).select(context);
+",0,2,11,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+8,"EventSubject snapshotEventSubject = EventSubject.getSubject(this.getClass(), dataDomain.getName());;","EventSubject snapshotEventSubject=EventSubject.getSubject(this.getClass(),dataDomain.getName());
+",0,0,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+9,final Language language = lang == null ? null : new Language(lang);;,"final Language language=lang == null ? null : new Language(lang);
+",0,7,8,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+10,chunkCount.set(chunkCount.get()+1);;,"chunkCount.set(chunkCount.get() + 1);
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+11,reads = reads + Long.valueOf(value);;,"reads=reads + Long.valueOf(value);
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+12,final com.cloud.host.Host host = Mockito.mock(com.cloud.host.Host.class);;,"final com.cloud.host.Host host=Mockito.mock(com.cloud.host.Host.class);
+",0,0,6,,"Modifier(VariableDeclarationStatement-modifiers, ),
+QualifiedName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+13,Class<?> fieldType = method.getParameterTypes()[0];;,"Class<?> fieldType=method.getParameterTypes()[0];
+",0,0,6,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+WildcardType(ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, ArrayAccess-array, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ArrayAccess-array, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayAccess-index, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+14,while (parser.nextToken() != null) {};,"while (parser.nextToken() != null) {
+}
+",0,0,4,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+15,final int ch = data[i] & 0xff; ;,"final int ch=data[i] & 0xff;
+",0,0,6,,"Modifier(VariableDeclarationStatement-modifiers, ),
+PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+16,if (!jmxHelper.isConnected()) jmxHelper.connect();;,"if (!jmxHelper.isConnected()) jmxHelper.connect();
+",0,0,4,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+17,URL resource = getClass().getClassLoader().getResource(war);;,"URL resource=getClass().getClassLoader().getResource(war);
+",0,0,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+18,"this.uniqueTag = JavaClassNames.simpleClassName(getClass())+"":""+source.getName()+""*->""+target.getName();;","this.uniqueTag=JavaClassNames.simpleClassName(getClass()) + "":"" + source.getName()+ ""*->""+ target.getName();
+",0,0,11,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+19,pluginService = (PluginService) clazz.getDeclaredConstructor().newInstance();;,"pluginService=(PluginService)clazz.getDeclaredConstructor().newInstance();
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+20,return buffer.toString();;,"return buffer.toString();
+",0,0,2,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+"
+21,byte[] data = null;;,"byte[] data=null;
+",0,0,4,,"PrimitiveType(ArrayType-elementType, VariableDeclarationStatement-type, ),
+Dimension(ArrayType-dimensions, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+NullLiteral(VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+22,boolean isVertical   = CorePanelGroupLayout.LAYOUT_VERTICAL.equals(layout);;,"boolean isVertical=CorePanelGroupLayout.LAYOUT_VERTICAL.equals(layout);
+",0,0,5,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+QualifiedName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+23,package org.apache.ranger.ugsyncutil.model;;,"package org.apache.ranger.ugsyncutil.model;
+",0,0,1,,"QualifiedName(PackageDeclaration-name, ),
+"
+24,"Method realSetter = GenericObject.class.getMethod(""setT"", String.class);;","Method realSetter=GenericObject.class.getMethod(""setT"",String.class);
+",0,0,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+25,"Histogram copy = new Histogram(3600000000000L, 3);;","Histogram copy=new Histogram(3600000000000L,3);
+",0,0,5,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+26,"List<Pair<Object, Values>> values = TestUtils.MockInsertBolt.getCollectedValues();;","List<Pair<Object,Values>> values=TestUtils.MockInsertBolt.getCollectedValues();
+",0,0,7,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+QualifiedName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+27,"TrackedTopology tracked = new TrackedTopology(Thrift.buildTopology(spoutMap, boltMap), cluster);;","TrackedTopology tracked=new TrackedTopology(Thrift.buildTopology(spoutMap,boltMap),cluster);
+",0,0,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+28,default:;,"default :
+",0,0,1,,"SwitchCase(),
+"
+29,eq &= ifNotExists == other.ifNotExists;;,"eq&=ifNotExists == other.ifNotExists;
+",0,0,3,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+30,"String testPath = ""http:","String testPath=""http://"" + serverName + "":""+ serverPort+ contextPath+ jspPath;
+",0,0,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-extendedOperands, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-extendedOperands, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-extendedOperands, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-extendedOperands, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+31,if (Character.isJavaIdentifierPart(c)) ;,"if (Character.isJavaIdentifierPart(c)) ;
+ else if ("".:"".indexOf(c) >= 0) ;
+ else break;
+",1,323,4,,"SimpleName(MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, IfStatement-expression, ),
+EmptyStatement(IfStatement-thenStatement, ),
+"
+32,"else if ("".:"".indexOf(c)>=0) ;","if ("".:"".indexOf(c) >= 0) ;
+ else break;
+",1,1,5,,"StringLiteral(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+EmptyStatement(IfStatement-thenStatement, ),
+"
+33,if (executor != null) executor.shutdownNow();;,"if (executor != null) executor.shutdownNow();
+",1,1,4,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+34,"RecordingWinRmTool.setCustomResponse("".*my.*File.*"", new MyResponseGenerator(true,mutexSupport));;","RecordingWinRmTool.setCustomResponse("".*my.*File.*"",new MyResponseGenerator(true,mutexSupport));
+",1,1,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+35,if (el.getClassName().startsWith(s)) return false;;,"if (el.getClassName().startsWith(s)) return false;
+",1,1,5,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, IfStatement-expression, ),
+BooleanLiteral(ReturnStatement-expression, IfStatement-thenStatement, ),
+"
+36,while (waitOnForExpiry(this)) {};,"while (waitOnForExpiry(this)) {
+}
+",1,1,3,,"SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+ThisExpression(MethodInvocation-arguments, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+37,int Y = y0 + y1;;,"int Y=y0 + y1;
+",1,1,4,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+38,"System.out.println(""Plugin "" + this + "" creating server socket for port="" + port + "" backlog="" + backlog);;","System.out.println(""Plugin "" + this + "" creating server socket for port=""+ port+ "" backlog=""+ backlog);
+",1,1,8,,"QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+39,app = TestApplication.Factory.newManagedInstanceForTests();;,"app=TestApplication.Factory.newManagedInstanceForTests();
+",1,1,3,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+40,System.err.println(method.getResponseBodyAsString());;,"System.err.println(method.getResponseBodyAsString());
+",1,1,4,,"QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+41,if (obj == Void.class) {;,"if (obj == Void.class) {
+  ;
+  return null;
+}
+ else {
+  return (T)obj;
+}
+",2,2,3,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, InfixExpression-rightOperand, IfStatement-expression, ),
+EmptyStatement(Block-statements, IfStatement-thenStatement, ),
+"
+42,this.mcontext = camelContext.getExtension(ManagedCamelContext.class);;,"this.mcontext=camelContext.getExtension(ManagedCamelContext.class);
+",2,2,5,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+43,"Map<String, String> detailsMap = new HashMap<String, String>();;","Map<String,String> detailsMap=new HashMap<String,String>();
+",2,3,7,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+44,int endIndex = -1; ;,"int endIndex=-1;
+",2,2,3,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+NumberLiteral(PrefixExpression-operand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+45,receivedDate = ((IMAPInternalDate)item).getDate();;,"receivedDate=((IMAPInternalDate)item).getDate();
+",2,2,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+46,catch ( NumberFormatException nfe){;},";
+",2,2,1,,"EmptyStatement(Block-statements, CatchClause-body, ),
+"
+47,import org.apache.aries.samples.goat.api.ComponentInfo;;,"import org.apache.aries.samples.goat.api.ComponentInfo;
+",3,3,1,,"QualifiedName(ImportDeclaration-name, ),
+"
+48,"final Task<Void> secondStop = entity.invoke(Startable.STOP, ImmutableMap.<String, Object>of());;","final Task<Void> secondStop=entity.invoke(Startable.STOP,ImmutableMap.<String,Object>of());
+",3,13,11,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, MethodInvocation-typeArguments, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, MethodInvocation-typeArguments, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+49,final StoragePool pool = Mockito.mock(StoragePool.class);;,"final StoragePool pool=Mockito.mock(StoragePool.class);
+",7,7,6,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+50,applicationA = findSubsystemService(applicationA.getSubsystemId());;,"applicationA=findSubsystemService(applicationA.getSubsystemId());
+",13,59,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"

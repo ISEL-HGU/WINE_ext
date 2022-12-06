@@ -1,0 +1,11 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,public void finalize() {,"new Object(){
+  @Override public void finalize(){
+    notifyFinalize();
+  }
+}
+;
+",0,0,3,1,"Modifier(),
+PrimitiveType(),
+SimpleName(),
+"

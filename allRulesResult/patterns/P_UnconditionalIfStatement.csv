@@ -1,0 +1,214 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"{if (true) return compiler.expressionPath(ex, ps.toArray(), steps.toArray());}","if (true) return compiler.expressionPath(ex,ps.toArray(),steps.toArray());
+",0,1,8,915,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+2,"if (false) output.collect(key, val);","if (false) output.collect(key,val);
+",0,6,5,,"BooleanLiteral(IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+3,"String lang = stripChars(t.image, 1) ; {if (true) return lang ;}","String lang=stripChars(t.image,1);
+",0,0,5,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+4,if ( false ) log(this) ;,"if (false) log(this);
+",0,0,3,,"BooleanLiteral(IfStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+ThisExpression(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+5,"if (false) x = """";","if (false) x="""";
+",0,0,3,,"BooleanLiteral(IfStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+6,"if (true) throw new IllegalStateException (""Do not call!"");","if (true) throw new IllegalStateException(""Do not call!"");
+",0,0,3,,"BooleanLiteral(IfStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ThrowStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(ClassInstanceCreation-arguments, ThrowStatement-expression, IfStatement-thenStatement, ),
+"
+7,if (false) for (IssueCommits ic : state.map.values()) {,"if (false) for (IssueCommits ic : state.map.values()) {
+  final Issue issue=ic.getIssue();
+  final Version version;
+  if (issue.getKey().startsWith(""TOMEE-"")) {
+    version=state.jira.getVersion(""TOMEE"",tomeeVersion);
+  }
+ else   if (issue.getKey().startsWith(""OPENEJB-"")) {
+    version=state.jira.getVersion(""OPENEJB"",openejbVersion);
+  }
+ else {
+    continue;
+  }
+  final Set<String> ids=new HashSet<String>();
+  for (  Version v : issue.getFixVersions()) {
+    ids.add(v.getId() + """");
+  }
+  final int versions=ids.size();
+  ids.add(version.getId() + """");
+  if (versions != ids.size()) {
+    try {
+      System.out.printf(""Adding version to %s\n"",issue.getKey());
+      final Hashtable map=new Hashtable();
+      map.put(""fixVersions"",new Vector(ids));
+      call(state.jira,""updateIssue"",issue.getKey(),map);
+    }
+ catch (    Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+",0,0,5,,"BooleanLiteral(IfStatement-expression, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, EnhancedForStatement-parameter, IfStatement-thenStatement, ),
+SimpleName(SingleVariableDeclaration-name, EnhancedForStatement-parameter, IfStatement-thenStatement, ),
+QualifiedName(MethodInvocation-expression, EnhancedForStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, EnhancedForStatement-expression, IfStatement-thenStatement, ),
+"
+8,"{if (true) return _factory.createConfiguredObjectExpression( s, Integer.valueOf( t.image ) );}","if (true) return _factory.createConfiguredObjectExpression(s,Integer.valueOf(t.image));
+",0,0,7,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+9,"{if (true) return _factory.createFunctionExpression( t.image.substring(0, t.image.length() - 1), args );}","if (true) return _factory.createFunctionExpression(t.image.substring(0,t.image.length() - 1),args);
+",0,0,10,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+QualifiedName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+10,{if (true) return (List) value;},"if (true) return (List)value;
+",0,0,3,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(SimpleType-name, CastExpression-type, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(CastExpression-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+11,"{if (true) return new AtomList[]{body, head};}","if (true) return new AtomList[]{body,head};
+",0,0,5,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+12,var=t.image;  {if (true) return new RuleBlankNode(var);},"var=t.image;
+",0,0,2,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+QualifiedName(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+13,{if (true) return param == null ? -1 : Integer.parseInt(param.image.trim());},"if (true) return param == null ? -1 : Integer.parseInt(param.image.trim());
+",1,681,8,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+NumberLiteral(PrefixExpression-operand, ConditionalExpression-thenExpression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-arguments, ConditionalExpression-elseExpression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ConditionalExpression-elseExpression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+14,if (!skipped) {if (true) return;},"if (!skipped) {
+  if (true)   return;
+}
+",1,13,3,,"SimpleName(PrefixExpression-operand, IfStatement-expression, ),
+BooleanLiteral(IfStatement-expression, Block-statements, IfStatement-thenStatement, ),
+ReturnStatement(IfStatement-thenStatement, Block-statements, IfStatement-thenStatement, ),
+"
+15,"{if (true) return compiler.qname(null, nc1);}","if (true) return compiler.qname(null,nc1);
+",1,8,5,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+NullLiteral(MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+16,"{if (true) return compiler.locationPath(true, steps.toArray());}","if (true) return compiler.locationPath(true,steps.toArray());
+",1,5,6,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+BooleanLiteral(MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+17,"{if (true) return compiler.function(name, null);}","if (true) return compiler.function(name,null);
+",1,1,5,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+NullLiteral(MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+18,"{if (true) return new StartTag(t.image, alist, et.image.equals("">""));}","if (true) return new StartTag(t.image,alist,et.image.equals("">""));
+",1,61,7,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+QualifiedName(ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+QualifiedName(MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+StringLiteral(MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+19,"{if (true) return new TextData(""<"" + text.image);}","if (true) return new TextData(""<"" + text.image);
+",1,3,4,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+StringLiteral(InfixExpression-leftOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+QualifiedName(InfixExpression-rightOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+20,{if (true) return new ResourceAtom(getSWRLArgument(uri1+colon.image+uri3));},"if (true) return new ResourceAtom(getSWRLArgument(uri1 + colon.image + uri3));
+",1,2,6,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+QualifiedName(InfixExpression-rightOperand, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+21,{if (true) return new Comment(sb.toString());},"if (true) return new Comment(sb.toString());
+",1,1,4,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+22,"{if (true) return nodes.size() != 1 ? new Node(FilterParserConstants.OR, nodes) : nodes.get(0);}","if (true) return nodes.size() != 1 ? new Node(FilterParserConstants.OR,nodes) : nodes.get(0);
+",1,1,10,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+NumberLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-thenExpression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+QualifiedName(ClassInstanceCreation-arguments, ConditionalExpression-thenExpression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-thenExpression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+NumberLiteral(MethodInvocation-arguments, ConditionalExpression-elseExpression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+23,"{if (true) return TokenResolver.resolve(startToken, getToken(0), true);}","if (true) return TokenResolver.resolve(startToken,getToken(0),true);
+",3,3,7,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-expression, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+BooleanLiteral(MethodInvocation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+24,"{if (true) return new VariableAtom(new URI(var), true);}","if (true) return new VariableAtom(new URI(var),true);
+",3,4,5,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+SimpleName(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+BooleanLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"
+25,"{if (true) throw new NullPointerException(""Parameter handler cannot be null"");}","if (true) throw new NullPointerException(""Parameter handler cannot be null"");
+",4,7,3,,"BooleanLiteral(IfStatement-expression, Block-statements, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ThrowStatement-expression, IfStatement-thenStatement, Block-statements, ),
+StringLiteral(ClassInstanceCreation-arguments, ThrowStatement-expression, IfStatement-thenStatement, Block-statements, ),
+"

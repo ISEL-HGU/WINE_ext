@@ -1,0 +1,11 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/commons-beanutils/src/test/java/org/apache/commons/beanutils2/LazyDynaListTestCase.java,194,,"        TreeMap<?, ?>[]  mapArray  = (TreeMap[])lazyList.toArray();"
+2,./TargetProjects/commons-beanutils/src/test/java/org/apache/commons/beanutils2/LazyDynaListTestCase.java,209,,"        mapArray  = (TreeMap[])lazyList.toArray();"
+3,./TargetProjects/commons-collections/src/test/java/org/apache/commons/collections4/collection/AbstractCollectionTest.java,392,,"            return (E[]) list.toArray();"
+4,./TargetProjects/commons-collections/src/test/java/org/apache/commons/collections4/list/AbstractListTest.java,92,,"        final E[] array = (E[]) list1.toArray();"
+5,./TargetProjects/commons-collections/src/test/java/org/apache/commons/collections4/map/AbstractOrderedMapTest.java,82,,"        return (K[]) list.toArray();"
+6,./TargetProjects/commons-collections/src/test/java/org/apache/commons/collections4/map/AbstractSortedMapTest.java,153,,"            return (K[]) subSortedKeys.toArray();"
+7,./TargetProjects/commons-collections/src/test/java/org/apache/commons/collections4/map/AbstractSortedMapTest.java,158,,"            return (V[]) subSortedValues.toArray();"
+8,./TargetProjects/commons-collections/src/test/java/org/apache/commons/collections4/map/AbstractSortedMapTest.java,163,,"            return (V[]) subSortedNewValues.toArray();"
+9,./TargetProjects/druid/processing/src/test/java/org/apache/druid/collections/TestIntegerSet.java,206,,"      Set<Integer> set = Sets.newHashSet((Integer[]) integerSet.toArray());"
+10,./TargetProjects/metron/metron-stellar/stellar-common/src/main/java/org/apache/metron/stellar/common/benchmark/StellarMicrobenchmark.java,257,,"      percentiles = (Double[])percentileList.toArray();"

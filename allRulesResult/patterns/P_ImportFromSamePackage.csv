@@ -1,0 +1,4 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,import org.apache.abdera.util.EntityTag;,"import org.apache.abdera.util.EntityTag;
+",6582,6582,1,6583,"QualifiedName(ImportDeclaration-name, ),
+"

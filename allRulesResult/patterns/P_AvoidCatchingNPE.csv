@@ -1,0 +1,75 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,try { } catch(NumberFormatException | NullPointerException e) {},"try {
+}
+ catch (NumberFormatException|NullPointerException e) {
+}
+",0,1,5,6661,"Block(TryStatement-body, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+2,} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NullPointerException innerEx) {,"try {
+  Method getServerErrorMessage=exceptionClass.getMethod(""getServerErrorMessage"");
+  Object serverErrorMessage=getServerErrorMessage.invoke(ex);
+  Class messageClass=serverErrorMessage.getClass();
+  Method getPosition=messageClass.getMethod(""getPosition"");
+  Integer result=(Integer)getPosition.invoke(serverErrorMessage);
+  if (result != null && result > 0) {
+    return result - 1;
+  }
+ else {
+    return -1;
+  }
+}
+ catch (NoSuchMethodException|SecurityException|IllegalAccessException|IllegalArgumentException|InvocationTargetException|NullPointerException innerEx) {
+  LOG.log(Level.FINE,""Failed to parse PostgreSQL error"",innerEx);
+  return -1;
+}
+",0,4,7,,"SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+"
+3,} catch (NullPointerException | IOException x) {x.printStackTrace(); throw new BuildException(x);},"x.printStackTrace();
+",0,0,2,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, CatchClause-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, CatchClause-body, ),
+"
+4,} catch (final NullPointerException | IllegalArgumentException ex) {},"try {
+  getMap().put(null,values[0]);
+  fail(""put(null, value) should throw NPE/IAE"");
+}
+ catch (final NullPointerException|IllegalArgumentException ex) {
+}
+",1,6400,5,,"Modifier(SingleVariableDeclaration-modifiers, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+Block(CatchClause-body, ),
+"
+5,} catch (final SecurityException | NullPointerException | IllegalArgumentException e) {,"try {
+  obj=biFunction.apply(key,object);
+}
+ catch (final SecurityException|NullPointerException|IllegalArgumentException e) {
+  return null;
+}
+",2,166,5,,"Modifier(SingleVariableDeclaration-modifiers, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+"
+6,} catch (final NullPointerException ex) {},"try {
+  ClosureUtils.whileClosure(null,ClosureUtils.nopClosure());
+  fail();
+}
+ catch (final NullPointerException ex) {
+}
+",63,63,4,,"Modifier(SingleVariableDeclaration-modifiers, CatchClause-exception, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+Block(CatchClause-body, ),
+"

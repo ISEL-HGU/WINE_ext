@@ -1,0 +1,13 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,synchronized (((EntityInternal)s.subscriber).getManagementSupport()) {},"synchronized (((EntityInternal)s.subscriber).getManagementSupport()) {
+}
+",0,3,4,8,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, SynchronizedStatement-expression, ),
+QualifiedName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, SynchronizedStatement-expression, ),
+SimpleName(MethodInvocation-name, SynchronizedStatement-expression, ),
+Block(SynchronizedStatement-body, ),
+"
+2,synchronized (new Object()) {},"synchronized (new Object()) {
+}
+",3,3,2,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, SynchronizedStatement-expression, ),
+Block(SynchronizedStatement-body, ),
+"

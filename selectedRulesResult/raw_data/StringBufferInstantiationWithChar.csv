@@ -1,0 +1,3 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/tuscany-sca-1/modules/binding-jsonrpc-runtime/src/main/java/org/apache/tuscany/sca/binding/jsonrpc/provider/JSONRPCServiceServlet.java,388,,"            StringBuffer sb = new StringBuffer('0');"
+2,./TargetProjects/tuscany-sca-2/modules/common-http/src/main/java/org/apache/tuscany/sca/common/http/HTTPUtils.java,101,,"            StringBuffer sb = new StringBuffer('0');"

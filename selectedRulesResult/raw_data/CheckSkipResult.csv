@@ -1,0 +1,10 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/commons-compress/src/test/java/org/apache/commons/compress/compressors/DetectCompressorTestCase.java,207,,"            compressorIs.skip(10);"
+2,./TargetProjects/druid/core/src/test/java/org/apache/druid/data/input/impl/prefetch/PrefetchableTextFilesFirehoseFactoryTest.java,588,,"      in.skip(start);"
+3,./TargetProjects/druid/extensions-contrib/aliyun-oss-extensions/src/main/java/org/apache/druid/firehose/aliyun/StaticOssFirehoseFactory.java,174,,"      is.skip(start);"
+4,./TargetProjects/druid/extensions-core/azure-extensions/src/main/java/org/apache/druid/storage/azure/AzureTaskLogs.java,142,,"                stream.skip(start);"
+5,./TargetProjects/druid/extensions-core/google-extensions/src/main/java/org/apache/druid/storage/google/GoogleStorage.java,55,,"    inputStream.skip(start);"
+6,./TargetProjects/metron/metron-platform/metron-enrichment/metron-enrichment-common/src/main/java/org/apache/metron/enrichment/converter/EnrichmentKey.java,65,,"    baos.skip(KeyUtil.HASH_PREFIX_SIZE);"
+7,./TargetProjects/metron/metron-platform/metron-indexing/metron-indexing-common/src/main/java/org/apache/metron/indexing/dao/HBaseDao.java,93,,"      baos.skip(KeyUtil.HASH_PREFIX_SIZE);"
+8,./TargetProjects/mina/codec/src/test/java/org/apache/mina/util/ByteBufferInputStreamTest.java,70,,"        is.skip(6);"
+9,./TargetProjects/mina/codec/src/test/java/org/apache/mina/util/ByteBufferInputStreamTest.java,78,,"        is.skip((long) Integer.MAX_VALUE + 1);"

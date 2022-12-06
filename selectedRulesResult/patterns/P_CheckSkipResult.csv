@@ -1,0 +1,18 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,is.skip((long) Integer.MAX_VALUE + 1);,"is.skip((long)Integer.MAX_VALUE + 1);
+",0,1,5,9,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(CastExpression-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,baos.skip(KeyUtil.HASH_PREFIX_SIZE);,"baos.skip(KeyUtil.HASH_PREFIX_SIZE);
+",1,1,3,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+3,in.skip(start);,"in.skip(start);
+",3,3,3,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

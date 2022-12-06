@@ -1,0 +1,16 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,for (int i=0; i<16; i++) System.gc();,"for (int i=0; i < 16; i++) System.gc();
+",2,235,8,249,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ForStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ForStatement-body, ),
+"
+2,Runtime.getRuntime().gc();,"Runtime.getRuntime().gc();
+",5,5,3,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+"

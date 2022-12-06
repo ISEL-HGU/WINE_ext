@@ -1,0 +1,145 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"public Accumulator<Integer, Integer> clone() {","runtimeContext.addAccumulator(""foobar"",new Accumulator<Integer,Integer>(){
+  private static final long serialVersionUID=-4673320336846482358L;
+  @Override public void add(  Integer value){
+  }
+  @Override public Integer getLocalValue(){
+    return null;
+  }
+  @Override public void resetLocal(){
+  }
+  @Override public void merge(  Accumulator<Integer,Integer> other){
+  }
+  @Override public Accumulator<Integer,Integer> clone(){
+    return null;
+  }
+}
+);
+",0,19,5,34,"Modifier(),
+SimpleName(SimpleType-name, ParameterizedType-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ),
+SimpleName(),
+"
+2,@Override public synchronized Object clone() throws CloneNotSupportedException {,"return new GridListSet<V>(){
+  @Override public synchronized boolean add(  V val){
+    return set.add(val);
+  }
+  @Override public synchronized V addx(  V val){
+    return set.addx(val);
+  }
+  @Override public synchronized Object clone() throws CloneNotSupportedException {
+    return set.clone();
+  }
+  @Override public synchronized boolean contains(  Object val){
+    return set.contains(val);
+  }
+  @Override public synchronized GridListSet<V> copy(){
+    return set.copy();
+  }
+  @Override public synchronized V get(  int idx){
+    return set.get(idx);
+  }
+  @Override public synchronized V get(  V val){
+    return set.get(val);
+  }
+  @Override public synchronized Iterator<V> iterator(){
+    return set.iterator();
+  }
+  @Override public synchronized boolean remove(  Object val){
+    return set.remove(val);
+  }
+  @Override public synchronized V removex(  V val){
+    return set.removex(val);
+  }
+  @Override public synchronized int size(){
+    return set.size();
+  }
+  @Override public synchronized String toString(){
+    return set.toString();
+  }
+  @Override public synchronized GridListSet<V> toSynchronized(){
+    return set.toSynchronized();
+  }
+  @Override public synchronized boolean equals(  Object o){
+    return set.equals(o);
+  }
+  @Override public synchronized int hashCode(){
+    return set.hashCode();
+  }
+  @Override public synchronized boolean removeAll(  Collection<?> c){
+    return set.removeAll(c);
+  }
+  @Override public synchronized boolean addAll(  Collection<? extends V> c){
+    return set.addAll(c);
+  }
+  @Override public synchronized void clear(){
+    set.clear();
+  }
+  @Override public synchronized boolean containsAll(  Collection<?> c){
+    return set.containsAll(c);
+  }
+  @Override public synchronized boolean isEmpty(){
+    return set.isEmpty();
+  }
+  @Override public synchronized boolean retainAll(  Collection<?> c){
+    return set.retainAll(c);
+  }
+  @Override public synchronized Object[] toArray(){
+    return set.toArray();
+  }
+  @SuppressWarnings({""SuspiciousToArrayCall""}) @Override public synchronized <T>T[] toArray(  T[] a){
+    return set.toArray(a);
+  }
+  @Override public synchronized V first(){
+    return set.first();
+  }
+  @Override public synchronized V removeFirst(){
+    return set.removeFirst();
+  }
+  @Override public synchronized List<V> values(){
+    return set.values();
+  }
+  @Override public V last(){
+    return set.last();
+  }
+  @Override public V removeLast(){
+    return set.removeLast();
+  }
+}
+;
+",0,3,6,,"SimpleName(MarkerAnnotation-typeName, MethodDeclaration-modifiers, ),
+Modifier(MethodDeclaration-modifiers, ),
+Modifier(MethodDeclaration-modifiers, ),
+SimpleName(SimpleType-name, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+SimpleName(SimpleType-name, MethodDeclaration-thrownExceptionTypes, ),
+"
+3,public RequestScope.Value clone() {,"Timing.setScopeValue(SessionContext.class,new SessionContext(){
+  @Override public boolean isAuthenticated(){
+    return session != null;
+  }
+  @Override public String getSessionKey(){
+    return session.getId();
+  }
+  @Override public ParticipantId getParticipantId(){
+    return loggedInUser;
+  }
+  @Override public RequestScope.Value clone(){
+    return this;
+  }
+}
+);
+",0,0,3,,"Modifier(),
+QualifiedName(SimpleType-name, ),
+SimpleName(),
+"
+4,public FileManager clone() { return clone(this) ; },"return clone(this);
+",0,2,2,,"SimpleName(MethodInvocation-name, ReturnStatement-expression, Block-statements, ),
+ThisExpression(MethodInvocation-arguments, ReturnStatement-expression, Block-statements, ),
+"
+5,@Override public Parameters                  clone()                {return new Wrapper(delegate.clone());},"return new Wrapper(delegate.clone());
+",0,1,3,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+"

@@ -1,0 +1,422 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,try {,"try {
+  this.writer.close();
+}
+ catch (MutationsRejectedException e) {
+  System.err.println(""Error closing batch writer."");
+  e.printStackTrace();
+}
+",0,0,0,398,
+2,this.backlogReader.close();,"this.backlogReader.close();
+",0,159,3,,"ThisExpression(FieldAccess-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+"
+3,if (!(_conn == null && (_stack == null || _stack.size() == 0))) {,"if (!(_conn == null && (_stack == null || _stack.size() == 0))) {
+  assert (false) : ""Oh Alex oh alex...something is wrong with how we're doing this"";
+  s_logger.error(""Something went wrong that a transaction is orphaned before db connection is closed"");
+  cleanup();
+}
+",0,87,7,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+"
+4,try {,"try {
+  Closeables.close(offsetConsumer,true);
+}
+ catch (Exception anyException) {
+  LOG.warn(""Failed to close offset consumer for {}"",topicPartition);
+}
+",0,0,0,,
+5,while (((toRelease = sampleQueue.poll()) != null)),"while (((toRelease=sampleQueue.poll()) != null)) {
+  toRelease.release();
+}
+",0,1,4,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+"
+6,try,"try {
+  close();
+}
+ catch (IOException e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+7,_selectType = SelectType.Fields;,"_selectType=SelectType.Fields;
+",0,0,2,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+QualifiedName(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+8,try {,"try {
+  super.finalize();
+}
+  finally {
+  if (this.closed)   return;
+  this.close();
+}
+",0,0,0,,
+9,if (results != null && results.singleUseActivation != null) {,"if (results != null && results.singleUseActivation != null) {
+  results.singleUseActivation.markUnused();
+}
+",0,0,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+10,try {,"try {
+  if (_indexReader != null) {
+    _indexReader.close();
+  }
+}
+ catch (IOException e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+11,try {,"try {
+  super.finalize();
+}
+  finally {
+  if (WORKER_STATE_UPDATER.getAndSet(this,WORKER_STATE_SHUTDOWN) != WORKER_STATE_SHUTDOWN) {
+    INSTANCE_COUNTER.decrementAndGet();
+  }
+}
+",0,0,0,,
+12,try {,"try {
+  cleanup();
+}
+ catch (Throwable t) {
+}
+",0,0,0,,
+13,try {,"try {
+  if (release(""finalize()"",constructionStack)) {
+    LOG.warn(""input stream of {}"" + "" not closed properly -cleaned up in finalize()"",uri);
+  }
+}
+ catch (Exception e) {
+  LOG.warn(""Exception while releasing {} in finalizer"",uri,e);
+}
+",0,0,0,,
+14,try {,"try {
+  cleanup();
+}
+ catch (Throwable t) {
+}
+",0,0,0,,
+15,try {,"try {
+  if (release(""finalize()"",constructionStack)) {
+    LOG.warn(""input stream of "" + uri + "" not closed properly -cleaned up in finalize()"");
+  }
+}
+ catch (Exception e) {
+  LOG.warn(""Exception while releasing "" + uri + ""in finalizer"",e);
+}
+",0,0,0,,
+16,if (!m_isClosed && m_tmpFile.exists()),"if (!m_isClosed && m_tmpFile.exists()) {
+  m_tmpFile.delete();
+}
+",0,1,3,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+17,try {,"try {
+  EventQueue.invokeAndWait(new Runnable(){
+    public void run(){
+      dispose();
+    }
+  }
+);
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+18,try {,"try {
+  super.finalize();
+}
+ catch (Throwable e) {
+  throw new RuntimeException(""finalize was broken"",e);
+}
+",0,0,0,,
+19,try {,"try {
+  close();
+}
+ catch (NamingException e) {
+}
+",0,0,0,,
+20,try {,"try {
+  allocate(size);
+  trace("","");
+}
+ catch (OutOfMemoryError e) {
+  trace(""x"");
+}
+",0,0,0,,
+21,try {,"try {
+  throw_and_catch(2);
+}
+ catch (NullPointerException e) {
+}
+",0,0,0,,
+22,while (true) {,"while (true) {
+  Thread.yield();
+}
+",0,0,1,,"BooleanLiteral(WhileStatement-expression, ),
+"
+23,if (processHandle != -1),"if (processHandle != -1) close0(this.processHandle);
+",0,0,2,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+24,try {,"try {
+  EventQueue.invokeAndWait(new Runnable(){
+    public void run(){
+      dispose();
+    }
+  }
+);
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+25,try {,"try {
+  super.finalize();
+}
+ catch (Throwable e) {
+  throw new RuntimeException(""finalize was broken"",e);
+}
+",0,0,0,,
+26,try {,"try {
+  close();
+}
+ catch (NamingException e) {
+}
+",0,0,0,,
+27,try {,"try {
+  if (null != session)   session.close();
+  if (conn != null) {
+    conn.close();
+  }
+}
+ catch (Exception ignore) {
+  LOG.info(""Failed to close message bus connection."",ignore);
+}
+",0,0,0,,
+28,try {,"try {
+  _watcher.join(DISCONNECT_WAIT_TIME_MS);
+}
+ catch (InterruptedException e) {
+  LOG.error(""ClusterManager watcher cleanup in the finalize method was interrupted."",e);
+}
+ finally {
+  if (isConnected()) {
+    LOG.warn(""The HelixManager ({}-{}-{}) is still connected after {} ms wait. This is a potential resource leakage!"",_clusterName,_instanceName,_type.name(),DISCONNECT_WAIT_TIME_MS);
+  }
+}
+",0,0,0,,
+29,if (leakDetection && ! isClosed && ! keepHttpClientOpen) {,"if (leakDetection && !isClosed && !keepHttpClientOpen) {
+  StringBuilder sb=new StringBuilder(""WARNING:  RestClient garbage collected before it was finalized."");
+  if (creationStack != null) {
+    sb.append(""\nCreation Stack:"");
+    for (    StackTraceElement e : creationStack)     sb.append(""\n\t"" + e);
+  }
+  log(WARNING,sb.toString());
+}
+",0,0,3,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(PrefixExpression-operand, InfixExpression-extendedOperands, IfStatement-expression, ),
+"
+30,if (this.isDirty()) {,"if (this.isDirty()) {
+  write();
+}
+",0,0,2,,"ThisExpression(MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+"
+31,goals = new HashSet();,"goals=new HashSet();
+",0,0,2,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+32,if ((binding != null) && (clAdded)) {,"if ((binding != null) && (clAdded)) {
+  binding.getModel().removeComponentListener(cl);
+}
+",0,0,3,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+33,"LOG.debug(""FSM-{}: Finalizing"", getFsmId());","LOG.debug(""FSM-{}: Finalizing"",getFsmId());
+",0,1,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+34,try {,"try {
+  if (this.client != null && this.client.isConnected()) {
+    this.client.logout();
+    this.client.disconnect();
+  }
+}
+ catch (IOException e) {
+}
+",0,0,0,,
+35,try,"try {
+  if ((connect != null) && (!keep_connect_open)) {
+    connect.close();
+  }
+  if (rs != null) {
+    rs.close();
+  }
+  if (stmt != null) {
+    stmt.close();
+  }
+}
+ catch (SQLException ignored) {
+}
+",0,0,0,,
+36,for(File f : this){,"for (File f : this) {
+  if (f.delete() == false) {
+    log.warn(""Failed to delete file: "" + f.getPath());
+  }
+}
+",0,0,3,,"SimpleName(SimpleType-name, SingleVariableDeclaration-type, EnhancedForStatement-parameter, ),
+SimpleName(SingleVariableDeclaration-name, EnhancedForStatement-parameter, ),
+ThisExpression(EnhancedForStatement-expression, ),
+"
+37,if (_fd.exists() && !_fd.delete()) {,"if (_fd.exists() && !_fd.delete()) {
+  LOG.atError().log(""Can't delete temporary encryption file: {}"",_fd);
+}
+",0,0,4,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+38,try {,"try {
+  ensureEverythingIsReleased();
+  super.finalize();
+}
+ catch (Exception ex) {
+  LOGGER.warn(""S3InputStreamWrapper: Issue Releasing Connections on Finalize - {}"",ex.getMessage());
+}
+",0,0,0,,
+39,try,"try {
+  close();
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+40,try,"try {
+  close();
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+41,"x11.XFreePixmap(xconf.dev.display, pixmap);","x11.XFreePixmap(xconf.dev.display,pixmap);
+",1,17,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+42,if (configs != null && configs.length != 0) {,"if (configs != null && configs.length != 0) {
+  x11.XFree(configs[0].info);
+}
+",1,2,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+43,close(false);,"close(false);
+",1,1,2,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+44,return;,"return;
+",1,1,1,,"ReturnStatement(),
+"
+45,for (int i = 0; i < systemCursors.length; i++) {,"for (int i=0; i < systemCursors.length; i++) {
+  LinuxCursor cursor=(LinuxCursor)systemCursors[i];
+  if (cursor != null) {
+    cursor.destroy();
+  }
+}
+",1,1,6,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+46,super.shutdown();,"super.shutdown();
+",1,1,1,,"SimpleName(SuperMethodInvocation-name, ExpressionStatement-expression, ),
+"
+47,"internalString = ""hit"";","internalString=""hit"";
+",1,1,2,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+StringLiteral(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+48,ClassUnloadDebuggee.classUnloaded = true;,"ClassUnloadDebuggee.classUnloaded=true;
+",1,1,2,,"QualifiedName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+49,MetricCollector.getInstance().deinit();,"MetricCollector.getInstance().deinit();
+",1,1,3,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+"
+50,try {disconnect(); }catch ( Exception ignore){},"try {
+  disconnect();
+}
+ catch (Exception ignore) {
+}
+",1,1,4,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+51,instanceCount--;,"instanceCount--;
+",2,2,1,,"SimpleName(PostfixExpression-operand, ExpressionStatement-expression, ),
+"
+52,if (logicalConnection != null && !logicalConnection.isClosed()) {,"if (logicalConnection != null && !logicalConnection.isClosed()) {
+  throw new SQLException(""PooledConnection was gc'ed, without its last Connection being closed."");
+}
+",2,2,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+53,this.logger = null;,"this.logger=null;
+",2,7,3,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+NullLiteral(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+54,finalized = true;,"finalized=true;
+",2,2,2,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+55,_handle = 0;,"_handle=0;
+",2,2,2,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+NumberLiteral(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+56,finalizer.onTaskFinalization(this);,"finalizer.onTaskFinalization(this);
+",3,3,3,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+57,"System.err.println(this + "" finalized"");","System.err.println(this + "" finalized"");
+",3,6,4,,"QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+ThisExpression(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+58,synchronized(toDel) {,"synchronized (toDel) {
+  for (Iterator<DLInfo> i=this.values().iterator(); i.hasNext(); ) {
+    toDel.add(Integer.valueOf(i.next().getDL()));
+  }
+}
+",8,8,1,,"SimpleName(SynchronizedStatement-expression, ),
+"
+59,"if (!built) log.warn(""ZabbixFeed.Builder created, but build() never called"");","if (!built) log.warn(""ZabbixFeed.Builder created, but build() never called"");
+",15,20,4,,"SimpleName(PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"

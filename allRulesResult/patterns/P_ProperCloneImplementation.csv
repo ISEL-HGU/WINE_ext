@@ -1,0 +1,6 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,@Override public Parameters                  clone()                {return new Wrapper(delegate.clone());},"return new Wrapper(delegate.clone());
+",0,0,3,1,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+"

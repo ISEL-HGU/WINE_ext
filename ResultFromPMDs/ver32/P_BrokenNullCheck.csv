@@ -1,0 +1,344 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,if (kc == null && kc.isConsumerContainsPartition(windowEntry.getKey().getTopicPartition())) {,"if (kc == null && kc.isConsumerContainsPartition(windowEntry.getKey().getTopicPartition())) {
+  throw new RuntimeException(""Coundn't find consumer to replay the message PartitionMeta : "" + meta);
+}
+",0,6,7,75,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+2,if (result != null || (result == null && max != null && max.longValue() == -1L)) {,"if (result != null || (result == null && max != null && max.longValue() == -1L)) {
+  ResourceLimitResponse response=_responseGenerator.createResourceLimitResponse(result);
+  response.setResponseName(getCommandName());
+  this.setResponseObject(response);
+}
+ else {
+  throw new ServerApiException(ApiErrorCode.INTERNAL_ERROR,""Failed to update resource limit"");
+}
+",0,2,9,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+3,if (node.getNodeValue() != null || node.getNodeValue().trim().length() > 0) {,"if (node.getNodeValue() != null || node.getNodeValue().trim().length() > 0) {
+  attr=node.getOwnerDocument().createAttributeNS(null,node.getNodeName());
+  node.getParentNode().appendChild(attr);
+}
+ else {
+  attr=(Attr)node;
+}
+",0,2,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+4,if (sentList == null && sentList.isEmpty()) return feats;,"if (sentList == null && sentList.isEmpty()) return feats;
+",0,0,5,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(ReturnStatement-expression, IfStatement-thenStatement, ),
+"
+5,if ( (i <= superActions.length - 2) && superActions[ i ] == null && superActions[i + 1] instanceof PropertiesAction ) {,"if ((i <= superActions.length - 2) && superActions[i] == null && superActions[i + 1] instanceof PropertiesAction) {
+  i++;
+  continue;
+}
+ else if (superActions[i] instanceof PropertiesAction) {
+  continue;
+}
+ else if (superActions[i] instanceof FileSystemAction) {
+  actionList.add(null);
+  actionList.add(FileSensitiveActions.fileCommandAction(ActionProvider.COMMAND_COMPILE_SINGLE,LBL_CompilePackage_Action(),null));
+  actionList.add(testPackageAction);
+  actionList.addAll((List<Action>)org.openide.util.Utilities.actionsForPath(""Projects/package/Actions""));
+}
+",0,1,10,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-array, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+6,if (userPA.getPartitionListeners() == null && userPA.getPartitionListeners().length == 0,"if (userPA.getPartitionListeners() == null && userPA.getPartitionListeners().length == 0 && prconfList != null) {
+  throw new IllegalStateException(String.format(""The PartitionListeners=%s are incompatible with the PartitionListeners=%s used by other distributed members."",new Object[]{null,prconfList}));
+}
+",0,1,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, FieldAccess-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, FieldAccess-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+7,if (null != val[end] || (null == val[end] && !fields[end].isNullable())) {,"if (null != val[end] || (null == val[end] && !fields[end].isNullable())) {
+  break;
+}
+",0,0,9,,"NullLiteral(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+8,if (((Polygon) geometry).getInterior() != null || !((Polygon) geometry).getInterior().isEmpty()) {,"if (((Polygon)geometry).getInterior() != null || !((Polygon)geometry).getInterior().isEmpty()) {
+  System.err.println(""GeoRSS simple format can't handle interior rings (ignored)"");
+}
+",0,0,8,,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+9,if ( this.scope.equals( scope ) || ( scope == null && this.scope.length() <= 0 ) ),"if (this.scope.equals(scope) || (scope == null && this.scope.length() <= 0)) {
+  return this;
+}
+",0,1,10,,"ThisExpression(FieldAccess-expression, MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+10,if (httpServer == null && httpServer.isStopped()) return;,"if (httpServer == null && httpServer.isStopped()) return;
+",0,0,5,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+ReturnStatement(IfStatement-thenStatement, ),
+"
+11,if (mainAndFollowSent!=null || mainAndFollowSent[0]!=null){,"if (mainAndFollowSent != null || mainAndFollowSent[0] != null) {
+  pageSentence=mainAndFollowSent[0];
+  for (int i=1; i < mainAndFollowSent.length; i++)   if (mainAndFollowSent[i] != null)   followSent+=mainAndFollowSent[i];
+}
+",0,0,5,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(ArrayAccess-index, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+12,if (getUserByUserName(newUser.getUserName()) != null ||,"if (getUserByUserName(newUser.getUserName()) != null || getUserByUserName(newUser.getUserName().toLowerCase()) != null) {
+  throw new WebloggerException(""error.add.user.userNameInUse"");
+}
+",0,0,4,,"SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+13,"if (index < 0 || (replacement != null ? properties.set(index, replacement) : properties.remove(index)) != old) {","if (index < 0 || (replacement != null ? properties.set(index,replacement) : properties.remove(index)) != old) {
+  throw new CorruptedObjectException();
+}
+",0,0,12,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+14,"if(config.remove(null) != null || config.remove("""") != null){","if (config.remove(null) != null || config.remove("""") != null) {
+  log.warn(""ExecutionNode configurations with NULL or an empty "" + ""engine name where removed form the configuration of the"" + ""GraphChain '{}'"",getName());
+}
+",0,0,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+15,if (request.getParameter(InternalConstants.CANCEL_NAME) != null ||,"if (request.getParameter(InternalConstants.CANCEL_NAME) != null || request.getParameter(InternalConstants.CANCEL_NAME + "".x"") != null) {
+  return true;
+}
+",0,0,4,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+16,if (selectionBounds == null && this.selectionBounds == null) return;,"if (selectionBounds == null && this.selectionBounds == null) return;
+",1,6,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+ThisExpression(FieldAccess-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+ReturnStatement(IfStatement-thenStatement, ),
+"
+17,if (brNameMatcher.group(1) != null || !brNameMatcher.group(1).isEmpty()) {,"if (brNameMatcher.group(1) != null || !brNameMatcher.group(1).isEmpty()) {
+  pName=brNameMatcher.group(1);
+}
+ else {
+  pName=""undefined"";
+}
+",1,2,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+18,if (null == connectors && !(connectors instanceof ReferenceCollection)) {,"if (null == connectors && !(connectors instanceof ReferenceCollection)) {
+  throw new IllegalArgumentException(""connectors must be a ["" + ReferenceCollection.class + ""]"");
+}
+ else if (null == idAccessors && !(idAccessors instanceof ReferenceCollection)) {
+  throw new IllegalArgumentException(""idAccessors must be a ["" + ReferenceCollection.class + ""]"");
+}
+ else if (null == sessionManager) {
+  throw new IllegalArgumentException(""sessionManager is required"");
+}
+",1,1,4,,"NullLiteral(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+19,if ((userValue == null) != (serverValue == null),"if ((userValue == null) != (serverValue == null) || (userValue != null && !userValue.equals(serverValue))) {
+  String logValue=initConf.isHiddenConfig(var) ? ""(hidden)"" : serverValue;
+  throw new HiveException(var + "" is restricted from being set; server is configured"" + "" to use ""+ logValue+ "", but the query configuration specifies ""+ userValue);
+}
+",1,1,4,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+20,} else if(  (context != null && subject != null && property != null),"if ((context != null && subject != null && property != null) || (context != null && subject != null) || context != null) {
+  IntArray fromKey=IntArray.createCSPOKey(subject,property,object,context);
+  IntArray toKey=IntArray.createCSPOMaxKey(subject,property,object,context);
+  return indexCSPO.subMap(fromKey,true,toKey,true).values();
+}
+ else {
+  Predicate<Statement> p=new Predicate<Statement>(){
+    @Override public boolean apply(    Statement triple){
+      if (subject != null && !triple.getSubject().equals(subject)) {
+        return false;
+      }
+      if (property != null && !triple.getPredicate().equals(property)) {
+        return false;
+      }
+      if (object != null && !triple.getObject().equals(object)) {
+        return false;
+      }
+      if (context != null && !triple.getContext().equals(context)) {
+        return false;
+      }
+      return true;
+    }
+  }
+;
+  return Collections2.filter(data,p);
+}
+",1,1,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+21,if( null == searchString && this.searchString == null ),"if (null == searchString && this.searchString == null) return true;
+",1,1,5,,"NullLiteral(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+ThisExpression(FieldAccess-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+22,if ((productStoreId == null && this.productStoreId == null) || (productStoreId != null && productStoreId.equals(this.productStoreId))) {,"if ((productStoreId == null && this.productStoreId == null) || (productStoreId != null && productStoreId.equals(this.productStoreId))) {
+  return;
+}
+",1,1,11,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+ThisExpression(FieldAccess-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+23,if (dsTape == null && dsTape != true && dsTape != false) {,"if (dsTape == null && dsTape != true && dsTape != false) {
+  throw new InvalidOptionsException(""--"" + DS_TAPE_ARG + "" specified is invalid. ""+ HELP_STR);
+}
+",1,1,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+BooleanLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+BooleanLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+24,if ((currElement == null && currElement != lastElement) ||,"if ((currElement == null && currElement != lastElement) || (currElement != null && !currElement.equals(lastElement))) {
+  throw new AssertionError(""Not all elements match in results: "" + Arrays.toString(resultsArray));
+}
+",2,2,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+25,"if(root.get(""data"") == null && root.get(""data"").size() < 1) {","if (root.get(""data"") == null && root.get(""data"").size() < 1) {
+  throw new ClientException(""No Bundle Info returned"");
+}
+",2,2,9,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+26,if ( response != null,"if (response != null || response.getData() != null || response.getData().size() > 0 || response.getPagination() != null || StringUtils.isBlank(response.getPagination().getNextMaxId())) {
+  return false;
+}
+ else {
+  return true;
+}
+",2,2,2,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+27,if (e != null || !(e instanceof InterruptedException)),"if (e != null || !(e instanceof InterruptedException)) currentException=e;
+",3,3,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+28,if (groupingColumns != null || groupingColumns.length > 0) {,"if (groupingColumns != null || groupingColumns.length > 0) {
+  sb.append(""grouping set="").append(TUtil.arrayToString(groupingColumns));
+  sb.append("", "");
+}
+",6,6,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"

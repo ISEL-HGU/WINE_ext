@@ -1,0 +1,168 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"Map<Object, Object> message = new HashMap<Object, Object>() {{","Map<Object,Object> message=new HashMap<Object,Object>(){
+{
+  }
+}
+;
+",0,12,7,36,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+2,{,"mockContext.checking(new Expectations(){
+{
+  }
+}
+);
+",0,0,0,,
+3,methodConfig.setArguments(Lists.newArrayList(new ArgumentConfig() {{,"methodConfig.setArguments(Lists.newArrayList(new ArgumentConfig(){
+{
+  }
+}
+));
+",0,3,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+4,{,"this.helper=new ManagementTestBase(){
+{
+  }
+}
+;
+",0,0,0,,
+5,{,"add(new UnCommittedEntryManagerTester(new ArrayList<Log>(){
+{
+  }
+}
+,0,0));
+",0,0,0,,
+6,{,"add(new UnCommittedEntryManagerTester(new ArrayList<Log>(){
+{
+  }
+}
+,5,5));
+",0,0,0,,
+7,{,"add(new UnCommittedEntryManagerTester(new ArrayList<Log>(){
+{
+  }
+}
+,0,-1));
+",0,0,0,,
+8,{,"add(new UnCommittedEntryManagerTester(new ArrayList<Log>(){
+{
+  }
+}
+,0,0,-1,null));
+",0,0,0,,
+9,{,"context.checking(new Expectations(){
+{
+  }
+}
+);
+",0,0,0,,
+10,".get(new GenericType<Map<String, JsonbModel>>(new JohnzonParameterizedType(Map.class, String.class, JsonbModel.class)) {{}});","final Map<String,JsonbModel> response=client.target(""http://localhost:"" + meecrowave.getConfiguration().getHttpPort() + ""/MultipartTest"").request().get(new GenericType<Map<String,JsonbModel>>(new JohnzonParameterizedType(Map.class,String.class,JsonbModel.class)){
+{
+  }
+}
+);
+",0,3,10,,"SimpleName(),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, ClassInstanceCreation-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, ClassInstanceCreation-type, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ),
+Block(Initializer-body, AnonymousClassDeclaration-bodyDeclarations, ClassInstanceCreation-anonymousClassDeclaration, ),
+"
+11,"put(""solr"", new HashMap<String, Object>() {{","put(""solr"",new HashMap<String,Object>(){
+{
+  }
+}
+);
+",0,0,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+12,{,"resTable=new JExtendedTable(resTableModel){
+  @Override public void doLayout(){
+    int columnsWidthsSum=0;
+    int realFirstColumn=-1;
+    int index;
+    for (int i=0; i < resTableModel.getColumnCount(); i++) {
+      index=resTableModel.getRealColumn(i);
+      if (index == 0) {
+        realFirstColumn=i;
+      }
+ else {
+        columnsWidthsSum+=getColumnModel().getColumn(i).getPreferredWidth();
+      }
+    }
+    if (realFirstColumn != -1) {
+      getColumnModel().getColumn(realFirstColumn).setPreferredWidth(Math.max(getWidth() - columnsWidthsSum,minNamesColumnWidth));
+    }
+    super.doLayout();
+  }
+{
+  }
+}
+;
+",0,0,0,,
+13,{,"jpegFileOptimizer.activate(new org.apache.sling.fileoptim.internal.optimizers.JpegFileOptimizer.Config(){
+{
+  }
+  @Override public Class<? extends Annotation> annotationType(){
+    return null;
+  }
+  @Override public float compressionLevel(){
+    return 0.7f;
+  }
+}
+);
+",0,0,0,,
+14,{,"Config config=new Config(){
+{
+  }
+  @Override public Class<? extends Annotation> annotationType(){
+    return null;
+  }
+  @Override public float compressionLevel(){
+    return 0.75f;
+  }
+}
+;
+",0,0,0,,
+15,"JSONObject input = new JSONObject(new HashMap<String, Object>() {{","JSONObject input=new JSONObject(new HashMap<String,Object>(){
+{
+  }
+}
+);
+",1,1,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+16,"NiFiProperties properties = NiFiProperties.createBasicNiFiProperties(null, new HashMap<String, String>() {{","NiFiProperties properties=NiFiProperties.createBasicNiFiProperties(null,new HashMap<String,String>(){
+{
+  }
+}
+);
+",1,1,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"

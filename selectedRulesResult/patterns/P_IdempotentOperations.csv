@@ -1,0 +1,19 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,cl = cl = AccessController.doPrivileged(new PrivilegedAction<ClassLoader>() {,"cl=cl=AccessController.doPrivileged(new PrivilegedAction<ClassLoader>(){
+  public ClassLoader run(){
+    return binding.getClass().getClassLoader();
+  }
+}
+);
+",0,1,6,13,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(Assignment-leftHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+2,s = s/=1000;,"s=s/=1000;
+",2,3,3,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(Assignment-leftHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"

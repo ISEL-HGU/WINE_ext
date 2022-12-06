@@ -1,0 +1,14 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"fn.replace( '\\', '/' );","fn.replace('\\','/');
+",0,1,4,4,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+CharacterLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+CharacterLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,"b.abs(new MathContext(0, RoundingMode.UNNECESSARY));","b.abs(new MathContext(0,RoundingMode.UNNECESSARY));
+",1,1,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

@@ -1,0 +1,653 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"log.trace(""sent "" + String.format(""%,d"", count) + "" mutations to "" + location + "" in ""","log.trace(""sent "" + String.format(""%,d"",count) + "" mutations to ""+ location+ "" in ""+ String.format(""%.2f secs (%,.2f mutations/sec) with %,d failures"",(st2 - st1) / 1000.0,count / ((st2 - st1) / 1000.0),failures.size()));
+",0,1077,10,1338,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,"LOG.info(""Cannot find file "" + Constants.AVRO_FULL_PATH, e.getMessage(), e);","LOG.info(""Cannot find file "" + Constants.AVRO_FULL_PATH,e.getMessage(),e);
+",0,9,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+3,"LOG.warn(""Error finding subscription for: "" + consumerInfo + "": "" + e.getMessage(), false, e);","LOG.warn(""Error finding subscription for: "" + consumerInfo + "": ""+ e.getMessage(),false,e);
+",0,3,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+4,"LOG.info(""count: "" + trace.count, trace);","LOG.info(""count: "" + trace.count,trace);
+",0,1,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+5,"LOG.debug(""reconnect XAResource with: "" + this.getInfo(), existingConnection == null ? """" : existingConnection.getFirstFailureError());","LOG.debug(""reconnect XAResource with: "" + this.getInfo(),existingConnection == null ? """" : existingConnection.getFirstFailureError());
+",0,23,10,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-elseExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+6,"LOG.error(""got event: "" + event + "", ex:"" + event.getThrowableInformation().getThrowable(), event.getThrowableInformation().getThrowable());","LOG.error(""got event: "" + event + "", ex:""+ event.getThrowableInformation().getThrowable(),event.getThrowableInformation().getThrowable());
+",0,39,11,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+7,"LOG.info(""Getting schema for {}. Gap: {} HighWaterMark: {}"", this.topicName, this.lowWatermark.getGap(this.highWatermark));","LOG.info(""Getting schema for {}. Gap: {} HighWaterMark: {}"",this.topicName,this.lowWatermark.getGap(this.highWatermark));
+",0,4,10,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+8,"LOG.error(""<< error running {} on node({}): {}"", new Object[] { event.getStatement(), event.getNode().getId(),","LOG.error(""<< error running {} on node({}): {}"",new Object[]{event.getStatement(),event.getNode().getId(),event.getCause().getMessage()},event.getCause());
+",0,32,10,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+9,"LOGGER.error(""An exception occurred while calling the destroy method of the blueprint bean  in bundle {}/{}."", getName(), b.getSymbolicName(), b.getVersion(), getRealCause(e));","LOGGER.error(""An exception occurred while calling the destroy method of the blueprint bean  in bundle {}/{}."",getName(),b.getSymbolicName(),b.getVersion(),getRealCause(e));
+",0,0,10,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+10,"LOG.debug(""Going to execute query <"" + s.replaceAll(""\\?"", ""{}"") + "">"", quoteString(names[0]),","LOG.debug(""Going to execute query <"" + s.replaceAll(""\\?"",""{}"") + "">"",quoteString(names[0]),quoteString(names[1]));
+",0,3,11,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+11,"logger.info(""\treading file split {}"", split.getPath().getName() + "" ({}"", split.getStart() + ""..."" + (split.getStart() + split.getLength()), ""{} {} bytes)"");","logger.info(""\treading file split {}"",split.getPath().getName() + "" ({}"",split.getStart() + ""..."" + (split.getStart() + split.getLength()),""{} {} bytes)"");
+",0,6,15,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+12,"logger.error(""invalid time bucket"", split[1]);","logger.error(""invalid time bucket"",split[1]);
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+13,"LOG.debug(String.format(""0x%x"", System.identityHashCode(this)) + "" resume prefetching"");","LOG.debug(String.format(""0x%x"",System.identityHashCode(this)) + "" resume prefetching"");
+",0,6,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-arguments, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+14,"logBookieUnavailable(() -> LOG.error(""Could not connect to bookie: {}/{}, current state {} : "",","logBookieUnavailable(() -> LOG.error(""Could not connect to bookie: {}/{}, current state {} : "",future.channel(),bookieId,state,future.cause()));
+",0,0,4,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, LambdaExpression-body, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, LambdaExpression-body, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, LambdaExpression-body, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+15,"LOG.error(""Invalid state transition from {} to {} "", this.state, toState, getStack());","LOG.error(""Invalid state transition from {} to {} "",this.state,toState,getStack());
+",0,0,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+16,"log.debug(""Management plane ID at {} {} changed from {} to {} (can happen on concurrent startup of multiple nodes)"", new Object[] {getManagementNodeId(), getHighAvailabilityManager().getNodeState(), managementPlaneId, newPlaneId, new RuntimeException(""Stack trace for setManagementPlaneId"")});","log.debug(""Management plane ID at {} {} changed from {} to {} (can happen on concurrent startup of multiple nodes)"",new Object[]{getManagementNodeId(),getHighAvailabilityManager().getNodeState(),managementPlaneId,newPlaneId,new RuntimeException(""Stack trace for setManagementPlaneId"")});
+",0,1,12,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+17,"if (LOG.isTraceEnabled()) LOG.trace(""Unable to install manifest from ""+url+"": ""+installResult.getError(), installResult.getError());","if (LOG.isTraceEnabled()) LOG.trace(""Unable to install manifest from "" + url + "": ""+ installResult.getError(),installResult.getError());
+",0,0,11,,"SimpleName(MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+18,"LOG.info(String.format(outputContext.getDestinationVertexName() + "": "" + ""New Span%d.length = %d, perItem = %d"", newSpan.index, newSpan","LOG.info(String.format(outputContext.getDestinationVertexName() + "": "" + ""New Span%d.length = %d, perItem = %d"",newSpan.index,newSpan.length(),perItem) + "", counter:"" + mapOutputRecordCounter.getValue());
+",0,1,10,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+19,"logger.warn(message + sql, new CayenneRuntimeException(message + ""%s"", sql));","logger.warn(message + sql,new CayenneRuntimeException(message + ""%s"",sql));
+",0,8,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+20,"LOG.error(""hit exception connecting to zookeeper at {}:{}"", new Object[] { ""127.0.0.1"", zkPort, ex });","LOG.error(""hit exception connecting to zookeeper at {}:{}"",new Object[]{""127.0.0.1"",zkPort,ex});
+",0,0,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+21,"logger.warn(""Ignoring column that is unsupported."", UserException","logger.warn(""Ignoring column that is unsupported."",UserException.unsupportedError().message(""A column you queried has a data type that is not currently supported by the JDBC storage plugin. "" + ""The column's name was %s and its JDBC data type was %s. "",name,nameFromType(jdbcType)).addContext(""Sql"",sql).addContext(""Column Name"",name).addContext(errorContext).build(logger));
+",0,0,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+22,"logger.warn(""Ignoring column that is unsupported."", UserException","logger.warn(""Ignoring column that is unsupported."",UserException.unsupportedError().message(""A column you queried has a data type that is not currently supported by the Kudu storage plugin. "" + ""The column's name was %s and its Kudu data type was %s. "",name,kuduType.toString()).addContext(""column Name"",name).addContext(""plugin"",""kudu"").build(logger));
+",0,0,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+23,"_log.error(""Callback error: "" + callbacks.get(i) + "" on "" + listener + "":"" + cr.getError(), cr.getError());","_log.error(""Callback error: "" + callbacks.get(i) + "" on ""+ listener+ "":""+ cr.getError(),cr.getError());
+",0,2,13,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+24,"LOG.info(outputContext.getDestinationVertexName() + "": "" + String.format(""Span%d.length = %d, perItem = %d"", index, length(), perItem));","LOG.info(outputContext.getDestinationVertexName() + "": "" + String.format(""Span%d.length = %d, perItem = %d"",index,length(),perItem));
+",0,2,11,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+25,"LOG.error(""Key bean isn't extended by {} ."", new Object[]{cassandraMapping.getKeyClass(), PersistentBase.class});","LOG.error(""Key bean isn't extended by {} ."",new Object[]{cassandraMapping.getKeyClass(),PersistentBase.class});
+",0,0,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+26,"LOG.info(""FSR %d %016x\n {}"", new Object[] {t2 - t1, rs.getKey()});","LOG.info(""FSR %d %016x\n {}"",new Object[]{t2 - t1,rs.getKey()});
+",0,1,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+27,"LOGGER.info(""Framework message received: "", new String(data, Charset.defaultCharset()));","LOGGER.info(""Framework message received: "",new String(data,Charset.defaultCharset()));
+",0,1,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+28,"LOG.debug(srcNameTrimmed + "": "" + ""NumCompletedInputs: {}"" + (numInputs - remainingMaps.get()));","LOG.debug(srcNameTrimmed + "": "" + ""NumCompletedInputs: {}""+ (numInputs - remainingMaps.get()));
+",0,1,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+29,LOG.debug(String.format(testIdMsg,"LOG.debug(String.format(testIdMsg + "" False positives: %d out of %d (%f)"",numFalsePos,nTrials,falsePosRate) + fakeLookupModeStr);
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+30,"log.info(""Separator: "" + String.format(""%04x"", (int) separator));","log.info(""Separator: "" + String.format(""%04x"",(int)separator));
+",0,0,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+31,"logger.error(""Dataflow {} failed to execute properly"", dataflowName, triggerResult.getFailureCause().orElse(null));","logger.error(""Dataflow {} failed to execute properly"",dataflowName,triggerResult.getFailureCause().orElse(null));
+",0,1,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+32,"LOG.trace(""removeToken: tokenIdentifier = {}, removed = "", tokenIdentifier, (tokenInfo != null));","LOG.trace(""removeToken: tokenIdentifier = {}, removed = "",tokenIdentifier,(tokenInfo != null));
+",0,0,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+33,"if (val != null) log.debug(""{} finished waiting for start-latch; continuing..."", entity(), val);","if (val != null) log.debug(""{} finished waiting for start-latch; continuing..."",entity(),val);
+",0,0,7,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+34,"LOG.debug(""After conversion: {}"" + constructorParams[i]);","LOG.debug(""After conversion: {}"" + constructorParams[i]);
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+35,"logger.warn(sBuilder.append(""Thread {} has been interrupted 3."")","logger.warn(sBuilder.append(""Thread {} has been interrupted 3."").append(Thread.currentThread().getName()).toString());
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+36,"logger.debug(message + "" - "" + duration + ""ms"", data);","logger.debug(message + "" - "" + duration+ ""ms"",data);
+",0,1,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+37,"LOG.error(""finalizing unclosed "" + this + ""; check caller"", this.callstack);","LOG.error(""finalizing unclosed "" + this + ""; check caller"",this.callstack);
+",0,0,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+38,"log.warn(""Can't resolve '"" + token.toString(false) + ""'"", ns) ;","log.warn(""Can't resolve '"" + token.toString(false) + ""'"",ns);
+",0,0,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+39,"log.error(""{} failed to send record to {}: "", WorkerSourceTask.this, topic, e);","log.error(""{} failed to send record to {}: "",WorkerSourceTask.this,topic,e);
+",0,1,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ThisExpression-qualifier, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+40,"LOGGER.warn(""Error while downloading artifact: {}"", ((Throwable) value).getMessage(), value);","LOGGER.warn(""Error while downloading artifact: {}"",((Throwable)value).getMessage(),value);
+",0,0,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+41,"LOGGER.warn(""SID = "" + getSessionId() + "" - JID = "" + getInitiatingEntity() + "" - RID = "" + rid + "" - async error on event "", event.getClass(), throwable);","LOGGER.warn(""SID = "" + getSessionId() + "" - JID = ""+ getInitiatingEntity()+ "" - RID = ""+ rid+ "" - async error on event "",event.getClass(),throwable);
+",0,0,12,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+42,"LOG.error(logErrorMessage + "" due to: {}"", this, vci.getVersion(), vci.getFlowIdentifier(), vci.getBucketIdentifier(), e.getLocalizedMessage());","LOG.error(logErrorMessage + "" due to: {}"",this,vci.getVersion(),vci.getFlowIdentifier(),vci.getBucketIdentifier(),e.getLocalizedMessage());
+",0,0,13,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+43,"logger.error(""Job failed to make progress!"" + String.format(""No epoch change for %d minutes."", this.maxTimeBetweenEpochsMs / (60 * 1000)));","logger.error(""Job failed to make progress!"" + String.format(""No epoch change for %d minutes."",this.maxTimeBetweenEpochsMs / (60 * 1000)));
+",0,0,10,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+44,"log.info(""Rule Store activated. It contains "" + recipes.size() + "" recipes."", this);","log.info(""Rule Store activated. It contains "" + recipes.size() + "" recipes."",this);
+",0,0,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+45,"logger.info(""Testing: {}"", testFile + "" (splits {}"", numberOfSplits + "")"");","logger.info(""Testing: {}"",testFile + "" (splits {}"",numberOfSplits + "")"");
+",0,0,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+46,"} ).doOnError( t -> logger.error( ""Failed on delete application"", t.getMessage() ) );","return Observable.from(indexes).flatMap(index -> {
+  final ListenableActionFuture<DeleteByQueryResponse> response=esProvider.getClient().prepareDeleteByQuery(alias.getWriteAlias()).setQuery(tqb).execute();
+  response.addListener(new ActionListener<DeleteByQueryResponse>(){
+    @Override public void onResponse(    DeleteByQueryResponse response){
+      checkDeleteByQueryResponse(tqb,response);
+    }
+    @Override public void onFailure(    Throwable e){
+      logger.error(""Failed on delete index"",e.getMessage());
+    }
+  }
+);
+  return Observable.from(response);
+}
+).doOnError(t -> logger.error(""Failed on delete application"",t.getMessage()));
+",0,0,7,,"SimpleName(),
+SimpleName(VariableDeclarationFragment-name, LambdaExpression-parameters, ),
+SimpleName(MethodInvocation-expression, LambdaExpression-body, ),
+SimpleName(MethodInvocation-name, LambdaExpression-body, ),
+StringLiteral(MethodInvocation-arguments, LambdaExpression-body, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, LambdaExpression-body, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, LambdaExpression-body, ),
+"
+47,"logger.info(""Created"", entity.get(""created"").toString());","logger.info(""Created"",entity.get(""created"").toString());
+",0,0,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+48,"LOG.info(""Close error on thread: "" + thread, thread.error);","LOG.info(""Close error on thread: "" + thread,thread.error);
+",1,1,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+49,"log.info(""taskId={}"" + stage.getExecutionCommands(hostName).get(0).","log.info(""taskId={}"" + stage.getExecutionCommands(hostName).get(0).getExecutionCommand().getTaskId());
+",1,8,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+50,"LOG.error(""Error starting ""+app+"": ""+Exceptions.collapseText(e), Exceptions.getFirstInteresting(e));","LOG.error(""Error starting "" + app + "": ""+ Exceptions.collapseText(e),Exceptions.getFirstInteresting(e));
+",1,2,11,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+51,"LOG.error(""Entity {} failed"", update ? ""update"" : ""creation"", entity);","LOG.error(""Entity {} failed"",update ? ""update"" : ""creation"",entity);
+",1,1,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ConditionalExpression-elseExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+52,"__log.warn("""",__msgs.msgBindingInputNotFound(_serviceName, _portName, op.getName()));","__log.warn("""",__msgs.msgBindingInputNotFound(_serviceName,_portName,op.getName()));
+",1,1,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+53,"if (log.isTraceEnabled()) log.trace(""modified attribute {} unchanged; not emitting on {}"", new Object[] {attribute.getName(), newValue, this});","if (log.isTraceEnabled()) log.trace(""modified attribute {} unchanged; not emitting on {}"",new Object[]{attribute.getName(),newValue,this});
+",1,8,11,,"SimpleName(MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+ThisExpression(ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+54,"logger.debug(""Repository initializer '"" + ri.getClass().getName() + ""' completed"", config.getHomeDir());","logger.debug(""Repository initializer '"" + ri.getClass().getName() + ""' completed"",config.getHomeDir());
+",1,4,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+55,"logger.debug(""Not able to generate index plan in "", this.getClass().toString());","logger.debug(""Not able to generate index plan in "",this.getClass().toString());
+",1,1,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+56,"LOG.error(String.format(""%s is Unknown"", StandardCharsets.UTF_8.toString()) + ""exception - [{}]"", e);","LOG.error(String.format(""%s is Unknown"",StandardCharsets.UTF_8.toString()) + ""exception - [{}]"",e);
+",1,2,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+57,"LOG.info(this + "": could not get "" + key + "" due to InvalidToken "" +","LOG.info(this + "": could not get "" + key+ "" due to InvalidToken ""+ ""exception."",info.getInvalidTokenException());
+",1,1,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+ThisExpression(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+58,"LOG.trace(""zkclient exists, path: {}, time: {} ms"", _uid, path, (endT - startT));","LOG.trace(""zkclient exists, path: {}, time: {} ms"",_uid,path,(endT - startT));
+",1,1,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+59,"log.trace(msg, new Object[]{id, this.cache.size(), upperLimit}, new Exception());","log.trace(msg,new Object[]{id,this.cache.size(),upperLimit},new Exception());
+",1,1,11,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+60,"logger.warn(""Some keystore properties are populated ({}, {}, {}, {}) but not valid"", (Object[]) tlsConfiguration.getKeystorePropertiesForLogging());","logger.warn(""Some keystore properties are populated ({}, {}, {}, {}) but not valid"",(Object[])tlsConfiguration.getKeystorePropertiesForLogging());
+",1,1,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+61,"log.info("" ... start to ACTIVATE Index {} on ManagedSolrServer"",entry.getKey(),info.metadata.getServerName());","log.info("" ... start to ACTIVATE Index {} on ManagedSolrServer"",entry.getKey(),info.metadata.getServerName());
+",1,2,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+62,"LOG.info(""Auto Deletion Policy monitor: {}"" + this.","LOG.info(""Auto Deletion Policy monitor: {}"" + this.getClass().getCanonicalName());
+",2,2,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+63,"log.debug(""Topic Collected Data in memory = {}"" + JsonUtil.obj2String(dashboardCollectService.getTopicMap().asMap()));","log.debug(""Topic Collected Data in memory = {}"" + JsonUtil.obj2String(dashboardCollectService.getTopicMap().asMap()));
+",3,3,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

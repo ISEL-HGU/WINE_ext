@@ -1,0 +1,68 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"errorMsg = errorMsg = NbBundle.getMessage(SelectDatabasePanel.class, ""ERR_MissingServer"");","errorMsg=errorMsg=NbBundle.getMessage(SelectDatabasePanel.class,""ERR_MissingServer"");
+",0,4,6,31,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(Assignment-leftHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+2,"topDocument = topDocument = XMLUtil.createDocument(""topDocument"", null, null, null);","topDocument=topDocument=XMLUtil.createDocument(""topDocument"",null,null,null);
+",0,0,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(Assignment-leftHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+3,module = module = Modules.instance(jt.getContext()).getDefaultModule();,"module=module=Modules.instance(jt.getContext()).getDefaultModule();
+",0,0,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(Assignment-leftHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+4,"dataFolderPanel = dataFolderPanel = new PropertyPanel (locationFolderModel, PropertyPanel.PREF_CUSTOM_EDITOR);","dataFolderPanel=dataFolderPanel=new PropertyPanel(locationFolderModel,PropertyPanel.PREF_CUSTOM_EDITOR);
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(Assignment-leftHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+5,"basePath = basePath += ""/"" + specialParam.getString();","basePath=basePath+=""/"" + specialParam.getString();
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(Assignment-leftHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+6,cl = cl = AccessController.doPrivileged(new PrivilegedAction<ClassLoader>() {,"cl=cl=AccessController.doPrivileged(new PrivilegedAction<ClassLoader>(){
+  public ClassLoader run(){
+    return binding.getClass().getClassLoader();
+  }
+}
+);
+",0,0,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(Assignment-leftHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+7,factory.injectAnnotationProcessorFactories = factory.injectAnnotationProcessorFactories = Collections.<InjectAnnotationProcessorFactory>singletonList(injector);,"factory.injectAnnotationProcessorFactories=factory.injectAnnotationProcessorFactories=Collections.<InjectAnnotationProcessorFactory>singletonList(injector);
+",1,1,6,,"QualifiedName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+QualifiedName(Assignment-leftHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, MethodInvocation-typeArguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+8,s = s/=1000;,"s=s/=1000;
+",3,11,3,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(Assignment-leftHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"

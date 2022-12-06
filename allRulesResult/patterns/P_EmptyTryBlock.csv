@@ -1,0 +1,2269 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,try {,"try {
+}
+ catch (Exception e) {
+  logger.warn(""Failed to clean up message: "" + copyRedistribute);
+}
+",0,0,0,361,
+2,try {,"try {
+}
+  finally {
+  dbAccessor.dropTable(tableName);
+}
+",0,0,0,,
+3,{,"try {
+}
+ catch (Exception e) {
+  throw new ResourceException(e);
+}
+",0,0,0,,
+4,try {,"try {
+}
+ catch (Exception e1) {
+  e1.printStackTrace();
+}
+ finally {
+  if (server != null) {
+    server.stopServer();
+  }
+}
+",0,0,0,,
+5,try {,"try {
+}
+ catch (Exception e) {
+  log.error(e);
+}
+",0,0,0,,
+6,try{,"try {
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+7,try{,"try {
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+8,try{,"try {
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+9,try{,"try {
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+10,try {,"try {
+}
+  finally {
+  System.clearProperty(featureProperty);
+}
+",0,0,0,,
+11,{,"try {
+}
+ catch (final Exception exception) {
+}
+",0,0,0,,
+12,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+13,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+14,{,"try {
+}
+ catch (Exception ex) {
+  log.error(""Can't fix "" + ex.getMessage());
+  throw new IOException(""Can't fix "" + ex.getMessage());
+}
+",0,0,0,,
+15,{,"try {
+}
+ catch (Exception ex) {
+  log.error(""Can't fix "" + ex.getMessage());
+  throw new IOException(""Can't fix "" + ex.getMessage());
+}
+",0,0,0,,
+16,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+  org.junit.Assert.fail(e.getMessage());
+}
+",0,0,0,,
+17,try {,"try {
+}
+  finally {
+  PartitionedRegion.BucketLock bl=(BucketLock)lock;
+  bl.unlock();
+}
+",0,0,0,,
+18,try {,"try {
+}
+  finally {
+  Bar.behaveSlowly=false;
+}
+",0,0,0,,
+19,try {,"try {
+}
+  finally {
+  in.close();
+}
+",0,0,0,,
+20,try {,"try {
+}
+ catch (ConstructionException expected) {
+}
+",0,0,0,,
+21,try { } catch(NumberFormatException | NullPointerException e) {},"try {
+}
+ catch (NumberFormatException|NullPointerException e) {
+}
+",0,0,5,,"Block(TryStatement-body, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+22,try {,"try {
+}
+ catch (RuntimeException e) {
+  assertTrue(e.getMessage().endsWith(""not found on CLASSPATH""));
+}
+",0,0,0,,
+23,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+24,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+25,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+26,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+27,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+28,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+29,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+30,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+31,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+32,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+33,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+34,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+35,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+36,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+37,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+38,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+39,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+40,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+41,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+42,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+43,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+44,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+45,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+46,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+47,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+48,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+49,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+50,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+51,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+52,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+53,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+54,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+55,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+56,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+57,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+58,try {,"try {
+}
+ catch (IllegalArgumentException e) {
+  throw new IllegalArgumentException(Messages.getString(""awt.81"",e.getMessage()));
+}
+",0,0,0,,
+59,try {,"try {
+}
+ catch (IllegalArgumentException e) {
+  throw new IllegalArgumentException(Messages.getString(""awt.85"",e.getMessage()));
+}
+",0,0,0,,
+60,try {,"try {
+}
+ catch (IllegalArgumentException e) {
+  throw new IllegalArgumentException(Messages.getString(""awt.8C"",e.getMessage()));
+}
+",0,0,0,,
+61,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+62,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+63,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+64,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+65,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+66,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+67,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+68,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+69,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+70,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+71,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+72,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+73,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+74,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+75,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+76,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+77,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+78,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+79,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+80,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+81,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+82,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+83,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+84,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+85,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+86,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+87,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+88,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+89,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+90,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+91,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+92,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+93,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+94,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+95,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+96,try {,"try {
+}
+ catch (Exception e) {
+  Assert.fail(""Can't save file: "" + filename);
+}
+",0,0,0,,
+97,try {,"try {
+}
+ catch (Exception e) {
+  Assert.fail(""Can't open file: "" + filename);
+}
+",0,0,0,,
+98,try {,"try {
+}
+ catch (Exception e) {
+  Assert.fail(""Can't save file: "" + filename);
+}
+",0,0,0,,
+99,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+100,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+101,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+102,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+103,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+104,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+105,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+106,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+107,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+108,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+109,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+110,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+111,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+112,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+113,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+114,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+115,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+116,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+117,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+118,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+119,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+120,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+121,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+122,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+123,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+124,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+125,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+126,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+127,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+128,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+129,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+130,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+131,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+132,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+133,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+134,try {,"try {
+}
+ catch (IllegalArgumentException e) {
+  throw new IllegalArgumentException(Messages.getString(""awt.81"",e.getMessage()));
+}
+",0,0,0,,
+135,try {,"try {
+}
+ catch (IllegalArgumentException e) {
+  throw new IllegalArgumentException(Messages.getString(""awt.85"",e.getMessage()));
+}
+",0,0,0,,
+136,try {,"try {
+}
+ catch (IllegalArgumentException e) {
+  throw new IllegalArgumentException(Messages.getString(""awt.8C"",e.getMessage()));
+}
+",0,0,0,,
+137,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+138,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+139,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+140,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+141,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+142,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+143,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+144,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+145,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+146,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+147,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+148,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+149,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+150,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+151,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+152,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+153,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+154,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+155,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+156,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+157,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+158,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+159,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+160,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+161,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+162,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+163,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+164,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+165,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+166,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+167,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+168,try {,"try {
+}
+  finally {
+  unlockAWT();
+}
+",0,0,0,,
+169,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+170,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+171,try {,"try {
+}
+  finally {
+  toolkit.unlockAWT();
+}
+",0,0,0,,
+172,try {,"try {
+}
+ catch (Exception e) {
+  Assert.fail(""Can't save file: "" + filename);
+}
+",0,0,0,,
+173,try {,"try {
+}
+ catch (Exception e) {
+  Assert.fail(""Can't open file: "" + filename);
+}
+",0,0,0,,
+174,try {,"try {
+}
+ catch (Exception e) {
+  Assert.fail(""Can't save file: "" + filename);
+}
+",0,0,0,,
+175,try {,"try {
+}
+  finally {
+  scanner.close();
+}
+",0,0,0,,
+176,try {,"try {
+}
+  finally {
+  closeRegion(region);
+}
+",0,0,0,,
+177,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+178,try {,"try {
+}
+  finally {
+  System.clearProperty(featureProperty);
+}
+",0,0,0,,
+179,try {,"try {
+}
+ catch (RuntimeException e) {
+  logger.error().log(e);
+  logger.error().log(""TEST FAILED"");
+  return true;
+}
+",0,0,0,,
+180,try {,"try {
+}
+ catch (Exception e1) {
+  logger.error(""There was an error storing the configuration:"" + config.getFilePrefix() + "" (UUID=""+ config.getUUID()+ "")"",e1);
+}
+",0,0,0,,
+181,try {,"try {
+}
+ catch (Exception e) {
+  logger.warn(""Could not read recent workflows from file "" + recentFile,e);
+}
+",0,0,0,,
+182,try {,"try {
+}
+  finally {
+  lock2.unlock();
+}
+",0,0,0,,
+183,try {,"try {
+}
+  finally {
+  super.tearDown();
+}
+",0,0,0,,
+184,try {,"try {
+}
+ catch (IllegalStateException ise) {
+  return;
+}
+",0,0,0,,
+185,try {,"try {
+}
+ catch (Exception e) {
+  logger.error(e.getMessage(),e);
+  Assert.fail(e.getMessage());
+}
+",0,0,0,,
+186,try{,"try {
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+187,try{,"try {
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+188,try{,"try {
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+189,try{,"try {
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+190,try {,"try {
+}
+ catch (Exception e) {
+  log.info(""LDAP-Passwd update for {} failed ({})"",username,dn);
+}
+",0,0,0,,
+191,{,"try {
+}
+ catch (Throwable e) {
+  t=e;
+  throw new IllegalStateException(""error"",e);
+}
+",0,0,0,,
+192,{,"try {
+}
+ catch (Exception e) {
+  throw new Maven1xIntegrationException(""Error executing Maven 1.x"",e);
+}
+",0,0,0,,
+193,try {,"try {
+}
+ catch (Exception ex) {
+  Exceptions.printStackTrace(ex);
+}
+",0,0,0,,
+194,try {,"try {
+}
+  finally {
+  out.close();
+}
+",0,0,0,,
+195,try {,"try {
+}
+ catch (Exception e) {
+  tee=(TimeoutExpiredException)e;
+}
+",0,0,0,,
+196,try {,"try {
+}
+ catch (Exception ex) {
+  assertTrue(""Should not be here"",false);
+}
+",0,0,0,,
+197,try {,"try {
+}
+ catch (Exception ex) {
+  assertTrue(""Should not be here"",false);
+}
+",0,0,0,,
+198,try {,"try {
+}
+  finally {
+  support.doFinish();
+}
+",0,0,0,,
+199,try {,"try {
+}
+  finally {
+  support.doFinish();
+}
+",0,0,0,,
+200,try {,"try {
+}
+  finally {
+  support.doFinish();
+}
+",0,0,0,,
+201,try {,"try {
+}
+ catch (Throwable t) {
+}
+ finally {
+  return;
+}
+",0,0,0,,
+202,try {,"try {
+}
+ catch (NullPointerException e) {
+  throw e;
+}
+",0,0,0,,
+203,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+204,try {,"try {
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+205,try {,"try {
+}
+  finally {
+  this.lck.unlock();
+}
+",0,0,0,,
+206,try {,"try {
+}
+ catch (RuntimeException ex) {
+  errormsg(""jshell.err.cant.launch.editor"",ex);
+  fluffmsg(""jshell.msg.try.set.editor"");
+  return false;
+}
+",0,0,0,,
+207,try {,"try {
+}
+ catch (NumberFormatException nfe) {
+  return null;
+}
+",0,0,0,,
+208,try {,"try {
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+209,try {,"try {
+}
+ catch (Exception e) {
+}
+",0,0,0,,
+210,try {,"try {
+}
+ catch (Exception e) {
+  throwMe=e;
+  flushResult=null;
+}
+",0,0,0,,
+211,try {,"try {
+}
+ catch (Exception e) {
+  throwMe=e;
+  flushResult=null;
+}
+",0,0,0,,
+212,try {,"try {
+}
+ catch (Exception e) {
+  throwMe=e;
+  flushResult=null;
+}
+",0,0,0,,
+213,try {,"try {
+}
+ catch (Exception e) {
+  throwMe=e;
+  flushResult=null;
+}
+",0,0,0,,
+214,try {,"try {
+}
+ catch (Exception e) {
+  throwMe=e;
+  flushResult=null;
+}
+",0,0,0,,
+215,try {,"try {
+}
+  finally {
+  unlockCheckUpdate();
+}
+",0,0,0,,
+216,try {,"try {
+}
+  finally {
+  outStream.close();
+}
+",0,0,0,,
+217,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+218,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+219,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+220,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+221,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+222,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+223,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+224,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+225,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+226,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+227,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+228,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+229,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+230,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+231,try {,"try {
+}
+ catch (Exception ignore) {
+}
+",0,0,0,,
+232,try {,"try {
+}
+ catch (AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+233,try {,"try {
+}
+ catch (AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+234,try {,"try {
+}
+ catch (AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+235,try {,"try {
+}
+ catch (AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+236,try {,"try {
+}
+ catch (AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+237,try {,"try {
+}
+ catch (AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+238,try {,"try {
+}
+ catch (AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+239,try {,"try {
+}
+ catch (AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+240,try {,"try {
+}
+ catch (AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+241,try {,"try {
+}
+ catch (Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+242,try {,"try {
+}
+ catch (Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+243,try {,"try {
+}
+ catch (Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+244,try {,"try {
+}
+ catch (Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+245,try {,"try {
+}
+ catch (Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+246,try {,"try {
+}
+ catch (Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+247,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+248,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+249,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+250,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+251,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+252,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+253,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+254,try {,"try {
+}
+ catch (Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+255,try {,"try {
+}
+ catch (Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+256,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+257,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+258,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+259,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+260,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+261,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+262,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+263,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+264,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+265,try {,"try {
+}
+ catch (Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+266,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+267,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+268,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+269,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+270,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+271,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+272,try{,"try {
+}
+ catch (Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+273,try {,"try {
+}
+ catch (Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+274,try {,"try {
+}
+ catch (Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+275,try {,"try {
+}
+ catch (Exception err) {
+  log.error(""[testKeyCodes]"",err);
+}
+",0,0,0,,
+276,{,"try {
+}
+  finally {
+  if (_systemLauncher != null) {
+    _systemLauncher.shutdown();
+  }
+  System.clearProperty(INITIAL_SYSTEM_PROPERTY);
+  FileUtils.delete(_brokerWork,true);
+  FileUtils.delete(_initialSystemProperties,false);
+  FileUtils.delete(_initialConfiguration,false);
+}
+",0,0,0,,
+277,{,"try {
+}
+  finally {
+  QpidByteBuffer.deinitialisePool();
+}
+",0,0,0,,
+278,{,"try {
+}
+  finally {
+  if (_parent != null) {
+    _parent.dispose();
+  }
+  if (_slicedBuffer != null) {
+    _slicedBuffer.dispose();
+  }
+  QpidByteBuffer.deinitialisePool();
+}
+",0,0,0,,
+279,{,"try {
+}
+  finally {
+  BrokerTestHelper.tearDown();
+}
+",0,0,0,,
+280,{,"try {
+}
+  finally {
+  _authenticationProvider.close();
+}
+",0,0,0,,
+281,{,"try {
+}
+  finally {
+  _taskExecutor.stop();
+}
+",0,0,0,,
+282,{,"try {
+}
+  finally {
+  Files.deleteIfExists(_testFile.toPath());
+}
+",0,0,0,,
+283,try {,"try {
+}
+ catch (Throwable e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+284,try {,"try {
+}
+ catch (Exception ex) {
+  log.error(ex);
+  throw new Exception(""Test setup failed"",ex);
+}
+",0,0,0,,
+285,try {,"try {
+}
+ catch (Exception ex) {
+  log.error(ex);
+  throw new Exception(""Test teardown failed"",ex);
+}
+",0,0,0,,
+286,try {,"try {
+}
+ catch (Exception e) {
+  return INPUT;
+}
+",0,0,0,,
+287,try {,"try {
+}
+ catch (Exception e) {
+  return INPUT;
+}
+",0,0,0,,
+288,try {,"try {
+}
+ catch (Exception x) {
+  log.error(""Unable to stop ReplicatedContext"",x);
+  throw new LifecycleException(""Failed to stop ReplicatedContext"",x);
+}
+ finally {
+  super.stop();
+}
+",0,0,0,,
+289,try {,"try {
+}
+ catch (Exception x) {
+  log.error(""Unable to stop BackupManager"",x);
+  throw new LifecycleException(""Failed to stop BackupManager"",x);
+}
+ finally {
+  super.stop();
+}
+",0,0,0,,
+290,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+291,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+292,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+293,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+294,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+295,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+296,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+297,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+298,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+299,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+300,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+301,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+302,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+303,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+304,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+305,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+306,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+307,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+308,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+309,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+310,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+311,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+312,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+313,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+314,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+315,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+316,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+317,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+318,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+319,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+320,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+321,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+322,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+323,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+324,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+325,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+326,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+327,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+328,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+329,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+330,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+331,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+332,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+333,{,"try {
+}
+ catch (Exception e) {
+  fail(e.getMessage());
+}
+",0,0,0,,
+334,{,"try {
+}
+ catch (Exception e) {
+  fail(e.getMessage());
+}
+",0,0,0,,
+335,{,"try {
+}
+ catch (Exception e) {
+  fail(e.getMessage());
+}
+",0,0,0,,
+336,{,"try {
+}
+ catch (Exception e) {
+  fail(e.getMessage());
+}
+",0,0,0,,
+337,{,"try {
+}
+ catch (Exception e) {
+  fail(e.getMessage());
+}
+",0,0,0,,
+338,{,"try {
+}
+ catch (Exception e) {
+  fail(e.getMessage());
+}
+",0,0,0,,
+339,{,"try {
+}
+ catch (Exception e) {
+  fail(e.getMessage());
+}
+",0,0,0,,
+340,{,"try {
+}
+ catch (Exception e) {
+  fail(e.getMessage());
+}
+",0,0,0,,
+341,try{,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+342,try {,"try {
+}
+ catch (Exception e) {
+  throw new ServiceRuntimeException(e);
+}
+",0,0,0,,
+343,try {,"try {
+}
+ catch (Exception ex) {
+  ex.printStackTrace();
+}
+",0,0,0,,
+344,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+345,try {,"try {
+}
+ catch (Throwable e) {
+  logger.log(Level.SEVERE,e.getMessage(),e);
+}
+",0,0,0,,
+346,try {,"try {
+}
+  finally {
+  node.stop();
+}
+",0,0,0,,
+347,try {,"try {
+}
+ catch (Exception exception) {
+  StatusImpl.appendStatus(""Exception caught on node.stopComposite"",""LifecycleTestCase.testConstructorExceptionShutdownCE"");
+}
+",0,0,0,,
+348,try {,"try {
+}
+ catch (Exception exception) {
+  StatusImpl.appendStatus(""Exception caught on node.stopComposite"",""LifecycleTestCase.testInitExceptionShutdownCE"");
+}
+",0,0,0,,
+349,try {,"try {
+}
+ catch (Exception exception) {
+  StatusImpl.appendStatus(""Exception caught on node.stopComposite"",""LifecycleTestCase.testDestroyExceptionShutdownCE"");
+}
+",0,0,0,,
+350,try {,"try {
+}
+ catch (StackOverflowError e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+351,try {,"try {
+}
+  finally {
+  lock2.unlock();
+}
+",0,0,0,,
+352,try {,"try {
+}
+ catch (Exception e) {
+  if (UIMAFramework.getLogger(CLASS_NAME).isLoggable(Level.WARNING)) {
+    UIMAFramework.getLogger(CLASS_NAME).logrb(Level.WARNING,CLASS_NAME.getName(),""handleTempQueueFailure"",JmsConstants.JMS_LOG_RESOURCE_BUNDLE,""UIMAJMS_exception__WARNING"",e);
+  }
+}
+",0,0,0,,
+353,try {,"try {
+}
+ catch (Exception e) {
+  throw new AsynchAEException(e);
+}
+",0,0,0,,
+354,try {,"try {
+}
+ catch (Exception e) {
+  if (UIMAFramework.getLogger(CLASS_NAME).isLoggable(Level.WARNING)) {
+    if (getController() != null) {
+      UIMAFramework.getLogger(CLASS_NAME).logrb(Level.WARNING,CLASS_NAME.getName(),""handlePingReply"",UIMAEE_Constants.JMS_LOG_RESOURCE_BUNDLE,""UIMAEE_service_exception_WARNING"",getController().getComponentName());
+    }
+    UIMAFramework.getLogger(CLASS_NAME).logrb(Level.WARNING,getClass().getName(),""handlePingReply"",UIMAEE_Constants.JMS_LOG_RESOURCE_BUNDLE,""UIMAEE_exception__WARNING"",e);
+  }
+}
+",0,0,0,,
+355,try {,"try {
+}
+ catch (Exception e) {
+  if (UIMAFramework.getLogger(CLASS_NAME).isLoggable(Level.WARNING)) {
+    UIMAFramework.getLogger(CLASS_NAME).logrb(Level.WARNING,CLASS_NAME.getName(),""handleTempQueueFailure"",JmsConstants.JMS_LOG_RESOURCE_BUNDLE,""UIMAJMS_exception__WARNING"",e);
+  }
+}
+",0,0,0,,
+356,try {,"try {
+}
+ catch (Exception e) {
+  throw new AsynchAEException(e);
+}
+",0,0,0,,
+357,try {,"try {
+}
+ catch (Exception e) {
+  if (UIMAFramework.getLogger(CLASS_NAME).isLoggable(Level.WARNING)) {
+    if (getController() != null) {
+      UIMAFramework.getLogger(CLASS_NAME).logrb(Level.WARNING,CLASS_NAME.getName(),""handlePingReply"",UIMAEE_Constants.JMS_LOG_RESOURCE_BUNDLE,""UIMAEE_service_exception_WARNING"",getController().getComponentName());
+    }
+    UIMAFramework.getLogger(CLASS_NAME).logrb(Level.WARNING,getClass().getName(),""handlePingReply"",UIMAEE_Constants.JMS_LOG_RESOURCE_BUNDLE,""UIMAEE_exception__WARNING"",e);
+  }
+}
+",0,0,0,,
+358,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+359,try {,"try {
+}
+ catch (Throwable t) {
+  logger.error(location,jobid,t);
+}
+",0,0,0,,
+360,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+  assert (false);
+}
+",0,0,0,,
+361,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+  assert (false);
+}
+",0,0,0,,

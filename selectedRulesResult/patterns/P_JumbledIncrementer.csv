@@ -1,0 +1,223 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,for (int i = 0; i < max / ((evenOnly ? 2 : 1) * numThreads); i++) {,"for (int i=0; i < max / ((evenOnly ? 2 : 1) * numThreads); i++) {
+  int j=i * numThreads + threadid;
+  if (evenOnly) {
+    j*=2;
+  }
+  out.onNext(new TupleEvent(j,j + """"));
+}
+",0,26,10,52,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(ConditionalExpression-expression, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(ConditionalExpression-thenExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(ConditionalExpression-elseExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+2,for (int k = 3; (i <= hi) && (--k >= 0); i++) {,"for (int k=3; (i <= hi) && (--k >= 0); i++) {
+  final int v=fmap[i];
+  final int vd=v + d;
+  int j=i;
+  boolean onceRunned=false;
+  int a=0;
+  HAMMER:   while (true) {
+    if (onceRunned) {
+      fmap[j]=a;
+      if ((j-=h) <= mj) {
+        break HAMMER;
+      }
+    }
+ else {
+      onceRunned=true;
+    }
+    a=fmap[j - h];
+    int i1=a + d;
+    int i2=vd;
+    if (block[i1 + 1] == block[i2 + 1]) {
+      if (block[i1 + 2] == block[i2 + 2]) {
+        if (block[i1 + 3] == block[i2 + 3]) {
+          if (block[i1 + 4] == block[i2 + 4]) {
+            if (block[i1 + 5] == block[i2 + 5]) {
+              if (block[(i1+=6)] == block[(i2+=6)]) {
+                int x=lastShadow;
+                X:                 while (x > 0) {
+                  x-=4;
+                  if (block[i1 + 1] == block[i2 + 1]) {
+                    if (quadrant[i1] == quadrant[i2]) {
+                      if (block[i1 + 2] == block[i2 + 2]) {
+                        if (quadrant[i1 + 1] == quadrant[i2 + 1]) {
+                          if (block[i1 + 3] == block[i2 + 3]) {
+                            if (quadrant[i1 + 2] == quadrant[i2 + 2]) {
+                              if (block[i1 + 4] == block[i2 + 4]) {
+                                if (quadrant[i1 + 3] == quadrant[i2 + 3]) {
+                                  if ((i1+=4) >= lastPlus1) {
+                                    i1-=lastPlus1;
+                                  }
+                                  if ((i2+=4) >= lastPlus1) {
+                                    i2-=lastPlus1;
+                                  }
+                                  workDoneShadow++;
+                                  continue X;
+                                }
+                                if ((quadrant[i1 + 3] > quadrant[i2 + 3])) {
+                                  continue HAMMER;
+                                }
+                                break HAMMER;
+                              }
+                              if ((block[i1 + 4] & 0xff) > (block[i2 + 4] & 0xff)) {
+                                continue HAMMER;
+                              }
+                              break HAMMER;
+                            }
+                            if ((quadrant[i1 + 2] > quadrant[i2 + 2])) {
+                              continue HAMMER;
+                            }
+                            break HAMMER;
+                          }
+                          if ((block[i1 + 3] & 0xff) > (block[i2 + 3] & 0xff)) {
+                            continue HAMMER;
+                          }
+                          break HAMMER;
+                        }
+                        if ((quadrant[i1 + 1] > quadrant[i2 + 1])) {
+                          continue HAMMER;
+                        }
+                        break HAMMER;
+                      }
+                      if ((block[i1 + 2] & 0xff) > (block[i2 + 2] & 0xff)) {
+                        continue HAMMER;
+                      }
+                      break HAMMER;
+                    }
+                    if ((quadrant[i1] > quadrant[i2])) {
+                      continue HAMMER;
+                    }
+                    break HAMMER;
+                  }
+                  if ((block[i1 + 1] & 0xff) > (block[i2 + 1] & 0xff)) {
+                    continue HAMMER;
+                  }
+                  break HAMMER;
+                }
+                break HAMMER;
+              }
+              if ((block[i1] & 0xff) > (block[i2] & 0xff)) {
+                continue HAMMER;
+              }
+              break HAMMER;
+            }
+            if ((block[i1 + 5] & 0xff) > (block[i2 + 5] & 0xff)) {
+              continue HAMMER;
+            }
+            break HAMMER;
+          }
+          if ((block[i1 + 4] & 0xff) > (block[i2 + 4] & 0xff)) {
+            continue HAMMER;
+          }
+          break HAMMER;
+        }
+        if ((block[i1 + 3] & 0xff) > (block[i2 + 3] & 0xff)) {
+          continue HAMMER;
+        }
+        break HAMMER;
+      }
+      if ((block[i1 + 2] & 0xff) > (block[i2 + 2] & 0xff)) {
+        continue HAMMER;
+      }
+      break HAMMER;
+    }
+    if ((block[i1 + 1] & 0xff) > (block[i2 + 1] & 0xff)) {
+      continue HAMMER;
+    }
+    break HAMMER;
+  }
+  fmap[j]=v;
+}
+",0,8,8,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+3,"for (int arrayNdx = 0; parameterNdx < parameters.length; parameterNdx++, arrayNdx++) {","for (int arrayNdx=0; parameterNdx < parameters.length; parameterNdx++, arrayNdx++) {
+  String[] parts=parameters[parameterNdx];
+  Array.set(array,arrayNdx,resolver.resolveClass(parts[0]).getConstructor(String.class).newInstance(parts[1]));
+}
+",0,2,7,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+4,for (int i = 0; i < getReceivedExchanges().size(); i++) {,"for (int i=0; i < getReceivedExchanges().size(); i++) {
+  assertOnIndex(i);
+}
+",0,0,7,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+5,for (i++; i < cmds.length; i++) {,"for (i++; i < cmds.length; i++) {
+  answers[i]=new Answer(cmds[i],false,""Stopped by previous failure"");
+}
+",0,0,4,,"SimpleName(PostfixExpression-operand, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+6,"for (int i = 0, eventsSize = events.size(); i < eventsSize; i++) {","for (int i=0, eventsSize=events.size(); i < eventsSize; i++) {
+  event.index=events.getInt(i);
+  eventBatches.add(emitter.emitAndReturnBatch(event));
+  if (i % 16 == 0) {
+    try {
+      Thread.sleep(10);
+    }
+ catch (    InterruptedException e) {
+      throw new RuntimeException(e);
+    }
+  }
+}
+",0,0,9,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+7,for (; rows[j] < selection[i]; j++) {,"for (; rows[j] < selection[i]; j++) {
+}
+",0,0,5,,"SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+8,for (index++ ; index < len; index++) {,"for (index++; index < len; index++) {
+  l=lines.get(index);
+  vLen=l.length();
+  if (l.charAt(vLen - 1) == HEADER_CONTINUATION_INDICATOR) {
+    value+=l.substring(0,vLen - 1);
+    continue;
+  }
+  value+=l;
+  break;
+}
+",0,0,4,,"SimpleName(PostfixExpression-operand, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"

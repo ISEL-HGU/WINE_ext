@@ -1,0 +1,351 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"return lowerKey.toLowerCase().startsWith(""content"") || lowerKey.toLowerCase().equals(""link"");","return lowerKey.toLowerCase().startsWith(""content"") || lowerKey.toLowerCase().equals(""link"");
+",0,0,8,115,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ReturnStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+2,"_blueprintHeaderMandatory = blueprintHeaderMandatory.toLowerCase().equals(""true"");","_blueprintHeaderMandatory=blueprintHeaderMandatory.toLowerCase().equals(""true"");
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+3,"if(args[filterArg].toLowerCase().equals(""all""))","if (args[filterArg].toLowerCase().equals(""all"")) patterns=Filter.ALL;
+ else {
+  try {
+    patterns=new Filter(args[filterArg]);
+  }
+ catch (  CheckedPatternSyntaxException pse) {
+    System.err.println(""Error parsing \""tags\"" regular expression: "" + pse.getMessage());
+    return;
+  }
+}
+",0,0,5,,"SimpleName(ArrayAccess-array, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, IfStatement-expression, ),
+"
+4,if (HypervisorType.LXC.toString().toLowerCase().equals(vm.getHvsType())) {,"if (HypervisorType.LXC.toString().toLowerCase().equals(vm.getHvsType())) {
+  for (  final DiskTO volume : disks) {
+    final DataTO data=volume.getData();
+    final PrimaryDataStoreTO store=(PrimaryDataStoreTO)data.getDataStore();
+    if (volume.getType() == Volume.Type.ROOT) {
+      final KVMPhysicalDisk physicalDisk=_storagePoolMgr.getPhysicalDisk(store.getPoolType(),store.getUuid(),data.getPath());
+      final FilesystemDef rootFs=new FilesystemDef(physicalDisk.getPath(),""/"");
+      vm.getDevices().addDevice(rootFs);
+    }
+ else     if (volume.getType() == Volume.Type.DATADISK) {
+      final KVMPhysicalDisk physicalDisk=_storagePoolMgr.getPhysicalDisk(store.getPoolType(),store.getUuid(),data.getPath());
+      final KVMStoragePool pool=physicalDisk.getPool();
+      if (StoragePoolType.RBD.equals(pool.getType())) {
+        final int devId=volume.getDiskSeq().intValue();
+        final String device=mapRbdDevice(physicalDisk);
+        if (device != null) {
+          s_logger.debug(""RBD device on host is: "" + device);
+          final DiskDef diskdef=new DiskDef();
+          diskdef.defBlockBasedDisk(device,devId,DiskDef.DiskBus.VIRTIO);
+          diskdef.setQemuDriver(false);
+          vm.getDevices().addDevice(diskdef);
+        }
+ else {
+          throw new InternalErrorException(""Error while mapping RBD device on host"");
+        }
+      }
+    }
+  }
+}
+",0,5,6,,"QualifiedName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, IfStatement-expression, ),
+"
+5,if (vmTypeString == null || VirtualMachine.Type.DomainRouter.toString().toLowerCase().equals(vmTypeString)) {,"if (vmTypeString == null || VirtualMachine.Type.DomainRouter.toString().toLowerCase().equals(vmTypeString)) {
+  vmType=VirtualMachine.Type.DomainRouter;
+  allowNetworkRate=true;
+}
+ else if (VirtualMachine.Type.ConsoleProxy.toString().toLowerCase().equals(vmTypeString)) {
+  vmType=VirtualMachine.Type.ConsoleProxy;
+}
+ else if (VirtualMachine.Type.SecondaryStorageVm.toString().toLowerCase().equals(vmTypeString)) {
+  vmType=VirtualMachine.Type.SecondaryStorageVm;
+}
+ else if (VirtualMachine.Type.InternalLoadBalancerVm.toString().toLowerCase().equals(vmTypeString)) {
+  vmType=VirtualMachine.Type.InternalLoadBalancerVm;
+}
+ else {
+  throw new InvalidParameterValueException(""Invalid systemVmType. Supported types are: "" + VirtualMachine.Type.DomainRouter + "", ""+ VirtualMachine.Type.ConsoleProxy+ "", ""+ VirtualMachine.Type.SecondaryStorageVm);
+}
+",0,0,7,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+6,if (lbProtocol != null && lbProtocol.toLowerCase().equals(NetUtils.UDP_PROTO)) {,"if (lbProtocol != null && lbProtocol.toLowerCase().equals(NetUtils.UDP_PROTO)) {
+  if (s_logger.isDebugEnabled()) {
+    s_logger.debug(""Can't create LB rule as haproxy does not support udp"");
+  }
+  return false;
+}
+",0,0,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+7,|| HOST_MAINTENANCE_LOCAL_STRATEGY.value().toLowerCase().equals(State.Error.toString().toLowerCase())) {,"if (org.apache.commons.lang3.StringUtils.isBlank(HOST_MAINTENANCE_LOCAL_STRATEGY.value().toString()) || HOST_MAINTENANCE_LOCAL_STRATEGY.value().toLowerCase().equals(State.Error.toString().toLowerCase())) {
+  return true;
+}
+",0,0,7,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ),
+"
+8,if ( propertyDescriptorName.equalsIgnoreCase( name ) || propertyDescriptorName.toLowerCase().equals( name.toLowerCase() ),"if (propertyDescriptorName.equalsIgnoreCase(name) || propertyDescriptorName.toLowerCase().equals(name.toLowerCase()) || propertyDescriptorName.toLowerCase().endsWith(name.toLowerCase())) {
+  return propertyDescriptor;
+}
+",0,0,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+9,&& searchTerms[1].toLowerCase().equals(rfc822Name.getCanonicalDomainName())) {,"if (searchTerms[0].equals(rfc822Name.getLocalName()) && searchTerms[1].toLowerCase().equals(rfc822Name.getCanonicalDomainName())) {
+  return ER_TRUE;
+}
+ else {
+  return ER_FALSE;
+}
+",0,0,6,,"SimpleName(ArrayAccess-array, MethodInvocation-expression, MethodInvocation-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-expression, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ),
+"
+10,"if ( !FileUtils.extension( output.getAbsolutePath() ).toLowerCase().equals( ""svg"" ) )","if (!FileUtils.extension(output.getAbsolutePath()).toLowerCase().equals(""svg"")) {
+  String img=""<a href=\"""" + link + ""\"" target=\""_blank\""><img src=\""""+ link+ ""\"" title=\""""+ getDiagramLabel()+ ""\"" width=\""800\"" title=\""""+ diagramLabel+ ""\""/></a>"";
+  getSink().rawText(img);
+}
+ else {
+  SVGConverter converter=new SVGConverter();
+  converter.setWidth(800);
+  converter.setSources(new String[]{output.getAbsolutePath()});
+  converter.setDst(new File(output.getParentFile(),""small-"" + output.getName() + "".png""));
+  converter.setDestinationType(DestinationType.PNG);
+  InputStream is=null;
+  OutputStream os=null;
+  try {
+    is=new FileInputStream(output);
+    String content=IOUtil.toString(is);
+    IOUtil.close(is);
+    content=StringUtils.replace(content,""font-weight:regular;"","""");
+    os=new FileOutputStream(output);
+    IOUtil.copy(content,os);
+  }
+  finally {
+    IOUtil.close(is);
+    IOUtil.close(os);
+  }
+  ClassLoader currentClassLoader=Thread.currentThread().getContextClassLoader();
+  try {
+    Thread.currentThread().setContextClassLoader(UmlReport.class.getClassLoader());
+    converter.execute();
+  }
+ catch (  SVGConverterException e) {
+    throw new IOException(""SVGConverterException: "" + e.getMessage());
+  }
+ finally {
+    Thread.currentThread().setContextClassLoader(currentClassLoader);
+  }
+  String smalllink=StringUtils.replace(link,output.getName(),""small-"" + output.getName() + "".png"");
+  String img=""<a href=\"""" + link + ""\"" target=\""_blank\""><img src=\""""+ smalllink+ ""\"" title=\""""+ getDiagramLabel()+ ""\"" width=\""800\"" title=\""""+ diagramLabel+ ""\""/></a>"";
+  getSink().rawText(img);
+}
+",0,2,7,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, PrefixExpression-operand, IfStatement-expression, ),
+"
+11,if ( messageLevel.trim().toLowerCase().equals( MESSAGE_LEVELS[i] ) ),"if (messageLevel.trim().toLowerCase().equals(MESSAGE_LEVELS[i])) {
+  break;
+}
+",0,0,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, IfStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-arguments, IfStatement-expression, ),
+"
+12,if (!HttpHeader.PREFER.toLowerCase().equals(,"if (!HttpHeader.PREFER.toLowerCase().equals(header.getKey().toLowerCase())) {
+  req.addHeader(header.getKey(),header.getValue());
+}
+",0,0,3,,"QualifiedName(MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, IfStatement-expression, ),
+"
+13,return PBE_SHA512_AES_128.toLowerCase().equals(cryptoAlgo.toLowerCase()),"return PBE_SHA512_AES_128.toLowerCase().equals(cryptoAlgo.toLowerCase()) || cryptoAlgo.toLowerCase().contains(""aes_128"") || cryptoAlgo.toLowerCase().contains(""aes_256"");
+",0,0,5,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+"
+14,if (rs.getString(1).toUpperCase().equals(params[params.length - 1].toUpperCase())) {,"if (rs.getString(1).toUpperCase().equals(params[params.length - 1].toUpperCase())) {
+  result=true;
+  break;
+}
+",0,0,9,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, MethodInvocation-arguments, IfStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, ArrayAccess-index, MethodInvocation-expression, MethodInvocation-arguments, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, MethodInvocation-expression, MethodInvocation-arguments, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, IfStatement-expression, ),
+"
+15,if (entry.getKey().toLowerCase().equals(lowerCase(key))) {,"if (entry.getKey().toLowerCase().equals(lowerCase(key))) {
+  return entry.getKey();
+}
+",0,0,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, IfStatement-expression, ),
+"
+16,return HOST_MAINTENANCE_LOCAL_STRATEGY.value().toLowerCase().equals(WorkType.Migration.toString().toLowerCase());,"return HOST_MAINTENANCE_LOCAL_STRATEGY.value().toLowerCase().equals(WorkType.Migration.toString().toLowerCase());
+",1,3,7,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+17,if (!column.getHeaderValue().toString().toUpperCase().equals(ChainsawColumns.getColumnName(ChainsawColumns.INDEX_THROWABLE_COL_NAME))) {,"if (!column.getHeaderValue().toString().toUpperCase().equals(ChainsawColumns.getColumnName(ChainsawColumns.INDEX_THROWABLE_COL_NAME))) {
+  return;
+}
+",1,29,8,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-arguments, PrefixExpression-operand, IfStatement-expression, ),
+"
+18,"if (debugMode != null && debugMode.toLowerCase().equals(""true"")) {","if (debugMode != null && debugMode.toLowerCase().equals(""true"")) {
+  lock=new ReentrantReadWriteLockTracker();
+}
+ else {
+  lock=new ReentrantReadWriteLock();
+}
+",1,1,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+19,"assert acl.principal().getPrincipalType().toLowerCase().equals(""role"") : ""Only Acls with KafkaPrincipal of type \""role;\"" is supported."";","assert acl.principal().getPrincipalType().toLowerCase().equals(""role"") : ""Only Acls with KafkaPrincipal of type \""role;\"" is supported."";
+",1,1,7,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, AssertStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, AssertStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, AssertStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, AssertStatement-expression, ),
+SimpleName(MethodInvocation-name, AssertStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, AssertStatement-expression, ),
+StringLiteral(AssertStatement-message, ),
+"
+20,return value != null && value.toLowerCase().equals(node2.getAttributes().get(NAME).toLowerCase());,"return value != null && value.toLowerCase().equals(node2.getAttributes().get(NAME).toLowerCase());
+",1,1,10,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+21,"if (numArgs >= 3 && args[0].toLowerCase().equals(""addfile"")) {","if (numArgs >= 3 && args[0].toLowerCase().equals(""addfile"")) {
+  doAddFile(c,args[1],args[2]);
+}
+ else if (numArgs >= 3 && args[0].toLowerCase().equals(""removefile"")) {
+  doRemoveFile(c,args[1],args[2]);
+}
+ else if (numArgs >= 1 && args[0].toLowerCase().equals(""list"")) {
+  doList(c);
+}
+ else if (numArgs >= 1 && args[0].equalsIgnoreCase(""removeall"")) {
+  doRemoveAll(c);
+}
+ else {
+  System.err.println(""usage: ChukwaClient addfile <apptype> <filename> [-h hostname] [-p portnumber]"");
+  System.err.println(""       ChukwaClient removefile adaptorID [-h hostname] [-p portnumber]"");
+  System.err.println(""       ChukwaClient removefile <apptype> <filename> [-h hostname] [-p portnumber]"");
+  System.err.println(""       ChukwaClient list [IP] [port]"");
+  System.err.println(""       ChukwaClient removeAll [IP] [port]"");
+}
+",2,2,7,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+22,"if (file.getParentFile().getName().toLowerCase().equals(""@broken"")) {","if (file.getParentFile().getName().toLowerCase().equals(""@broken"")) {
+  continue;
+}
+",3,10,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, IfStatement-expression, ),
+"
+23,"if (value.toLowerCase().equals(""true"") || value.toLowerCase().equals(""false"")) {","if (value.toLowerCase().equals(""true"") || value.toLowerCase().equals(""false"")) {
+  dataSourceProperties.put(key,Boolean.parseBoolean(value.toLowerCase()));
+}
+ else {
+  try {
+    int i=Integer.parseInt(value);
+    dataSourceProperties.put(key,i);
+  }
+ catch (  NumberFormatException nfe) {
+    dataSourceProperties.put(key,value);
+  }
+}
+",15,33,8,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"

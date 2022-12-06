@@ -1,0 +1,221 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"try { super.abort(); } catch (Throwable t) { log.warn(""Exception in abort: "" + t.getMessage(), t); }","try {
+  super.abort();
+}
+ catch (Throwable t) {
+  log.warn(""Exception in abort: "" + t.getMessage(),t);
+}
+",0,17,9,21896,"SimpleName(SuperMethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+"
+2,try { a.close(); } catch (Throwable tt) {;},"try {
+  a.close();
+}
+ catch (Throwable tt) {
+  ;
+}
+",0,1,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+EmptyStatement(Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+"
+3,"try { textIndex.rollback(); } catch (Throwable t) { log.warn(""Exception in abort: "" + t.getMessage(), t); }","try {
+  textIndex.rollback();
+}
+ catch (Throwable t) {
+  log.warn(""Exception in abort: "" + t.getMessage(),t);
+}
+",0,0,10,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+"
+4,catch (final Throwable reflectionFailed) { return true; },"return true;
+",0,0,1,,"BooleanLiteral(ReturnStatement-expression, Block-statements, CatchClause-body, ),
+"
+5,try { System.in.read(); } catch( Throwable t ) {},"try {
+  System.in.read();
+}
+ catch (Throwable t) {
+}
+",0,0,5,,"QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+6,} catch (IllegalArgumentException iae) {} catch (Throwable t) {,"try {
+  opts.remove(BasicCompactionStrategy.LARGE_FILE_COMPRESSION_TYPE);
+  ttcs.init(opts);
+  fail(""IllegalArgumentException should have been thrown."");
+}
+ catch (IllegalArgumentException iae) {
+}
+catch (Throwable t) {
+  fail(""IllegalArgumentException should have been thrown."");
+}
+",1,20076,5,,"SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+Block(CatchClause-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+"
+7,catch( Throwable t) { throw ToolUtilities.wrap( t ); },"throw ToolUtilities.wrap(t);
+",1,22,3,,"SimpleName(MethodInvocation-expression, ThrowStatement-expression, Block-statements, CatchClause-body, ),
+SimpleName(MethodInvocation-name, ThrowStatement-expression, Block-statements, CatchClause-body, ),
+SimpleName(MethodInvocation-arguments, ThrowStatement-expression, Block-statements, CatchClause-body, ),
+"
+8,if (null != in) try { in.close(); } catch (Throwable e) {},"if (null != in) try {
+  in.close();
+}
+ catch (Throwable e) {
+}
+",1,1,7,,"NullLiteral(InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, IfStatement-thenStatement, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, IfStatement-thenStatement, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, IfStatement-thenStatement, ),
+Block(CatchClause-body, TryStatement-catchClauses, IfStatement-thenStatement, ),
+"
+9,"try { System.load(locationPath + ""/"" + filename); } catch (Throwable t) { LOG.log(Level.FINE, ""cannot load library {0}"", filename); }","try {
+  System.load(locationPath + ""/"" + filename);
+}
+ catch (Throwable t) {
+  LOG.log(Level.FINE,""cannot load library {0}"",filename);
+}
+",1,1,12,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+"
+10,"try { Exceptions.propagateAnnotateIfWrapping(""important"", t); } catch (Throwable t2) { t = t2; }","try {
+  Exceptions.propagateAnnotateIfWrapping(""important"",t);
+}
+ catch (Throwable t2) {
+  t=t2;
+}
+",2,3,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+SimpleName(Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, ),
+"
+11,"catch (Throwable t) { accumulate = merge(accumulate, t); }","accumulate=merge(accumulate,t);
+",2,2,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, Block-statements, CatchClause-body, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, CatchClause-body, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, CatchClause-body, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, CatchClause-body, ),
+"
+12,catch (Throwable t) { return null; },"return null;
+",2,2,1,,"NullLiteral(ReturnStatement-expression, Block-statements, CatchClause-body, ),
+"
+13,try { Thread.sleep(2); } catch (Throwable ignore) {},"try {
+  Thread.sleep(2);
+}
+ catch (Throwable ignore) {
+}
+",3,6,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+14,if (br != null) { try { br.close(); } catch (Throwable t) { if (th == null) { th = t; } } },"if (br != null) {
+  try {
+    br.close();
+  }
+ catch (  Throwable t) {
+    if (th == null) {
+      th=t;
+    }
+  }
+}
+",3,3,10,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, Block-statements, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, Block-statements, IfStatement-thenStatement, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, Block-statements, IfStatement-thenStatement, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, Block-statements, IfStatement-thenStatement, ),
+SimpleName(InfixExpression-leftOperand, IfStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, Block-statements, IfStatement-thenStatement, ),
+NullLiteral(InfixExpression-rightOperand, IfStatement-expression, Block-statements, CatchClause-body, TryStatement-catchClauses, Block-statements, IfStatement-thenStatement, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, Block-statements, IfStatement-thenStatement, Block-statements, CatchClause-body, TryStatement-catchClauses, Block-statements, IfStatement-thenStatement, ),
+SimpleName(Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, IfStatement-thenStatement, Block-statements, CatchClause-body, TryStatement-catchClauses, Block-statements, IfStatement-thenStatement, ),
+"
+15,} catch (Throwable t) { throw new SQLException( t.getMessage() ); },"throw new SQLException(t.getMessage());
+",4,4,3,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ThrowStatement-expression, Block-statements, CatchClause-body, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, ThrowStatement-expression, Block-statements, CatchClause-body, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ThrowStatement-expression, Block-statements, CatchClause-body, ),
+"
+16,"try { _pool.returnObject(pattern, compiled); } catch (Throwable t) { }","try {
+  _pool.returnObject(pattern,compiled);
+}
+ catch (Throwable t) {
+}
+",4,4,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+17,} catch (final Throwable e) {,"try {
+  final JmsTemplate jmsTemplate=new JmsTemplate(pcf);
+  jmsTemplate.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
+  jmsTemplate.setExplicitQosEnabled(true);
+  jmsTemplate.setMessageIdEnabled(false);
+  jmsTemplate.setMessageTimestampEnabled(false);
+  jmsTemplate.afterPropertiesSet();
+  final byte[] bytes=new byte[2048];
+  final Random r=new Random();
+  r.nextBytes(bytes);
+  Thread.sleep(2000);
+  final AtomicInteger count=new AtomicInteger();
+  for (int i=0; i < NUM_MESSAGE_TO_SEND; i++) {
+    jmsTemplate.send(queueName,new MessageCreator(){
+      @Override public Message createMessage(      Session session) throws JMSException {
+        final BytesMessage message=session.createBytesMessage();
+        message.writeBytes(bytes);
+        message.setIntProperty(""count"",count.incrementAndGet());
+        message.setStringProperty(""producer"",""pooled"");
+        return message;
+      }
+    }
+);
+    LOG.info(""PooledProducer sent message: "" + count.get());
+  }
+}
+ catch (final Throwable e) {
+  LOG.error(""Producer 1 is exiting"",e);
+}
+",1681,1681,3,,"Modifier(SingleVariableDeclaration-modifiers, CatchClause-exception, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+"

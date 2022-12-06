@@ -1,0 +1,7 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/ignite/modules/ml/src/main/java/org/apache/ignite/ml/preprocessing/encoding/EncoderTrainer.java,421,,"        if (lbVal.equals(Double.NaN) || lbVal == null)"
+2,./TargetProjects/incubator-ambari/ambari-server/src/main/java/org/apache/ambari/server/api/services/RequestFactory.java,50,,"        return ((uriInfo.getQueryParameters().isEmpty() && body.getQueryString() == null) || body == null) ?"
+3,./TargetProjects/netbeans/ide/editor/src/org/netbeans/modules/editor/HtmlPrintContainer.java,300,,"        if ((!useDefaults || !fg.equals(getDefaultColor())) && fg != null) {"
+4,./TargetProjects/netbeans/ide/editor/src/org/netbeans/modules/editor/HtmlPrintContainer.java,306,,"        if ((!useDefaults || !bg.equals (getDefaultBackgroundColor())) && bg != null) {"
+5,./TargetProjects/netbeans/ide/editor/src/org/netbeans/modules/editor/HtmlPrintContainer.java,315,,"        if ((!useDefaults || !font.equals (getDefaultFont())) && font != null) {"
+6,./TargetProjects/xerces2-j/src/org/apache/xerces/parsers/DOMParserImpl.java,839,,"                || value.equals (Constants.NS_DTD))) || value == null) {"

@@ -1,0 +1,13 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,if (d == Double.NaN) {,"if (d == Double.NaN) {
+  return ""NaN"";
+}
+ else if (d == Double.POSITIVE_INFINITY) {
+  return ""INF"";
+}
+ else if (d == Double.NEGATIVE_INFINITY) {
+  return ""-INF"";
+}
+",2,2,2,3,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, IfStatement-expression, ),
+"

@@ -1,0 +1,73 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,is.skip((long) Integer.MAX_VALUE + 1);,"is.skip((long)Integer.MAX_VALUE + 1);
+",0,5,5,234,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(CastExpression-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,in.skip(offheapSize - offsetCount * 4);,"in.skip(offheapSize - offsetCount * 4);
+",0,18,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+3,this.inStream.skip(availableBytes);,"this.inStream.skip(availableBytes);
+",0,0,4,,"ThisExpression(FieldAccess-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+4,inputStream.skip(getTrailerSize() - NOT_PB_SIZE - size);,"inputStream.skip(getTrailerSize() - NOT_PB_SIZE - size);
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+5,bis.skip((int) fileLocation);,"bis.skip((int)fileLocation);
+",0,0,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+6,bais.skip(loca.getOffset(i));,"bais.skip(loca.getOffset(i));
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+7,is.skip(17 + 9 + 14 + 6);,"is.skip(17 + 9 + 14+ 6);
+",0,0,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+8,is.skip(this.fileString.length() - 2);,"is.skip(this.fileString.length() - 2);
+",1,168,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+9,currentRecord.payloadStream.skip(remaining);,"currentRecord.payloadStream.skip(remaining);
+",2,2,3,,"QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+10,this.currentRecord.payloadStream.skip(,"this.currentRecord.payloadStream.skip(this.currentRecord.payloadStream.available() - (endPos - position));
+",5,5,4,,"ThisExpression(FieldAccess-expression, FieldAccess-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, FieldAccess-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+"
+11,is.skip(-1);,"is.skip(-1);
+",6,6,3,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

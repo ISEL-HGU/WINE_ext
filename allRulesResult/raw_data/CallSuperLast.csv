@@ -1,0 +1,10 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/cordova-amazon-fireos/framework/src/org/apache/cordova/CordovaActivity.java,637,,"        if (this.appView == null) {"
+2,./TargetProjects/cordova-amazon-fireos/framework/src/org/apache/cordova/CordovaActivity.java,698,,"        if (this.appView != null) {"
+3,./TargetProjects/cordova-amazon-fireos/framework/src/org/apache/cordova/CordovaActivity.java,1062,,"        if(this.activityResultCallback != null)"
+4,./TargetProjects/cordova-amazon-fireos/test/src/org/apache/cordova/test/CordovaWebViewTestActivity.java,123,,"        if (cordovaWebView != null) {"
+5,./TargetProjects/incubator-retired-wave-android/app/src/main/java/app/android/box/waveprotocol/org/androidwave/activities/MainActivity.java,66,,"        finish();"
+6,./TargetProjects/incubator-weex-playground/android/playground/src/main/java/org/apache/weex/CustomCaptureActivity.java,146,,"        capture.onPause();"
+7,./TargetProjects/incubator-weex-playground/android/playground/src/main/java/org/apache/weex/CustomCaptureActivity.java,152,,"        capture.onDestroy();"
+8,./TargetProjects/incubator-weex-playground/android/playground/src/main/java/org/apache/weex/CustomCaptureActivity.java,158,,"        capture.onSaveInstanceState(outState);"
+9,./TargetProjects/tuscany-sca-1/samples/calculator-android/src/calculator/android/CalculatorClient.java,212,,"		try {"

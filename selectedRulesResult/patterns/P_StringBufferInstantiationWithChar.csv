@@ -1,0 +1,7 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,StringBuffer sb = new StringBuffer('0');,"StringBuffer sb=new StringBuffer('0');
+",1,1,4,2,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+CharacterLiteral(ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"

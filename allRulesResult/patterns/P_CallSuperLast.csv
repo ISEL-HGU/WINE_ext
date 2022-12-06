@@ -1,0 +1,22 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,capture.onSaveInstanceState(outState);,"capture.onSaveInstanceState(outState);
+",0,2,3,9,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+3,if (this.appView == null) {,"if (this.appView == null) {
+  return;
+}
+ else {
+  this.appView.handlePause(this.keepRunning);
+}
+",2,3,3,,"ThisExpression(FieldAccess-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+"

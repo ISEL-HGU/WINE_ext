@@ -1,0 +1,233 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"private static final Log AUDITLOG = LogFactory.getLog(""xaaudit."" + Log4jAuditProvider.class.getName());","private static final Log AUDITLOG=LogFactory.getLog(""xaaudit."" + Log4jAuditProvider.class.getName());
+",0,5745,10,6502,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+2,"private static final Log log = LogFactory.getLog(ScriptTag.class.getName() + "".evaluating"");","/** 
+ * The Log to which logging calls will be made. 
+ */
+private static final Log log=LogFactory.getLog(ScriptTag.class.getName() + "".evaluating"");
+",0,8,10,,"Modifier(),
+Modifier(),
+Modifier(),
+SimpleName(SimpleType-name, ),
+SimpleName(VariableDeclarationFragment-name, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+"
+3,private static final Log log = LogFactory.getLog(UUIDGenerator.class.getPackage().getName());,"private static final Log log=LogFactory.getLog(UUIDGenerator.class.getPackage().getName());
+",0,2,10,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+4,public static final Log logger = new LoggerWrapper(getLog());,"/** 
+ * The deprecation logger.
+ */
+public static final Log logger=new LoggerWrapper(getLog());
+",0,2,7,,"Modifier(),
+Modifier(),
+Modifier(),
+SimpleName(SimpleType-name, ),
+SimpleName(VariableDeclarationFragment-name, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, ),
+"
+5,private Log[] _logs;,"private Log[] _logs;
+",0,1,4,,"Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, ArrayType-elementType, FieldDeclaration-type, ),
+Dimension(ArrayType-dimensions, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+"
+6,private final static Log log = LogFactory.getLog(new PlanHelper().getClass());,"private final static Log log=LogFactory.getLog(new PlanHelper().getClass());
+",0,0,9,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+7,private final static Log mLogger = LogFactory.getFactory().getInstance(IndexManagerImpl.class);,"private final static Log mLogger=LogFactory.getFactory().getInstance(IndexManagerImpl.class);
+",0,2,9,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+8,protected static final Log trace = LogFactory.getLog(SynapseConstants.TRACE_LOGGER);,"/** 
+ * The runtime trace log for mediators 
+ */
+protected static final Log trace=LogFactory.getLog(SynapseConstants.TRACE_LOGGER);
+",0,0,8,,"Modifier(),
+Modifier(),
+Modifier(),
+SimpleName(SimpleType-name, ),
+SimpleName(VariableDeclarationFragment-name, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, ),
+QualifiedName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+"
+9,protected Log log = LogFactory.getLog(this.getClass().getName());,"protected Log log=LogFactory.getLog(this.getClass().getName());
+",0,0,8,,"Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+10,private static final Log log = LogFactory.getLog(org.wso2.carbon.ui.transports.FileDownloadServlet.class);,"private static final Log log=LogFactory.getLog(org.wso2.carbon.ui.transports.FileDownloadServlet.class);
+",1,58,8,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+QualifiedName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+11,"private final Log logger = LogFactory.getFactory().getInstance(""org.apache.jdo.tck"");","private final Log logger=LogFactory.getFactory().getInstance(""org.apache.jdo.tck"");
+",1,59,8,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+StringLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+12,private static final Log log = new Log(null);,"private static final Log log=new Log(null);
+",1,20,7,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NullLiteral(ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+13,static Log LOG = ((Log4JLogger)NameNode.stateChangeLog);,"static Log LOG=((Log4JLogger)NameNode.stateChangeLog);
+",1,1,5,,"Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+QualifiedName(CastExpression-expression, ParenthesizedExpression-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+14,public static final Log LOG = LogFactory.getLog(TestLocalJobControl.class,"public static final Log LOG=LogFactory.getLog(TestLocalJobControl.class.getName());
+",1,1,8,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+15,@Inject protected Log logger;,"@Inject protected Log logger;
+",1,1,4,,"SimpleName(MarkerAnnotation-typeName, FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+"
+16,"private static Log log = new SimpleLog(""FOP/RTF"");","private static Log log=new SimpleLog(""FOP/RTF"");
+",1,1,6,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+17,protected Log log = null;,"/** 
+ * the reference to the actual commons logger to be used for log messages 
+ */
+protected Log log=null;
+",2,2,4,,"Modifier(),
+SimpleName(SimpleType-name, ),
+SimpleName(VariableDeclarationFragment-name, ),
+NullLiteral(VariableDeclarationFragment-initializer, ),
+"
+18,private Log log = debug ? LogFactory.getLog(this.getClass()) : null;,"private Log log=debug ? LogFactory.getLog(this.getClass()) : null;
+",3,295,9,,"Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(ConditionalExpression-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-arguments, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NullLiteral(ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+19,private Log log = LogFactory.getFactory().getInstance(this.getClass().getName());,"/** 
+ * Commons Logging instance.
+ */
+private Log log=LogFactory.getFactory().getInstance(this.getClass().getName());
+",4,5,9,,"Modifier(),
+SimpleName(SimpleType-name, ),
+SimpleName(VariableDeclarationFragment-name, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+"
+20,private @Inject @ApplicationLog Log logger;,"private @Inject @ApplicationLog Log logger;
+",5,5,5,,"Modifier(FieldDeclaration-modifiers, ),
+SimpleName(MarkerAnnotation-typeName, FieldDeclaration-modifiers, ),
+SimpleName(MarkerAnnotation-typeName, FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+"
+21,private static final Log trace = LogFactory.getLog(SynapseConstants.TRACE_LOGGER);,"private static final Log trace=LogFactory.getLog(SynapseConstants.TRACE_LOGGER);
+",8,8,8,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+QualifiedName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+22,private static final Log log = new Log(BindingTest.class);,"private static final Log log=new Log(BindingTest.class);
+",19,61,7,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+23,"public static final Log METRICS_LOG = LogFactory.getLog(""DataNodeMetricsLog"");","public static final Log METRICS_LOG=LogFactory.getLog(""DataNodeMetricsLog"");
+",21,21,8,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+StringLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"

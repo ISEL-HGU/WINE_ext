@@ -1,0 +1,169 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"if(k == null || k.getId() == """" ) id +=""|NULL"";","if (k == null || k.getId() == """") id+=""|NULL"";
+ else id+=""|"" + k.getId();
+",0,7,7,2754,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+2,"if (context.containsKey(""enable_console_output"") && context.get(""enable_console_output"") == ""true"") {","if (context.containsKey(""enable_console_output"") && context.get(""enable_console_output"") == ""true"") {
+  if (params.containsKey(""xpath"")) {
+    System.out.println(""XPATH("" + params.get(""action"") + ""): ""+ params.get(""xpath""));
+  }
+  if (params.containsKey(""type"") && params.get(""type"").equals(""op"")) {
+    System.out.println(""OP CMD: "" + params.get(""cmd""));
+  }
+  System.out.println(response + ""\n"");
+}
+",0,2,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+3,"final Predicate<E> predicate = e -> e == ""1"";","final Predicate<E> predicate=e -> e == ""1"";
+",0,0,7,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(VariableDeclarationFragment-name, LambdaExpression-parameters, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, LambdaExpression-body, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-rightOperand, LambdaExpression-body, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+4,"if (!(input.getAttribute(MY_ATTRIBUTE) == ""yes""))","if (!(input.getAttribute(MY_ATTRIBUTE) == ""yes"")) return false;
+",0,0,4,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+"
+5,"if (self.optionGroupEffect.getValue() == ""Permit"") {","if (self.optionGroupEffect.getValue() == ""Permit"") {
+  self.rule.setEffect(EffectType.PERMIT);
+}
+ else {
+  self.rule.setEffect(EffectType.DENY);
+}
+",0,0,3,,"QualifiedName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+"
+6,"if (s == """" || s == null)","if (s == """" || s == null) throw new InvalidRequestException();
+",0,0,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+7,"Entity otherEntity = entitySet.getName() == ""ESAllPrim"" ? data.get(""ESDelta"").getEntities().get(0) :","Entity otherEntity=entitySet.getName() == ""ESAllPrim"" ? data.get(""ESDelta"").getEntities().get(0) : data.get(""ESAllPrim"").getEntities().get(0);
+",0,0,11,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(MethodInvocation-arguments, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+8,"Assert.assertTrue(""Null policy"", serializer.toString() == """");","Assert.assertTrue(""Null policy"",serializer.toString() == """");
+",0,8,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+9,"input.getConfig(MockContainerEntity.MOCK_MEMBERSHIP) == ""ingroup"";","return input instanceof MockContainerEntity && input.getConfig(MockContainerEntity.MOCK_MEMBERSHIP) == ""ingroup"";
+",1,1,4,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-leftOperand, ),
+StringLiteral(InfixExpression-rightOperand, ),
+"
+10,"if (url=="""") throw new NullPointerException(""Cannot read from empty string"");","if (url == """") throw new NullPointerException(""Cannot read from empty string"");
+",1,1,4,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ThrowStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(ClassInstanceCreation-arguments, ThrowStatement-expression, IfStatement-thenStatement, ),
+"
+11,"if(this.dbCatalog == """") {","if (this.dbCatalog == """") {
+  this.dbCatalog=null;
+}
+",1,1,3,,"ThisExpression(FieldAccess-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+"
+12,"if ((ejbAnnotation.name() != null) && (ejbAnnotation.name() != """") && (ejbAnnotation.beanInterface() != null)) {","if ((ejbAnnotation.name() != null) && (ejbAnnotation.name() != """") && (ejbAnnotation.beanInterface() != null)) {
+  try {
+    home=initialContext.lookup(ejbAnnotation.name());
+    home=cast(home,ejbAnnotation.beanInterface());
+    field.setAccessible(true);
+    field.set(this,home);
+  }
+ catch (  final Exception ex) {
+    ex.printStackTrace();
+  }
+}
+",1,2,9,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+"
+13,"assertTrue(""First Put"" == c.get(""bla""));","assertTrue(""First Put"" == c.get(""bla""));
+",6,6,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+14,"else if( args[i] == """" )","if (args[i] == """") {
+  emptyArgs++;
+  System.out.println(""arg["" + i + ""] is empty"");
+}
+ else {
+  notEmptyArgs++;
+  System.out.println(""arg["" + i + ""] is not empty"");
+}
+",9,9,3,,"SimpleName(ArrayAccess-array, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+"
+15,"if (apiVersion == ""??"" || implVersion == ""??"")","if (apiVersion == ""??"" || implVersion == ""??"") versionInfo=""Version unknown: "";
+ else if (apiVersion != ""??"" && implVersion != ""??"" && !apiVersion.equals(implVersion)) versionInfo=""Version mismatch: "";
+",13,13,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+16,"assertTrue(""assign() should not have succeeded"" == null);","assertTrue(""assign() should not have succeeded"" == null);
+",34,34,3,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+17,"if ((""id"" == attribute.getLocalName()) && (("""" == attribute.getNamespace()) || (attribute.getNamespace() == null))) {","if ((""id"" == attribute.getLocalName()) && (("""" == attribute.getNamespace()) || (attribute.getNamespace() == null))) {
+  final String id=Adapters.collapsedStringAdapterAdapter.unmarshal(attribute.getValue());
+  context.addXmlId(reader,id,activationConfig);
+  activationConfig.id=id;
+}
+ else if (XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI != attribute.getNamespace()) {
+  context.unexpectedAttribute(attribute,new QName("""",""id""));
+}
+",381,2646,9,,"StringLiteral(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"

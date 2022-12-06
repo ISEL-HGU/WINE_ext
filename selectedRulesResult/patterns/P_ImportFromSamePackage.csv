@@ -1,0 +1,4 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,import org.apache.activeio.journal.InvalidRecordLocationException;,"import org.apache.activeio.journal.InvalidRecordLocationException;
+",1906,1906,1,1907,"QualifiedName(ImportDeclaration-name, ),
+"

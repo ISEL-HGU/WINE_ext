@@ -1,0 +1,65 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,for (float i = (float)0.5; i <= 100.00; i += 0.75) {,"for (float i=(float)0.5; i <= 100.00; i+=0.75) {
+  byte[] bytes=new byte[5];
+  PositionedByteRange br=new SimplePositionedMutableByteRange(bytes,0,5);
+  OrderedBytes.encodeFloat32(br,i,Order.ASCENDING);
+  Put p=new Put(bytes);
+  p.addColumn(FAMILY_F,COLUMN_C,String.format(""value %03f"",i).getBytes());
+  table.mutate(p);
+}
+",1,4,8,16,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+PrimitiveType(CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ForStatement-updaters, ),
+NumberLiteral(Assignment-rightHandSide, ForStatement-updaters, ),
+"
+2,for (float i = COUNT2; i > 0; i--) {,"for (float i=COUNT2; i > 0; i--) {
+  cw.writeFloat(i % 50);
+}
+",1,1,6,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+3,for (float i = 0; i < 100; i++) {,"for (float i=0; i < 100; i++) {
+  cw.writeFloat(i);
+  if (i < fallBackThreshold) {
+    assertEquals(cw.getEncoding(),PLAIN_DICTIONARY);
+  }
+ else {
+    assertEquals(cw.getEncoding(),PLAIN);
+  }
+}
+",1,1,6,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+4,for (float i = 0; i < numberOfDraws; i++) {,"for (float i=0; i < numberOfDraws; i++) {
+  SubClusterId chosenId=((FederationRouterPolicy)getPolicy()).getHomeSubcluster(getApplicationSubmissionContext(),null);
+  counter.get(chosenId).incrementAndGet();
+}
+",2,2,6,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+5,for (float i = self; i <= to1; i++) {,"for (float i=self; i <= to1; i++) {
+  closure.call(i);
+}
+",3,3,6,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"

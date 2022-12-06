@@ -1,0 +1,11 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"public void gregorian_cast_01()             { eval(""xsd:gYear('2010-03-22'^^xsd:date) = '2010'^^xsd:gYear"", true ) ; }","eval(""xsd:gYear('2010-03-22'^^xsd:date) = '2010'^^xsd:gYear"",true);
+",0,1,3,4,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, MethodDeclaration-body, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, MethodDeclaration-body, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, MethodDeclaration-body, ),
+"
+2,"public void month_26()              { test(""month('--12-24-08:00'^^xsd:gMonthDay)"", ""12"") ; }","test(""month('--12-24-08:00'^^xsd:gMonthDay)"",""12"");
+",0,0,3,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, MethodDeclaration-body, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, MethodDeclaration-body, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, MethodDeclaration-body, ),
+"

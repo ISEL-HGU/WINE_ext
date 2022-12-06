@@ -1,0 +1,179 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"aborted = finalize(conf, true);","aborted=finalize(conf,true);
+",0,9,4,107,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+2,"finalize = lib.getClass().getDeclaredMethod(""finalize"", new Class[0]);","finalize=lib.getClass().getDeclaredMethod(""finalize"",new Class[0]);
+",0,28,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+3,"Assert.assertEquals(finalize, MetricManipulatorFns.finalizing().manipulate(aggregatorFactory, agg));","Assert.assertEquals(finalize,MetricManipulatorFns.finalizing().manipulate(aggregatorFactory,agg));
+",0,4,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+4,if (finalize != null && !finalize.getActions().isEmpty()) {,"if (finalize != null && !finalize.getActions().isEmpty()) {
+  writer.writeStartElement(SCXMLConstants.ELEM_FINALIZE);
+  writeExecutableContent(writer,finalize.getActions());
+  writer.writeEndElement();
+}
+",0,2,5,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+5,"return doAsync(() -> setEndOffsets(id, endOffsets, finalize));","return doAsync(() -> setEndOffsets(id,endOffsets,finalize));
+",0,4,5,,"SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, LambdaExpression-body, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, LambdaExpression-body, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, LambdaExpression-body, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, LambdaExpression-body, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+6,this.finalize = finalize == null ? DEFAULT_FINALIZE : finalize;,"this.finalize=finalize == null ? DEFAULT_FINALIZE : finalize;
+",0,3,6,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+7,return finalize == that.finalize &&,"return finalize == that.finalize && Objects.equals(dimFilter,that.dimFilter);
+",0,0,2,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+"
+8,"return upgradeFinalizer.finalize(datanodeDetails.getUuidString(), this);","return upgradeFinalizer.finalize(datanodeDetails.getUuidString(),this);
+",0,3,5,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+ThisExpression(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+9,"LOG.info(""FINALIZE: "" + finalize);","LOG.info(""FINALIZE: "" + finalize);
+",0,0,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+10,"StatusAndMessages ret = finalizer.finalize(CLIENT_ID, null);","StatusAndMessages ret=finalizer.finalize(CLIENT_ID,null);
+",0,2,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+11,"StatusAndMessages ret = finalizer.finalize(CLIENT_ID, mockOzoneManager(2));","StatusAndMessages ret=finalizer.finalize(CLIENT_ID,mockOzoneManager(2));
+",0,0,7,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+12,"finalize(UnmatchingRule.toEventName(unmatchingRule), resultStatus, null, output, delta);","finalize(UnmatchingRule.toEventName(unmatchingRule),resultStatus,null,output,delta);
+",0,0,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+13,if (future.isDone() || finalize ) {,"if (future.isDone() || finalize) {
+  try {
+    Long asyncEventsTupleTime=asyncEvents.get(tupleKey);
+    if (future.get() == null && (asyncEventsTupleTime == null || asyncEventsTupleTime < tupleTime)) {
+      putManagedState(tuple);
+      asyncEvents.put(tupleKey,tupleTime);
+      processUnique(tuple);
+    }
+ else {
+      processDuplicate(tuple);
+    }
+  }
+ catch (  InterruptedException|ExecutionException e) {
+    throw new RuntimeException(""handle idle time"",e);
+  }
+  waitIterator.remove();
+}
+",1,5,3,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, IfStatement-expression, ),
+"
+14,super.finalize();,"super.finalize();
+",1,1,1,,"SimpleName(SuperMethodInvocation-name, ExpressionStatement-expression, ),
+"
+15,final boolean needRecovery = corruptor.needRecovery(finalize);,"final boolean needRecovery=corruptor.needRecovery(finalize);
+",1,1,6,,"Modifier(VariableDeclarationStatement-modifiers, ),
+PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+16,"es.finalize(factory, testTraceFile.toString(), 1024L, resolver, dataStats,","es.finalize(factory,testTraceFile.toString(),1024L,resolver,dataStats,conf);
+",1,1,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+17,"finalize(ResourceOperation.DELETE.name().toLowerCase(), Result.SUCCESS, null, null, delta);","finalize(ResourceOperation.DELETE.name().toLowerCase(),Result.SUCCESS,null,null,delta);
+",1,2,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+18,"parent.disconnectEvent(this, finalize);","parent.disconnectEvent(this,finalize);
+",1,1,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+19,"finalize(UnmatchingRule.toEventName(UnmatchingRule.ASSIGN), Result.SUCCESS, null, null, delta);","finalize(UnmatchingRule.toEventName(UnmatchingRule.ASSIGN),Result.SUCCESS,null,null,delta);
+",2,3,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+20,"finalizer.finalize(CLIENT_ID, mockOzoneManager(2));","finalizer.finalize(CLIENT_ID,mockOzoneManager(2));
+",2,2,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+21,finalize(unlink,"finalize(unlink ? MatchingRule.toEventName(MatchingRule.UNASSIGN) : MatchingRule.toEventName(MatchingRule.DEPROVISION),Result.SUCCESS,null,null,delta);
+",2,2,2,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+22,package org.netbeans.modules.java.hints.finalize;,"package org.netbeans.modules.java.hints.finalize;
+",8,8,1,,"QualifiedName(PackageDeclaration-name, ),
+"

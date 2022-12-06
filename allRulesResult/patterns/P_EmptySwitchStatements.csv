@@ -1,0 +1,6 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,switch (response.getCommand()) {,"switch (response.getCommand()) {
+}
+",0,3,2,5,"SimpleName(MethodInvocation-expression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, SwitchStatement-expression, ),
+"

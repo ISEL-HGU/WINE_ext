@@ -1,0 +1,89 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"assertEquals(new Long(Long.MAX_VALUE).toString(), cd.get(VALUE));","assertEquals(new Long(Long.MAX_VALUE).toString(),cd.get(VALUE));
+",0,0,7,34,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,"String to = getAttribute(root, ""defaultLockTimeout"", new Long(Long.MAX_VALUE).toString());","String to=getAttribute(root,""defaultLockTimeout"",new Long(Long.MAX_VALUE).toString());
+",0,0,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+3,"final String periodId = new Long(ProfilePeriod.fromTimestamp(timestamp, 15, TimeUnit.MINUTES).getPeriod()).toString();","final String periodId=new Long(ProfilePeriod.fromTimestamp(timestamp,15,TimeUnit.MINUTES).getPeriod()).toString();
+",0,1,11,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+4,maxItems = new Integer(this.defaultMaxItems).toString();,"maxItems=new Integer(this.defaultMaxItems).toString();
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, ClassInstanceCreation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+5,"message.put(Constants.Fields.TIMESTAMP.getName(), new Long(System.currentTimeMillis()).toString());","message.put(Constants.Fields.TIMESTAMP.getName(),new Long(System.currentTimeMillis()).toString());
+",0,0,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+6,byte[] now = new Long(current).toString().getBytes();,"byte[] now=new Long(current).toString().getBytes();
+",0,0,7,,"PrimitiveType(ArrayType-elementType, VariableDeclarationStatement-type, ),
+Dimension(ArrayType-dimensions, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+7,"newPattern = singleReplace(newPattern, longPropertyName, new Integer(buildingKeywords.size() -1).toString());","newPattern=singleReplace(newPattern,longPropertyName,new Integer(buildingKeywords.size() - 1).toString());
+",3,3,9,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+8,assertTrue(msg.readString().equals(new Byte(test).toString()));,"assertTrue(msg.readString().equals(new Byte(test).toString()));
+",4,11,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+9,"assertEquals(new Double(Double.MAX_VALUE).toString(), Unbox.box(Double.MAX_VALUE).toString());","assertEquals(new Double(Double.MAX_VALUE).toString(),Unbox.box(Double.MAX_VALUE).toString());
+",9,9,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

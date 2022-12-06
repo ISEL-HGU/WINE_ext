@@ -1,0 +1,224 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,protected Object clone() {,"return new Socket(){
+  public void connect(  SocketAddress endpoint,  int timeout) throws IOException {
+    Socket s=createSocket((InetSocketAddress)endpoint,timeout);
+    s.close();
+  }
+  public void bind(  SocketAddress bindpoint){
+    throw new UnsupportedOperationException();
+  }
+  protected Object clone(){
+    throw new UnsupportedOperationException();
+  }
+  public synchronized void close(){
+  }
+  public void connect(  SocketAddress endpoint){
+    throw new UnsupportedOperationException();
+  }
+  public SocketChannel getChannel(){
+    throw new UnsupportedOperationException();
+  }
+  public InetAddress getInetAddress(){
+    throw new UnsupportedOperationException();
+  }
+  public InputStream getInputStream(){
+    throw new UnsupportedOperationException();
+  }
+  public boolean getKeepAlive(){
+    throw new UnsupportedOperationException();
+  }
+  public InetAddress getLocalAddress(){
+    throw new UnsupportedOperationException();
+  }
+  public int getLocalPort(){
+    throw new UnsupportedOperationException();
+  }
+  public SocketAddress getLocalSocketAddress(){
+    throw new UnsupportedOperationException();
+  }
+  public boolean getOOBInline(){
+    throw new UnsupportedOperationException();
+  }
+  public OutputStream getOutputStream(){
+    throw new UnsupportedOperationException();
+  }
+  public int getPort(){
+    throw new UnsupportedOperationException();
+  }
+  public synchronized int getReceiveBufferSize(){
+    throw new UnsupportedOperationException();
+  }
+  public SocketAddress getRemoteSocketAddress(){
+    throw new UnsupportedOperationException();
+  }
+  public boolean getReuseAddress(){
+    throw new UnsupportedOperationException();
+  }
+  public synchronized int getSendBufferSize(){
+    throw new UnsupportedOperationException();
+  }
+  public int getSoLinger(){
+    throw new UnsupportedOperationException();
+  }
+  public synchronized int getSoTimeout(){
+    throw new UnsupportedOperationException();
+  }
+  public boolean getTcpNoDelay(){
+    throw new UnsupportedOperationException();
+  }
+  public int getTrafficClass(){
+    throw new UnsupportedOperationException();
+  }
+  public boolean isBound(){
+    throw new UnsupportedOperationException();
+  }
+  public boolean isClosed(){
+    throw new UnsupportedOperationException();
+  }
+  public boolean isConnected(){
+    throw new UnsupportedOperationException();
+  }
+  public boolean isInputShutdown(){
+    throw new UnsupportedOperationException();
+  }
+  public boolean isOutputShutdown(){
+    throw new UnsupportedOperationException();
+  }
+  public void sendUrgentData(  int data){
+    throw new UnsupportedOperationException();
+  }
+  public void setKeepAlive(  boolean on){
+    throw new UnsupportedOperationException();
+  }
+  public void setOOBInline(  boolean on){
+    throw new UnsupportedOperationException();
+  }
+  public synchronized void setReceiveBufferSize(  int size){
+    throw new UnsupportedOperationException();
+  }
+  public void setReuseAddress(  boolean on){
+    throw new UnsupportedOperationException();
+  }
+  public synchronized void setSendBufferSize(  int size){
+    throw new UnsupportedOperationException();
+  }
+  public void setSoLinger(  boolean on,  int linger){
+    throw new UnsupportedOperationException();
+  }
+  public synchronized void setSoTimeout(  int timeout){
+    throw new UnsupportedOperationException();
+  }
+  public void setTcpNoDelay(  boolean on){
+    throw new UnsupportedOperationException();
+  }
+  public void setTrafficClass(  int tc){
+    throw new UnsupportedOperationException();
+  }
+  public void shutdownInput(){
+    throw new UnsupportedOperationException();
+  }
+  public void shutdownOutput(){
+    throw new UnsupportedOperationException();
+  }
+}
+;
+",0,0,3,4,"Modifier(MethodDeclaration-modifiers, ),
+SimpleName(SimpleType-name, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+"
+2,protected Object clone() throws CloneNotSupportedException {,"return new IndexPlan(){
+  private final double costPerExecution=Builder.this.costPerExecution;
+  private final double costPerEntry=Builder.this.costPerEntry;
+  private final long estimatedEntryCount=Builder.this.estimatedEntryCount;
+  private Filter filter=Builder.this.filter;
+  private final boolean isDelayed=Builder.this.isDelayed;
+  private final boolean isFulltextIndex=Builder.this.isFulltextIndex;
+  private final boolean includesNodeData=Builder.this.includesNodeData;
+  private final List<OrderEntry> sortOrder=Builder.this.sortOrder == null ? null : new ArrayList<OrderEntry>(Builder.this.sortOrder);
+  private final NodeState definition=Builder.this.definition;
+  private final PropertyRestriction propRestriction=Builder.this.propRestriction;
+  private final String pathPrefix=Builder.this.pathPrefix;
+  private final boolean supportsPathRestriction=Builder.this.supportsPathRestriction;
+  private final Map<String,Object> attributes=Builder.this.attributes;
+  private final String planName=Builder.this.planName;
+  private final boolean deprecated=Builder.this.deprecated;
+  private final boolean logWarningForPathFilterMismatch=Builder.this.logWarningForPathFilterMismatch;
+  private final Map<Level,List<String>> additionalMessages=Builder.this.additionalMessages;
+  private String getAdditionalMessageString(){
+    return additionalMessages.entrySet().stream().map(e -> e.getKey() + "" : "" + e.getValue()).collect(Collectors.joining("", ""));
+  }
+  @Override public String toString(){
+    return String.format(""{ costPerExecution : %s,"" + "" costPerEntry : %s,"" + "" estimatedEntryCount : %s,""+ "" filter : %s,""+ "" isDelayed : %s,""+ "" isFulltextIndex : %s,""+ "" includesNodeData : %s,""+ "" sortOrder : %s,""+ "" definition : %s,""+ "" propertyRestriction : %s,""+ "" pathPrefix : %s,""+ "" deprecated : %s,""+ "" supportsPathRestriction : %s,""+ "" additionalMessage : %s,""+ "" logWarningForPathFilterMismatch : %s }"",costPerExecution,costPerEntry,estimatedEntryCount,filter,isDelayed,isFulltextIndex,includesNodeData,sortOrder,definition,propRestriction,pathPrefix,deprecated,supportsPathRestriction,getAdditionalMessageString(),logWarningForPathFilterMismatch);
+  }
+  @Override public double getCostPerExecution(){
+    return costPerExecution;
+  }
+  @Override public double getCostPerEntry(){
+    return costPerEntry;
+  }
+  @Override public long getEstimatedEntryCount(){
+    return estimatedEntryCount;
+  }
+  @Override public Filter getFilter(){
+    return filter;
+  }
+  @Override public void setFilter(  Filter filter){
+    this.filter=filter;
+  }
+  @Override public boolean isDelayed(){
+    return isDelayed;
+  }
+  @Override public boolean isFulltextIndex(){
+    return isFulltextIndex;
+  }
+  @Override public boolean includesNodeData(){
+    return includesNodeData;
+  }
+  @Override public List<OrderEntry> getSortOrder(){
+    return sortOrder;
+  }
+  @Override public NodeState getDefinition(){
+    return definition;
+  }
+  @Override public PropertyRestriction getPropertyRestriction(){
+    return propRestriction;
+  }
+  @Override public String getPathPrefix(){
+    return pathPrefix;
+  }
+  @Override public boolean getSupportsPathRestriction(){
+    return supportsPathRestriction;
+  }
+  @Override protected Object clone() throws CloneNotSupportedException {
+    return super.clone();
+  }
+  @Override public IndexPlan copy(){
+    try {
+      return (IndexPlan)super.clone();
+    }
+ catch (    CloneNotSupportedException e) {
+      throw new IllegalStateException(e);
+    }
+  }
+  @Override public Object getAttribute(  String name){
+    return attributes.get(name);
+  }
+  @Override public String getPlanName(){
+    return planName;
+  }
+  @Override public boolean isDeprecated(){
+    return deprecated;
+  }
+  @Override public boolean logWarningForPathFilterMismatch(){
+    return logWarningForPathFilterMismatch;
+  }
+  @Override public Map<Level,List<String>> getAdditionalMessages(){
+    return additionalMessages;
+  }
+}
+;
+",2,2,4,,"Modifier(),
+SimpleName(SimpleType-name, ),
+SimpleName(),
+SimpleName(SimpleType-name, ),
+"

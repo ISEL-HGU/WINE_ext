@@ -1,0 +1,186 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,device = (nextArtificalDeviceAndInode++ >> 18) & 0777777;,"device=(nextArtificalDeviceAndInode++ >> 18) & 0777777;
+",0,9,4,270,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(PostfixExpression-operand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+2,this.mode = mode & 07777;,"this.mode=mode & 07777;
+",0,0,4,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+3,| ((mode & 0200) == 0 ? 1 : 0),"setExternalAttributes((mode << SHORT_SHIFT) | ((mode & 0200) == 0 ? 1 : 0) | (isDirectory() ? 0x10 : 0));
+",0,0,5,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ),
+NumberLiteral(ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ),
+NumberLiteral(ConditionalExpression-elseExpression, ParenthesizedExpression-expression, ),
+"
+4,final int newPermission = 0777 ^ umask;,"final int newPermission=0777 ^ umask;
+",0,11,5,,"Modifier(VariableDeclarationStatement-modifiers, ),
+PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+5,FsPermission pathPermission = new FsPermission((short) 0777);,"FsPermission pathPermission=new FsPermission((short)0777);
+",0,0,5,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+6,"if (fileSystem.mkdirs(extPath, new FsPermission((short) 0777))) {","if (fileSystem.mkdirs(extPath,new FsPermission((short)0777))) {
+  fileSystem.setOwner(extPath,ADMIN,ADMIN);
+}
+ else {
+  throw new IOException(""mkdir failed to create "" + strFullPath);
+}
+",0,0,6,,"SimpleName(MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, IfStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, IfStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, IfStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, IfStatement-expression, ),
+"
+7,FsPermission defaultPermission = FsPermission.createImmutable((short)0700);,"FsPermission defaultPermission=FsPermission.createImmutable((short)0700);
+",0,0,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+8,"assertEquals(0664, entry.getUnixMode() & 07777 );","assertEquals(0664,entry.getUnixMode() & 07777);
+",1,49,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+9,"TarUtils.formatUnsignedOctalString(07777777L, buffer, 0, buffer.length);","TarUtils.formatUnsignedOctalString(07777777L,buffer,0,buffer.length);
+",1,1,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+10,zipArchiveEntry.setUnixMode(UnixStat.FILE_FLAG | 0664);,"zipArchiveEntry.setUnixMode(UnixStat.FILE_FLAG | 0664);
+",1,1,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+11,"fileSystem.mkdirs(new Path(""/"", ""warehouse""), new FsPermission((short) 0777));","fileSystem.mkdirs(new Path(""/"",""warehouse""),new FsPermission((short)0777));
+",1,5,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+12,"assertEquals(""mode plain file"", FILE_FLAG | 0123, a.getMode());","assertEquals(""mode plain file"",FILE_FLAG | 0123,a.getMode());
+",2,10,6,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+13,"assertEquals(Integer.valueOf(017777777777), NumberUtils.createNumber(""017777777777""));","assertEquals(Integer.valueOf(017777777777),NumberUtils.createNumber(""017777777777""));
+",2,3,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+14,private static final FilePermissions permissions600 = new FilePermissions(0600);,"private static final FilePermissions permissions600=new FilePermissions(0600);
+",3,3,7,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+15,public static final int DEFAULT_DIR_MODE = 040755;,"/** 
+ * Default permissions bits for directories 
+ */
+public static final int DEFAULT_DIR_MODE=040755;
+",3,3,6,,"Modifier(),
+Modifier(),
+Modifier(),
+PrimitiveType(),
+SimpleName(VariableDeclarationFragment-name, ),
+NumberLiteral(VariableDeclarationFragment-initializer, ),
+"
+16,"0123, (byte)0x80,","byte[] expect={(byte)0xC6,0x02,0x78,(byte)0xB6,0123,(byte)0x80,0,0,0,0,5,0,6,0};
+",5,5,3,,"NumberLiteral(),
+PrimitiveType(CastExpression-type, ),
+NumberLiteral(CastExpression-expression, ),
+"
+17,if ((jjtoToken[jjmatchedKind >> 6] & (1L << (jjmatchedKind & 077))) != 0L),"if ((jjtoToken[jjmatchedKind >> 6] & (1L << (jjmatchedKind & 077))) != 0L) {
+  matchedToken=jjFillToken();
+  TokenLexicalActions(matchedToken);
+  if (jjnewLexState[jjmatchedKind] != -1)   curLexState=jjnewLexState[jjmatchedKind];
+  return matchedToken;
+}
+ else if ((jjtoSkip[jjmatchedKind >> 6] & (1L << (jjmatchedKind & 077))) != 0L) {
+  if (jjnewLexState[jjmatchedKind] != -1)   curLexState=jjnewLexState[jjmatchedKind];
+  continue EOFLoop;
+}
+",7,12,7,,"SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+"
+18,final public static FsPermission TAJO_ROOT_DIR_PERMISSION = FsPermission.createImmutable((short) 0755);,"/** 
+ * rw-r--r-- 
+ */
+@SuppressWarnings(""OctalInteger"") final public static FsPermission TAJO_ROOT_DIR_PERMISSION=FsPermission.createImmutable((short)0755);
+",12,12,9,,"Modifier(),
+Modifier(),
+Modifier(),
+SimpleName(SimpleType-name, ),
+SimpleName(VariableDeclarationFragment-name, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+"
+19,if ((posixMode & 0400) != 0) posixPermissions.add(OWNER_READ);,"if ((posixMode & 0400) != 0) posixPermissions.add(OWNER_READ);
+",17,27,6,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+20,"Assert.assertEquals(new FsPermission((short) 0755), fs.getFileStatus(path).getPermission());","Assert.assertEquals(new FsPermission((short)0755),fs.getFileStatus(path).getPermission());
+",17,36,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+21,long l = 1L << (curChar & 077);,"long l=1L << (curChar & 077);
+",19,52,5,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"

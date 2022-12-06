@@ -1,0 +1,288 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,final Constructor<MethodHandles.Lookup> constructor = MethodHandles.Lookup.class.getDeclaredConstructor(,"final Constructor<MethodHandles.Lookup> constructor=MethodHandles.Lookup.class.getDeclaredConstructor(Class.class,int.class);
+",0,0,6,122,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+QualifiedName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+QualifiedName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+2,Constructor<?> constructor = clazz.getDeclaredConstructor(new Class[] {JMSBinding.class});,"Constructor<?> constructor=clazz.getDeclaredConstructor(new Class[]{JMSBinding.class});
+",0,4,8,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+WildcardType(ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+3,return (Constructor<T>[])cls.getDeclaredConstructors();,"return (Constructor<T>[])cls.getDeclaredConstructors();
+",0,0,5,,"SimpleName(SimpleType-name, ParameterizedType-type, ArrayType-elementType, CastExpression-type, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ArrayType-elementType, CastExpression-type, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, CastExpression-type, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ReturnStatement-expression, ),
+"
+4,"Constructor<?> ctor = buf.getClass().getDeclaredConstructor(long.class, int.class);","Constructor<?> ctor=buf.getClass().getDeclaredConstructor(long.class,int.class);
+",0,4,8,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+WildcardType(ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+PrimitiveType(TypeLiteral-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+PrimitiveType(TypeLiteral-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+5,"m_accessorCache = objects -> AccessibleObject.setAccessible(objects, true);","m_accessorCache=objects -> AccessibleObject.setAccessible(objects,true);
+",0,6,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(VariableDeclarationFragment-name, LambdaExpression-parameters, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, LambdaExpression-body, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, LambdaExpression-body, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, LambdaExpression-body, Assignment-rightHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, LambdaExpression-body, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+6,"return objects -> AccessibleObject.setAccessible(objects, true);","return objects -> AccessibleObject.setAccessible(objects,true);
+",0,0,5,,"SimpleName(VariableDeclarationFragment-name, LambdaExpression-parameters, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, LambdaExpression-body, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, LambdaExpression-body, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, LambdaExpression-body, ReturnStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, LambdaExpression-body, ReturnStatement-expression, ),
+"
+7,"instance = (GrapeEngine) Class.forName(""groovy.grape.GrapeIvy"").getDeclaredConstructor().newInstance();","instance=(GrapeEngine)Class.forName(""groovy.grape.GrapeIvy"").getDeclaredConstructor().newInstance();
+",0,5,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+8,Constructor<Principal> constructor = clazz.getDeclaredConstructor(new Class[]{String.class});,"Constructor<Principal> constructor=clazz.getDeclaredConstructor(new Class[]{String.class});
+",0,5,8,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+9,Constructor<Principal>[] constructors = (Constructor<Principal>[])clazz.getDeclaredConstructors();,"Constructor<Principal>[] constructors=(Constructor<Principal>[])clazz.getDeclaredConstructors();
+",0,2,9,,"SimpleName(SimpleType-name, ParameterizedType-type, ArrayType-elementType, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ArrayType-elementType, VariableDeclarationStatement-type, ),
+Dimension(ArrayType-dimensions, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ArrayType-elementType, CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ArrayType-elementType, CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+10,PrivilegedAction<CachedConstructor[]> action = () -> Arrays.stream(getTheClass().getDeclaredConstructors()),"PrivilegedAction<CachedConstructor[]> action=() -> Arrays.stream(getTheClass().getDeclaredConstructors()).filter(c -> !c.isSynthetic()).filter(c -> checkCanSetAccessible(c,CachedClass.class)).map(c -> new CachedConstructor(CachedClass.this,c)).toArray(CachedConstructor[]::new);
+",0,0,8,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+Dimension(ArrayType-dimensions, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, LambdaExpression-body, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, LambdaExpression-body, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, LambdaExpression-body, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, LambdaExpression-body, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+11,return (VMPlugin) loader.loadClass(pluginName).getDeclaredConstructor().newInstance();,"return (VMPlugin)loader.loadClass(pluginName).getDeclaredConstructor().newInstance();
+",0,0,6,,"SimpleName(SimpleType-name, CastExpression-type, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ReturnStatement-expression, ),
+"
+12,"lookup = MethodHandles.Lookup.class.getDeclaredConstructor(Class.class, Integer.TYPE);","lookup=MethodHandles.Lookup.class.getDeclaredConstructor(Class.class,Integer.TYPE);
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+QualifiedName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+13,GroovyObject object = (GroovyObject) groovyClass.getDeclaredConstructor().newInstance();,"GroovyObject object=(GroovyObject)groovyClass.getDeclaredConstructor().newInstance();
+",0,0,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+14,"finder = Class.forName(""groovy.ant.FileNameFinder"").asSubclass(IFileNameFinder.class).getDeclaredConstructor().newInstance();","finder=Class.forName(""groovy.ant.FileNameFinder"").asSubclass(IFileNameFinder.class).getDeclaredConstructor().newInstance();
+",0,4,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+15,final Constructor<T>[] declaredConstructors = getReflectionData().getDeclaredConstructors();,"final Constructor<T>[] declaredConstructors=getReflectionData().getDeclaredConstructors();
+",0,1,7,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ArrayType-elementType, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ArrayType-elementType, VariableDeclarationStatement-type, ),
+Dimension(ArrayType-dimensions, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+16,return _declaredConstructors = VMClassRegistry.getDeclaredConstructors(Class.this);,"return _declaredConstructors=VMClassRegistry.getDeclaredConstructors(Class.this);
+",0,0,4,,"SimpleName(Assignment-leftHandSide, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ReturnStatement-expression, ),
+SimpleName(ThisExpression-qualifier, MethodInvocation-arguments, Assignment-rightHandSide, ReturnStatement-expression, ),
+"
+17,cls.getDeclaredConstructor(new Class[0]);,"cls.getDeclaredConstructor(new Class[0]);
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+18,versionFor(pluginKlass.getDeclaredConstructor().newInstance()) : UNDEFINED_VERSION;,"return Connector.class.isAssignableFrom(pluginKlass) ? versionFor(pluginKlass.getDeclaredConstructor().newInstance()) : UNDEFINED_VERSION;
+",0,0,5,,"SimpleName(MethodInvocation-name, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ),
+SimpleName(),
+"
+19,fields[i].setAccessible( isAccessible );,"fields[i].setAccessible(isAccessible);
+",0,0,4,,"SimpleName(ArrayAccess-array, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+20,java.lang.reflect.Constructor<? extends SharedClassObject> c = clazz.getDeclaredConstructor(new Class[0]);,"java.lang.reflect.Constructor<? extends SharedClassObject> c=clazz.getDeclaredConstructor(new Class[0]);
+",0,0,8,,"QualifiedName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, WildcardType-bound, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+21,for (Constructor<?> constructor : classToProxy.getDeclaredConstructors()) {,"for (Constructor<?> constructor : classToProxy.getDeclaredConstructors()) {
+  final String descriptor=Type.getConstructorDescriptor(constructor);
+  final MethodVisitor mv=cw.visitMethod(ACC_PUBLIC,""<init>"",descriptor,null,null);
+  mv.visitCode();
+  mv.visitVarInsn(ALOAD,0);
+  int offset=1;
+  for (  Class<?> aClass : constructor.getParameterTypes()) {
+    final Type type=Type.getType(aClass);
+    mv.visitVarInsn(type.getOpcode(ILOAD),offset);
+    offset+=type.getSize();
+  }
+  mv.visitMethodInsn(INVOKESPECIAL,classFileName,""<init>"",descriptor);
+  mv.visitInsn(RETURN);
+  mv.visitMaxs(-1,-1);
+  mv.visitEnd();
+}
+",0,0,5,,"SimpleName(SimpleType-name, ParameterizedType-type, SingleVariableDeclaration-type, EnhancedForStatement-parameter, ),
+WildcardType(ParameterizedType-typeArguments, SingleVariableDeclaration-type, EnhancedForStatement-parameter, ),
+SimpleName(SingleVariableDeclaration-name, EnhancedForStatement-parameter, ),
+SimpleName(MethodInvocation-expression, EnhancedForStatement-expression, ),
+SimpleName(MethodInvocation-name, EnhancedForStatement-expression, ),
+"
+22,this.charsetMapper = (CharsetMapper) clazz.getDeclaredConstructor().newInstance();,"this.charsetMapper=(CharsetMapper)clazz.getDeclaredConstructor().newInstance();
+",0,0,6,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+23,"return clazz.getDeclaredConstructor(new Class[] {JMSBinding.class, ExtensionPointRegistry.class});","return clazz.getDeclaredConstructor(new Class[]{JMSBinding.class,ExtensionPointRegistry.class});
+",0,0,6,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+24,final Constructor<?> constructor = clazz.getDeclaredConstructor();,"final Constructor<?> constructor=clazz.getDeclaredConstructor();
+",1,1,6,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+WildcardType(ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+25,final GroovyObject script = (GroovyObject) groovyClass.getDeclaredConstructor().newInstance();,"final GroovyObject script=(GroovyObject)groovyClass.getDeclaredConstructor().newInstance();
+",1,5,7,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+26,return clazz.getDeclaredConstructor((Class<?>[])parameters);,"return clazz.getDeclaredConstructor((Class<?>[])parameters);
+",1,1,6,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ArrayType-elementType, CastExpression-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+WildcardType(ParameterizedType-typeArguments, ArrayType-elementType, CastExpression-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, CastExpression-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+27,Constructor<TestClass> c = TestClass.class.getDeclaredConstructor(new Class[0]);,"Constructor<TestClass> c=TestClass.class.getDeclaredConstructor(new Class[0]);
+",1,3,8,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+28,c = TestClass.class.getDeclaredConstructor(Object.class);,"c=TestClass.class.getDeclaredConstructor(Object.class);
+",1,9,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+29,Constructor[] c = TestClass.class.getDeclaredConstructors();,"Constructor[] c=TestClass.class.getDeclaredConstructors();
+",1,1,5,,"SimpleName(SimpleType-name, ArrayType-elementType, VariableDeclarationStatement-type, ),
+Dimension(ArrayType-dimensions, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+30,return ((Class) arg1).getDeclaredConstructor((Class[]) arg2);,"return ((Class)arg1).getDeclaredConstructor((Class[])arg2);
+",2,13,6,,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, CastExpression-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+31,"return newInstance(clazz.getDeclaredConstructor().newInstance(), clazz);","return newInstance(clazz.getDeclaredConstructor().newInstance(),clazz);
+",2,3,5,,"SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+32,f[0].setAccessible(true);,"f[0].setAccessible(true);
+",3,3,4,,"SimpleName(ArrayAccess-array, MethodInvocation-expression, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+33,((Method) arg1).setAccessible(true);,"((Method)arg1).setAccessible(true);
+",5,5,4,,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+34,fields[i].setAccessible(true);,"fields[i].setAccessible(true);
+",7,11,4,,"SimpleName(ArrayAccess-array, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

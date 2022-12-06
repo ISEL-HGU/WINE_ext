@@ -1,0 +1,68 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,public Object getInstance () {,"class PairThatNeedsInfoAboutModules extends AbstractLookup.Pair {
+  public String getDisplayName(){
+    return ""Need a module"";
+  }
+  public String getId(){
+    return getDisplayName();
+  }
+  public Class getType(){
+    return Integer.class;
+  }
+  protected boolean instanceOf(  Class c){
+    if (c == Integer.class) {
+synchronized (this) {
+        notifyAll();
+        try {
+          wait(1000);
+        }
+ catch (        InterruptedException ex) {
+          fail(ex.getMessage());
+        }
+      }
+      java.util.Collection coll=allModules.allInstances();
+      assertEquals(""Size is 1"",1,coll.size());
+      assertEquals(""My module is there"",myModule,coll.iterator().next());
+    }
+    return c.isAssignableFrom(Integer.class);
+  }
+  public Object getInstance(){
+    return new Integer(10);
+  }
+  protected boolean creatorOf(  Object obj){
+    return new Integer(10).equals(obj);
+  }
+}
+",0,0,3,8,"Modifier(MethodDeclaration-modifiers, ),
+SimpleName(SimpleType-name, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+"
+2,"public <T extends ConstraintValidator<?, ?>> T getInstance(Class<T> key) {","builder.constraintValidatorFactory(new ConstraintValidatorFactory(){
+  @Override public <T extends ConstraintValidator<?,?>>T getInstance(  Class<T> key){
+    if (key == NotNullValidator.class) {
+      @SuppressWarnings(""unchecked"") final T result=(T)new BadlyBehavedNotNullValidator();
+      return result;
+    }
+    return new DefaultConstraintValidatorFactory().getInstance(key);
+  }
+  @Override public void releaseInstance(  ConstraintValidator<?,?> instance){
+  }
+}
+);
+",1,2,10,,"Modifier(),
+SimpleName(TypeParameter-name, ),
+SimpleName(SimpleType-name, ParameterizedType-type, TypeParameter-typeBounds, ),
+WildcardType(ParameterizedType-typeArguments, TypeParameter-typeBounds, ),
+WildcardType(ParameterizedType-typeArguments, TypeParameter-typeBounds, ),
+SimpleName(SimpleType-name, ),
+SimpleName(),
+SimpleName(SimpleType-name, ParameterizedType-type, SingleVariableDeclaration-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+"
+3,public static final DirectByteBufferAllocator getInstance(){return new DirectByteBufferAllocator();},"return new DirectByteBufferAllocator();
+",1,1,1,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+"
+4,public Bridge getInstance() { return new SVGDescElementBridge(); },"return new SVGDescElementBridge();
+",1,1,1,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, Block-statements, ),
+"

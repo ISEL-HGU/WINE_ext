@@ -1,0 +1,3640 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,scanWhitespace: while ((c = super.read()) != -1) {,"while ((c=super.read()) != -1) {
+switch (c) {
+case ' ':
+    if (++columnNumber == colNextTab) {
+      numTabs++;
+      countSpaces=0;
+      colNextTab+=tabLength;
+    }
+ else {
+      countSpaces++;
+    }
+  break;
+case '\t':
+columnNumber=colNextTab;
+numTabs++;
+countSpaces=0;
+colNextTab+=tabLength;
+break;
+default :
+push(c);
+break scanWhitespace;
+}
+}
+",0,0,3,358,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, LabeledStatement-body, ),
+SimpleName(SuperMethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, LabeledStatement-body, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, LabeledStatement-body, ),
+"
+2,lab1: do {,"do {
+  if (!r_consonant_pair()) {
+    break lab1;
+  }
+}
+ while (false);
+",0,0,0,,
+3,lab5: do {,"do {
+  v_6=limit - cursor;
+  lab6:   do {
+    ket=cursor;
+    if (!(eq_s_b(2,""ig""))) {
+      break lab6;
+    }
+    bra=cursor;
+    if (!r_R2()) {
+      break lab6;
+    }
+{
+      v_7=limit - cursor;
+      lab7:       do {
+        if (!(eq_s_b(1,""e""))) {
+          break lab7;
+        }
+        break lab6;
+      }
+ while (false);
+      cursor=limit - v_7;
+    }
+    slice_del();
+    break lab5;
+  }
+ while (false);
+  cursor=limit - v_6;
+  if (!r_undouble()) {
+    break lab4;
+  }
+}
+ while (false);
+",0,0,0,,
+4,lab6: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""ig""))) {
+    break lab6;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    break lab6;
+  }
+{
+    v_7=limit - cursor;
+    lab7:     do {
+      if (!(eq_s_b(1,""e""))) {
+        break lab7;
+      }
+      break lab6;
+    }
+ while (false);
+    cursor=limit - v_7;
+  }
+  slice_del();
+  break lab5;
+}
+ while (false);
+",0,0,0,,
+5,lab7: do {,"do {
+  if (!(eq_s_b(1,""e""))) {
+    break lab7;
+  }
+  break lab6;
+}
+ while (false);
+",0,0,0,,
+6,lab8: do {,"do {
+  if (!(eq_s_b(1,""e""))) {
+    break lab8;
+  }
+  break lab4;
+}
+ while (false);
+",0,0,0,,
+7,lab1: do {,"do {
+  v_2=limit - cursor;
+  lab2:   do {
+{
+      int c=cursor - 2;
+      if (limit_backward > c || c > limit) {
+        break lab2;
+      }
+      cursor=c;
+    }
+    slice_from(""i"");
+    break lab1;
+  }
+ while (false);
+  cursor=limit - v_2;
+  slice_from(""ie"");
+}
+ while (false);
+",0,0,0,,
+8,lab2: do {,"do {
+{
+    int c=cursor - 2;
+    if (limit_backward > c || c > limit) {
+      break lab2;
+    }
+    cursor=c;
+  }
+  slice_from(""i"");
+  break lab1;
+}
+ while (false);
+",0,0,0,,
+9,lab4: do {,"do {
+  if (!(in_grouping_b(g_v,97,121))) {
+    break lab4;
+  }
+  break golab3;
+}
+ while (false);
+",0,0,0,,
+10,lab1: do {,"do {
+  if (!(in_grouping_b(g_v,97,121))) {
+    break lab1;
+  }
+  break golab0;
+}
+ while (false);
+",0,0,0,,
+11,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!(eq_s_b(1,""s""))) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!(eq_s_b(1,""t""))) {
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+12,lab1: do {,"do {
+  if (!(eq_s_b(1,""s""))) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+13,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!r_R2()) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!r_R1()) {
+    return false;
+  }
+{
+    v_2=limit - cursor;
+    lab2:     do {
+      if (!r_shortv()) {
+        break lab2;
+      }
+      return false;
+    }
+ while (false);
+    cursor=limit - v_2;
+  }
+}
+ while (false);
+",0,0,0,,
+14,lab1: do {,"do {
+  if (!r_R2()) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+15,lab2: do {,"do {
+  if (!r_shortv()) {
+    break lab2;
+  }
+  return false;
+}
+ while (false);
+",0,0,0,,
+16,lab0: do {,"do {
+  if (!(eq_s_b(1,""k""))) {
+    break lab0;
+  }
+  return false;
+}
+ while (false);
+",0,0,0,,
+17,lab0: do {,"do {
+  v_4=limit - cursor;
+  lab1:   do {
+    v_5=limit - cursor;
+    lab2:     do {
+      if (!r_LONG()) {
+        break lab2;
+      }
+      break lab1;
+    }
+ while (false);
+    cursor=limit - v_5;
+    if (!(eq_s_b(2,""ie""))) {
+      cursor=limit - v_3;
+      break lab0;
+    }
+  }
+ while (false);
+  cursor=limit - v_4;
+  if (cursor <= limit_backward) {
+    cursor=limit - v_3;
+    break lab0;
+  }
+  cursor--;
+  bra=cursor;
+}
+ while (false);
+",0,0,0,,
+18,lab1: do {,"do {
+  v_5=limit - cursor;
+  lab2:   do {
+    if (!r_LONG()) {
+      break lab2;
+    }
+    break lab1;
+  }
+ while (false);
+  cursor=limit - v_5;
+  if (!(eq_s_b(2,""ie""))) {
+    cursor=limit - v_3;
+    break lab0;
+  }
+}
+ while (false);
+",0,0,0,,
+19,lab2: do {,"do {
+  if (!r_LONG()) {
+    break lab2;
+  }
+  break lab1;
+}
+ while (false);
+",0,0,0,,
+20,lab0: do {,"do {
+  if (!(eq_s_b(2,""po""))) {
+    break lab0;
+  }
+  return false;
+}
+ while (false);
+",0,0,0,,
+21,lab0: do {,"do {
+  if (!(eq_s_b(2,""po""))) {
+    break lab0;
+  }
+  return false;
+}
+ while (false);
+",0,0,0,,
+22,lab0: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""ic""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  bra=cursor;
+  lab1:   do {
+    v_2=limit - cursor;
+    lab2:     do {
+      if (!r_R2()) {
+        break lab2;
+      }
+      slice_del();
+      break lab1;
+    }
+ while (false);
+    cursor=limit - v_2;
+    slice_from(""iqU"");
+  }
+ while (false);
+}
+ while (false);
+",0,0,0,,
+23,lab1: do {,"do {
+  v_2=limit - cursor;
+  lab2:   do {
+    if (!r_R2()) {
+      break lab2;
+    }
+    slice_del();
+    break lab1;
+  }
+ while (false);
+  cursor=limit - v_2;
+  slice_from(""iqU"");
+}
+ while (false);
+",0,0,0,,
+24,lab2: do {,"do {
+  if (!r_R2()) {
+    break lab2;
+  }
+  slice_del();
+  break lab1;
+}
+ while (false);
+",0,0,0,,
+25,lab3: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_2,6);
+  if (among_var == 0) {
+    cursor=limit - v_3;
+    break lab3;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_3;
+  break lab3;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_3;
+  break lab3;
+}
+slice_del();
+ket=cursor;
+if (!(eq_s_b(2,""at""))) {
+cursor=limit - v_3;
+break lab3;
+}
+bra=cursor;
+if (!r_R2()) {
+cursor=limit - v_3;
+break lab3;
+}
+slice_del();
+break;
+case 2:
+lab4: do {
+v_4=limit - cursor;
+lab5: do {
+if (!r_R2()) {
+break lab5;
+}
+slice_del();
+break lab4;
+}
+ while (false);
+cursor=limit - v_4;
+if (!r_R1()) {
+cursor=limit - v_3;
+break lab3;
+}
+slice_from(""eux"");
+}
+ while (false);
+break;
+case 3:
+if (!r_R2()) {
+cursor=limit - v_3;
+break lab3;
+}
+slice_del();
+break;
+case 4:
+if (!r_RV()) {
+cursor=limit - v_3;
+break lab3;
+}
+slice_from(""i"");
+break;
+}
+}
+ while (false);
+",0,0,0,,
+26,lab4: do {,"do {
+  v_4=limit - cursor;
+  lab5:   do {
+    if (!r_R2()) {
+      break lab5;
+    }
+    slice_del();
+    break lab4;
+  }
+ while (false);
+  cursor=limit - v_4;
+  if (!r_R1()) {
+    cursor=limit - v_3;
+    break lab3;
+  }
+  slice_from(""eux"");
+}
+ while (false);
+",0,0,0,,
+27,lab4: do {,"do {
+  v_4=limit - cursor;
+  lab5:   do {
+    if (!r_R2()) {
+      break lab5;
+    }
+    slice_del();
+    break lab4;
+  }
+ while (false);
+  cursor=limit - v_4;
+  if (!r_R1()) {
+    cursor=limit - v_3;
+    break lab3;
+  }
+  slice_from(""eux"");
+}
+ while (false);
+",0,0,0,,
+28,lab5: do {,"do {
+  if (!r_R2()) {
+    break lab5;
+  }
+  slice_del();
+  break lab4;
+}
+ while (false);
+",0,0,0,,
+29,lab5: do {,"do {
+  if (!r_R2()) {
+    break lab5;
+  }
+  slice_del();
+  break lab4;
+}
+ while (false);
+",0,0,0,,
+30,lab6: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_3,3);
+  if (among_var == 0) {
+    cursor=limit - v_5;
+    break lab6;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_5;
+  break lab6;
+case 1:
+lab7: do {
+  v_6=limit - cursor;
+  lab8:   do {
+    if (!r_R2()) {
+      break lab8;
+    }
+    slice_del();
+    break lab7;
+  }
+ while (false);
+  cursor=limit - v_6;
+  slice_from(""abl"");
+}
+ while (false);
+break;
+case 2:
+lab9: do {
+v_7=limit - cursor;
+lab10: do {
+if (!r_R2()) {
+  break lab10;
+}
+slice_del();
+break lab9;
+}
+ while (false);
+cursor=limit - v_7;
+slice_from(""iqU"");
+}
+ while (false);
+break;
+case 3:
+if (!r_R2()) {
+cursor=limit - v_5;
+break lab6;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+31,lab7: do {,"do {
+  v_6=limit - cursor;
+  lab8:   do {
+    if (!r_R2()) {
+      break lab8;
+    }
+    slice_del();
+    break lab7;
+  }
+ while (false);
+  cursor=limit - v_6;
+  slice_from(""abl"");
+}
+ while (false);
+",0,0,0,,
+32,lab7: do {,"do {
+  v_6=limit - cursor;
+  lab8:   do {
+    if (!r_R2()) {
+      break lab8;
+    }
+    slice_del();
+    break lab7;
+  }
+ while (false);
+  cursor=limit - v_6;
+  slice_from(""abl"");
+}
+ while (false);
+",0,0,0,,
+33,lab8: do {,"do {
+  if (!r_R2()) {
+    break lab8;
+  }
+  slice_del();
+  break lab7;
+}
+ while (false);
+",0,0,0,,
+34,lab8: do {,"do {
+  if (!r_R2()) {
+    break lab8;
+  }
+  slice_del();
+  break lab7;
+}
+ while (false);
+",0,0,0,,
+35,lab9: do {,"do {
+  v_7=limit - cursor;
+  lab10:   do {
+    if (!r_R2()) {
+      break lab10;
+    }
+    slice_del();
+    break lab9;
+  }
+ while (false);
+  cursor=limit - v_7;
+  slice_from(""iqU"");
+}
+ while (false);
+",0,0,0,,
+36,lab9: do {,"do {
+  v_7=limit - cursor;
+  lab10:   do {
+    if (!r_R2()) {
+      break lab10;
+    }
+    slice_del();
+    break lab9;
+  }
+ while (false);
+  cursor=limit - v_7;
+  slice_from(""iqU"");
+}
+ while (false);
+",0,0,0,,
+37,lab10: do {,"do {
+  if (!r_R2()) {
+    break lab10;
+  }
+  slice_del();
+  break lab9;
+}
+ while (false);
+",0,0,0,,
+38,lab10: do {,"do {
+  if (!r_R2()) {
+    break lab10;
+  }
+  slice_del();
+  break lab9;
+}
+ while (false);
+",0,0,0,,
+39,lab11: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""at""))) {
+    cursor=limit - v_8;
+    break lab11;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_8;
+    break lab11;
+  }
+  slice_del();
+  ket=cursor;
+  if (!(eq_s_b(2,""ic""))) {
+    cursor=limit - v_8;
+    break lab11;
+  }
+  bra=cursor;
+  lab12:   do {
+    v_9=limit - cursor;
+    lab13:     do {
+      if (!r_R2()) {
+        break lab13;
+      }
+      slice_del();
+      break lab12;
+    }
+ while (false);
+    cursor=limit - v_9;
+    slice_from(""iqU"");
+  }
+ while (false);
+}
+ while (false);
+",0,0,0,,
+40,lab12: do {,"do {
+  v_9=limit - cursor;
+  lab13:   do {
+    if (!r_R2()) {
+      break lab13;
+    }
+    slice_del();
+    break lab12;
+  }
+ while (false);
+  cursor=limit - v_9;
+  slice_from(""iqU"");
+}
+ while (false);
+",0,0,0,,
+41,lab13: do {,"do {
+  if (!r_R2()) {
+    break lab13;
+  }
+  slice_del();
+  break lab12;
+}
+ while (false);
+",0,0,0,,
+42,lab14: do {,"do {
+  v_10=limit - cursor;
+  lab15:   do {
+    if (!r_R2()) {
+      break lab15;
+    }
+    slice_del();
+    break lab14;
+  }
+ while (false);
+  cursor=limit - v_10;
+  if (!r_R1()) {
+    return false;
+  }
+  slice_from(""eux"");
+}
+ while (false);
+",0,0,0,,
+43,lab15: do {,"do {
+  if (!r_R2()) {
+    break lab15;
+  }
+  slice_del();
+  break lab14;
+}
+ while (false);
+",0,0,0,,
+44,lab0: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(1,""e""))) {
+    cursor=limit - v_3;
+    break lab0;
+  }
+  bra=cursor;
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+45,lab1: do {,"do {
+  v_5=limit - cursor;
+  lab2:   do {
+    if (!(eq_s_b(1,""s""))) {
+      break lab2;
+    }
+    break lab1;
+  }
+ while (false);
+  cursor=limit - v_5;
+  if (!(eq_s_b(1,""t""))) {
+    limit_backward=v_4;
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+46,lab2: do {,"do {
+  if (!(eq_s_b(1,""s""))) {
+    break lab2;
+  }
+  break lab1;
+}
+ while (false);
+",0,0,0,,
+47,lab1: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(1,""s""))) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  bra=cursor;
+  if (!(eq_s_b(3,""nis""))) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+48,lab4: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""ig""))) {
+    cursor=limit - v_5;
+    break lab4;
+  }
+  bra=cursor;
+{
+    v_6=limit - cursor;
+    lab5:     do {
+      if (!(eq_s_b(1,""e""))) {
+        break lab5;
+      }
+      cursor=limit - v_5;
+      break lab4;
+    }
+ while (false);
+    cursor=limit - v_6;
+  }
+  if (!r_R2()) {
+    cursor=limit - v_5;
+    break lab4;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+49,lab5: do {,"do {
+  if (!(eq_s_b(1,""e""))) {
+    break lab5;
+  }
+  cursor=limit - v_5;
+  break lab4;
+}
+ while (false);
+",0,0,0,,
+50,lab6: do {,"do {
+  if (!(eq_s_b(1,""e""))) {
+    break lab6;
+  }
+  break lab3;
+}
+ while (false);
+",0,0,0,,
+51,lab7: do {,"do {
+  ket=cursor;
+  lab8:   do {
+    v_9=limit - cursor;
+    lab9:     do {
+      if (!(eq_s_b(2,""er""))) {
+        break lab9;
+      }
+      break lab8;
+    }
+ while (false);
+    cursor=limit - v_9;
+    if (!(eq_s_b(2,""en""))) {
+      cursor=limit - v_8;
+      break lab7;
+    }
+  }
+ while (false);
+  bra=cursor;
+  if (!r_R1()) {
+    cursor=limit - v_8;
+    break lab7;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+52,lab8: do {,"do {
+  v_9=limit - cursor;
+  lab9:   do {
+    if (!(eq_s_b(2,""er""))) {
+      break lab9;
+    }
+    break lab8;
+  }
+ while (false);
+  cursor=limit - v_9;
+  if (!(eq_s_b(2,""en""))) {
+    cursor=limit - v_8;
+    break lab7;
+  }
+}
+ while (false);
+",0,0,0,,
+53,lab9: do {,"do {
+  if (!(eq_s_b(2,""er""))) {
+    break lab9;
+  }
+  break lab8;
+}
+ while (false);
+",0,0,0,,
+54,lab10: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_3,2);
+  if (among_var == 0) {
+    cursor=limit - v_10;
+    break lab10;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_10;
+    break lab10;
+  }
+switch (among_var) {
+case 0:
+    cursor=limit - v_10;
+  break lab10;
+case 1:
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+55,lab0: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""ic""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+56,lab1: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_4,4);
+  if (among_var == 0) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  slice_del();
+switch (among_var) {
+case 0:
+    cursor=limit - v_2;
+  break lab1;
+case 1:
+ket=cursor;
+if (!(eq_s_b(2,""at""))) {
+cursor=limit - v_2;
+break lab1;
+}
+bra=cursor;
+if (!r_R2()) {
+cursor=limit - v_2;
+break lab1;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+57,lab2: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_5,3);
+  if (among_var == 0) {
+    cursor=limit - v_3;
+    break lab2;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_3;
+  break lab2;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_3;
+  break lab2;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+58,lab3: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""at""))) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  slice_del();
+  ket=cursor;
+  if (!(eq_s_b(2,""ic""))) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+59,lab0: do {,"do {
+  v_3=limit - cursor;
+  lab1:   do {
+    if (!(in_grouping_b(g_s_ending,98,122))) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_3;
+  if (!(eq_s_b(1,""k""))) {
+    return false;
+  }
+  if (!(out_grouping_b(g_v,97,248))) {
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+60,lab1: do {,"do {
+  if (!(in_grouping_b(g_s_ending,98,122))) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+61,lab1: do {,"do {
+  if (!(in_grouping_b(g_v,97,121))) {
+    break lab1;
+  }
+  break golab0;
+}
+ while (false);
+",0,0,0,,
+62,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!(eq_s_b(1,""s""))) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!(eq_s_b(1,""t""))) {
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+63,lab1: do {,"do {
+  if (!(eq_s_b(1,""s""))) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+64,lab0: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_2,4);
+  if (among_var == 0) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  slice_del();
+switch (among_var) {
+case 0:
+    cursor=limit - v_1;
+  break lab0;
+case 1:
+ket=cursor;
+if (!(eq_s_b(2,""at""))) {
+cursor=limit - v_1;
+break lab0;
+}
+bra=cursor;
+if (!r_R2()) {
+cursor=limit - v_1;
+break lab0;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+65,lab1: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_3,3);
+  if (among_var == 0) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_2;
+  break lab1;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_2;
+  break lab1;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+66,lab2: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_4,3);
+  if (among_var == 0) {
+    cursor=limit - v_3;
+    break lab2;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_3;
+  break lab2;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_3;
+  break lab2;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+67,lab3: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""at""))) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+68,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!(eq_s_b(1,""u""))) {
+      break lab1;
+    }
+    bra=cursor;
+    v_2=limit - cursor;
+    if (!(eq_s_b(1,""g""))) {
+      break lab1;
+    }
+    cursor=limit - v_2;
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!(eq_s_b(1,""i""))) {
+    return false;
+  }
+  bra=cursor;
+  v_3=limit - cursor;
+  if (!(eq_s_b(1,""c""))) {
+    return false;
+  }
+  cursor=limit - v_3;
+}
+ while (false);
+",0,0,0,,
+69,lab1: do {,"do {
+  if (!(eq_s_b(1,""u""))) {
+    break lab1;
+  }
+  bra=cursor;
+  v_2=limit - cursor;
+  if (!(eq_s_b(1,""g""))) {
+    break lab1;
+  }
+  cursor=limit - v_2;
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+70,lab0: do {,"do {
+  if (!(eq_s_b(2,""ab""))) {
+    break lab0;
+  }
+  return false;
+}
+ while (false);
+",0,0,0,,
+71,lab0: do {,"do {
+  v_3=limit - cursor;
+  lab1:   do {
+    if (!(out_grouping_b(g_v,97,259))) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_3;
+  if (!(eq_s_b(1,""u""))) {
+    limit_backward=v_2;
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+72,lab1: do {,"do {
+  if (!(out_grouping_b(g_v,97,259))) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+73,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!(eq_s_b(1,""\u0430""))) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!(eq_s_b(1,""\u044F""))) {
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+74,lab1: do {,"do {
+  if (!(eq_s_b(1,""\u0430""))) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+75,lab1: do {,"do {
+  v_2=limit - cursor;
+  lab2:   do {
+    if (!(eq_s_b(1,""\u0430""))) {
+      break lab2;
+    }
+    break lab1;
+  }
+ while (false);
+  cursor=limit - v_2;
+  if (!(eq_s_b(1,""\u044F""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+}
+ while (false);
+",0,0,0,,
+76,lab2: do {,"do {
+  if (!(eq_s_b(1,""\u0430""))) {
+    break lab2;
+  }
+  break lab1;
+}
+ while (false);
+",0,0,0,,
+77,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!(eq_s_b(1,""\u0430""))) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!(eq_s_b(1,""\u044F""))) {
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+78,lab1: do {,"do {
+  if (!(eq_s_b(1,""\u0430""))) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+79,lab0: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""ic""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+80,lab1: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_3,4);
+  if (among_var == 0) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  slice_del();
+switch (among_var) {
+case 0:
+    cursor=limit - v_2;
+  break lab1;
+case 1:
+ket=cursor;
+if (!(eq_s_b(2,""at""))) {
+cursor=limit - v_2;
+break lab1;
+}
+bra=cursor;
+if (!r_R2()) {
+cursor=limit - v_2;
+break lab1;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+81,lab2: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_4,3);
+  if (among_var == 0) {
+    cursor=limit - v_3;
+    break lab2;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_3;
+  break lab2;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_3;
+  break lab2;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+82,lab3: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_5,3);
+  if (among_var == 0) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_4;
+  break lab3;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_4;
+  break lab3;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+83,lab4: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""at""))) {
+    cursor=limit - v_5;
+    break lab4;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_5;
+    break lab4;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+84,lab0: do {,"do {
+  if (!(eq_s_b(1,""u""))) {
+    cursor=limit - v_3;
+    break lab0;
+  }
+  v_4=limit - cursor;
+  if (!(eq_s_b(1,""g""))) {
+    cursor=limit - v_3;
+    break lab0;
+  }
+  cursor=limit - v_4;
+}
+ while (false);
+",0,0,0,,
+85,lab0: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(1,""u""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  bra=cursor;
+  v_2=limit - cursor;
+  if (!(eq_s_b(1,""g""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  cursor=limit - v_2;
+  if (!r_RV()) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+86,format:                     for (final DefaultAttributeType<?> ct : ((DefaultAttributeType<?>) propertyType).characteristics().values()) {,"for (final DefaultAttributeType<?> ct : ((DefaultAttributeType<?>)propertyType).characteristics().values()) {
+  final GenericName cn=ct.getName();
+  final String cs=toString(cn);
+  table.append(separator).append(cs);
+  length+=separator.length() + cs.length();
+  Collection<?> cv=CollectionsExt.singletonOrEmpty(ct.getDefaultValue());
+  if (feature != null) {
+    final Object cp=feature.getProperty(propertyType.getName().toString());
+    if (cp instanceof AbstractAttribute<?>) {
+      AbstractAttribute<?> ca=((AbstractAttribute<?>)cp).characteristics().get(cn.toString());
+      if (ca != null)       cv=ca.getValues();
+    }
+  }
+  final boolean multi=ct.getMaximumOccurs() > 1;
+  String sep=multi ? "" = {"" : "" = "";
+  for (  Object c : cv) {
+    length=formatValue(c,table.append(sep),length+=sep.length());
+    if (length < 0)     break format;
+    sep=SEPARATOR;
+  }
+  separator=SEPARATOR;
+  if (multi && sep == SEPARATOR) {
+    table.append('}');
+  }
+}
+",0,0,9,,"Modifier(SingleVariableDeclaration-modifiers, EnhancedForStatement-parameter, LabeledStatement-body, ),
+SimpleName(SimpleType-name, ParameterizedType-type, SingleVariableDeclaration-type, EnhancedForStatement-parameter, LabeledStatement-body, ),
+WildcardType(ParameterizedType-typeArguments, SingleVariableDeclaration-type, EnhancedForStatement-parameter, LabeledStatement-body, ),
+SimpleName(SingleVariableDeclaration-name, EnhancedForStatement-parameter, LabeledStatement-body, ),
+SimpleName(SimpleType-name, ParameterizedType-type, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, EnhancedForStatement-expression, LabeledStatement-body, ),
+WildcardType(ParameterizedType-typeArguments, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, EnhancedForStatement-expression, LabeledStatement-body, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, EnhancedForStatement-expression, LabeledStatement-body, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, EnhancedForStatement-expression, LabeledStatement-body, ),
+SimpleName(MethodInvocation-name, EnhancedForStatement-expression, LabeledStatement-body, ),
+"
+87,top: for (;;) {,"for (; ; ) {
+switch (c=signature.charAt(pos)) {
+case '>':
+    break top;
+case '*':
+  ++pos;
+v.visitTypeArgument();
+break;
+case '+':
+case '-':
+pos=parseType(signature,pos + 1,v.visitTypeArgument(c));
+break;
+default :
+pos=parseType(signature,pos,v.visitTypeArgument('='));
+break;
+}
+}
+",0,0,0,,
+88,top: for (;;) {,"for (; ; ) {
+switch (c=signature.charAt(pos)) {
+case '>':
+    break top;
+case '*':
+  ++pos;
+v.visitTypeArgument();
+break;
+case '+':
+case '-':
+pos=parseType(signature,pos + 1,v.visitTypeArgument(c));
+break;
+default :
+pos=parseType(signature,pos,v.visitTypeArgument('='));
+break;
+}
+}
+",0,0,0,,
+89,lab1: do {,"do {
+  if (!r_consonant_pair()) {
+    break lab1;
+  }
+}
+ while (false);
+",0,0,0,,
+90,lab5: do {,"do {
+  v_6=limit - cursor;
+  lab6:   do {
+    ket=cursor;
+    if (!(eq_s_b(2,""ig""))) {
+      break lab6;
+    }
+    bra=cursor;
+    if (!r_R2()) {
+      break lab6;
+    }
+{
+      v_7=limit - cursor;
+      lab7:       do {
+        if (!(eq_s_b(1,""e""))) {
+          break lab7;
+        }
+        break lab6;
+      }
+ while (false);
+      cursor=limit - v_7;
+    }
+    slice_del();
+    break lab5;
+  }
+ while (false);
+  cursor=limit - v_6;
+  if (!r_undouble()) {
+    break lab4;
+  }
+}
+ while (false);
+",0,0,0,,
+91,lab6: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""ig""))) {
+    break lab6;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    break lab6;
+  }
+{
+    v_7=limit - cursor;
+    lab7:     do {
+      if (!(eq_s_b(1,""e""))) {
+        break lab7;
+      }
+      break lab6;
+    }
+ while (false);
+    cursor=limit - v_7;
+  }
+  slice_del();
+  break lab5;
+}
+ while (false);
+",0,0,0,,
+92,lab7: do {,"do {
+  if (!(eq_s_b(1,""e""))) {
+    break lab7;
+  }
+  break lab6;
+}
+ while (false);
+",0,0,0,,
+93,lab8: do {,"do {
+  if (!(eq_s_b(1,""e""))) {
+    break lab8;
+  }
+  break lab4;
+}
+ while (false);
+",0,0,0,,
+94,lab1: do {,"do {
+  v_2=limit - cursor;
+  lab2:   do {
+{
+      int c=cursor - 2;
+      if (limit_backward > c || c > limit) {
+        break lab2;
+      }
+      cursor=c;
+    }
+    slice_from(""i"");
+    break lab1;
+  }
+ while (false);
+  cursor=limit - v_2;
+  slice_from(""ie"");
+}
+ while (false);
+",0,0,0,,
+95,lab2: do {,"do {
+{
+    int c=cursor - 2;
+    if (limit_backward > c || c > limit) {
+      break lab2;
+    }
+    cursor=c;
+  }
+  slice_from(""i"");
+  break lab1;
+}
+ while (false);
+",0,0,0,,
+96,lab4: do {,"do {
+  if (!(in_grouping_b(g_v,97,121))) {
+    break lab4;
+  }
+  break golab3;
+}
+ while (false);
+",0,0,0,,
+97,lab1: do {,"do {
+  if (!(in_grouping_b(g_v,97,121))) {
+    break lab1;
+  }
+  break golab0;
+}
+ while (false);
+",0,0,0,,
+98,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!(eq_s_b(1,""s""))) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!(eq_s_b(1,""t""))) {
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+99,lab1: do {,"do {
+  if (!(eq_s_b(1,""s""))) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+100,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!r_R2()) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!r_R1()) {
+    return false;
+  }
+{
+    v_2=limit - cursor;
+    lab2:     do {
+      if (!r_shortv()) {
+        break lab2;
+      }
+      return false;
+    }
+ while (false);
+    cursor=limit - v_2;
+  }
+}
+ while (false);
+",0,0,0,,
+101,lab1: do {,"do {
+  if (!r_R2()) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+102,lab2: do {,"do {
+  if (!r_shortv()) {
+    break lab2;
+  }
+  return false;
+}
+ while (false);
+",0,0,0,,
+103,lab0: do {,"do {
+  if (!(eq_s_b(1,""k""))) {
+    break lab0;
+  }
+  return false;
+}
+ while (false);
+",0,0,0,,
+104,lab0: do {,"do {
+  v_4=limit - cursor;
+  lab1:   do {
+    v_5=limit - cursor;
+    lab2:     do {
+      if (!r_LONG()) {
+        break lab2;
+      }
+      break lab1;
+    }
+ while (false);
+    cursor=limit - v_5;
+    if (!(eq_s_b(2,""ie""))) {
+      cursor=limit - v_3;
+      break lab0;
+    }
+  }
+ while (false);
+  cursor=limit - v_4;
+  if (cursor <= limit_backward) {
+    cursor=limit - v_3;
+    break lab0;
+  }
+  cursor--;
+  bra=cursor;
+}
+ while (false);
+",0,0,0,,
+105,lab1: do {,"do {
+  v_5=limit - cursor;
+  lab2:   do {
+    if (!r_LONG()) {
+      break lab2;
+    }
+    break lab1;
+  }
+ while (false);
+  cursor=limit - v_5;
+  if (!(eq_s_b(2,""ie""))) {
+    cursor=limit - v_3;
+    break lab0;
+  }
+}
+ while (false);
+",0,0,0,,
+106,lab2: do {,"do {
+  if (!r_LONG()) {
+    break lab2;
+  }
+  break lab1;
+}
+ while (false);
+",0,0,0,,
+107,lab0: do {,"do {
+  if (!(eq_s_b(2,""po""))) {
+    break lab0;
+  }
+  return false;
+}
+ while (false);
+",0,0,0,,
+108,lab0: do {,"do {
+  if (!(eq_s_b(2,""po""))) {
+    break lab0;
+  }
+  return false;
+}
+ while (false);
+",0,0,0,,
+109,lab0: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""ic""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  bra=cursor;
+  lab1:   do {
+    v_2=limit - cursor;
+    lab2:     do {
+      if (!r_R2()) {
+        break lab2;
+      }
+      slice_del();
+      break lab1;
+    }
+ while (false);
+    cursor=limit - v_2;
+    slice_from(""iqU"");
+  }
+ while (false);
+}
+ while (false);
+",0,0,0,,
+110,lab1: do {,"do {
+  v_2=limit - cursor;
+  lab2:   do {
+    if (!r_R2()) {
+      break lab2;
+    }
+    slice_del();
+    break lab1;
+  }
+ while (false);
+  cursor=limit - v_2;
+  slice_from(""iqU"");
+}
+ while (false);
+",0,0,0,,
+111,lab2: do {,"do {
+  if (!r_R2()) {
+    break lab2;
+  }
+  slice_del();
+  break lab1;
+}
+ while (false);
+",0,0,0,,
+112,lab3: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_2,6);
+  if (among_var == 0) {
+    cursor=limit - v_3;
+    break lab3;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_3;
+  break lab3;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_3;
+  break lab3;
+}
+slice_del();
+ket=cursor;
+if (!(eq_s_b(2,""at""))) {
+cursor=limit - v_3;
+break lab3;
+}
+bra=cursor;
+if (!r_R2()) {
+cursor=limit - v_3;
+break lab3;
+}
+slice_del();
+break;
+case 2:
+lab4: do {
+v_4=limit - cursor;
+lab5: do {
+if (!r_R2()) {
+break lab5;
+}
+slice_del();
+break lab4;
+}
+ while (false);
+cursor=limit - v_4;
+if (!r_R1()) {
+cursor=limit - v_3;
+break lab3;
+}
+slice_from(""eux"");
+}
+ while (false);
+break;
+case 3:
+if (!r_R2()) {
+cursor=limit - v_3;
+break lab3;
+}
+slice_del();
+break;
+case 4:
+if (!r_RV()) {
+cursor=limit - v_3;
+break lab3;
+}
+slice_from(""i"");
+break;
+}
+}
+ while (false);
+",0,0,0,,
+113,lab4: do {,"do {
+  v_4=limit - cursor;
+  lab5:   do {
+    if (!r_R2()) {
+      break lab5;
+    }
+    slice_del();
+    break lab4;
+  }
+ while (false);
+  cursor=limit - v_4;
+  if (!r_R1()) {
+    cursor=limit - v_3;
+    break lab3;
+  }
+  slice_from(""eux"");
+}
+ while (false);
+",0,0,0,,
+114,lab4: do {,"do {
+  v_4=limit - cursor;
+  lab5:   do {
+    if (!r_R2()) {
+      break lab5;
+    }
+    slice_del();
+    break lab4;
+  }
+ while (false);
+  cursor=limit - v_4;
+  if (!r_R1()) {
+    cursor=limit - v_3;
+    break lab3;
+  }
+  slice_from(""eux"");
+}
+ while (false);
+",0,0,0,,
+115,lab5: do {,"do {
+  if (!r_R2()) {
+    break lab5;
+  }
+  slice_del();
+  break lab4;
+}
+ while (false);
+",0,0,0,,
+116,lab5: do {,"do {
+  if (!r_R2()) {
+    break lab5;
+  }
+  slice_del();
+  break lab4;
+}
+ while (false);
+",0,0,0,,
+117,lab6: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_3,3);
+  if (among_var == 0) {
+    cursor=limit - v_5;
+    break lab6;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_5;
+  break lab6;
+case 1:
+lab7: do {
+  v_6=limit - cursor;
+  lab8:   do {
+    if (!r_R2()) {
+      break lab8;
+    }
+    slice_del();
+    break lab7;
+  }
+ while (false);
+  cursor=limit - v_6;
+  slice_from(""abl"");
+}
+ while (false);
+break;
+case 2:
+lab9: do {
+v_7=limit - cursor;
+lab10: do {
+if (!r_R2()) {
+  break lab10;
+}
+slice_del();
+break lab9;
+}
+ while (false);
+cursor=limit - v_7;
+slice_from(""iqU"");
+}
+ while (false);
+break;
+case 3:
+if (!r_R2()) {
+cursor=limit - v_5;
+break lab6;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+118,lab7: do {,"do {
+  v_6=limit - cursor;
+  lab8:   do {
+    if (!r_R2()) {
+      break lab8;
+    }
+    slice_del();
+    break lab7;
+  }
+ while (false);
+  cursor=limit - v_6;
+  slice_from(""abl"");
+}
+ while (false);
+",0,0,0,,
+119,lab7: do {,"do {
+  v_6=limit - cursor;
+  lab8:   do {
+    if (!r_R2()) {
+      break lab8;
+    }
+    slice_del();
+    break lab7;
+  }
+ while (false);
+  cursor=limit - v_6;
+  slice_from(""abl"");
+}
+ while (false);
+",0,0,0,,
+120,lab8: do {,"do {
+  if (!r_R2()) {
+    break lab8;
+  }
+  slice_del();
+  break lab7;
+}
+ while (false);
+",0,0,0,,
+121,lab8: do {,"do {
+  if (!r_R2()) {
+    break lab8;
+  }
+  slice_del();
+  break lab7;
+}
+ while (false);
+",0,0,0,,
+122,lab9: do {,"do {
+  v_7=limit - cursor;
+  lab10:   do {
+    if (!r_R2()) {
+      break lab10;
+    }
+    slice_del();
+    break lab9;
+  }
+ while (false);
+  cursor=limit - v_7;
+  slice_from(""iqU"");
+}
+ while (false);
+",0,0,0,,
+123,lab9: do {,"do {
+  v_7=limit - cursor;
+  lab10:   do {
+    if (!r_R2()) {
+      break lab10;
+    }
+    slice_del();
+    break lab9;
+  }
+ while (false);
+  cursor=limit - v_7;
+  slice_from(""iqU"");
+}
+ while (false);
+",0,0,0,,
+124,lab10: do {,"do {
+  if (!r_R2()) {
+    break lab10;
+  }
+  slice_del();
+  break lab9;
+}
+ while (false);
+",0,0,0,,
+125,lab10: do {,"do {
+  if (!r_R2()) {
+    break lab10;
+  }
+  slice_del();
+  break lab9;
+}
+ while (false);
+",0,0,0,,
+126,lab11: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""at""))) {
+    cursor=limit - v_8;
+    break lab11;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_8;
+    break lab11;
+  }
+  slice_del();
+  ket=cursor;
+  if (!(eq_s_b(2,""ic""))) {
+    cursor=limit - v_8;
+    break lab11;
+  }
+  bra=cursor;
+  lab12:   do {
+    v_9=limit - cursor;
+    lab13:     do {
+      if (!r_R2()) {
+        break lab13;
+      }
+      slice_del();
+      break lab12;
+    }
+ while (false);
+    cursor=limit - v_9;
+    slice_from(""iqU"");
+  }
+ while (false);
+}
+ while (false);
+",0,0,0,,
+127,lab12: do {,"do {
+  v_9=limit - cursor;
+  lab13:   do {
+    if (!r_R2()) {
+      break lab13;
+    }
+    slice_del();
+    break lab12;
+  }
+ while (false);
+  cursor=limit - v_9;
+  slice_from(""iqU"");
+}
+ while (false);
+",0,0,0,,
+128,lab13: do {,"do {
+  if (!r_R2()) {
+    break lab13;
+  }
+  slice_del();
+  break lab12;
+}
+ while (false);
+",0,0,0,,
+129,lab14: do {,"do {
+  v_10=limit - cursor;
+  lab15:   do {
+    if (!r_R2()) {
+      break lab15;
+    }
+    slice_del();
+    break lab14;
+  }
+ while (false);
+  cursor=limit - v_10;
+  if (!r_R1()) {
+    return false;
+  }
+  slice_from(""eux"");
+}
+ while (false);
+",0,0,0,,
+130,lab15: do {,"do {
+  if (!r_R2()) {
+    break lab15;
+  }
+  slice_del();
+  break lab14;
+}
+ while (false);
+",0,0,0,,
+131,lab0: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(1,""e""))) {
+    cursor=limit - v_3;
+    break lab0;
+  }
+  bra=cursor;
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+132,lab1: do {,"do {
+  v_5=limit - cursor;
+  lab2:   do {
+    if (!(eq_s_b(1,""s""))) {
+      break lab2;
+    }
+    break lab1;
+  }
+ while (false);
+  cursor=limit - v_5;
+  if (!(eq_s_b(1,""t""))) {
+    limit_backward=v_4;
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+133,lab2: do {,"do {
+  if (!(eq_s_b(1,""s""))) {
+    break lab2;
+  }
+  break lab1;
+}
+ while (false);
+",0,0,0,,
+134,lab3: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""ig""))) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  bra=cursor;
+{
+    v_5=limit - cursor;
+    lab4:     do {
+      if (!(eq_s_b(1,""e""))) {
+        break lab4;
+      }
+      cursor=limit - v_4;
+      break lab3;
+    }
+ while (false);
+    cursor=limit - v_5;
+  }
+  if (!r_R2()) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+135,lab4: do {,"do {
+  if (!(eq_s_b(1,""e""))) {
+    break lab4;
+  }
+  cursor=limit - v_4;
+  break lab3;
+}
+ while (false);
+",0,0,0,,
+136,lab5: do {,"do {
+  if (!(eq_s_b(1,""e""))) {
+    break lab5;
+  }
+  break lab2;
+}
+ while (false);
+",0,0,0,,
+137,lab6: do {,"do {
+  ket=cursor;
+  lab7:   do {
+    v_8=limit - cursor;
+    lab8:     do {
+      if (!(eq_s_b(2,""er""))) {
+        break lab8;
+      }
+      break lab7;
+    }
+ while (false);
+    cursor=limit - v_8;
+    if (!(eq_s_b(2,""en""))) {
+      cursor=limit - v_7;
+      break lab6;
+    }
+  }
+ while (false);
+  bra=cursor;
+  if (!r_R1()) {
+    cursor=limit - v_7;
+    break lab6;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+138,lab7: do {,"do {
+  v_8=limit - cursor;
+  lab8:   do {
+    if (!(eq_s_b(2,""er""))) {
+      break lab8;
+    }
+    break lab7;
+  }
+ while (false);
+  cursor=limit - v_8;
+  if (!(eq_s_b(2,""en""))) {
+    cursor=limit - v_7;
+    break lab6;
+  }
+}
+ while (false);
+",0,0,0,,
+139,lab8: do {,"do {
+  if (!(eq_s_b(2,""er""))) {
+    break lab8;
+  }
+  break lab7;
+}
+ while (false);
+",0,0,0,,
+140,lab9: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_3,2);
+  if (among_var == 0) {
+    cursor=limit - v_9;
+    break lab9;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_9;
+    break lab9;
+  }
+switch (among_var) {
+case 0:
+    cursor=limit - v_9;
+  break lab9;
+case 1:
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+141,lab0: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""ic""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+142,lab1: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_4,4);
+  if (among_var == 0) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  slice_del();
+switch (among_var) {
+case 0:
+    cursor=limit - v_2;
+  break lab1;
+case 1:
+ket=cursor;
+if (!(eq_s_b(2,""at""))) {
+cursor=limit - v_2;
+break lab1;
+}
+bra=cursor;
+if (!r_R2()) {
+cursor=limit - v_2;
+break lab1;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+143,lab2: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_5,3);
+  if (among_var == 0) {
+    cursor=limit - v_3;
+    break lab2;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_3;
+  break lab2;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_3;
+  break lab2;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+144,lab3: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""at""))) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  slice_del();
+  ket=cursor;
+  if (!(eq_s_b(2,""ic""))) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+145,lab0: do {,"do {
+  v_3=limit - cursor;
+  lab1:   do {
+    if (!(in_grouping_b(g_s_ending,98,122))) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_3;
+  if (!(eq_s_b(1,""k""))) {
+    return false;
+  }
+  if (!(out_grouping_b(g_v,97,248))) {
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+146,lab1: do {,"do {
+  if (!(in_grouping_b(g_s_ending,98,122))) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+147,lab1: do {,"do {
+  if (!(in_grouping_b(g_v,97,121))) {
+    break lab1;
+  }
+  break golab0;
+}
+ while (false);
+",0,0,0,,
+148,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!(eq_s_b(1,""s""))) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!(eq_s_b(1,""t""))) {
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+149,lab1: do {,"do {
+  if (!(eq_s_b(1,""s""))) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+150,lab0: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_2,4);
+  if (among_var == 0) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  slice_del();
+switch (among_var) {
+case 0:
+    cursor=limit - v_1;
+  break lab0;
+case 1:
+ket=cursor;
+if (!(eq_s_b(2,""at""))) {
+cursor=limit - v_1;
+break lab0;
+}
+bra=cursor;
+if (!r_R2()) {
+cursor=limit - v_1;
+break lab0;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+151,lab1: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_3,3);
+  if (among_var == 0) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_2;
+  break lab1;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_2;
+  break lab1;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+152,lab2: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_4,3);
+  if (among_var == 0) {
+    cursor=limit - v_3;
+    break lab2;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_3;
+  break lab2;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_3;
+  break lab2;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+153,lab3: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""at""))) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+154,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!(eq_s_b(1,""u""))) {
+      break lab1;
+    }
+    bra=cursor;
+    v_2=limit - cursor;
+    if (!(eq_s_b(1,""g""))) {
+      break lab1;
+    }
+    cursor=limit - v_2;
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!(eq_s_b(1,""i""))) {
+    return false;
+  }
+  bra=cursor;
+  v_3=limit - cursor;
+  if (!(eq_s_b(1,""c""))) {
+    return false;
+  }
+  cursor=limit - v_3;
+}
+ while (false);
+",0,0,0,,
+155,lab1: do {,"do {
+  if (!(eq_s_b(1,""u""))) {
+    break lab1;
+  }
+  bra=cursor;
+  v_2=limit - cursor;
+  if (!(eq_s_b(1,""g""))) {
+    break lab1;
+  }
+  cursor=limit - v_2;
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+156,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!(eq_s_b(1,""\u0430""))) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!(eq_s_b(1,""\u044F""))) {
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+157,lab1: do {,"do {
+  if (!(eq_s_b(1,""\u0430""))) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+158,lab1: do {,"do {
+  v_2=limit - cursor;
+  lab2:   do {
+    if (!(eq_s_b(1,""\u0430""))) {
+      break lab2;
+    }
+    break lab1;
+  }
+ while (false);
+  cursor=limit - v_2;
+  if (!(eq_s_b(1,""\u044F""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+}
+ while (false);
+",0,0,0,,
+159,lab2: do {,"do {
+  if (!(eq_s_b(1,""\u0430""))) {
+    break lab2;
+  }
+  break lab1;
+}
+ while (false);
+",0,0,0,,
+160,lab0: do {,"do {
+  v_1=limit - cursor;
+  lab1:   do {
+    if (!(eq_s_b(1,""\u0430""))) {
+      break lab1;
+    }
+    break lab0;
+  }
+ while (false);
+  cursor=limit - v_1;
+  if (!(eq_s_b(1,""\u044F""))) {
+    return false;
+  }
+}
+ while (false);
+",0,0,0,,
+161,lab1: do {,"do {
+  if (!(eq_s_b(1,""\u0430""))) {
+    break lab1;
+  }
+  break lab0;
+}
+ while (false);
+",0,0,0,,
+162,lab0: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""ic""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+163,lab1: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_3,4);
+  if (among_var == 0) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_2;
+    break lab1;
+  }
+  slice_del();
+switch (among_var) {
+case 0:
+    cursor=limit - v_2;
+  break lab1;
+case 1:
+ket=cursor;
+if (!(eq_s_b(2,""at""))) {
+cursor=limit - v_2;
+break lab1;
+}
+bra=cursor;
+if (!r_R2()) {
+cursor=limit - v_2;
+break lab1;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+164,lab2: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_4,3);
+  if (among_var == 0) {
+    cursor=limit - v_3;
+    break lab2;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_3;
+  break lab2;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_3;
+  break lab2;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+165,lab3: do {,"do {
+  ket=cursor;
+  among_var=find_among_b(a_5,3);
+  if (among_var == 0) {
+    cursor=limit - v_4;
+    break lab3;
+  }
+  bra=cursor;
+switch (among_var) {
+case 0:
+    cursor=limit - v_4;
+  break lab3;
+case 1:
+if (!r_R2()) {
+  cursor=limit - v_4;
+  break lab3;
+}
+slice_del();
+break;
+}
+}
+ while (false);
+",0,0,0,,
+166,lab4: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(2,""at""))) {
+    cursor=limit - v_5;
+    break lab4;
+  }
+  bra=cursor;
+  if (!r_R2()) {
+    cursor=limit - v_5;
+    break lab4;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+167,lab0: do {,"do {
+  if (!(eq_s_b(1,""u""))) {
+    cursor=limit - v_3;
+    break lab0;
+  }
+  v_4=limit - cursor;
+  if (!(eq_s_b(1,""g""))) {
+    cursor=limit - v_3;
+    break lab0;
+  }
+  cursor=limit - v_4;
+}
+ while (false);
+",0,0,0,,
+168,lab0: do {,"do {
+  ket=cursor;
+  if (!(eq_s_b(1,""u""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  bra=cursor;
+  v_2=limit - cursor;
+  if (!(eq_s_b(1,""g""))) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  cursor=limit - v_2;
+  if (!r_RV()) {
+    cursor=limit - v_1;
+    break lab0;
+  }
+  slice_del();
+}
+ while (false);
+",0,0,0,,
+169,allscan: for (int i = 0; i < _top._childCount; i++),"for (int i=0; i < _top._childCount; i++) {
+  if (_top._seen[i])   continue allscan;
+  SchemaParticle candidate=_top._curPart.getParticleChild(i);
+  if (candidate.canStartWithElement(eltName)) {
+    _top._processedChildCount++;
+    _top._seen[i]=true;
+    push(candidate);
+    continue traversing;
+  }
+ else   if (candidate.isSkippable()) {
+    skipped+=1;
+  }
+}
+",0,0,6,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, LabeledStatement-body, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, LabeledStatement-body, ),
+QualifiedName(InfixExpression-rightOperand, ForStatement-expression, LabeledStatement-body, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, LabeledStatement-body, ),
+"
+170,loop: for (int i = idx - 2; i >= 0; --i) {,"for (int i=idx - 2; i >= 0; --i) {
+switch (ffname.charAt(i)) {
+default :
+    return false;
+case ' ':
+  continue;
+case '""':
+case '\'':
+quote=true;
+break loop;
+}
+}
+",0,0,7,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, LabeledStatement-body, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+SimpleName(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+NumberLiteral(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, LabeledStatement-body, ),
+NumberLiteral(InfixExpression-rightOperand, ForStatement-expression, LabeledStatement-body, ),
+SimpleName(PrefixExpression-operand, ForStatement-updaters, LabeledStatement-body, ),
+"
+171,loop: for (int i = idx + family.length() + 1;,"for (int i=idx + family.length() + 1; i < ffname.length(); i++) {
+switch (ffname.charAt(i)) {
+default :
+    return false;
+case ' ':
+  continue;
+case '""':
+case '\'':
+if (!quote) {
+  return false;
+}
+break loop;
+}
+}
+",0,0,6,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, LabeledStatement-body, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+SimpleName(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+NumberLiteral(InfixExpression-extendedOperands, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+"
+172,id: for (;;) {,"for (; ; ) {
+  bufferSize=0;
+  if (current == -1 || !XMLUtilities.isXMLNameFirstCharacter((char)current)) {
+    reportUnexpectedCharacterError(current);
+    break loop;
+  }
+  bufferize();
+  current=reader.read();
+  parseIdentifier();
+  String s=getBufferContent();
+  fragmentIdentifierHandler.viewTarget(s);
+  bufferSize=0;
+switch (current) {
+case ')':
+    current=reader.read();
+  break id;
+case ',':
+case ';':
+current=reader.read();
+break;
+default :
+reportUnexpectedCharacterError(current);
+break loop;
+}
+}
+",0,0,0,,
+173,id: for (;;) {,"for (; ; ) {
+  bufferSize=0;
+  if (current == -1 || !XMLUtilities.isXMLNameFirstCharacter((char)current)) {
+    reportUnexpectedCharacterError(current);
+    break loop;
+  }
+  bufferize();
+  current=reader.read();
+  parseIdentifier();
+  String s=getBufferContent();
+  fragmentIdentifierHandler.viewTarget(s);
+  bufferSize=0;
+switch (current) {
+case ')':
+    current=reader.read();
+  break id;
+case ',':
+case ';':
+current=reader.read();
+break;
+default :
+reportUnexpectedCharacterError(current);
+break loop;
+}
+}
+",0,0,0,,
+174,tloop: for (;;) {,"for (; ; ) {
+  try {
+    current=reader.read();
+switch (current) {
+case ',':
+      break;
+case 'm':
+    parseMatrix();
+  break;
+case 'r':
+parseRotate();
+break;
+case 't':
+parseTranslate();
+break;
+case 's':
+current=reader.read();
+switch (current) {
+case 'c':
+parseScale();
+break;
+case 'k':
+parseSkew();
+break;
+default :
+reportUnexpectedCharacterError(current);
+skipTransform();
+}
+break;
+default :
+break tloop;
+}
+}
+ catch (ParseException e) {
+errorHandler.error(e);
+skipTransform();
+}
+}
+",0,0,0,,
+175,l: for (;;) {,"for (; ; ) {
+  current=reader.read();
+switch (current) {
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+    break l;
+default :
+  break m1;
+case '0':
+}
+}
+",0,0,0,,
+176,l: for (;;) {,"for (; ; ) {
+  if (mantDig < 9) {
+    mantDig++;
+    mant=mant * 10 + (current - '0');
+  }
+ else {
+    expAdj++;
+  }
+  current=reader.read();
+switch (current) {
+default :
+    break l;
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+}
+}
+",0,0,0,,
+177,l: for (;;) {,"for (; ; ) {
+  current=reader.read();
+  expAdj--;
+switch (current) {
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+    break l;
+default :
+  break m2;
+case '0':
+}
+}
+",0,0,0,,
+178,l: for (;;) {,"for (; ; ) {
+  if (mantDig < 9) {
+    mantDig++;
+    mant=mant * 10 + (current - '0');
+    expAdj--;
+  }
+  current=reader.read();
+switch (current) {
+default :
+    break l;
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+}
+}
+",0,0,0,,
+179,l: for (;;) {,"for (; ; ) {
+  current=reader.read();
+switch (current) {
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+    break l;
+default :
+  break en;
+case '0':
+}
+}
+",0,0,0,,
+180,l: for (;;) {,"for (; ; ) {
+  current=reader.read();
+switch (current) {
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+    break l;
+default :
+  break en;
+case '0':
+}
+}
+",0,0,0,,
+181,l: for (;;) {,"for (; ; ) {
+  if (expDig < 3) {
+    expDig++;
+    exp=exp * 10 + (current - '0');
+  }
+  current=reader.read();
+switch (current) {
+default :
+    break l;
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+}
+}
+",0,0,0,,
+182,l: for (;;) {,"for (; ; ) {
+  if (expDig < 3) {
+    expDig++;
+    exp=exp * 10 + (current - '0');
+  }
+  current=reader.read();
+switch (current) {
+default :
+    break l;
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+}
+}
+",0,0,0,,
+183,l: for (;;) {,"for (; ; ) {
+  current=reader.read();
+switch (current) {
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+    break l;
+case '.':
+case 'e':
+case 'E':
+  break m1;
+default :
+return 0.0f;
+case '0':
+}
+}
+",0,0,0,,
+184,l: for (;;) {,"for (; ; ) {
+  if (mantDig < 9) {
+    mantDig++;
+    mant=mant * 10 + (current - '0');
+  }
+ else {
+    expAdj++;
+  }
+  current=reader.read();
+switch (current) {
+default :
+    break l;
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+}
+}
+",0,0,0,,
+185,l: for (;;) {,"for (; ; ) {
+  current=reader.read();
+  expAdj--;
+switch (current) {
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+    break l;
+default :
+  if (!mantRead) {
+    return 0.0f;
+  }
+break m2;
+case '0':
+}
+}
+",0,0,0,,
+186,l: for (;;) {,"for (; ; ) {
+  if (mantDig < 9) {
+    mantDig++;
+    mant=mant * 10 + (current - '0');
+    expAdj--;
+  }
+  current=reader.read();
+switch (current) {
+default :
+    break l;
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+}
+}
+",0,0,0,,
+187,l: for (;;) {,"for (; ; ) {
+  current=reader.read();
+switch (current) {
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+    break l;
+default :
+  break en;
+case '0':
+}
+}
+",0,0,0,,
+188,l: for (;;) {,"for (; ; ) {
+  current=reader.read();
+switch (current) {
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+    break l;
+default :
+  break en;
+case '0':
+}
+}
+",0,0,0,,
+189,l: for (;;) {,"for (; ; ) {
+  if (expDig < 3) {
+    expDig++;
+    exp=exp * 10 + (current - '0');
+  }
+  current=reader.read();
+switch (current) {
+default :
+    break l;
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+}
+}
+",0,0,0,,
+190,l: for (;;) {,"for (; ; ) {
+  if (expDig < 3) {
+    expDig++;
+    exp=exp * 10 + (current - '0');
+  }
+  current=reader.read();
+switch (current) {
+default :
+    break l;
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+}
+}
+",0,0,0,,
+191,dtd: for (;;) {,"for (; ; ) {
+switch (type) {
+case LexicalUnits.S:
+    output.printSpaces(getCurrentValue(),true);
+  scanner.clearBuffer();
+type=scanner.next();
+break;
+case LexicalUnits.COMMENT:
+output.printComment(getCurrentValue());
+scanner.clearBuffer();
+type=scanner.next();
+break;
+case LexicalUnits.PI_START:
+printPI();
+break;
+case LexicalUnits.PARAMETER_ENTITY_REFERENCE:
+output.printParameterEntityReference(getCurrentValue());
+scanner.clearBuffer();
+type=scanner.next();
+break;
+case LexicalUnits.ELEMENT_DECLARATION_START:
+scanner.clearBuffer();
+printElementDeclaration();
+break;
+case LexicalUnits.ATTLIST_START:
+scanner.clearBuffer();
+printAttlist();
+break;
+case LexicalUnits.NOTATION_START:
+scanner.clearBuffer();
+printNotation();
+break;
+case LexicalUnits.ENTITY_START:
+scanner.clearBuffer();
+printEntityDeclaration();
+break;
+case LexicalUnits.RSQUARE_BRACKET:
+output.printCharacter(']');
+scanner.clearBuffer();
+type=scanner.next();
+break dtd;
+default :
+throw fatalError(""xml"",null);
+}
+}
+",0,0,0,,
+192,loop: for (;;) {,"for (; ; ) {
+switch (type) {
+default :
+    break loop;
+case LexicalUnits.PIPE:
+  type=scanner.next();
+space=null;
+if (type == LexicalUnits.S) {
+space=getCurrentValue();
+type=scanner.next();
+}
+if (type != LexicalUnits.NAME) {
+throw fatalError(""name"",null);
+}
+name=getCurrentValue();
+type=scanner.next();
+space2=null;
+if (type == LexicalUnits.S) {
+space2=getCurrentValue();
+type=scanner.next();
+}
+names.add(new OutputManager.NameInfo(space,name,space2));
+}
+}
+",0,0,0,,
+193,loop: for (;;) {,"for (; ; ) {
+switch (type) {
+default :
+    break loop;
+case LexicalUnits.PIPE:
+  type=scanner.next();
+space=null;
+if (type == LexicalUnits.S) {
+space=getCurrentValue();
+type=scanner.next();
+}
+if (type != LexicalUnits.NMTOKEN) {
+throw fatalError(""nmtoken"",null);
+}
+name=getCurrentValue();
+type=scanner.next();
+space2=null;
+if (type == LexicalUnits.S) {
+space2=getCurrentValue();
+type=scanner.next();
+}
+names.add(new OutputManager.NameInfo(space,name,space2));
+}
+}
+",0,0,0,,
+194,loop: for (;;) {,"for (; ; ) {
+  type=scanner.next();
+switch (type) {
+case LexicalUnits.STRING:
+case LexicalUnits.ATTRIBUTE_FRAGMENT:
+case LexicalUnits.FIRST_ATTRIBUTE_FRAGMENT:
+case LexicalUnits.LAST_ATTRIBUTE_FRAGMENT:
+    output.printCharacters(getCurrentValue());
+  break;
+case LexicalUnits.CHARACTER_REFERENCE:
+output.printString(""&#"");
+output.printCharacters(getCurrentValue());
+output.printCharacter(';');
+break;
+case LexicalUnits.ENTITY_REFERENCE:
+output.printCharacter('&');
+output.printCharacters(getCurrentValue());
+output.printCharacter(';');
+break;
+default :
+break loop;
+}
+}
+",0,0,0,,
+195,loop: for (;;) {,"for (; ; ) {
+switch (type) {
+case LexicalUnits.STRING:
+case LexicalUnits.ATTRIBUTE_FRAGMENT:
+case LexicalUnits.FIRST_ATTRIBUTE_FRAGMENT:
+case LexicalUnits.LAST_ATTRIBUTE_FRAGMENT:
+    writer.write(getCurrentValue());
+  break;
+case LexicalUnits.ENTITY_REFERENCE:
+writer.write('&');
+writer.write(getCurrentValue());
+writer.write(';');
+break;
+case LexicalUnits.PARAMETER_ENTITY_REFERENCE:
+writer.write('&');
+writer.write(getCurrentValue());
+writer.write(';');
+break;
+default :
+break loop;
+}
+type=scanner.next();
+}
+",0,0,0,,
+196,loop: for (;;) {,"for (; ; ) {
+  c=desc.charAt(++i);
+switch (c) {
+case '[':
+    do {
+      c=desc.charAt(++i);
+    }
+ while (c == '[');
+  if (c != 'L') {
+    break;
+  }
+case 'L':
+c=desc.charAt(++i);
+StringBuffer sb=new StringBuffer();
+while (c != ';') {
+sb.append(c);
+c=desc.charAt(++i);
+}
+result.add(sb.toString());
+break;
+default :
+break;
+case ')':
+break loop;
+}
+}
+",0,0,0,,
+197,loop: for (;;) {,"for (; ; ) {
+switch (current) {
+default :
+    nextChar();
+  break;
+case -1:
+case '&':
+case '<':
+break loop;
+}
+}
+",0,0,0,,
+198,en: switch (current) {,"switch (current) {
+case '0':
+  l:   for (; ; ) {
+    current=reader.read();
+switch (current) {
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+      break l;
+default :
+    break en;
+case '0':
+}
+}
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+l: for (; ; ) {
+if (expDig < 3) {
+expDig++;
+exp=exp * 10 + (current - '0');
+}
+current=reader.read();
+switch (current) {
+default :
+break l;
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+}
+}
+}
+",2,2,1,,"SimpleName(SwitchStatement-expression, LabeledStatement-body, ),
+"
+199,delimiters: for(byte delimiterIndex = 0; delimiterIndex < customELQuery.getOpenDelimiters().length; delimiterIndex++ ) {,"for (byte delimiterIndex=0; delimiterIndex < customELQuery.getOpenDelimiters().length; delimiterIndex++) {
+  String openDelimiter=customELQuery.getOpenDelimiters()[delimiterIndex];
+  if (openDelimiter == null) {
+    continue;
+  }
+  int alreadyRead=input.readLength();
+  char read=(char)actChar;
+  for (int i=0; i < openDelimiter.length(); i++) {
+    char delimChar=openDelimiter.charAt(i);
+    if (read != delimChar) {
+      input.backup(input.readLengthEOF() - alreadyRead);
+      continue delimiters;
+    }
+    if ((i + 1) < openDelimiter.length()) {
+      read=(char)input.read();
+    }
+  }
+  if (input.readLength() > openDelimiter.length()) {
+    input.backup(openDelimiter.length());
+    return token(HTMLTokenId.TEXT);
+  }
+ else {
+    lexerState=ISI_EL;
+    customELIndex=(byte)(delimiterIndex + 1);
+    return token(HTMLTokenId.EL_OPEN_DELIMITER,new HtmlTokenPropertyProvider(EL_EXPRESSION_CONTENT_MIMETYPE_TOKEN_PROPERTY_KEY,customELQuery.getMimeTypes()[delimiterIndex]));
+  }
+}
+",3,3,8,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, LabeledStatement-body, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, LabeledStatement-body, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, LabeledStatement-body, ),
+SimpleName(MethodInvocation-expression, FieldAccess-expression, InfixExpression-rightOperand, ForStatement-expression, LabeledStatement-body, ),
+SimpleName(MethodInvocation-name, FieldAccess-expression, InfixExpression-rightOperand, ForStatement-expression, LabeledStatement-body, ),
+SimpleName(FieldAccess-name, InfixExpression-rightOperand, ForStatement-expression, LabeledStatement-body, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, LabeledStatement-body, ),
+"
+200,label_1: while (true) {,"while (true) {
+switch ((jj_ntk == -1) ? jj_ntk() : jj_ntk) {
+case SEPARATOR:
+    ;
+  break;
+default :
+jj_la1[0]=jj_gen;
+break label_1;
+}
+jj_consume_token(SEPARATOR);
+parameter=Parameter();
+template.addParameter(parameter);
+}
+",12,12,1,,"BooleanLiteral(WhileStatement-expression, LabeledStatement-body, ),
+"
+201,_loop364:,"_loop364: do {
+  if (((LA(1) >= '0' && LA(1) <= '9'))) {
+    mDIGIT(false);
+  }
+ else {
+    break _loop364;
+  }
+}
+ while (true);
+",140,140,1,,"SimpleName(LabeledStatement-label, ),
+"

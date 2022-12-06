@@ -1,0 +1,782 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,private byte[] loadEntry(String name) throws IOException,"ResourceImpl resource=createResource(new Headers(){
+  private final Manifest manifest;
+  private Properties localization;
+{
+    byte[] man=loadEntry(JarFile.MANIFEST_NAME);
+    if (man == null) {
+      throw new IllegalArgumentException(""The specified url is not a valid jar (can't read manifest): "" + bundleUrl);
+    }
+    manifest=new Manifest(new ByteArrayInputStream(man));
+  }
+  public String getHeader(  String name){
+    String value=manifest.getMainAttributes().getValue(name);
+    if (value != null && value.startsWith(""%"")) {
+      if (localization == null) {
+        try {
+          localization=new Properties();
+          String path=manifest.getMainAttributes().getValue(Constants.BUNDLE_LOCALIZATION);
+          if (path == null) {
+            path=Constants.BUNDLE_LOCALIZATION_DEFAULT_BASENAME;
+          }
+          path+="".properties"";
+          byte[] loc=loadEntry(path);
+          if (loc != null) {
+            localization.load(new ByteArrayInputStream(loc));
+          }
+        }
+ catch (        IOException e) {
+        }
+      }
+      value=value.substring(1);
+      value=localization.getProperty(value,value);
+    }
+    return value;
+  }
+  private byte[] loadEntry(  String name) throws IOException {
+    ZipInputStream zis=new ZipInputStream(FileUtil.openURL(bundleUrl));
+    try {
+      for (ZipEntry e=zis.getNextEntry(); e != null; e=zis.getNextEntry()) {
+        if (name.equalsIgnoreCase(e.getName())) {
+          ByteArrayOutputStream baos=new ByteArrayOutputStream();
+          byte[] buf=new byte[1024];
+          int n;
+          while ((n=zis.read(buf,0,buf.length)) > 0) {
+            baos.write(buf,0,n);
+          }
+          return baos.toByteArray();
+        }
+      }
+    }
+  finally {
+      zis.close();
+    }
+    return null;
+  }
+}
+);
+",0,87,7,394,"Modifier(MethodDeclaration-modifiers, ),
+PrimitiveType(ArrayType-elementType, MethodDeclaration-returnType2, ),
+Dimension(ArrayType-dimensions, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+SimpleName(SimpleType-name, MethodDeclaration-thrownExceptionTypes, ),
+"
+2,"public byte[] readRawData( ArtifactMetadata bmd, String classifier, String type, boolean exempt )","public static final RepositoryReader NULL_READER=new RepositoryReader(){
+  public DependencyProcessor getDependencyProcessor(){
+    return null;
+  }
+  public RepositoryMetadataCache getMetadataCache(){
+    return null;
+  }
+  public Repository getRepository(){
+    return null;
+  }
+  public ArtifactResults readArtifacts(  Collection<ArtifactMetadata> query) throws RepositoryException {
+    return null;
+  }
+  public MetadataResults readDependencies(  Collection<ArtifactMetadata> query) throws RepositoryException {
+    return null;
+  }
+  public byte[] readRawData(  String path,  boolean exempt) throws MetadataReaderException {
+    return null;
+  }
+  public byte[] readRawData(  String path) throws MetadataReaderException {
+    return null;
+  }
+  public MetadataResults readVersions(  Collection<ArtifactMetadata> query) throws RepositoryException {
+    return null;
+  }
+  public void setDependencyProcessor(  DependencyProcessor mdProcessor){
+  }
+  public void setMetadataCache(  RepositoryMetadataCache mdCache){
+  }
+  public boolean canHandle(  String protocol){
+    return false;
+  }
+  public void close(){
+  }
+  public String[] getProtocols(){
+    return null;
+  }
+  public byte[] readMetadata(  ArtifactMetadata bmd,  boolean exempt) throws MetadataReaderException {
+    return null;
+  }
+  public byte[] readMetadata(  ArtifactMetadata bmd) throws MetadataReaderException {
+    return null;
+  }
+  public byte[] readRawData(  ArtifactMetadata bmd,  String classifier,  String type,  boolean exempt) throws MetadataReaderException {
+    return null;
+  }
+  public byte[] readRawData(  ArtifactMetadata bmd,  String classifier,  String type) throws MetadataReaderException {
+    return null;
+  }
+  public MetadataReader getMetadataReader(){
+    return null;
+  }
+  public void setMetadataReader(  MetadataReader mdReader){
+  }
+}
+;
+",0,6,12,,"Modifier(MethodDeclaration-modifiers, ),
+PrimitiveType(ArrayType-elementType, MethodDeclaration-returnType2, ),
+Dimension(ArrayType-dimensions, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+PrimitiveType(SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+"
+3,"public int[] answerSubnegotiation(final int[] suboptionData, final int suboptionLength)","final SimpleOptionHandler subnegotiationSizeHandler=new SimpleOptionHandler(99,false,false,true,false){
+  @Override public int[] answerSubnegotiation(  final int[] suboptionData,  final int suboptionLength){
+    lastSubnegotiation=suboptionData;
+    lastSubnegotiationLength=suboptionLength;
+    return null;
+  }
+}
+;
+",0,1,11,,"Modifier(),
+PrimitiveType(ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+Modifier(SingleVariableDeclaration-modifiers, ),
+PrimitiveType(ArrayType-elementType, SingleVariableDeclaration-type, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+Modifier(SingleVariableDeclaration-modifiers, ),
+PrimitiveType(SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+"
+4,public Class<? extends Payload>[] payload() {,"allowLocal.initialize(new Domain(){
+  @Override public Class<? extends Annotation> annotationType(){
+    return null;
+  }
+  @Override public Class<? extends Payload>[] payload(){
+    return null;
+  }
+  @Override public String message(){
+    return null;
+  }
+  @Override public Class<?>[] groups(){
+    return null;
+  }
+  @Override public boolean allowLocal(){
+    return true;
+  }
+}
+);
+",0,0,5,,"Modifier(),
+SimpleName(SimpleType-name, ParameterizedType-type, ArrayType-elementType, ),
+SimpleName(SimpleType-name, WildcardType-bound, ParameterizedType-typeArguments, ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+"
+5,"public Tuple2<Integer, Double>[][] map(Tuple2<Integer, Double>[][] value)","MapFunction<?,?> function=new MapFunction<Tuple2<Integer,Double>[][],Tuple2<Integer,Double>[][]>(){
+  private static final long serialVersionUID=1L;
+  @Override public Tuple2<Integer,Double>[][] map(  Tuple2<Integer,Double>[][] value) throws Exception {
+    return null;
+  }
+}
+;
+",0,1,13,,"Modifier(),
+SimpleName(SimpleType-name, ParameterizedType-type, ArrayType-elementType, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ArrayType-elementType, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+SimpleName(SimpleType-name, ParameterizedType-type, ArrayType-elementType, SingleVariableDeclaration-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ArrayType-elementType, SingleVariableDeclaration-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ArrayType-elementType, SingleVariableDeclaration-type, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+"
+6,public Folder[] list(final String pattern) throws MessagingException {,"return new Folder(getTestStore()){
+  @Override public void appendMessages(  final Message[] messages) throws MessagingException {
+  }
+  @Override public void close(  final boolean expunge) throws MessagingException {
+  }
+  @Override public boolean create(  final int type) throws MessagingException {
+    return false;
+  }
+  @Override public boolean delete(  final boolean recurse) throws MessagingException {
+    return false;
+  }
+  @Override public boolean exists() throws MessagingException {
+    return false;
+  }
+  @Override public Message[] expunge() throws MessagingException {
+    return null;
+  }
+  @Override public Folder getFolder(  final String name) throws MessagingException {
+    return null;
+  }
+  @Override public String getFullName(){
+    return null;
+  }
+  @Override public Message getMessage(  final int id) throws MessagingException {
+    return null;
+  }
+  @Override public int getMessageCount() throws MessagingException {
+    return 0;
+  }
+  @Override public String getName(){
+    return null;
+  }
+  @Override public Folder getParent() throws MessagingException {
+    return null;
+  }
+  @Override public Flags getPermanentFlags(){
+    return null;
+  }
+  @Override public char getSeparator() throws MessagingException {
+    return 0;
+  }
+  @Override public int getType() throws MessagingException {
+    return 0;
+  }
+  @Override public boolean hasNewMessages() throws MessagingException {
+    return false;
+  }
+  @Override public boolean isOpen(){
+    return false;
+  }
+  @Override public Folder[] list(  final String pattern) throws MessagingException {
+    return null;
+  }
+  @Override public void open(  final int mode) throws MessagingException {
+  }
+  @Override public boolean renameTo(  final Folder newName) throws MessagingException {
+    return false;
+  }
+}
+;
+",0,1,8,,"Modifier(),
+SimpleName(SimpleType-name, ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+Modifier(SingleVariableDeclaration-modifiers, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+SimpleName(SimpleType-name, ),
+"
+7,"public FileStatus[] listStatus(Path path, String startFrom, TracingContext tracingContext)","return new ListingSupport(){
+  @Override public FileStatus[] listStatus(  Path path,  TracingContext tracingContext) throws IOException {
+    return null;
+  }
+  @Override public FileStatus[] listStatus(  Path path,  String startFrom,  TracingContext tracingContext) throws IOException {
+    return null;
+  }
+  @Override public String listStatus(  Path path,  String startFrom,  List<FileStatus> fileStatuses,  boolean fetchAll,  String continuation,  TracingContext tracingContext) throws IOException {
+    throw new IOException(exceptionMessage);
+  }
+}
+;
+",0,1,10,,"Modifier(),
+SimpleName(SimpleType-name, ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+"
+8,"public char[] writeSections(List<GuardedSection> sections, char[] content) {","AbstractGuardedSectionsProvider hack=new AbstractGuardedSectionsProvider(new GuardedEditorSupport(){
+  @Override public StyledDocument getDocument(){
+    return (StyledDocument)consoleDocument;
+  }
+}
+){
+  @Override public char[] writeSections(  List<GuardedSection> sections,  char[] content){
+    return null;
+  }
+  @Override public AbstractGuardedSectionsProvider.Result readSections(  char[] content){
+    return null;
+  }
+}
+;
+",0,0,10,,"Modifier(),
+PrimitiveType(ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+SimpleName(SimpleType-name, ParameterizedType-type, SingleVariableDeclaration-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+PrimitiveType(ArrayType-elementType, SingleVariableDeclaration-type, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+"
+9,public TransformationResult[] transform(final RegisteredResource resource) {,"serviceRegistrations.add(this.bundleContext.registerService(ResourceTransformer.class,new ResourceTransformer(){
+  public TransformationResult[] transform(  final RegisteredResource resource){
+    final int lastDot=resource.getURL().lastIndexOf('.');
+    final int lastSlash=resource.getURL().lastIndexOf('/');
+    if (resource.getURL().substring(lastDot + 1).equals(TYPE)) {
+      final String id=resource.getURL().substring(lastSlash + 1,lastDot);
+      final TransformationResult tr=new TransformationResult();
+      tr.setId(id);
+      tr.setResourceType(TYPE);
+      return new TransformationResult[]{tr};
+    }
+    return null;
+  }
+}
+,props));
+",0,0,7,,"Modifier(MethodDeclaration-modifiers, ),
+SimpleName(SimpleType-name, ArrayType-elementType, MethodDeclaration-returnType2, ),
+Dimension(ArrayType-dimensions, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+Modifier(SingleVariableDeclaration-modifiers, MethodDeclaration-parameters, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+"
+10,public Integer[][][] map(Integer[][][] value) throws Exception {,"function=new MapFunction<Integer[][][],Integer[][][]>(){
+  private static final long serialVersionUID=1L;
+  @Override public Integer[][][] map(  Integer[][][] value) throws Exception {
+    return null;
+  }
+}
+;
+",1,2,12,,"Modifier(),
+SimpleName(SimpleType-name, ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+Dimension(ArrayType-dimensions, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+SimpleName(SimpleType-name, ArrayType-elementType, SingleVariableDeclaration-type, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+SimpleName(SimpleType-name, ),
+"
+11,"public String[] getServerAliases(String s, Principal[] principals) {","X509KeyManager km=new X509KeyManager(){
+  @Override public String[] getClientAliases(  String s,  Principal[] principals){
+    return new String[]{""client""};
+  }
+  @Override public String chooseClientAlias(  String[] strings,  Principal[] principals,  Socket socket){
+    return ""client"";
+  }
+  @Override public String[] getServerAliases(  String s,  Principal[] principals){
+    return null;
+  }
+  @Override public String chooseServerAlias(  String s,  Principal[] principals,  Socket socket){
+    return null;
+  }
+  @Override public X509Certificate[] getCertificateChain(  String s){
+    return new X509Certificate[]{clientCert};
+  }
+  @Override public PrivateKey getPrivateKey(  String s){
+    return clientKeyPair.getPrivate();
+  }
+}
+;
+",1,8,9,,"Modifier(),
+SimpleName(SimpleType-name, ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+SimpleName(SimpleType-name, ArrayType-elementType, SingleVariableDeclaration-type, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+"
+12,private byte[] increment(byte[] array) {,"private static final BinaryTruncator DEFAULT_UTF8_TRUNCATOR=new BinaryTruncator(){
+  private final CharsetValidator validator=new CharsetValidator(StandardCharsets.UTF_8);
+  @Override public Binary truncateMin(  Binary minValue,  int length){
+    if (minValue.length() <= length) {
+      return minValue;
+    }
+    ByteBuffer buffer=minValue.toByteBuffer();
+    byte[] array;
+    if (validator.checkValidity(buffer) == Validity.VALID) {
+      array=truncateUtf8(buffer,length);
+    }
+ else {
+      array=truncate(buffer,length);
+    }
+    return array == null ? minValue : Binary.fromConstantByteArray(array);
+  }
+  @Override public Binary truncateMax(  Binary maxValue,  int length){
+    if (maxValue.length() <= length) {
+      return maxValue;
+    }
+    byte[] array;
+    ByteBuffer buffer=maxValue.toByteBuffer();
+    if (validator.checkValidity(buffer) == Validity.VALID) {
+      array=incrementUtf8(truncateUtf8(buffer,length));
+    }
+ else {
+      array=increment(truncate(buffer,length));
+    }
+    return array == null ? maxValue : Binary.fromConstantByteArray(array);
+  }
+  private byte[] truncate(  ByteBuffer buffer,  int length){
+    assert length < buffer.remaining();
+    byte[] array=new byte[length];
+    buffer.get(array);
+    return array;
+  }
+  private byte[] increment(  byte[] array){
+    for (int i=array.length - 1; i >= 0; --i) {
+      byte elem=array[i];
+      ++elem;
+      array[i]=elem;
+      if (elem != 0) {
+        return array;
+      }
+    }
+    return null;
+  }
+  private byte[] truncateUtf8(  ByteBuffer buffer,  int length){
+    assert length < buffer.remaining();
+    ByteBuffer newBuffer=buffer.slice();
+    newBuffer.limit(newBuffer.position() + length);
+    while (validator.checkValidity(newBuffer) != Validity.VALID) {
+      newBuffer.limit(newBuffer.limit() - 1);
+      if (newBuffer.remaining() == 0) {
+        return null;
+      }
+    }
+    byte[] array=new byte[newBuffer.remaining()];
+    newBuffer.get(array);
+    return array;
+  }
+  private byte[] incrementUtf8(  byte[] array){
+    if (array == null) {
+      return null;
+    }
+    ByteBuffer buffer=ByteBuffer.wrap(array);
+    for (int i=array.length - 1; i >= 0; --i) {
+      byte prev=array[i];
+      byte inc=prev;
+      while (++inc != 0) {
+        array[i]=inc;
+switch (validator.checkValidity(buffer)) {
+case VALID:
+          return array;
+case UNMAPPABLE:
+        continue;
+case MALFORMED:
+      break;
+  }
+  break;
+}
+array[i]=prev;
+}
+return null;
+}
+}
+;
+",1,2,7,,"Modifier(MethodDeclaration-modifiers, ),
+PrimitiveType(ArrayType-elementType, MethodDeclaration-returnType2, ),
+Dimension(ArrayType-dimensions, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+PrimitiveType(ArrayType-elementType, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+"
+13,"public Object[] defaultSomeAction(final int x, final Long y) {","class Customer {
+  @SuppressWarnings(""unused"") public void someAction(  final int x,  final Long y){
+  }
+  @SuppressWarnings(""unused"") public Object[] defaultSomeAction(  final int x,  final Long y){
+    return null;
+  }
+}
+",1,1,10,,"Modifier(),
+SimpleName(SimpleType-name, ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+Modifier(SingleVariableDeclaration-modifiers, ),
+PrimitiveType(SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+Modifier(SingleVariableDeclaration-modifiers, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+"
+14,public Value[] getRestrictions(@NotNull String restrictionName) {,"acl.removeAccessControlEntry(new JackrabbitAccessControlEntry(){
+  public boolean isAllow(){
+    return false;
+  }
+  @NotNull public String[] getRestrictionNames(){
+    return new String[0];
+  }
+  @Nullable public Value getRestriction(  @NotNull String restrictionName){
+    return null;
+  }
+  @Nullable public Value[] getRestrictions(  @NotNull String restrictionName){
+    return null;
+  }
+  public Principal getPrincipal(){
+    return testPrincipal;
+  }
+  public Privilege[] getPrivileges(){
+    return testPrivileges;
+  }
+}
+);
+",1,1,7,,"Modifier(),
+SimpleName(SimpleType-name, ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+SimpleName(MarkerAnnotation-typeName, SingleVariableDeclaration-modifiers, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+"
+15,@Override public byte[] getColumnQualifierBytes() {,"return new PBaseColumn(){
+  @Override public PName getName(){
+    return PNameFactory.newName(name);
+  }
+  @Override public PDataType getDataType(){
+    return PBoolean.INSTANCE;
+  }
+  @Override public PName getFamilyName(){
+    return PNameFactory.newName(QueryConstants.DEFAULT_COLUMN_FAMILY);
+  }
+  @Override public int getPosition(){
+    return 0;
+  }
+  @Override public Integer getArraySize(){
+    return null;
+  }
+  @Override public byte[] getViewConstant(){
+    return new byte[0];
+  }
+  @Override public boolean isViewReferenced(){
+    return false;
+  }
+  @Override public String getExpressionStr(){
+    return null;
+  }
+  @Override public boolean isRowTimestamp(){
+    return false;
+  }
+  @Override public boolean isDynamic(){
+    return false;
+  }
+  @Override public byte[] getColumnQualifierBytes(){
+    return null;
+  }
+  @Override public long getTimestamp(){
+    return 0;
+  }
+  @Override public boolean isDerived(){
+    return false;
+  }
+  @Override public boolean isExcluded(){
+    return false;
+  }
+  @Override public SortOrder getSortOrder(){
+    return null;
+  }
+}
+;
+",1,1,5,,"SimpleName(MarkerAnnotation-typeName, MethodDeclaration-modifiers, ),
+Modifier(MethodDeclaration-modifiers, ),
+PrimitiveType(ArrayType-elementType, MethodDeclaration-returnType2, ),
+Dimension(ArrayType-dimensions, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+"
+16,"public String[] getValuesfor(IvyTagAttribute att, IvyFile ivyFile) {","child.addAttribute(new IvyTagAttribute(""url"",""an URL pointing to the repository."",true,new IValueProvider(){
+  public String[] getValuesfor(  IvyTagAttribute att,  IvyFile ivyFile){
+    Map<String,String> allAttsValues=ivyFile.getAllAttsValues();
+    if (allAttsValues != null) {
+      String name=allAttsValues.get(""name"");
+      if (""ibiblio"".equals(name)) {
+        return new String[]{""http://www.ibiblio.org/maven/""};
+      }
+ else       if (""ivyrep"".equals(name)) {
+        return new String[]{""http://www.jayasoft.fr/org/ivyrep/""};
+      }
+    }
+    return null;
+  }
+}
+));
+",2,114,8,,"Modifier(MethodDeclaration-modifiers, ),
+SimpleName(SimpleType-name, ArrayType-elementType, MethodDeclaration-returnType2, ),
+Dimension(ArrayType-dimensions, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+"
+17,public Class<?>[] groups() {,"allowLocal.initialize(new Domain(){
+  @Override public Class<? extends Annotation> annotationType(){
+    return null;
+  }
+  @Override public Class<? extends Payload>[] payload(){
+    return null;
+  }
+  @Override public String message(){
+    return null;
+  }
+  @Override public Class<?>[] groups(){
+    return null;
+  }
+  @Override public boolean allowLocal(){
+    return true;
+  }
+}
+);
+",3,3,5,,"Modifier(),
+SimpleName(SimpleType-name, ParameterizedType-type, ArrayType-elementType, ),
+WildcardType(ParameterizedType-typeArguments, ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+"
+18,public java.security.cert.X509Certificate[] getAcceptedIssuers() {,"TrustManager[] trustAllCerts=new TrustManager[]{new X509TrustManager(){
+  public java.security.cert.X509Certificate[] getAcceptedIssuers(){
+    return null;
+  }
+  public void checkClientTrusted(  java.security.cert.X509Certificate[] certs,  String authType){
+  }
+  public void checkServerTrusted(  java.security.cert.X509Certificate[] certs,  String authType){
+  }
+}
+};
+",4,4,4,,"Modifier(MethodDeclaration-modifiers, ),
+QualifiedName(SimpleType-name, ArrayType-elementType, MethodDeclaration-returnType2, ),
+Dimension(ArrayType-dimensions, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+"
+19,public java.security.cert.X509Certificate[] getAcceptedIssuers() {,"/** 
+ * static class to allow all requests. 
+ */
+private static final TrustManager[] trustAllCerts=new TrustManager[]{new X509TrustManager(){
+  @Override public java.security.cert.X509Certificate[] getAcceptedIssuers(){
+    return null;
+  }
+  @Override public void checkClientTrusted(  X509Certificate[] certs,  String authType){
+  }
+  @Override public void checkServerTrusted(  X509Certificate[] certs,  String authType){
+  }
+}
+};
+",5,5,4,,"Modifier(),
+QualifiedName(SimpleType-name, ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+"
+20,"public byte[] hash( byte[] input, CredentialsInfo info, UUID userId, UUID applicationId ) {","EncryptionCommand command1=new EncryptionCommand(){
+  @Override public byte[] hash(  byte[] input,  CredentialsInfo info,  UUID userId,  UUID applicationId){
+    return null;
+  }
+  @Override public String getName(){
+    return duplicate;
+  }
+  @Override public byte[] auth(  byte[] input,  CredentialsInfo info,  UUID userId,  UUID applicationId){
+    return null;
+  }
+}
+;
+",5,6,13,,"Modifier(),
+PrimitiveType(ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(),
+PrimitiveType(ArrayType-elementType, SingleVariableDeclaration-type, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+"
+21,public Folder[] list(String pattern) throws MessagingException {,"return new Folder(getTestStore()){
+  public void appendMessages(  Message[] messages) throws MessagingException {
+  }
+  public void close(  boolean expunge) throws MessagingException {
+  }
+  public boolean create(  int type) throws MessagingException {
+    return false;
+  }
+  public boolean delete(  boolean recurse) throws MessagingException {
+    return false;
+  }
+  public boolean exists() throws MessagingException {
+    return false;
+  }
+  public Message[] expunge() throws MessagingException {
+    return null;
+  }
+  public Folder getFolder(  String name) throws MessagingException {
+    return null;
+  }
+  public String getFullName(){
+    return null;
+  }
+  public Message getMessage(  int id) throws MessagingException {
+    return null;
+  }
+  public int getMessageCount() throws MessagingException {
+    return 0;
+  }
+  public String getName(){
+    return null;
+  }
+  public Folder getParent() throws MessagingException {
+    return null;
+  }
+  public Flags getPermanentFlags(){
+    return null;
+  }
+  public char getSeparator() throws MessagingException {
+    return 0;
+  }
+  public int getType() throws MessagingException {
+    return 0;
+  }
+  public boolean hasNewMessages() throws MessagingException {
+    return false;
+  }
+  public boolean isOpen(){
+    return false;
+  }
+  public Folder[] list(  String pattern) throws MessagingException {
+    return null;
+  }
+  public void open(  int mode) throws MessagingException {
+  }
+  public boolean renameTo(  Folder newName) throws MessagingException {
+    return false;
+  }
+}
+;
+",5,7,7,,"Modifier(MethodDeclaration-modifiers, ),
+SimpleName(SimpleType-name, ArrayType-elementType, MethodDeclaration-returnType2, ),
+Dimension(ArrayType-dimensions, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+SimpleName(SimpleType-name, MethodDeclaration-thrownExceptionTypes, ),
+"
+22,@Override public CacheConfiguration[] apply(String igniteInstanceName) {,"cacheC=new IgniteClosure<String,CacheConfiguration[]>(){
+  @Override public CacheConfiguration[] apply(  String igniteInstanceName){
+    return null;
+  }
+}
+;
+",5,7,7,,"SimpleName(MarkerAnnotation-typeName, MethodDeclaration-modifiers, ),
+Modifier(MethodDeclaration-modifiers, ),
+SimpleName(SimpleType-name, ArrayType-elementType, MethodDeclaration-returnType2, ),
+Dimension(ArrayType-dimensions, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+"
+23,public List<BigInteger[]>[] method3() { return null;},"return null;
+",35,35,1,,"NullLiteral(ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+"
+24,public String[] getAttributeNames() { return null; },"return null;
+",67,67,1,,"NullLiteral(ReturnStatement-expression, Block-statements, ),
+"

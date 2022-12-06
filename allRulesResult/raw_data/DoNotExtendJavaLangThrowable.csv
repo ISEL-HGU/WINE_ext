@@ -1,0 +1,73 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/activemq/activemq-broker/src/main/java/org/apache/activemq/util/ThreadTracker.java,76,,class Trace extends Throwable {
+2,./TargetProjects/attic-stratos/components/org.apache.stratos.common/src/main/java/org/apache/stratos/common/exception/InvalidEmailException.java,24,,public class InvalidEmailException extends Throwable {
+3,./TargetProjects/attic-wink/wink-itests/wink-itest/wink-itest-providers/src/main/java/org/apache/wink/itest/exceptionmappers/nullconditions/GuestbookThrowable.java,22,,public class GuestbookThrowable extends Throwable {
+4,./TargetProjects/beam/sdks/java/io/google-cloud-platform/src/main/java/org/apache/beam/sdk/io/gcp/bigquery/RetryManager.java,60,,"  static class WrappedFailure extends Throwable {"
+5,./TargetProjects/calcite/core/src/test/java/org/apache/calcite/util/TestUtil.java,65,,"  private static class ExtraInformation extends Throwable {"
+6,./TargetProjects/cocoon/blocks/cocoon-web3/cocoon-web3-mocks/src/main/java/com/sap/mw/jco/JCO.java,174,,"    public static class AbapException extends Throwable {"
+7,./TargetProjects/cocoon/blocks/cocoon-web3/cocoon-web3-mocks/src/main/java/com/sap/mw/jco/JCO.java,181,,"    public static class ConversionException extends Throwable {"
+8,./TargetProjects/commons-lang/src/test/java/org/apache/commons/lang3/AnnotationUtilsTest.java,390,,"        class None extends Throwable {"
+9,./TargetProjects/commons-lang/src/test/java/org/apache/commons/lang3/exception/ExceptionUtilsTest.java,103,,"    public static class TestThrowable extends Throwable {"
+10,./TargetProjects/commons-pool/src/main/java/org/apache/commons/pool2/impl/ThrowableCallStack.java,36,,"    private static class Snapshot extends Throwable {"
+11,./TargetProjects/datafu/datafu-hourglass/src/main/java/datafu/hourglass/jobs/MaxInputDataExceededException.java,21,,public class MaxInputDataExceededException extends Throwable
+12,./TargetProjects/derby/java/org.apache.derby.commons/org/apache/derby/shared/common/error/StandardException.java,315,,"    public static class BadMessageArgumentException extends Throwable {}"
+13,./TargetProjects/derby/java/org.apache.derby.engine/org/apache/derby/impl/store/access/btree/WaitError.java,31,,public class WaitError extends Throwable
+14,./TargetProjects/geode/geode-core/src/main/java/org/apache/geode/internal/offheap/RefCountChangeInfo.java,25,,public class RefCountChangeInfo extends Throwable {
+15,./TargetProjects/geode/geode-core/src/test/java/org/apache/geode/management/internal/operation/OperationStateConcurrentTest.java,35,,"  private static class DateThrowable extends Throwable {"
+16,./TargetProjects/geode/geode-dunit/src/main/java/org/apache/geode/test/dunit/RMIException.java,111,,"  private static class HokeyException extends Throwable {"
+17,./TargetProjects/geode/geode-dunit/src/main/java/org/apache/geode/test/dunit/internal/StackTrace.java,19,,public class StackTrace extends Throwable {
+18,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/test/java/org/apache/hadoop/net/unix/TestDomainSocket.java,314,,"  static class Success extends Throwable {"
+19,./TargetProjects/hadoop/hadoop-hdfs-project/hadoop-hdfs/src/test/java/org/apache/hadoop/hdfs/web/TestWebHDFS.java,2199,,"  final static class DummyThrowable extends Throwable {"
+20,./TargetProjects/hadoop-common/hadoop-common-project/hadoop-common/src/test/java/org/apache/hadoop/net/unix/TestDomainSocket.java,314,,"  static class Success extends Throwable {"
+21,./TargetProjects/harmony/classlib/modules/luni/src/main/java/java/lang/Error.java,30,,public class Error extends Throwable {
+22,./TargetProjects/harmony/classlib/modules/luni/src/main/java/java/lang/Exception.java,30,,public class Exception extends Throwable {
+23,./TargetProjects/harmony/classlib/modules/luni/src/test/api/common/org/apache/harmony/luni/tests/java/lang/ThreadTest.java,112,,"	static class BogusException extends Throwable {"
+24,./TargetProjects/harmony/drlvm/src/test/regression/H1802/UnresolvedHandlerTest.java,46,,class MissedThrowable extends Throwable {}
+25,./TargetProjects/harmony/drlvm/src/test/regression/H1857/Test.java,32,,class MissedThrowable extends Throwable {}
+26,./TargetProjects/harmony/drlvm/vm/tests/kernel/java/lang/ClassGenericsTest.java,411,,"    static class Mc009\u0576\u06C0\u06F1 extends Throwable "
+27,./TargetProjects/harmony/drlvm/vm/tests/kernel/java/lang/ClassGenericsTest2.java,208,,"    static class Mc209 extends Throwable implements java.io.Serializable, Cloneable {"
+28,./TargetProjects/harmony/drlvm/vm/tests/kernel/java/lang/ClassTestGetConstructor.java,146,,"    public static class Inner extends Throwable {"
+29,./TargetProjects/harmony/drlvm/vm/tests/kernel/java/lang/ClassTestGetConstructors.java,105,,"    public static class Inner extends Throwable {"
+30,./TargetProjects/harmony/drlvm/vm/tests/kernel/java/lang/ClassTestGetDeclaredConstructor.java,116,,"    private static class Inner extends Throwable {"
+31,./TargetProjects/harmony/drlvm/vm/tests/kernel/java/lang/ClassTestGetDeclaredConstructors.java,104,,"    static class Inner extends Throwable {"
+32,./TargetProjects/harmony/drlvm/vm/tests/kernel/org/apache/harmony/lang/generics/TemplateSet.java,69,,"    static class Mc009\u0576\u06C0\u06F1 extends Throwable implements java.io.Serializable, Cloneable {private static final long serialVersionUID = 0L;};"
+33,./TargetProjects/harmony-classlib/modules/luni/src/main/java/java/lang/Error.java,30,,public class Error extends Throwable {
+34,./TargetProjects/harmony-classlib/modules/luni/src/main/java/java/lang/Exception.java,30,,public class Exception extends Throwable {
+35,./TargetProjects/harmony-classlib/modules/luni/src/test/api/common/org/apache/harmony/luni/tests/java/lang/ThreadTest.java,112,,"	static class BogusException extends Throwable {"
+36,./TargetProjects/hbase/hbase-server/src/main/java/org/apache/hadoop/hbase/errorhandling/ForeignException.java,123,,"  private static class ProxyThrowable extends Throwable {"
+37,./TargetProjects/hcatalog/webhcat/svr/src/main/java/org/apache/hcatalog/templeton/SimpleWebException.java,35,,public class SimpleWebException extends Throwable {
+38,./TargetProjects/ignite/modules/core/src/main/java/org/apache/ignite/internal/visor/util/VisorExceptionWrapper.java,26,,public class VisorExceptionWrapper extends Throwable {
+39,./TargetProjects/incubator-retired-wave/wave/src/main/java/org/waveprotocol/wave/concurrencycontrol/common/CorruptionDetail.java,31,,public class CorruptionDetail extends Throwable {
+40,./TargetProjects/incubator-taverna-engine/taverna-workflowmodel-api/src/main/java/org/apache/taverna/facade/WorkflowRunCancellation.java,29,,public class WorkflowRunCancellation extends Throwable {
+41,./TargetProjects/juneau/juneau-utest/src/test/java/org/apache/juneau/rest/annotation/Swagger_Response_Test.java,298,,"		public static class D1 extends Throwable {}"
+42,./TargetProjects/juneau/juneau-utest/src/test/java/org/apache/juneau/rest/annotation/Swagger_Response_Test.java,311,,"		public static class D2 extends Throwable {}"
+43,./TargetProjects/juneau/juneau-utest/src/test/java/org/apache/juneau/rest/annotation/Swagger_Response_Test.java,329,,"		public static class D3 extends Throwable {}"
+44,./TargetProjects/juneau/juneau-utest/src/test/java/org/apache/juneau/rest/annotation/Swagger_Response_Test.java,334,,"		public static class D4 extends Throwable {}"
+45,./TargetProjects/juneau/juneau-utest/src/test/java/org/apache/juneau/rest/annotation/Swagger_Response_Test.java,339,,"		public static class D5 extends Throwable {}"
+46,./TargetProjects/juneau/juneau-utest/src/test/java/org/apache/juneau/rest/annotation/Swagger_Response_Test.java,344,,"		public static class D6 extends Throwable {}"
+47,./TargetProjects/juneau/juneau-utest/src/test/java/org/apache/juneau/rest/annotation/Swagger_Response_Test.java,389,,"		public static class E1 extends Throwable {}"
+48,./TargetProjects/juneau/juneau-utest/src/test/java/org/apache/juneau/rest/annotation/Swagger_Response_Test.java,410,,"		public static class F1 extends Throwable {}"
+49,./TargetProjects/juneau/juneau-utest/src/test/java/org/apache/juneau/rest/annotation/Swagger_Response_Test.java,415,,"		public static class F2 extends Throwable {}"
+50,./TargetProjects/log4j/tests/src/java/org/apache/log4j/spi/ThrowableInformationTest.java,41,,"    private static final class OverriddenThrowable extends Throwable {"
+51,./TargetProjects/log4j/tests/src/java/org/apache/log4j/spi/ThrowableInformationTest.java,85,,"    private static final class NotOverriddenThrowable extends Throwable {"
+52,./TargetProjects/log4j/tests/src/java/org/apache/log4j/spi/ThrowableInformationTest.java,143,,"    private static final class NullThrowable extends Throwable {"
+53,./TargetProjects/log4j/tests/src/java/org/apache/log4j/spi/ThrowableInformationTest.java,181,,"    private static final class EmptyThrowable extends Throwable {"
+54,./TargetProjects/log4j/tests/src/java/org/apache/log4j/spi/ThrowableInformationTest.java,212,,"    private static final class StringThrowable extends Throwable {"
+55,./TargetProjects/log4j/tests/src/java/org/apache/log4j/spi/ThrowableInformationTest.java,312,,"    private static final class NastyThrowable extends Throwable {"
+56,./TargetProjects/maven/maven-core/src/main/java/org/apache/maven/artifact/repository/metadata/RepositoryMetadataDeploymentException.java,28,,"    extends Throwable"
+57,./TargetProjects/maven/maven-core/src/main/java/org/apache/maven/artifact/repository/metadata/RepositoryMetadataInstallationException.java,28,,"    extends Throwable"
+58,./TargetProjects/maven-2/maven-artifact/src/main/java/org/apache/maven/artifact/repository/metadata/RepositoryMetadataDeploymentException.java,29,,"    extends Throwable"
+59,./TargetProjects/maven-2/maven-artifact/src/main/java/org/apache/maven/artifact/repository/metadata/RepositoryMetadataInstallationException.java,29,,"    extends Throwable"
+60,./TargetProjects/maven-artifact/src/main/java/org/apache/maven/artifact/repository/metadata/RepositoryMetadataDeploymentException.java,29,,"    extends Throwable"
+61,./TargetProjects/maven-artifact/src/main/java/org/apache/maven/artifact/repository/metadata/RepositoryMetadataInstallationException.java,29,,"    extends Throwable"
+62,./TargetProjects/maven-surefire/surefire-api/src/test/java/org/apache/maven/surefire/api/report/LegacyPojoStackTraceWriterTest.java,122,,"    static class MockThrowable extends Throwable"
+63,./TargetProjects/netbeans/ide/project.indexingbridge/src/org/netbeans/modules/project/indexingbridge/IndexingBridge.java,149,,"    private static final class Stack extends Throwable {"
+64,./TargetProjects/netbeans/platform/o.n.core/src/org/netbeans/core/CLIOptions2.java,128,,"    private static class EQStuck extends Throwable {"
+65,./TargetProjects/nifi/nifi-commons/nifi-data-provenance-utils/src/main/java/org/apache/nifi/provenance/EncryptionException.java,19,,public class EncryptionException extends Throwable {
+66,./TargetProjects/openejb/openejb/server/openejb-client/src/main/java/org/apache/openejb/client/ThrowableArtifact.java,81,,"    private static class MockThrowable extends Throwable {"
+67,./TargetProjects/tapestry-5/tapestry-core/src/test/java/org/apache/tapestry5/internal/services/DefaultRequestExceptionHandlerTest.java,53,,"    private static class MyContextAwareException extends Throwable implements ContextAwareException"
+68,./TargetProjects/tomcat/java/org/apache/tomcat/dbcp/pool2/impl/ThrowableCallStack.java,82,,"    private static class Snapshot extends Throwable {"
+69,./TargetProjects/tomcat/java/org/apache/tomcat/util/MultiThrowable.java,30,,public class MultiThrowable extends Throwable {
+70,./TargetProjects/tomcat80/java/org/apache/tomcat/dbcp/pool2/impl/ThrowableCallStack.java,82,,"    private static class Snapshot extends Throwable {"
+71,./TargetProjects/tomee/server/openejb-client/src/main/java/org/apache/openejb/client/ThrowableArtifact.java,92,,"    private static class MockThrowable extends Throwable {"
+72,./TargetProjects/usergrid/stack/rest/src/main/java/org/apache/usergrid/rest/exceptions/UncaughtException.java,24,,public class UncaughtException extends Throwable {

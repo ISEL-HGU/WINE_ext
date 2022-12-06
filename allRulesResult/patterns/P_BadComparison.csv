@@ -1,0 +1,54 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,d = d == Double.NaN ? 0d : d;,"d=d == Double.NaN ? 0d : d;
+",0,0,5,22,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+2,if(boost == Double.NaN || boost <= 0){,"if (boost == Double.NaN || boost <= 0) {
+  StringBuilder message=new StringBuilder(""The Boost of a Constraint "" + ""MUST BE a double AND >= 0 (parsed: '"");
+  message.append(jConstraint.get(""boost"")).append(""')!"");
+  log.warn(message.toString());
+  throw new IllegalArgumentException(message.toString());
+}
+ else {
+  constraint.setBoost(boost);
+}
+",0,0,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+3,|| (denominatorValue == Double.NaN),"if ((denominatorValue == 0) || (denominatorValue == Double.NaN) || (numeratorValue == Double.NaN)) {
+  return 0d;
+}
+",1,1,2,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, ),
+QualifiedName(InfixExpression-rightOperand, ParenthesizedExpression-expression, ),
+"
+4,if (denom == Double.NaN || num == Double.NaN) {,"if (denom == Double.NaN || num == Double.NaN) {
+  log.error(""IC = NaN for "" + icInfo.getConcept().getConceptID() + "", leafCount=""+ icInfo.getLeafCount()+ "", subsumerCount = ""+ icInfo.getSubsumerCount());
+  return -1d;
+}
+ else return num - denom;
+",1,11,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+5,if (result.floatValue()==Float.NaN) result = new Float (0);,"if (result.floatValue() == Float.NaN) result=new Float(0);
+",1,1,6,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+NumberLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+6,if (elemPrio == Double.NaN || elemPrio < nodePrio ||,"if (elemPrio == Double.NaN || elemPrio < nodePrio || (elemPrio == nodePrio && elemPos < nodePos)) {
+  ihElem=_childNodeTestSeq.compile(classGen,methodGen,ihLoop);
+}
+",3,3,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+"

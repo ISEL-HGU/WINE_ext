@@ -1,0 +1,64 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,{,"context.checking(new Expectations(){
+{
+  }
+}
+);
+",0,0,0,11,
+2,".convertValue(groups, new TypeReference<Collection<SensorParserGroup>>() {{}});","Collection<SensorParserGroup> sensorParserGroups=JSONUtils.INSTANCE.getMapper().convertValue(groups,new TypeReference<Collection<SensorParserGroup>>(){
+{
+  }
+}
+);
+",0,2,6,,"SimpleName(),
+SimpleName(),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, ClassInstanceCreation-type, ),
+Block(Initializer-body, AnonymousClassDeclaration-bodyDeclarations, ClassInstanceCreation-anonymousClassDeclaration, ),
+"
+3,"Map<Object, Object> message = new HashMap<Object, Object>() {{","Map<Object,Object> message=new HashMap<Object,Object>(){
+{
+  }
+}
+;
+",0,0,7,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+4,"put(""solr"", new HashMap<String, Object>() {{","put(""solr"",new HashMap<String,Object>(){
+{
+  }
+}
+);
+",0,0,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+5,"JSONObject input = new JSONObject(new HashMap<String, Object>() {{","JSONObject input=new JSONObject(new HashMap<String,Object>(){
+{
+  }
+}
+);
+",1,1,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+6,context.checking(new Expectations() {{,"context.checking(new Expectations(){
+{
+  }
+}
+);
+",2,2,3,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

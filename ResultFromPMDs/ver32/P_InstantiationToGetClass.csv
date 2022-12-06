@@ -1,0 +1,361 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"method = this.getClass().getMethod(""withTripleArray"", new String[0][0][0].getClass());","method=this.getClass().getMethod(""withTripleArray"",new String[0][0][0].getClass());
+",0,75,13,212,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+2,"Class st = new java.util.StringTokenizer(""some string"").getClass();","Class st=new java.util.StringTokenizer(""some string"").getClass();
+",0,3,5,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+QualifiedName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+3,"private static final TypeInformation<?> MAP_TYPE_INFORMATION = TypeExtractor.createTypeInfo(new HashMap<String, Object>().getClass());","@SuppressWarnings(""unchecked"") private static final TypeInformation<?> MAP_TYPE_INFORMATION=TypeExtractor.createTypeInfo(new HashMap<String,Object>().getClass());
+",0,7,12,,"Modifier(),
+Modifier(),
+Modifier(),
+SimpleName(SimpleType-name, ParameterizedType-type, ),
+WildcardType(ParameterizedType-typeArguments, ),
+SimpleName(VariableDeclarationFragment-name, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+"
+4,"DoFnSignatures.getSignature(new DoFn<String, String>() {}.getClass());","DoFnSignatures.getSignature(new DoFn<String,String>(){
+}
+.getClass());
+",0,11,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+AnonymousClassDeclaration(ClassInstanceCreation-anonymousClassDeclaration, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+5,"String buf = IntrospectionSupport.toString(new Person(""bloggs""), new Person().getClass());","String buf=IntrospectionSupport.toString(new Person(""bloggs""),new Person().getClass());
+",0,5,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+6,"Class[] bootParams = {Boolean.TYPE, new java.util.Properties().getClass()};","Class[] bootParams={Boolean.TYPE,new java.util.Properties().getClass()};
+",0,1,6,,"SimpleName(SimpleType-name, ArrayType-elementType, VariableDeclarationStatement-type, ),
+Dimension(ArrayType-dimensions, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+QualifiedName(ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+7,return new String[0].getClass();,"return new String[0].getClass();
+",0,0,4,,"SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+"
+8,"Method method = this.getClass().getMethod(""withOneArray"", new String[0].getClass());","Method method=this.getClass().getMethod(""withOneArray"",new String[0].getClass());
+",0,3,10,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+9,"Method method = this.getClass().getMethod(""withPrimitiveArray"", new int[0].getClass());","Method method=this.getClass().getMethod(""withPrimitiveArray"",new int[0].getClass());
+",0,3,10,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+PrimitiveType(ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+10,"method = this.getClass().getMethod(""withPrimitiveArray"", new int[0][0][0].getClass());","method=this.getClass().getMethod(""withPrimitiveArray"",new int[0][0][0].getClass());
+",0,1,13,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+PrimitiveType(ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+11,"(Class<scala.Tuple1<String>>) new scala.Tuple1<>(""hello"").getClass();","Class<scala.Tuple1<String>> c=(Class<scala.Tuple1<String>>)new scala.Tuple1<>(""hello"").getClass();
+",0,0,6,,"SimpleName(SimpleType-name, ParameterizedType-type, CastExpression-type, ),
+QualifiedName(SimpleType-name, ParameterizedType-type, ParameterizedType-typeArguments, CastExpression-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, CastExpression-type, ),
+QualifiedName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-expression, CastExpression-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, CastExpression-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ),
+"
+12,Class c = new int[0][0].getClass();,"Class c=new int[0][0].getClass();
+",0,0,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+PrimitiveType(ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+13,assertTrue(Object.class.isAssignableFrom(new int[0].getClass()));,"assertTrue(Object.class.isAssignableFrom(new int[0].getClass()));
+",0,0,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+14,"ClassSize.align(ClassSize.estimateBase(new MultiByteBuff(buf).getClass(), true)","long byteBufferExpectedSize=ClassSize.align(ClassSize.estimateBase(new MultiByteBuff(buf).getClass(),true) + HConstants.HFILEBLOCK_HEADER_SIZE + size);
+",0,0,8,,"SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ),
+BooleanLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ),
+"
+15,"Method createNodeMethod = nodeFactoryClass.getMethod(""createNode"", new Class[]{URI.class, new String[0].getClass()});","Method createNodeMethod=nodeFactoryClass.getMethod(""createNode"",new Class[]{URI.class,new String[0].getClass()});
+",0,1,12,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+16,"Assert.assertEquals(new ClassUtilTest[0].getClass(), toClass(""org.apache.openjpa.lib.util.ClassUtilTest[]""));","Assert.assertEquals(new ClassUtilTest[0].getClass(),toClass(""org.apache.openjpa.lib.util.ClassUtilTest[]""));
+",0,0,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+17,"Assert.assertEquals(new long[0][0][0].getClass(), toClass(""long[][][]""));","Assert.assertEquals(new long[0][0][0].getClass(),toClass(""long[][][]""));
+",0,2,12,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+PrimitiveType(ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+18,private final static Log log = LogFactory.getLog(new PlanHelper().getClass());,"private final static Log log=LogFactory.getLog(new PlanHelper().getClass());
+",0,0,9,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+19,private static final Class<?> STRING_ARRAY_CLASS = new String[0].getClass();,"private static final Class<?> STRING_ARRAY_CLASS=new String[0].getClass();
+",0,0,10,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, ParameterizedType-type, FieldDeclaration-type, ),
+WildcardType(ParameterizedType-typeArguments, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+20,ns.getNode(s(new String[0].getClass()));,"ns.getNode(s(new String[0].getClass()));
+",0,0,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+21,"objectMapper.readValue(bytes, new HashMap<String, Map<String, Object>>().getClass()));","return MetricsSnapshot.fromMap(objectMapper.readValue(bytes,new HashMap<String,Map<String,Object>>().getClass()));
+",0,0,9,,"SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(MethodInvocation-arguments, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ),
+"
+22,Class<?> cl = new Object().getClass();,"Class<?> cl=new Object().getClass();
+",1,1,5,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+WildcardType(ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+23,"new ObjectStreamField(""ipaddress"", new byte[0].getClass()),","private static final ObjectStreamField[] serialPersistentFields={new ObjectStreamField(""ipaddress"",new byte[0].getClass()),new ObjectStreamField(""scope_id"",Integer.TYPE),new ObjectStreamField(""scope_id_set"",Boolean.TYPE),new ObjectStreamField(""scope_ifname_set"",Boolean.TYPE),new ObjectStreamField(""ifname"",String.class)};
+",1,1,6,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ),
+StringLiteral(ClassInstanceCreation-arguments, ),
+PrimitiveType(ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, ClassInstanceCreation-arguments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, ClassInstanceCreation-arguments, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, ClassInstanceCreation-arguments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ),
+"
+24,"Class[] ctorArgs = { URL.class, new CodeSigner[] {}.getClass() };","Class[] ctorArgs={URL.class,new CodeSigner[]{}.getClass()};
+",1,2,8,,"SimpleName(SimpleType-name, ArrayType-elementType, VariableDeclarationStatement-type, ),
+Dimension(ArrayType-dimensions, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+ArrayInitializer(ArrayCreation-initializer, MethodInvocation-expression, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+25,"info = new DataLine.Info(new Object().getClass(), formats, 1, 10);","info=new DataLine.Info(new Object().getClass(),formats,1,10);
+",1,1,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+QualifiedName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+26,"DataLine.Info info2 = new DataLine.Info(new Object().getClass(), format);","DataLine.Info info2=new DataLine.Info(new Object().getClass(),format);
+",1,3,6,,"QualifiedName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+QualifiedName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+27,"Class cuCla = new MC002<Object, java.lang.reflect.Proxy, MC002<Integer, Void, Character>.MC002_01<Integer, Void, Character>.MC002_01_01<Integer, Void, Character>.MC002_01_01_01<Integer, Void, Character>.MC002_01_01_01_01<Integer, Void, Character>.MC002_01_01_01_01_01<Integer, Void, Character>.MC002_01_01_01_01_01_01<Integer, Void, Character>>().getClass();","Class cuCla=new MC002<Object,java.lang.reflect.Proxy,MC002<Integer,Void,Character>.MC002_01<Integer,Void,Character>.MC002_01_01<Integer,Void,Character>.MC002_01_01_01<Integer,Void,Character>.MC002_01_01_01_01<Integer,Void,Character>.MC002_01_01_01_01_01<Integer,Void,Character>.MC002_01_01_01_01_01_01<Integer,Void,Character>>().getClass();
+",1,1,34,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(QualifiedType-name, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(QualifiedType-name, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(QualifiedType-name, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(QualifiedType-name, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(QualifiedType-name, ParameterizedType-type, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, QualifiedType-qualifier, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(QualifiedType-name, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+28,private static final Class<?> DOUBLE_ARRAY_CLASS = new double[0].getClass();,"private static final Class<?> DOUBLE_ARRAY_CLASS=new double[0].getClass();
+",3,16,10,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, ParameterizedType-type, FieldDeclaration-type, ),
+WildcardType(ParameterizedType-typeArguments, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+PrimitiveType(ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+29,"assertEquals(""SimpleDateFormat"", Classes.simpleName(new SimpleDateFormat() {}.getClass()));","assertEquals(""SimpleDateFormat"",Classes.simpleName(new SimpleDateFormat(){
+}
+.getClass()));
+",3,4,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+AnonymousClassDeclaration(ClassInstanceCreation-anonymousClassDeclaration, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+30,parms[0] = new Object().getClass();,"parms[0]=new Object().getClass();
+",5,7,4,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+31,return new boolean[0].getClass();,"return new boolean[0].getClass();
+",7,7,4,,"PrimitiveType(ArrayType-elementType, ArrayCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+"
+32,private static final Class NO_CLASS = new Object(){}.getClass();,"private static final Class NO_CLASS=new Object(){
+}
+.getClass();
+",8,8,8,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+AnonymousClassDeclaration(ClassInstanceCreation-anonymousClassDeclaration, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+33,e.getClass().equals(new NoSuchElementException().getClass()));,"assertTrue(""NoSuchElementException must be thrown"",e.getClass().equals(new NoSuchElementException().getClass()));
+",15,15,5,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ),
+"

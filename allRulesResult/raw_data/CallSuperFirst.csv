@@ -1,0 +1,2 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/cordova-amazon-fireos/framework/src/org/apache/cordova/CordovaActivity.java,212,,"    public void onCreate(Bundle savedInstanceState) {"

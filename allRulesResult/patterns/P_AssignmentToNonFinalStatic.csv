@@ -1,0 +1,648 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,MarkovPairs.lookahead_steps = Integer.valueOf(lookahead_steps);,"MarkovPairs.lookahead_steps=Integer.valueOf(lookahead_steps);
+",0,45,4,1401,"QualifiedName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+2,"startDate = DateUtils.addHours(endDate, -1);","startDate=DateUtils.addHours(endDate,-1);
+",0,98,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+3,TIMELINE_METRIC_READ_HELPER = new TimelineMetricReadHelper(this.metadataManagerInstance);,"TIMELINE_METRIC_READ_HELPER=new TimelineMetricReadHelper(this.metadataManagerInstance);
+",0,86,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+4,mbServer = (MBeanServer) mbServerList.get(0);,"mbServer=(MBeanServer)mbServerList.get(0);
+",0,1,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+5,url = new URL(new test.wsdl.interop4.groupi.Round4XSDTestLocator().getRound4XSDTestSoapAddress());,"url=new URL(new test.wsdl.interop4.groupi.Round4XSDTestLocator().getRound4XSDTestSoapAddress());
+",0,24,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+6,"dataFileDir = conf.get(""test.data.files"").replace('\\', '/')","dataFileDir=conf.get(""test.data.files"").replace('\\','/').replace(""c:"","""");
+",0,2,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+CharacterLiteral(MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+CharacterLiteral(MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+7,io = loc.getInoutService(HttpTestUtil.getTestEndpoint(loc.getInoutServiceAddress()));,"io=loc.getInoutService(HttpTestUtil.getTestEndpoint(loc.getInoutServiceAddress()));
+",0,2,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+8,"dfs=new MiniDFSCluster(conf,1,true,null);","dfs=new MiniDFSCluster(conf,1,true,null);
+",0,34,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+9,"buf_clean_method = sun.misc.Unsafe.class.getMethod(""invokeCleaner"", java.nio.ByteBuffer.class);","buf_clean_method=sun.misc.Unsafe.class.getMethod(""invokeCleaner"",java.nio.ByteBuffer.class);
+",0,1,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+QualifiedName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+10,column = startcolumn - 1;,"column=startcolumn - 1;
+",0,0,3,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+11,this.objectWrapper = defaultObjectWrapper = new DefaultObjectWrapper();,"this.objectWrapper=defaultObjectWrapper=new DefaultObjectWrapper();
+",0,1,4,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(Assignment-leftHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+12,"class_package = class_name.substring(0, index);","class_package=class_name.substring(0,index);
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+13,this.badNotes = new HashSet<>();,"this.badNotes=new HashSet<>();
+",0,0,3,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+14,"cost = Integer.valueOf(props.getProperty(""scrypt.cost"", """" + cost));","cost=Integer.valueOf(props.getProperty(""scrypt.cost"","""" + cost));
+",0,5,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+15,"TEST_FILE_FOLDER = PerformanceIT.class.getClassLoader().getResource("""").toURI().getPath() + System.getProperty(""testresourcefolder"") + File.separatorChar;","TEST_FILE_FOLDER=PerformanceIT.class.getClassLoader().getResource("""").toURI().getPath() + System.getProperty(""testresourcefolder"") + File.separatorChar;
+",0,3,11,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+16,MarkovPairs.lookahead_steps = 1;,"MarkovPairs.lookahead_steps=1;
+",0,0,2,,"QualifiedName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+NumberLiteral(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+17,"this.topSuiteName = suiteProperties.getProperty(""suitename"");","this.topSuiteName=suiteProperties.getProperty(""suitename"");
+",0,0,5,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+18,"configList[0] = new AppConfigurationEntry( loginModule, flag, options );","configList[0]=new AppConfigurationEntry(loginModule,flag,options);
+",0,12,6,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+19,trustManager = ( X509TrustManager ) trustManagers[i];,"trustManager=(X509TrustManager)trustManagers[i];
+",0,0,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+20,"admin = new HBaseAdminImpl(config, TableMappingRulesFactory.create(conf));","admin=new HBaseAdminImpl(config,TableMappingRulesFactory.create(conf));
+",0,0,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+21,partitionVals = new ArrayList<String>(2);,"partitionVals=new ArrayList<String>(2);
+",0,1,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+22,enableServerAuthentication = !enableServerAuthentication;,"enableServerAuthentication=!enableServerAuthentication;
+",0,0,2,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+23,"charMapInfoArray_[7] = new CharMapInfo(""PCS to Unicode"", 0x7E,","charMapInfoArray_[7]=new CharMapInfo(""PCS to Unicode"",0x7E,mappingInfoValues7);
+",0,1,5,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+24,"noneInstance_ = new CodeSetInfo(""none"", 0, 0, null, (short) 2);","noneInstance_=new CodeSetInfo(""none"",0,0,null,(short)2);
+",0,2,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+25,list = BufferUtils.synchronizedBuffer(new CircularFifoBuffer(10));,"list=BufferUtils.synchronizedBuffer(new CircularFifoBuffer(10));
+",0,2,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+26,"super((jobid = new JobID(jtIdentifier, jobCounter ++)), jc, jt);","super((jobid=new JobID(jtIdentifier,jobCounter++)),jc,jt);
+",0,0,6,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, SuperConstructorInvocation-arguments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ParenthesizedExpression-expression, SuperConstructorInvocation-arguments, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, SuperConstructorInvocation-arguments, ),
+SimpleName(PostfixExpression-operand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, SuperConstructorInvocation-arguments, ),
+SimpleName(SuperConstructorInvocation-arguments, ),
+SimpleName(SuperConstructorInvocation-arguments, ),
+"
+27,provider = Security.getProvider(this.providerString);,"provider=Security.getProvider(this.providerString);
+",0,3,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+28,"shortKnoxPrincipal = knoxPrincipal.split(""/"", 2)[0];","shortKnoxPrincipal=knoxPrincipal.split(""/"",2)[0];
+",0,2,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ArrayAccess-array, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayAccess-array, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ArrayAccess-array, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ArrayAccess-array, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+29,"chunkCreator = ChunkCreator.initialize(MemStoreLAB.CHUNK_SIZE_DEFAULT, false,","chunkCreator=ChunkCreator.initialize(MemStoreLAB.CHUNK_SIZE_DEFAULT,false,globalMemStoreLimit,0.2f,MemStoreLAB.POOL_INITIAL_SIZE_DEFAULT,null,MemStoreLAB.INDEX_CHUNK_SIZE_PERCENTAGE_DEFAULT);
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+30,"standAloneServer = ""true"".equals(System","standAloneServer=""true"".equals(System.getProperty(""test.service.standalone.server""));
+",0,0,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+31,ReplChangeManager.enabled = true;,"ReplChangeManager.enabled=true;
+",0,0,2,,"QualifiedName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+32,docApiFilePath = new StringBuilder().append(CACHE_FOLDER_NAME).append(File.separator),"docApiFilePath=new StringBuilder().append(CACHE_FOLDER_NAME).append(File.separator).append(support.getVersion().toString()).append(File.separator).append(API_ALL_JSON_FILE).toString();
+",0,5,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+33,log = getIgniteTestResources().getLogger().getLogger(getClass());,"log=getIgniteTestResources().getLogger().getLogger(getClass());
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+34,"ontologyModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM, null);","ontologyModel=ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM,null);
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+35,dfsCluster = new MiniDFSCluster.Builder(conf).numDataNodes(2).build();,"dfsCluster=new MiniDFSCluster.Builder(conf).numDataNodes(2).build();
+",0,0,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+QualifiedName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+36,"this.messageIdPrefix = """" + System.currentTimeMillis();","this.messageIdPrefix="""" + System.currentTimeMillis();
+",0,0,5,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+37,{ impIsConstructed = true; },"impIsConstructed=true;
+",0,0,2,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, Block-statements, ),
+BooleanLiteral(Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, ),
+"
+38,KEY_SPACE = 100 * TOP_K;,"KEY_SPACE=100 * TOP_K;
+",0,0,3,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+39,values = projectStages.values().toArray(new ProjectStage[ projectStages.size() ]);,"values=projectStages.values().toArray(new ProjectStage[projectStages.size()]);
+",0,1,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ArrayCreation-dimensions, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayCreation-dimensions, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+40,"dataJarPath = directoryPath + System.getProperty(""file.separator"") + ""data.jar"";","dataJarPath=directoryPath + System.getProperty(""file.separator"") + ""data.jar"";
+",0,1,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+41,((MainClassLoader) mainClassLoader).antInstance = this;,"((MainClassLoader)mainClassLoader).antInstance=this;
+",0,0,4,,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+ThisExpression(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+42,if( isDefault ) defaultKitInfo = this;,"if (isDefault) defaultKitInfo=this;
+",0,0,3,,"SimpleName(IfStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+ThisExpression(Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+43,if (env == null) env = new Environment();,"if (env == null) env=new Environment();
+",0,0,4,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+44,"debug = new PrintStream(new FileOutputStream(""/home/pkuzel/tmp/jj1.log""));","debug=new PrintStream(new FileOutputStream(""/home/pkuzel/tmp/jj1.log""));
+",0,0,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+45,instanceRef = new WeakReference<PersistenceManager>(this);,"instanceRef=new WeakReference<PersistenceManager>(this);
+",0,1,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+ThisExpression(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+46,tmpBytes[j] = (byte) utf8.charAt(j);,"tmpBytes[j]=(byte)utf8.charAt(j);
+",0,1,6,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+47,keepOpened = e.getStateChange() == ItemEvent.SELECTED;,"keepOpened=e.getStateChange() == ItemEvent.SELECTED;
+",0,0,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+48,"wshost          = SystemPropertyResolver.getStringProperty(""ducc.ws.node"", System.getProperty(""ducc.head""));","wshost=SystemPropertyResolver.getStringProperty(""ducc.ws.node"",System.getProperty(""ducc.head""));
+",0,1,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+49,"RangerHdfsPlugin.fileNameExtensionSeparator = config.get(RangerHdfsAuthorizer.RANGER_FILENAME_EXTENSION_SEPARATOR_PROP, RangerHdfsAuthorizer.DEFAULT_FILENAME_EXTENSION_SEPARATOR);","RangerHdfsPlugin.fileNameExtensionSeparator=config.get(RangerHdfsAuthorizer.RANGER_FILENAME_EXTENSION_SEPARATOR_PROP,RangerHdfsAuthorizer.DEFAULT_FILENAME_EXTENSION_SEPARATOR);
+",0,0,5,,"QualifiedName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+50,"WKT1 = new TensorParameters<>(Double.class, ""elt_"", ""_"",","WKT1=new TensorParameters<>(Double.class,""elt_"",""_"",TensorParameters.WKT1.getDimensionDescriptor(0),TensorParameters.WKT1.getDimensionDescriptor(1));
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+51,"HtmlTextExtractUtil.htmlExtractor = new XsltExtractor(""any"", ""xslt/htmlmetadata.xsl"", transFac);","HtmlTextExtractUtil.htmlExtractor=new XsltExtractor(""any"",""xslt/htmlmetadata.xsl"",transFac);
+",0,0,5,,"QualifiedName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+52,this.currentDatabase = getClass().getSimpleName().toLowerCase();,"this.currentDatabase=getClass().getSimpleName().toLowerCase();
+",0,0,5,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+53,"API_TEST_TYPE = TypeHelper.INSTANCE.getType(TEST_NAMESPACE, ""APITest"");","API_TEST_TYPE=TypeHelper.INSTANCE.getType(TEST_NAMESPACE,""APITest"");
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+54,"port = Integer.valueOf( props.getProperty( ""elasticsearch.port"", ""9300"" ) ).intValue();","port=Integer.valueOf(props.getProperty(""elasticsearch.port"",""9300"")).intValue();
+",0,0,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+55,"dbHelper = new DBHelper(TEST_JDBC_DRIVER_CLASS, TEST_JDBC_URI, TEST_JDBC_LOGIN, TEST_JDBC_PASSWORD,path + ""/create-db.sql"");","dbHelper=new DBHelper(TEST_JDBC_DRIVER_CLASS,TEST_JDBC_URI,TEST_JDBC_LOGIN,TEST_JDBC_PASSWORD,path + ""/create-db.sql"");
+",0,0,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+56,"tmpDir = new File(""target"", this.getClass().getSimpleName() + ""-tmpDir"");","tmpDir=new File(""target"",this.getClass().getSimpleName() + ""-tmpDir"");
+",1,463,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+57,if (augmenterSR != null) augmenterInvoker = (AugmenterInvoker) callerContext.getService(augmenterSR);,"if (augmenterSR != null) augmenterInvoker=(AugmenterInvoker)callerContext.getService(augmenterSR);
+",1,30,7,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(SimpleType-name, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-arguments, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+58,"maxRetries = ApplicationProperties.get().getInt(RETRY_COUNT, 3);","maxRetries=ApplicationProperties.get().getInt(RETRY_COUNT,3);
+",1,3,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+59,"USE_KEEPALIVE = conf.getBoolean(""chukwa.tee.keepalive"", true);","USE_KEEPALIVE=conf.getBoolean(""chukwa.tee.keepalive"",true);
+",1,93,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+60,"s_dvPortGroupCacheMap = new ConcurrentHashMap<String, List<String>>();","s_dvPortGroupCacheMap=new ConcurrentHashMap<String,List<String>>();
+",1,34,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ParameterizedType-typeArguments, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+61,intDimensionSums[i] = 0;,"intDimensionSums[i]=0;
+",1,1,3,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+NumberLiteral(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+62,"patternComment = Pattern.compile(SQLSyntaxConstants.COMMENT_TEXT, Pattern.UNICODE_CASE | Pattern.CASE_INSENSITIVE);","patternComment=Pattern.compile(SQLSyntaxConstants.COMMENT_TEXT,Pattern.UNICODE_CASE | Pattern.CASE_INSENSITIVE);
+",1,6,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+63,"exportAll = ""true"".equals(EntityUtilProperties.getPropertyValue(""service"", ""remotedispatcher.exportall"", ""false"", delegator));","exportAll=""true"".equals(EntityUtilProperties.getPropertyValue(""service"",""remotedispatcher.exportall"",""false"",delegator));
+",1,5,9,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+64,dirs = new File[4];,"dirs=new File[4];
+",1,6,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+65,logger = this.cache.getLogger();,"logger=this.cache.getLogger();
+",1,1,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+66,"sslFactory = new SSLFactory(SSLFactory.Mode.CLIENT, job);","sslFactory=new SSLFactory(SSLFactory.Mode.CLIENT,job);
+",1,1,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+67,"CONFIG_FILE1 = System.getProperty(""user.dir"") + ""/resources"";","CONFIG_FILE1=System.getProperty(""user.dir"") + ""/resources"";
+",1,1,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+68,"regExp = NbPreferences.forModule(Controller.class).getBoolean(KEY_REGEXP, false);","regExp=NbPreferences.forModule(Controller.class).getBoolean(KEY_REGEXP,false);
+",1,3,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+69,"baseCommand = new File(baseName, script).getPath();","baseCommand=new File(baseName,script).getPath();
+",1,1,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+70,"genModel = GenderModel.testModel(corefProject + ""/gen"");","genModel=GenderModel.testModel(corefProject + ""/gen"");
+",1,1,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+71,"_connFac = (ConnectionFactory) context.lookup(""myConnFactory"");","_connFac=(ConnectionFactory)context.lookup(""myConnFactory"");
+",1,1,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+72,"dir = base + fs + ""src/test/resources"" + fs + ""org"" + fs + ""apache"" + fs + ""xml"" +","dir=base + fs + ""src/test/resources""+ fs+ ""org""+ fs+ ""apache""+ fs+ ""xml""+ fs+ ""security""+ fs+ ""testcases""+ fs;
+",1,1,10,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+73,"portQNameClass = Service.class.getDeclaredMethod(""getPort"", new Class[]{QName.class, Class.class});","portQNameClass=Service.class.getDeclaredMethod(""getPort"",new Class[]{QName.class,Class.class});
+",1,3,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, ArrayInitializer-expressions, ArrayCreation-initializer, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+74,this.lastRefreshTime = 0;,"this.lastRefreshTime=0;
+",1,1,3,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+NumberLiteral(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+75,"jobPrepare = h.prepare(""INSERT INTO "" + HistoryManagerDb.JOB_HISTORY_TABLE + "" (ducc_id, type, history, work) VALUES (?, ?, ?, ?)"");","jobPrepare=h.prepare(""INSERT INTO "" + HistoryManagerDb.JOB_HISTORY_TABLE + "" (ducc_id, type, history, work) VALUES (?, ?, ?, ?)"");
+",1,1,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+76,"schemaCompSrcDir = new File(schemaCompOutputDirPath + P + ""src"");","schemaCompSrcDir=new File(schemaCompOutputDirPath + P + ""src"");
+",1,2,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+77,this.extendedContext = camelContext.getExtension(ExtendedCamelContext.class);,"this.extendedContext=camelContext.getExtension(ExtendedCamelContext.class);
+",2,32,5,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+78,"this.iiOldLog=new ImageIcon(Toolkit.getDefaultToolkit().getImage(bdlCtx.getBundle().getResource(""icons/OLDLOG.gif"")));","this.iiOldLog=new ImageIcon(Toolkit.getDefaultToolkit().getImage(bdlCtx.getBundle().getResource(""icons/OLDLOG.gif"")));
+",2,13,10,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+79,buffer = new char[buffersize];,"buffer=new char[buffersize];
+",2,2,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+PrimitiveType(ArrayType-elementType, ArrayCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayCreation-dimensions, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+80,"log = U.logger(ctx.kernalContext(), logRef, this);","log=U.logger(ctx.kernalContext(),logRef,this);
+",2,2,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+81,prefs = NbPreferences.forModule(SearchHistory.class).node(PREFS_NODE);,"prefs=NbPreferences.forModule(SearchHistory.class).node(PREFS_NODE);
+",2,2,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+82,myFileLocks = new LockPool(new FileLockObjectFactory(synchDirectory));,"myFileLocks=new LockPool(new FileLockObjectFactory(synchDirectory));
+",3,4,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+83,this.isTraining = true;,"this.isTraining=true;
+",3,3,3,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+84,log = LogManager.getLogger(this.getClass());,"log=LogManager.getLogger(this.getClass());
+",4,4,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+ThisExpression(MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+85,"jebBytes = ""abcdefghijklmnopqrstuvwx"".getBytes(StandardCharsets.US_ASCII);","jebBytes=""abcdefghijklmnopqrstuvwx"".getBytes(StandardCharsets.US_ASCII);
+",5,5,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+86,this.numInstance++;,"this.numInstance++;
+",7,80,2,,"ThisExpression(FieldAccess-expression, PostfixExpression-operand, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, PostfixExpression-operand, ExpressionStatement-expression, ),
+"
+87,usedConstructor[0] = true;,"usedConstructor[0]=true;
+",7,7,3,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+88,buf = super.buf;,"buf=super.buf;
+",9,9,2,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SuperFieldAccess-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+89,AppTest.INSTANCE = this;,"AppTest.INSTANCE=this;
+",10,10,2,,"QualifiedName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+ThisExpression(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+90,"log = U.logger(cctx.kernalContext(), logRef, GridCacheMapEntry.class);","log=U.logger(cctx.kernalContext(),logRef,GridCacheMapEntry.class);
+",19,27,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+91,values_[value] = this;,"values_[value]=this;
+",55,55,3,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+ThisExpression(Assignment-rightHandSide, ExpressionStatement-expression, ),
+"

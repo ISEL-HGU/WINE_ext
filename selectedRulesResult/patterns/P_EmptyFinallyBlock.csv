@@ -1,0 +1,1897 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,} finally {,"try {
+synchronized (creditsLock) {
+    if (sender.getLocalState() == EndpointState.CLOSED) {
+      return 0;
+    }
+    pending.incrementAndGet();
+    credits--;
+  }
+  if (messageReference.getMessage() instanceof AMQPLargeMessage) {
+    hasLarge=true;
+  }
+  if (messageReference instanceof Runnable && consumer.allowReferenceCallback()) {
+    messageReference.onDelivery(executeDelivery);
+    connection.runNow((Runnable)messageReference);
+  }
+ else {
+    connection.runNow(() -> executeDelivery(messageReference));
+  }
+  return 1;
+}
+  finally {
+}
+",0,0,0,53,
+2,} finally {,"try {
+  QueueConsumer consumer=null;
+  int attributes=0;
+  if (selector != null) {
+    attributes=attributes | SELECTOR_SET;
+  }
+  if (autoAck) {
+    consumer=createConsumer(selector);
+  }
+ else {
+    attributes|=ACKNOWLEDGED;
+    consumer=createAcknowledgedConsumer(selector);
+  }
+  String attributesSegment=""attributes-"" + attributes;
+  UriBuilder location=uriInfo.getAbsolutePathBuilder();
+  location.path(attributesSegment);
+  location.path(consumer.getId());
+  Response.ResponseBuilder builder=Response.created(location.build());
+  if (autoAck) {
+    QueueConsumer.setConsumeNextLink(serviceManager.getLinkStrategy(),builder,uriInfo,uriInfo.getMatchedURIs().get(0) + ""/"" + attributesSegment+ ""/""+ consumer.getId(),""-1"");
+  }
+ else {
+    AcknowledgedQueueConsumer.setAcknowledgeNextLink(serviceManager.getLinkStrategy(),builder,uriInfo,uriInfo.getMatchedURIs().get(0) + ""/"" + attributesSegment+ ""/""+ consumer.getId(),""-1"");
+  }
+  return builder.build();
+}
+ catch (ActiveMQException e) {
+  throw new RuntimeException(e);
+}
+ finally {
+}
+",0,0,0,,
+3,} finally {,"try {
+  for (int i=0; i < numIts; i++) {
+    log.debug(""Iteration "" + i);
+    ServerLocator locator=getServerLocator().setBlockOnNonDurableSend(true).setBlockOnDurableSend(true).setReconnectAttempts(30).setRetryInterval(100).setConfirmationWindowSize(10 * 1024 * 1024).setCallTimeout(10000).setCallFailoverTimeout(10000);
+    sf=createSessionFactoryAndWaitForTopology(locator,2);
+    try {
+      ClientSession createSession=sf.createSession(true,true);
+      createSession.createQueue(new QueueConfiguration(FailoverTestBase.ADDRESS).setAddress(FailoverTestBase.ADDRESS));
+      RemotingConnection conn=((ClientSessionInternal)createSession).getConnection();
+      Thread t=new Thread(runnable);
+      t.setName(""MainTEST"");
+      t.start();
+      long randomDelay=(long)(2000 * Math.random());
+      log.debug(""Sleeping "" + randomDelay);
+      Thread.sleep(randomDelay);
+      log.debug(""Failing asynchronously"");
+synchronized (lockFail) {
+        if (log.isDebugEnabled()) {
+          log.debug(""#test crashing test"");
+        }
+        crash(createSession);
+      }
+      runnable.setFailed();
+      log.debug(""Fail complete"");
+      t.join(TimeUnit.SECONDS.toMillis(120));
+      if (t.isAlive()) {
+        System.out.println(threadDump(""Thread still running from the test""));
+        t.interrupt();
+        fail(""Test didn't complete successful, thread still running"");
+      }
+      runnable.checkForExceptions();
+      createSession.close();
+      Assert.assertEquals(0,sf.numSessions());
+      locator.close();
+    }
+  finally {
+      locator.close();
+      Assert.assertEquals(0,sf.numConnections());
+    }
+    if (i != numIts - 1) {
+      tearDown();
+      runnable.checkForExceptions();
+      runnable.reset();
+      setUp();
+    }
+  }
+}
+  finally {
+}
+",0,0,0,,
+4,} finally {,"try {
+  ServerLocator locator=createFactory(isNetty).setClientFailureCheckPeriod(pingPeriod).setRetryInterval(500).setRetryIntervalMultiplier(1d).setReconnectAttempts(-1).setConfirmationWindowSize(1024 * 1024);
+  ClientSessionFactoryInternal factory=(ClientSessionFactoryInternal)locator.createSessionFactory();
+  final CountDownLatch latchCommit=new CountDownLatch(2);
+  final ArrayList<Thread> threadToBeInterrupted=new ArrayList<>();
+  factory.addFailureListener(new SessionFailureListener(){
+    @Override public void connectionFailed(    ActiveMQException exception,    boolean failedOver){
+    }
+    @Override public void connectionFailed(    final ActiveMQException me,    boolean failedOver,    String scaleDownTargetNodeID){
+      connectionFailed(me,failedOver);
+    }
+    @Override public void beforeReconnect(    ActiveMQException exception){
+      threadToBeInterrupted.add(Thread.currentThread());
+      latchCommit.countDown();
+    }
+  }
+);
+  final ClientSessionInternal session=(ClientSessionInternal)factory.createSession();
+  final AtomicInteger count=new AtomicInteger(0);
+  final CountDownLatch latch=new CountDownLatch(1);
+  session.addFailureListener(new SessionFailureListener(){
+    @Override public void connectionFailed(    final ActiveMQException me,    boolean failedOver){
+      count.incrementAndGet();
+      latch.countDown();
+    }
+    @Override public void connectionFailed(    final ActiveMQException me,    boolean failedOver,    String scaleDownTargetNodeID){
+      connectionFailed(me,failedOver);
+    }
+    @Override public void beforeReconnect(    final ActiveMQException exception){
+    }
+  }
+);
+  server.stop();
+  Thread tcommitt=new Thread(){
+    @Override public void run(){
+      latchCommit.countDown();
+      try {
+        session.commit();
+      }
+ catch (      ActiveMQException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+;
+  tcommitt.start();
+  assertTrue(latchCommit.await(10,TimeUnit.SECONDS));
+  assertEquals(1,threadToBeInterrupted.size());
+  if (interruptMainThread) {
+    tcommitt.interrupt();
+  }
+ else {
+    for (    Thread tint : threadToBeInterrupted) {
+      tint.interrupt();
+    }
+  }
+  tcommitt.join(5000);
+  assertFalse(tcommitt.isAlive());
+  locator.close();
+}
+  finally {
+}
+",0,0,0,,
+5,} finally {,"try {
+  admin.stop();
+  if (startServer) {
+    admin.stopServer();
+  }
+}
+  finally {
+}
+",0,0,0,,
+6,} finally {,"try {
+  TransactionAttribute.REQUIRES_NEW.begin(tm);
+}
+ catch (SystemException se) {
+}
+catch (NotSupportedException nse) {
+}
+catch (Exception thrownE) {
+  fail(""TransactionStrategy.REQUIRES_NEW.begin() threw unexpected exception when manager status is "" + managerStatus);
+}
+ finally {
+}
+",0,0,0,,
+7,} finally {,"try {
+  expect(tm.getStatus()).andReturn(allStates[i]);
+  requiresNew_assertion(tm,allStates[i]);
+  c.replay();
+  TransactionToken tranToken=new TransactionToken(t,null,TransactionAttribute.REQUIRES_NEW,true);
+  TransactionAttribute.REQUIRES_NEW.finish(tm,tranToken);
+}
+ catch (Throwable e) {
+  e.printStackTrace();
+  fail(""TransactionStrategy.REQUIRES_NEW.finish() threw unexpected exception when manager status is "" + allStates[i]);
+}
+ finally {
+}
+",0,0,0,,
+8,} finally {,"try {
+  computeService=getComputeService(config().getBag());
+  Set<? extends NodeMetadata> destroyed=computeService.destroyNodesMatching(withIds(instanceId));
+  LOG.debug(""Destroyed nodes %s%n"",destroyed);
+}
+  finally {
+}
+",0,0,0,,
+9,} finally {,"try {
+  base.evaluate();
+  verify();
+}
+  finally {
+}
+",0,0,0,,
+10,} finally {,"try {
+  int statusCode=client.executeMethod(method);
+  if (statusCode != HttpStatus.SC_OK) {
+    System.out.println(""Http Error: "" + method.getStatusLine());
+  }
+  BufferedReader reader=new BufferedReader(new InputStreamReader(method.getResponseBodyAsStream(),method.getResponseCharSet()));
+  String json_str="""";
+  String str;
+  while ((str=reader.readLine()) != null) {
+    json_str+=str;
+  }
+  String cluster=""demo"";
+  DatabaseWriter db=new DatabaseWriter(cluster);
+  JSONArray json_array=(JSONArray)JSONValue.parse(json_str);
+  for (int i=0; i < json_array.size(); i++) {
+    JSONObject row_obj=(JSONObject)json_array.get(i);
+    String queryString=getDatabaseQuery(table,row_obj);
+    Macro m=new Macro(startTime,endTime,queryString);
+    ResultSet rs=db.query(m.toString());
+    rs.next();
+    ResultSetMetaData md=rs.getMetaData();
+    Iterator names=row_obj.keySet().iterator();
+    while (names.hasNext()) {
+      String name=(String)names.next();
+      String jsonValue=(String)row_obj.get(name);
+      String dbValue=rs.getString(name);
+      int dbCol=rs.findColumn(name);
+      int dbType=md.getColumnType(dbCol);
+      if (dbType == 93) {
+        dbValue=Long.toString(rs.getTimestamp(name).getTime());
+      }
+      assertEquals(dbValue,jsonValue);
+    }
+  }
+  db.close();
+}
+ catch (SQLException e) {
+  System.out.println(""Exception: "" + e.toString() + "":""+ e.getMessage());
+  System.out.println(""Exception: "" + e.toString() + "":""+ e.getSQLState());
+  System.out.println(""Exception: "" + e.toString() + "":""+ e.getErrorCode());
+  fail(""SQL Error:"" + ExceptionUtil.getStackTrace(e));
+}
+catch (Exception eOther) {
+  System.out.println(""Other Exception: "" + eOther.toString());
+  eOther.printStackTrace();
+  fail(""Error:"" + ExceptionUtil.getStackTrace(eOther));
+}
+ finally {
+}
+",0,0,0,,
+11,} finally {,"try {
+  GlobalLoadBalancerRule gslbRule=_gslbService.createGlobalLoadBalancerRule(this);
+  this.setEntityId(gslbRule.getId());
+  this.setEntityUuid(gslbRule.getUuid());
+  CallContext.current().setEventDetails(""Rule Id: "" + getEntityId());
+}
+ catch (Exception ex) {
+  s_logger.warn(""Exception: "",ex);
+  throw new ServerApiException(ApiErrorCode.PARAM_ERROR,ex.getMessage());
+}
+ finally {
+}
+",0,0,0,,
+12,} finally {  },"try (InputStream in=request.getResponseBodyAsStream();RandomAccessFile out=new RandomAccessFile(file,""rw"")){
+  out.seek(localFileSize);
+  s_logger.info(""Starting download from "" + downloadUrl + "" to ""+ toFile+ "" remoteSize=""+ toHumanReadableSize(remoteSize)+ "" , max size=""+ toHumanReadableSize(maxTemplateSizeInBytes));
+  if (copyBytes(file,in,out))   return 0;
+  Date finish=new Date();
+  checkDowloadCompletion();
+  downloadTime+=finish.getTime() - start.getTime();
+}
+  finally {
+}
+",0,0,1,,"Block(),
+"
+13,} finally {,"try {
+  VirtualMachineMO vmMo=null;
+  if (cleanupMaid.getDatacenterMorValue() != null) {
+    DatacenterMO dcMo=new DatacenterMO(context,""Datacenter"",cleanupMaid.getDatacenterMorValue());
+    vmMo=dcMo.findVm(cleanupMaid.getVmName());
+  }
+ else {
+    assert (cleanupMaid.getHostMorValue() != null);
+    HostMO hostMo=new HostMO(context,""HostSystem"",cleanupMaid.getHostMorValue());
+    ClusterMO clusterMo=new ClusterMO(context,hostMo.getHyperHostCluster());
+    vmMo=clusterMo.findVmOnHyperHost(cleanupMaid.getVmName());
+  }
+  if (vmMo != null) {
+    s_logger.info(""Found left over dummy VM "" + cleanupMaid.getVmName() + "", destroy it"");
+    vmMo.destroy();
+  }
+}
+ catch (Throwable e) {
+  s_logger.warn(""Unable to destroy left over dummy VM "" + cleanupMaid.getVmName());
+}
+ finally {
+}
+",0,0,0,,
+14,} finally {,"try {
+  VmwareManager mgr=context.getStockObject(VmwareManager.CONTEXT_STOCK_NAME);
+  VmwareHypervisorHost hyperHost=getHyperHost(context);
+  dcMo=new DatacenterMO(hyperHost.getContext(),hyperHost.getHyperHostDatacenter());
+  VirtualMachineMO vmInVcenter=dcMo.checkIfVmAlreadyExistsInVcenter(vmNameOnVcenter,vmInternalCSName);
+  if (vmInVcenter != null) {
+    vmAlreadyExistsInVcenter=true;
+    String msg=""VM with name: "" + vmNameOnVcenter + "" already exists in vCenter."";
+    s_logger.error(msg);
+    throw new Exception(msg);
+  }
+  DiskTO[] specDisks=vmSpec.getDisks();
+  String guestOsId=getGuestOsIdFromVmSpec(vmSpec,deployAsIs);
+  DiskTO[] disks=validateDisks(vmSpec.getDisks());
+  assert (disks.length > 0);
+  NicTO[] nics=vmSpec.getNics();
+  HashMap<String,Pair<ManagedObjectReference,DatastoreMO>> dataStoresDetails=inferDatastoreDetailsFromDiskInfo(hyperHost,context,disks,cmd);
+  if ((dataStoresDetails == null) || (dataStoresDetails.isEmpty())) {
+    String msg=""Unable to locate datastore details of the volumes to be attached"";
+    s_logger.error(msg);
+    throw new Exception(msg);
+  }
+  VirtualMachineDiskInfoBuilder diskInfoBuilder=null;
+  VirtualDevice[] nicDevices=null;
+  VirtualMachineMO vmMo=hyperHost.findVmOnHyperHost(vmInternalCSName);
+  DiskControllerType systemVmScsiControllerType=DiskControllerType.lsilogic;
+  int firstScsiControllerBusNum=0;
+  int numScsiControllerForSystemVm=1;
+  boolean hasSnapshot=false;
+  List<Pair<Integer,ManagedObjectReference>> diskDatastores=null;
+  if (vmMo != null) {
+    s_logger.info(""VM "" + vmInternalCSName + "" already exists, tear down devices for reconfiguration"");
+    if (getVmPowerState(vmMo) != PowerState.PowerOff)     vmMo.safePowerOff(_shutdownWaitMs);
+    diskDatastores=vmMo.getAllDiskDatastores();
+    diskInfoBuilder=vmMo.getDiskInfoBuilder();
+    hasSnapshot=vmMo.hasSnapshot();
+    nicDevices=vmMo.getNicDevices();
+    tearDownVmDevices(vmMo,hasSnapshot,deployAsIs);
+    ensureDiskControllersInternal(vmMo,systemVm,controllerInfo,systemVmScsiControllerType,numScsiControllerForSystemVm,firstScsiControllerBusNum,deployAsIs);
+  }
+ else {
+    ManagedObjectReference morDc=hyperHost.getHyperHostDatacenter();
+    assert (morDc != null);
+    vmMo=hyperHost.findVmOnPeerHyperHost(vmInternalCSName);
+    if (vmMo != null) {
+      if (s_logger.isInfoEnabled()) {
+        s_logger.info(""Found vm "" + vmInternalCSName + "" at other host, relocate to ""+ hyperHost.getHyperHostName());
+      }
+      takeVmFromOtherHyperHost(hyperHost,vmInternalCSName);
+      if (getVmPowerState(vmMo) != PowerState.PowerOff)       vmMo.safePowerOff(_shutdownWaitMs);
+      diskInfoBuilder=vmMo.getDiskInfoBuilder();
+      hasSnapshot=vmMo.hasSnapshot();
+      diskDatastores=vmMo.getAllDiskDatastores();
+      tearDownVmDevices(vmMo,hasSnapshot,deployAsIs);
+      ensureDiskControllersInternal(vmMo,systemVm,controllerInfo,systemVmScsiControllerType,numScsiControllerForSystemVm,firstScsiControllerBusNum,deployAsIs);
+    }
+ else {
+      VirtualMachineMO existingVmInDc=dcMo.findVm(vmInternalCSName);
+      if (existingVmInDc != null) {
+        s_logger.debug(""Found VM: "" + vmInternalCSName + "" on a host in a different cluster. Unregistering the exisitng VM."");
+        existingVmName=existingVmInDc.getName();
+        existingVmFileInfo=existingVmInDc.getFileInfo();
+        existingVmFileLayout=existingVmInDc.getFileLayout();
+        existingDatastores=existingVmInDc.getAllDatastores();
+        existingVmInDc.unregisterVm();
+      }
+      if (deployAsIs) {
+        vmMo=hyperHost.findVmOnHyperHost(vmInternalCSName);
+        if (vmMo == null) {
+          s_logger.info(""Cloned deploy-as-is VM "" + vmInternalCSName + "" is not in this host, relocating it"");
+          vmMo=takeVmFromOtherHyperHost(hyperHost,vmInternalCSName);
+        }
+      }
+ else {
+        DiskTO rootDisk=null;
+        for (        DiskTO vol : disks) {
+          if (vol.getType() == Volume.Type.ROOT) {
+            rootDisk=vol;
+          }
+        }
+        Pair<ManagedObjectReference,DatastoreMO> rootDiskDataStoreDetails=getDatastoreThatDiskIsOn(dataStoresDetails,rootDisk);
+        assert (vmSpec.getMinSpeed() != null) && (rootDiskDataStoreDetails != null);
+        DatastoreMO dsRootVolumeIsOn=rootDiskDataStoreDetails.second();
+        if (dsRootVolumeIsOn == null) {
+          String msg=""Unable to locate datastore details of root volume"";
+          s_logger.error(msg);
+          throw new Exception(msg);
+        }
+        if (rootDisk.getDetails().get(DiskTO.PROTOCOL_TYPE) != null && rootDisk.getDetails().get(DiskTO.PROTOCOL_TYPE).equalsIgnoreCase(""DatastoreCluster"")) {
+          if (diskInfoBuilder != null) {
+            DatastoreMO diskDatastoreMofromVM=getDataStoreWhereDiskExists(hyperHost,context,diskInfoBuilder,rootDisk,diskDatastores);
+            if (diskDatastoreMofromVM != null) {
+              String actualPoolUuid=diskDatastoreMofromVM.getCustomFieldValue(CustomFieldConstants.CLOUD_UUID);
+              if (!actualPoolUuid.equalsIgnoreCase(rootDisk.getData().getDataStore().getUuid())) {
+                dsRootVolumeIsOn=diskDatastoreMofromVM;
+              }
+            }
+          }
+        }
+        boolean vmFolderExists=dsRootVolumeIsOn.folderExists(String.format(""[%s]"",dsRootVolumeIsOn.getName()),vmNameOnVcenter);
+        String vmxFileFullPath=dsRootVolumeIsOn.searchFileInSubFolders(vmNameOnVcenter + "".vmx"",false,VmwareManager.s_vmwareSearchExcludeFolder.value());
+        if (vmFolderExists && vmxFileFullPath != null) {
+          registerVm(vmNameOnVcenter,dsRootVolumeIsOn);
+          vmMo=hyperHost.findVmOnHyperHost(vmInternalCSName);
+          if (vmMo != null) {
+            if (s_logger.isDebugEnabled()) {
+              s_logger.debug(""Found registered vm "" + vmInternalCSName + "" at host ""+ hyperHost.getHyperHostName());
+            }
+          }
+          tearDownVm(vmMo);
+        }
+ else         if (!hyperHost.createBlankVm(vmNameOnVcenter,vmInternalCSName,vmSpec.getCpus(),vmSpec.getMaxSpeed().intValue(),getReservedCpuMHZ(vmSpec),vmSpec.getLimitCpuUse(),(int)(vmSpec.getMaxRam() / ResourceType.bytesToMiB),getReservedMemoryMb(vmSpec),guestOsId,rootDiskDataStoreDetails.first(),false,controllerInfo,systemVm)) {
+          throw new Exception(""Failed to create VM. vmName: "" + vmInternalCSName);
+        }
+      }
+    }
+    vmMo=hyperHost.findVmOnHyperHost(vmInternalCSName);
+    if (vmMo == null) {
+      throw new Exception(""Failed to find the newly create or relocated VM. vmName: "" + vmInternalCSName);
+    }
+  }
+  if (deployAsIs) {
+    s_logger.info(""Mapping VM disks to spec disks and tearing down datadisks (if any)"");
+    mapSpecDisksToClonedDisksAndTearDownDatadisks(vmMo,vmInternalCSName,specDisks);
+  }
+  int disksChanges=getDisksChangesNumberFromDisksSpec(disks,deployAsIs);
+  int totalChangeDevices=disksChanges + nics.length;
+  if (deployAsIsInfo != null && deployAsIsInfo.getProperties() != null) {
+    totalChangeDevices++;
+  }
+  DiskTO volIso=null;
+  if (vmSpec.getType() != VirtualMachine.Type.User) {
+    totalChangeDevices++;
+  }
+ else {
+    volIso=getIsoDiskTO(disks);
+    if (volIso == null && !deployAsIs) {
+      totalChangeDevices++;
+    }
+  }
+  VirtualMachineConfigSpec vmConfigSpec=new VirtualMachineConfigSpec();
+  int i=0;
+  int ideUnitNumber=!deployAsIs ? 0 : vmMo.getNextIDEDeviceNumber();
+  int scsiUnitNumber=!deployAsIs ? 0 : vmMo.getNextScsiDiskDeviceNumber();
+  int ideControllerKey=vmMo.getIDEDeviceControllerKey();
+  int scsiControllerKey=vmMo.getScsiDeviceControllerKeyNoException();
+  VirtualDeviceConfigSpec[] deviceConfigSpecArray=new VirtualDeviceConfigSpec[totalChangeDevices];
+  DiskTO[] sortedDisks=sortVolumesByDeviceId(disks);
+  VmwareHelper.setBasicVmConfig(vmConfigSpec,vmSpec.getCpus(),vmSpec.getMaxSpeed(),getReservedCpuMHZ(vmSpec),(int)(vmSpec.getMaxRam() / (1024 * 1024)),getReservedMemoryMb(vmSpec),guestOsId,vmSpec.getLimitCpuUse(),deployAsIs);
+  int numCoresPerSocket=1;
+  String coresPerSocket=vmSpec.getDetails().get(VmDetailConstants.CPU_CORE_PER_SOCKET);
+  if (coresPerSocket != null) {
+    String apiVersion=HypervisorHostHelper.getVcenterApiVersion(vmMo.getContext());
+    if (apiVersion.compareTo(""5.0"") >= 0) {
+      numCoresPerSocket=NumbersUtil.parseInt(coresPerSocket,1);
+      vmConfigSpec.setNumCoresPerSocket(numCoresPerSocket);
+    }
+  }
+  vmConfigSpec.setMemoryHotAddEnabled(vmMo.isMemoryHotAddSupported(guestOsId));
+  String hostApiVersion=((HostMO)hyperHost).getHostAboutInfo().getApiVersion();
+  if (numCoresPerSocket > 1 && hostApiVersion.compareTo(""5.0"") < 0) {
+    s_logger.warn(""Dynamic scaling of CPU is not supported for Virtual Machines with multi-core vCPUs in case of ESXi hosts 4.1 and prior. Hence CpuHotAdd will not be"" + "" enabled for Virtual Machine: "" + vmInternalCSName);
+    vmConfigSpec.setCpuHotAddEnabled(false);
+  }
+ else {
+    vmConfigSpec.setCpuHotAddEnabled(vmMo.isCpuHotAddSupported(guestOsId));
+  }
+  configNestedHVSupport(vmMo,vmSpec,vmConfigSpec);
+  if (vmSpec.getType() != VirtualMachine.Type.User) {
+    Pair<String,Long> secStoreUrlAndId=mgr.getSecondaryStorageStoreUrlAndId(Long.parseLong(_dcId));
+    String secStoreUrl=secStoreUrlAndId.first();
+    Long secStoreId=secStoreUrlAndId.second();
+    if (secStoreUrl == null) {
+      String msg=""secondary storage for dc "" + _dcId + "" is not ready yet?"";
+      throw new Exception(msg);
+    }
+    mgr.prepareSecondaryStorageStore(secStoreUrl,secStoreId);
+    ManagedObjectReference morSecDs=prepareSecondaryDatastoreOnHost(secStoreUrl);
+    if (morSecDs == null) {
+      String msg=""Failed to prepare secondary storage on host, secondary store url: "" + secStoreUrl;
+      throw new Exception(msg);
+    }
+    DatastoreMO secDsMo=new DatastoreMO(hyperHost.getContext(),morSecDs);
+    deviceConfigSpecArray[i]=new VirtualDeviceConfigSpec();
+    Pair<VirtualDevice,Boolean> isoInfo=VmwareHelper.prepareIsoDevice(vmMo,String.format(""[%s] systemvm/%s"",secDsMo.getName(),mgr.getSystemVMIsoFileNameOnDatastore()),secDsMo.getMor(),true,true,ideUnitNumber++,i + 1);
+    deviceConfigSpecArray[i].setDevice(isoInfo.first());
+    if (isoInfo.second()) {
+      if (s_logger.isDebugEnabled())       s_logger.debug(""Prepare ISO volume at new device "" + _gson.toJson(isoInfo.first()));
+      deviceConfigSpecArray[i].setOperation(VirtualDeviceConfigSpecOperation.ADD);
+    }
+ else {
+      if (s_logger.isDebugEnabled())       s_logger.debug(""Prepare ISO volume at existing device "" + _gson.toJson(isoInfo.first()));
+      deviceConfigSpecArray[i].setOperation(VirtualDeviceConfigSpecOperation.EDIT);
+    }
+    i++;
+  }
+ else   if (!deployAsIs) {
+    if (volIso != null) {
+      for (      DiskTO vol : disks) {
+        if (vol.getType() == Volume.Type.ISO) {
+          configureIso(hyperHost,vmMo,vol,deviceConfigSpecArray,ideUnitNumber++,i);
+          i++;
+        }
+      }
+    }
+ else {
+      deviceConfigSpecArray[i]=new VirtualDeviceConfigSpec();
+      Pair<VirtualDevice,Boolean> isoInfo=VmwareHelper.prepareIsoDevice(vmMo,null,null,true,true,ideUnitNumber++,i + 1);
+      deviceConfigSpecArray[i].setDevice(isoInfo.first());
+      if (isoInfo.second()) {
+        if (s_logger.isDebugEnabled())         s_logger.debug(""Prepare ISO volume at existing device "" + _gson.toJson(isoInfo.first()));
+        deviceConfigSpecArray[i].setOperation(VirtualDeviceConfigSpecOperation.ADD);
+      }
+ else {
+        if (s_logger.isDebugEnabled())         s_logger.debug(""Prepare ISO volume at existing device "" + _gson.toJson(isoInfo.first()));
+        deviceConfigSpecArray[i].setOperation(VirtualDeviceConfigSpecOperation.EDIT);
+      }
+      i++;
+    }
+  }
+  int controllerKey;
+  if (multipleIsosAtached(sortedDisks) && deployAsIs) {
+    sortedDisks=getDisks(sortedDisks);
+  }
+  for (  DiskTO vol : sortedDisks) {
+    if (vol.getType() == Volume.Type.ISO) {
+      if (deployAsIs) {
+        configureIso(hyperHost,vmMo,vol,deviceConfigSpecArray,ideUnitNumber++,i);
+        i++;
+      }
+      continue;
+    }
+    if (deployAsIs && vol.getType() == Volume.Type.ROOT) {
+      rootDiskTO=vol;
+      resizeRootDiskOnVMStart(vmMo,rootDiskTO,hyperHost,context);
+      continue;
+    }
+    VirtualMachineDiskInfo matchingExistingDisk=getMatchingExistingDisk(diskInfoBuilder,vol,hyperHost,context);
+    String diskController=getDiskController(vmMo,matchingExistingDisk,vol,controllerInfo,deployAsIs);
+    if (DiskControllerType.getType(diskController) == DiskControllerType.osdefault) {
+      diskController=vmMo.getRecommendedDiskController(null);
+    }
+    if (DiskControllerType.getType(diskController) == DiskControllerType.ide) {
+      controllerKey=vmMo.getIDEControllerKey(ideUnitNumber);
+      if (vol.getType() == Volume.Type.DATADISK) {
+        if (vmMo.getNumberOfVirtualDisks() > 3) {
+          throw new CloudRuntimeException(""Found more than 3 virtual disks attached to this VM ["" + vmMo.getVmName() + ""]. Unable to implement the disks over ""+ diskController+ "" controller, as maximum number of devices supported over IDE controller is 4 includeing CDROM device."");
+        }
+      }
+    }
+ else {
+      if (VmwareHelper.isReservedScsiDeviceNumber(scsiUnitNumber)) {
+        scsiUnitNumber++;
+      }
+      controllerKey=vmMo.getScsiDiskControllerKeyNoException(diskController,scsiUnitNumber);
+      if (controllerKey == -1) {
+        Ternary<Integer,Integer,DiskControllerType> vmScsiControllerInfo=vmMo.getScsiControllerInfo();
+        DiskControllerType existingControllerType=vmScsiControllerInfo.third();
+        controllerKey=vmMo.getScsiDiskControllerKeyNoException(existingControllerType.toString(),scsiUnitNumber);
+      }
+    }
+    if (!hasSnapshot) {
+      deviceConfigSpecArray[i]=new VirtualDeviceConfigSpec();
+      VolumeObjectTO volumeTO=(VolumeObjectTO)vol.getData();
+      DataStoreTO primaryStore=volumeTO.getDataStore();
+      Map<String,String> details=vol.getDetails();
+      boolean managed=false;
+      String iScsiName=null;
+      if (details != null) {
+        managed=Boolean.parseBoolean(details.get(DiskTO.MANAGED));
+        iScsiName=details.get(DiskTO.IQN);
+      }
+      String primaryStoreUuid=primaryStore.getUuid();
+      String datastoreName=managed ? VmwareResource.getDatastoreName(iScsiName) : primaryStoreUuid;
+      Pair<ManagedObjectReference,DatastoreMO> volumeDsDetails=dataStoresDetails.get(datastoreName);
+      assert (volumeDsDetails != null);
+      if (volumeDsDetails == null) {
+        throw new Exception(""Primary datastore "" + primaryStore.getUuid() + "" is not mounted on host."");
+      }
+      if (vol.getDetails().get(DiskTO.PROTOCOL_TYPE) != null && vol.getDetails().get(DiskTO.PROTOCOL_TYPE).equalsIgnoreCase(""DatastoreCluster"")) {
+        if (diskInfoBuilder != null && matchingExistingDisk != null) {
+          String[] diskChain=matchingExistingDisk.getDiskChain();
+          if (diskChain != null && diskChain.length > 0) {
+            DatastoreFile file=new DatastoreFile(diskChain[0]);
+            if (!file.getFileBaseName().equalsIgnoreCase(volumeTO.getPath())) {
+              if (s_logger.isInfoEnabled())               s_logger.info(""Detected disk-chain top file change on volume: "" + volumeTO.getId() + "" ""+ volumeTO.getPath()+ "" -> ""+ file.getFileBaseName());
+              volumeTO.setPath(file.getFileBaseName());
+            }
+          }
+          DatastoreMO diskDatastoreMofromVM=getDataStoreWhereDiskExists(hyperHost,context,diskInfoBuilder,vol,diskDatastores);
+          if (diskDatastoreMofromVM != null) {
+            String actualPoolUuid=diskDatastoreMofromVM.getCustomFieldValue(CustomFieldConstants.CLOUD_UUID);
+            if (actualPoolUuid != null && !actualPoolUuid.equalsIgnoreCase(primaryStore.getUuid())) {
+              volumeDsDetails=new Pair<>(diskDatastoreMofromVM.getMor(),diskDatastoreMofromVM);
+              if (s_logger.isInfoEnabled())               s_logger.info(""Detected datastore uuid change on volume: "" + volumeTO.getId() + "" ""+ primaryStore.getUuid()+ "" -> ""+ actualPoolUuid);
+              ((PrimaryDataStoreTO)primaryStore).setUuid(actualPoolUuid);
+            }
+          }
+        }
+      }
+      String[] diskChain=syncDiskChain(dcMo,vmMo,vol,matchingExistingDisk,volumeDsDetails.second());
+      int deviceNumber=-1;
+      if (controllerKey == vmMo.getIDEControllerKey(ideUnitNumber)) {
+        deviceNumber=ideUnitNumber % VmwareHelper.MAX_ALLOWED_DEVICES_IDE_CONTROLLER;
+        ideUnitNumber++;
+      }
+ else {
+        deviceNumber=scsiUnitNumber % VmwareHelper.MAX_ALLOWED_DEVICES_SCSI_CONTROLLER;
+        scsiUnitNumber++;
+      }
+      VirtualDevice device=VmwareHelper.prepareDiskDevice(vmMo,null,controllerKey,diskChain,volumeDsDetails.first(),deviceNumber,i + 1);
+      diskStoragePolicyId=volumeTO.getvSphereStoragePolicyId();
+      if (!StringUtils.isEmpty(diskStoragePolicyId)) {
+        PbmProfileManagerMO profMgrMo=new PbmProfileManagerMO(context);
+        diskProfileSpec=profMgrMo.getProfileSpec(diskStoragePolicyId);
+        deviceConfigSpecArray[i].getProfile().add(diskProfileSpec);
+        if (s_logger.isDebugEnabled()) {
+          s_logger.debug(String.format(""Adding vSphere storage profile: %s to virtual disk [%s]"",diskStoragePolicyId,_gson.toJson(device)));
+        }
+      }
+      if (vol.getType() == Volume.Type.ROOT) {
+        rootDiskTO=vol;
+        vmStoragePolicyId=diskStoragePolicyId;
+        vmProfileSpec=diskProfileSpec;
+      }
+      deviceConfigSpecArray[i].setDevice(device);
+      deviceConfigSpecArray[i].setOperation(VirtualDeviceConfigSpecOperation.ADD);
+      if (s_logger.isDebugEnabled())       s_logger.debug(""Prepare volume at new device "" + _gson.toJson(device));
+      i++;
+    }
+ else {
+      if (controllerKey == vmMo.getIDEControllerKey(ideUnitNumber))       ideUnitNumber++;
+ else       scsiUnitNumber++;
+    }
+  }
+  if (StringUtils.isNotBlank(guestOsId) && guestOsId.startsWith(""darwin"")) {
+    VirtualDevice[] devices=vmMo.getMatchedDevices(new Class<?>[]{VirtualUSBController.class});
+    if (devices.length == 0) {
+      s_logger.debug(""No USB Controller device on VM Start. Add USB Controller device for Mac OS VM "" + vmInternalCSName);
+      VirtualDevice usbControllerDevice=VmwareHelper.prepareUSBControllerDevice();
+      deviceConfigSpecArray[i]=new VirtualDeviceConfigSpec();
+      deviceConfigSpecArray[i].setDevice(usbControllerDevice);
+      deviceConfigSpecArray[i].setOperation(VirtualDeviceConfigSpecOperation.ADD);
+      if (s_logger.isDebugEnabled())       s_logger.debug(""Prepare USB controller at new device "" + _gson.toJson(deviceConfigSpecArray[i]));
+      i++;
+    }
+ else {
+      s_logger.debug(""USB Controller device exists on VM Start for Mac OS VM "" + vmInternalCSName);
+    }
+  }
+  VirtualDevice nic;
+  int nicMask=0;
+  int nicCount=0;
+  if (vmSpec.getType() == VirtualMachine.Type.DomainRouter) {
+    int extraPublicNics=mgr.getRouterExtraPublicNics();
+    if (extraPublicNics > 0 && vmSpec.getDetails().containsKey(""PeerRouterInstanceName"")) {
+      String peerRouterInstanceName=vmSpec.getDetails().get(""PeerRouterInstanceName"");
+      VirtualMachineMO peerVmMo=hyperHost.findVmOnHyperHost(peerRouterInstanceName);
+      if (peerVmMo == null) {
+        peerVmMo=hyperHost.findVmOnPeerHyperHost(peerRouterInstanceName);
+      }
+      if (peerVmMo != null) {
+        String oldMacSequence=generateMacSequence(nics);
+        for (int nicIndex=nics.length - extraPublicNics; nicIndex < nics.length; nicIndex++) {
+          VirtualDevice nicDevice=peerVmMo.getNicDeviceByIndex(nics[nicIndex].getDeviceId());
+          if (nicDevice != null) {
+            String mac=((VirtualEthernetCard)nicDevice).getMacAddress();
+            if (mac != null) {
+              s_logger.info(""Use same MAC as previous RvR, the MAC is "" + mac + "" for extra NIC with device id: ""+ nics[nicIndex].getDeviceId());
+              nics[nicIndex].setMac(mac);
+            }
+          }
+        }
+        if (!StringUtils.isBlank(vmSpec.getBootArgs())) {
+          String newMacSequence=generateMacSequence(nics);
+          vmSpec.setBootArgs(replaceNicsMacSequenceInBootArgs(oldMacSequence,newMacSequence,vmSpec));
+        }
+      }
+    }
+  }
+  VirtualEthernetCardType nicDeviceType;
+  NiciraNvpApiVersion.logNiciraApiVersion();
+  Map<String,String> nicUuidToDvSwitchUuid=new HashMap<String,String>();
+  for (  NicTO nicTo : sortNicsByDeviceId(nics)) {
+    s_logger.info(""Prepare NIC device based on NicTO: "" + _gson.toJson(nicTo));
+    String adapterTypeStr=deployAsIs ? mapAdapterType(deployAsIsInfo.getNicAdapterMap().get(nicTo.getDeviceId())) : vmSpec.getDetails().get(VmDetailConstants.NIC_ADAPTER);
+    nicDeviceType=VirtualEthernetCardType.valueOf(adapterTypeStr);
+    if (s_logger.isDebugEnabled()) {
+      s_logger.debug(""VM "" + vmInternalCSName + "" will be started with NIC device type: ""+ nicDeviceType+ "" on NIC device ""+ nicTo.getDeviceId());
+    }
+    boolean configureVServiceInNexus=(nicTo.getType() == TrafficType.Guest) && (vmSpec.getDetails().containsKey(""ConfigureVServiceInNexus""));
+    VirtualMachine.Type vmType=cmd.getVirtualMachine().getType();
+    Pair<ManagedObjectReference,String> networkInfo=prepareNetworkFromNicInfo(vmMo.getRunningHost(),nicTo,configureVServiceInNexus,vmType);
+    if ((nicTo.getBroadcastType() != BroadcastDomainType.Lswitch) || (nicTo.getBroadcastType() == BroadcastDomainType.Lswitch && NiciraNvpApiVersion.isApiVersionLowerThan(""4.2""))) {
+      if (VmwareHelper.isDvPortGroup(networkInfo.first())) {
+        String dvSwitchUuid;
+        ManagedObjectReference dcMor=hyperHost.getHyperHostDatacenter();
+        DatacenterMO dataCenterMo=new DatacenterMO(context,dcMor);
+        ManagedObjectReference dvsMor=dataCenterMo.getDvSwitchMor(networkInfo.first());
+        dvSwitchUuid=dataCenterMo.getDvSwitchUuid(dvsMor);
+        s_logger.info(""Preparing NIC device on dvSwitch : "" + dvSwitchUuid);
+        nic=VmwareHelper.prepareDvNicDevice(vmMo,networkInfo.first(),nicDeviceType,networkInfo.second(),dvSwitchUuid,nicTo.getMac(),i + 1,true,true);
+        if (nicTo.getUuid() != null) {
+          nicUuidToDvSwitchUuid.put(nicTo.getUuid(),dvSwitchUuid);
+        }
+      }
+ else {
+        s_logger.info(""Preparing NIC device on network "" + networkInfo.second());
+        nic=VmwareHelper.prepareNicDevice(vmMo,networkInfo.first(),nicDeviceType,networkInfo.second(),nicTo.getMac(),i + 1,true,true);
+      }
+    }
+ else {
+      nic=VmwareHelper.prepareNicOpaque(vmMo,nicDeviceType,networkInfo.second(),nicTo.getMac(),i + 1,true,true);
+    }
+    deviceConfigSpecArray[i]=new VirtualDeviceConfigSpec();
+    deviceConfigSpecArray[i].setDevice(nic);
+    deviceConfigSpecArray[i].setOperation(VirtualDeviceConfigSpecOperation.ADD);
+    if (s_logger.isDebugEnabled())     s_logger.debug(""Prepare NIC at new device "" + _gson.toJson(deviceConfigSpecArray[i]));
+    if (nicCount < 3)     nicMask|=(1 << nicCount);
+    i++;
+    nicCount++;
+  }
+  for (int j=0; j < i; j++)   vmConfigSpec.getDeviceChange().add(deviceConfigSpecArray[j]);
+  ArrayList<OptionValue> extraOptions=new ArrayList<OptionValue>();
+  configBasicExtraOption(extraOptions,vmSpec);
+  if (deployAsIs) {
+    setDeployAsIsProperties(vmMo,deployAsIsInfo,vmConfigSpec,hyperHost);
+  }
+  configNvpExtraOption(extraOptions,vmSpec,nicUuidToDvSwitchUuid);
+  configCustomExtraOption(extraOptions,vmSpec);
+  VirtualMachine.Type vmType=cmd.getVirtualMachine().getType();
+  if (vmType.equals(VirtualMachine.Type.NetScalerVm)) {
+    NicTO mgmtNic=vmSpec.getNics()[0];
+    OptionValue option=new OptionValue();
+    option.setKey(""machine.id"");
+    option.setValue(""ip="" + mgmtNic.getIp() + ""&netmask=""+ mgmtNic.getNetmask()+ ""&gateway=""+ mgmtNic.getGateway());
+    extraOptions.add(option);
+  }
+  configureVNC(vmSpec,extraOptions,vmConfigSpec,hyperHost,vmInternalCSName);
+  configureVideoCard(vmMo,vmSpec,vmConfigSpec);
+  setBootOptions(vmSpec,bootMode,vmConfigSpec);
+  if (!StringUtils.isEmpty(vmStoragePolicyId)) {
+    vmConfigSpec.getVmProfile().add(vmProfileSpec);
+    if (s_logger.isTraceEnabled()) {
+      s_logger.trace(String.format(""Configuring the VM %s with storage policy: %s"",vmInternalCSName,vmStoragePolicyId));
+    }
+  }
+  if (!vmMo.configureVm(vmConfigSpec)) {
+    throw new Exception(""Failed to configure VM before start. vmName: "" + vmInternalCSName);
+  }
+  if (vmSpec.getType() == VirtualMachine.Type.DomainRouter) {
+    hyperHost.setRestartPriorityForVM(vmMo,DasVmPriority.HIGH.value());
+  }
+  final Map<String,String> vmDetails=cmd.getVirtualMachine().getDetails();
+  if (!deployAsIs && rootDiskTO != null && !hasSnapshot && (vmDetails != null && vmDetails.containsKey(ApiConstants.ROOT_DISK_SIZE))) {
+    resizeRootDiskOnVMStart(vmMo,rootDiskTO,hyperHost,context);
+  }
+  vmMo.setCustomFieldValue(CustomFieldConstants.CLOUD_NIC_MASK,String.valueOf(nicMask));
+  postNvpConfigBeforeStart(vmMo,vmSpec);
+  Map<String,Map<String,String>> iqnToData=new HashMap<>();
+  postDiskConfigBeforeStart(vmMo,vmSpec,sortedDisks,ideControllerKey,scsiControllerKey,iqnToData,hyperHost,context);
+  if (!vmMo.powerOn()) {
+    throw new Exception(""Failed to start VM. vmName: "" + vmInternalCSName + "" with hostname ""+ vmNameOnVcenter);
+  }
+  StartAnswer startAnswer=new StartAnswer(cmd);
+  startAnswer.setIqnToData(iqnToData);
+  if (existingVmName != null && existingVmFileLayout != null) {
+    List<String> vmDatastoreNames=new ArrayList<String>();
+    for (    DatastoreMO vmDatastore : vmMo.getAllDatastores()) {
+      vmDatastoreNames.add(vmDatastore.getName());
+    }
+    List<String> skipDatastores=new ArrayList<String>();
+    for (    DatastoreMO existingDatastore : existingDatastores) {
+      if (vmDatastoreNames.contains(existingDatastore.getName())) {
+        skipDatastores.add(existingDatastore.getName());
+      }
+    }
+    deleteUnregisteredVmFiles(existingVmFileLayout,dcMo,true,skipDatastores);
+  }
+  return startAnswer;
+}
+ catch (Throwable e) {
+  if (e instanceof RemoteException) {
+    s_logger.warn(""Encounter remote exception to vCenter, invalidate VMware session context"");
+    invalidateServiceContext();
+  }
+  String msg=""StartCommand failed due to "" + VmwareHelper.getExceptionMessage(e);
+  s_logger.warn(msg,e);
+  StartAnswer startAnswer=new StartAnswer(cmd,msg);
+  if (vmAlreadyExistsInVcenter) {
+    startAnswer.setContextParam(""stopRetry"",""true"");
+  }
+  if (existingVmName != null && existingVmFileInfo != null) {
+    s_logger.debug(""Since VM start failed, registering back an existing VM: "" + existingVmName + "" that was unregistered"");
+    try {
+      DatastoreFile fileInDatastore=new DatastoreFile(existingVmFileInfo.getVmPathName());
+      DatastoreMO existingVmDsMo=new DatastoreMO(dcMo.getContext(),dcMo.findDatastore(fileInDatastore.getDatastoreName()));
+      registerVm(existingVmName,existingVmDsMo);
+    }
+ catch (    Exception ex) {
+      String message=""Failed to register an existing VM: "" + existingVmName + "" due to ""+ VmwareHelper.getExceptionMessage(ex);
+      s_logger.warn(message,ex);
+    }
+  }
+  return startAnswer;
+}
+ finally {
+}
+",0,0,0,,
+15,} finally {,"try {
+  vmMo.setCustomFieldValue(CustomFieldConstants.CLOUD_NIC_MASK,""0"");
+  vmMo.setCustomFieldValue(CustomFieldConstants.CLOUD_VM_INTERNAL_NAME,cmd.getVmName());
+  if (getVmPowerState(vmMo) != PowerState.PowerOff) {
+    String msg=""Stop VM "" + cmd.getVmName() + "" Succeed"";
+    boolean success=false;
+    if (cmd.isForceStop()) {
+      success=vmMo.powerOff();
+    }
+ else {
+      success=vmMo.safePowerOff(_shutdownWaitMs);
+    }
+    if (!success) {
+      msg=""Have problem in powering off VM "" + cmd.getVmName() + "", let the process continue"";
+      s_logger.warn(msg);
+    }
+    return new StopAnswer(cmd,msg,true);
+  }
+  String msg=""VM "" + cmd.getVmName() + "" is already in stopped state"";
+  s_logger.info(msg);
+  return new StopAnswer(cmd,msg,true);
+}
+  finally {
+}
+",0,0,0,,
+16,} finally {,"try {
+  if (new File(snapshotFullOVAName).exists()) {
+    command=new Script(false,""cp"",wait,s_logger);
+    command.add(snapshotFullOVAName);
+    command.add(installFullOVAName);
+    result=command.execute();
+    if (result != null) {
+      String msg=""unable to copy snapshot "" + snapshotFullOVAName + "" to ""+ installFullPath;
+      s_logger.error(msg);
+      throw new Exception(msg);
+    }
+    command=new Script(""tar"",wait,s_logger);
+    command.add(""--no-same-owner"");
+    command.add(""-xf"",installFullOVAName);
+    command.setWorkDir(installFullPath);
+    s_logger.info(""Executing command: "" + command.toString());
+    result=command.execute();
+    if (result != null) {
+      String msg=""unable to untar snapshot "" + snapshotFullOVAName + "" to ""+ installFullPath;
+      s_logger.error(msg);
+      throw new Exception(msg);
+    }
+  }
+ else {
+    if (new File(snapshotFullOvfName).exists()) {
+      command=new Script(false,""cp"",wait,s_logger);
+      command.add(snapshotFullOvfName);
+      command.add(installFullPath);
+      result=command.execute();
+      if (result != null) {
+        String msg=""unable to copy snapshot "" + snapshotFullOvfName + "" to ""+ installFullPath;
+        s_logger.error(msg);
+        throw new Exception(msg);
+      }
+      s_logger.info(""vmdkfile parent dir: "" + snapshotRoot);
+      File snapshotdir=new File(snapshotRoot);
+      File[] ssfiles=snapshotdir.listFiles();
+      if (ssfiles == null) {
+        String msg=""unable to find snapshot vmdk files in "" + snapshotRoot;
+        s_logger.error(msg);
+        throw new Exception(msg);
+      }
+      for (int i=0; i < ssfiles.length; i++) {
+        String vmdkfile=ssfiles[i].getName();
+        s_logger.info(""vmdk file name: "" + vmdkfile);
+        if (vmdkfile.toLowerCase().startsWith(backupSSUuid) && vmdkfile.toLowerCase().endsWith("".vmdk"")) {
+          snapshotFullVMDKName=snapshotRoot + File.separator + vmdkfile;
+          templateVMDKName+=vmdkfile;
+          break;
+        }
+      }
+      if (snapshotFullVMDKName != null) {
+        command=new Script(false,""cp"",wait,s_logger);
+        command.add(snapshotFullVMDKName);
+        command.add(installFullPath);
+        result=command.execute();
+        s_logger.info(""Copy VMDK file: "" + snapshotFullVMDKName);
+        if (result != null) {
+          String msg=""unable to copy snapshot vmdk file "" + snapshotFullVMDKName + "" to ""+ installFullPath;
+          s_logger.error(msg);
+          throw new Exception(msg);
+        }
+      }
+    }
+ else {
+      String msg=""unable to find any snapshot ova/ovf files"" + snapshotFullOVAName + "" to ""+ installFullPath;
+      s_logger.error(msg);
+      throw new Exception(msg);
+    }
+  }
+  Size size=handleMetadataCreateTemplateFromSnapshot(installFullPath,templateVMDKName,templateId,templateUniqueName,backupSSUuid);
+  return new Ternary<>(installPath + ""/"" + templateUniqueName+ "".ova"",size.getPhysicalSize(),size.getVirtualSize());
+}
+  finally {
+}
+",0,0,0,,
+17,} finally {,"try (Formatter formatter=new Formatter(conditionExpression,Locale.US)){
+  if (counterTO.getSource().equals(""snmp"")) {
+    counterName=generateSnmpMetricName(counterName);
+    if (snmpMetrics.size() == 0) {
+      final lbmetrictable metricTable=new lbmetrictable();
+      try {
+        metricTable.set_metrictable(mtName);
+        lbmetrictable.add(_netscalerService,metricTable);
+      }
+ catch (      final Exception e) {
+        if (!isCleanUp) {
+          throw e;
+        }
+      }
+      final lbmonitor monitor=new lbmonitor();
+      try {
+        monitor.set_monitorname(monitorName);
+        monitor.set_type(""LOAD"");
+        monitor.set_destport(snmpPort);
+        monitor.set_snmpcommunity(snmpCommunity);
+        monitor.set_metrictable(mtName);
+        monitor.set_interval((int)(interval * 0.8));
+        lbmonitor.add(_netscalerService,monitor);
+      }
+ catch (      final Exception e) {
+        if (!isCleanUp) {
+          throw e;
+        }
+      }
+      final servicegroup_lbmonitor_binding servicegroup_monitor_binding=new servicegroup_lbmonitor_binding();
+      try {
+        servicegroup_monitor_binding.set_servicegroupname(serviceGroupName);
+        servicegroup_monitor_binding.set_monitor_name(monitorName);
+        servicegroup_monitor_binding.set_passive(true);
+        servicegroup_lbmonitor_binding.add(_netscalerService,servicegroup_monitor_binding);
+      }
+ catch (      final Exception e) {
+        if (!isCleanUp) {
+          throw e;
+        }
+      }
+    }
+    final boolean newMetric=!snmpMetrics.containsKey(counterName);
+    if (newMetric) {
+      snmpMetrics.put(counterName,snmpCounterNumber++);
+    }
+    if (newMetric) {
+      final String counterOid=counterTO.getValue();
+      final lbmetrictable_metric_binding metrictable_metric_binding=new lbmetrictable_metric_binding();
+      try {
+        metrictable_metric_binding.set_metrictable(mtName);
+        metrictable_metric_binding.set_metric(counterName);
+        metrictable_metric_binding.set_Snmpoid(counterOid);
+        lbmetrictable_metric_binding.add(_netscalerService,metrictable_metric_binding);
+      }
+ catch (      final Exception e) {
+        if (!isCleanUp) {
+          throw e;
+        }
+      }
+      final lbmonitor_metric_binding monitor_metric_binding=new lbmonitor_metric_binding();
+      try {
+        monitor_metric_binding.set_monitorname(monitorName);
+        monitor_metric_binding.set_metric(counterName);
+        monitor_metric_binding.set_metricthreshold(Integer.MAX_VALUE);
+        lbmonitor_metric_binding.add(_netscalerService,monitor_metric_binding);
+      }
+ catch (      final Exception e) {
+        if (!isCleanUp) {
+          throw e;
+        }
+      }
+    }
+    final int counterIndex=snmpMetrics.get(counterName);
+    formatter.format(""SYS.VSERVER(\""%s\"").SNMP_TABLE(%d).AVERAGE_VALUE.%s(%d)"",nsVirtualServerName,counterIndex,operator,threshold);
+  }
+ else   if (counterTO.getSource().equals(""netscaler"")) {
+    formatter.format(""SYS.VSERVER(\""%s\"").%s.%s(%d)"",nsVirtualServerName,counterTO.getValue(),operator,threshold);
+  }
+}
+  finally {
+}
+",0,0,0,,
+18,} finally {,"try {
+  return Transaction.execute(new TransactionCallback<Long>(){
+    @Override public Long doInTransaction(    TransactionStatus status){
+      VpcDistributedRouterSeqNoVO seqVo=_vpcDrSeqNoDao.findByVpcId(vpcId);
+      if (seqVo == null) {
+        seqVo=new VpcDistributedRouterSeqNoVO(vpcId);
+        _vpcDrSeqNoDao.persist(seqVo);
+      }
+      seqVo=_vpcDrSeqNoDao.lockRow(seqVo.getId(),true);
+      seqVo.incrTopologyUpdateSequenceNo();
+      _vpcDrSeqNoDao.update(seqVo.getId(),seqVo);
+      return seqVo.getTopologyUpdateSequenceNo();
+    }
+  }
+);
+}
+  finally {
+}
+",0,0,0,,
+19,} finally {,"try {
+  return Transaction.execute(new TransactionCallback<Long>(){
+    @Override public Long doInTransaction(    TransactionStatus status){
+      VpcDistributedRouterSeqNoVO seqVo=_vpcDrSeqNoDao.findByVpcId(vpcId);
+      if (seqVo == null) {
+        seqVo=new VpcDistributedRouterSeqNoVO(vpcId);
+        _vpcDrSeqNoDao.persist(seqVo);
+      }
+      seqVo=_vpcDrSeqNoDao.lockRow(seqVo.getId(),true);
+      seqVo.incrPolicyUpdateSequenceNo();
+      _vpcDrSeqNoDao.update(seqVo.getId(),seqVo);
+      return seqVo.getPolicyUpdateSequenceNo();
+    }
+  }
+);
+}
+  finally {
+}
+",0,0,0,,
+20,} finally {,"try {
+  boolean success=applyIpAssociations(network,false);
+  if (success) {
+    s_logger.debug(""Successfully associated ip address "" + ip.getAddress().addr() + "" to network ""+ network);
+  }
+ else {
+    s_logger.warn(""Failed to associate ip address "" + ip.getAddress().addr() + "" to network ""+ network);
+  }
+  return ip;
+}
+  finally {
+}
+",0,0,0,,
+21,} finally {,"try {
+  final Node file=getOrAddNode(parent,name,NodeType_NT_FILE);
+  final Node content=getOrAddNode(file,Node_JCR_CONTENT,NodeType_NT_RESOURCE);
+  content.setProperty(Property_JCR_MIMETYPE,mime);
+  final String[] parameters=mime.split("";"");
+  for (int i=1; i < parameters.length; i++) {
+    final int equals=parameters[i].indexOf('=');
+    if (equals != -1) {
+      final String parameter=parameters[i].substring(0,equals);
+      if (""charset"".equalsIgnoreCase(parameter.trim())) {
+        content.setProperty(Property_JCR_ENCODING,parameters[i].substring(equals + 1).trim());
+      }
+    }
+  }
+  content.setProperty(Property_JCR_LAST_MODIFIED,date);
+  content.setProperty(Property_JCR_DATA,binary);
+  return file;
+}
+  finally {
+}
+",0,0,0,,
+22,} finally {,"try {
+  final Node file=getOrAddNode(parent,name,NodeType_NT_FILE);
+  final Node content=getOrAddNode(file,Node_JCR_CONTENT,NodeType_NT_RESOURCE);
+  content.setProperty(Property_JCR_MIMETYPE,mime);
+  final String[] parameters=mime.split("";"");
+  for (int i=1; i < parameters.length; i++) {
+    final int equals=parameters[i].indexOf('=');
+    if (equals != -1) {
+      final String parameter=parameters[i].substring(0,equals);
+      if (""charset"".equalsIgnoreCase(parameter.trim())) {
+        content.setProperty(Property_JCR_ENCODING,parameters[i].substring(equals + 1).trim());
+      }
+    }
+  }
+  content.setProperty(Property_JCR_LAST_MODIFIED,date);
+  content.setProperty(Property_JCR_DATA,binary);
+  return file;
+}
+  finally {
+}
+",0,0,0,,
+23,} finally {,"try {
+  final InputStream inputStream;
+  try {
+    if (!getType().hasContent()) {
+      throw new FileSystemException(""vfs.provider/read-not-file.error"",getName());
+    }
+    inputStream=channel.get(relPath);
+  }
+ catch (  final SftpException e) {
+    if (e.id == ChannelSftp.SSH_FX_NO_SUCH_FILE) {
+      throw new FileNotFoundException(getName());
+    }
+    throw new FileSystemException(e);
+  }
+  return new SftpInputStream(channel,inputStream,bufferSize);
+}
+  finally {
+}
+",0,0,0,,
+24,finally {,"try {
+  boolean shouldFinalize=QueryContexts.isFinalize(query,true);
+  boolean serializeDateTimeAsLong=QueryContexts.isSerializeDateTimeAsLong(query,false) || (!shouldFinalize && QueryContexts.isSerializeDateTimeAsLongInner(query,false));
+  final ObjectWriter jsonWriter=ioReaderWriter.getResponseWriter().newOutputWriter(queryLifecycle.getToolChest(),queryLifecycle.getQuery(),serializeDateTimeAsLong);
+  Response.ResponseBuilder responseBuilder=Response.ok(new StreamingOutput(){
+    @Override public void write(    OutputStream outputStream) throws WebApplicationException {
+      Exception e=null;
+      CountingOutputStream os=new CountingOutputStream(outputStream);
+      try {
+        jsonWriter.writeValue(os,yielder);
+        os.flush();
+        os.close();
+      }
+ catch (      Exception ex) {
+        e=ex;
+        log.noStackTrace().error(ex,""Unable to send query response."");
+        throw new RuntimeException(ex);
+      }
+ finally {
+        Thread.currentThread().setName(currThreadName);
+        queryLifecycle.emitLogsAndMetrics(e,req.getRemoteAddr(),os.getCount());
+        if (e == null) {
+          successfulQueryCount.incrementAndGet();
+        }
+ else {
+          failedQueryCount.incrementAndGet();
+        }
+      }
+    }
+  }
+,ioReaderWriter.getResponseWriter().getResponseType()).header(""X-Druid-Query-Id"",queryId);
+  Object entityTag=responseContext.remove(ResponseContext.Key.ETAG);
+  if (entityTag != null) {
+    responseBuilder.header(HEADER_ETAG,entityTag);
+  }
+  DirectDruidClient.removeMagicResponseContextFields(responseContext);
+  final ResponseContext.SerializationResult serializationResult=responseContext.serializeWith(jsonMapper,responseContextConfig.getMaxResponseContextHeaderSize());
+  if (serializationResult.isTruncated()) {
+    final String logToPrint=StringUtils.format(""Response Context truncated for id [%s]. Full context is [%s]."",queryId,serializationResult.getFullResult());
+    if (responseContextConfig.shouldFailOnTruncatedResponseContext()) {
+      log.error(logToPrint);
+      throw new QueryInterruptedException(new TruncatedResponseContextException(""Serialized response context exceeds the max size[%s]"",responseContextConfig.getMaxResponseContextHeaderSize()),selfNode.getHostAndPortToUse());
+    }
+ else {
+      log.warn(logToPrint);
+    }
+  }
+  return responseBuilder.header(HEADER_RESPONSE_CONTEXT,serializationResult.getResult()).build();
+}
+ catch (QueryException e) {
+  yielder.close();
+  throw e;
+}
+catch (Exception e) {
+  yielder.close();
+  throw new RuntimeException(e);
+}
+ finally {
+}
+",0,0,0,,
+25,} finally {,"try {
+  System.out.println(""Running Query:"");
+  System.out.println(cmd.getSelect());
+  System.out.println(""---------------------------------"");
+switch (type) {
+case BeanList:
+    DBRecordCallbackHandler readerImpl=new DBRecordCallbackHandler(){
+      public void processRecord(      DBRecordData reader){
+        System.out.println(reader.getString(EMP.EMPLOYEE_ID) + ""\t"" + reader.getString(EMPLOYEE_FULLNAME)+ ""\t""+ EMP.GENDER.getOptions().get(reader.getString(EMP.GENDER))+ ""\t""+ reader.getString(PHONE_EXT_NUMBER)+ ""\t""+ reader.getString(DEP.NAME));
+      }
+    }
+;
+  getEmpireTemplate().query(cmd,readerImpl);
+break;
+case Reader:
+DBReaderExtractor<List<SampleBean>> beanListImpl=new DBReaderExtractor<List<SampleBean>>(){
+public List<SampleBean> process(DBReader reader){
+  return reader.getBeanList(SampleBean.class);
+}
+}
+;
+List<SampleBean> beanList=getEmpireTemplate().query(cmd,beanListImpl);
+System.out.println(String.valueOf(beanList.size()) + "" SampleBeans returned from Query."");
+for (SampleBean b : beanList) {
+System.out.println(b.toString());
+}
+break;
+case XmlDocument:
+XmlDocumentExtractor xmlImpl=new XmlDocumentExtractor();
+Document doc=getEmpireTemplate().query(cmd,xmlImpl);
+XMLWriter.debug(doc);
+break;
+}
+}
+  finally {
+}
+",0,0,0,,
+26,} finally {,"try {
+  while (!doneReading && in.readable()) {
+    b=in.readByte();
+    if (b == '\n') {
+      doneReading=true;
+    }
+ else {
+      baos.write(b);
+    }
+  }
+  e=EventBuilder.withBody(baos.toByteArray(),headers);
+}
+  finally {
+}
+",0,0,0,,
+27,} finally {,"try {
+  while (!doneReading && in.readable()) {
+    b=in.readByte();
+switch (m) {
+case START:
+      if (b == '<') {
+        baos.write(b);
+        m=Mode.PRIO;
+      }
+ else       if (b == '\n') {
+        logger.debug(""Delimiter found while in START mode, ignoring.."");
+      }
+ else {
+        isBadEvent=true;
+        baos.write(b);
+        m=Mode.DATA;
+      }
+    break;
+case PRIO:
+  baos.write(b);
+if (b == '>') {
+  if (prio.length() == 0) {
+    isBadEvent=true;
+  }
+  m=Mode.DATA;
+}
+ else {
+  char ch=(char)b;
+  prio.append(ch);
+  if (!Character.isDigit(ch) || prio.length() > 3) {
+    isBadEvent=true;
+    m=Mode.DATA;
+  }
+}
+break;
+case DATA:
+if (b == '\n') {
+e=buildEvent();
+doneReading=true;
+}
+ else {
+baos.write(b);
+}
+if (baos.size() == this.maxSize && !doneReading) {
+isIncompleteEvent=true;
+e=buildEvent();
+doneReading=true;
+}
+break;
+}
+}
+if (e == null && isUdp) {
+doneReading=true;
+e=buildEvent();
+}
+}
+  finally {
+}
+",0,0,0,,
+28,} finally {,"try {
+  Object[] args=method.readArguments(_input);
+  Object result=invoke_method(m,args);
+  org.omg.CORBA.portable.OutputStream _out=response.createReply();
+  method.writeResult(_out,result);
+  logger.finer(debug_name(m) + "": returning normally"");
+  return _out;
+}
+ catch (org.omg.CORBA.SystemException ex) {
+  logger.throwing(RMIServant.class.getName(),""_invoke"",ex);
+  logger.warning(ex.getMessage());
+  throw ex;
+}
+catch (java.lang.reflect.UndeclaredThrowableException ex) {
+  logger.throwing(RMIServant.class.getName(),""_invoke"",ex.getUndeclaredThrowable());
+  throw new org.omg.CORBA.portable.UnknownException(ex.getUndeclaredThrowable());
+}
+catch (RuntimeException ex) {
+  logger.log(Level.FINER,debug_name(m) + "": RuntimeException "" + ex.getMessage(),ex);
+  return method.writeException(response,ex);
+}
+catch (java.rmi.RemoteException ex) {
+  logger.log(Level.FINER,debug_name(m) + "": RemoteException "" + ex.getMessage(),ex);
+  throw UtilImpl.mapRemoteException(ex);
+}
+catch (Throwable ex) {
+  logger.log(Level.FINER,debug_name(m) + "": Throwable "" + ex.getMessage(),ex);
+  return method.writeException(response,ex);
+}
+ finally {
+}
+",0,0,0,,
+29,} finally {,"try {
+  javax.rmi.PortableRemoteObject.exportObject(remote);
+}
+  finally {
+}
+",0,0,0,,
+30,} finally {,"try {
+  javax.rmi.PortableRemoteObject.unexportObject(remote);
+}
+  finally {
+}
+",0,0,0,,
+31,} finally {,"try {
+  int count;
+  while ((count=is.read(buf)) != -1) {
+    os.write(buf,0,count);
+  }
+}
+  finally {
+}
+",0,0,0,,
+32,} finally {,"try {
+  int count;
+  while ((count=reader.read(buf)) != -1) {
+    writer.write(buf,0,count);
+  }
+}
+  finally {
+}
+",0,0,0,,
+33,} finally {,"try {
+  computeService=getConfig(COMPUTE_SERVICE_REGISTRY).findComputeService(config().getBag(),true);
+  computeService.destroyNode(instanceId);
+}
+  finally {
+}
+",0,0,0,,
+34,} finally {,"try {
+  EventHandler handler=eventDispatchers.get(type);
+  if (handler != null) {
+    handler.handle(event);
+  }
+ else {
+    throw new Exception(""No handler for registered for "" + type);
+  }
+}
+ catch (Throwable t) {
+  LOG.fatal(""Error in dispatcher thread:"" + event.getType(),t);
+  if (exitOnDispatchException && (ShutdownHookManager.get().isShutdownInProgress()) == false) {
+    LOG.info(""Exiting, bye.."");
+    System.exit(-1);
+  }
+}
+ finally {
+}
+",0,0,0,,
+35,} finally {,"try {
+  val propertyEditDto=PropertySetterOrClearFacetForDomainEventAbstract.this.getInteractionDtoServiceInternal().asPropertyEditDto(owningProperty,head.getOwner(),newValueAdapterMutatable);
+  currentExecution.setDto(propertyEditDto);
+  val oldValuePojo=getterFacet.getProperty(head.getTarget(),interactionInitiatedBy);
+  val newValuePojo=UnwrapUtil.single(newValueAdapterMutatable);
+  val propertyDomainEvent=domainEventHelper.postEventForProperty(AbstractDomainEvent.Phase.EXECUTING,PropertySetterOrClearFacetForDomainEventAbstract.this.getEventType(),null,PropertySetterOrClearFacetForDomainEventAbstract.this.getFacetHolder(),head,oldValuePojo,newValuePojo);
+  val newValuePojoPossiblyUpdated=propertyDomainEvent.getNewValue();
+  if (!Objects.equals(newValuePojoPossiblyUpdated,newValuePojo)) {
+    newValueAdapterMutatable=newValuePojoPossiblyUpdated != null ? PropertySetterOrClearFacetForDomainEventAbstract.this.getObjectManager().adapt(newValuePojoPossiblyUpdated) : null;
+  }
+  currentExecution.setEvent(propertyDomainEvent);
+  style.invoke(PropertySetterOrClearFacetForDomainEventAbstract.this,owningProperty,head.getTarget(),newValueAdapterMutatable,interactionInitiatedBy);
+  val actualNewValue=getterFacet.getProperty(head.getTarget(),interactionInitiatedBy);
+  if (!Objects.equals(oldValuePojo,actualNewValue)) {
+    domainEventHelper.postEventForProperty(AbstractDomainEvent.Phase.EXECUTED,PropertySetterOrClearFacetForDomainEventAbstract.this.getEventType(),uncheckedCast(propertyDomainEvent),PropertySetterOrClearFacetForDomainEventAbstract.this.getFacetHolder(),head,oldValuePojo,actualNewValue);
+  }
+  val targetManagedObjectPossiblyCloned=PropertySetterOrClearFacetForDomainEventAbstract.this.cloneIfViewModelCloneable(head.getTarget());
+  return targetManagedObjectPossiblyCloned.getPojo();
+}
+  finally {
+}
+",0,0,0,,
+36,finally,"try {
+  DefaultMavenExecutionRequest req=new DefaultMavenExecutionRequest();
+  req.setBaseDirectory(project.getBasedir());
+  req.setInteractiveMode(false);
+  req.setGoals(projectGoals);
+  req.setProperties(buildProperties);
+  maven.execute(req);
+  getLog().info(""...SUCCESS."");
+}
+  finally {
+}
+",0,0,0,,
+37,} finally {,"try {
+  for (  String name : serviceDiscovery.queryForNames()) {
+    for (    ServiceInstance<ModelEndpoint> endpoint : serviceDiscovery.queryForInstances(name)) {
+      ModelEndpoint ep=endpoint.getPayload();
+      if (LOG.isDebugEnabled()) {
+        LOG.debug(""Found model endpoint "" + ep);
+      }
+      String currentVersion=modelToVersion.getOrDefault(ep.getName(),ep.getVersion());
+      currentVersion=currentVersion.compareTo(ep.getVersion()) < 0 ? ep.getVersion() : currentVersion;
+      modelToVersion.put(ep.getName(),currentVersion);
+      containerToEndpoint.put(ep.getContainerId(),endpoint);
+      Model model=new Model(ep.getName(),ep.getVersion());
+      List<ModelEndpoint> endpoints=state.get(model);
+      if (endpoints == null) {
+        endpoints=new ArrayList<>();
+        state.put(model,endpoints);
+      }
+      endpoints.add(ep);
+    }
+  }
+  rwLock.writeLock().lock();
+  try {
+    this.modelToCurrentVersion=modelToVersion;
+    this.state=state;
+    this.containerToEndpoint=containerToEndpoint;
+    if (LOG.isDebugEnabled()) {
+      LOG.debug(""Containers found: "" + containerToEndpoint);
+    }
+  }
+  finally {
+    rwLock.writeLock().unlock();
+  }
+}
+ catch (Exception e) {
+  LOG.error(e.getMessage(),e);
+}
+ finally {
+}
+",0,0,0,,
+38,finally {,"try {
+  serviceDiscovery=ServiceDiscoveryBuilder.builder(ModelEndpoint.class).client(client).basePath(config.getServiceRoot()).serializer(serializer).build();
+}
+  finally {
+}
+",0,0,0,,
+39,finally {,"try (CuratorFramework client=CuratorFrameworkFactory.newClient(getZookeeperConnectString(),retryPolicy)){
+  client.start();
+  String root=""/storm/leader-lock"";
+  Stat exists=client.checkExists().forPath(root);
+  if (exists == null) {
+    client.create().creatingParentsIfNeeded().forPath(root);
+  }
+}
+ catch (Exception e) {
+  LOG.error(""Unable to create leaderlock"",e);
+}
+ finally {
+}
+",0,0,0,,
+40,} finally {,"try {
+  bootstrap=new ServerBootstrap();
+  bootstrap.option(ChannelOption.SO_RCVBUF,128 * 1024);
+  bootstrap.option(ChannelOption.TCP_NODELAY,true);
+  bootstrap.group(new NioEventLoopGroup(),new NioEventLoopGroup());
+  bootstrap.channel(NioServerSocketChannel.class);
+  bootstrap.localAddress(port);
+  bootstrap.childHandler(new ChannelInitializer<SocketChannel>(){
+    @Override public void initChannel(    SocketChannel channel) throws Exception {
+      channel.pipeline().addLast(new TestServerHandler());
+    }
+  }
+);
+  ChannelFuture bindFuture=bootstrap.bind();
+}
+  finally {
+}
+",0,0,0,,
+41,finally,"try {
+  facesContext.setCurrentPhaseId(PhaseId.RENDER_RESPONSE);
+  flash.doPrePhaseActions(facesContext);
+  Method doPrePhaseActionsMethod=phaseExecutor.getClass().getMethod(""doPrePhaseActions"",FacesContext.class);
+  if (!(doPrePhaseActionsMethod.isAccessible())) {
+    doPrePhaseActionsMethod.setAccessible(true);
+  }
+  doPrePhaseActionsMethod.invoke(phaseExecutor,facesContext);
+  Method informPhaseListenersBeforeMethod=phaseManager.getClass().getDeclaredMethod(""informPhaseListenersBefore"",PhaseId.class);
+  if (!(informPhaseListenersBeforeMethod.isAccessible())) {
+    informPhaseListenersBeforeMethod.setAccessible(true);
+  }
+  informPhaseListenersBeforeMethod.invoke(phaseManager,PhaseId.RENDER_RESPONSE);
+  if (facesContext.getResponseComplete()) {
+    return;
+  }
+}
+ catch (Throwable e) {
+  ExceptionQueuedEventContext context=new ExceptionQueuedEventContext(facesContext,e,null,PhaseId.RENDER_RESPONSE);
+  facesContext.getApplication().publishEvent(facesContext,ExceptionQueuedEvent.class,context);
+}
+ finally {
+}
+",0,0,0,,
+42,finally,"try {
+  facesContext.setCurrentPhaseId(PhaseId.RENDER_RESPONSE);
+  flash.doPrePhaseActions(facesContext);
+  Method doPrePhaseActionsMethod=phaseExecutor.getClass().getMethod(""doPrePhaseActions"",FacesContext.class);
+  if (!(doPrePhaseActionsMethod.isAccessible())) {
+    doPrePhaseActionsMethod.setAccessible(true);
+  }
+  doPrePhaseActionsMethod.invoke(phaseExecutor,facesContext);
+  Method informPhaseListenersBeforeMethod=phaseManager.getClass().getDeclaredMethod(""informPhaseListenersBefore"",PhaseId.class);
+  if (!(informPhaseListenersBeforeMethod.isAccessible())) {
+    informPhaseListenersBeforeMethod.setAccessible(true);
+  }
+  informPhaseListenersBeforeMethod.invoke(phaseManager,PhaseId.RENDER_RESPONSE);
+  if (facesContext.getResponseComplete()) {
+    return;
+  }
+}
+ catch (Throwable e) {
+  ExceptionQueuedEventContext context=new ExceptionQueuedEventContext(facesContext,e,null,PhaseId.RENDER_RESPONSE);
+  facesContext.getApplication().publishEvent(facesContext,ExceptionQueuedEvent.class,context);
+}
+ finally {
+}
+",0,0,0,,
+43,finally,"try {
+  testResults=test.getOutput().toString();
+  out.write(testResults);
+}
+  finally {
+}
+",0,0,0,,
+44,finally,"try {
+  for (  Map.Entry<ModuleWrapper,Artifact> elem : tobePopulated.entrySet()) {
+    ModuleWrapper man=elem.getKey();
+    Artifact art=elem.getValue();
+    index=index + 1;
+    getLog().info(""Processing "" + index + ""/""+ count);
+    File pom=createMavenProject(man,wrapperList,externals);
+    ArtifactMetadata metadata=new ProjectArtifactMetadata(art,pom);
+    art.addMetadata(metadata);
+    File javadoc=null;
+    Artifact javadocArt=null;
+    if (javadocRoot != null) {
+      File zip=new File(javadocRoot,art.getArtifactId() + "".zip"");
+      if (zip.exists()) {
+        javadoc=zip;
+        javadocArt=createAttachedArtifact(art,javadoc,""jar"",""javadoc"");
+      }
+    }
+    File source=null;
+    Artifact sourceArt=null;
+    if (sourceRoot != null) {
+      File zip=new File(sourceRoot,art.getArtifactId() + "".zip"");
+      if (zip.exists()) {
+        source=zip;
+        sourceArt=createAttachedArtifact(art,source,""jar"",""sources"");
+      }
+    }
+    File nbm=null;
+    Artifact nbmArt=null;
+    if (nbmRoot != null) {
+      File zip=new File(nbmRoot,art.getArtifactId() + "".nbm"");
+      if (!zip.exists()) {
+        zip=new File(nbmRoot,man.getCluster() + File.separator + art.getArtifactId()+ "".nbm"");
+      }
+      if (zip.exists()) {
+        nbm=zip;
+        nbmArt=createAttachedArtifact(art,nbm,""nbm-file"",null);
+        if (nbmArt.getArtifactHandler().getExtension().equals(""nbm-file"")) {
+          nbmArt=createAttachedArtifact(art,nbm,""nbm"",null);
+        }
+        assert nbmArt.getArtifactHandler().getExtension().equals(""nbm"");
+      }
+    }
+    File moduleJar=man.getFile();
+    File moduleJarMinusCP=null;
+    if (!man.getModuleManifest().getClasspath().isEmpty()) {
+      try {
+        moduleJarMinusCP=File.createTempFile(man.getArtifact(),"".jar"");
+        moduleJarMinusCP.deleteOnExit();
+        InputStream is=new FileInputStream(moduleJar);
+        try {
+          OutputStream os=new FileOutputStream(moduleJarMinusCP);
+          try {
+            JarInputStream jis=new JarInputStream(is);
+            Manifest mani=new Manifest(jis.getManifest());
+            mani.getMainAttributes().remove(Attributes.Name.CLASS_PATH);
+            if (!man.deps.isEmpty()) {
+              StringBuilder b=new StringBuilder();
+              for (              Dependency dep : man.deps) {
+                if (b.length() > 0) {
+                  b.append(' ');
+                }
+                b.append(dep.getGroupId()).append(':').append(dep.getArtifactId()).append(':').append(dep.getVersion());
+                if (dep.getClassifier() != null) {
+                  b.append("":"").append(dep.getClassifier());
+                }
+              }
+              mani.getMainAttributes().putValue(""Maven-Class-Path"",b.toString());
+            }
+ else {
+              getLog().warn(""did not find any external artifacts for "" + man.getModule());
+            }
+            JarOutputStream jos=new JarOutputStream(os,mani);
+            JarEntry entry;
+            while ((entry=jis.getNextJarEntry()) != null) {
+              if (entry.getName().matches(""META-INF/.+[.]SF"")) {
+                throw new IOException(""cannot handle signed JARs"");
+              }
+              jos.putNextEntry(entry);
+              byte[] buf=new byte[(int)entry.getSize()];
+              int read=jis.read(buf,0,buf.length);
+              if (read != buf.length) {
+                throw new IOException(""read wrong amount"");
+              }
+              jos.write(buf);
+            }
+            jos.close();
+          }
+  finally {
+            os.close();
+          }
+        }
+  finally {
+          is.close();
+        }
+      }
+ catch (      IOException x) {
+        getLog().warn(""Could not process "" + moduleJar + "": ""+ x,x);
+        moduleJarMinusCP.delete();
+        moduleJarMinusCP=null;
+      }
+    }
+    try {
+      if (!skipLocalInstall) {
+        install(moduleJarMinusCP != null ? moduleJarMinusCP : moduleJar,art);
+        if (javadoc != null) {
+          install(javadoc,javadocArt);
+        }
+        if (source != null) {
+          install(source,sourceArt);
+        }
+        if (nbm != null) {
+          install(nbm,nbmArt);
+        }
+      }
+      try {
+        if (deploymentRepository != null) {
+          artifactDeployer.deploy(moduleJarMinusCP != null ? moduleJarMinusCP : moduleJar,art,deploymentRepository,localRepository);
+          if (javadoc != null) {
+            artifactDeployer.deploy(javadoc,javadocArt,deploymentRepository,localRepository);
+          }
+          if (source != null) {
+            artifactDeployer.deploy(source,sourceArt,deploymentRepository,localRepository);
+          }
+          if (nbm != null) {
+            artifactDeployer.deploy(nbm,nbmArt,deploymentRepository,localRepository);
+          }
+        }
+      }
+ catch (      ArtifactDeploymentException ex) {
+        throw new MojoExecutionException(""Error Deploying artifact"",ex);
+      }
+    }
+  finally {
+      if (moduleJarMinusCP != null) {
+        moduleJarMinusCP.delete();
+      }
+    }
+  }
+}
+  finally {
+}
+",0,0,0,,
+45,} finally {,"try {
+  doStop();
+}
+  finally {
+}
+",0,0,0,,
+46,} finally {,"try {
+  getLogger().fine(new org.apache.cxf.common.i18n.Message(""DISPATCH.TO.SU"",getLogger()).toString());
+  dispatch(exchange);
+}
+  finally {
+}
+",0,0,0,,
+47,} finally {,"try {
+  if (object instanceof Serializable && !object.getClass().isArray()) {
+    try {
+      object=copyObj(Thread.currentThread().getContextClassLoader(),object);
+    }
+ catch (    Exception e) {
+      throw new UnknownException(e);
+    }
+  }
+  if (type == Object.class || type == Serializable.class) {
+    javax.rmi.CORBA.Util.writeAny(out,object);
+  }
+ else   if (org.omg.CORBA.Object.class.isAssignableFrom(type)) {
+    out.write_Object((org.omg.CORBA.Object)object);
+  }
+ else   if (Remote.class.isAssignableFrom(type)) {
+    javax.rmi.CORBA.Util.writeRemoteObject(out,object);
+  }
+ else   if (type.isInterface() && Serializable.class.isAssignableFrom(type)) {
+    javax.rmi.CORBA.Util.writeAbstractObject(out,object);
+  }
+ else {
+    out.write_value((Serializable)object,type);
+  }
+}
+  finally {
+}
+",0,0,0,,
+48,} finally {,"try {
+  for (  Bundle bundle : context.getBundles()) {
+    final URL url=bundle.getEntry(serviceName);
+    if (url == null) {
+      continue;
+    }
+    if (debug) {
+      logger.fine(""Reading service provider file: "" + url.toExternalForm());
+    }
+    try {
+      InputStream is;
+      try {
+        is=AccessController.doPrivileged(new PrivilegedExceptionAction<InputStream>(){
+          public InputStream run() throws IOException {
+            return url.openStream();
+          }
+        }
+);
+      }
+ catch (      PrivilegedActionException e) {
+        throw (IOException)e.getException();
+      }
+      BufferedReader reader=null;
+      try {
+        reader=new BufferedReader(new InputStreamReader(is));
+        int count=0;
+        while (true) {
+          String line=reader.readLine();
+          if (line == null)           break;
+          line=line.trim();
+          if (!line.startsWith(""#"") && !"""".equals(line)) {
+            String reg=line.trim();
+            if (debug) {
+              logger.fine(""Registering service provider: "" + reg);
+            }
+            Map<String,String> attributes=parseServiceDeclaration(reg);
+            String className=attributes.get(""class"");
+            if (className == null) {
+              className=""_class_"" + count;
+              count++;
+            }
+            ServiceDeclarationImpl descriptor=new ServiceDeclarationImpl(bundle,url,className,attributes);
+            descriptors.add(descriptor);
+            if (firstOnly) {
+              return descriptors;
+            }
+          }
+        }
+      }
+  finally {
+        if (reader != null) {
+          try {
+            reader.close();
+          }
+ catch (          IOException e) {
+          }
+        }
+      }
+    }
+ catch (    IOException e) {
+      logger.log(Level.SEVERE,e.getMessage(),e);
+    }
+  }
+}
+  finally {
+}
+",0,0,0,,
+49,} finally {,"try {
+  HttpResponse response=httpclient.execute(post);
+  int result=response.getStatusLine().getStatusCode();
+  Assert.assertEquals(201,result);
+  Header header=response.getFirstHeader(""Location"");
+  Assert.assertNotNull(header);
+  Assert.assertNotNull(header.getValue());
+  header=response.getFirstHeader(""Content-Location"");
+  Assert.assertNotNull(header);
+  Assert.assertNotNull(header.getValue());
+  header=response.getFirstHeader(""Content-Type"");
+  Assert.assertNotNull(header);
+  Assert.assertNotNull(header.getValue());
+  header=response.getFirstHeader(""Content-Length"");
+  Assert.assertNotNull(header);
+  Assert.assertNotNull(header.getValue());
+  Document<Entry> document=abderaParser.parse(response.getEntity().getContent());
+  Entry entry=document.getRoot();
+  String title=entry.getTitle();
+  Assert.assertNotNull(title);
+  IRI id=entry.getId();
+  Assert.assertNotNull(id);
+  mediaId=id.toString();
+  Assert.assertNotNull(mediaId);
+  Date updated=entry.getUpdated();
+  Assert.assertNotNull(updated);
+  String summary=entry.getSummary();
+  Assert.assertNotNull(summary);
+  IRI contentSrc=entry.getContentSrc();
+  Assert.assertNotNull(contentSrc);
+  Link editLink=entry.getEditLink();
+  Assert.assertNotNull(editLink);
+  Assert.assertNotNull(editLink.getRel());
+  Assert.assertNotNull(editLink.getHref());
+  Link editMediaLink=entry.getEditMediaLink();
+  Assert.assertNotNull(editMediaLink);
+  Assert.assertNotNull(editMediaLink.getRel());
+  Assert.assertNotNull(editMediaLink.getHref());
+}
+  finally {
+}
+",0,0,0,,
+50,} finally {,"try {
+  HttpResponse response=httpclient.execute(put);
+  response.getEntity().consumeContent();
+  int result=response.getStatusLine().getStatusCode();
+  Assert.assertEquals(200,result);
+}
+  finally {
+}
+",0,0,0,,
+51,} finally {,"try {
+  HttpResponse response=httpclient.execute(put);
+  int result=response.getStatusLine().getStatusCode();
+  Assert.assertEquals(404,result);
+}
+  finally {
+}
+",0,0,0,,
+52,} finally {,"try {
+  if (object instanceof Serializable && !object.getClass().isArray()) {
+    try {
+      object=copyObj(Thread.currentThread().getContextClassLoader(),object);
+    }
+ catch (    Exception e) {
+      throw new UnknownException(e);
+    }
+  }
+  if (type == Object.class || type == Serializable.class) {
+    javax.rmi.CORBA.Util.writeAny(out,object);
+  }
+ else   if (org.omg.CORBA.Object.class.isAssignableFrom(type)) {
+    out.write_Object((org.omg.CORBA.Object)object);
+  }
+ else   if (Remote.class.isAssignableFrom(type)) {
+    javax.rmi.CORBA.Util.writeRemoteObject(out,object);
+  }
+ else   if (type.isInterface() && Serializable.class.isAssignableFrom(type)) {
+    javax.rmi.CORBA.Util.writeAbstractObject(out,object);
+  }
+ else {
+    out.write_value((Serializable)object,type);
+  }
+}
+  finally {
+}
+",0,0,0,,
+53,} finally {,"try {
+  String msgID=((CallbackServiceReferenceImpl)callableReference).getMsgID();
+  return invoke(method,chain,args,wire,msgID);
+}
+ catch (InvocationTargetException e) {
+  Throwable t=e.getCause();
+  throw t;
+}
+ finally {
+}
+",0,0,0,,

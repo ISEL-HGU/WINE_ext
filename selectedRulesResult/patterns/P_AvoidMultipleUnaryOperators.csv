@@ -1,0 +1,577 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,private static final ByteValue[] VALUES = new ByteValue[-(-128) + 127 + 1];,"private static final ByteValue[] VALUES=new ByteValue[-(-128) + 127 + 1];
+",0,0,11,381,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, ArrayType-elementType, FieldDeclaration-type, ),
+Dimension(ArrayType-dimensions, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(PrefixExpression-operand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, ArrayCreation-dimensions, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayCreation-dimensions, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(InfixExpression-extendedOperands, ArrayCreation-dimensions, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+2,if (!!!app.getApplicationMetadata().getApplicationSymbolicName().equals(depMf.getApplicationSymbolicName()),"if (!!!app.getApplicationMetadata().getApplicationSymbolicName().equals(depMf.getApplicationSymbolicName()) || !!!app.getApplicationMetadata().getApplicationVersion().equals(depMf.getApplicationVersion())) {
+  throw new IllegalArgumentException(""The deployment metadata does not match the application."");
+}
+",1,130,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+3,|| !!!app.getApplicationMetadata().getApplicationVersion().equals(depMf.getApplicationVersion())) {,"if (!!!app.getApplicationMetadata().getApplicationSymbolicName().equals(depMf.getApplicationSymbolicName()) || !!!app.getApplicationMetadata().getApplicationVersion().equals(depMf.getApplicationVersion())) {
+  throw new IllegalArgumentException(""The deployment metadata does not match the application."");
+}
+",1,1,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+"
+4,if (!!!output.add(component)) return;,"if (!!!output.add(component)) return;
+",1,1,4,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+ReturnStatement(IfStatement-thenStatement, ),
+"
+5,if ((email_old != null) && (!!!email_old.equals(email))) {,"if ((email_old != null) && (!!!email_old.equals(email))) {
+  String sql_ab=""UDPATE Author_BlogEntry ab SET ab.AUTHOR_EMAIL = '"" + email + ""'"";
+  updatedRows=0;
+  try {
+    Connection connection=dataSource.getConnection();
+    PreparedStatement ppsm=connection.prepareStatement(sql_ab);
+    updatedRows=ppsm.executeUpdate();
+    ppsm.close();
+    connection.close();
+    if (updatedRows != 1)     throw new IllegalArgumentException(""The Author_BlogEntry with the postsID "" + b.getId() + "" cannot be updated."");
+  }
+ catch (  SQLException e) {
+    e.printStackTrace();
+  }
+}
+",1,12,5,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+6,"if (!!!waitForStartLevelChangedEventToOccur.tryAcquire(60, TimeUnit.SECONDS)) {","if (!!!waitForStartLevelChangedEventToOccur.tryAcquire(60,TimeUnit.SECONDS)) {
+  LOGGER.debug(""Starting CBA child bundles took longer than 60 seconds"");
+}
+",1,1,4,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+"
+7,if (!!!illegalProperties.contains(prop.getName())) result.add(prop);,"if (!!!illegalProperties.contains(prop.getName())) result.add(prop);
+",1,3,7,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+8,"if (!!!first) builder.append("","");","if (!!!first) builder.append("","");
+ else first=false;
+",1,1,4,,"SimpleName(PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+9,"if (!!!_current.compareAndSet(null, _default.get())) {","if (!!!_current.compareAndSet(null,_default.get())) {
+  _default.getAndSet(null).shutdown();
+}
+",1,9,5,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+"
+10,while (!!!_unprocessedWork.isEmpty() && _invokeEntryCount.get() > 0 && timeLeftToWait > 0) {,"while (!!!_unprocessedWork.isEmpty() && _invokeEntryCount.get() > 0 && timeLeftToWait > 0) {
+  Thread.sleep(pausePeriod);
+  timeLeftToWait-=pausePeriod;
+  if (timeLeftToWait < pausePeriod)   pausePeriod=timeLeftToWait;
+}
+",1,3,7,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+11,while (!!!destroyed && System.currentTimeMillis() - startTime < timeout) {,"while (!!!destroyed && System.currentTimeMillis() - startTime < timeout) {
+  try {
+    wait(100);
+  }
+ catch (  InterruptedException e) {
+  }
+}
+",1,1,5,,"SimpleName(PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+12,if (value != null && !!!returnType.isInstance(value)) {,"if (value != null && !!!returnType.isInstance(value)) {
+  throw new IllegalArgumentException(""The object cannot be returned by the requested method: "" + call);
+}
+ else break methods;
+",1,2,5,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+13,"!!!isTrue(reference, PersistenceContextProvider.PROXY_FACTORY_EMF_ATTRIBUTE)) {","if (isTrue(reference,PersistenceUnitConstants.CONTAINER_MANAGED_PERSISTENCE_UNIT) && !!!isTrue(reference,PersistenceContextProvider.PROXY_FACTORY_EMF_ATTRIBUTE)) {
+  Map<Context,PersistenceUnitReferenceInfo> pUnitRefs=unitRegistrations.get(reference.getProperty(PersistenceUnitConstants.OSGI_UNIT_NAME));
+  Map<Context,PersistenceContextReferenceInfo> pCtxRefs=contextRegistrations.get(reference.getProperty(PersistenceUnitConstants.OSGI_UNIT_NAME));
+  if (pUnitRefs == null) {
+    pUnitRefs=new HashMap<Context,PersistenceUnitReferenceInfo>();
+  }
+  if (pCtxRefs == null) {
+    pCtxRefs=new HashMap<Context,PersistenceContextReferenceInfo>();
+  }
+  if (pUnitRefs.size() > 0 || pCtxRefs.size() > 0) {
+    EntityManagerFactory emf=(EntityManagerFactory)bundle.getBundleContext().getService(reference);
+    for (    Entry<Context,PersistenceUnitReferenceInfo> e : pUnitRefs.entrySet()) {
+      try {
+        e.getKey().bind(e.getValue().referenceName,emf);
+      }
+ catch (      NamingException ex) {
+        ex.printStackTrace();
+      }
+    }
+    for (    Entry<Context,PersistenceContextReferenceInfo> e : pCtxRefs.entrySet()) {
+      PersistenceContextReferenceInfo pci=e.getValue();
+      try {
+        e.getKey().bind(pci.referenceName,new JtaEntityManager((String)reference.getProperty(PersistenceUnitConstants.OSGI_UNIT_NAME),AriesPersistenceContextIntegration.get(),emf,pci.properties,pci.extended));
+      }
+ catch (      NamingException ex) {
+        ex.printStackTrace();
+      }
+    }
+    return emf;
+  }
+}
+",1,1,3,,"SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+QualifiedName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+"
+14,"if (!!!Enum.class.isAssignableFrom(type)) throw new IllegalArgumentException(type.getName() + "" is not an Enum"");","if (!!!Enum.class.isAssignableFrom(type)) throw new IllegalArgumentException(type.getName() + "" is not an Enum"");
+",1,2,7,,"SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ThrowStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ClassInstanceCreation-arguments, ThrowStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ClassInstanceCreation-arguments, ThrowStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(InfixExpression-rightOperand, ClassInstanceCreation-arguments, ThrowStatement-expression, IfStatement-thenStatement, ),
+"
+15,"| ACC_NATIVE | ACC_BRIDGE)) == 0 && !!!name.equals(""<init>"") &&","if ((access & (ACC_STATIC | ACC_PRIVATE | ACC_SYNTHETIC| ACC_NATIVE| ACC_BRIDGE)) == 0 && !!!name.equals(""<init>"") && !!!name.equals(""<clinit>"")) {
+  String methodStaticFieldName=""methodField"" + getSanitizedUUIDString();
+  transformedMethods.put(methodStaticFieldName,new TypeMethod(currentMethodDeclaringType,currentMethod));
+  methodVisitorToReturn=getWeavingMethodVisitor(access,name,desc,signature,exceptions,currentMethod,methodStaticFieldName,currentMethodDeclaringType,currentMethodDeclaringTypeIsInterface);
+}
+ else if (name.equals(""<clinit>"")) {
+  staticInitMethod=new Method(""static_init_"" + UU_ID,Type.VOID_TYPE,NO_ARGS);
+  staticInitMethodFlags=staticInitMethodFlags | ACC_FINAL;
+  methodVisitorToReturn=new AdviceAdapter(Opcodes.ASM9,cv.visitMethod(access,name,desc,signature,exceptions),access,name,desc){
+    @Override protected void onMethodEnter(){
+      invokeStatic(typeBeingWoven,staticInitMethod);
+      super.onMethodEnter();
+    }
+  }
+;
+}
+ else {
+  if (currentMethod.getArgumentTypes().length == 0 && name.equals(""<init>""))   hasNoArgsConstructor=true;
+  methodVisitorToReturn=cv.visitMethod(access,name,desc,signature,exceptions);
+}
+",1,3,6,,"SimpleName(),
+SimpleName(),
+NumberLiteral(),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+StringLiteral(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ),
+"
+16,if (!!!isVoid && returnType.getSort() != Type.OBJECT && returnType.getSort() != Type.ARRAY){,"if (!!!isVoid && returnType.getSort() != Type.OBJECT && returnType.getSort() != Type.ARRAY) {
+  box(returnType);
+}
+",1,1,7,,"SimpleName(PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+17,else if (!!!this._arguments[i].equals(other._arguments[i])) return false;,"if (!!!this._arguments[i].equals(other._arguments[i])) return false;
+",1,8,7,,"ThisExpression(FieldAccess-expression, ArrayAccess-array, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(FieldAccess-name, ArrayAccess-array, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+QualifiedName(ArrayAccess-array, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+BooleanLiteral(ReturnStatement-expression, IfStatement-thenStatement, ),
+"
+18,wpa.setSVUIDGenerated(!!!hasSVUID);,"wpa.setSVUIDGenerated(!!!hasSVUID);
+",1,1,3,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+19,if(!!!re.getTargetException().getClass().equals(RuntimeException.class)),"if (!!!re.getTargetException().getClass().equals(RuntimeException.class)) throw re.getTargetException();
+",1,1,5,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+"
+20,allDone = !!!it.next().toQuiesce.contains(b);,"allDone=!!!it.next().toQuiesce.contains(b);
+",1,1,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, FieldAccess-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, FieldAccess-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+21,if (!!!next.toQuiesce.isEmpty()) allDone = false;,"if (!!!next.toQuiesce.isEmpty()) allDone=false;
+",1,3,4,,"QualifiedName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+BooleanLiteral(Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+22,if (!!!Constants.VERSION_ATTRIBUTE.equals(entry.getKey())) {,"if (!!!Constants.VERSION_ATTRIBUTE.equals(entry.getKey())) {
+  addProperty(doc,capability,entry.getKey(),entry.getValue(),null);
+}
+",1,1,4,,"QualifiedName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+"
+23,if (!!!arr1[k].equals(arr2[k])) return false;,"if (!!!arr1[k].equals(arr2[k])) return false;
+",1,1,6,,"SimpleName(ArrayAccess-array, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+BooleanLiteral(ReturnStatement-expression, IfStatement-thenStatement, ),
+"
+24,if (worker == null || !!!worker.isValid()) worker = new DefaultWorker();,"if (worker == null || !!!worker.isValid()) worker=new DefaultWorker();
+",1,1,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+25,if (!!!(pos > 0 && fragment.charAt(pos - 1) == ':')) {,"if (!!!(pos > 0 && fragment.charAt(pos - 1) == ':')) {
+  result.append(fragment);
+  result.append(';');
+}
+",1,3,7,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+"
+26,if (!!!isZipRoot()) baseBuilderCrapThingToGetRoundFindBugs.append('/');,"if (!!!isZipRoot()) baseBuilderCrapThingToGetRoundFindBugs.append('/');
+",1,1,4,,"SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+CharacterLiteral(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+27,result = (name.startsWith(parentDir) && !!!name.equals(parentDir) && (allowSubDirs || name.substring(parentDir.length() + 1).indexOf('/') == -1));,"result=(name.startsWith(parentDir) && !!!name.equals(parentDir) && (allowSubDirs || name.substring(parentDir.length() + 1).indexOf('/') == -1));
+",1,1,16,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+CharacterLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ParenthesizedExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+28,"if (!!!(part.contains(""="")))  {","if (!!!(part.contains(""=""))) {
+  if (!!!(firstParameter))   pkgs.add(part);
+}
+ else {
+  if (!!!(firstParameter))   firstParameter=true;
+  parameters.append(part + "";"");
+}
+",1,1,3,,"SimpleName(MethodInvocation-expression, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+"
+29,"if (!!!zipFile.renameTo(new File(""fileSystemTest/outer.zip""))) throw new IOException(""Rename failed"");","if (!!!zipFile.renameTo(new File(""fileSystemTest/outer.zip""))) throw new IOException(""Rename failed"");
+",1,1,6,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ThrowStatement-expression, IfStatement-thenStatement, ),
+StringLiteral(ClassInstanceCreation-arguments, ThrowStatement-expression, IfStatement-thenStatement, ),
+"
+30,if ((!!!bundleVersionCorrect) || ((pkgElements.length() > 0))) {,"if ((!!!bundleVersionCorrect) || ((pkgElements.length() > 0))) {
+  writeRecordToWriter(versionStatusFileWriter,bundleElement);
+  writeRecordToWriter(versionStatusFileWriter,pkgElements.toString());
+  writeRecordToWriter(versionStatusFileWriter,""</bundle>"");
+}
+",1,1,4,,"SimpleName(PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+31,if ((!!!bef_fd.isFinal()) && (cur_fd.isFinal())) {,"if ((!!!bef_fd.isFinal()) && (cur_fd.isFinal())) {
+  reasons.add(prefix + "" was not final but has been changed to be final."");
+  compatible=false;
+}
+",1,1,4,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+32,"if (md.equals(value) && (!!!SemanticVersioningUtils.isLessAccessible(md, value)) && (value.isStatic() == md.isStatic())) {","if (md.equals(value) && (!!!SemanticVersioningUtils.isLessAccessible(md,value)) && (value.isStatic() == md.isStatic())) {
+  return true;
+}
+",1,1,11,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+"
+33,privateClients = !!!(ConnectionReusePolicyHelper.narrow(pol).value());,"privateClients=!!!(ConnectionReusePolicyHelper.narrow(pol).value());
+",1,1,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+34,while (!!!frames[i].getClassName().equals(ApeClassLoader.class.getName())) i++;,"while (!!!frames[i].getClassName().equals(ApeClassLoader.class.getName())) i++;
+",1,1,7,,"SimpleName(ArrayAccess-array, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, ExpressionStatement-expression, WhileStatement-body, ),
+"
+35,if ((writer.yasfSet != null) && !!!writer.yasfSet.contains(Yasf.ENUM_FIXED)) {,"if ((writer.yasfSet != null) && !!!writer.yasfSet.contains(Yasf.ENUM_FIXED)) {
+  ordinalField.write(writer,val);
+}
+",1,1,5,,"QualifiedName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+36,while (!!!type.isEnum()) type = type.getSuperclass();,"while (!!!type.isEnum()) type=type.getSuperclass();
+",1,1,5,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, WhileStatement-body, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, WhileStatement-body, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, WhileStatement-body, ),
+"
+37,"return ((!!!"""".equals(eid)) && """".equals(kind)) ? eid : (eid + '.' + escape(kind));","return ((!!!"""".equals(eid)) && """".equals(kind)) ? eid : (eid + '.' + escape(kind));
+",1,1,11,,"StringLiteral(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+StringLiteral(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, ParenthesizedExpression-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-extendedOperands, ParenthesizedExpression-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+38,"if (!!!refCount.compareAndSet(oldCount, oldCount + 1)) continue RESPIN;","if (!!!refCount.compareAndSet(oldCount,oldCount + 1)) continue RESPIN;
+",1,4,6,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(ContinueStatement-label, IfStatement-thenStatement, ),
+"
+39,"if (!!!refCount.compareAndSet(0, NOT_READY))","if (!!!refCount.compareAndSet(0,NOT_READY)) return true;
+",1,1,4,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+"
+40,"if (!!! refCount.compareAndSet(IDLE, CLEANED)) return null;","if (!!!refCount.compareAndSet(IDLE,CLEANED)) return null;
+",1,1,5,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+NullLiteral(ReturnStatement-expression, IfStatement-thenStatement, ),
+"
+41,"return !(!Objects.equals(delegate, that.delegate));","return !(!Objects.equals(delegate,that.delegate));
+",1,1,4,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, ParenthesizedExpression-expression, PrefixExpression-operand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, ParenthesizedExpression-expression, PrefixExpression-operand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, ParenthesizedExpression-expression, PrefixExpression-operand, ReturnStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, PrefixExpression-operand, ParenthesizedExpression-expression, PrefixExpression-operand, ReturnStatement-expression, ),
+"
+42,if (!!!shell.getNode().getInstalledContributionURIs().contains(args[0])) {,"if (!!!shell.getNode().getInstalledContributionURIs().contains(args[0])) {
+  System.err.println(""contribution not installed: "" + args[0]);
+  return true;
+}
+",1,1,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+"
+43,return !!!errors.isEmpty();,"return !!!errors.isEmpty();
+",3,7,2,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, ReturnStatement-expression, ),
+"
+44,"if (!!!name.equals(""<init>"") && !!!name.equals(""<clinit>"")","if (!!!name.equals(""<init>"") && !!!name.equals(""<clinit>"") && (access & (ACC_STATIC | ACC_PRIVATE | ACC_SYNTHETIC| ACC_ABSTRACT| ACC_NATIVE| ACC_BRIDGE)) == 0) {
+  Method currentTransformMethod=new Method(name,desc);
+  if (!!!knownMethods.add(currentTransformMethod))   return null;
+  if ((access & ACC_FINAL) != 0)   throw new RuntimeException(new FinalModifierException(superToCopy,name));
+  if ((access & (ACC_PUBLIC | ACC_PROTECTED | ACC_PRIVATE)) == 0) {
+    if (!!!samePackage) {
+      methodHiddenException(name);
+    }
+  }
+  Type superType=Type.getType(superToCopy);
+  String methodStaticFieldName=""methodField"" + AbstractWovenProxyAdapter.getSanitizedUUIDString();
+  transformedMethods.put(methodStaticFieldName,new TypeMethod(superType,currentTransformMethod));
+  MethodVisitor weaver=wovenProxyAdapter.getWeavingMethodVisitor(access,name,desc,sig,exceptions,currentTransformMethod,methodStaticFieldName,superType,false);
+  if (weaver instanceof AbstractWovenProxyMethodAdapter) {
+    if (!samePackage && (access & ACC_PROTECTED) != 0) {
+      methodHiddenException(name);
+    }
+    mv=new CopyingMethodAdapter((GeneratorAdapter)weaver,superType,currentTransformMethod);
+  }
+ else {
+    mv=new CopyingMethodAdapter(new GeneratorAdapter(access,currentTransformMethod,mv),superType,currentTransformMethod);
+  }
+}
+",3,24,6,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+45,} else if (minV.compareTo(new Version(ve)) == 0 && !!!vri.isMinimumExclusive()) {,"if (minV.compareTo(new Version(ve)) == 0 && !!!vri.isMinimumExclusive()) {
+  value=true;
+}
+ else if (maxV.compareTo(new Version(ve)) == 0 && !!!vri.isMaximumExclusive()) {
+  value=true;
+}
+",3,3,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+46,"if (email != null && !!!"""".equals(email)) {","if (email != null && !!!"""".equals(email)) {
+  BlogAuthor author=service.getBlogAuthor(email);
+  if (author != null) {
+    pageTitle=""Update "" + author.getName() + ""'s profile"";
+  }
+}
+",3,3,5,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+47,if (!!!clazz.isInstance(service) && !!!(service instanceof ServiceFactory)) {,"if (!!!clazz.isInstance(service) && !!!(service instanceof ServiceFactory)) {
+  throw new AssertionFailedError(""The service "" + service + "" does not implement ""+ interFace);
+}
+",3,3,5,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+48,while (ze != null && !!!ze.getName().equals(name)) {,"while (ze != null && !!!ze.getName().equals(name)) {
+  if (name.startsWith(ze.getName()))   entries.put(ze.getName(),ze);
+  ze=zis.getNextEntry();
+}
+",3,3,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+49,if (!!!Modifier.isFinal(md.getAccess()) && !!!Modifier.isStatic(md.getAccess()) && Modifier.isFinal(new_md.getAccess())) {,"if (!!!Modifier.isFinal(md.getAccess()) && !!!Modifier.isStatic(md.getAccess()) && Modifier.isFinal(new_md.getAccess())) {
+  compatible=false;
+  reasons.add(prefix + "" was not final but has been changed to be final."");
+}
+",3,6,12,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-extendedOperands, IfStatement-expression, ),
+"
+50,for (List<String> list : removalLists) if (!!!list.isEmpty()) System.out.println(list);,"for (List<String> list : removalLists) if (!!!list.isEmpty()) System.out.println(list);
+",3,3,9,,"SimpleName(SimpleType-name, ParameterizedType-type, SingleVariableDeclaration-type, EnhancedForStatement-parameter, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, SingleVariableDeclaration-type, EnhancedForStatement-parameter, ),
+SimpleName(SingleVariableDeclaration-name, EnhancedForStatement-parameter, ),
+SimpleName(EnhancedForStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, EnhancedForStatement-body, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, EnhancedForStatement-body, ),
+QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, EnhancedForStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, EnhancedForStatement-body, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, EnhancedForStatement-body, ),
+"
+51,if (!!!dependentContributions.containsKey(exportingIC.getURI()) && !!!cd.getURI().equals(exportingIC.getURI())) {,"if (!!!dependentContributions.containsKey(exportingIC.getURI()) && !!!cd.getURI().equals(exportingIC.getURI())) {
+  dependentContributions.put(exportingIC.getURI(),loadContribution(exportingIC));
+}
+",3,3,9,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+52,if (!!!(majorChange.isChange() || minorChange.isChange())) {,"if (!!!(majorChange.isChange() || minorChange.isChange())) {
+  checkAdditionalClassOrXsds(pkgName,curClazz,curXsds,minorChange);
+}
+",5,5,4,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+"
+53,if (!!! (revision instanceof BundleRevision)) return false;,"if (!!!(revision instanceof BundleRevision)) return false;
+",11,28,3,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, PrefixExpression-operand, PrefixExpression-operand, IfStatement-expression, ),
+BooleanLiteral(ReturnStatement-expression, IfStatement-thenStatement, ),
+"

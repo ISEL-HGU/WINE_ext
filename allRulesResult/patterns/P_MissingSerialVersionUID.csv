@@ -1,0 +1,60 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"class AnnoMap extends HashMap<String, String> implements AnnotationMap {","class AnnoMap extends HashMap<String,String> implements AnnotationMap {
+  @Override public AnnotationMap updateWith(  AnnotationsUpdate mutation){
+    return new AnnotationMapImpl(this).updateWith(mutation);
+  }
+  @Override public AnnotationMap updateWithNoCompatibilityCheck(  AnnotationsUpdate mutation){
+    return new AnnotationMapImpl(this).updateWithNoCompatibilityCheck(mutation);
+  }
+}
+",0,99,5,181,"SimpleName(TypeDeclaration-name, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-type, TypeDeclaration-superclassType, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, TypeDeclaration-superclassType, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, TypeDeclaration-superclassType, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+"
+2,class Provider extends javax.swing.JComponent implements Lookup.Provider {,"class Provider extends javax.swing.JComponent implements Lookup.Provider {
+  public Lookup getLookup(){
+    return returnedLookup[0];
+  }
+}
+",0,2,3,,"SimpleName(TypeDeclaration-name, TypeDeclarationStatement-declaration, ),
+QualifiedName(SimpleType-name, TypeDeclaration-superclassType, TypeDeclarationStatement-declaration, ),
+QualifiedName(SimpleType-name, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+"
+3,public static class ExFatal extends RuntimeException { ExFatal(String msg) { super(msg) ; } },"super(msg);
+",2,2,1,,"SimpleName(SuperConstructorInvocation-arguments, Block-statements, MethodDeclaration-body, TypeDeclaration-bodyDeclarations, ),
+"
+4,class LocalClass implements Serializable {};,";
+",2,2,1,,"EmptyStatement(),
+"
+5,"class Panel extends JPanel implements ExplorerManager.Provider, Lookup.Provider {","class Panel extends JPanel implements ExplorerManager.Provider, Lookup.Provider {
+{
+    setLayout(new BorderLayout());
+    add(view,BorderLayout.CENTER);
+  }
+  public ExplorerManager getExplorerManager(){
+    return manager;
+  }
+  @Override public boolean requestFocusInWindow(){
+    return view.requestFocusInWindow();
+  }
+  public Lookup getLookup(){
+    return lookup;
+  }
+}
+",6,16,4,,"SimpleName(TypeDeclaration-name, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, TypeDeclaration-superclassType, TypeDeclarationStatement-declaration, ),
+QualifiedName(SimpleType-name, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+QualifiedName(SimpleType-name, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+"
+6,class TestBean extends Component implements BeanContextProxy {,"@SuppressWarnings(""serial"") class TestBean extends Component implements BeanContextProxy {
+  public BeanContextChildSupport childSupport=new BeanContextChildSupport();
+  public BeanContextChild getBeanContextProxy(){
+    return childSupport;
+  }
+}
+",7,19,3,,"SimpleName(),
+SimpleName(SimpleType-name, ),
+SimpleName(SimpleType-name, ),
+"

@@ -1,0 +1,19 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,e.getMessage().equalsIgnoreCase(ENTITY_NAME_IN_BASE_AND_ALTER_DDL_DON_T_MATCH);,"e.getMessage().equalsIgnoreCase(ENTITY_NAME_IN_BASE_AND_ALTER_DDL_DON_T_MATCH);
+",1,1,4,61,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,e.getCause().printStackTrace(System.err);,"e.getCause().printStackTrace(System.err);
+",4,4,4,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+3,"expected.getMessage().equals(""InternalDistributedSystem is null"");","expected.getMessage().equals(""InternalDistributedSystem is null"");
+",13,52,4,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

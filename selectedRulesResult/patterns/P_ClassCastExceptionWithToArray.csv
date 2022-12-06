@@ -1,0 +1,46 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"TreeMap<?, ?>[]  mapArray  = (TreeMap[])lazyList.toArray();","TreeMap<?,?>[] mapArray=(TreeMap[])lazyList.toArray();
+",0,0,9,10,"SimpleName(SimpleType-name, ParameterizedType-type, ArrayType-elementType, VariableDeclarationStatement-type, ),
+WildcardType(ParameterizedType-typeArguments, ArrayType-elementType, VariableDeclarationStatement-type, ),
+WildcardType(ParameterizedType-typeArguments, ArrayType-elementType, VariableDeclarationStatement-type, ),
+Dimension(ArrayType-dimensions, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+2,final E[] array = (E[]) list1.toArray();,"final E[] array=(E[])list1.toArray();
+",0,0,8,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, ArrayType-elementType, VariableDeclarationStatement-type, ),
+Dimension(ArrayType-dimensions, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+3,Set<Integer> set = Sets.newHashSet((Integer[]) integerSet.toArray());,"Set<Integer> set=Sets.newHashSet((Integer[])integerSet.toArray());
+",0,0,9,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, CastExpression-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+4,mapArray  = (TreeMap[])lazyList.toArray();,"mapArray=(TreeMap[])lazyList.toArray();
+",1,1,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+5,return (E[]) list.toArray();,"return (E[])list.toArray();
+",4,4,4,,"SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, CastExpression-type, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ReturnStatement-expression, ),
+"

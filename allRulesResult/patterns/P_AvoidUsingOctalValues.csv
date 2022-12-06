@@ -1,0 +1,1063 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,device = (nextArtificalDeviceAndInode++ >> 18) & 0777777;,"device=(nextArtificalDeviceAndInode++ >> 18) & 0777777;
+",0,22,4,3928,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(PostfixExpression-operand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+2,"Future<Integer> chmod = CommonTasksSupport.chmod(execEnv, privpCmd, 0755, null);","Future<Integer> chmod=CommonTasksSupport.chmod(execEnv,privpCmd,0755,null);
+",0,1,9,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+3,"FileSystem.mkdirs(fs, new Path(whDir), new FsPermission((short) 0777));","FileSystem.mkdirs(fs,new Path(whDir),new FsPermission((short)0777));
+",0,287,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+4,"Transferable.of(setupUsersScript.getBytes(StandardCharsets.UTF_8), 0775),","copyFileToContainer(Transferable.of(setupUsersScript.getBytes(StandardCharsets.UTF_8),0775),""/setup-users.sh"");
+",0,0,6,,"SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-arguments, ),
+NumberLiteral(MethodInvocation-arguments, ),
+"
+5,this.mode = mode & 07777;,"this.mode=mode & 07777;
+",0,0,4,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+6,final int newPermission = 0777 ^ umask;,"final int newPermission=0777 ^ umask;
+",0,11,5,,"Modifier(VariableDeclarationStatement-modifiers, ),
+PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+7,"test(String.format(""ALTER SESSION SET `%s`='%o';"", ExecConstants.NEW_VIEW_DEFAULT_PERMS_KEY, (short) 0750));","test(String.format(""ALTER SESSION SET `%s`='%o';"",ExecConstants.NEW_VIEW_DEFAULT_PERMS_KEY,(short)0750));
+",0,6,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+8,"assertEquals((short) 0775, list[0].getPermission().toShort());","assertEquals((short)0775,list[0].getPermission().toShort());
+",0,13,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+9,"assertEquals(0355, toUnixMode(Files.getPosixFilePermissions(path)));","assertEquals(0355,toUnixMode(Files.getPosixFilePermissions(path)));
+",0,0,6,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+10,this((short)(mode & 01777));,"this((short)(mode & 01777));
+",0,0,3,,"PrimitiveType(CastExpression-type, ConstructorInvocation-arguments, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, ConstructorInvocation-arguments, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, ConstructorInvocation-arguments, ),
+"
+11,"return this.fs.exists(storePath) || this.fs.mkdirs(storePath, new FsPermission((short) 0755));","return this.fs.exists(storePath) || this.fs.mkdirs(storePath,new FsPermission((short)0755));
+",0,4,11,,"ThisExpression(FieldAccess-expression, MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+12,FsPermission PERMISSION_555 = new FsPermission((short) 0555);,"FsPermission PERMISSION_555=new FsPermission((short)0555);
+",0,0,5,,"SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+13,"12345678L, 87654321L, FsPermission.createImmutable((short)0111),","FileStatus stat=new FileStatus(1024L,false,3,1L << 31,12345678L,87654321L,FsPermission.createImmutable((short)0111),""hadoop"",""unqbbc"",null,p);
+",0,0,6,,"NumberLiteral(),
+NumberLiteral(),
+SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ),
+"
+14,"new File(TEST_DIR, ""doesntexist"").getAbsolutePath(), O_WRONLY, 0700);","FileDescriptor fd=NativeIO.POSIX.open(new File(TEST_DIR,""doesntexist"").getAbsolutePath(),O_WRONLY,0700);
+",0,0,6,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(),
+NumberLiteral(),
+"
+15,"O_WRONLY | O_CREAT | O_EXCL, 0700);","fd=NativeIO.POSIX.open(new File(TEST_DIR,""testWorkingOpen"").getAbsolutePath(),O_WRONLY | O_CREAT | O_EXCL,0700);
+",0,0,4,,"SimpleName(InfixExpression-leftOperand, ),
+SimpleName(InfixExpression-rightOperand, ),
+SimpleName(InfixExpression-extendedOperands, ),
+NumberLiteral(),
+"
+16,"this(DOMAIN, DOMAIN.parse(str), (short)0, (short)01777);","this(DOMAIN,DOMAIN.parse(str),(short)0,(short)01777);
+",0,0,8,,"SimpleName(ConstructorInvocation-arguments, ),
+SimpleName(MethodInvocation-expression, ConstructorInvocation-arguments, ),
+SimpleName(MethodInvocation-name, ConstructorInvocation-arguments, ),
+SimpleName(MethodInvocation-arguments, ConstructorInvocation-arguments, ),
+PrimitiveType(CastExpression-type, ConstructorInvocation-arguments, ),
+NumberLiteral(CastExpression-expression, ConstructorInvocation-arguments, ),
+PrimitiveType(CastExpression-type, ConstructorInvocation-arguments, ),
+NumberLiteral(CastExpression-expression, ConstructorInvocation-arguments, ),
+"
+17,"cluster.getFileSystem().setPermission(root, new FsPermission((short)0777));","cluster.getFileSystem().setPermission(root,new FsPermission((short)0777));
+",0,0,7,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+18,"Assert.assertEquals(""Permissions"", new FsPermission(0644), perm);","Assert.assertEquals(""Permissions"",new FsPermission(0644),perm);
+",0,0,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+19,FsPermission inheritPerm = FsPermission.createImmutable((short)(rootPerm.toShort() | 0300));,"FsPermission inheritPerm=FsPermission.createImmutable((short)(rootPerm.toShort() | 0300));
+",0,0,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+20,"NativeIO.POSIX.O_WRONLY | NativeIO.POSIX.O_CREAT | NativeIO.POSIX.O_EXCL, 0700);","fd=NativeIO.POSIX.open(new File(TEST_DIR,""testWorkingOpen"").getAbsolutePath(),NativeIO.POSIX.O_WRONLY | NativeIO.POSIX.O_CREAT | NativeIO.POSIX.O_EXCL,0700);
+",0,2,4,,"QualifiedName(InfixExpression-leftOperand, ),
+QualifiedName(InfixExpression-rightOperand, ),
+QualifiedName(InfixExpression-extendedOperands, ),
+NumberLiteral(),
+"
+21,new FsAclPermission(FsPermission.createImmutable((short)0755)));,"fs.setPermission(path,new FsAclPermission(FsPermission.createImmutable((short)0755)));
+",0,0,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ClassInstanceCreation-arguments, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ClassInstanceCreation-arguments, ),
+"
+22,"now, now + 10, new FsPermission((short) 0644), ""user"", ""group"",","final HdfsFileStatus status=new HdfsFileStatus(1001L,false,3,1L << 26,now,now + 10,new FsPermission((short)0644),""user"",""group"",DFSUtil.string2Bytes(""bar""),DFSUtil.string2Bytes(""foo""),INodeId.GRANDFATHER_INODE_ID,0,null);
+",0,0,8,,"SimpleName(),
+SimpleName(InfixExpression-leftOperand, ),
+NumberLiteral(InfixExpression-rightOperand, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, ),
+StringLiteral(),
+StringLiteral(),
+"
+23,new FsPermission((short) ~0666);,"static final FsPermission FILE_MASK_IGNORE_X_BIT=new FsPermission((short)~0666);
+",0,0,3,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, ),
+NumberLiteral(PrefixExpression-operand, CastExpression-expression, ClassInstanceCreation-arguments, ),
+"
+24,short expectedPermission = (short) ((op == OpType.CREATE) ? 0 : 0111);,"short expectedPermission=(short)((op == OpType.CREATE) ? 0 : 0111);
+",0,0,7,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+PrimitiveType(CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ParenthesizedExpression-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ParenthesizedExpression-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ConditionalExpression-thenExpression, ParenthesizedExpression-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ConditionalExpression-elseExpression, ParenthesizedExpression-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+25,"Ssh.createFile(client,  entry.getValue(), 0600,  entry.getKey());","Ssh.createFile(client,entry.getValue(),0600,entry.getKey());
+",0,0,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+26,"Ssh.createFile(client, createPuppetScript(pool, machine), 0600, destination);","Ssh.createFile(client,createPuppetScript(pool,machine),0600,destination);
+",0,0,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+27,"String.format(""%07o"", 0400).getBytes(UTF_8), 0,","System.arraycopy(String.format(""%07o"",0400).getBytes(UTF_8),0,header,100,7);
+",0,0,7,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(MethodInvocation-arguments, ),
+NumberLiteral(),
+"
+28,"assertEquals(-0123, r.intValue());","assertEquals(-0123,r.intValue());
+",0,0,4,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+29,ret = Integer.toOctalString( 0777 - mode );,"ret=Integer.toOctalString(0777 - mode);
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+30,"dorunScriptFile.getAbsolutePath(), 0755, null);","CommonTasksSupport.chmod(ExecutionEnvironmentFactory.getLocal(),dorunScriptFile.getAbsolutePath(),0755,null);
+",0,0,4,,"SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+NumberLiteral(),
+NullLiteral(),
+"
+31,"Future<CommonTasksSupport.UploadStatus> uploadTask = CommonTasksSupport.uploadFile(lf, env, remoteFile, 0755, true);","Future<CommonTasksSupport.UploadStatus> uploadTask=CommonTasksSupport.uploadFile(lf,env,remoteFile,0755,true);
+",0,0,10,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+QualifiedName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+BooleanLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+32,"uploadTask = CommonTasksSupport.uploadFile(src.getAbsolutePath(), execEnv, dst, 0755);","uploadTask=CommonTasksSupport.uploadFile(src.getAbsolutePath(),execEnv,dst,0755);
+",0,0,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+33,"src, execEnv, dst, null, 0755, false, new ChangeListener() {","CommonTasksSupport.UploadParameters up=new CommonTasksSupport.UploadParameters(src,execEnv,dst,null,0755,false,new ChangeListener(){
+  @Override public void stateChanged(  ChangeEvent e){
+    ref.set(e.getSource());
+  }
+}
+);
+",0,0,7,,"SimpleName(),
+SimpleName(),
+SimpleName(),
+NullLiteral(),
+NumberLiteral(),
+BooleanLiteral(),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ),
+"
+34,"int rc = CommonTasksSupport.uploadFile(localFile, env, remotePath, 0777).get().getExitCode();","int rc=CommonTasksSupport.uploadFile(localFile,env,remotePath,0777).get().getExitCode();
+",0,0,10,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+35,"files[currFile], env, remoteDir + '/' + name , 0600);","tasks[currThread][currFile]=CommonTasksSupport.uploadFile(files[currFile],env,remoteDir + '/' + name,0600);
+",0,0,7,,"SimpleName(ArrayAccess-array, ),
+SimpleName(ArrayAccess-index, ),
+SimpleName(),
+SimpleName(InfixExpression-leftOperand, ),
+CharacterLiteral(InfixExpression-rightOperand, ),
+SimpleName(InfixExpression-extendedOperands, ),
+NumberLiteral(),
+"
+36,"CommonTasksSupport.UploadStatus res = CommonTasksSupport.uploadFile(scriptFile, env, remoteScriptPath, 0777, true).get();","CommonTasksSupport.UploadStatus res=CommonTasksSupport.uploadFile(scriptFile,env,remoteScriptPath,0777,true).get();
+",0,0,10,,"QualifiedName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+BooleanLiteral(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+37,differ = (difference & ~0111) != 0;,"differ=(difference & ~0111) != 0;
+",0,0,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+38,return -0123;,"return -0123;
+",0,0,1,,"NumberLiteral(PrefixExpression-operand, ReturnStatement-expression, ),
+"
+39,dest[didx++] = Base64EncMap[(data[sidx] >>> 2) & 077];,"dest[didx++]=Base64EncMap[(data[sidx] >>> 2) & 077];
+",0,0,7,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(PostfixExpression-operand, ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+40,".of(bashFileTemplate.getBytes(StandardCharsets.UTF_8), 0777), file);","schemaRegistryContainer.copyFileToContainer(Transferable.of(bashFileTemplate.getBytes(StandardCharsets.UTF_8),0777),file);
+",0,0,6,,"SimpleName(),
+SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+QualifiedName(MethodInvocation-arguments, ),
+NumberLiteral(),
+SimpleName(),
+"
+41,"if (fileSystem.mkdirs(extPath, new FsPermission((short) 0777))) {","if (fileSystem.mkdirs(extPath,new FsPermission((short)0777))) {
+  fileSystem.setOwner(extPath,ADMIN,ADMIN);
+}
+ else {
+  throw new IOException(""mkdir failed to create "" + strFullPath);
+}
+",0,0,6,,"SimpleName(MethodInvocation-expression, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, IfStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, IfStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, IfStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, IfStatement-expression, ),
+"
+42,"colGenerator(000, Schema.create(Schema.Type.INT), 100, ""INTEGER""),","ColumnGenerator[] gens=new ColumnGenerator[]{colGenerator(000,Schema.create(Schema.Type.INT),100,""INTEGER""),colGenerator(111,Schema.create(Schema.Type.INT),100,""INTEGER""),colGenerator(222,Schema.create(Schema.Type.INT),100,""INTEGER""),colGenerator(333,Schema.create(Schema.Type.INT),100,""INTEGER"")};
+",0,0,7,,"SimpleName(MethodInvocation-name, ),
+NumberLiteral(MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-arguments, ),
+NumberLiteral(MethodInvocation-arguments, ),
+StringLiteral(MethodInvocation-arguments, ),
+"
+43,"assertEquals(""\\177"", TableDefWriter.getHiveOctalCharCode(0177));","assertEquals(""\\177"",TableDefWriter.getHiveOctalCharCode(0177));
+",0,0,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+44,| ((mode & 0200) == 0 ? 1 : 0),"setExternalAttributes((mode << SHORT_SHIFT) | ((mode & 0200) == 0 ? 1 : 0) | (isDirectory() ? 0x10 : 0));
+",1,1,5,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ),
+NumberLiteral(ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ),
+NumberLiteral(ConditionalExpression-elseExpression, ParenthesizedExpression-expression, ),
+"
+45,"static int[] NANOS_ARRAY = { 231000000, 000000000, 309000000 };","static int[] NANOS_ARRAY={231000000,000000000,309000000};
+",1,2,7,,"Modifier(FieldDeclaration-modifiers, ),
+PrimitiveType(ArrayType-elementType, FieldDeclaration-type, ),
+Dimension(ArrayType-dimensions, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+46,"TarUtils.formatUnsignedOctalString(07777777L, buffer, 0, buffer.length);","TarUtils.formatUnsignedOctalString(07777777L,buffer,0,buffer.length);
+",1,2,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+47,zipArchiveEntry.setUnixMode(UnixStat.FILE_FLAG | 0664);,"zipArchiveEntry.setUnixMode(UnixStat.FILE_FLAG | 0664);
+",1,1,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+48,boolean exeOk = file.isDirectory() || (existing & 0111) != 0;,"boolean exeOk=file.isDirectory() || (existing & 0111) != 0;
+",1,2,7,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+49,return (short) (~umaskMode & 0777);,"return (short)(~umaskMode & 0777);
+",1,1,3,,"PrimitiveType(CastExpression-type, ReturnStatement-expression, ),
+SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, ReturnStatement-expression, ),
+"
+50,"assertTrue(fs.mkdirs(dir, new FsPermission((short) 0777)));","assertTrue(fs.mkdirs(dir,new FsPermission((short)0777)));
+",1,1,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+51,"assertEquals((short)0755, webhdfs.getFileStatus(dir).getPermission().toShort());","assertEquals((short)0755,webhdfs.getFileStatus(dir).getPermission().toShort());
+",1,2,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+52,"super(DOMAIN, DOMAIN.parse(str), (short)0, (short)01777);","super(DOMAIN,DOMAIN.parse(str),(short)0,(short)01777);
+",1,1,8,,"SimpleName(SuperConstructorInvocation-arguments, ),
+SimpleName(MethodInvocation-expression, SuperConstructorInvocation-arguments, ),
+SimpleName(MethodInvocation-name, SuperConstructorInvocation-arguments, ),
+SimpleName(MethodInvocation-arguments, SuperConstructorInvocation-arguments, ),
+PrimitiveType(CastExpression-type, SuperConstructorInvocation-arguments, ),
+NumberLiteral(CastExpression-expression, SuperConstructorInvocation-arguments, ),
+PrimitiveType(CastExpression-type, SuperConstructorInvocation-arguments, ),
+NumberLiteral(CastExpression-expression, SuperConstructorInvocation-arguments, ),
+"
+53,"assertEquals(new Short((short)01777), param.parse(""01777""));","assertEquals(new Short((short)01777),param.parse(""01777""));
+",1,11,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+54,dest[didx + 1] = (byte) (((data[sidx + 1] << 4) & 255) | ((data[sidx + 2] >>> 2) & 017));,"dest[didx + 1]=(byte)(((data[sidx + 1] << 4) & 255) | ((data[sidx + 2] >>> 2) & 017));
+",1,11,14,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+55,"fs.create(filePath, new FsPermission((short)0740), false, bufferSize,","fs.create(filePath,new FsPermission((short)0740),false,bufferSize,fs.getDefaultReplication(filePath),fs.getDefaultBlockSize(path),null).close();
+",1,51,8,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+"
+56,short filteredPerm = (short)(perm & 01777);,"short filteredPerm=(short)(perm & 01777);
+",1,4,5,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+PrimitiveType(CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+57,"fileSystem.mkdirs(new Path(""/"", ""warehouse""), new FsPermission((short) 0777));","fileSystem.mkdirs(new Path(""/"",""warehouse""),new FsPermission((short)0777));
+",1,11,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+58,"nnrpc.create(pathStr, new FsPermission((short)0755), ""client"",","nnrpc.create(pathStr,new FsPermission((short)0755),""client"",new EnumSetWritable<CreateFlag>(EnumSet.of(CreateFlag.CREATE)),true,(short)1,128 * 1024 * 1024L,null,null,null);
+",1,1,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+59,permissions[i] = new FsPermission((short)(i & 0666));,"permissions[i]=new FsPermission((short)(i & 0666));
+",1,2,6,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+60,"(short) 0777), true, 1024, (short) 1, 1024, null);","FSDataOutputStream out=nnfs.create(CHILD_FILE1,new FsPermission((short)0777),true,1024,(short)1,1024,null);
+",1,1,8,,"PrimitiveType(CastExpression-type, ),
+NumberLiteral(CastExpression-expression, ),
+BooleanLiteral(),
+NumberLiteral(),
+PrimitiveType(CastExpression-type, ),
+NumberLiteral(CastExpression-expression, ),
+NumberLiteral(),
+NullLiteral(),
+"
+61,"ugi.resolve(file(TESTUSER, TESTGROUP, new FsPermission((short)0777)));","ugi.resolve(file(TESTUSER,TESTGROUP,new FsPermission((short)0777)));
+",1,1,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+62,if ((scFileStatus.getPermission().toShort() & 0022) != 0) {,"if ((scFileStatus.getPermission().toShort() & 0022) != 0) {
+  throw new YarnRuntimeException(""The remote jarfile should not "" + ""be writable by group or others. "" + ""The current Permission is ""+ scFileStatus.getPermission().toShort());
+}
+",1,2,5,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+"
+63,"copyTask = CommonTasksSupport.uploadFile(fullLocalPath + ""/"" + unbufferLib, execEnv, remoteLib_32, 0755, true);","copyTask=CommonTasksSupport.uploadFile(fullLocalPath + ""/"" + unbufferLib,execEnv,remoteLib_32,0755,true);
+",1,5,10,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+64,if (digitValue > 037 || c1 > '7' || c1 < '0') {,"if (digitValue > 037 || c1 > '7' || c1 < '0') {
+  readPeek=false;
+}
+ else {
+  digitValue=digitValue * 8 + (c1 - '0');
+}
+",1,1,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+65,"07654321, Integer.decode(""07654321"").intValue());","assertEquals(""Failed for 07654321"",07654321,Integer.decode(""07654321"").intValue());
+",1,1,5,,"NumberLiteral(),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+"
+66,intArray[BYTES_OFFSET] = ( index + toByte - fromByte + 1 ) & 077 ;,"intArray[BYTES_OFFSET]=(index + toByte - fromByte + 1) & 077;
+",1,1,7,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+67,dest[didx++] = Base64EncMap[(data[sidx + 2] >>> 6) & 003 | (data[sidx + 1] << 2) & 077];,"dest[didx++]=Base64EncMap[(data[sidx + 2] >>> 6) & 003 | (data[sidx + 1] << 2) & 077];
+",1,9,13,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(PostfixExpression-operand, ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ArrayAccess-index, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+68,"assertEquals(0123, parseNumber(""0123"", null));","assertEquals(0123,parseNumber(""0123"",null));
+",1,1,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+69,"UploadStatus res = CommonTasksSupport.uploadFile(localFile, env, remotePath, 0777, true).get();","UploadStatus res=CommonTasksSupport.uploadFile(localFile,env,remotePath,0777,true).get();
+",1,1,10,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+BooleanLiteral(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+70,"return new FileStatus(100L, false, 3, 128*1024*1024, 1523456000000L, 1523457000000L, perms((short)0644), ""owner"", ""group"", new Path(p));","return new FileStatus(100L,false,3,128 * 1024 * 1024,1523456000000L,1523457000000L,perms((short)0644),""owner"",""group"",new Path(p));
+",1,2,16,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+BooleanLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-extendedOperands, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NumberLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+71,dest[j++] = (byte) ((data[i+2] >>> 6) & 003 | (data[i+1] << 2) & 077);,"dest[j++]=(byte)((data[i + 2] >>> 6) & 003 | (data[i + 1] << 2) & 077);
+",1,9,13,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(PostfixExpression-operand, ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+72,"FSDataOutputStream stm = fileSys.create(name, new FsPermission((short)0777),","FSDataOutputStream stm=fileSys.create(name,new FsPermission((short)0777),true,fileSys.getConf().getInt(CommonConfigurationKeys.IO_FILE_BUFFER_SIZE_KEY,4096),NUM_OF_DATANODES,BLOCK_SIZE,null);
+",2,195,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+73,"assertEquals(UnixStat.FILE_FLAG | 0446, ze.getUnixMode());","assertEquals(UnixStat.FILE_FLAG | 0446,ze.getUnixMode());
+",2,20,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+74,"assertEquals(Integer.valueOf(017777777777), NumberUtils.createNumber(""017777777777""));","assertEquals(Integer.valueOf(017777777777),NumberUtils.createNumber(""017777777777""));
+",2,5,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+75,int permBits = 0777 & ~umaskBits;,"int permBits=0777 & ~umaskBits;
+",2,2,4,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(PrefixExpression-operand, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+76,"createAndAddWorkspace(user, getUserHome(user), (short)0755, user, group, workspaces);","createAndAddWorkspace(user,getUserHome(user),(short)0755,user,group,workspaces);
+",2,3,9,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+77,"long expectedValues[][] = { {20, 10, 00, 00, 0000}, {34, 11, 00, 00, 0000}, {24, 14, 00, 00, 0000} };","long expectedValues[][]={{20,10,00,00,0000},{34,11,00,00,0000},{24,14,00,00,0000}};
+",2,10,19,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+Dimension(VariableDeclarationFragment-extraDimensions2, VariableDeclarationStatement-fragments, ),
+Dimension(VariableDeclarationFragment-extraDimensions2, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+78,"for (short mode : Arrays.asList((short)0666, (short)0660, (short)0600)) {","for (short mode : Arrays.asList((short)0666,(short)0660,(short)0600)) {
+  FsPermission perm=new FsPermission(mode);
+  localFs.setPermission(p,perm);
+  assertEquals(perm,localFs.getFileStatus(p).getPermission());
+  assertEquals(perm,rawFs.getFileStatus(crc).getPermission());
+}
+",2,5,10,,"PrimitiveType(SingleVariableDeclaration-type, EnhancedForStatement-parameter, ),
+SimpleName(SingleVariableDeclaration-name, EnhancedForStatement-parameter, ),
+SimpleName(MethodInvocation-expression, EnhancedForStatement-expression, ),
+SimpleName(MethodInvocation-name, EnhancedForStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, EnhancedForStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, EnhancedForStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, EnhancedForStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, EnhancedForStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, EnhancedForStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, EnhancedForStatement-expression, ),
+"
+79,for(short s = 0; s <= 01777; s++) {,"for (short s=0; s <= 01777; s++) {
+  assertEquals(s,new FsPermission(s).toShort());
+  assertEquals(s,new FsPermission(String.format(""%03o"",s)).toShort());
+}
+",2,2,6,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+80,"mkdir(fs, ""/staging"", MR_UGI.getShortUserName(), ""nogroup"", (short)01777);","mkdir(fs,""/staging"",MR_UGI.getShortUserName(),""nogroup"",(short)01777);
+",2,9,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+81,"4344L, false, 2, 512 << 20, 1234L, 5678L, new FsPermission((short)0512),","CopyListingFileStatus src=new CopyListingFileStatus(4344L,false,2,512 << 20,1234L,5678L,new FsPermission((short)0512),""dingo"",""yaks"",new Path(""hdfs://localhost:4344""));
+",2,2,10,,"NumberLiteral(),
+BooleanLiteral(),
+NumberLiteral(),
+NumberLiteral(InfixExpression-leftOperand, ),
+NumberLiteral(InfixExpression-rightOperand, ),
+NumberLiteral(),
+NumberLiteral(),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, ),
+"
+82,"assertEquals(0755, (ze.getExternalAttributes() >> 16) & 0xFFFF);","assertEquals(0755,(ze.getExternalAttributes() >> 16) & 0xFFFF);
+",3,106,6,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+83,"assertEquals(Integer.valueOf(000), result.f4);","assertEquals(Integer.valueOf(000),result.f4);
+",3,3,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+84,"unprotectedSetAttributes((short) 0777, (short) 0777, ""user1"",","assertTrue(""SetOwner should return true for a new user"",unprotectedSetAttributes((short)0777,(short)0777,""user1"",""user2"",true));
+",3,3,6,,"SimpleName(MethodInvocation-name, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ),
+StringLiteral(MethodInvocation-arguments, ),
+"
+85,"TestMiniMRWithDFSWithDistinctUsers.mkdir(fs, ""/user"", ""mapred"", ""mapred"", (short)01777);","TestMiniMRWithDFSWithDistinctUsers.mkdir(fs,""/user"",""mapred"",""mapred"",(short)01777);
+",3,4,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+86,"GridmixTestUtils.dfs.mkdirs(root, new FsPermission((short)0777));","GridmixTestUtils.dfs.mkdirs(root,new FsPermission((short)0777));
+",3,4,6,,"QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+87,"status.isDirectory() ? (short) 00777 : (short) 00666,","return new FileStatusAdapter(keyInfo.getDataSize(),new Path(OZONE_URI_DELIMITER + keyInfo.getKeyName()).makeQualified(defaultUri,workingDir),status.isDirectory(),replication,status.getBlockSize(),keyInfo.getModificationTime(),keyInfo.getModificationTime(),status.isDirectory() ? (short)00777 : (short)00666,owner,owner,null,getBlockLocations(status));
+",3,3,6,,"SimpleName(MethodInvocation-expression, ConditionalExpression-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-expression, ),
+PrimitiveType(CastExpression-type, ConditionalExpression-thenExpression, ),
+NumberLiteral(CastExpression-expression, ConditionalExpression-thenExpression, ),
+PrimitiveType(CastExpression-type, ConditionalExpression-elseExpression, ),
+NumberLiteral(CastExpression-expression, ConditionalExpression-elseExpression, ),
+"
+88,"new Color[] { new Color(145, 104, 052), new Color(155, 143, 126) },","private static final Color[][] PREDEFINED_GRADIENTS=!UIUtils.isDarkResultsBackground() ? new Color[][]{new Color[]{new Color(245,204,152),new Color(255,243,226)},new Color[]{new Color(151,223,246),new Color(227,248,255)},new Color[]{new Color(200,163,248),new Color(242,232,255)},new Color[]{new Color(212,211,131),new Color(244,243,217)}} : new Color[][]{new Color[]{new Color(145,104,052),new Color(155,143,126)},new Color[]{new Color(051,123,146),new Color(127,148,155)},new Color[]{new Color(100,063,148),new Color(142,132,155)},new Color[]{new Color(112,111,031),new Color(144,143,117)}};
+",3,9,10,,"SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ArrayInitializer-expressions, ArrayCreation-initializer, ),
+NumberLiteral(ClassInstanceCreation-arguments, ArrayInitializer-expressions, ArrayCreation-initializer, ),
+NumberLiteral(ClassInstanceCreation-arguments, ArrayInitializer-expressions, ArrayCreation-initializer, ),
+NumberLiteral(ClassInstanceCreation-arguments, ArrayInitializer-expressions, ArrayCreation-initializer, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ArrayInitializer-expressions, ArrayCreation-initializer, ),
+NumberLiteral(ClassInstanceCreation-arguments, ArrayInitializer-expressions, ArrayCreation-initializer, ),
+NumberLiteral(ClassInstanceCreation-arguments, ArrayInitializer-expressions, ArrayCreation-initializer, ),
+NumberLiteral(ClassInstanceCreation-arguments, ArrayInitializer-expressions, ArrayCreation-initializer, ),
+"
+89,private static final short _700 = (short) 0700;,"private static final short _700=(short)0700;
+",4,248,7,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+PrimitiveType(FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+PrimitiveType(CastExpression-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(CastExpression-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+90,public static final FsPermission NM_PRIVATE_PERM = new FsPermission((short) 0700);,"public static final FsPermission NM_PRIVATE_PERM=new FsPermission((short)0700);
+",4,20,8,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+91,".mkdirs(mount + ""/file"", new FsPermission(020), false));","intercept(RemoteException.class,""No namenode available to invoke mkdirs"",""Expect no namenode exception."",() -> routerClient.mkdirs(mount + ""/file"",new FsPermission(020),false));
+",4,8,6,,"SimpleName(),
+SimpleName(InfixExpression-leftOperand, ),
+StringLiteral(InfixExpression-rightOperand, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ),
+NumberLiteral(ClassInstanceCreation-arguments, ),
+BooleanLiteral(),
+"
+92,private static final FsPermission DIR_PERMISSION = FsPermission.createImmutable((short)01777);,"private static final FsPermission DIR_PERMISSION=FsPermission.createImmutable((short)01777);
+",4,5,9,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+93,"assertEquals(""mode plain file"", FILE_FLAG | 0123, a.getMode());","assertEquals(""mode plain file"",FILE_FLAG | 0123,a.getMode());
+",5,20,6,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+94,"NativeIO.POSIX.chmod(toChmod.getAbsolutePath(), 0777);","NativeIO.POSIX.chmod(toChmod.getAbsolutePath(),0777);
+",5,5,5,,"QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+95,withSB = (short) (hdfs.getFileStatus(p).getPermission().toShort() | 01000);,"withSB=(short)(hdfs.getFileStatus(p).getPermission().toShort() | 01000);
+",5,14,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+96,final FsPermission defaultPerm = new FsPermission((short)0755);,"final FsPermission defaultPerm=new FsPermission((short)0755);
+",5,5,6,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+97,"byte aBytes[] = {-0, 0, +0, 0, 0, 00, 000};","byte aBytes[]={-0,0,+0,0,0,00,000};
+",5,5,10,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+Dimension(VariableDeclarationFragment-extraDimensions2, VariableDeclarationStatement-fragments, ),
+NumberLiteral(PrefixExpression-operand, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(PrefixExpression-operand, ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ArrayInitializer-expressions, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+98,"assertEquals(000, ((IntValue) values[4]).getValue());","assertEquals(000,((IntValue)values[4]).getValue());
+",6,6,6,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+99,"assertEquals(""Umask for fc1 is incorrect"", 022, fc1.getUMask().toShort());","assertEquals(""Umask for fc1 is incorrect"",022,fc1.getUMask().toShort());
+",7,7,6,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+100,setMode(new FsPermission((short)0755)).setLimit(150l);,"CachePoolInfo info=new CachePoolInfo(poolName).setOwnerName(""bob"").setGroupName(""bobgroup"").setMode(new FsPermission((short)0755)).setLimit(150l);
+",7,7,6,,"SimpleName(),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, ),
+SimpleName(),
+NumberLiteral(),
+"
+101,"createAndAddWorkspace(""tmp"", ""/tmp"", (short) 0777, processUser, processUser, workspaces);","createAndAddWorkspace(""tmp"",""/tmp"",(short)0777,processUser,processUser,workspaces);
+",8,36,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+102,"createView(org1Users[1], org1Groups[1], (short)0750, ""u1_lineitem"", getWSSchema(org1Users[0]), ""lineitem"");","createView(org1Users[1],org1Groups[1],(short)0750,""u1_lineitem"",getWSSchema(org1Users[0]),""lineitem"");
+",9,189,12,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+103,"testDeepFileCreationBase(""deep/file/creation/test"", ""deep"", ""deep/file/creation"", (short)0644, (short)0644);","testDeepFileCreationBase(""deep/file/creation/test"",""deep"",""deep/file/creation"",(short)0644,(short)0644);
+",11,11,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+104,final public static FsPermission TAJO_ROOT_DIR_PERMISSION = FsPermission.createImmutable((short) 0755);,"/** 
+ * rw-r--r-- 
+ */
+@SuppressWarnings(""OctalInteger"") final public static FsPermission TAJO_ROOT_DIR_PERMISSION=FsPermission.createImmutable((short)0755);
+",11,11,9,,"Modifier(),
+Modifier(),
+Modifier(),
+SimpleName(SimpleType-name, ),
+SimpleName(VariableDeclarationFragment-name, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, ),
+"
+105,if ((posixMode & 0400) != 0) posixPermissions.add(OWNER_READ);,"if ((posixMode & 0400) != 0) posixPermissions.add(OWNER_READ);
+",17,43,6,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+106,"assertEquals(0777, new FsPermission(""+rwx"").toShort());","assertEquals(0777,new FsPermission(""+rwx"").toShort());
+",17,17,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+107,"Assert.assertEquals(new FsPermission((short) 0755), fs.getFileStatus(path).getPermission());","Assert.assertEquals(new FsPermission((short)0755),fs.getFileStatus(path).getPermission());
+",17,24,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+108,when( archiver.getOverrideDirectoryMode() ).thenReturn( 0777 );,"when(archiver.getOverrideDirectoryMode()).thenReturn(0777);
+",17,17,5,,"SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+109,"new PermissionStatus(""test"",""test"", new FsPermission((short)00755)),","namesystem.mkdirs(""/test"",new PermissionStatus(""test"",""test"",new FsPermission((short)00755)),true);
+",19,19,6,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ),
+StringLiteral(ClassInstanceCreation-arguments, ),
+StringLiteral(ClassInstanceCreation-arguments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, ),
+PrimitiveType(CastExpression-type, ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ),
+NumberLiteral(CastExpression-expression, ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ),
+"
+110,case 0020: return '+';,"case 0020:
+",28,28,1,,"NumberLiteral(SwitchCase-expression, ),
+"
+111,if ((jjtoToken[jjmatchedKind >> 6] & (1L << (jjmatchedKind & 077))) != 0L),"if ((jjtoToken[jjmatchedKind >> 6] & (1L << (jjmatchedKind & 077))) != 0L) {
+  matchedToken=jjFillToken();
+  TokenLexicalActions(matchedToken);
+  if (jjnewLexState[jjmatchedKind] != -1)   curLexState=jjnewLexState[jjmatchedKind];
+  return matchedToken;
+}
+ else if ((jjtoSkip[jjmatchedKind >> 6] & (1L << (jjmatchedKind & 077))) != 0L) {
+  if (jjnewLexState[jjmatchedKind] != -1)   curLexState=jjnewLexState[jjmatchedKind];
+  continue EOFLoop;
+}
+",46,51,7,,"SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+"
+112,"FileSystem.mkdirs(fs, path, FsPermission.createImmutable((short) 0700));","FileSystem.mkdirs(fs,path,FsPermission.createImmutable((short)0700));
+",166,219,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(CastExpression-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+113,long l = 1L << (curChar & 077);,"long l=1L << (curChar & 077);
+",253,313,5,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+114,"{0101, ""A""},","/** 
+ * Table of octal character codes and their corresponding names.
+ */
+private static final Object[][] MAC_ROMAN_ENCODING_TABLE={{0101,""A""},{0256,""AE""},{0347,""Aacute""},{0345,""Acircumflex""},{0200,""Adieresis""},{0313,""Agrave""},{0201,""Aring""},{0314,""Atilde""},{0102,""B""},{0103,""C""},{0202,""Ccedilla""},{0104,""D""},{0105,""E""},{0203,""Eacute""},{0346,""Ecircumflex""},{0350,""Edieresis""},{0351,""Egrave""},{0106,""F""},{0107,""G""},{0110,""H""},{0111,""I""},{0352,""Iacute""},{0353,""Icircumflex""},{0354,""Idieresis""},{0355,""Igrave""},{0112,""J""},{0113,""K""},{0114,""L""},{0115,""M""},{0116,""N""},{0204,""Ntilde""},{0117,""O""},{0316,""OE""},{0356,""Oacute""},{0357,""Ocircumflex""},{0205,""Odieresis""},{0361,""Ograve""},{0257,""Oslash""},{0315,""Otilde""},{0120,""P""},{0121,""Q""},{0122,""R""},{0123,""S""},{0124,""T""},{0125,""U""},{0362,""Uacute""},{0363,""Ucircumflex""},{0206,""Udieresis""},{0364,""Ugrave""},{0126,""V""},{0127,""W""},{0130,""X""},{0131,""Y""},{0331,""Ydieresis""},{0132,""Z""},{0141,""a""},{0207,""aacute""},{0211,""acircumflex""},{0253,""acute""},{0212,""adieresis""},{0276,""ae""},{0210,""agrave""},{046,""ampersand""},{0214,""aring""},{0136,""asciicircum""},{0176,""asciitilde""},{052,""asterisk""},{0100,""at""},{0213,""atilde""},{0142,""b""},{0134,""backslash""},{0174,""bar""},{0173,""braceleft""},{0175,""braceright""},{0133,""bracketleft""},{0135,""bracketright""},{0371,""breve""},{0245,""bullet""},{0143,""c""},{0377,""caron""},{0215,""ccedilla""},{0374,""cedilla""},{0242,""cent""},{0366,""circumflex""},{072,""colon""},{054,""comma""},{0251,""copyright""},{0333,""currency""},{0144,""d""},{0240,""dagger""},{0340,""daggerdbl""},{0241,""degree""},{0254,""dieresis""},{0326,""divide""},{044,""dollar""},{0372,""dotaccent""},{0365,""dotlessi""},{0145,""e""},{0216,""eacute""},{0220,""ecircumflex""},{0221,""edieresis""},{0217,""egrave""},{070,""eight""},{0311,""ellipsis""},{0321,""emdash""},{0320,""endash""},{075,""equal""},{041,""exclam""},{0301,""exclamdown""},{0146,""f""},{0336,""fi""},{065,""five""},{0337,""fl""},{0304,""florin""},{064,""four""},{0332,""fraction""},{0147,""g""},{0247,""germandbls""},{0140,""grave""},{076,""greater""},{0307,""guillemotleft""},{0310,""guillemotright""},{0334,""guilsinglleft""},{0335,""guilsinglright""},{0150,""h""},{0375,""hungarumlaut""},{055,""hyphen""},{0151,""i""},{0222,""iacute""},{0224,""icircumflex""},{0225,""idieresis""},{0223,""igrave""},{0152,""j""},{0153,""k""},{0154,""l""},{074,""less""},{0302,""logicalnot""},{0155,""m""},{0370,""macron""},{0265,""mu""},{0156,""n""},{071,""nine""},{0226,""ntilde""},{043,""numbersign""},{0157,""o""},{0227,""oacute""},{0231,""ocircumflex""},{0232,""odieresis""},{0317,""oe""},{0376,""ogonek""},{0230,""ograve""},{061,""one""},{0273,""ordfeminine""},{0274,""ordmasculine""},{0277,""oslash""},{0233,""otilde""},{0160,""p""},{0246,""paragraph""},{050,""parenleft""},{051,""parenright""},{045,""percent""},{056,""period""},{0341,""periodcentered""},{0344,""perthousand""},{053,""plus""},{0261,""plusminus""},{0161,""q""},{077,""question""},{0300,""questiondown""},{042,""quotedbl""},{0343,""quotedblbase""},{0322,""quotedblleft""},{0323,""quotedblright""},{0324,""quoteleft""},{0325,""quoteright""},{0342,""quotesinglbase""},{047,""quotesingle""},{0162,""r""},{0250,""registered""},{0373,""ring""},{0163,""s""},{0244,""section""},{073,""semicolon""},{067,""seven""},{066,""six""},{057,""slash""},{040,""space""},{0243,""sterling""},{0164,""t""},{063,""three""},{0367,""tilde""},{0252,""trademark""},{062,""two""},{0165,""u""},{0234,""uacute""},{0236,""ucircumflex""},{0237,""udieresis""},{0235,""ugrave""},{0137,""underscore""},{0166,""v""},{0167,""w""},{0170,""x""},{0171,""y""},{0330,""ydieresis""},{0264,""yen""},{0172,""z""},{060,""zero""}};
+",1472,1472,2,,"NumberLiteral(ArrayInitializer-expressions, ),
+StringLiteral(ArrayInitializer-expressions, ),
+"

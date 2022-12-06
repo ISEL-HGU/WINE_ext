@@ -1,0 +1,10 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/activemq-artemis/artemis-core-client/src/main/java/org/apache/activemq/artemis/core/message/impl/CoreMessage.java,544,,"      if (address == null && this.address == null) {"
+2,./TargetProjects/cloudstack/api/src/main/java/org/apache/cloudstack/api/command/user/resource/UpdateResourceLimitCmd.java,114,,"        if (result != null || (result == null && max != null && max.longValue() == -1L)) {"
+3,./TargetProjects/cloudstack/plugins/hypervisors/kvm/src/main/java/com/cloud/hypervisor/kvm/resource/BridgeVifDriver.java,354,,"                if (brNameMatcher.group(1) != null || !brNameMatcher.group(1).isEmpty()) {"
+4,./TargetProjects/cloudstack/plugins/hypervisors/kvm/src/main/java/com/cloud/hypervisor/kvm/resource/IvsVifDriver.java,224,,"                if (brNameMatcher.group(1) != null || !brNameMatcher.group(1).isEmpty()) {"
+5,./TargetProjects/cloudstack/server/src/main/java/com/cloud/projects/ProjectManagerImpl.java,448,,"        if (projectAccounts != null || !projectAccounts.isEmpty()) {"
+6,./TargetProjects/incubator-tajo/tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/GroupbyNode.java,99,,"    if (groupingColumns != null || groupingColumns.length > 0) {"
+7,./TargetProjects/storm/external/storm-kinesis/src/main/java/org/apache/storm/kinesis/spout/ZkInfo.java,100,,"        if (argument == null && argument <= 0) {"
+8,./TargetProjects/storm/external/storm-kinesis/src/main/java/org/apache/storm/kinesis/spout/ZkInfo.java,106,,"        if (argument == null && argument <= 0) {"
+9,./TargetProjects/tuscany-sca-2/modules/implementation-bpel/src/main/java/org/apache/tuscany/sca/implementation/bpel/xml/BPELDocumentProcessor.java,102,,"    	if (model != null || model.isUnresolved()) {"

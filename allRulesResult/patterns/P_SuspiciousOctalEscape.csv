@@ -1,0 +1,100 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"buffer = "" 0\00007 "".getBytes(UTF_8);","buffer="" 0\00007 "".getBytes(UTF_8);
+",0,0,4,498,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+2,"assertEquals(""\279"", result, ""Failed to unescape octal characters via the between method"");","assertEquals(""\279"",result,""Failed to unescape octal characters via the between method"");
+",0,0,4,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+3,"assertThat(result).as(""Failed to unescape octal characters via the between method"").isEqualTo(""\279"");","assertThat(result).as(""Failed to unescape octal characters via the between method"").isEqualTo(""\279"");
+",0,2,6,,"SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+4,"return ""\2345\n\r\t\\ \b\f\'\'\u5678\uffff\uFFFF"";","return ""\2345\n\r\t\\ \b\f\'\'\u5678\uffff\uFFFF"";
+",0,0,1,,"StringLiteral(ReturnStatement-expression, ),
+"
+5,"assertEquals(secondChild.getChildren().get(1).toString(), ""float RANGE [[6.0\0006.5)]"");","assertEquals(secondChild.getChildren().get(1).toString(),""float RANGE [[6.0\0006.5)]"");
+",1,2,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+6,"assertEquals(operands.get(0), getRangeFilterExpression(""int"", ""(10\00020]""));","assertEquals(operands.get(0),getRangeFilterExpression(""int"",""(10\00020]""));
+",1,3,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+7,".testInnerSegmentAggregationGroupByResult(resultsBlock.getAggregationGroupByResult(), ""w\0003818\000369"", 1L,","QueriesTestUtils.testInnerSegmentAggregationGroupByResult(resultsBlock.getAggregationGroupByResult(),""w\0003818\000369"",1L,1095214422L,1547156787,528554902,52058876L,1L);
+",1,19,5,,"SimpleName(),
+SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+StringLiteral(),
+NumberLiteral(),
+"
+8,"private static final String    Z_MORE_SEPS = ""([\\p{Z}\u0f0b\0f0c\0f0d\180e]*?)"";","private static final String Z_MORE_SEPS=""([\\p{Z}\u0f0b\0f0c\0f0d\180e]*?)"";
+",1,1,6,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+StringLiteral(VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+9,"Assert.assertEquals(brokerRequest.getFilterQuery().getValue().get(0), ""(*\000100)"");","Assert.assertEquals(brokerRequest.getFilterQuery().getValue().get(0),""(*\000100)"");
+",2,2,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+10,"final String s = ""5\r\n01234\r\n5\r\n5\0006789\r\na\r\n0123\000456789\r\n0\r\n"";","final String s=""5\r\n01234\r\n5\r\n5\0006789\r\na\r\n0123\000456789\r\n0\r\n"";
+",4,6,4,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+StringLiteral(VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+11,"PredicateEvaluator predicateEvaluator = buildRangePredicate(""[-10\00010]"", FieldSpec.DataType.INT);","PredicateEvaluator predicateEvaluator=buildRangePredicate(""[-10\00010]"",FieldSpec.DataType.INT);
+",5,5,5,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+12,"""L\000306633\0002147483647"", 1L, 131154783L, 952002176, 674022574, 674022574L, 1L);","QueriesTestUtils.testInnerSegmentAggregationGroupByResult(resultsBlock.getAggregationGroupByResult(),""L\000306633\0002147483647"",1L,131154783L,952002176,674022574,674022574L,1L);
+",7,9,7,,"StringLiteral(),
+NumberLiteral(),
+NumberLiteral(),
+NumberLiteral(),
+NumberLiteral(),
+NumberLiteral(),
+NumberLiteral(),
+"
+13,"String data = ""8=FIX.4.0\0019=100\00135=D\00134=2\00149=TW\00156=ISLD\00111=ID\00121=1\001""","String data=""8=FIX.4.0\0019=100\00135=D\00134=2\00149=TW\00156=ISLD\00111=ID\00121=1\001"" + ""40=1\00154=1\00140=2\00138=200\00155=INTC\00110=160\001"";
+",12,401,3,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+14,"predicateEvaluator = buildRangePredicate(""(-10\00010]"", FieldSpec.DataType.INT);","predicateEvaluator=buildRangePredicate(""(-10\00010]"",FieldSpec.DataType.INT);
+",23,23,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"

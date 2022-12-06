@@ -1,0 +1,52 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,if (address == null && this.address == null) {,"if (address == null && this.address == null) {
+  return this;
+}
+",0,0,5,9,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+ThisExpression(FieldAccess-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+2,if (result != null || (result == null && max != null && max.longValue() == -1L)) {,"if (result != null || (result == null && max != null && max.longValue() == -1L)) {
+  ResourceLimitResponse response=_responseGenerator.createResourceLimitResponse(result);
+  response.setResponseName(getCommandName());
+  this.setResponseObject(response);
+}
+ else {
+  throw new ServerApiException(ApiErrorCode.INTERNAL_ERROR,""Failed to update resource limit"");
+}
+",0,3,9,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+3,if (groupingColumns != null || groupingColumns.length > 0) {,"if (groupingColumns != null || groupingColumns.length > 0) {
+  sb.append(""grouping set="").append(TUtil.arrayToString(groupingColumns));
+  sb.append("", "");
+}
+",0,0,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+4,if (brNameMatcher.group(1) != null || !brNameMatcher.group(1).isEmpty()) {,"if (brNameMatcher.group(1) != null || !brNameMatcher.group(1).isEmpty()) {
+  pName=brNameMatcher.group(1);
+}
+ else {
+  pName=""undefined"";
+}
+",1,2,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"

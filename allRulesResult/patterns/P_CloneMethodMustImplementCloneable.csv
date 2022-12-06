@@ -1,0 +1,48 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,public Schema<SchemaInfo> clone() {,"private static final Schema<SchemaInfo> SCHEMA_INFO_WRITER=new Schema<SchemaInfo>(){
+  @Override public byte[] encode(  SchemaInfo si){
+    return si.getSchema();
+  }
+  @Override public SchemaInfo getSchemaInfo(){
+    return Schema.BYTES.getSchemaInfo();
+  }
+  @Override public Schema<SchemaInfo> clone(){
+    return this;
+  }
+}
+;
+",0,2,4,12,"Modifier(),
+SimpleName(SimpleType-name, ParameterizedType-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ),
+SimpleName(),
+"
+2,public FileManager clone() { return clone(this) ; },"return clone(this);
+",0,2,2,,"SimpleName(MethodInvocation-name, ReturnStatement-expression, Block-statements, ),
+ThisExpression(MethodInvocation-arguments, ReturnStatement-expression, Block-statements, ),
+"
+3,@Override public ParameterValueGroup         clone()                {return impl.clone();},"return impl.clone();
+",0,0,2,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, Block-statements, ),
+"
+4,public Rule clone() {,"static Rule rule=new Rule(){
+  public Rule clone(){
+    return null;
+  }
+  @Override public String javaAction(){
+    return rule_action;
+  }
+  @Override public String javaMatch(  String action){
+    return rule_match + ""{"" + action+ ""}"";
+  }
+  @Override public String toString(){
+    return rule_name;
+  }
+}
+;
+",1,1,3,,"Modifier(MethodDeclaration-modifiers, ),
+SimpleName(SimpleType-name, MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+"
+5,public Person clone() { return null; },"return null;
+",1,1,1,,"NullLiteral(ReturnStatement-expression, Block-statements, ),
+"

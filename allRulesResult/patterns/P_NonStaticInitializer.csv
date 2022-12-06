@@ -1,0 +1,733 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,TransactionCoordinator txnMgr = new TransactionCoordinator(jrnl); {,"TransactionCoordinator txnMgr=new TransactionCoordinator(jrnl);
+",0,0,4,31,"SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+2,{,"class Panel extends JPanel implements ExplorerManager.Provider, Lookup.Provider {
+{
+    setLayout(new BorderLayout());
+    add(view,BorderLayout.CENTER);
+  }
+  public ExplorerManager getExplorerManager(){
+    return manager;
+  }
+  @Override public boolean requestFocusInWindow(){
+    return view.requestFocusInWindow();
+  }
+  public Lookup getLookup(){
+    return lookup;
+  }
+}
+",0,0,0,,
+3,"{providers.put (this, null);}","providers.put(this,null);
+",0,0,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+ThisExpression(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+NullLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+"
+4,{,"class PP implements PropertyProvider, FileChangeListener, AntProjectListener {
+  final ChangeSupport cs=new ChangeSupport(this);
+  final Set<File> listeningTo=new HashSet<File>();
+{
+    helper.addAntProjectListener(WeakListeners.create(AntProjectListener.class,this,helper));
+  }
+  private void listenTo(  File f,  Set<File> noLongerListeningTo){
+    if (f != null) {
+      noLongerListeningTo.remove(f);
+      if (listeningTo.add(f)) {
+        FileUtil.addFileChangeListener(this,f);
+      }
+    }
+  }
+  public synchronized Map<String,String> getProperties(){
+    Map<String,String> m=new HashMap<String,String>();
+    Set<File> noLongerListeningTo=new HashSet<File>(listeningTo);
+    Definitions def=findDefinitions(helper);
+    if (def != null) {
+      m.putAll(def.properties(true));
+      listenTo(def.mainPropertiesFile,noLongerListeningTo);
+      listenTo(def.privatePropertiesFile,noLongerListeningTo);
+    }
+    for (    File f : noLongerListeningTo) {
+      listeningTo.remove(f);
+      FileUtil.removeFileChangeListener(this,f);
+    }
+    return m;
+  }
+  public void addChangeListener(  ChangeListener l){
+    cs.addChangeListener(l);
+  }
+  public void removeChangeListener(  ChangeListener l){
+    cs.removeChangeListener(l);
+  }
+  public void fileFolderCreated(  FileEvent fe){
+    fireChangeNowOrLater();
+  }
+  public void fileDataCreated(  FileEvent fe){
+    fireChangeNowOrLater();
+  }
+  public void fileChanged(  FileEvent fe){
+    fireChangeNowOrLater();
+  }
+  public void fileDeleted(  FileEvent fe){
+    fireChangeNowOrLater();
+  }
+  public void fileRenamed(  FileRenameEvent fe){
+    fireChangeNowOrLater();
+  }
+  public void fileAttributeChanged(  FileAttributeEvent fe){
+    fireChangeNowOrLater();
+  }
+  void fireChangeNowOrLater(){
+    if (!cs.hasListeners()) {
+      return;
+    }
+    final Mutex.Action<Void> action=new Mutex.Action<Void>(){
+      public Void run(){
+        cs.fireChange();
+        return null;
+      }
+    }
+;
+    if (ProjectManager.mutex().isWriteAccess() || FIRE_CHANGES_SYNCH) {
+      ProjectManager.mutex().readAccess(action);
+    }
+ else     if (ProjectManager.mutex().isReadAccess()) {
+      action.run();
+    }
+ else {
+      RP.post(new Runnable(){
+        public void run(){
+          ProjectManager.mutex().readAccess(action);
+        }
+      }
+);
+    }
+  }
+  public void configurationXmlChanged(  AntProjectEvent ev){
+    cs.fireChange();
+  }
+  public void propertiesChanged(  AntProjectEvent ev){
+  }
+}
+",0,0,0,,
+5,{,"class Panel extends JPanel implements ExplorerManager.Provider, Lookup.Provider {
+  private final Lookup lookup=ExplorerUtils.createLookup(manager,new ActionMap());
+{
+    setLayout(new BorderLayout());
+    add(view,BorderLayout.CENTER);
+  }
+  public ExplorerManager getExplorerManager(){
+    return manager;
+  }
+  public Lookup getLookup(){
+    return lookup;
+  }
+}
+",0,0,0,,
+6,{,"class Panel extends JPanel implements ExplorerManager.Provider, Lookup.Provider {
+  private final Lookup lookup=ExplorerUtils.createLookup(manager,new ActionMap());
+{
+    setLayout(new BorderLayout());
+    add(view,BorderLayout.CENTER);
+  }
+  public ExplorerManager getExplorerManager(){
+    return manager;
+  }
+  public Lookup getLookup(){
+    return lookup;
+  }
+}
+",0,0,0,,
+7,{,"class Panel extends JPanel implements ExplorerManager.Provider, Lookup.Provider {
+  private final Lookup lookup=ExplorerUtils.createLookup(manager,new ActionMap());
+{
+    setLayout(new BorderLayout());
+    add(view,BorderLayout.CENTER);
+  }
+  public ExplorerManager getExplorerManager(){
+    return manager;
+  }
+  public Lookup getLookup(){
+    return lookup;
+  }
+}
+",0,0,0,,
+8,{,"class Panel extends JPanel implements ExplorerManager.Provider, Lookup.Provider {
+  private final Lookup lookup=ExplorerUtils.createLookup(manager,new ActionMap());
+{
+    setLayout(new BorderLayout());
+    add(view,BorderLayout.CENTER);
+  }
+  public ExplorerManager getExplorerManager(){
+    return manager;
+  }
+  public Lookup getLookup(){
+    return lookup;
+  }
+}
+",0,0,0,,
+9,{,"class Scanner extends CollectIdentifiers<Void,Void> {
+  public Scanner(){
+    super(patternIdentifiers,cancel);
+  }
+  private boolean auxPath;
+  private List<String> currentContent;
+{
+    content.add(currentContent=new ArrayList<String>());
+  }
+  @Override public Void scan(  Tree t,  Void v){
+    if (t == null) {
+      return null;
+    }
+    if (Utilities.isMultistatementWildcardTree(t) || multiModifiers(t)) {
+      int target=nextState[0]++;
+      setBit(transitionTable,NFA.Key.create(currentState[0],new Input(Kind.IDENTIFIER,""$"",false)),target);
+      setBit(transitionTable,NFA.Key.create(target,UP),currentState[0]);
+      content.add(currentContent=new ArrayList<String>());
+      return null;
+    }
+    if (t.getKind() == Kind.BLOCK) {
+      StatementTree singletonStatement=null;
+      BlockTree bt=(BlockTree)t;
+      if (!bt.isStatic()) {
+switch (bt.getStatements().size()) {
+case 1:
+          singletonStatement=bt.getStatements().get(0);
+        break;
+case 2:
+      if (Utilities.isMultistatementWildcardTree(bt.getStatements().get(0))) {
+        singletonStatement=bt.getStatements().get(1);
+      }
+ else {
+        if (Utilities.isMultistatementWildcardTree(bt.getStatements().get(1))) {
+          singletonStatement=bt.getStatements().get(0);
+        }
+      }
+    break;
+case 3:
+  if (Utilities.isMultistatementWildcardTree(bt.getStatements().get(0)) && Utilities.isMultistatementWildcardTree(bt.getStatements().get(2))) {
+    singletonStatement=bt.getStatements().get(1);
+  }
+break;
+}
+}
+if (singletonStatement != null) {
+int backup=currentState[0];
+boolean oldAuxPath=auxPath;
+auxPath=true;
+scan(singletonStatement,null);
+auxPath=oldAuxPath;
+int target=currentState[0];
+setBit(transitionTable,NFA.Key.create(backup,new Input(Kind.BLOCK,null,false)),currentState[0]=nextState[0]++);
+setBit(transitionTable,NFA.Key.create(currentState[0],new Input(Kind.IDENTIFIER,""("",false)),currentState[0]=nextState[0]++);
+for (StatementTree st : bt.getStatements()) {
+scan(st,null);
+}
+setBit(transitionTable,NFA.Key.create(currentState[0],UP),currentState[0]=nextState[0]++);
+setBit(transitionTable,NFA.Key.create(currentState[0],UP),target);
+currentState[0]=target;
+return null;
+}
+}
+boolean[] goDeeper=new boolean[1];
+Input[] bypass=new Input[1];
+Input i=normalizeInput(t,goDeeper,bypass);
+if (!TO_IGNORE.contains(i.kind) && !auxPath) {
+currentContent.add(kind2EncodedString.get(i.kind));
+}
+if (i.name != null && !auxPath) {
+if (!""$"".equals(i.name)) {
+if (isIdentifierAcceptable(i.name)) {
+currentContent.add(i.name);
+}
+if (Utilities.isPureMemberSelect(t,false)) {
+content.add(currentContent=new ArrayList<String>());
+}
+}
+ else {
+content.add(currentContent=new ArrayList<String>());
+}
+}
+int backup=currentState[0];
+handleTree(i,goDeeper,t,bypass);
+boolean oldAuxPath=auxPath;
+auxPath=true;
+if (StatementTree.class.isAssignableFrom(t.getKind().asInterface()) && t != pattern) {
+int target=currentState[0];
+setBit(transitionTable,NFA.Key.create(backup,new Input(Kind.BLOCK,null,false)),currentState[0]=nextState[0]++);
+setBit(transitionTable,NFA.Key.create(currentState[0],new Input(Kind.IDENTIFIER,""("",false)),currentState[0]=nextState[0]++);
+handleTree(i,goDeeper,t,bypass);
+setBit(transitionTable,NFA.Key.create(currentState[0],UP),currentState[0]=nextState[0]++);
+setBit(transitionTable,NFA.Key.create(currentState[0],UP),target);
+currentState[0]=target;
+}
+auxPath=oldAuxPath;
+return null;
+}
+@Override public Void scan(Iterable<? extends Tree> nodes,Void p){
+setBit(transitionTable,NFA.Key.create(currentState[0],new Input(Kind.IDENTIFIER,""("",false)),currentState[0]=nextState[0]++);
+try {
+return super.scan(nodes,p);
+}
+  finally {
+setBit(transitionTable,NFA.Key.create(currentState[0],UP),currentState[0]=nextState[0]++);
+}
+}
+private void handleTree(Input i,boolean[] goDeeper,Tree t,Input[] bypass){
+int backup=currentState[0];
+int target=nextState[0]++;
+setBit(transitionTable,NFA.Key.create(backup,i),currentState[0]=nextState[0]++);
+if (goDeeper[0]) {
+super.scan(t,null);
+}
+ else {
+new CollectIdentifiers<Void,Void>(patternIdentifiers,cancel).scan(t,null);
+int aux=nextState[0]++;
+setBit(transitionTable,NFA.Key.create(backup,new Input(Kind.MEMBER_SELECT,i.name,false)),aux);
+setBit(transitionTable,NFA.Key.create(aux,new Input(Kind.IDENTIFIER,""$"",false)),aux=nextState[0]++);
+setBit(transitionTable,NFA.Key.create(aux,UP),aux=nextState[0]++);
+setBit(transitionTable,NFA.Key.create(aux,UP),target);
+}
+setBit(transitionTable,NFA.Key.create(currentState[0],UP),target);
+if (bypass[0] != null) {
+int intermediate=nextState[0]++;
+setBit(transitionTable,NFA.Key.create(backup,bypass[0]),intermediate);
+setBit(transitionTable,NFA.Key.create(intermediate,UP),target);
+}
+currentState[0]=target;
+}
+}
+",0,0,0,,
+10,{,"class ExTC extends org.openide.windows.TopComponent implements java.beans.PropertyChangeListener {
+  ExplorerManager em=new ExplorerManager();
+{
+    addPropertyChangeListener(this);
+    em.setRootContext(new AbstractNode(new Children.Array()));
+  }
+  @Override public void propertyChange(  java.beans.PropertyChangeEvent ev){
+    if (""activatedNodes"".equals(ev.getPropertyName())) {
+      try {
+        Node[] arr=getActivatedNodes();
+        Children.Array ch=(Children.Array)em.getRootContext().getChildren();
+        for (int i=0; i < arr.length; i++) {
+          if (arr[i].getParentNode() != em.getRootContext()) {
+            assertTrue(""If this fails we are in troubles"",ch.add(new Node[]{arr[i]}));
+          }
+        }
+        em.setSelectedNodes(getActivatedNodes());
+      }
+ catch (      java.beans.PropertyVetoException ex) {
+        throw new AssertionError(ex);
+      }
+    }
+  }
+}
+",0,0,0,,
+11,{,"class AWTTst implements Runnable {
+  AbstractNode root=new AbstractNode(new Children.Array());
+  Node[] children;
+{
+    List<Node> arr=new ArrayList<Node>();
+    for (    String s : childrenNames) {
+      arr.add(createLeaf(s));
+    }
+    children=arr.toArray(new Node[0]);
+  }
+  Panel p;
+  BeanTreeView btv;
+  JFrame f;
+  JTree tree;
+  Node operateOn;
+  private void initUI(){
+    if (p == null) {
+      p=new Panel();
+      btv=new BeanTreeView();
+      f=new JFrame();
+      tree=btv.tree;
+      root.setName(""test root"");
+      root.getChildren().add(children);
+      p.getExplorerManager().setRootContext(root);
+      p.add(BorderLayout.CENTER,btv);
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      f.getContentPane().add(BorderLayout.CENTER,p);
+      f.setVisible(true);
+    }
+  }
+  @Override public void run(){
+    initUI();
+    for (int i=0; ; i++) {
+      if (name.equals(children[i].getName())) {
+        operateOn=children[i];
+        break;
+      }
+    }
+    try {
+      p.getExplorerManager().setSelectedNodes(new Node[]{operateOn});
+    }
+ catch (    PropertyVetoException e) {
+      fail(""Unexpected PropertyVetoException from ExplorerManager.setSelectedNodes()"");
+    }
+    TreePath[] paths=tree.getSelectionPaths();
+    assertNotNull(""Before removal: one node should be selected, but there are none."",paths);
+    assertEquals(""Before removal: one node should be selected, but there are none."",1,paths.length);
+    assertEquals(""Before removal: one node should be selected, but there are none."",operateOn,Visualizer.findNode(paths[0].getLastPathComponent()));
+    assertEquals(""Before removal: one node should be selected, but there are none."",operateOn,Visualizer.findNode(tree.getAnchorSelectionPath().getLastPathComponent()));
+    root.getChildren().remove(new Node[]{operateOn});
+    assertNotNull(""After removal: one node should be selected, but there are none."",tree.getSelectionPath());
+    children=null;
+  }
+  public void tryGc(){
+    WeakReference<Node> wref=new WeakReference<Node>(operateOn);
+    operateOn=null;
+    assertGC(""Node should be released."",wref);
+  }
+}
+",0,0,0,,
+12,{,"class AWTTst implements Runnable {
+  Node[] children;
+{
+    List<Node> arr=new ArrayList<Node>();
+    for (    String s : childrenNames) {
+      arr.add(createLeaf(s));
+    }
+    children=arr.toArray(new Node[0]);
+  }
+  AbstractNode root=new AbstractNode(new RefreshableChildren());
+  Panel p;
+  BeanTreeView btv;
+  JFrame f;
+  JTree tree;
+  Node operateOn;
+  private void initUI(){
+    if (p == null) {
+      p=new Panel();
+      btv=new BeanTreeView();
+      f=new JFrame();
+      tree=btv.tree;
+      ((RefreshableChildren)root.getChildren()).refreshKeys(childrenNames);
+      root.setName(""test root"");
+      p.getExplorerManager().setRootContext(root);
+      p.add(BorderLayout.CENTER,btv);
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      f.getContentPane().add(BorderLayout.CENTER,p);
+      f.setVisible(true);
+    }
+  }
+class RefreshableChildren extends Children.Keys<String> {
+    public RefreshableChildren(){
+      super(true);
+    }
+    @Override protected Node[] createNodes(    String key){
+      Node n=null;
+      for (      Node cand : children) {
+        if (cand.getName().equals(key)) {
+          n=cand;
+          break;
+        }
+      }
+      return new Node[]{n};
+    }
+    void refreshKeys(    String[] keys){
+      super.setKeys(keys);
+    }
+  }
+  @Override public void run(){
+    initUI();
+    List<Node> selection=new ArrayList<Node>();
+    for (int i=0; i < children.length; i++) {
+      if (name.equals(children[i].getName())) {
+        operateOn=children[i];
+      }
+      if (toSelect.contains(children[i].getName())) {
+        selection.add(children[i]);
+      }
+    }
+    try {
+      p.getExplorerManager().setSelectedNodes(selection.toArray(new Node[selection.size()]));
+    }
+ catch (    PropertyVetoException e) {
+      fail(""Unexpected PropertyVetoException from ExplorerManager.setSelectedNodes()"");
+    }
+    TreePath[] paths=tree.getSelectionPaths();
+    assertNotNull(""Before removal: one node should be selected, but there are none."",paths);
+    assertEquals(""Before removal: one node should be selected, but there are none."",selection.size(),paths.length);
+    if (selection.size() == 1) {
+      assertEquals(""Before removal: one node should be selected, but there are none."",operateOn,Visualizer.findNode(paths[0].getLastPathComponent()));
+      assertEquals(""Before removal: one node should be selected, but there are none."",operateOn,Visualizer.findNode(tree.getAnchorSelectionPath().getLastPathComponent()));
+    }
+    try {
+      operateOn.destroy();
+    }
+ catch (    IOException ex) {
+      fail(ex.getMessage());
+    }
+    assertNotNull(""After removal: one node should be selected, but there are none."",tree.getSelectionPath());
+  }
+  public void tryGc() throws InterruptedException, InvocationTargetException {
+    EventQueue.invokeAndWait(new Runnable(){
+      @Override public void run(){
+        List<String> newKeys=new ArrayList<String>(Arrays.asList(childrenNames));
+        newKeys.remove(name);
+        ((RefreshableChildren)root.getChildren()).refreshKeys(newKeys.toArray(new String[newKeys.size()]));
+        children=null;
+      }
+    }
+);
+    WeakReference<Node> wref=new WeakReference<Node>(operateOn);
+    operateOn=null;
+    RequestProcessor selectionProcessor;
+    int delay;
+    try {
+      Method getSelectionProcessorMethod=ExplorerManager.class.getDeclaredMethod(""getSelectionProcessor"");
+      getSelectionProcessorMethod.setAccessible(true);
+      selectionProcessor=(RequestProcessor)getSelectionProcessorMethod.invoke(null);
+      Field delayField=ExplorerManager.class.getDeclaredField(""SELECTION_SYNC_DELAY"");
+      delayField.setAccessible(true);
+      delay=(Integer)delayField.get(null);
+      Class ticTacClass=Class.forName(RequestProcessor.class.getName() + ""$TickTac"");
+      Field tickField=ticTacClass.getDeclaredField(""TICK"");
+      tickField.setAccessible(true);
+      Object tick=tickField.get(null);
+      if (tick != null) {
+        Field queueField=ticTacClass.getDeclaredField(""queue"");
+        queueField.setAccessible(true);
+        Queue queue=(Queue)queueField.get(tick);
+        while (hasOwnersOf(tick,queue,selectionProcessor)) {
+          Thread.sleep(2 * delay);
+        }
+      }
+    }
+ catch (    IllegalAccessException ex) {
+      throw new InvocationTargetException(ex);
+    }
+catch (    NoSuchMethodException ex) {
+      throw new InvocationTargetException(ex);
+    }
+catch (    NoSuchFieldException ex) {
+      throw new InvocationTargetException(ex);
+    }
+catch (    ClassNotFoundException ex) {
+      throw new InvocationTargetException(ex);
+    }
+    Thread.sleep(2 * delay);
+    selectionProcessor.awaitTermination(60,TimeUnit.SECONDS);
+    assertGC(""Node should be released."",wref);
+  }
+  private boolean hasOwnersOf(  Object tick,  Queue q,  RequestProcessor rp) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
+    Class itemClass=Class.forName(RequestProcessor.class.getName() + ""$Item"");
+    Field ownerField=itemClass.getDeclaredField(""owner"");
+    ownerField.setAccessible(true);
+synchronized (tick) {
+      for (      Object o : q) {
+        Object ownerRP=ownerField.get(o);
+        if (rp.equals(ownerRP)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+}
+",0,0,0,,
+13,{,"class W extends WeakReference<Object> implements Runnable {
+  boolean cleaned;
+  boolean finalized;
+  public W(  Object obj){
+    super(obj,Utilities.activeReferenceQueue());
+  }
+  public synchronized void run(){
+    cleaned=true;
+    notifyAll();
+  }
+  public synchronized void notifyFinalize(){
+    finalized=true;
+    notifyAll();
+  }
+{
+    new Object(){
+      @Override public void finalize(){
+        notifyFinalize();
+      }
+    }
+;
+  }
+  public void await() throws InterruptedException {
+    for (; ; ) {
+synchronized (this) {
+        if (cleaned && finalized) {
+          return;
+        }
+        wait(100);
+      }
+      System.gc();
+      System.runFinalization();
+    }
+  }
+}
+",0,0,0,,
+14,{,"class L implements LookupListener {
+  Lookup.Result integer=lookup.lookup(new Template(Integer.class));
+  Lookup.Result number=lookup.lookup(new Template(Number.class));
+  Lookup.Result serial=lookup.lookup(new Template(Serializable.class));
+{
+    integer.addLookupListener(this);
+    number.addLookupListener(this);
+    serial.addLookupListener(this);
+  }
+  int round;
+  public void resultChanged(  LookupEvent ev){
+    Collection c1=get(type,integer);
+    Collection c2=get(type,number);
+    Collection c3=get(type,serial);
+    assertEquals(""round "" + round + "" c1 vs. c2"",c1,c2);
+    assertEquals(""round "" + round + "" c1 vs. c3"",c1,c3);
+    assertEquals(""round "" + round + "" c2 vs. c3"",c2,c3);
+    round++;
+  }
+  private Collection get(  int type,  Lookup.Result res){
+    Collection c;
+switch (type) {
+case 0:
+      c=res.allInstances();
+    break;
+case 1:
+  c=res.allClasses();
+break;
+case 2:
+c=res.allItems();
+break;
+default :
+c=null;
+fail(""Type: "" + type);
+break;
+}
+assertNotNull(c);
+return new ArrayList(c);
+}
+}
+",0,0,0,,
+15,{,"class L implements LookupListener {
+  Lookup.Result integer=lookup.lookup(new Lookup.Template(Integer.class));
+  Lookup.Result number=lookup.lookup(new Lookup.Template(Number.class));
+  Lookup.Result serial=lookup.lookup(new Lookup.Template(Serializable.class));
+{
+    integer.addLookupListener(this);
+    number.addLookupListener(this);
+    serial.addLookupListener(this);
+  }
+  int round;
+  public void resultChanged(  LookupEvent ev){
+    Collection c1=get(type,integer);
+    Collection c2=get(type,number);
+    Collection c3=get(type,serial);
+    assertEquals(""round "" + round + "" c1 vs. c2"",c1,c2);
+    assertEquals(""round "" + round + "" c1 vs. c3"",c1,c3);
+    assertEquals(""round "" + round + "" c2 vs. c3"",c2,c3);
+    round++;
+  }
+  private Collection get(  int type,  Lookup.Result res){
+    Collection c;
+switch (type) {
+case 0:
+      c=res.allInstances();
+    break;
+case 1:
+  c=res.allClasses();
+break;
+case 2:
+c=res.allItems();
+break;
+default :
+c=null;
+fail(""Type: "" + type);
+break;
+}
+assertNotNull(c);
+return new ArrayList(c);
+}
+}
+",0,0,0,,
+16,{,"class L implements LookupListener {
+  Lookup.Result integer=lookup.lookup(new Lookup.Template(Integer.class));
+  Lookup.Result number=lookup.lookup(new Lookup.Template(Number.class));
+  Lookup.Result serial=lookup.lookup(new Lookup.Template(Serializable.class));
+{
+    integer.addLookupListener(this);
+    number.addLookupListener(this);
+    serial.addLookupListener(this);
+  }
+  int round;
+  public void resultChanged(  LookupEvent ev){
+    Collection c1=get(type,integer);
+    Collection c2=get(type,number);
+    Collection c3=get(type,serial);
+    assertEquals(""round "" + round + "" c1 vs. c2"",c1,c2);
+    assertEquals(""round "" + round + "" c1 vs. c3"",c1,c3);
+    assertEquals(""round "" + round + "" c2 vs. c3"",c2,c3);
+    round++;
+  }
+  private Collection get(  int type,  Lookup.Result res){
+    Collection c;
+switch (type) {
+case 0:
+      c=res.allInstances();
+    break;
+case 1:
+  c=res.allClasses();
+break;
+case 2:
+c=res.allItems();
+break;
+default :
+c=null;
+fail(""Type: "" + type);
+break;
+}
+assertNotNull(c);
+return new ArrayList(c);
+}
+}
+",0,0,0,,
+17,{,"class Panel extends JPanel implements ExplorerManager.Provider, Lookup.Provider {
+{
+    setLayout(new BorderLayout());
+    add(view,BorderLayout.CENTER);
+  }
+  @Override public ExplorerManager getExplorerManager(){
+    return manager;
+  }
+  @Override public boolean requestFocusInWindow(){
+    return view.requestFocusInWindow();
+  }
+  @Override public Lookup getLookup(){
+    return lookup;
+  }
+}
+",0,0,0,,
+18,{ persistenceLocationSpec = BlobStoreTest.PERSIST_TO_OBJECT_STORE_FOR_TEST_SPEC; },"persistenceLocationSpec=BlobStoreTest.PERSIST_TO_OBJECT_STORE_FOR_TEST_SPEC;
+",1,1,2,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+QualifiedName(Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+"
+19,private final NodeState base; {,"private final NodeState base;
+",1,1,4,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+"
+20,{ pcs = new PropertyChangeSupport (this); },"pcs=new PropertyChangeSupport(this);
+",1,1,3,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+ThisExpression(ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+"
+21,{ setPositive(false); },"setPositive(false);
+",3,3,2,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+"
+22,"{ messages.add(""ME.initializer""); }","messages.add(""ME.initializer"");
+",3,3,3,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, Initializer-body, ),
+"

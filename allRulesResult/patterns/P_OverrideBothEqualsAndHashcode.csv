@@ -1,0 +1,129 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,@Override public boolean equals(final Object object) {,"return new SetOfUnknownSize<Entry<K,V>>(){
+  @Override public void clear(){
+    AbstractMap.this.clear();
+  }
+  @Override public boolean isEmpty(){
+    return AbstractMap.this.isEmpty();
+  }
+  @Override public int size(){
+    return AbstractMap.this.size();
+  }
+  /** 
+ * Returns  {@code true} if the map contains the given (key, value) pair. 
+ */
+  @Override public boolean contains(  final Object e){
+    if (e instanceof Entry<?,?>) {
+      final Entry<?,?> entry=(Entry<?,?>)e;
+      final Object value=get(entry.getKey());
+      if (value != null) {
+        return value.equals(entry.getValue());
+      }
+    }
+    return false;
+  }
+  /** 
+ * Returns an iterator compliant to the Map contract. 
+ */
+  @Override public Iterator<Entry<K,V>> iterator(){
+    final EntryIterator<K,V> it=entryIterator();
+    return (it != null) ? new Entries<>(it) : Collections.emptyIterator();
+  }
+  /** 
+ * Overridden for the same reason than  {@link AbstractMap#equals(Object). }
+ */
+  @Override public boolean equals(  final Object object){
+    if (object == this) {
+      return true;
+    }
+    if (!(object instanceof Set<?>)) {
+      return false;
+    }
+    final Set<?> that=(Set<?>)object;
+    final EntryIterator<K,V> it=entryIterator();
+    if (it == null) {
+      return that.isEmpty();
+    }
+    int size=0;
+    while (it.next()) {
+      if (!that.contains(it.getEntry())) {
+        return false;
+      }
+      size++;
+    }
+    return size == that.size();
+  }
+}
+;
+",0,32,7,86,"SimpleName(MarkerAnnotation-typeName, ),
+Modifier(),
+PrimitiveType(),
+SimpleName(),
+Modifier(SingleVariableDeclaration-modifiers, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+"
+2,@Override public boolean equals(Object o) {,"iters=new LinkedHashMap<Long,GridFutureAdapter<FieldsResult>>(16,0.75f,true){
+  @Override protected boolean removeEldestEntry(  Map.Entry<Long,GridFutureAdapter<FieldsResult>> e){
+    boolean rmv=size() > maxIterCnt;
+    if (rmv) {
+      try {
+        e.getValue().get().closeIfNotShared(recipient(sndId,e.getKey()));
+      }
+ catch (      IgniteCheckedException ex) {
+        U.error(log,""Failed to close fields query iterator."",ex);
+      }
+    }
+    return rmv;
+  }
+  @Override public boolean equals(  Object o){
+    return o == this;
+  }
+}
+;
+",0,8,6,,"SimpleName(MarkerAnnotation-typeName, MethodDeclaration-modifiers, ),
+Modifier(MethodDeclaration-modifiers, ),
+PrimitiveType(MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+"
+3,public boolean equals(Object o2) { return o2==this; },"return o2 == this;
+",0,5,2,,"SimpleName(InfixExpression-leftOperand, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+ThisExpression(InfixExpression-rightOperand, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+"
+4,public int hashCode() { return element.hashCode() ^ sourceNode.hashCode() ; },"return element.hashCode() ^ sourceNode.hashCode();
+",0,1,4,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ReturnStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, Block-statements, ),
+"
+5,"hash.addNode(new Object() { @Override public int hashCode() { return 0; } }, 1);","hash.addNode(new Object(){
+  @Override public int hashCode(){
+    return 0;
+  }
+}
+,1);
+",1,5,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MarkerAnnotation-typeName, MethodDeclaration-modifiers, AnonymousClassDeclaration-bodyDeclarations, ClassInstanceCreation-anonymousClassDeclaration, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Modifier(MethodDeclaration-modifiers, AnonymousClassDeclaration-bodyDeclarations, ClassInstanceCreation-anonymousClassDeclaration, MethodInvocation-arguments, ExpressionStatement-expression, ),
+PrimitiveType(MethodDeclaration-returnType2, AnonymousClassDeclaration-bodyDeclarations, ClassInstanceCreation-anonymousClassDeclaration, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodDeclaration-name, AnonymousClassDeclaration-bodyDeclarations, ClassInstanceCreation-anonymousClassDeclaration, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ReturnStatement-expression, Block-statements, MethodDeclaration-body, AnonymousClassDeclaration-bodyDeclarations, ClassInstanceCreation-anonymousClassDeclaration, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+6,public int hashCode() { return getElement().hashCode() ^ Element.HashNotExists ; },"return getElement().hashCode() ^ Element.HashNotExists;
+",1,1,3,,"SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ReturnStatement-expression, Block-statements, ),
+QualifiedName(InfixExpression-rightOperand, ReturnStatement-expression, Block-statements, ),
+"
+7,public boolean equals(Object obj) {return true;},"return true;
+",3,3,1,,"BooleanLiteral(ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+"
+8,public int hashCode()   { return HC_AggAvg ^ getExprList().hashCode() ; },"return HC_AggAvg ^ getExprList().hashCode();
+",11,13,3,,"SimpleName(InfixExpression-leftOperand, ReturnStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, Block-statements, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, Block-statements, ),
+"

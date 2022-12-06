@@ -1,0 +1,49 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"assertTrue(""Completed query: ""+query[i],true);","assertTrue(""Completed query: "" + query[i],true);
+",0,454,5,490,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,"assertTrue(false, ""Failed to make async call to api"");","assertTrue(false,""Failed to make async call to api"");
+",0,0,3,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+3,assertTrue(!InitTest.initted);,"assertTrue(!InitTest.initted);
+",0,0,2,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+4,"assertTrue(""Unexpected exception for query "" + q + "": "" + t,","assertTrue(""Unexpected exception for query "" + q + "": ""+ t,false);
+",0,2,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+5,"assertTrue(fileName + ""-"" + testName + "" - Unexpected type of contextEnricher"", false);","assertTrue(fileName + ""-"" + testName+ "" - Unexpected type of contextEnricher"",false);
+",0,0,6,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+6,"assertFalse(e.toString(), true);","assertFalse(e.toString(),true);
+",2,2,4,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+7,"assertTrue(""Should not have implicit access to new column "" + colName, !found);","assertTrue(""Should not have implicit access to new column "" + colName,!found);
+",2,11,4,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+8,"assertTrue(!added, ""Duplicated entry was not added"");","assertTrue(!added,""Duplicated entry was not added"");
+",2,2,3,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(PrefixExpression-operand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

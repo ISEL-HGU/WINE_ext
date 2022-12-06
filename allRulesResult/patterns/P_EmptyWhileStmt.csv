@@ -1,0 +1,1616 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,while (((c = super.read()) != -1 && !filter.accept(c))) {,"while (((c=super.read()) != -1 && !filter.accept(c))) {
+}
+",0,148,6,1417,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+SimpleName(SuperMethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+"
+2,while (++pos < header.length() && WHITE.indexOf(header.charAt(pos)) != -1) {,"while (++pos < header.length() && WHITE.indexOf(header.charAt(pos)) != -1) {
+}
+",0,13,9,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+3,while (byteBuffer.remaining() > 0 && socketChannel.read(byteBuffer) > 0);,"while (byteBuffer.remaining() > 0 && socketChannel.read(byteBuffer) > 0) ;
+",0,210,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+4,"while ((read = is.read(buf, 0, buf.length)) != -1) {","while ((read=is.read(buf,0,buf.length)) != -1) {
+}
+",0,38,7,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+5,while (--i >= 0 && line.charAt(i) == CTRLZ) {,"while (--i >= 0 && line.charAt(i) == CTRLZ) {
+}
+",0,0,6,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+6,{,"while (observer.observedEvents.size() != 10) {
+}
+",0,0,0,,
+7,while (it.hasNext() && !it.next().xidVersion().equals(locTx.xidVersion()));,"while (it.hasNext() && !it.next().xidVersion().equals(locTx.xidVersion())) ;
+",0,22,9,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+8,while (li.hasNext() && li.next().windowId < checkpoint.windowId) {,"while (li.hasNext() && li.next().windowId < checkpoint.windowId) {
+}
+",0,13,6,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, FieldAccess-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, FieldAccess-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+9,"while (doRead(readChunk, null) >= 0) {","while (doRead(readChunk,null) >= 0) {
+}
+",0,2,4,,"SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+10,{,"while (!lock.tryLock(1000,TimeUnit.MILLISECONDS)) {
+}
+",0,0,0,,
+11,{,"while (!lock.tryLock(1000,TimeUnit.MILLISECONDS)) {
+}
+",0,0,0,,
+12,while ((bytes[start++] & 0x80) != 0) {,"while ((bytes[start++] & 0x80) != 0) {
+}
+",0,0,4,,"SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+13,while(!uniqueTokens.add(r.nextLong() % 1000000));,"while (!uniqueTokens.add(r.nextLong() % 1000000)) ;
+",0,18,6,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+14,while (collectionIterator.hasNext() && (nextItem = collectionIterator.next()) == null){},"while (collectionIterator.hasNext() && (nextItem=collectionIterator.next()) == null) {
+}
+",0,7,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+15,while (tracker.tryClaim(null)) {},"while (tracker.tryClaim(null)) {
+}
+",0,0,4,,"SimpleName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+16,while (bb.hasRemaining() && in.read(bb) >= 0) {},"while (bb.hasRemaining() && in.read(bb) >= 0) {
+}
+",0,6,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+17,"while (fcq.offer(mockCall(""c"", mockedPriorities[i++]))) ;","while (fcq.offer(mockCall(""c"",mockedPriorities[i++]))) ;
+",0,9,7,,"SimpleName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, WhileStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, ArrayAccess-index, MethodInvocation-arguments, MethodInvocation-arguments, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+18,while (this.proxy.write(this.buffer) > 0) {},"while (this.proxy.write(this.buffer) > 0) {
+}
+",0,1,7,,"ThisExpression(FieldAccess-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+19,while ((rawBatch = getNext(p)) != null && rawBatch.getHeader().getDef().getRecordCount() == 0) {,"while ((rawBatch=getNext(p)) != null && rawBatch.getHeader().getDef().getRecordCount() == 0) {
+}
+",0,1,9,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+20,while ((readaheadRemaining = readahead.hasRemaining()) && readahead.get() != delimiter);,"while ((readaheadRemaining=readahead.hasRemaining()) && readahead.get() != delimiter) ;
+",0,0,7,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+21,while (outbound.pendingCount() > 0 && !Thread.interrupted()) {},"while (outbound.pendingCount() > 0 && !Thread.interrupted()) {
+}
+",0,2,6,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+22,while ((readLine = br.readLine()) != null && readLine.indexOf(warmup_started) == -1);,"while ((readLine=br.readLine()) != null && readLine.indexOf(warmup_started) == -1) ;
+",0,19,9,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+23,{,"while (!createdColumnNames.add(str=IDENTIFIER_GEN.generate(rnd))) {
+}
+",0,0,0,,
+24,while (0 <= (x = archive.read(buf))) {,"while (0 <= (x=archive.read(buf))) {
+}
+",0,0,5,,"NumberLiteral(InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+25,"while ((is.read (buffer, 0, buffer.length)) != -1);","while ((is.read(buffer,0,buffer.length)) != -1) ;
+",0,1,7,,"SimpleName(MethodInvocation-expression, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+26,{,"while (read() != -1) {
+}
+",0,0,0,,
+27,{,"while (buildsManager.isAnyProjectCurrentlyBeingCheckedOut(projectIds)) {
+}
+",0,0,0,,
+28,while (depth != getDepth() || super.next() != XMLStreamConstants.END_ELEMENT) {,"while (depth != getDepth() || super.next() != XMLStreamConstants.END_ELEMENT) {
+}
+",0,0,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(SuperMethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+29,"while (su.runOneWorkerIteration(ss, ss.getUserName(), ss.getConf(), false)) {}","while (su.runOneWorkerIteration(ss,ss.getUserName(),ss.getConf(),false)) {
+}
+",0,6,9,,"SimpleName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, WhileStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+30,{,"while (rs.getNextRow() != null) {
+}
+",0,0,0,,
+31,while ((--i >= 0) && (special.indexOf(text.charAt(i)) == -1));,"while ((--i >= 0) && (special.indexOf(text.charAt(i)) == -1)) ;
+",0,4,9,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+32,while (whiteSpace(peekChar()) && ! peekEOF());,"while (whiteSpace(peekChar()) && !peekEOF()) ;
+",0,0,4,,"SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+33,{,"while (cursor.next()) {
+}
+",0,0,0,,
+34,{,"while (cursor.next()) {
+}
+",0,0,0,,
+35,{,"while (cursor.next()) {
+}
+",0,0,0,,
+36,{,"while (reader.read(buffer) >= 0) {
+}
+",0,0,0,,
+37,while(++modifiedIdx < modifiedLine.length() && modifiedLine.charAt(modifiedIdx) != '$');,"while (++modifiedIdx < modifiedLine.length() && modifiedLine.charAt(modifiedIdx) != '$') ;
+",0,2,8,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+38,"while ( !exportService.getState( exportUUID ).equals( ""FINISHED"" ) ) {}","while (!exportService.getState(exportUUID).equals(""FINISHED"")) {
+}
+",0,3,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+39,"while (!destructableClaims.offer(claim, 30, TimeUnit.MINUTES)) {","while (!destructableClaims.offer(claim,30,TimeUnit.MINUTES)) {
+}
+",0,1,5,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+"
+40,{,"while (stringItem(list,rdr) && fieldItem(list,rdr)) {
+}
+",0,0,0,,
+41,{,"while (parse(rdr.read())) {
+}
+",0,0,0,,
+42,{,"while (ungetService(bundle,usages[i].m_ref,usages[i].m_prototype ? usages[i].getService() : null)) {
+}
+",0,0,0,,
+43,{,"while (ungetService(bundle,usages[i].m_ref,usages[i].m_prototype ? usages[i].getService() : null)) {
+}
+",0,0,0,,
+44,{,"while ((getch() != EOT) && ('\n' != ch)) {
+}
+",0,0,0,,
+45,{,"while ((getch() != EOT) && !(('*' == ch) && (peek() == '/'))) {
+}
+",0,0,0,,
+46,{,"while ((next=tryInvokeBind0(tracker,monitor,next,trackingCount)) != null) {
+}
+",0,0,0,,
+47,while (portIterator.hasNext() && !attemptToBind(portIterator.next())) {},"while (portIterator.hasNext() && !attemptToBind(portIterator.next())) {
+}
+",0,2,6,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+48,while (inputGate.pollNext().map(output::add).isPresent()) {},"while (inputGate.pollNext().map(output::add).isPresent()) {
+}
+",0,0,7,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(ExpressionMethodReference-expression, MethodInvocation-arguments, MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(ExpressionMethodReference-name, MethodInvocation-arguments, MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+49,while (((key[--i]) == null)) {},"while (((key[--i]) == null)) {
+}
+",0,1,4,,"SimpleName(ArrayAccess-array, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, ArrayAccess-index, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+50,while (!((newKey[pos = (pos + 1) & mask]) == null)) {},"while (!((newKey[pos=(pos + 1) & mask]) == null)) {
+}
+",0,1,7,,"SimpleName(ArrayAccess-array, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ArrayAccess-index, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ArrayAccess-index, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ArrayAccess-index, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, Assignment-rightHandSide, ArrayAccess-index, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+51,while (time >= ((InternalRegion) region).cacheTimeMillis() + millisecs) {,"while (time >= ((InternalRegion)region).cacheTimeMillis() + millisecs) {
+}
+",0,0,5,,"SimpleName(InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+52,while (!((curr = array[pos = (pos + 1) & mask]) == null || curr == REMOVED)) {,"while (!((curr=array[pos=(pos + 1) & mask]) == null || curr == REMOVED)) {
+}
+",0,0,9,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ArrayAccess-index, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ArrayAccess-index, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ArrayAccess-index, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, Assignment-rightHandSide, ArrayAccess-index, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+"
+53,while (!Thread.currentThread().isInterrupted() && !stopCondition.getAsBoolean()) {,"while (!Thread.currentThread().isInterrupted() && !stopCondition.getAsBoolean()) {
+}
+",0,2,5,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+54,while (name.equals(toHere.getName()) && toHere.toNextSibling()) {,"while (name.equals(toHere.getName()) && toHere.toNextSibling()) {
+}
+",0,0,6,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+55,"while (source.read(result, Integer.MAX_VALUE) != -1) ;","while (source.read(result,Integer.MAX_VALUE) != -1) ;
+",0,0,6,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+56,while (command.charAt(startPosition++) != '`' && startPosition < command.length()){,"while (command.charAt(startPosition++) != '`' && startPosition < command.length()) {
+}
+",0,3,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+57,while (i < buf.length && buf[i++] != '>');,"while (i < buf.length && buf[i++] != '>') ;
+",0,2,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, ArrayAccess-index, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+58,while (i > 0 && (n = t[--i]) == null) {},"while (i > 0 && (n=t[--i]) == null) {
+}
+",0,5,7,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, ArrayAccess-index, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+59,"!Character.isWhitespace(segment.array[offset--])) {","while (offset > -1 && !Character.isWhitespace(segment.array[offset--])) {
+}
+",0,0,4,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, ),
+QualifiedName(ArrayAccess-array, MethodInvocation-arguments, PrefixExpression-operand, ),
+SimpleName(PostfixExpression-operand, ArrayAccess-index, MethodInvocation-arguments, PrefixExpression-operand, ),
+"
+60,while ((offset = matcher.start(++groupNum)) == -1){,"while ((offset=matcher.start(++groupNum)) == -1) {
+}
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+61,"while(-1 != (find = context.doc.find(stringFwdFinder, find+1, -1)) && skipUsage(find, context.doc));","while (-1 != (find=context.doc.find(stringFwdFinder,find + 1,-1)) && skipUsage(find,context.doc)) ;
+",0,6,12,,"NumberLiteral(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+62,while (keys.contains(k = random.nextLong()));,"while (keys.contains(k=random.nextLong())) ;
+",0,1,6,,"SimpleName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+63,while (app.getCurrentConsumption().equals(Resources.none())) { },"while (app.getCurrentConsumption().equals(Resources.none())) {
+}
+",0,0,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+64,while (++i < elements.length && elements[i].getClassName().equals(current)) {,"while (++i < elements.length && elements[i].getClassName().equals(current)) {
+}
+",0,1,7,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+65,while (!tArray[i].isInterrupted() && !(expired = doSleep(10))) {,"while (!tArray[i].isInterrupted() && !(expired=doSleep(10))) {
+}
+",0,5,6,,"SimpleName(ArrayAccess-array, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+66,while (t.curThread == null && !(expired = doSleep(10))) {,"while (t.curThread == null && !(expired=doSleep(10))) {
+}
+",0,0,5,,"QualifiedName(InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+67,while (nanoTime() <= (start + toNano(LOCK_HOLD_TIME))) {,"while (nanoTime() <= (start + toNano(LOCK_HOLD_TIME))) {
+}
+",0,0,4,,"SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+68,while (driver.getResults(new ArrayList<String>())) {,"while (driver.getResults(new ArrayList<String>())) {
+}
+",0,0,4,,"SimpleName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-arguments, WhileStatement-expression, ),
+"
+69,while (this.morque.poll() != null) {,"while (this.morque.poll() != null) {
+}
+",0,0,4,,"ThisExpression(FieldAccess-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+70,"while (this.buffer.read(tmp, 0, tmp.length) >= 0) {","while (this.buffer.read(tmp,0,tmp.length) >= 0) {
+}
+",0,0,7,,"ThisExpression(FieldAccess-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+71,"while (val > (cur = cntr.get()) && !cntr.compareAndSet(cur, val));","while (val > (cur=cntr.get()) && !cntr.compareAndSet(cur,val)) ;
+",0,2,9,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+72,"while ((written += fileToWrite.writeFully(bytes, written, bytes.length - written)) < bytes.length);","while ((written+=fileToWrite.writeFully(bytes,written,bytes.length - written)) < bytes.length) ;
+",0,0,9,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+73,while (!super.remove(first())) {,"while (!super.remove(first())) {
+}
+",0,0,2,,"SimpleName(SuperMethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, SuperMethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+"
+74,while (cctx.affinity().partition(cur = next++) != part);,"while (cctx.affinity().partition(cur=next++) != part) ;
+",0,0,7,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, Assignment-rightHandSide, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+75,while (concThread.getState() == Thread.State.RUNNABLE && !Thread.currentThread().isInterrupted());,"while (concThread.getState() == Thread.State.RUNNABLE && !Thread.currentThread().isInterrupted()) ;
+",0,0,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+76,while (appliedLogs.size() < 11 * 10) {},"while (appliedLogs.size() < 11 * 10) {
+}
+",0,0,5,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+77,while (this.readPos < this.limit && (curr = this.readBuffer[this.readPos++]) != LF) {,"while (this.readPos < this.limit && (curr=this.readBuffer[this.readPos++]) != LF) {
+}
+",0,0,10,,"ThisExpression(FieldAccess-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+ThisExpression(FieldAccess-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+ThisExpression(FieldAccess-expression, ArrayAccess-array, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, ArrayAccess-array, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+ThisExpression(FieldAccess-expression, PostfixExpression-operand, ArrayAccess-index, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, PostfixExpression-operand, ArrayAccess-index, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+78,"while (workUnit(Priority.CRITICAL, maxMillis)) {}","while (workUnit(Priority.CRITICAL,maxMillis)) {
+}
+",0,0,4,,"SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+79,while(!context.isStopped() && executor.next() != null) {,"while (!context.isStopped() && executor.next() != null) {
+}
+",0,1,5,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+80,"while (!done && !openEvents.tryAcquire(10, MILLISECONDS));","while (!done && !openEvents.tryAcquire(10,MILLISECONDS)) ;
+",0,0,6,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+81,"while("""".equals(reader.readLine()));","while ("""".equals(reader.readLine())) ;
+",0,0,5,,"StringLiteral(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+82,while (++pos < offsets.length && offsets[pos] < 0) { },"while (++pos < offsets.length && offsets[pos] < 0) {
+}
+",0,0,6,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+83,while (!cancelled && !nodeStore.release(checkpoint)) {},"while (!cancelled && !nodeStore.release(checkpoint)) {
+}
+",0,0,5,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+84,while (!in.eof() && in.readChar() != '\n') {,"while (!in.eof() && in.readChar() != '\n') {
+}
+",0,0,5,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+85,while ((n = readNextChar()) > '\u001F' && n != ESCAPE_CHAR && n != EOL && n != QUOTE_CHAR) {,"while ((n=readNextChar()) > '\u001F' && n != ESCAPE_CHAR && n != EOL && n != QUOTE_CHAR) {
+}
+",0,0,9,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+86,while (--offset >= 0 && characterAcceptor.isIdentifier(docText.charAt(offset))) { },"while (--offset >= 0 && characterAcceptor.isIdentifier(docText.charAt(offset))) {
+}
+",0,2,8,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+87,while (terminal.reader().read(1) == NonBlockingReader.READ_EXPIRED);,"while (terminal.reader().read(1) == NonBlockingReader.READ_EXPIRED) ;
+",0,0,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+88,while (Thread.State.NEW.equals(getState()));,"while (Thread.State.NEW.equals(getState())) ;
+",0,0,4,,"QualifiedName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+89,while (IOUtils.EOF != is.read(buffer)) {,"while (IOUtils.EOF != is.read(buffer)) {
+}
+",0,0,4,,"QualifiedName(InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+90,while ((back ? ts.movePrevious() : ts.moveNext()) && (ts.token().id() == JsTokenId.WHITESPACE || ts.token().id() == JsTokenId.EOL)) {},"while ((back ? ts.movePrevious() : ts.moveNext()) && (ts.token().id() == JsTokenId.WHITESPACE || ts.token().id() == JsTokenId.EOL)) {
+}
+",0,1,14,,"SimpleName(ConditionalExpression-expression, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+91,{,"while (!lockManager.cleanupInactiveService(agentsClassServiceType,cleanup)) {
+}
+",0,0,0,,
+92,{,"while (decodeNextWord(inputBuffer,outputBuffer)) {
+}
+",0,0,0,,
+93,{,"while (encodeNextWord(inputStream,outputWriter)) {
+}
+",0,0,0,,
+94,{,"while (getChar() != '\n') {
+}
+",0,0,0,,
+95,{,"while (in.read(buf) >= 0) {
+}
+",0,0,0,,
+96,{,"while (go.isEmpty()) {
+}
+",0,0,0,,
+97,{,"while ((line=br.readLine()) != null) {
+}
+",0,0,0,,
+98,{,"while (_keys.remove(key)) {
+}
+",0,0,0,,
+99,{,"while (_keys.remove(key)) {
+}
+",0,0,0,,
+100,{,"while (_keys.remove(keyToRemove)) {
+}
+",0,0,0,,
+101,"while (text.regionMatches(0, textToReplace, 0, ++common));","while (text.regionMatches(0,textToReplace,0,++common)) ;
+",0,6,7,,"SimpleName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, MethodInvocation-arguments, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+102,while (hs.getStartOffset() <= curPos && (hasElements = hs.moveNext()));,"while (hs.getStartOffset() <= curPos && (hasElements=hs.moveNext())) ;
+",0,2,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+103,while ((ts.token().id() == JadeTokenId.WHITESPACE || ts.token().id() == JadeTokenId.EOL) && ts.movePrevious()) {,"while ((ts.token().id() == JadeTokenId.WHITESPACE || ts.token().id() == JadeTokenId.EOL) && ts.movePrevious()) {
+}
+",0,1,10,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+104,"while ((c = nextChar()) != EOF && isIdentifierPart(c, currentState));","while ((c=nextChar()) != EOF && isIdentifierPart(c,currentState)) ;
+",0,0,7,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+105,while (++i <= max && text.charAt(i) != first);,"while (++i <= max && text.charAt(i) != first) ;
+",0,0,7,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+106,while (!eof && (element = processNextToken()) == null) {,"while (!eof && (element=processNextToken()) == null) {
+}
+",0,0,4,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+107,"while (allElements.contains(generatedSelectorName = selectorNameBase + (counter++ == 0 ? """" : counter))) {","while (allElements.contains(generatedSelectorName=selectorNameBase + (counter++ == 0 ? """" : counter))) {
+}
+",0,0,8,,"SimpleName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, Assignment-rightHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, InfixExpression-leftOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, Assignment-rightHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, Assignment-rightHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+StringLiteral(ConditionalExpression-thenExpression, ParenthesizedExpression-expression, InfixExpression-rightOperand, Assignment-rightHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, ParenthesizedExpression-expression, InfixExpression-rightOperand, Assignment-rightHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+"
+108,while (input.read() == 'b') {},"while (input.read() == 'b') {
+}
+",0,0,4,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+109,while ((c = sr.read()) != -1 && c != DELIMITER_OPEN_BRACKET && c != DELIMITER_CLOSING_BRACKET);,"while ((c=sr.read()) != -1 && c != DELIMITER_OPEN_BRACKET && c != DELIMITER_CLOSING_BRACKET) ;
+",0,1,9,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+110,while ((read = li.read()) != LexerInput.EOF && read != '\n');,"while ((read=li.read()) != LexerInput.EOF && read != '\n') ;
+",0,0,7,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+111,while (isWhiteSpaceToken(ts.token()) && ts.movePrevious()) {},"while (isWhiteSpaceToken(ts.token()) && ts.movePrevious()) {
+}
+",0,0,6,,"SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+112,while (i.a[0]) {},"while (i.a[0]) {
+}
+",0,0,3,,"QualifiedName(ArrayAccess-array, WhileStatement-expression, ),
+NumberLiteral(ArrayAccess-index, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+113,while ('u' == (ch = input.read())) {};,"while ('u' == (ch=input.read())) {
+}
+",0,0,5,,"CharacterLiteral(InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+114,while (tokenSequence.moveNext() && JavaTokenId.WHITESPACE == tokenSequence.token().id()) ;,"while (tokenSequence.moveNext() && JavaTokenId.WHITESPACE == tokenSequence.token().id()) ;
+",0,0,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+115,while (seq.movePrevious() && seq.token().id() != precToken) ;,"while (seq.movePrevious() && seq.token().id() != precToken) ;
+",0,0,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+116,while (cnt-- > 0 && Installer.getLogsSize() < 800) {,"while (cnt-- > 0 && Installer.getLogsSize() < 800) {
+}
+",0,0,5,,"SimpleName(PostfixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+117,while ( index++ < startIndex && (reader.nextRecord()) != null) {},"while (index++ < startIndex && (reader.nextRecord()) != null) {
+}
+",0,0,6,,"SimpleName(PostfixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+118,while ((line = reader.readLine()) != null && !line.equals(header)) {,"while ((line=reader.readLine()) != null && !line.equals(header)) {
+}
+",0,0,7,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+119,"while ((value = PathUtils.doDynamicReplacement(value, inputMetadata)).contains(""["") && envReplaceRecur) {","while ((value=PathUtils.doDynamicReplacement(value,inputMetadata)).contains(""["") && envReplaceRecur) {
+}
+",0,0,8,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+120,|| (testDir.exists() && testDir.listFiles().length != 2)) {,"while (!testDir.exists() || (testDir.exists() && testDir.listFiles().length != 2)) {
+}
+",0,0,6,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, ),
+SimpleName(MethodInvocation-expression, FieldAccess-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ),
+SimpleName(MethodInvocation-name, FieldAccess-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ),
+"
+121,if (!(available instanceof Overdraft)) while (available.tryAcquire()) ;,"if (!(available instanceof Overdraft)) while (available.tryAcquire()) ;
+",0,0,5,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, WhileStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, IfStatement-thenStatement, ),
+EmptyStatement(WhileStatement-body, IfStatement-thenStatement, ),
+"
+122,while ((result = randomInt96()).compareTo(maximum) > 0);,"while ((result=randomInt96()).compareTo(maximum) > 0) ;
+",0,0,6,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+123,{,"while (dis.read() != -1) {
+}
+",0,0,0,,
+124,{,"while (dis.read() != -1) {
+}
+",0,0,0,,
+125,{,"while (dis.read() != -1) {
+}
+",0,0,0,,
+126,while(!(admin.getOnlineRegions(regionServer.getServerName()).size() < regionsCount));,"while (!(admin.getOnlineRegions(regionServer.getServerName()).size() < regionsCount)) ;
+",0,1,7,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+127,while (keyOffset < keyBuffer.length && !isSeparatorByte(keyBuffer[keyOffset++])) {,"while (keyOffset < keyBuffer.length && !isSeparatorByte(keyBuffer[keyOffset++])) {
+}
+",0,0,5,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, ArrayAccess-index, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+128,{,"while (!doWrite()) {
+}
+",0,0,0,,
+129,{,"while (inputStream.read() != -1) {
+}
+",0,0,0,,
+130,while (!this.isStopped() && this.mmapOperation()) {,"while (!this.isStopped() && this.mmapOperation()) {
+}
+",0,0,4,,"ThisExpression(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+ThisExpression(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+131,while( (value = br.readLine())!=null && value.charAt(0) == '%' ) {,"while ((value=br.readLine()) != null && value.charAt(0) == '%') {
+}
+",0,0,8,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+132,while( value==bv[ix++] && ix<bv.length ) {},"while (value == bv[ix++] && ix < bv.length) {
+}
+",0,0,6,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, ArrayAccess-index, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+133,while(this.mergeThread.tmpDir == null) {,"while (this.mergeThread.tmpDir == null) {
+}
+",0,0,4,,"ThisExpression(FieldAccess-expression, FieldAccess-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, FieldAccess-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+134,&& ((pos += rc) < conceptBytes.length)) {,"while (((rc=is.read(conceptBytes,pos,conceptBytes.length - pos)) >= 0) && ((pos+=rc) < conceptBytes.length)) {
+}
+",0,0,3,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ),
+SimpleName(Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ),
+QualifiedName(InfixExpression-rightOperand, ParenthesizedExpression-expression, ),
+"
+135,{,"while ((i > 0) && ((n=t[--i]) == null)) {
+}
+",0,0,0,,
+136,while (ignoredEvents.contains(event = super.next())) {,"while (ignoredEvents.contains(event=super.next())) {
+}
+",0,0,4,,"SimpleName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(SuperMethodInvocation-name, Assignment-rightHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+"
+137,while ((index < count) && (bvalues[index++] != 0)) {,"while ((index < count) && (bvalues[index++] != 0)) {
+}
+",0,0,5,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+138,while (chunk.getByte(textIndex++) != 0) {,"while (chunk.getByte(textIndex++) != 0) {
+}
+",0,0,4,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+139,&& it.next().siblings[1] != childNode) {,"while (it.hasNext() && it.next().siblings[1] != childNode) {
+}
+",0,0,5,,"SimpleName(MethodInvocation-expression, FieldAccess-expression, ArrayAccess-array, InfixExpression-leftOperand, ),
+SimpleName(MethodInvocation-name, FieldAccess-expression, ArrayAccess-array, InfixExpression-leftOperand, ),
+SimpleName(FieldAccess-name, ArrayAccess-array, InfixExpression-leftOperand, ),
+NumberLiteral(ArrayAccess-index, InfixExpression-leftOperand, ),
+SimpleName(InfixExpression-rightOperand, ),
+"
+140,while (--span > 0 && !columnIndexManager.isColumnNumberUsed(++columnNumber)) {,"while (--span > 0 && !columnIndexManager.isColumnNumberUsed(++columnNumber)) {
+}
+",0,0,5,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+141,"while (dis.read(buf, 0, readBufferSize) != -1) {","while (dis.read(buf,0,readBufferSize) != -1) {
+}
+",1,95,6,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+142,"while ((channel.read(buffer, bufferOffset)) == 0) {}","while ((channel.read(buffer,bufferOffset)) == 0) {
+}
+",1,25,6,,"SimpleName(MethodInvocation-expression, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+143,"while (connection1.getDispatchQueue().poll(0, TimeUnit.MILLISECONDS) != null) {","while (connection1.getDispatchQueue().poll(0,TimeUnit.MILLISECONDS) != null) {
+}
+",1,84,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+144,while (System.in.read() != '\n');,"while (System.in.read() != '\n') ;
+",1,6,4,,"QualifiedName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+145,while(imon.hasNext() && (node = imon.next().getNodeById(nodeId)) == null) {},"while (imon.hasNext() && (node=imon.next().getNodeById(nodeId)) == null) {
+}
+",1,46,9,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+146,while ((c = (char) (r = patchSource.read())) != '\n' && c != '\r' && r != -1) ;,"while ((c=(char)(r=patchSource.read())) != '\n' && c != '\r' && r != -1) ;
+",1,10,11,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+PrimitiveType(CastExpression-type, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+147,while ((length = blockSize * ++blockNumber) <= pos) {,"while ((length=blockSize * ++blockNumber) <= pos) {
+}
+",1,1,4,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, InfixExpression-rightOperand, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+148,while (!(transaction.getStatus() == Status.CoordinatorStatus.STATUS_PREPARING_VOLATILE)) {,"while (!(transaction.getStatus() == Status.CoordinatorStatus.STATUS_PREPARING_VOLATILE)) {
+}
+",1,1,3,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+"
+149,while (Double.doubleToLongBits(newKey[pos = pos + 1 & mask]) != 0L) {},"while (Double.doubleToLongBits(newKey[pos=pos + 1 & mask]) != 0L) {
+}
+",1,14,9,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ArrayAccess-index, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, Assignment-rightHandSide, ArrayAccess-index, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, Assignment-rightHandSide, ArrayAccess-index, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, Assignment-rightHandSide, ArrayAccess-index, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+150,"&& !queue.offerFirst((T) POISON_PILL, 60, TimeUnit.SECONDS)) {}","while (!queueDrainer.isDone() && !queue.offerFirst((T)POISON_PILL,60,TimeUnit.SECONDS)) {
+}
+",1,1,7,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, ),
+SimpleName(SimpleType-name, CastExpression-type, MethodInvocation-arguments, PrefixExpression-operand, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, PrefixExpression-operand, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, ),
+QualifiedName(MethodInvocation-arguments, PrefixExpression-operand, ),
+Block(),
+"
+151,"while (context.getRouteController().getRouteStatus(""tailableCursorConsumer2"") != ServiceStatus.Stopped) {","while (context.getRouteController().getRouteStatus(""tailableCursorConsumer2"") != ServiceStatus.Stopped) {
+}
+",1,3,5,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+152,while (!Thread.currentThread().isInterrupted() && client.channel.isOpen());,"while (!Thread.currentThread().isInterrupted() && client.channel.isOpen()) ;
+",1,7,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+153,"while(!proc.completedLatch.await(WAKE_FREQUENCY, TimeUnit.MILLISECONDS));","while (!proc.completedLatch.await(WAKE_FREQUENCY,TimeUnit.MILLISECONDS)) ;
+",1,2,5,,"QualifiedName(MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+154,"while (this.running && outerJoinIterator.callWithNextKey(joinStub, collector)) {}","while (this.running && outerJoinIterator.callWithNextKey(joinStub,collector)) {
+}
+",1,1,7,,"ThisExpression(FieldAccess-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+155,while (this.iterator1.nextKey()) {},"while (this.iterator1.nextKey()) {
+}
+",1,1,4,,"ThisExpression(FieldAccess-expression, MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+156,while (buildSide.next(recordReuse) != null) ;,"while (buildSide.next(recordReuse) != null) ;
+",1,1,5,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+157,"while (iterator.callWithNextKey(new SimpleTupleJoinFunction(), collector)) ;","while (iterator.callWithNextKey(new SimpleTupleJoinFunction(),collector)) ;
+",1,13,5,,"SimpleName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+158,while ((fileSize = r.nextGaussian()+2)<=0) {},"while ((fileSize=r.nextGaussian() + 2) <= 0) {
+}
+",1,3,6,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+159,while (++i < length && src.charAt(pos + i) == des.charAt(i)) {,"while (++i < length && src.charAt(pos + i) == des.charAt(i)) {
+}
+",1,2,9,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+160,while (++o2 < subCount && value[++o1] == subString.charAt(o2)) {,"while (++o2 < subCount && value[++o1] == subString.charAt(o2)) {
+}
+",1,4,7,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, ArrayAccess-index, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+161,while ((numberLength > 0) && (digits[--numberLength] == 0)) {,"while ((numberLength > 0) && (digits[--numberLength] == 0)) {
+}
+",1,1,5,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, ArrayAccess-index, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+162,&& (ch != '\n') && (ch != '\r')) {,"while (((ch=inStream.read()) != -1) && (ch != '\n') && (ch != '\r')) {
+}
+",1,1,4,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, ),
+"
+163,while (i-- > 0 && (input[i] == 32 || input[i] == 0)) {,"while (i-- > 0 && (input[i] == 32 || input[i] == 0)) {
+}
+",1,1,8,,"SimpleName(PostfixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+164,while ((++pos < endPos) && Character.isWhitespace(text.charAt(pos)));,"while ((++pos < endPos) && Character.isWhitespace(text.charAt(pos))) ;
+",1,1,8,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+165,while(++i < len && (c = ddpath.charAt(i)) != '/') {,"while (++i < len && (c=ddpath.charAt(i)) != '/') {
+}
+",1,1,7,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+166,while(input.read() != LexerInput.EOF) {};,"while (input.read() != LexerInput.EOF) {
+}
+",1,1,4,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+167,while (EditorWindowOperator.jumpLeft() && count++ < 100);,"while (EditorWindowOperator.jumpLeft() && count++ < 100) ;
+",1,1,5,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(PostfixExpression-operand, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+168,while (seq.moveNext() && nonRelevant.contains(seq.token().id())) ;,"while (seq.moveNext() && nonRelevant.contains(seq.token().id())) ;
+",1,1,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+169,while (tokenSequence.token().id() == JavaTokenId.WHITESPACE && tokenSequence.moveNext()) {,"while (tokenSequence.token().id() == JavaTokenId.WHITESPACE && tokenSequence.moveNext()) {
+}
+",1,1,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+170,while ((line = r.readLine()) != null && line.length() > 0) {},"while ((line=r.readLine()) != null && line.length() > 0) {
+}
+",1,1,8,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+171,while (ts.moveNext() && !lookfor.contains(ts.token().id())) {,"while (ts.moveNext() && !lookfor.contains(ts.token().id())) {
+}
+",1,1,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+172,while ( !m_Statement.getMoreResults() && m_Statement.getUpdateCount() >= 0 ) ;,"while (!m_Statement.getMoreResults() && m_Statement.getUpdateCount() >= 0) ;
+",1,1,6,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+173,while ((index-- > 0) && ((entry = table[index]) == null));,"while ((index-- > 0) && ((entry=table[index]) == null)) ;
+",1,1,7,,"SimpleName(PostfixExpression-operand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-index, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+174,while ((node = _nextsib2(node)) != DTM.NULL && _exptype2(node) != nodeType) {},"while ((node=_nextsib2(node)) != DTM.NULL && _exptype2(node) != nodeType) {
+}
+",1,1,8,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+175,while ((node = _nextsib2(node)) != DTM.NULL && _exptype2(node) < DTM.NTYPES) {},"while ((node=_nextsib2(node)) != DTM.NULL && _exptype2(node) < DTM.NTYPES) {
+}
+",1,1,8,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+176,while ((type = _type2(++baseID)) == DTM.ATTRIBUTE_NODE);,"while ((type=_type2(++baseID)) == DTM.ATTRIBUTE_NODE) ;
+",1,1,5,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+177,while (++count < datalength && dataarray[count] == ']') {,"while (++count < datalength && dataarray[count] == ']') {
+}
+",1,1,5,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+178,"while ( ! addEdge( vertices.get( r.nextInt(NODES) ), vertices.get( r.nextInt(NODES) ) ) ) {","while (!addEdge(vertices.get(r.nextInt(NODES)),vertices.get(r.nextInt(NODES)))) {
+}
+",2,2,11,,"SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+"
+179,while (!NodeCharacter.ELECTOR.equals(member.getCharacter())) {},"while (!NodeCharacter.ELECTOR.equals(member.getCharacter())) {
+}
+",2,3,5,,"QualifiedName(MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+180,while(++sep < fileLine.length() && Character.isWhitespace(fileLine.charAt(sep))) ;,"while (++sep < fileLine.length() && Character.isWhitespace(fileLine.charAt(sep))) ;
+",2,3,9,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+181,while(System.currentTimeMillis() % (periodMult*1000) > 500) {,"while (System.currentTimeMillis() % (periodMult * 1000) > 500) {
+}
+",2,2,5,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+182,while (ts.moveNext() && !lookfor.contains(ts.token().id())) {},"while (ts.moveNext() && !lookfor.contains(ts.token().id())) {
+}
+",3,6,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+183,while ( (c = is.read() ) > -1) {},"while ((c=is.read()) > -1) {
+}
+",3,8,5,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+184,"while(!ai.weakCompareAndSet(one, two, false, false));","while (!ai.weakCompareAndSet(one,two,false,false)) ;
+",3,15,7,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+185,"while(!ai.weakCompareAndSet(one, two, 0, 0));","while (!ai.weakCompareAndSet(one,two,0,0)) ;
+",3,6,7,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+186,"while(!ai.weakCompareAndSet(i, 2,-4));","while (!ai.weakCompareAndSet(i,2,-4)) ;
+",3,8,6,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+187,while (++o2 < end && value[++o1] == target[o2]) {,"while (++o2 < end && value[++o1] == target[o2]) {
+}
+",3,3,6,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, ArrayAccess-index, InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+188,while (maybeStrip(n = node.getFirstChild())) { },"while (maybeStrip(n=node.getFirstChild())) {
+}
+",3,3,5,,"SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, MethodInvocation-arguments, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+189,while (x.compareTo((Template)templates.elementAt(--j)) > 0);,"while (x.compareTo((Template)templates.elementAt(--j)) > 0) ;
+",3,7,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, MethodInvocation-arguments, CastExpression-expression, MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+190,while (x < array[--j]);,"while (x < array[--j]) ;
+",3,3,4,,"SimpleName(InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(PrefixExpression-operand, ArrayAccess-index, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+191,while ((m_next >= index) && DTM.NULL != (n = previousNode()));,"while ((m_next >= index) && DTM.NULL != (n=previousNode())) ;
+",3,6,6,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+192,while (isXMLSpace((char)(c = r.read()))) {,"while (isXMLSpace((char)(c=r.read()))) {
+}
+",3,3,5,,"SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+PrimitiveType(CastExpression-type, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, CastExpression-expression, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, CastExpression-expression, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, CastExpression-expression, MethodInvocation-arguments, WhileStatement-expression, ),
+"
+193,"while((rV = br.readLine())!=null && !rV.endsWith(""/jre/bin/java"")) {","while ((rV=br.readLine()) != null && !rV.endsWith(""/jre/bin/java"")) {
+}
+",4,4,7,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+194,while (!eh.wasCalled && !(expired = doSleep(10))) {,"while (!eh.wasCalled && !(expired=doSleep(10))) {
+}
+",4,4,4,,"QualifiedName(PrefixExpression-operand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+195,"while (iterator.callWithNextKey(nMatcher[i], collector)) ;","while (iterator.callWithNextKey(nMatcher[i],collector)) ;
+",5,5,6,,"SimpleName(MethodInvocation-expression, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, WhileStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-arguments, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+196,"while (cmp.compare(khead, key) <= 0 && next());","while (cmp.compare(khead,key) <= 0 && next()) ;
+",5,5,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+197,"while(!a.weakCompareAndSet(this,one,two));","while (!a.weakCompareAndSet(this,one,two)) ;
+",5,5,6,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+ThisExpression(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+198,"while (!workerPool.awaitTermination(1000L, TimeUnit.MILLISECONDS)) {}","while (!workerPool.awaitTermination(1000L,TimeUnit.MILLISECONDS)) {
+}
+",6,77,5,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+199,while (is.read(buf) != -1) { },"while (is.read(buf) != -1) {
+}
+",6,6,5,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+200,while (ts.movePrevious() && ignores.contains(ts.token().id())) {},"while (ts.movePrevious() && ignores.contains(ts.token().id())) {
+}
+",6,10,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, WhileStatement-expression, ),
+Block(WhileStatement-body, ),
+"
+201,while((token = tokenizer.nextToken()).getType() != JsonTokenizer.TokenType.NONE) {,"while ((token=tokenizer.nextToken()).getType() != JsonTokenizer.TokenType.NONE) {
+}
+",7,7,5,,"SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+202,"while(!a.weakCompareAndSet(this,1,2));","while (!a.weakCompareAndSet(this,1,2)) ;
+",11,12,6,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+ThisExpression(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+203,"while (!exec.awaitTermination(1000, TimeUnit.MILLISECONDS));","while (!exec.awaitTermination(1000,TimeUnit.MILLISECONDS)) ;
+",11,11,5,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, PrefixExpression-operand, WhileStatement-expression, ),
+EmptyStatement(WhileStatement-body, ),
+"
+204,while (s.squaredNumber == 0 && !(expired = doSleep(10))) {,"while (s.squaredNumber == 0 && !(expired=doSleep(10))) {
+}
+",12,12,5,,"QualifiedName(InfixExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"

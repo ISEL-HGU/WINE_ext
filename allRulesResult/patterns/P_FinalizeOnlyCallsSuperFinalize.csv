@@ -1,0 +1,4 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,super.finalize();,"super.finalize();
+",21,21,1,22,"SimpleName(SuperMethodInvocation-name, ExpressionStatement-expression, ),
+"

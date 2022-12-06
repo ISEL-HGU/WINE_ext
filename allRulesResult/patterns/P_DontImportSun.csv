@@ -1,0 +1,4 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,import sun.rmi.server.UnicastRef;,"import sun.rmi.server.UnicastRef;
+",226,226,1,227,"QualifiedName(ImportDeclaration-name, ),
+"

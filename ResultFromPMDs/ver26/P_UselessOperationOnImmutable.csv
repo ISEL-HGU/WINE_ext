@@ -1,0 +1,58 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,sequenceSet.concat(String.valueOf(nextSequenceId++));,"sequenceSet.concat(String.valueOf(nextSequenceId++));
+",0,52,5,98,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(PostfixExpression-operand, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,"fileLocation.substring(0, fileLocation.lastIndexOf(""/"") + 1);","fileLocation.substring(0,fileLocation.lastIndexOf(""/"") + 1);
+",0,10,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+3,"result.setScale(this.colScale, RoundingMode.HALF_UP);","result.setScale(this.colScale,RoundingMode.HALF_UP);
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+4,"verbalize.replaceFirst(""FST"", verbalizeName(element));","verbalize.replaceFirst(""FST"",verbalizeName(element));
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+5,"superResult.substring(superResult.indexOf(""@""));","superResult.substring(superResult.indexOf(""@""));
+",1,4,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+6,"divd1.divide(divd2, 4, BigDecimal.ROUND_DOWN);","divd1.divide(divd2,4,BigDecimal.ROUND_DOWN);
+",3,9,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+7,"name.replace('$', '.');","name.replace('$','.');
+",5,5,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+CharacterLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+CharacterLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+8,aNumber1.add(aNumber2).shiftLeft(125);,"aNumber1.add(aNumber2).shiftLeft(125);
+",5,9,5,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"

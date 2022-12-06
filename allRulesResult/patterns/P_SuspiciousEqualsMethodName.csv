@@ -1,0 +1,118 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"public boolean equals(final Object o1, final Object o2) {return ((EventSetDescriptor)o1).getName().equalsIgnoreCase   (((EventSetDescriptor)o2).getName());}","return ((EventSetDescriptor)o1).getName().equalsIgnoreCase(((EventSetDescriptor)o2).getName());
+",1,1,7,7,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, Block-statements, MethodDeclaration-body, ),
+"
+2,"private boolean equals(final Object[] files1, final Object[] files2) {","return new PropertyChangeListener(){
+  public void propertyChange(  final PropertyChangeEvent event){
+    String changedProperty=event.getPropertyName();
+    if (JFileChooser.DIALOG_TYPE_CHANGED_PROPERTY.equals(changedProperty) || JFileChooser.APPROVE_BUTTON_TEXT_CHANGED_PROPERTY.equals(changedProperty)) {
+      customizeFileChooserLabels(fc);
+    }
+ else     if (JFileChooser.DIRECTORY_CHANGED_PROPERTY.equals(changedProperty)) {
+      File file=(File)event.getNewValue();
+      directoryModel.setCurrentDirectory(file);
+      getChangeToParentDirectoryAction().setEnabled(!getFileChooser().getFileSystemView().isRoot(file));
+    }
+ else     if (JFileChooser.SELECTED_FILE_CHANGED_PROPERTY.equals(changedProperty)) {
+      File selectedFile=(File)event.getNewValue();
+      if (selectedFile != null) {
+        File parentDirectory=getFileChooser().getFileSystemView().getParentDirectory(selectedFile);
+        if (parentDirectory != null) {
+          directoryModel.setCurrentDirectory(parentDirectory);
+          getViewRepresentation().setSelectedValue(selectedFile,true);
+        }
+      }
+      if (selectedFile != null) {
+        fileNameField.setText(fileToText(selectedFile));
+      }
+    }
+ else     if (JFileChooser.SELECTED_FILES_CHANGED_PROPERTY.equals(changedProperty)) {
+      File[] selectedFiles=(File[])event.getNewValue();
+      if (Utilities.isEmptyArray(selectedFiles)) {
+        return;
+      }
+      StringBuilder textSelection=new StringBuilder();
+      if (selectedFiles.length == 1) {
+        textSelection.append(fileToText(selectedFiles[0]));
+        getViewRepresentation().setSelectedValue(selectedFiles[0],true);
+      }
+ else {
+        if (!equals(getViewRepresentation().getSelectedValues(),selectedFiles)) {
+          updateListSelection(selectedFiles);
+        }
+        for (int i=0; i < selectedFiles.length; i++) {
+          if (textSelection.length() > 0) {
+            textSelection.append("" "");
+          }
+          textSelection.append('\""').append(fileToText(selectedFiles[i])).append('\""');
+        }
+      }
+      fileNameField.setText(textSelection.toString());
+    }
+ else     if (JFileChooser.MULTI_SELECTION_ENABLED_CHANGED_PROPERTY.equals(changedProperty)) {
+      getViewRepresentation().getSelectionModel().setSelectionMode(((Boolean)event.getNewValue()).booleanValue() ? ListSelectionModel.MULTIPLE_INTERVAL_SELECTION : ListSelectionModel.SINGLE_SELECTION);
+    }
+ else     if (JFileChooser.FILE_SELECTION_MODE_CHANGED_PROPERTY.equals(changedProperty)) {
+      if (((Integer)event.getNewValue()).intValue() == JFileChooser.DIRECTORIES_ONLY) {
+        fileNameField.setText(fileToText(getFileChooser().getCurrentDirectory()));
+      }
+    }
+ else     if (JFileChooser.ACCESSORY_CHANGED_PROPERTY.equals(changedProperty)) {
+      final JComponent old=(JComponent)event.getOldValue();
+      if (old != null) {
+        getAccessoryPanel().remove(old);
+      }
+      getAccessoryPanel().add((JComponent)event.getNewValue());
+    }
+ else     if (StringConstants.TRANSFER_HANDLER_PROPERTY_NAME.equals(changedProperty)) {
+      list.setTransferHandler((TransferHandler)event.getNewValue());
+      table.setTransferHandler((TransferHandler)event.getNewValue());
+    }
+  }
+  private String fileToText(  final File file){
+    if (getFileChooser().getFileSelectionMode() == JFileChooser.DIRECTORIES_ONLY) {
+      return file.getAbsolutePath();
+    }
+ else {
+      return file.getName();
+    }
+  }
+  private boolean equals(  final Object[] files1,  final Object[] files2){
+    if (files1.length != files2.length) {
+      return false;
+    }
+    for (int i=0; i < files1.length; i++) {
+      if (!contains(files2,files1[i])) {
+        return false;
+      }
+    }
+    return true;
+  }
+  private boolean contains(  final Object[] files,  final Object file){
+    for (int i=0; i < files.length; i++) {
+      if (files[i].equals(file)) {
+        return true;
+      }
+    }
+    return false;
+  }
+}
+;
+",1,4,11,,"Modifier(MethodDeclaration-modifiers, ),
+PrimitiveType(MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+Modifier(SingleVariableDeclaration-modifiers, MethodDeclaration-parameters, ),
+SimpleName(SimpleType-name, ArrayType-elementType, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+Modifier(SingleVariableDeclaration-modifiers, MethodDeclaration-parameters, ),
+SimpleName(SimpleType-name, ArrayType-elementType, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+Dimension(ArrayType-dimensions, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+"

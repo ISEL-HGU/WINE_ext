@@ -1,0 +1,777 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/accumulo/core/src/main/java/org/apache/accumulo/core/util/compaction/CompactionPlanImpl.java,37,,public class CompactionPlanImpl implements CompactionPlan {
+2,./TargetProjects/activemq-artemis/tests/integration-tests/src/test/java/org/apache/activemq/artemis/tests/integration/plugin/MetricsPluginTest.java,92,,"      class Metric {"
+3,./TargetProjects/ambari/ambari-server/src/main/java/org/apache/ambari/server/orm/TransactionalLocks.java,39,,public class TransactionalLocks {
+4,./TargetProjects/aries/proxy/proxy-impl/src/test/java/org/apache/aries/blueprint/proxy/ProxyTestClassPrivateConstructor.java,21,,public class ProxyTestClassPrivateConstructor
+5,./TargetProjects/aries-cdi/cdi-extender/src/main/java/org/apache/aries/cdi/container/internal/model/SingleActivator.java,43,,public class SingleActivator extends InstanceActivator {
+6,./TargetProjects/asterixdb/asterixdb/asterix-geo/src/main/java/org/apache/asterix/geo/evaluators/GeoFunctionTypeInferers.java,33,,public class GeoFunctionTypeInferers {
+7,./TargetProjects/asterixdb/hyracks-fullstack/hyracks/hyracks-dataflow-std/src/main/java/org/apache/hyracks/dataflow/std/join/HybridHashJoinUtil.java,26,,public class HybridHashJoinUtil {
+8,./TargetProjects/asterixdb/hyracks-fullstack/hyracks/hyracks-storage-am-lsm-invertedindex/src/main/java/org/apache/hyracks/storage/am/lsm/invertedindex/tokenizers/TokenizerInfo.java,22,,public class TokenizerInfo {
+9,./TargetProjects/attic-apex-core/api/src/main/java/org/apache/apex/api/plugin/DAGSetupEvent.java,30,,public class DAGSetupEvent extends Event.BaseEvent<DAGSetupEvent.Type>
+10,./TargetProjects/attic-apex-malhar/library/src/main/java/org/apache/apex/malhar/lib/appdata/QueueUtils.java,24,,public class QueueUtils
+11,./TargetProjects/attic-apex-malhar/library/src/test/java/org/apache/apex/malhar/lib/appdata/ThreadUtils.java,24,,public class ThreadUtils
+12,./TargetProjects/attic-aurora/src/jmh/java/org/apache/aurora/benchmark/BenchmarkSettings.java,26,,final class BenchmarkSettings {
+13,./TargetProjects/attic-aurora/src/jmh/java/org/apache/aurora/benchmark/Hosts.java,28,,final class Hosts {
+14,./TargetProjects/attic-aurora/src/jmh/java/org/apache/aurora/benchmark/Tasks.java,43,,final class Tasks {
+15,./TargetProjects/attic-onami/persist/src/main/java/org/apache/onami/persist/AggregatedException.java,32,,class AggregatedException
+16,./TargetProjects/attic-polygene-java/core/bootstrap/src/main/java/org/apache/polygene/bootstrap/Assemblers.java,25,,public class Assemblers
+17,./TargetProjects/attic-wink/wink-common/src/main/java/org/apache/wink/common/internal/ResponseImpl.java,41,,public class ResponseImpl extends Response {
+18,./TargetProjects/avro/lang/java/avro/src/main/java/org/apache/avro/file/SnappyCodec.java,28,,public class SnappyCodec extends Codec {
+19,./TargetProjects/axis-axis2-java-core/modules/metadata/src/org/apache/axis2/jaxws/description/builder/WebServiceContextAnnot.java,29,,public class WebServiceContextAnnot implements javax.xml.ws.WebServiceContext {
+20,./TargetProjects/beam/examples/java/twitter/src/main/java/org/apache/beam/examples/twitterstreamgenerator/TwitterConfig.java,30,,public class TwitterConfig implements Serializable {
+21,./TargetProjects/beam/runners/core-construction-java/src/main/java/org/apache/beam/runners/core/construction/PrimitiveCreate.java,35,,"public class PrimitiveCreate<T> extends PTransform<PBegin, PCollection<T>> {"
+22,./TargetProjects/beam/runners/direct-java/src/main/java/org/apache/beam/runners/direct/DirectRegistrar.java,31,,public class DirectRegistrar {
+23,./TargetProjects/beam/runners/flink/src/main/java/org/apache/beam/runners/flink/FlinkRunnerRegistrar.java,33,,public class FlinkRunnerRegistrar {
+24,./TargetProjects/beam/runners/google-cloud-dataflow-java/src/main/java/org/apache/beam/runners/dataflow/DataflowPTransformMatchers.java,37,,class DataflowPTransformMatchers {
+25,./TargetProjects/beam/runners/google-cloud-dataflow-java/src/main/java/org/apache/beam/runners/dataflow/DataflowPipelineRegistrar.java,32,,public class DataflowPipelineRegistrar {
+26,./TargetProjects/beam/runners/jet/src/main/java/org/apache/beam/runners/jet/JetRunnerRegistrar.java,34,,public final class JetRunnerRegistrar {
+27,./TargetProjects/beam/runners/jet/src/main/java/org/apache/beam/runners/jet/processors/FlattenP.java,37,,public class FlattenP extends AbstractProcessor {
+28,./TargetProjects/beam/runners/jet/src/main/java/org/apache/beam/runners/jet/processors/ParDoP.java,44,,"public class ParDoP<InputT, OutputT>"
+29,./TargetProjects/beam/runners/jet/src/test/java/org/apache/beam/runners/jet/JetTestRunnerRegistrar.java,34,,public final class JetTestRunnerRegistrar {
+30,./TargetProjects/beam/runners/samza/src/main/java/org/apache/beam/runners/samza/SamzaRunnerRegistrar.java,33,,public class SamzaRunnerRegistrar {
+31,./TargetProjects/beam/runners/spark/2/src/main/java/org/apache/beam/runners/spark/structuredstreaming/SparkStructuredStreamingRunnerRegistrar.java,34,,public final class SparkStructuredStreamingRunnerRegistrar {
+32,./TargetProjects/beam/runners/spark/src/main/java/org/apache/beam/runners/spark/SparkRunnerRegistrar.java,34,,public final class SparkRunnerRegistrar {
+33,./TargetProjects/beam/runners/twister2/src/main/java/org/apache/beam/runners/twister2/Twister2RunnerRegistrar.java,33,,public class Twister2RunnerRegistrar {
+34,./TargetProjects/beam/sdks/java/core/src/main/java/org/apache/beam/sdk/transforms/splittabledofn/WatermarkEstimators.java,33,,public class WatermarkEstimators {
+35,./TargetProjects/bookkeeper/bookkeeper-common/src/main/java/org/apache/bookkeeper/common/annotation/InterfaceAudience.java,30,,public class InterfaceAudience {
+36,./TargetProjects/bookkeeper/bookkeeper-common/src/main/java/org/apache/bookkeeper/common/annotation/InterfaceStability.java,29,,public class InterfaceStability {
+37,./TargetProjects/bookkeeper/stream/common/src/main/java/org/apache/bookkeeper/common/grpc/stats/ClientStats.java,35,,class ClientStats {
+38,./TargetProjects/bookkeeper/stream/common/src/main/java/org/apache/bookkeeper/common/grpc/stats/ServerStats.java,35,,class ServerStats {
+39,./TargetProjects/brooklyn-server/locations/jclouds/src/main/java/org/apache/brooklyn/location/jclouds/aws/EbsVolumeCustomizers.java,37,,public class EbsVolumeCustomizers {
+40,./TargetProjects/brooklyn-server/utils/common/src/main/java/org/apache/brooklyn/util/javalang/coerce/CoerceFunctionals.java,23,,public class CoerceFunctionals {
+41,./TargetProjects/bval/bval-jsr/src/main/java/org/apache/bval/jsr/metadata/MetadataBuilder.java,38,,public final class MetadataBuilder {
+42,./TargetProjects/camel/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/client/map/AtomixMap.java,19,,public final class AtomixMap {
+43,./TargetProjects/camel/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/client/multimap/AtomixMultiMap.java,19,,public final class AtomixMultiMap {
+44,./TargetProjects/camel/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/client/queue/AtomixQueue.java,19,,public final class AtomixQueue {
+45,./TargetProjects/camel/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/client/set/AtomixSet.java,19,,public final class AtomixSet {
+46,./TargetProjects/camel/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/client/value/AtomixValue.java,19,,public final class AtomixValue {
+47,./TargetProjects/camel/components/camel-infinispan/camel-infinispan-embedded/src/main/java/org/apache/camel/component/infinispan/embedded/InfinispanEmbeddedEventListeners.java,24,,public final class InfinispanEmbeddedEventListeners {
+48,./TargetProjects/camel/core/camel-cluster/src/main/java/org/apache/camel/impl/cluster/ClusteredRouteFilters.java,30,,public final class ClusteredRouteFilters {
+49,./TargetProjects/camel/core/camel-core-model/src/main/java/org/apache/camel/builder/ExpressionBuilder.java,22,,public final class ExpressionBuilder extends org.apache.camel.support.builder.ExpressionBuilder {
+50,./TargetProjects/camel/core/camel-core-model/src/main/java/org/apache/camel/builder/PredicateBuilder.java,22,,public final class PredicateBuilder extends org.apache.camel.support.builder.PredicateBuilder {
+51,./TargetProjects/camel/dsl/camel-yaml-dsl/camel-yaml-dsl-deserializers/src/generated/java/org/apache/camel/dsl/yaml/deserializers/ModelDeserializers.java,238,,public final class ModelDeserializers extends YamlDeserializerSupport {
+52,./TargetProjects/camel/dsl/camel-yaml-dsl/camel-yaml-dsl-deserializers/src/main/java/org/apache/camel/dsl/yaml/deserializers/EndpointDeserializers.java,25,,public final class EndpointDeserializers {
+53,./TargetProjects/camel/test-infra/camel-test-infra-hbase/src/test/java/org/apache/camel/test/infra/hbase/common/HBaseProperties.java,20,,public final class HBaseProperties {
+54,./TargetProjects/camel/test-infra/camel-test-infra-ignite/src/test/java/org/apache/camel/test/infra/ignite/common/IgniteProperties.java,20,,public final class IgniteProperties {
+55,./TargetProjects/camel-quarkus/extensions-core/core/deployment/src/main/java/org/apache/camel/quarkus/core/deployment/spi/CamelRoutesLoaderBuildItems.java,23,,public final class CamelRoutesLoaderBuildItems {
+56,./TargetProjects/camel-quarkus/extensions-core/core/runtime/src/main/java/org/apache/camel/quarkus/core/RegistryRoutesLoaders.java,34,,public final class RegistryRoutesLoaders {
+57,./TargetProjects/camel-quarkus/extensions/fhir/runtime/src/main/java/org/apache/camel/quarkus/component/fhir/FhirFlags.java,23,,public final class FhirFlags {
+58,./TargetProjects/camel-quarkus/extensions/platform-http/runtime/src/main/java/org/apache/camel/quarkus/component/platform/http/runtime/PlatformHttpHandlers.java,22,,public final class PlatformHttpHandlers {
+59,./TargetProjects/cassandra/src/java/org/apache/cassandra/cql3/statements/DeleteStatement.java,44,,public class DeleteStatement extends ModificationStatement
+60,./TargetProjects/cassandra/src/java/org/apache/cassandra/cql3/statements/UpdateStatement.java,47,,public class UpdateStatement extends ModificationStatement
+61,./TargetProjects/cassandra/test/unit/org/apache/cassandra/db/partitions/PurgeFunctionTest.java,54,,"        class WithoutPurgeableTombstones extends PurgeFunction"
+62,./TargetProjects/cassandra/test/unit/org/apache/cassandra/net/ManyToOneConcurrentLinkedQueueTest.java,255,,"        class Producer implements Runnable"
+63,./TargetProjects/cloudstack/plugins/api/solidfire-intg-test/src/main/java/org/apache/cloudstack/util/solidfire/SolidFireIntegrationTestUtil.java,40,,public class SolidFireIntegrationTestUtil {
+64,./TargetProjects/commons-text/src/main/java/org/apache/commons/text/translate/CsvTranslators.java,34,,public final class CsvTranslators {
+65,./TargetProjects/crunch/crunch-core/src/main/java/org/apache/crunch/impl/mr/exec/CrunchJobHooks.java,34,,public final class CrunchJobHooks {
+66,./TargetProjects/ctakes/ctakes-gui/src/main/java/org/apache/ctakes/gui/dictionary/umls/AutoTermExtractor.java,11,,final public class AutoTermExtractor {
+67,./TargetProjects/cxf/distribution/src/main/release/samples/jax_rs/description_openapi_v3/src/main/java/demo/jaxrs/openapi/server/Metadata.java,34,,public final class Metadata {
+68,./TargetProjects/cxf/rt/rs/sse/src/main/java/org/apache/cxf/jaxrs/sse/OutboundSseEventImpl.java,27,,public final class OutboundSseEventImpl implements OutboundSseEvent {
+69,./TargetProjects/drill/contrib/storage-jdbc/src/main/java/org/apache/drill/exec/store/jdbc/DrillJdbcRuleBase.java,42,,abstract class DrillJdbcRuleBase extends ConverterRule {
+70,./TargetProjects/drill/exec/java-exec/src/main/java/org/apache/drill/exec/expr/fn/impl/SimpleRepeatedFunctions.java,40,,public class SimpleRepeatedFunctions {
+71,./TargetProjects/drill/exec/java-exec/src/main/java/org/apache/drill/exec/expr/fn/impl/StringFunctions.java,44,,public class StringFunctions{
+72,./TargetProjects/drill/exec/java-exec/src/main/java/org/apache/drill/exec/metastore/store/SimpleFileTableMetadataProvider.java,51,,public class SimpleFileTableMetadataProvider implements TableMetadataProvider {
+73,./TargetProjects/drill/exec/java-exec/src/main/java/org/apache/drill/exec/metastore/store/parquet/MetastoreParquetTableMetadataProvider.java,46,,public class MetastoreParquetTableMetadataProvider extends MetastoreFileTableMetadataProvider
+74,./TargetProjects/drill/exec/java-exec/src/main/java/org/apache/drill/exec/metastore/store/parquet/ParquetTableMetadataProviderImpl.java,48,,public class ParquetTableMetadataProviderImpl extends BaseParquetMetadataProvider
+75,./TargetProjects/drill/exec/java-exec/src/main/java/org/apache/drill/exec/testing/CountDownLatchInjectionImpl.java,33,,public class CountDownLatchInjectionImpl extends Injection implements CountDownLatchInjection {
+76,./TargetProjects/drill/exec/java-exec/src/main/java/org/apache/drill/exec/testing/ExceptionInjection.java,35,,public class ExceptionInjection extends Injection {
+77,./TargetProjects/drill/exec/java-exec/src/main/java/org/apache/drill/exec/testing/PauseInjection.java,39,,public class PauseInjection extends Injection {
+78,./TargetProjects/drill/tools/fmpp/src/main/java/bsh/EvalError.java,20,,public class EvalError extends Exception {
+79,./TargetProjects/druid/extensions-core/druid-bloom-filter/src/main/java/org/apache/druid/query/expressions/BloomFilterExprMacro.java,71,,"    class BloomExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr"
+80,./TargetProjects/druid/indexing-service/src/test/java/org/apache/druid/indexing/overlord/sampler/SamplerTestUtils.java,28,,public final class SamplerTestUtils
+81,./TargetProjects/druid/integration-tests/src/main/java/org/apache/druid/testing/clients/TaskResponseObject.java,27,,public class TaskResponseObject
+82,./TargetProjects/druid/processing/src/main/java/org/apache/druid/query/expression/IPv4AddressMatchExprMacro.java,76,,"    class IPv4AddressMatchExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr"
+83,./TargetProjects/druid/processing/src/main/java/org/apache/druid/query/expression/IPv4AddressParseExprMacro.java,69,,"    class IPv4AddressParseExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr"
+84,./TargetProjects/druid/processing/src/main/java/org/apache/druid/query/expression/IPv4AddressStringifyExprMacro.java,68,,"    class IPv4AddressStringifyExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr"
+85,./TargetProjects/druid/processing/src/main/java/org/apache/druid/query/expression/LikeExprMacro.java,74,,"    class LikeExtractExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr"
+86,./TargetProjects/druid/processing/src/main/java/org/apache/druid/query/expression/LookupExprMacro.java,80,,"    class LookupExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr"
+87,./TargetProjects/druid/processing/src/main/java/org/apache/druid/query/expression/RegexpExtractExprMacro.java,72,,"    class RegexpExtractExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr"
+88,./TargetProjects/druid/processing/src/main/java/org/apache/druid/query/expression/RegexpLikeExprMacro.java,65,,"    class RegexpLikeExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr"
+89,./TargetProjects/druid/processing/src/main/java/org/apache/druid/query/expression/TimestampExtractExprMacro.java,96,,"    class TimestampExtractExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr"
+90,./TargetProjects/druid/processing/src/main/java/org/apache/druid/query/expression/TimestampFormatExprMacro.java,76,,"    class TimestampFormatExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr"
+91,./TargetProjects/druid/processing/src/main/java/org/apache/druid/query/expression/TimestampParseExprMacro.java,72,,"    class TimestampParseExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr"
+92,./TargetProjects/druid/processing/src/main/java/org/apache/druid/query/groupby/GroupByQueryQueryToolChest.java,451,,"    class GroupByResultRowModule extends SimpleModule"
+93,./TargetProjects/druid/processing/src/main/java/org/apache/druid/segment/data/ColumnarDoubles.java,154,,"    class ColumnarDoublesVectorValueSelector extends BaseDoubleVectorValueSelector"
+94,./TargetProjects/druid/processing/src/main/java/org/apache/druid/segment/data/ColumnarFloats.java,154,,"    class ColumnarFloatsVectorValueSelector extends BaseFloatVectorValueSelector"
+95,./TargetProjects/druid/processing/src/main/java/org/apache/druid/segment/data/ColumnarLongs.java,154,,"    class ColumnarLongsVectorValueSelector extends BaseLongVectorValueSelector"
+96,./TargetProjects/druid/sql/src/main/java/org/apache/druid/sql/calcite/expression/builtin/MultiValueStringOperatorConversions.java,37,,public class MultiValueStringOperatorConversions
+97,./TargetProjects/dubbo/dubbo-config/dubbo-config-api/src/test/java/org/apache/dubbo/config/mock/GreetingMock2.java,21,,public class GreetingMock2 implements Greeting {
+98,./TargetProjects/dubbo/dubbo-rpc/dubbo-rpc-api/src/main/java/org/apache/dubbo/rpc/RpcConstants.java,31,,"public final class RpcConstants implements CommonConstants, QosConstants, FilterConstants,"
+99,./TargetProjects/dubbo-admin/dubbo-admin-server/src/main/java/org/apache/dubbo/admin/model/dto/MetricDTO.java,24,,public class MetricDTO {
+100,./TargetProjects/felix-dev/tools/org.apache.felix.scr.annotations/src/main/java/org/apache/felix/scr/annotations/AutoDetect.java,27,,public final class AutoDetect {
+101,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/accounting/accrual/api/AccrualAccountingApiResourceSwagger.java,26,,final class AccrualAccountingApiResourceSwagger {
+102,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/accounting/closure/api/GLClosuresApiResourceSwagger.java,24,,final class GLClosuresApiResourceSwagger {
+103,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/accounting/financialactivityaccount/api/FinancialActivityAccountsApiResourceSwagger.java,28,,final class FinancialActivityAccountsApiResourceSwagger {
+104,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/accounting/glaccount/api/GLAccountsApiResourceSwagger.java,31,,final class GLAccountsApiResourceSwagger {
+105,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/accounting/journalentry/api/JournalEntriesApiResourceSwagger.java,26,,final class JournalEntriesApiResourceSwagger {
+106,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/accounting/provisioning/api/ProvisioningEntriesApiResourceSwagger.java,26,,final class ProvisioningEntriesApiResourceSwagger {
+107,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/accounting/rule/api/AccountingRuleApiResourceSwagger.java,31,,final class AccountingRuleApiResourceSwagger {
+108,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/batch/api/BatchApiResourceSwagger.java,28,,final class BatchApiResourceSwagger {
+109,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/commands/api/MakercheckersApiResourceSwagger.java,31,,final class MakercheckersApiResourceSwagger {
+110,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/accountnumberformat/api/AccountNumberFormatsApiResourceSwagger.java,29,,final class AccountNumberFormatsApiResourceSwagger {
+111,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/cache/api/CacheApiResourceSwagger.java,27,,final class CacheApiResourceSwagger {
+112,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/codes/api/CodeValuesApiResourceSwagger.java,26,,final class CodeValuesApiResourceSwagger {
+113,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/codes/api/CodesApiResourceSwagger.java,26,,final class CodesApiResourceSwagger {
+114,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/configuration/api/ExternalServicesConfigurationApiResourceSwagger.java,26,,final class ExternalServicesConfigurationApiResourceSwagger {
+115,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/configuration/api/GlobalConfigurationApiResourceSwagger.java,28,,final class GlobalConfigurationApiResourceSwagger {
+116,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/dataqueries/api/DatatablesApiResourceSwagger.java,30,,final class DatatablesApiResourceSwagger {
+117,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/dataqueries/api/EntityDatatableChecksApiResourceSwagger.java,33,,final class EntityDatatableChecksApiResourceSwagger {
+118,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/dataqueries/api/ReportsApiResourceSwagger.java,29,,final class ReportsApiResourceSwagger {
+119,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/dataqueries/api/RunreportsApiResourceSwagger.java,29,,final class RunreportsApiResourceSwagger {
+120,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/documentmanagement/api/DocumentManagementApiResourceSwagger.java,27,,final class DocumentManagementApiResourceSwagger {
+121,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/documentmanagement/api/ImagesApiResourceSwagger.java,25,,final class ImagesApiResourceSwagger {
+122,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/hooks/api/HookApiResourceSwagger.java,33,,final class HookApiResourceSwagger {
+123,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/jobs/api/SchedulerApiResourceSwagger.java,26,,final class SchedulerApiResourceSwagger {
+124,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/jobs/api/SchedulerJobApiResourceSwagger.java,29,,final class SchedulerJobApiResourceSwagger {
+125,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/reportmailingjob/api/ReportMailingJobApiResourceSwagger.java,31,,final class ReportMailingJobApiResourceSwagger {
+126,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/reportmailingjob/api/ReportMailingJobRunHistoryApiResourceSwagger.java,27,,final class ReportMailingJobRunHistoryApiResourceSwagger {
+127,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/security/api/AuthenticationApiResourceSwagger.java,29,,final class AuthenticationApiResourceSwagger {
+128,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/security/api/UserDetailsApiResourceSwagger.java,29,,final class UserDetailsApiResourceSwagger {
+129,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/infrastructure/survey/api/SurveyApiResourceSwagger.java,30,,final class SurveyApiResourceSwagger {
+130,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/organisation/holiday/api/HolidaysApiResourceSwagger.java,29,,final class HolidaysApiResourceSwagger {
+131,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/organisation/monetary/api/CurrenciesApiResourceSwagger.java,28,,final class CurrenciesApiResourceSwagger {
+132,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/organisation/office/api/OfficesApiResourceSwagger.java,28,,final class OfficesApiResourceSwagger {
+133,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/organisation/provisioning/api/ProvisioningCriteriaApiResourceSwagger.java,29,,final class ProvisioningCriteriaApiResourceSwagger {
+134,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/organisation/staff/api/StaffApiResourceSwagger.java,28,,final class StaffApiResourceSwagger {
+135,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/organisation/teller/api/TellerApiResourceSwagger.java,37,,final class TellerApiResourceSwagger {
+136,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/organisation/workingdays/api/WorkingDaysApiResourceSwagger.java,29,,final class WorkingDaysApiResourceSwagger {
+137,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/account/api/AccountTransfersApiResourceSwagger.java,28,,final class AccountTransfersApiResourceSwagger {
+138,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/account/api/StandingInstructionApiResourceSwagger.java,28,,final class StandingInstructionApiResourceSwagger {
+139,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/account/api/StandingInstructionHistoryApiResourceSwagger.java,28,,final class StandingInstructionHistoryApiResourceSwagger {
+140,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/accounts/api/AccountsApiResourceSwagger.java,29,,final class AccountsApiResourceSwagger {
+141,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/address/api/EntityFieldConfigurationApiResourcesSwagger.java,27,,final class EntityFieldConfigurationApiResourcesSwagger {
+142,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/client/api/ClientAddressApiResourcesSwagger.java,27,,final class ClientAddressApiResourcesSwagger {
+143,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/client/api/ClientChargesApiResourceSwagger.java,29,,final class ClientChargesApiResourceSwagger {
+144,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/client/api/ClientIdentifiersApiResourceSwagger.java,27,,final class ClientIdentifiersApiResourceSwagger {
+145,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/client/api/ClientTransactionsApiResourceSwagger.java,29,,final class ClientTransactionsApiResourceSwagger {
+146,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/client/api/ClientsApiResourceSwagger.java,29,,final class ClientsApiResourceSwagger {
+147,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/collateral/api/CollateralsApiResourceSwagger.java,27,,final class CollateralsApiResourceSwagger {
+148,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/collectionsheet/api/CollectionSheetApiResourceSwagger.java,28,,final class CollectionSheetApiResourceSwagger {
+149,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/floatingrates/api/FloatingRatesApiResourceSwagger.java,27,,final class FloatingRatesApiResourceSwagger {
+150,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/fund/api/FundsApiResourceSwagger.java,26,,final class FundsApiResourceSwagger {
+151,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/group/api/CentersApiResourceSwagger.java,28,,final class CentersApiResourceSwagger {
+152,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/group/api/GroupsApiResourceSwagger.java,28,,final class GroupsApiResourceSwagger {
+153,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/interestratechart/api/InterestRateChartSlabsApiResourceSwagger.java,27,,final class InterestRateChartSlabsApiResourceSwagger {
+154,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/interestratechart/api/InterestRateChartsApiResourceSwagger.java,28,,final class InterestRateChartsApiResourceSwagger {
+155,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/loanaccount/api/LoanChargesApiResourceSwagger.java,27,,final class LoanChargesApiResourceSwagger {
+156,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/loanaccount/api/LoanScheduleApiResourceSwagger.java,27,,final class LoanScheduleApiResourceSwagger {
+157,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/loanaccount/api/LoanTransactionsApiResourceSwagger.java,27,,final class LoanTransactionsApiResourceSwagger {
+158,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/loanaccount/api/LoansApiResourceSwagger.java,28,,final class LoansApiResourceSwagger {
+159,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/loanproduct/api/LoanProductsApiResourceSwagger.java,29,,final class LoanProductsApiResourceSwagger {
+160,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/note/api/NotesApiResourceSwagger.java,27,,final class NotesApiResourceSwagger {
+161,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/paymenttype/api/PaymentTypeApiResourceSwagger.java,26,,final class PaymentTypeApiResourceSwagger {
+162,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/products/api/ProductsApiResourceSwagger.java,27,,final class ProductsApiResourceSwagger {
+163,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/savings/api/FixedDepositAccountsApiResourceSwagger.java,28,,final class FixedDepositAccountsApiResourceSwagger {
+164,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/savings/api/FixedDepositProductsApiResourceSwagger.java,28,,final class FixedDepositProductsApiResourceSwagger {
+165,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/savings/api/RecurringDepositAccountTransactionsApiResourceSwagger.java,29,,final class RecurringDepositAccountTransactionsApiResourceSwagger {
+166,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/savings/api/RecurringDepositAccountsApiResourceSwagger.java,28,,final class RecurringDepositAccountsApiResourceSwagger {
+167,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/savings/api/RecurringDepositProductsApiResourceSwagger.java,28,,final class RecurringDepositProductsApiResourceSwagger {
+168,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/savings/api/SavingsAccountChargesApiResourceSwagger.java,27,,final class SavingsAccountChargesApiResourceSwagger {
+169,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/savings/api/SavingsAccountsApiResourceSwagger.java,28,,final class SavingsAccountsApiResourceSwagger {
+170,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/savings/api/SavingsProductsApiResourceSwagger.java,29,,final class SavingsProductsApiResourceSwagger {
+171,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/search/api/SearchApiResourceSwagger.java,28,,final class SearchApiResourceSwagger {
+172,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/self/account/api/SelfAccountTransferApiResourceSwagger.java,28,,final class SelfAccountTransferApiResourceSwagger {
+173,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/self/account/api/SelfBeneficiariesTPTApiResourceSwagger.java,27,,final class SelfBeneficiariesTPTApiResourceSwagger {
+174,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/self/client/api/SelfClientsApiResourceSwagger.java,30,,final class SelfClientsApiResourceSwagger {
+175,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/self/loanaccount/api/SelfLoansApiResourceSwagger.java,29,,final class SelfLoansApiResourceSwagger {
+176,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/self/pockets/api/PocketApiResourceSwagger.java,28,,final class PocketApiResourceSwagger {
+177,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/self/runreport/SelfRunReportApiResourceSwagger.java,28,,final class SelfRunReportApiResourceSwagger {
+178,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/self/savings/api/SelfSavingsApiResourceSwagger.java,27,,final class SelfSavingsApiResourceSwagger {
+179,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/self/security/api/SelfAuthenticationApiResourceSwagger.java,28,,final class SelfAuthenticationApiResourceSwagger {
+180,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/self/security/api/SelfUserApiResourceSwagger.java,26,,final class SelfUserApiResourceSwagger {
+181,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/self/security/api/SelfUserDetailsApiResourceSwagger.java,28,,final class SelfUserDetailsApiResourceSwagger {
+182,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/self/shareaccounts/api/SelfShareAccountsApiResourceSwagger.java,29,,final class SelfShareAccountsApiResourceSwagger {
+183,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/tax/api/TaxComponentApiResourceSwagger.java,28,,final class TaxComponentApiResourceSwagger {
+184,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/portfolio/tax/api/TaxGroupApiResourceSwagger.java,29,,final class TaxGroupApiResourceSwagger {
+185,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/template/api/TemplatesApiResourcesSwagger.java,28,,final class TemplatesApiResourcesSwagger {
+186,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/useradministration/api/PasswordPreferencesApiResourceSwagger.java,26,,final class PasswordPreferencesApiResourceSwagger {
+187,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/useradministration/api/PermissionsApiResourceSwagger.java,26,,final class PermissionsApiResourceSwagger {
+188,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/useradministration/api/RolesApiResourceSwagger.java,28,,final class RolesApiResourceSwagger {
+189,./TargetProjects/fineract/fineract-provider/src/main/java/org/apache/fineract/useradministration/api/UsersApiResourceSwagger.java,30,,final class UsersApiResourceSwagger {
+190,./TargetProjects/fineract/integration-tests/src/test/java/org/apache/fineract/integrationtests/common/PaymentTypeDomain.java,21,,public final class PaymentTypeDomain {
+191,./TargetProjects/flink/flink-core/src/main/java/org/apache/flink/types/Nothing.java,24,,public class Nothing {
+192,./TargetProjects/flink/flink-formats/flink-parquet/src/main/java/org/apache/flink/formats/parquet/row/ParquetRowDataWriter.java,263,,"        class LongUnscaledBytesWriter implements FieldWriter {"
+193,./TargetProjects/flink/flink-formats/flink-parquet/src/main/java/org/apache/flink/formats/parquet/row/ParquetRowDataWriter.java,289,,"        class UnscaledBytesWriter implements FieldWriter {"
+194,./TargetProjects/flink/flink-libraries/flink-gelly/src/main/java/org/apache/flink/graph/asm/degree/annotate/DegreeAnnotationFunctions.java,34,,public class DegreeAnnotationFunctions {
+195,./TargetProjects/flink/flink-libraries/flink-gelly/src/main/java/org/apache/flink/graph/library/linkanalysis/Functions.java,26,,class Functions {
+196,./TargetProjects/flink/flink-runtime/src/main/java/org/apache/flink/runtime/operators/coordination/RecreateOnResetOperatorCoordinator.java,42,,public class RecreateOnResetOperatorCoordinator implements OperatorCoordinator {
+197,./TargetProjects/flink/flink-runtime/src/test/java/org/apache/flink/runtime/checkpoint/channel/ChannelStateCheckpointWriterTest.java,158,,"        class FlushRecorder extends DataOutputStream {"
+198,./TargetProjects/flink/flink-runtime/src/test/java/org/apache/flink/runtime/scheduler/strategy/TestingSchedulingResultPartition.java,35,,public class TestingSchedulingResultPartition implements SchedulingResultPartition {
+199,./TargetProjects/flink/flink-table/flink-table-common/src/main/java/org/apache/flink/table/annotation/UnknownSerializer.java,28,,abstract class UnknownSerializer extends TypeSerializer<Object> {
+200,./TargetProjects/flink/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/inference/strategies/SubsequenceInputTypeStrategy.java,50,,public final class SubsequenceInputTypeStrategy implements InputTypeStrategy {
+201,./TargetProjects/flink/flink-table/flink-table-runtime/src/main/java/org/apache/flink/table/filesystem/stream/compact/CompactMessages.java,40,,public class CompactMessages {
+202,./TargetProjects/flink/flink-table/flink-table-runtime/src/test/java/org/apache/flink/table/data/BinaryStringDataTest.java,492,,"        class DecimalTestData {"
+203,./TargetProjects/flume/flume-ng-core/src/main/java/org/apache/flume/annotations/InterfaceAudience.java,46,,public class InterfaceAudience {
+204,./TargetProjects/flume/flume-ng-core/src/main/java/org/apache/flume/interceptor/SearchAndReplaceInterceptor.java,49,,public class SearchAndReplaceInterceptor implements Interceptor {
+205,./TargetProjects/flume/flume-ng-core/src/main/java/org/apache/flume/serialization/BodyTextEventSerializer.java,32,,public class BodyTextEventSerializer implements EventSerializer {
+206,./TargetProjects/flume/flume-ng-core/src/main/java/org/apache/flume/serialization/FlumeEventAvroEventSerializer.java,26,,public class FlumeEventAvroEventSerializer extends AbstractAvroEventSerializer<Event> {
+207,./TargetProjects/flume/flume-ng-core/src/main/java/org/apache/flume/serialization/HeaderAndBodyTextEventSerializer.java,32,,public class HeaderAndBodyTextEventSerializer implements EventSerializer {
+208,./TargetProjects/flume/flume-ng-core/src/main/java/org/apache/flume/source/shaded/guava/SmoothRateLimiter.java,24,,abstract class SmoothRateLimiter extends RateLimiter {
+209,./TargetProjects/flume/flume-ng-core/src/test/java/org/apache/flume/interceptor/CensoringInterceptor.java,30,,public class CensoringInterceptor implements Interceptor {
+210,./TargetProjects/flume/flume-ng-sinks/flume-dataset-sink/src/main/java/org/apache/flume/sink/kite/policy/RetryPolicy.java,31,,public class RetryPolicy implements FailurePolicy {
+211,./TargetProjects/flume/flume-ng-sources/flume-jms-source/src/main/java/org/apache/flume/source/jms/DefaultJMSMessageConverter.java,57,,public class DefaultJMSMessageConverter implements JMSMessageConverter {
+212,./TargetProjects/freemarker/src/main/java/freemarker/core/BuiltInsForDates.java,42,,class BuiltInsForDates {
+213,./TargetProjects/freemarker/src/main/java/freemarker/core/BuiltInsForExistenceHandling.java,33,,class BuiltInsForExistenceHandling {
+214,./TargetProjects/freemarker/src/main/java/freemarker/core/BuiltInsForHashes.java,31,,class BuiltInsForHashes {
+215,./TargetProjects/freemarker/src/main/java/freemarker/core/BuiltInsForMultipleTypes.java,56,,class BuiltInsForMultipleTypes {
+216,./TargetProjects/freemarker/src/main/java/freemarker/core/BuiltInsForNodes.java,38,,class BuiltInsForNodes {
+217,./TargetProjects/freemarker/src/main/java/freemarker/core/BuiltInsForStringsBasic.java,41,,class BuiltInsForStringsBasic {
+218,./TargetProjects/freemarker/src/main/java/freemarker/core/BuiltInsForStringsEncoding.java,34,,class BuiltInsForStringsEncoding {
+219,./TargetProjects/freemarker/src/main/java/freemarker/core/BuiltInsForStringsMisc.java,35,,class BuiltInsForStringsMisc {
+220,./TargetProjects/freemarker/src/main/java/freemarker/core/BuiltInsForStringsRegexp.java,45,,class BuiltInsForStringsRegexp {
+221,./TargetProjects/freemarker/src/main/java/freemarker/core/BuiltInsWithLazyConditionals.java,28,,final class BuiltInsWithLazyConditionals {
+222,./TargetProjects/geode/geode-core/src/integrationTest/java/org/apache/geode/TXJUnitTest.java,4634,,"    class statsValidator {"
+223,./TargetProjects/geronimo-openapi/geronimo-openapi-impl/src/main/java/org/apache/geronimo/microprofile/openapi/impl/model/codec/Serializers.java,38,,public final class Serializers {
+224,./TargetProjects/geronimo-specs/geronimo-jcdi_2.0_spec/src/main/java/javax/enterprise/event/ImmutableNotificationOptions.java,29,,class ImmutableNotificationOptions implements NotificationOptions
+225,./TargetProjects/geronimo-specs/geronimo-osgi-support/geronimo-osgi-itesta/src/main/java/org/apache/geronimo/osgi/itesta/NoAccess.java,21,,public class NoAccess {
+226,./TargetProjects/hadoop/hadoop-common-project/hadoop-annotations/src/main/java/org/apache/hadoop/classification/InterfaceAudience.java,47,,public class InterfaceAudience {
+227,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/fs/impl/FunctionsRaisingIOE.java,32,,public final class FunctionsRaisingIOE {
+228,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/io/file/tfile/Chunk.java,29,,final class Chunk {
+229,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/io/file/tfile/CompareUtils.java,25,,class CompareUtils {
+230,./TargetProjects/hadoop/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/java/org/apache/hadoop/hdfs/server/federation/store/driver/impl/StateStoreSerializerPBImpl.java,35,,public final class StateStoreSerializerPBImpl extends StateStoreSerializer {
+231,./TargetProjects/hadoop/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/snapshot/FSImageFormatPBSnapshot.java,89,,public class FSImageFormatPBSnapshot {
+232,./TargetProjects/hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-jobclient/src/test/java/org/apache/hadoop/fs/slive/Weights.java,26,,class Weights {
+233,./TargetProjects/hadoop-common/hadoop-common-project/hadoop-annotations/src/main/java/org/apache/hadoop/classification/InterfaceAudience.java,47,,public class InterfaceAudience {
+234,./TargetProjects/hadoop-common/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/io/file/tfile/Chunk.java,29,,final class Chunk {
+235,./TargetProjects/hadoop-common/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/io/file/tfile/CompareUtils.java,25,,class CompareUtils {
+236,./TargetProjects/hadoop-common/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/snapshot/FSImageFormatPBSnapshot.java,75,,public class FSImageFormatPBSnapshot {
+237,./TargetProjects/hadoop-common/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-jobclient/src/test/java/org/apache/hadoop/fs/slive/Weights.java,26,,class Weights {
+238,./TargetProjects/hadoop-mapreduce/src/test/mapred/org/apache/hadoop/fs/slive/Weights.java,26,,class Weights {
+239,./TargetProjects/hadoop-ozone/hadoop-hdds/common/src/main/java/org/apache/hadoop/hdds/annotation/InterfaceAudience.java,47,,public final class InterfaceAudience {
+240,./TargetProjects/hadoop-ozone/hadoop-hdds/server-scm/src/main/java/org/apache/hadoop/hdds/scm/server/SCMCertStore.java,68,,public final class SCMCertStore implements CertificateStore {
+241,./TargetProjects/hadoop-ozone/hadoop-ozone/common/src/main/java/org/apache/hadoop/ozone/om/helpers/VolumeArgs.java,28,,public final class VolumeArgs {
+242,./TargetProjects/harmony/classlib/modules/luni-kernel/src/main/java/java/lang/reflect/Constructor.java,28,,"public final class Constructor<T> extends AccessibleObject implements GenericDeclaration,"
+243,./TargetProjects/harmony/classlib/modules/luni-kernel/src/main/java/java/lang/reflect/Field.java,24,,public final class Field extends AccessibleObject implements Member {
+244,./TargetProjects/harmony/classlib/modules/luni-kernel/src/main/java/java/lang/reflect/Method.java,26,,"public final class Method extends AccessibleObject implements GenericDeclaration, Member {"
+245,./TargetProjects/harmony/drlvm/vm/tests/kernel/java/lang/PrivateConstructor.java,23,,public class PrivateConstructor {
+246,./TargetProjects/harmony-classlib/modules/luni-kernel/src/main/java/java/lang/reflect/Constructor.java,28,,"public final class Constructor<T> extends AccessibleObject implements GenericDeclaration,"
+247,./TargetProjects/harmony-classlib/modules/luni-kernel/src/main/java/java/lang/reflect/Field.java,24,,public final class Field extends AccessibleObject implements Member {
+248,./TargetProjects/harmony-classlib/modules/luni-kernel/src/main/java/java/lang/reflect/Method.java,26,,"public final class Method extends AccessibleObject implements GenericDeclaration, Member {"
+249,./TargetProjects/hbase/hbase-server/src/main/java/org/apache/hadoop/hbase/master/normalizer/MergeNormalizationPlan.java,41,,final class MergeNormalizationPlan implements NormalizationPlan {
+250,./TargetProjects/hive/classification/src/java/org/apache/hadoop/hive/common/classification/InterfaceAudience.java,25,,public class InterfaceAudience {
+251,./TargetProjects/hive/contrib/src/java/org/apache/hadoop/hive/contrib/udaf/example/UDAFExampleAvg.java,38,,public final class UDAFExampleAvg extends UDAF {
+252,./TargetProjects/hive/llap-server/src/test/org/apache/hadoop/hive/llap/io/LlapIoMocks.java,37,,public final class LlapIoMocks {
+253,./TargetProjects/hive/testutils/ptest2/src/main/java/org/apache/hive/ptest/execution/context/FixedExecutionContextProvider.java,37,,public class FixedExecutionContextProvider implements ExecutionContextProvider {
+254,./TargetProjects/iceberg/core/src/main/java/org/apache/iceberg/ManifestListWriter.java,32,,abstract class ManifestListWriter implements FileAppender<ManifestFile> {
+255,./TargetProjects/ignite/modules/core/src/test/java/org/apache/ignite/internal/util/future/IgniteFutureImplTest.java,607,,"        class TestClosure implements CI1<IgniteFuture<Integer>> {"
+256,./TargetProjects/incubator-atlas/typesystem/src/main/java/org/apache/atlas/classification/InterfaceAudience.java,29,,public class InterfaceAudience {
+257,./TargetProjects/incubator-gobblin/gobblin-compaction/src/main/java/org/apache/gobblin/compaction/conditions/RecompactionConditionBasedOnFileCount.java,33,,public class RecompactionConditionBasedOnFileCount implements RecompactionCondition {
+258,./TargetProjects/incubator-gobblin/gobblin-compaction/src/main/java/org/apache/gobblin/compaction/listeners/SimpleCompactorCompletionListener.java,31,,public class SimpleCompactorCompletionListener implements CompactorCompletionListener {
+259,./TargetProjects/incubator-gobblin/gobblin-compaction/src/main/java/org/apache/gobblin/compaction/mapreduce/MRCompactorJobPropCreator.java,58,,public class MRCompactorJobPropCreator {
+260,./TargetProjects/incubator-gobblin/gobblin-core/src/main/java/org/apache/gobblin/commit/FsRenameCommitStep.java,43,,public class FsRenameCommitStep extends CommitStepBase {
+261,./TargetProjects/incubator-gobblin/gobblin-metrics-libs/gobblin-metrics-base/src/test/java/org/apache/gobblin/metrics/performance/MetricsUpdater.java,52,,public class MetricsUpdater implements Runnable {
+262,./TargetProjects/incubator-gobblin/gobblin-modules/gobblin-azkaban/src/main/java/org/apache/gobblin/service/modules/orchestration/AzkabanMultiCallables.java,51,,class AzkabanMultiCallables {
+263,./TargetProjects/incubator-gobblin/gobblin-runtime-hadoop/src/main/java/org/apache/gobblin/runtime/instance/plugin/hadoop/HadoopKerberosKeytabAuthenticationPlugin.java,40,,public class HadoopKerberosKeytabAuthenticationPlugin extends BaseIdlePluginImpl {
+264,./TargetProjects/incubator-gobblin/gobblin-runtime/src/main/java/org/apache/gobblin/runtime/commit/DatasetStateCommitStep.java,43,,public class DatasetStateCommitStep extends CommitStepBase {
+265,./TargetProjects/incubator-heron/heron/api/src/java/org/apache/heron/classification/InterfaceAudience.java,50,,public final class InterfaceAudience {
+266,./TargetProjects/incubator-iotdb/cluster/src/main/java/org/apache/iotdb/cluster/client/async/AsyncDataHeartbeatClient.java,37,,public class AsyncDataHeartbeatClient extends AsyncDataClient {
+267,./TargetProjects/incubator-iotdb/cluster/src/main/java/org/apache/iotdb/cluster/client/async/AsyncMetaHeartbeatClient.java,37,,public class AsyncMetaHeartbeatClient extends AsyncMetaClient {
+268,./TargetProjects/incubator-nemo/client/src/main/java/org/apache/nemo/client/NemoClient.java,34,,public final class NemoClient {
+269,./TargetProjects/incubator-nemo/client/src/main/java/org/apache/nemo/client/beam/NemoRunnerRegistrar.java,35,,public final class NemoRunnerRegistrar {
+270,./TargetProjects/incubator-nemo/common/src/main/java/org/apache/nemo/common/eventhandler/PubSubEventHandlerWrapper.java,28,,public final class PubSubEventHandlerWrapper {
+271,./TargetProjects/incubator-nemo/compiler/backend/src/main/java/org/apache/nemo/compiler/backend/nemo/NemoBackend.java,35,,public final class NemoBackend implements Backend<PhysicalPlan> {
+272,./TargetProjects/incubator-nemo/compiler/optimizer/src/main/java/org/apache/nemo/compiler/optimizer/NemoOptimizer.java,50,,public final class NemoOptimizer implements Optimizer {
+273,./TargetProjects/incubator-nemo/conf/src/main/java/org/apache/nemo/conf/DataPlaneConf.java,30,,public final class DataPlaneConf {
+274,./TargetProjects/incubator-nemo/runtime/common/src/main/java/org/apache/nemo/runtime/common/NativeChannelImplementationSelector.java,40,,public final class NativeChannelImplementationSelector implements NettyChannelImplementationSelector {
+275,./TargetProjects/incubator-nemo/runtime/common/src/main/java/org/apache/nemo/runtime/common/NioChannelImplementationSelector.java,34,,public final class NioChannelImplementationSelector implements NettyChannelImplementationSelector {
+276,./TargetProjects/incubator-nemo/runtime/common/src/main/java/org/apache/nemo/runtime/common/message/ClientRPC.java,45,,public final class ClientRPC {
+277,./TargetProjects/incubator-nemo/runtime/common/src/main/java/org/apache/nemo/runtime/common/message/PersistentConnectionToMasterMap.java,32,,public final class PersistentConnectionToMasterMap {
+278,./TargetProjects/incubator-nemo/runtime/common/src/main/java/org/apache/nemo/runtime/common/message/grpc/GrpcMessageEnvironment.java,53,,public final class GrpcMessageEnvironment implements MessageEnvironment {
+279,./TargetProjects/incubator-nemo/runtime/common/src/main/java/org/apache/nemo/runtime/common/message/ncs/NcsMessageEnvironment.java,47,,public final class NcsMessageEnvironment implements MessageEnvironment {
+280,./TargetProjects/incubator-nemo/runtime/common/src/main/java/org/apache/nemo/runtime/common/plan/PhysicalPlanGenerator.java,54,,"public final class PhysicalPlanGenerator implements Function<IRDAG, DAG<Stage, StageEdge>> {"
+281,./TargetProjects/incubator-nemo/runtime/driver/src/main/java/org/apache/nemo/driver/NemoContext.java,41,,public final class NemoContext {
+282,./TargetProjects/incubator-nemo/runtime/driver/src/main/java/org/apache/nemo/driver/NemoDriver.java,70,,public final class NemoDriver {
+283,./TargetProjects/incubator-nemo/runtime/driver/src/main/java/org/apache/nemo/driver/UserApplicationRunner.java,46,,public final class UserApplicationRunner {
+284,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/Executor.java,62,,public final class Executor {
+285,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/MetricManagerWorker.java,37,,public final class MetricManagerWorker implements MetricMessageSender {
+286,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/data/BlockTransferThrottler.java,38,,public final class BlockTransferThrottler {
+287,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/data/PipeManagerWorker.java,50,,public final class PipeManagerWorker {
+288,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/data/SerializerManager.java,38,,public final class SerializerManager {
+289,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/data/stores/GlusterFileStore.java,48,,public final class GlusterFileStore extends AbstractBlockStore implements RemoteFileStore {
+290,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/data/stores/LocalFileStore.java,42,,public final class LocalFileStore extends LocalBlockStore {
+291,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/data/stores/MemoryStore.java,36,,public final class MemoryStore extends LocalBlockStore {
+292,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/data/stores/SerializedMemoryStore.java,35,,public final class SerializedMemoryStore extends LocalBlockStore {
+293,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/datatransfer/IntermediateDataIOFactory.java,36,,public final class IntermediateDataIOFactory {
+294,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/transfer/ByteTransfer.java,36,,public final class ByteTransfer {
+295,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/transfer/ByteTransport.java,49,,final class ByteTransport implements AutoCloseable {
+296,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/transfer/ByteTransportChannelInitializer.java,61,,final class ByteTransportChannelInitializer extends ChannelInitializer<SocketChannel> {
+297,./TargetProjects/incubator-nemo/runtime/executor/src/main/java/org/apache/nemo/runtime/executor/transfer/ControlFrameEncoder.java,40,,final class ControlFrameEncoder extends MessageToMessageEncoder<ByteTransferContext> {
+298,./TargetProjects/incubator-nemo/runtime/master/src/main/java/org/apache/nemo/runtime/master/PipeManagerMaster.java,47,,public final class PipeManagerMaster {
+299,./TargetProjects/incubator-nemo/runtime/master/src/main/java/org/apache/nemo/runtime/master/RuntimeMaster.java,82,,public final class RuntimeMaster {
+300,./TargetProjects/incubator-nemo/runtime/master/src/main/java/org/apache/nemo/runtime/master/metric/MetricManagerMaster.java,36,,public final class MetricManagerMaster implements MetricMessageHandler {
+301,./TargetProjects/incubator-nemo/runtime/master/src/main/java/org/apache/nemo/runtime/master/resource/ContainerManager.java,59,,public final class ContainerManager {
+302,./TargetProjects/incubator-nemo/runtime/master/src/main/java/org/apache/nemo/runtime/master/scheduler/BatchScheduler.java,54,,public final class BatchScheduler implements Scheduler {
+303,./TargetProjects/incubator-nemo/runtime/master/src/main/java/org/apache/nemo/runtime/master/scheduler/ContainerTypeAwareSchedulingConstraint.java,32,,public final class ContainerTypeAwareSchedulingConstraint implements SchedulingConstraint {
+304,./TargetProjects/incubator-nemo/runtime/master/src/main/java/org/apache/nemo/runtime/master/scheduler/FreeSlotSchedulingConstraint.java,32,,public final class FreeSlotSchedulingConstraint implements SchedulingConstraint {
+305,./TargetProjects/incubator-nemo/runtime/master/src/main/java/org/apache/nemo/runtime/master/scheduler/MinOccupancyFirstSchedulingPolicy.java,35,,public final class MinOccupancyFirstSchedulingPolicy implements SchedulingPolicy {
+306,./TargetProjects/incubator-nemo/runtime/master/src/main/java/org/apache/nemo/runtime/master/scheduler/NodeShareSchedulingConstraint.java,34,,public final class NodeShareSchedulingConstraint implements SchedulingConstraint {
+307,./TargetProjects/incubator-nemo/runtime/master/src/main/java/org/apache/nemo/runtime/master/scheduler/SchedulingConstraintRegistry.java,38,,public final class SchedulingConstraintRegistry {
+308,./TargetProjects/incubator-nemo/runtime/master/src/main/java/org/apache/nemo/runtime/master/scheduler/SimulationScheduler.java,74,,public final class SimulationScheduler implements Scheduler {
+309,./TargetProjects/incubator-optiq-linq4j/src/main/java/net/hydromatic/linq4j/Notes.java,62,,final class Notes {
+310,./TargetProjects/incubator-pinot/pinot-spi/src/main/java/org/apache/pinot/spi/annotations/InterfaceAudience.java,50,,public class InterfaceAudience {
+311,./TargetProjects/incubator-retired-htrace/htrace-core4/src/main/java/org/apache/htrace/core/JavaPropertyConfiguration.java,29,,public final class JavaPropertyConfiguration extends HTraceConfiguration {
+312,./TargetProjects/incubator-retired-wave/wave/src/main/java/org/waveprotocol/box/server/robots/RobotRegistrationServlet.java,53,,public class RobotRegistrationServlet extends HttpServlet {
+313,./TargetProjects/incubator-retired-wave/wave/src/main/java/org/waveprotocol/wave/client/doodad/DoodadInstallers.java,31,,public final class DoodadInstallers {
+314,./TargetProjects/incubator-retired-wave/wave/src/main/java/org/waveprotocol/wave/model/document/Doc.java,28,,public final class Doc {
+315,./TargetProjects/incubator-retired-wave/wave/src/main/java/org/waveprotocol/wave/model/util/FuzzingBackOffScheduler.java,32,,public class FuzzingBackOffScheduler implements Scheduler {
+316,./TargetProjects/incubator-samoa/samoa-api/src/main/java/org/apache/samoa/learners/classifiers/trees/FilterProcessor.java,43,,public final class FilterProcessor implements Processor {
+317,./TargetProjects/incubator-taverna-common-activities/taverna-interaction-activity/src/main/java/org/apache/taverna/activities/interaction/feed/ShowRequestFeedListener.java,37,,public class ShowRequestFeedListener extends FeedReader {
+318,./TargetProjects/incubator-taverna-common-activities/taverna-interaction-activity/src/main/java/org/apache/taverna/activities/interaction/preference/InteractionPreference.java,40,,public class InteractionPreference {
+319,./TargetProjects/incubator-taverna-osgi/taverna-configuration-impl/src/main/java/org/apache/taverna/configuration/proxy/impl/HttpProxyConfigurationImpl.java,36,,public class HttpProxyConfigurationImpl extends AbstractConfigurable implements
+320,./TargetProjects/incubator-tubemq/inlong-sort/sort-core/src/main/java/org/apache/inlong/sort/flink/filesystem/BulkPartWriter.java,31,,"public class BulkPartWriter<IN, BucketID> extends PartFileWriter<IN, BucketID> {"
+321,./TargetProjects/isis/core/metamodel/src/main/java/org/apache/isis/core/metamodel/facets/actions/layout/CssClassFaFacetForActionLayoutAnnotation.java,36,,"        class Annot {"
+322,./TargetProjects/isis/core/metamodel/src/main/java/org/apache/isis/core/metamodel/facets/object/domainobjectlayout/CssClassFaFacetForDomainObjectLayoutAnnotation.java,36,,"        class Annot {"
+323,./TargetProjects/isis/core/metamodel/src/main/java/org/apache/isis/core/metamodel/facets/properties/property/modify/Utils.java,21,,class Utils {
+324,./TargetProjects/isis/incubator/viewers/javafx/ui/src/main/java/org/apache/isis/incubator/viewer/javafx/ui/components/UiComponentFactoryFx.java,46,,"public class UiComponentFactoryFx implements UiComponentFactory<Node, Node> {"
+325,./TargetProjects/isis/incubator/viewers/vaadin/ui/src/main/java/org/apache/isis/incubator/viewer/vaadin/ui/components/UiComponentFactoryVaa.java,39,,"public class UiComponentFactoryVaa implements UiComponentFactory<Component, Component> {"
+326,./TargetProjects/jackrabbit-oak/oak-lucene/src/main/java/org/apache/jackrabbit/oak/plugins/index/lucene/util/FunctionIndexProcessor.java,25,,public class FunctionIndexProcessor extends org.apache.jackrabbit.oak.plugins.index.search.util.FunctionIndexProcessor {
+327,./TargetProjects/jclouds/apis/cloudstack/src/main/java/org/jclouds/cloudstack/functions/CloudStackFallbacks.java,25,,public final class CloudStackFallbacks {
+328,./TargetProjects/jclouds/apis/ec2/src/main/java/org/jclouds/ec2/EC2Fallbacks.java,28,,public final class EC2Fallbacks {
+329,./TargetProjects/jclouds/apis/openstack-keystone/src/main/java/org/jclouds/openstack/keystone/v2_0/KeystoneFallbacks.java,27,,public final class KeystoneFallbacks {
+330,./TargetProjects/jclouds/apis/openstack-keystone/src/main/java/org/jclouds/openstack/v2_0/domain/Limit.java,33,,public final class Limit {
+331,./TargetProjects/jclouds/apis/openstack-keystone/src/main/java/org/jclouds/openstack/v2_0/domain/Limits.java,30,,public final class Limits {
+332,./TargetProjects/jclouds/apis/openstack-keystone/src/main/java/org/jclouds/openstack/v2_0/domain/RateLimit.java,29,,public final class RateLimit {
+333,./TargetProjects/jclouds/apis/openstack-swift/src/main/java/org/jclouds/openstack/swift/v1/SwiftFallbacks.java,27,,public final class SwiftFallbacks {
+334,./TargetProjects/jclouds/apis/rackspace-clouddns/src/main/java/org/jclouds/rackspace/clouddns/v1/CloudDNSExceptions.java,26,,public final class CloudDNSExceptions {
+335,./TargetProjects/jclouds/apis/rackspace-clouddns/src/main/java/org/jclouds/rackspace/clouddns/v1/domain/DomainChange.java,28,,public class DomainChange {
+336,./TargetProjects/jclouds/apis/rackspace-clouddns/src/main/java/org/jclouds/rackspace/clouddns/v1/domain/Subdomain.java,32,,public class Subdomain {
+337,./TargetProjects/jclouds/apis/s3/src/main/java/org/jclouds/s3/S3Fallbacks.java,28,,public final class S3Fallbacks {
+338,./TargetProjects/jclouds/blobstore/src/main/java/org/jclouds/blobstore/BlobStoreFallbacks.java,25,,public final class BlobStoreFallbacks {
+339,./TargetProjects/jclouds/compute/src/main/java/org/jclouds/ssh/internal/RsaSshKeyPairGenerator.java,33,,public class RsaSshKeyPairGenerator implements SshKeyPairGenerator {
+340,./TargetProjects/jclouds/core/src/main/java/org/jclouds/config/ValueOfConfigurationKeyOrNull.java,29,,"public class ValueOfConfigurationKeyOrNull implements Function<String, String> {"
+341,./TargetProjects/jclouds/core/src/main/java/org/jclouds/rest/config/AnnotatedHttpApiProvider.java,31,,public class AnnotatedHttpApiProvider<A> implements Provider<A> {
+342,./TargetProjects/jclouds/providers/azureblob/src/main/java/org/jclouds/azureblob/AzureBlobFallbacks.java,25,,public final class AzureBlobFallbacks {
+343,./TargetProjects/jclouds/providers/dynect/src/main/java/org/jclouds/dynect/v3/DynECTExceptions.java,22,,public final class DynECTExceptions {
+344,./TargetProjects/jclouds/providers/dynect/src/main/java/org/jclouds/dynect/v3/DynECTFallbacks.java,25,,public final class DynECTFallbacks {
+345,./TargetProjects/jclouds/providers/ultradns-ws/src/main/java/org/jclouds/ultradns/ws/UltraDNSWSExceptions.java,22,,public final class UltraDNSWSExceptions {
+346,./TargetProjects/jclouds/providers/ultradns-ws/src/main/java/org/jclouds/ultradns/ws/internal/DirectionalPoolRecordTypeToString.java,30,,"public class DirectionalPoolRecordTypeToString implements Function<Object, String> {"
+347,./TargetProjects/jclouds/providers/ultradns-ws/src/main/java/org/jclouds/ultradns/ws/internal/RoundRobinPoolRecordTypeToString.java,27,,"public class RoundRobinPoolRecordTypeToString implements Function<Object, String> {"
+348,./TargetProjects/jclouds/providers/ultradns-ws/src/main/java/org/jclouds/ultradns/ws/internal/TrafficControllerPoolRecordTypeToString.java,30,,"public class TrafficControllerPoolRecordTypeToString implements Function<Object, String> {"
+349,./TargetProjects/jclouds/providers/ultradns-ws/src/main/java/org/jclouds/ultradns/ws/xml/ResourceRecordDetailHandler.java,32,,public class ResourceRecordDetailHandler extends
+350,./TargetProjects/jclouds-labs-aws/rds/src/main/java/org/jclouds/rds/RDSFallbacks.java,25,,public final class RDSFallbacks {
+351,./TargetProjects/jclouds-labs-openstack/openstack-poppy/src/main/java/org/jclouds/openstack/poppy/v1/fallbacks/PoppyFallbacks.java,26,,public final class PoppyFallbacks {
+352,./TargetProjects/jclouds-labs-openstack/rackspace-autoscale/src/main/java/org/jclouds/rackspace/autoscale/v1/binders/BindCreateGroupToJson.java,34,,public class BindCreateGroupToJson implements MapBinder {
+353,./TargetProjects/jclouds-labs-openstack/rackspace-autoscale/src/main/java/org/jclouds/rackspace/autoscale/v1/binders/BindLaunchConfigurationToJson.java,31,,public class BindLaunchConfigurationToJson implements MapBinder {
+354,./TargetProjects/jclouds-labs-openstack/rackspace-autoscale/src/main/java/org/jclouds/rackspace/autoscale/v1/binders/BindScalingPoliciesToJson.java,31,,public class BindScalingPoliciesToJson implements MapBinder {
+355,./TargetProjects/jclouds-labs-openstack/rackspace-autoscale/src/main/java/org/jclouds/rackspace/autoscale/v1/binders/BindScalingPolicyToJson.java,32,,public class BindScalingPolicyToJson implements MapBinder {
+356,./TargetProjects/jclouds-labs-openstack/rackspace-autoscale/src/main/java/org/jclouds/rackspace/autoscale/v1/binders/BindWebhookToJson.java,32,,public class BindWebhookToJson implements MapBinder {
+357,./TargetProjects/jclouds-labs-openstack/rackspace-autoscale/src/main/java/org/jclouds/rackspace/autoscale/v1/binders/BindWebhookUpdateToJson.java,31,,public class BindWebhookUpdateToJson implements MapBinder {
+358,./TargetProjects/jclouds-labs-openstack/rackspace-autoscale/src/main/java/org/jclouds/rackspace/autoscale/v1/binders/BindWebhooksToJson.java,34,,public class BindWebhooksToJson implements MapBinder {
+359,./TargetProjects/jena/jena-arq/src/main/java/org/apache/jena/sparql/expr/E_Cast.java,24,,public class E_Cast extends ExprFunction2
+360,./TargetProjects/jena/jena-db/jena-dboe-transaction/src/main/java/org/apache/jena/dboe/transaction/txn/TransactionalComponentByLock.java,34,,public class TransactionalComponentByLock extends TransactionalComponentLifecycle<Object> {
+361,./TargetProjects/jena/jena-tdb/src/main/java/org/apache/jena/tdb/assembler/IndexAssembler.java,46,,public class IndexAssembler extends AssemblerBase //implements Assembler
+362,./TargetProjects/johnzon/johnzon-mapper/src/main/java/org/apache/johnzon/mapper/ObjectConverter.java,33,,public final class ObjectConverter {
+363,./TargetProjects/kafka/connect/runtime/src/test/java/org/apache/kafka/connect/runtime/PredicatedTransformationTest.java,46,,"        class TestTransformation implements Transformation<SourceRecord> {"
+364,./TargetProjects/kafka/connect/runtime/src/test/java/org/apache/kafka/connect/runtime/PredicatedTransformationTest.java,80,,"        class TestPredicate implements Predicate<SourceRecord> {"
+365,./TargetProjects/kylin/core-job/src/main/java/org/apache/kylin/job/lock/zookeeper/ZookeeperDistributedLock.java,54,,"public class ZookeeperDistributedLock implements DistributedLock, JobLock {"
+366,./TargetProjects/logging-log4j2/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/AbstractFileAppender.java,34,,public abstract class AbstractFileAppender<M extends OutputStreamManager> extends AbstractOutputStreamAppender<M> {
+367,./TargetProjects/netbeans/enterprise/j2ee.dd/src/org/netbeans/modules/j2ee/dd/api/web/model/FilterInfo.java,30,,public class FilterInfo {
+368,./TargetProjects/netbeans/enterprise/j2ee.dd/src/org/netbeans/modules/j2ee/dd/api/web/model/ServletInfo.java,30,,public final class ServletInfo {
+369,./TargetProjects/netbeans/enterprise/j2ee.earproject/src/org/netbeans/modules/j2ee/earproject/ui/ArchiveViews.java,55,,class ArchiveViews {
+370,./TargetProjects/netbeans/enterprise/j2eeserver/src/org/netbeans/modules/j2ee/deployment/devmodules/api/J2eeApplication.java,38,,public class J2eeApplication extends J2eeModule {
+371,./TargetProjects/netbeans/enterprise/j2eeserver/src/org/netbeans/modules/j2ee/deployment/devmodules/api/ResourceChangeReporter.java,32,,public final class ResourceChangeReporter {
+372,./TargetProjects/netbeans/enterprise/j2eeserver/src/org/netbeans/modules/j2ee/deployment/plugins/api/DeploymentChangeDescriptor.java,33,,public final class DeploymentChangeDescriptor implements AppChangeDescriptor {
+373,./TargetProjects/netbeans/enterprise/j2eeserver/src/org/netbeans/modules/j2ee/deployment/plugins/api/ServerLibrary.java,36,,public final class ServerLibrary {
+374,./TargetProjects/netbeans/enterprise/j2eeserver/src/org/netbeans/modules/j2ee/deployment/plugins/spi/DeploymentContext.java,32,,public final class DeploymentContext {
+375,./TargetProjects/netbeans/enterprise/javaee.specs.support/src/org/netbeans/modules/javaee/specs/support/api/JpaProvider.java,28,,public final class JpaProvider {
+376,./TargetProjects/netbeans/enterprise/spring.webmvc/src/org/netbeans/modules/spring/webmvc/editor/BeanCodeGenerator.java,56,,public class BeanCodeGenerator implements CodeGenerator {
+377,./TargetProjects/netbeans/enterprise/websvc.projectapi/src/org/netbeans/modules/websvc/project/api/ServiceDescriptor.java,31,,public final class ServiceDescriptor {
+378,./TargetProjects/netbeans/enterprise/websvc.projectapi/src/org/netbeans/modules/websvc/project/api/WebService.java,34,,public final class WebService {
+379,./TargetProjects/netbeans/enterprise/websvc.rest/src/org/netbeans/modules/websvc/rest/editor/AsynchronousGenerator.java,47,,public class AsynchronousGenerator extends AsyncConverter implements CodeGenerator {
+380,./TargetProjects/netbeans/enterprise/websvc.wsstackapi/src/org/netbeans/modules/websvc/wsstack/api/WSTool.java,31,,public final class WSTool {
+381,./TargetProjects/netbeans/extide/o.apache.tools.ant.module/src/org/apache/tools/ant/module/spi/AntSession.java,37,,public final class AntSession {
+382,./TargetProjects/netbeans/extide/o.apache.tools.ant.module/src/org/apache/tools/ant/module/spi/TaskStructure.java,31,,public final class TaskStructure {
+383,./TargetProjects/netbeans/groovy/groovy.refactoring/src/org/netbeans/modules/groovy/refactoring/RefactoringTask.java,70,,public abstract class RefactoringTask extends UserTask implements Runnable {
+384,./TargetProjects/netbeans/ide/csl.api/src/org/netbeans/modules/csl/editor/codetemplates/GsfCodeTemplateFilter.java,37,,public class GsfCodeTemplateFilter implements CodeTemplateFilter {
+385,./TargetProjects/netbeans/ide/csl.api/src/org/netbeans/modules/csl/editor/codetemplates/GsfCodeTemplateProcessor.java,51,,public class GsfCodeTemplateProcessor implements CodeTemplateProcessor {
+386,./TargetProjects/netbeans/ide/dlight.nativeexecution/src/org/netbeans/modules/nativeexecution/api/ProcessStatusEx.java,28,,public final class ProcessStatusEx {
+387,./TargetProjects/netbeans/ide/dlight.terminal/src/org/netbeans/modules/dlight/terminal/action/OpenInTerminalAction.java,54,,public class OpenInTerminalAction extends NodeAction {
+388,./TargetProjects/netbeans/ide/editor.indent/src/org/netbeans/modules/editor/indent/IndentScriptEngineHack.java,50,,public class IndentScriptEngineHack extends AbstractScriptEngine {
+389,./TargetProjects/netbeans/ide/editor.lib/src/org/netbeans/editor/MarkFactory.java,31,,public class MarkFactory {
+390,./TargetProjects/netbeans/ide/extexecution.base/src/org/netbeans/api/extexecution/base/Environment.java,35,,public final class Environment {
+391,./TargetProjects/netbeans/ide/extexecution.base/src/org/netbeans/spi/extexecution/base/ProcessParameters.java,33,,public final class ProcessParameters {
+392,./TargetProjects/netbeans/ide/hudson.ui/src/org/netbeans/modules/hudson/ui/APITokenConnectionAuthenticator.java,51,,public class APITokenConnectionAuthenticator extends JPanel {
+393,./TargetProjects/netbeans/ide/libs.graalsdk/src/org/netbeans/libs/graalsdk/GraalSDK.java,64,,public final class GraalSDK {
+394,./TargetProjects/netbeans/ide/mercurial/src/org/netbeans/modules/mercurial/util/HgCommand.java,1212,,"        class TagInfo {"
+395,./TargetProjects/netbeans/ide/parsing.nb/src/org/netbeans/modules/parsing/nb/NbSamplerProfiler.java,35,,public final class NbSamplerProfiler extends ProfilerSupport {
+396,./TargetProjects/netbeans/ide/server/src/org/netbeans/api/server/ServerInstance.java,37,,public final class ServerInstance implements Lookup.Provider {
+397,./TargetProjects/netbeans/ide/web.common.ui/src/org/netbeans/modules/web/common/ui/api/CssPreprocessorUI.java,32,,public final class CssPreprocessorUI {
+398,./TargetProjects/netbeans/ide/web.common/src/org/netbeans/modules/web/common/api/CssPreprocessor.java,32,,public final class CssPreprocessor {
+399,./TargetProjects/netbeans/ide/web.webkit.debugging/src/org/netbeans/modules/web/webkit/debugging/api/WebKitDebugging.java,34,,public class WebKitDebugging {
+400,./TargetProjects/netbeans/java/debugger.jpda.truffle/src/org/netbeans/modules/debugger/jpda/truffle/TruffleProperties.java,34,,public final class TruffleProperties {
+401,./TargetProjects/netbeans/java/i18n/src/org/netbeans/modules/i18n/wizard/ResourceWizardPanel.java,75,,final class ResourceWizardPanel extends JPanel {
+402,./TargetProjects/netbeans/java/i18n/src/org/netbeans/modules/i18n/wizard/SourceWizardPanel.java,62,,final class SourceWizardPanel extends JPanel {
+403,./TargetProjects/netbeans/java/j2ee.metadata/src/org/netbeans/modules/j2ee/metadata/model/api/MetadataModel.java,36,,public final class MetadataModel<T> {
+404,./TargetProjects/netbeans/java/j2ee.persistence/src/org/netbeans/modules/j2ee/persistence/indexing/CopyResourcesIndexer.java,43,,public class CopyResourcesIndexer extends CustomIndexer {
+405,./TargetProjects/netbeans/java/java.debug/src/org/netbeans/modules/java/debug/TreeNavigatorProviderImpl.java,231,,"        class PathFinder extends ErrorAwareTreePathScanner<Void,Void> {"
+406,./TargetProjects/netbeans/java/java.editor.base/test/unit/data/org/netbeans/modules/java/editor/base/semantic/data/SerialVersionUID89356.java,5,,public class SerialVersionUID89356 implements Serializable {
+407,./TargetProjects/netbeans/java/java.editor/src/org/netbeans/modules/editor/java/JavaCodeTemplateFilter.java,60,,public class JavaCodeTemplateFilter implements CodeTemplateFilter {
+408,./TargetProjects/netbeans/java/java.editor/src/org/netbeans/modules/java/editor/codegen/ConstructorGenerator.java,62,,public class ConstructorGenerator implements CodeGenerator {
+409,./TargetProjects/netbeans/java/java.editor/src/org/netbeans/modules/java/editor/codegen/GetterSetterGenerator.java,63,,public class GetterSetterGenerator implements CodeGenerator {
+410,./TargetProjects/netbeans/java/java.hints/test/unit/data/javahints/ReferredTo.java,3,,public class ReferredTo {
+411,./TargetProjects/netbeans/java/java.hints/test/unit/data/org/netbeans/test/java/hints/ChangeMethodParametersTest/Constructor.java,3,,public class Constructor {
+412,./TargetProjects/netbeans/java/java.source.base/src/org/netbeans/api/java/source/TreeUtilities.java,366,,"        class PathFinder extends ErrorAwareTreePathScanner<Void,Void> {"
+413,./TargetProjects/netbeans/java/java.source.base/src/org/netbeans/api/java/source/TreeUtilities.java,541,,"        class PathFinder extends DocTreePathScanner<Void,TreePath> {"
+414,./TargetProjects/netbeans/java/java.source.base/src/org/netbeans/modules/java/source/save/Reindenter.java,97,,public class Reindenter implements IndentTask {
+415,./TargetProjects/netbeans/java/java.source/src/org/netbeans/modules/java/source/DefaultPositionRefProvider.java,36,,public final class DefaultPositionRefProvider extends PositionRefProvider {
+416,./TargetProjects/netbeans/java/java.source/src/org/netbeans/modules/java/source/tasklist/IncorrectErrorBadges.java,47,,public class IncorrectErrorBadges implements CancellableTask<CompilationInfo> {
+417,./TargetProjects/netbeans/java/java.sourceui/src/org/netbeans/api/java/source/ui/ElementJavadoc.java,1106,,"        class ComputeURL implements Callable<Void> {"
+418,./TargetProjects/netbeans/java/maven.grammar/src/org/netbeans/modules/maven/codegen/DependencyGenerator.java,44,,public class DependencyGenerator extends AbstractGenerator<POMModel> {
+419,./TargetProjects/netbeans/java/maven.grammar/src/org/netbeans/modules/maven/codegen/ExclusionGenerator.java,47,,public class ExclusionGenerator extends AbstractGenerator<POMModel> {
+420,./TargetProjects/netbeans/java/maven.grammar/src/org/netbeans/modules/maven/codegen/LicenseGenerator.java,40,,public class LicenseGenerator extends AbstractGenerator<POMModel> {
+421,./TargetProjects/netbeans/java/maven.grammar/src/org/netbeans/modules/maven/codegen/MirrorGenerator.java,41,,public class MirrorGenerator extends AbstractGenerator<SettingsModel> {
+422,./TargetProjects/netbeans/java/maven.grammar/src/org/netbeans/modules/maven/codegen/PluginGenerator.java,49,,public class PluginGenerator extends AbstractGenerator<POMModel> {
+423,./TargetProjects/netbeans/java/maven.grammar/src/org/netbeans/modules/maven/codegen/ProfileGenerator.java,52,,public class ProfileGenerator extends AbstractGenerator<POMModel> {
+424,./TargetProjects/netbeans/java/maven.grammar/src/org/netbeans/modules/maven/grammar/BasicPomMD.java,62,,"public class BasicPomMD implements MultiViewDescription, Serializable {"
+425,./TargetProjects/netbeans/java/performance/threaddemo/src/threaddemo/util/TwoWayEvent.java,30,,"public abstract class TwoWayEvent<DM, UMD, DMD> extends EventObject {"
+426,./TargetProjects/netbeans/java/spi.java.hints/src/org/netbeans/spi/java/hints/HintContext.java,43,,public class HintContext {
+427,./TargetProjects/netbeans/java/spring.beans/src/org/netbeans/modules/spring/api/beans/ConfigFileManager.java,36,,public final class ConfigFileManager {
+428,./TargetProjects/netbeans/java/testng/src/org/netbeans/modules/testng/spi/TestConfig.java,28,,public final class TestConfig {
+429,./TargetProjects/netbeans/javafx/javafx2.project/src/org/netbeans/modules/javafx2/project/fxml/ConfigureFXMLControllerPanelVisual.java,56,,"public class ConfigureFXMLControllerPanelVisual extends JPanel implements ActionListener, DocumentListener {"
+430,./TargetProjects/netbeans/javafx/javafx2.project/src/org/netbeans/modules/javafx2/project/fxml/ConfigureFXMLPanelVisual.java,48,,"public class ConfigureFXMLPanelVisual extends JPanel implements ActionListener, DocumentListener {"
+431,./TargetProjects/netbeans/php/php.api.testing/src/org/netbeans/modules/php/spi/testing/locate/Locations.java,28,,public final class Locations {
+432,./TargetProjects/netbeans/php/php.dbgp/src/org/netbeans/modules/php/dbgp/breakpoints/UpdatePropertiesOnSaveTask.java,33,,public class UpdatePropertiesOnSaveTask implements OnSaveTask {
+433,./TargetProjects/netbeans/php/php.latte/src/org/netbeans/modules/php/latte/codetemplates/LatteCodeTemplateFilter.java,48,,public final class LatteCodeTemplateFilter extends UserTask implements CodeTemplateFilter {
+434,./TargetProjects/netbeans/php/php.nette2/src/org/netbeans/modules/php/nette2/codegen/ActionRenderCodeGenerator.java,43,,public class ActionRenderCodeGenerator implements CodeGenerator {
+435,./TargetProjects/netbeans/platform/editor.mimelookup.impl/test/unit/src/org/netbeans/modules/editor/mimelookup/impl/TestLookupObjectInstantiation.java,30,,public class TestLookupObjectInstantiation {
+436,./TargetProjects/netbeans/platform/masterfs.ui/src/org/netbeans/modules/masterfs/ui/Init.java,28,,final class Init {
+437,./TargetProjects/netbeans/platform/openide.loaders/src/org/netbeans/modules/openide/loaders/EntityCatalogImpl.java,46,,public final class EntityCatalogImpl extends EntityCatalog {
+438,./TargetProjects/netbeans/platform/uihandler/test/unit/src/org/netbeans/modules/uihandler/InstallerInitTest.java,236,,"        class RunnableImpl implements Runnable {"
+439,./TargetProjects/netbeans/platform/uihandler/test/unit/src/org/netbeans/modules/uihandler/InstallerLittleTest.java,173,,"        class RunnableImpl implements Runnable {"
+440,./TargetProjects/netbeans/profiler/profiler/src/org/netbeans/modules/profiler/v2/features/LocksFeature.java,52,,final class LocksFeature extends ProfilerFeature.Basic {
+441,./TargetProjects/netbeans/profiler/profiler/src/org/netbeans/modules/profiler/v2/features/MethodsFeature.java,76,,final class MethodsFeature extends ProfilerFeature.Basic {
+442,./TargetProjects/netbeans/profiler/profiler/src/org/netbeans/modules/profiler/v2/features/MonitorFeature.java,41,,final class MonitorFeature extends ProfilerFeature.Basic {
+443,./TargetProjects/netbeans/profiler/profiler/src/org/netbeans/modules/profiler/v2/features/ObjectsFeature.java,82,,final class ObjectsFeature extends ProfilerFeature.Basic {
+444,./TargetProjects/netbeans/profiler/profiler/src/org/netbeans/modules/profiler/v2/features/SQLFeature.java,70,,final class SQLFeature extends ProfilerFeature.Basic {
+445,./TargetProjects/netbeans/profiler/profiler/src/org/netbeans/modules/profiler/v2/features/ThreadsFeature.java,41,,final class ThreadsFeature extends ProfilerFeature.Basic {
+446,./TargetProjects/netbeans/webcommon/javascript.karma/src/org/netbeans/modules/javascript/karma/ui/logicalview/KarmaChildrenList.java,321,,"            final class DebugAction extends AbstractAction implements Presenter.Popup {"
+447,./TargetProjects/netbeans/webcommon/javascript2.model/src/org/netbeans/modules/javascript2/model/spi/FunctionArgument.java,29,,public final class FunctionArgument {
+448,./TargetProjects/netbeans/webcommon/javascript2.model/src/org/netbeans/modules/javascript2/model/spi/ModelElementFactory.java,60,,public final class ModelElementFactory {
+449,./TargetProjects/netbeans/webcommon/selenium2.webclient/src/org/netbeans/modules/selenium2/webclient/api/SeleniumTestingProvider.java,35,,public final class SeleniumTestingProvider {
+450,./TargetProjects/netbeans/webcommon/web.clientproject.api/src/org/netbeans/modules/web/clientproject/api/CustomizerPanel.java,32,,public final class CustomizerPanel {
+451,./TargetProjects/netbeans/webcommon/web.clientproject.api/src/org/netbeans/modules/web/clientproject/api/jstesting/JsTestingProvider.java,38,,public final class JsTestingProvider {
+452,./TargetProjects/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-repository-models/src/main/java/org/apache/nifi/controller/repository/StandardFlowFileRecord.java,43,,"public final class StandardFlowFileRecord implements FlowFile, FlowFileRecord {"
+453,./TargetProjects/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-web/nifi-web-security/src/main/java/org/apache/nifi/web/security/saml/impl/StandardSAMLConfiguration.java,34,,public class StandardSAMLConfiguration implements SAMLConfiguration {
+454,./TargetProjects/nifi/nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-0-10-processors/src/main/java/org/apache/nifi/processors/kafka/pubsub/Partitioners.java,27,,final public class Partitioners {
+455,./TargetProjects/nifi/nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-0-11-processors/src/main/java/org/apache/nifi/processors/kafka/pubsub/Partitioners.java,27,,final public class Partitioners {
+456,./TargetProjects/nifi/nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-0-8-processors/src/main/java/org/apache/nifi/processors/kafka/Partitioners.java,26,,final public class Partitioners {
+457,./TargetProjects/nifi/nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-0-9-processors/src/main/java/org/apache/nifi/processors/kafka/pubsub/Partitioners.java,27,,final public class Partitioners {
+458,./TargetProjects/nifi/nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-1-0-processors/src/main/java/org/apache/nifi/processors/kafka/pubsub/Partitioners.java,27,,final public class Partitioners {
+459,./TargetProjects/nifi/nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-2-0-processors/src/main/java/org/apache/nifi/processors/kafka/pubsub/Partitioners.java,27,,final public class Partitioners {
+460,./TargetProjects/nifi/nifi-nar-bundles/nifi-kafka-bundle/nifi-kafka-2-6-processors/src/main/java/org/apache/nifi/processors/kafka/pubsub/Partitioners.java,27,,final public class Partitioners {
+461,./TargetProjects/nifi/nifi-nar-bundles/nifi-spring-bundle/nifi-spring-processors/src/main/java/org/apache/nifi/spring/bootstrap/SpringContextDelegate.java,48,,"final class SpringContextDelegate implements Closeable, SpringDataExchanger {"
+462,./TargetProjects/nifi/nifi-registry/nifi-registry-core/nifi-registry-framework/src/main/java/org/apache/nifi/registry/event/StandardEvent.java,34,,public class StandardEvent implements Event {
+463,./TargetProjects/nifi-registry/nifi-registry-core/nifi-registry-framework/src/main/java/org/apache/nifi/registry/event/StandardEvent.java,34,,public class StandardEvent implements Event {
+464,./TargetProjects/ofbiz-framework/framework/base/src/main/java/org/apache/ofbiz/base/util/ReferenceCleaner.java,26,,public final class ReferenceCleaner {
+465,./TargetProjects/oozie/fluent-job/fluent-job-api/src/test/java/org/apache/oozie/fluentjob/api/action/TestNodeBuilderBaseImpl.java,48,,"        class WrongBuilder extends NodeBuilderBaseImpl<MapReduceActionBuilder> implements Builder<MapReduceAction> {"
+466,./TargetProjects/parquet-format/src/main/java/org/apache/parquet/format/event/TypedConsumer.java,47,,abstract public class TypedConsumer {
+467,./TargetProjects/parquet-mr/parquet-column/src/main/java/org/apache/parquet/filter2/predicate/Operators.java,32,,public final class Operators {
+468,./TargetProjects/parquet-mr/parquet-format-structures/src/main/java/org/apache/parquet/format/event/TypedConsumer.java,42,,abstract public class TypedConsumer {
+469,./TargetProjects/pdfbox/pdfbox/src/main/java/org/apache/pdfbox/pdmodel/common/function/type4/ArithmeticOperators.java,25,,class ArithmeticOperators
+470,./TargetProjects/pdfbox/pdfbox/src/main/java/org/apache/pdfbox/pdmodel/common/function/type4/BitwiseOperators.java,25,,class BitwiseOperators
+471,./TargetProjects/pdfbox/pdfbox/src/main/java/org/apache/pdfbox/pdmodel/common/function/type4/ConditionalOperators.java,25,,class ConditionalOperators
+472,./TargetProjects/pdfbox/pdfbox/src/main/java/org/apache/pdfbox/pdmodel/common/function/type4/RelationalOperators.java,25,,class RelationalOperators
+473,./TargetProjects/pdfbox/pdfbox/src/main/java/org/apache/pdfbox/pdmodel/common/function/type4/StackOperators.java,27,,class StackOperators
+474,./TargetProjects/phoenix/phoenix-core/src/main/java/org/apache/phoenix/iterate/ChunkedResultIterator.java,58,,public class ChunkedResultIterator implements PeekingResultIterator {
+475,./TargetProjects/phoenix-connectors/phoenix-spark-base/src/main/java/org/apache/phoenix/spark/datasource/v2/writer/PhoenixDataSourceWriteOptions.java,25,,class PhoenixDataSourceWriteOptions implements Serializable {
+476,./TargetProjects/phoenix-tephra/tephra-core/src/main/java/org/apache/tephra/distributed/RetryNTimes.java,29,,public class RetryNTimes extends RetryStrategy {
+477,./TargetProjects/phoenix-tephra/tephra-core/src/main/java/org/apache/tephra/distributed/RetryWithBackoff.java,31,,public class RetryWithBackoff extends RetryStrategy {
+478,./TargetProjects/pig/src/org/apache/pig/classification/InterfaceAudience.java,25,,public class InterfaceAudience {
+479,./TargetProjects/pulsar/pulsar-broker/src/test/java/org/apache/pulsar/client/api/InterceptorsTest.java,77,,"        abstract class BaseInterceptor implements"
+480,./TargetProjects/pulsar/pulsar-client-api/src/main/java/org/apache/pulsar/common/classification/InterfaceAudience.java,30,,public class InterfaceAudience {
+481,./TargetProjects/pulsar/pulsar-client-api/src/main/java/org/apache/pulsar/common/classification/InterfaceStability.java,29,,public class InterfaceStability {
+482,./TargetProjects/pulsar/tests/integration/src/test/java/org/apache/pulsar/tests/integration/schema/Schemas.java,53,,public final class Schemas {
+483,./TargetProjects/qpid-jms/qpid-jms-client/src/main/java/org/apache/qpid/jms/provider/ProviderConstants.java,22,,public final class ProviderConstants {
+484,./TargetProjects/qpid-proton-j/proton-j/src/test/java/org/apache/qpid/proton/reactor/ReactorTest.java,496,,"        class TaskHandler extends BaseHandler {"
+485,./TargetProjects/ranger/agents-common/src/main/java/org/apache/ranger/plugin/model/validation/RangerValidityScheduleValidator.java,314,,"        class Range {"
+486,./TargetProjects/reef/lang/java/reef-applications/reef-vortex/src/main/java/org/apache/reef/vortex/api/VortexThreadPool.java,32,,public final class VortexThreadPool {
+487,./TargetProjects/reef/lang/java/reef-applications/reef-vortex/src/main/java/org/apache/reef/vortex/common/KryoUtils.java,39,,public final class KryoUtils {
+488,./TargetProjects/reef/lang/java/reef-applications/reef-vortex/src/main/java/org/apache/reef/vortex/driver/AggregateFunctionRepository.java,38,,final class AggregateFunctionRepository {
+489,./TargetProjects/reef/lang/java/reef-applications/reef-vortex/src/main/java/org/apache/reef/vortex/driver/PendingTaskletLauncher.java,32,,final class PendingTaskletLauncher implements EventHandler<Integer> {
+490,./TargetProjects/reef/lang/java/reef-applications/reef-vortex/src/main/java/org/apache/reef/vortex/driver/VortexDriver.java,50,,final class VortexDriver {
+491,./TargetProjects/reef/lang/java/reef-applications/reef-vortex/src/main/java/org/apache/reef/vortex/driver/VortexStartExecutor.java,32,,final class VortexStartExecutor implements EventHandler<VortexStart> {
+492,./TargetProjects/reef/lang/java/reef-applications/reef-vortex/src/main/java/org/apache/reef/vortex/evaluator/VortexWorker.java,52,,"public final class VortexWorker implements Task, TaskMessageSource {"
+493,./TargetProjects/reef/lang/java/reef-applications/reef-vortex/src/main/java/org/apache/reef/vortex/examples/addone/AddOneStart.java,35,,final class AddOneStart implements VortexStart {
+494,./TargetProjects/reef/lang/java/reef-applications/reef-vortex/src/main/java/org/apache/reef/vortex/examples/hello/HelloVortexStart.java,31,,final class HelloVortexStart implements VortexStart {
+495,./TargetProjects/reef/lang/java/reef-applications/reef-vortex/src/main/java/org/apache/reef/vortex/examples/matmul/IdentityMatMulStart.java,40,,final class IdentityMatMulStart implements VortexStart {
+496,./TargetProjects/reef/lang/java/reef-applications/reef-vortex/src/main/java/org/apache/reef/vortex/examples/sumones/SumOnesAggregateStart.java,30,,final class SumOnesAggregateStart implements VortexStart {
+497,./TargetProjects/reef/lang/java/reef-bridge-client/src/main/java/org/apache/reef/bridge/client/AvroMultiRuntimeAppSubmissionParametersSerializer.java,35,,final class AvroMultiRuntimeAppSubmissionParametersSerializer {
+498,./TargetProjects/reef/lang/java/reef-bridge-client/src/main/java/org/apache/reef/bridge/client/AvroYarnJobSubmissionParametersSerializer.java,35,,final class AvroYarnJobSubmissionParametersSerializer {
+499,./TargetProjects/reef/lang/java/reef-bridge-client/src/main/java/org/apache/reef/bridge/client/AzureBatchBootstrapDriverConfigGenerator.java,35,,final class AzureBatchBootstrapDriverConfigGenerator {
+500,./TargetProjects/reef/lang/java/reef-bridge-client/src/main/java/org/apache/reef/bridge/client/MultiRuntimeYarnBootstrapDriverConfigGenerator.java,58,,final class MultiRuntimeYarnBootstrapDriverConfigGenerator {
+501,./TargetProjects/reef/lang/java/reef-bridge-client/src/main/java/org/apache/reef/bridge/client/Parameters/HTTPStatusAlarmInterval.java,28,,public final class HTTPStatusAlarmInterval implements Name<Integer> {
+502,./TargetProjects/reef/lang/java/reef-bridge-client/src/main/java/org/apache/reef/bridge/client/Parameters/HTTPStatusNumberOfRetries.java,28,,public final class HTTPStatusNumberOfRetries implements Name<Integer> {
+503,./TargetProjects/reef/lang/java/reef-bridge-client/src/main/java/org/apache/reef/bridge/client/SecurityTokensReader.java,43,,final class SecurityTokensReader {
+504,./TargetProjects/reef/lang/java/reef-bridge-java/src/main/java/org/apache/reef/bridge/NetworkTransport.java,44,,public final class NetworkTransport {
+505,./TargetProjects/reef/lang/java/reef-bridge-java/src/main/java/org/apache/reef/javabridge/ActiveContextBridgeFactory.java,34,,public final class ActiveContextBridgeFactory {
+506,./TargetProjects/reef/lang/java/reef-bridge-java/src/main/java/org/apache/reef/javabridge/AllocatedEvaluatorBridgeFactory.java,33,,public final class AllocatedEvaluatorBridgeFactory {
+507,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/client/grpc/ClientService.java,49,,final class ClientService extends REEFClientGrpc.REEFClientImplBase implements AutoCloseable {
+508,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/client/DefaultDriverClientStopHandler.java,34,,public final class DefaultDriverClientStopHandler implements EventHandler<StopTime> {
+509,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/client/DriverClientClock.java,42,,"public final class DriverClientClock implements Clock, AlarmDispatchHandler {"
+510,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/client/DriverClientDispatcher.java,50,,public final class DriverClientDispatcher {
+511,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/client/DriverClientEvaluatorRequestor.java,32,,public final class DriverClientEvaluatorRequestor implements EvaluatorRequestor {
+512,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/client/DriverClientExceptionHandler.java,34,,public final class DriverClientExceptionHandler implements EventHandler<Throwable> {
+513,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/client/grpc/GRPCDriverClientService.java,68,,public final class GRPCDriverClientService extends DriverClientGrpc.DriverClientImplBase
+514,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/client/grpc/GRPCDriverServiceClient.java,56,,public final class GRPCDriverServiceClient implements DriverServiceClient {
+515,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/launch/local/LocalConfigurationProvider.java,35,,public final class LocalConfigurationProvider implements RuntimeConfigurationProvider {
+516,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/launch/yarn/YarnConfigurationProvider.java,39,,public final class YarnConfigurationProvider implements RuntimeConfigurationProvider {
+517,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/service/DriverServiceHandlers.java,49,,public final class DriverServiceHandlers {
+518,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/service/grpc/GRPCDriverService.java,79,,"public final class GRPCDriverService implements DriverService, DriverIdlenessSource {"
+519,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/service/grpc/GRPCDriverServiceConfigurationProvider.java,49,,public final class GRPCDriverServiceConfigurationProvider implements DriverServiceConfigurationProvider {
+520,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/service/parameters/HTTPStatusAlarmInterval.java,28,,public final class HTTPStatusAlarmInterval implements Name<Integer> {
+521,./TargetProjects/reef/lang/java/reef-bridge-proto-java/src/main/java/org/apache/reef/bridge/driver/service/parameters/HTTPStatusNumberOfRetries.java,28,,public final class HTTPStatusNumberOfRetries implements Name<Integer> {
+522,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/client/parameters/JobCompletedHandler.java,32,,public final class JobCompletedHandler implements Name<EventHandler<CompletedJob>> {
+523,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/client/parameters/JobFailedHandler.java,32,,public final class JobFailedHandler implements Name<EventHandler<FailedJob>> {
+524,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/client/parameters/JobMessageHandler.java,32,,public final class JobMessageHandler implements Name<EventHandler<JobMessage>> {
+525,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/client/parameters/JobRunningHandler.java,32,,public final class JobRunningHandler implements Name<EventHandler<RunningJob>> {
+526,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/client/parameters/JobSubmittedHandler.java,29,,public final class JobSubmittedHandler implements Name<EventHandler<SubmittedJob>> {
+527,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/client/parameters/ResourceManagerErrorHandler.java,32,,public final class ResourceManagerErrorHandler implements Name<EventHandler<FailedRuntime>> {
+528,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/DefaultProgressProvider.java,32,,public final class DefaultProgressProvider implements ProgressProvider {
+529,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/evaluator/CLRProcessFactory.java,31,,public final class CLRProcessFactory implements EvaluatorProcessFactory<CLRProcess> {
+530,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/evaluator/DotNetProcessFactory.java,32,,public final class DotNetProcessFactory implements EvaluatorProcessFactory<DotNetProcess> {
+531,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/evaluator/JVMProcessFactory.java,31,,public final class JVMProcessFactory implements EvaluatorProcessFactory<JVMProcess> {
+532,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ClientCloseHandlers.java,32,,public final class ClientCloseHandlers implements Name<Set<EventHandler<Void>>> {
+533,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ClientCloseWithMessageHandlers.java,32,,public final class ClientCloseWithMessageHandlers implements Name<Set<EventHandler<byte[]>>> {
+534,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ClientMessageHandlers.java,32,,public final class ClientMessageHandlers implements Name<Set<EventHandler<byte[]>>> {
+535,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ContextActiveHandlers.java,33,,public final class ContextActiveHandlers implements Name<Set<EventHandler<ActiveContext>>> {
+536,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ContextClosedHandlers.java,33,,public final class ContextClosedHandlers implements Name<Set<EventHandler<ClosedContext>>> {
+537,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ContextFailedHandlers.java,33,,public final class ContextFailedHandlers implements Name<Set<EventHandler<FailedContext>>> {
+538,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ContextMessageHandlers.java,33,,public final class ContextMessageHandlers implements Name<Set<EventHandler<ContextMessage>>> {
+539,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/DriverCPUCores.java,28,,public final class DriverCPUCores implements Name<Integer> {
+540,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/DriverIdleSources.java,31,,public final class DriverIdleSources implements Name<Set<DriverIdlenessSource>> {
+541,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/DriverIsUnmanaged.java,30,,public final class DriverIsUnmanaged implements Name<Boolean> {
+542,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/DriverJobSubmissionDirectory.java,30,,public final class DriverJobSubmissionDirectory implements Name<String> {
+543,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/DriverLocalFiles.java,30,,public final class DriverLocalFiles implements Name<Set<String>> {
+544,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/DriverLocalLibraries.java,30,,public final class DriverLocalLibraries implements Name<Set<String>> {
+545,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/DriverMemory.java,28,,public final class DriverMemory implements Name<Integer> {
+546,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/DriverRestartCompletedHandlers.java,34,,public final class DriverRestartCompletedHandlers implements Name<Set<EventHandler<DriverRestartCompleted>>> {
+547,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/DriverRestartContextActiveHandlers.java,34,,public final class DriverRestartContextActiveHandlers implements Name<Set<EventHandler<ActiveContext>>> {
+548,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/DriverRestartFailedEvaluatorHandlers.java,34,,public final class DriverRestartFailedEvaluatorHandlers implements Name<Set<EventHandler<FailedEvaluator>>> {
+549,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/DriverRestartTaskRunningHandlers.java,34,,public final class DriverRestartTaskRunningHandlers implements Name<Set<EventHandler<RunningTask>>> {
+550,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/EvaluatorAllocatedHandlers.java,34,,public final class EvaluatorAllocatedHandlers implements Name<Set<EventHandler<AllocatedEvaluator>>> {
+551,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/EvaluatorCompletedHandlers.java,34,,public final class EvaluatorCompletedHandlers implements Name<Set<EventHandler<CompletedEvaluator>>> {
+552,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/EvaluatorDispatcherThreads.java,30,,public final class EvaluatorDispatcherThreads implements Name<Integer> {
+553,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/EvaluatorFailedHandlers.java,34,,public final class EvaluatorFailedHandlers implements Name<Set<EventHandler<FailedEvaluator>>> {
+554,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/FailDriverOnEvaluatorLogErrors.java,28,,public final class FailDriverOnEvaluatorLogErrors implements Name<Boolean> {
+555,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/JobGlobalFiles.java,30,,public final class JobGlobalFiles implements Name<Set<String>> {
+556,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/JobGlobalLibraries.java,30,,public final class JobGlobalLibraries implements Name<Set<String>> {
+557,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/MaxApplicationSubmissions.java,29,,public final class MaxApplicationSubmissions implements Name<Integer> {
+558,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ResourceManagerPreserveEvaluators.java,29,,public final class ResourceManagerPreserveEvaluators implements Name<Boolean> {
+559,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceContextActiveHandlers.java,32,,public final class ServiceContextActiveHandlers implements Name<Set<EventHandler<ActiveContext>>> {
+560,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceContextClosedHandlers.java,32,,public final class ServiceContextClosedHandlers implements Name<Set<EventHandler<ClosedContext>>> {
+561,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceContextFailedHandlers.java,32,,public final class ServiceContextFailedHandlers implements Name<Set<EventHandler<FailedContext>>> {
+562,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceContextMessageHandlers.java,32,,public final class ServiceContextMessageHandlers implements Name<Set<EventHandler<ContextMessage>>> {
+563,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceDriverRestartCompletedHandlers.java,32,,public final class ServiceDriverRestartCompletedHandlers implements Name<Set<EventHandler<DriverRestartCompleted>>> {
+564,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceDriverRestartContextActiveHandlers.java,32,,public final class ServiceDriverRestartContextActiveHandlers implements Name<Set<EventHandler<ActiveContext>>> {
+565,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceDriverRestartFailedEvaluatorHandlers.java,32,,public final class ServiceDriverRestartFailedEvaluatorHandlers implements Name<Set<EventHandler<FailedEvaluator>>> {
+566,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceDriverRestartTaskRunningHandlers.java,32,,public final class ServiceDriverRestartTaskRunningHandlers implements Name<Set<EventHandler<RunningTask>>> {
+567,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceDriverRestartedHandlers.java,32,,public final class ServiceDriverRestartedHandlers implements Name<Set<EventHandler<DriverRestarted>>> {
+568,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceEvaluatorAllocatedHandlers.java,32,,public final class ServiceEvaluatorAllocatedHandlers implements Name<Set<EventHandler<AllocatedEvaluator>>> {
+569,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceEvaluatorCompletedHandlers.java,32,,public final class ServiceEvaluatorCompletedHandlers implements Name<Set<EventHandler<CompletedEvaluator>>> {
+570,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceEvaluatorFailedHandlers.java,32,,public final class ServiceEvaluatorFailedHandlers implements Name<Set<EventHandler<FailedEvaluator>>> {
+571,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceTaskCompletedHandlers.java,32,,public final class ServiceTaskCompletedHandlers implements Name<Set<EventHandler<CompletedTask>>> {
+572,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceTaskFailedHandlers.java,32,,public final class ServiceTaskFailedHandlers implements Name<Set<EventHandler<FailedTask>>> {
+573,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceTaskMessageHandlers.java,32,,public final class ServiceTaskMessageHandlers implements Name<Set<EventHandler<TaskMessage>>> {
+574,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceTaskRunningHandlers.java,32,,public final class ServiceTaskRunningHandlers implements Name<Set<EventHandler<RunningTask>>> {
+575,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/ServiceTaskSuspendedHandlers.java,32,,public final class ServiceTaskSuspendedHandlers implements Name<Set<EventHandler<SuspendedTask>>> {
+576,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/TaskCompletedHandlers.java,33,,public final class TaskCompletedHandlers implements Name<Set<EventHandler<CompletedTask>>> {
+577,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/TaskFailedHandlers.java,33,,public final class TaskFailedHandlers implements Name<Set<EventHandler<FailedTask>>> {
+578,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/TaskMessageHandlers.java,33,,public final class TaskMessageHandlers implements Name<Set<EventHandler<TaskMessage>>> {
+579,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/TaskRunningHandlers.java,33,,public final class TaskRunningHandlers implements Name<Set<EventHandler<RunningTask>>> {
+580,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/parameters/TaskSuspendedHandlers.java,33,,public final class TaskSuspendedHandlers implements Name<Set<EventHandler<SuspendedTask>>> {
+581,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/restart/DefaultDriverRuntimeRestartMangerImpl.java,37,,final class DefaultDriverRuntimeRestartMangerImpl implements DriverRuntimeRestartManager {
+582,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/restart/DriverRestartManager.java,47,,"public final class DriverRestartManager implements DriverIdlenessSource, AutoCloseable {"
+583,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/restart/EvaluatorPreservingEvaluatorAllocatedHandler.java,29,,public final class EvaluatorPreservingEvaluatorAllocatedHandler implements EventHandler<AllocatedEvaluator> {
+584,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/restart/EvaluatorPreservingEvaluatorCompletedHandler.java,29,,public final class EvaluatorPreservingEvaluatorCompletedHandler implements EventHandler<CompletedEvaluator> {
+585,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/driver/restart/EvaluatorPreservingEvaluatorFailedHandler.java,29,,public final class EvaluatorPreservingEvaluatorFailedHandler implements EventHandler<FailedEvaluator> {
+586,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/client/REEFImplementation.java,51,,public final class REEFImplementation implements REEF {
+587,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/client/defaults/DefaultCompletedJobHandler.java,35,,public final class DefaultCompletedJobHandler implements EventHandler<CompletedJob> {
+588,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/client/defaults/DefaultFailedJobHandler.java,33,,public final class DefaultFailedJobHandler implements EventHandler<FailedJob> {
+589,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/client/defaults/DefaultJobMessageHandler.java,36,,public final class DefaultJobMessageHandler implements EventHandler<JobMessage> {
+590,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/client/defaults/DefaultRunningJobHandler.java,35,,public final class DefaultRunningJobHandler implements EventHandler<RunningJob> {
+591,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/client/defaults/DefaultRuntimeErrorHandler.java,35,,public final class DefaultRuntimeErrorHandler implements EventHandler<FailedRuntime> {
+592,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/client/defaults/DefaultSubmittedJobHandler.java,33,,public final class DefaultSubmittedJobHandler implements EventHandler<SubmittedJob> {
+593,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/client/defaults/DefaultUserCredentials.java,36,,public final class DefaultUserCredentials implements UserCredentials {
+594,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/DriverRuntimeStartHandler.java,42,,final class DriverRuntimeStartHandler implements EventHandler<RuntimeStart> {
+595,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/DriverRuntimeStopHandler.java,45,,final class DriverRuntimeStopHandler implements EventHandler<RuntimeStop> {
+596,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/DriverStartHandler.java,40,,public final class DriverStartHandler implements EventHandler<StartTime> {
+597,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/DriverStatusManager.java,38,,public final class DriverStatusManager {
+598,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/client/RemoteClientJobStatusHandler.java,36,,final class RemoteClientJobStatusHandler implements JobStatusHandler {
+599,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/context/ContextRepresenters.java,45,,public final class ContextRepresenters {
+600,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/defaults/DefaultContextActiveHandler.java,31,,public final class DefaultContextActiveHandler implements EventHandler<ActiveContext> {
+601,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/defaults/DefaultDriverRestartCompletedHandler.java,31,,public final class DefaultDriverRestartCompletedHandler implements EventHandler<DriverRestartCompleted> {
+602,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/defaults/DefaultDriverRestartContextActiveHandler.java,31,,public final class DefaultDriverRestartContextActiveHandler implements EventHandler<ActiveContext> {
+603,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/evaluator/EvaluatorDescriptorImpl.java,34,,public final class EvaluatorDescriptorImpl implements EvaluatorDescriptor {
+604,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/evaluator/EvaluatorIdlenessThreadPool.java,41,,public final class EvaluatorIdlenessThreadPool implements AutoCloseable {
+605,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/evaluator/EvaluatorMessageDispatcher.java,44,,public final class EvaluatorMessageDispatcher implements AutoCloseable {
+606,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/evaluator/EvaluatorStatusManager.java,34,,final class EvaluatorStatusManager {
+607,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/evaluator/Evaluators.java,41,,public final class Evaluators implements AutoCloseable {
+608,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/evaluator/IdlenessCallbackEventHandlerFactory.java,34,,final class IdlenessCallbackEventHandlerFactory {
+609,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/idle/DriverIdleManager.java,34,,public final class DriverIdleManager {
+610,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/parameters/EvaluatorIdlenessThreadPoolSize.java,30,,public final class EvaluatorIdlenessThreadPoolSize implements Name<Integer> {
+611,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/parameters/EvaluatorIdlenessWaitInMilliseconds.java,30,,public final class EvaluatorIdlenessWaitInMilliseconds implements Name<Long> {
+612,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/driver/resourcemanager/ResourceManagerStatus.java,40,,"public final class ResourceManagerStatus implements EventHandler<RuntimeStatusEvent>, DriverIdlenessSource {"
+613,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/evaluator/EvaluatorRuntime.java,45,,final class EvaluatorRuntime implements EventHandler<EvaluatorControlProto> {
+614,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/evaluator/HeartBeatManager.java,45,,public final class HeartBeatManager {
+615,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/evaluator/parameters/ApplicationIdentifier.java,32,,public final class ApplicationIdentifier implements Name<String> {
+616,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/evaluator/parameters/DriverRemoteIdentifier.java,30,,public final class DriverRemoteIdentifier implements Name<String> {
+617,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/evaluator/parameters/EvaluatorConfiguration.java,30,,public final class EvaluatorConfiguration implements Name<String> {
+618,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/evaluator/parameters/EvaluatorIdentifier.java,30,,public final class EvaluatorIdentifier implements Name<String> {
+619,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/evaluator/parameters/HeartbeatPeriod.java,28,,public final class HeartbeatPeriod implements Name<Integer> {
+620,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/evaluator/parameters/InitialTaskConfiguration.java,30,,public final class InitialTaskConfiguration implements Name<String> {
+621,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/evaluator/parameters/RootContextConfiguration.java,30,,public final class RootContextConfiguration implements Name<String> {
+622,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/evaluator/parameters/RootServiceConfiguration.java,28,,public final class RootServiceConfiguration implements Name<String> {
+623,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/evaluator/task/TaskRuntime.java,46,,public final class TaskRuntime implements Runnable {
+624,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/launch/REEFMessageCodec.java,45,,public final class REEFMessageCodec implements Codec<GeneratedMessage> {
+625,./TargetProjects/reef/lang/java/reef-common/src/main/java/org/apache/reef/runtime/common/parameters/DeleteTempFiles.java,29,,public final class DeleteTempFiles implements Name<Boolean> {
+626,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/distributedshell/NumEvaluators.java,26,,final class NumEvaluators implements Name<Integer> {
+627,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/distributedshell/RuntimeName.java,26,,final class RuntimeName implements Name<String> {
+628,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/distributedshell/ShellDriver.java,41,,final class ShellDriver {
+629,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/hello/HelloDriver.java,37,,public final class HelloDriver {
+630,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/hello/HelloDriverRestart.java,33,,public final class HelloDriverRestart {
+631,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/hello/HelloJVMOptionsDriver.java,40,,public final class HelloJVMOptionsDriver {
+632,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/hello/HelloTask.java,28,,public final class HelloTask implements Task {
+633,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/hellomultiruntime/HelloMultiRuntimeDriver.java,39,,public final class HelloMultiRuntimeDriver {
+634,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/library/ShellTask.java,33,,public final class ShellTask implements Task {
+635,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/pool/SleepTask.java,31,,public final class SleepTask implements Task {
+636,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/reefonreef/ReefOnReefDriver.java,44,,final class ReefOnReefDriver implements EventHandler<StartTime> {
+637,./TargetProjects/reef/lang/java/reef-examples/src/main/java/org/apache/reef/examples/scheduler/driver/http/SchedulerHttpHandler.java,38,,public final class SchedulerHttpHandler implements HttpHandler {
+638,./TargetProjects/reef/lang/java/reef-experimental/src/main/java/org/apache/reef/experimental/parquet/ParquetReader.java,55,,public final class ParquetReader {
+639,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/data/output/TaskOutputService.java,45,,public final class TaskOutputService implements OutputService {
+640,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/data/output/TaskOutputStreamProviderHDFS.java,36,,public final class TaskOutputStreamProviderHDFS extends TaskOutputStreamProvider {
+641,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/data/output/TaskOutputStreamProviderLocal.java,35,,public final class TaskOutputStreamProviderLocal extends TaskOutputStreamProvider {
+642,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/CommGroupMessageHandler.java,30,,public final class CommGroupMessageHandler implements Name<BroadcastingEventHandler<GroupCommunicationMessage>> {
+643,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/CommGroupNameClass.java,28,,public final class CommGroupNameClass implements Name<Class<? extends Name<String>>> {
+644,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/CommGroupNumTask.java,28,,public final class CommGroupNumTask implements Name<Integer> {
+645,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/CommunicationGroupName.java,25,,public final class CommunicationGroupName implements Name<String> {
+646,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/DataCodec.java,26,,public final class DataCodec implements Name<Codec> {
+647,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/GroupCommFailedEvalHandler.java,30,,public final class GroupCommFailedEvalHandler implements Name<BroadcastingEventHandler<FailedEvaluator>> {
+648,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/GroupCommFailedTaskHandler.java,30,,public final class GroupCommFailedTaskHandler implements Name<BroadcastingEventHandler<FailedTask>> {
+649,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/GroupCommRunningTaskHandler.java,30,,public final class GroupCommRunningTaskHandler implements Name<BroadcastingEventHandler<RunningTask>> {
+650,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/GroupCommSenderStage.java,30,,public final class GroupCommSenderStage implements Name<EStage<GroupCommunicationMessage>> {
+651,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/OperatorName.java,28,,public final class OperatorName implements Name<String> {
+652,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/OperatorNameClass.java,28,,public final class OperatorNameClass implements Name<Class<? extends Name<String>>> {
+653,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/ReduceFunctionParam.java,29,,public final class ReduceFunctionParam implements Name<ReduceFunction> {
+654,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/SerializedGroupConfigs.java,27,,public final class SerializedGroupConfigs implements Name<Set<String>> {
+655,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/SerializedOperConfigs.java,30,,public final class SerializedOperConfigs implements Name<Set<String>> {
+656,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/TaskVersion.java,25,,public final class TaskVersion implements Name<Integer> {
+657,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/TopologyClass.java,29,,public final class TopologyClass implements Name<Class<? extends Topology>> {
+658,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/config/parameters/TreeTopologyFanOut.java,28,,public final class TreeTopologyFanOut implements Name<Integer> {
+659,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/driver/CommunicationGroupDriverFactory.java,43,,public final class CommunicationGroupDriverFactory {
+660,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/driver/FlatTopology.java,59,,public final class FlatTopology implements Topology {
+661,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/driver/GroupCommDriverImpl.java,76,,public final class GroupCommDriverImpl implements GroupCommServiceDriver {
+662,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/driver/TopologyFactory.java,38,,public final class TopologyFactory {
+663,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/driver/TreeTopology.java,61,,public final class TreeTopology implements Topology {
+664,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/task/CommunicationGroupClientImpl.java,61,,public final class CommunicationGroupClientImpl implements CommunicationGroupServiceClient {
+665,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/group/impl/task/GroupCommClientImpl.java,41,,public final class GroupCommClientImpl implements GroupCommClient {
+666,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/impl/NetworkConnectionServiceImpl.java,55,,public final class NetworkConnectionServiceImpl implements NetworkConnectionService {
+667,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/impl/NetworkService.java,47,,"public final class NetworkService<T> implements Stage, ConnectionFactory<T> {"
+668,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/naming/LocalNameResolverImpl.java,40,,public final class LocalNameResolverImpl implements NameResolver {
+669,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/naming/NameClient.java,48,,public final class NameClient implements NameResolver {
+670,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/network/naming/NameServerImpl.java,50,,public final class NameServerImpl implements NameServer {
+671,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/watcher/FileEventStream.java,46,,public final class FileEventStream implements EventStream {
+672,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/watcher/LogEventStream.java,31,,public final class LogEventStream implements EventStream {
+673,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/watcher/Watcher.java,47,,public final class Watcher {
+674,./TargetProjects/reef/lang/java/reef-io/src/main/java/org/apache/reef/io/watcher/param/EventStreams.java,36,,public final class EventStreams implements Name<Set<EventStream>> {
+675,./TargetProjects/reef/lang/java/reef-runtime-azbatch/src/main/java/org/apache/reef/runtime/azbatch/AzureBatchClasspathProvider.java,32,,public final class AzureBatchClasspathProvider implements RuntimeClasspathProvider {
+676,./TargetProjects/reef/lang/java/reef-runtime-azbatch/src/main/java/org/apache/reef/runtime/azbatch/client/AzureBatchDriverConfigurationProviderImpl.java,48,,public final class AzureBatchDriverConfigurationProviderImpl implements DriverConfigurationProvider {
+677,./TargetProjects/reef/lang/java/reef-runtime-azbatch/src/main/java/org/apache/reef/runtime/azbatch/client/AzureBatchRuntimeConfigurationProvider.java,36,,public final class AzureBatchRuntimeConfigurationProvider {
+678,./TargetProjects/reef/lang/java/reef-runtime-azbatch/src/main/java/org/apache/reef/runtime/azbatch/driver/AzureBatchTaskStatusAlarmHandler.java,49,,final class AzureBatchTaskStatusAlarmHandler implements EventHandler<Alarm> {
+679,./TargetProjects/reef/lang/java/reef-runtime-azbatch/src/main/java/org/apache/reef/runtime/azbatch/util/batch/ContainerRegistryProvider.java,34,,public final class ContainerRegistryProvider {
+680,./TargetProjects/reef/lang/java/reef-runtime-azbatch/src/main/java/org/apache/reef/runtime/azbatch/util/batch/SharedKeyBatchCredentialProvider.java,36,,public final class SharedKeyBatchCredentialProvider implements IAzureBatchCredentialProvider {
+681,./TargetProjects/reef/lang/java/reef-runtime-local/src/main/java/org/apache/reef/runtime/local/driver/LocalResourceManagerStartHandler.java,26,,final class LocalResourceManagerStartHandler implements ResourceManagerStartHandler {
+682,./TargetProjects/reef/lang/java/reef-runtime-local/src/main/java/org/apache/reef/runtime/local/driver/LocalResourceManagerStopHandler.java,26,,final class LocalResourceManagerStopHandler implements ResourceManagerStopHandler {
+683,./TargetProjects/reef/lang/java/reef-runtime-multi/src/main/java/org/apache/reef/runtime/multi/client/EmptyMultiRuntimeMainConfigurationGeneratorImpl.java,30,,final class EmptyMultiRuntimeMainConfigurationGeneratorImpl
+684,./TargetProjects/reef/lang/java/reef-runtime-multi/src/main/java/org/apache/reef/runtime/multi/client/MultiRuntimeDefinitionGeneratorImpl.java,49,,final class MultiRuntimeDefinitionGeneratorImpl implements MultiRuntimeDefinitionGenerator {
+685,./TargetProjects/reef/lang/java/reef-runtime-multi/src/main/java/org/apache/reef/runtime/multi/client/YarnMultiRuntimeMainConfigurationGeneratorImpl.java,33,,final class YarnMultiRuntimeMainConfigurationGeneratorImpl
+686,./TargetProjects/reef/lang/java/reef-runtime-multi/src/main/java/org/apache/reef/runtime/multi/driver/MultiRuntimeResourceLaunchHandler.java,33,,final class MultiRuntimeResourceLaunchHandler implements ResourceLaunchHandler {
+687,./TargetProjects/reef/lang/java/reef-runtime-multi/src/main/java/org/apache/reef/runtime/multi/driver/MultiRuntimeResourceManagerStartHandler.java,29,,final class MultiRuntimeResourceManagerStartHandler implements ResourceManagerStartHandler {
+688,./TargetProjects/reef/lang/java/reef-runtime-multi/src/main/java/org/apache/reef/runtime/multi/driver/MultiRuntimeResourceManagerStopHandler.java,29,,final class MultiRuntimeResourceManagerStopHandler implements ResourceManagerStopHandler {
+689,./TargetProjects/reef/lang/java/reef-runtime-multi/src/main/java/org/apache/reef/runtime/multi/driver/MultiRuntimeResourceReleaseHandler.java,32,,final class MultiRuntimeResourceReleaseHandler implements ResourceReleaseHandler {
+690,./TargetProjects/reef/lang/java/reef-runtime-multi/src/main/java/org/apache/reef/runtime/multi/driver/MultiRuntimeResourceRequestHandler.java,33,,final class MultiRuntimeResourceRequestHandler implements ResourceRequestHandler {
+691,./TargetProjects/reef/lang/java/reef-runtime-multi/src/main/java/org/apache/reef/runtime/multi/driver/RuntimeImpl.java,32,,final class RuntimeImpl implements Runtime {
+692,./TargetProjects/reef/lang/java/reef-runtime-multi/src/main/java/org/apache/reef/runtime/multi/driver/RuntimesHost.java,51,,final class RuntimesHost {
+693,./TargetProjects/reef/lang/java/reef-runtime-standalone/src/main/java/org/apache/reef/runtime/standalone/client/parameters/NodeListFilePath.java,28,,public final class NodeListFilePath implements Name<String> {
+694,./TargetProjects/reef/lang/java/reef-runtime-standalone/src/main/java/org/apache/reef/runtime/standalone/client/parameters/SshPortNum.java,28,,public final class SshPortNum implements Name<Integer> {
+695,./TargetProjects/reef/lang/java/reef-runtime-standalone/src/main/java/org/apache/reef/runtime/standalone/driver/StandaloneResourceManagerStartHandler.java,31,,final class StandaloneResourceManagerStartHandler implements ResourceManagerStartHandler {
+696,./TargetProjects/reef/lang/java/reef-runtime-yarn/src/main/java/org/apache/reef/runtime/yarn/client/unmanaged/UnmanagedAmYarnJobSubmissionHandler.java,40,,final class UnmanagedAmYarnJobSubmissionHandler implements JobSubmissionHandler {
+697,./TargetProjects/reef/lang/java/reef-runtime-yarn/src/main/java/org/apache/reef/runtime/yarn/client/unmanaged/UnmanagedDriverFiles.java,38,,final class UnmanagedDriverFiles {
+698,./TargetProjects/reef/lang/java/reef-runtime-yarn/src/main/java/org/apache/reef/runtime/yarn/driver/DefaultRackNameFormatter.java,35,,public final class DefaultRackNameFormatter implements RackNameFormatter {
+699,./TargetProjects/reef/lang/java/reef-runtime-yarn/src/main/java/org/apache/reef/runtime/yarn/driver/YarnContainerManager.java,66,,"final class YarnContainerManager implements AMRMClientAsync.CallbackHandler, NMClientAsync.CallbackHandler {"
+700,./TargetProjects/reef/lang/java/reef-runtime-yarn/src/main/java/org/apache/reef/runtime/yarn/driver/YarnDriverRuntimeRestartManager.java,51,,public final class YarnDriverRuntimeRestartManager implements DriverRuntimeRestartManager {
+701,./TargetProjects/reef/lang/java/reef-runtime-yarn/src/main/java/org/apache/reef/runtime/yarn/driver/parameters/YarnEvaluatorPreserver.java,31,,public final class YarnEvaluatorPreserver implements Name<EvaluatorPreserver> {
+702,./TargetProjects/reef/lang/java/reef-tang/tang/src/test/java/org/apache/reef/tang/implementation/TestClassHierarchy.java,513,,final class NameWithConstructor implements Name<Object> {
+703,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/evaluator/failure/parameters/NumEvaluatorsToFail.java,29,,public final class NumEvaluatorsToFail implements Name<Integer> {
+704,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/evaluator/failure/parameters/NumEvaluatorsToSubmit.java,29,,public final class NumEvaluatorsToSubmit implements Name<Integer> {
+705,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/group/MasterTask.java,30,,public final class MasterTask implements Task {
+706,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/group/MultipleCommGroupsDriver.java,52,,public final class MultipleCommGroupsDriver {
+707,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/group/SlaveTask.java,30,,public final class SlaveTask implements Task {
+708,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/group/conf/GroupCommServiceInjectionCodec.java,33,,final class GroupCommServiceInjectionCodec implements Codec<Integer> {
+709,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/library/tasks/EchoTask.java,28,,public final class EchoTask implements Task {
+710,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/library/tasks/NoopTask.java,28,,public final class NoopTask implements Task {
+711,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/watcher/FailedContextHandler.java,29,,public final class FailedContextHandler implements EventHandler<ContextStart> {
+712,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/watcher/FailedTaskStartHandler.java,29,,public final class FailedTaskStartHandler implements EventHandler<TaskStart> {
+713,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/watcher/TestEventStream.java,32,,public final class TestEventStream implements EventStream {
+714,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/watcher/WatcherTestDriver.java,46,,public final class WatcherTestDriver {
+715,./TargetProjects/reef/lang/java/reef-tests/src/main/java/org/apache/reef/tests/watcher/WatcherTestTask.java,38,,"public final class WatcherTestTask implements Task, TaskMessageSource {"
+716,./TargetProjects/reef/lang/java/reef-tests/src/test/java/org/apache/reef/tests/applications/vortex/addone/AddOneCallbackTestStart.java,35,,public final class AddOneCallbackTestStart implements VortexStart {
+717,./TargetProjects/reef/lang/java/reef-tests/src/test/java/org/apache/reef/tests/applications/vortex/addone/AddOneTestStart.java,34,,public final class AddOneTestStart implements VortexStart {
+718,./TargetProjects/reef/lang/java/reef-tests/src/test/java/org/apache/reef/tests/applications/vortex/cancellation/TaskletCancellationTestStart.java,36,,public final class TaskletCancellationTestStart implements VortexStart {
+719,./TargetProjects/reef/lang/java/reef-tests/src/test/java/org/apache/reef/tests/applications/vortex/exception/ExceptionCallbackTestStart.java,35,,public final class ExceptionCallbackTestStart implements VortexStart {
+720,./TargetProjects/reef/lang/java/reef-tests/src/test/java/org/apache/reef/tests/configurationproviders/ConfigurationProviderTestDriver.java,38,,final class ConfigurationProviderTestDriver {
+721,./TargetProjects/reef/lang/java/reef-tests/src/test/java/org/apache/reef/tests/configurationproviders/ConfigurationProviderTestTask.java,31,,final class ConfigurationProviderTestTask implements Task {
+722,./TargetProjects/reef/lang/java/reef-tests/src/test/java/org/apache/reef/tests/configurationproviders/TestDriverConfigurationProvider.java,33,,final class TestDriverConfigurationProvider implements ConfigurationProvider {
+723,./TargetProjects/reef/lang/java/reef-tests/src/test/java/org/apache/reef/tests/configurationproviders/TestEvaluatorConfigurationProvider.java,33,,final class TestEvaluatorConfigurationProvider implements ConfigurationProvider {
+724,./TargetProjects/reef/lang/java/reef-tests/src/test/java/org/apache/reef/tests/evaluatorexit/EvaluatorCompleteTestDriver.java,37,,final class EvaluatorCompleteTestDriver {
+725,./TargetProjects/reef/lang/java/reef-tests/src/test/java/org/apache/reef/tests/evaluatorexit/EvaluatorCompleteTestTask.java,28,,final class EvaluatorCompleteTestTask implements Task {
+726,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/avro/ProtocolSerializerNamespace.java,29,,public final class ProtocolSerializerNamespace implements Name<String> {
+727,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/impl/MissingStartHandlerHandler.java,31,,public final class MissingStartHandlerHandler implements EventHandler<StartTime> {
+728,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/remote/DefaultErrorHandler.java,30,,final class DefaultErrorHandler implements EventHandler<Throwable> {
+729,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/remote/DefaultRemoteManagerFactory.java,35,,final class DefaultRemoteManagerFactory implements RemoteManagerFactory {
+730,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/remote/address/HostnameBasedLocalAddressProvider.java,33,,public final class HostnameBasedLocalAddressProvider implements LocalAddressProvider {
+731,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/remote/address/LoopbackLocalAddressProvider.java,32,,public final class LoopbackLocalAddressProvider implements LocalAddressProvider {
+732,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/remote/impl/DefaultRemoteManagerImplementation.java,44,,public final class DefaultRemoteManagerImplementation implements RemoteManager {
+733,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/remote/ports/parameters/TcpPortSet.java,29,,public final class TcpPortSet implements Name<Set<Integer>> {
+734,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/remote/transport/netty/MessagingTransportFactory.java,39,,public final class MessagingTransportFactory implements TransportFactory {
+735,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/time/runtime/LogicalTimer.java,33,,public final class LogicalTimer implements Timer {
+736,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/time/runtime/RealTimer.java,28,,public final class RealTimer implements Timer {
+737,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/time/runtime/RuntimeClock.java,45,,public final class RuntimeClock implements Clock {
+738,./TargetProjects/rocketmq-exporter/src/main/java/org/apache/rocketmq/exporter/service/client/MQAdminInstance.java,43,,public class MQAdminInstance {
+739,./TargetProjects/sentry/sentry-service/sentry-service-server/src/main/java/org/apache/sentry/provider/db/service/classification/InterfaceAudience.java,29,,public class InterfaceAudience {
+740,./TargetProjects/sis/core/sis-metadata/src/main/java/org/apache/sis/internal/jaxb/lan/LocaleAdapter.java,47,,"public final class LocaleAdapter extends XmlAdapter<LanguageCode, Locale> {"
+741,./TargetProjects/sis/profiles/sis-japan-profile/src/main/java/org/apache/sis/profile/japan/JapaneseProfile.java,37,,public final class JapaneseProfile extends Static {
+742,./TargetProjects/sling-org-apache-sling-committer-cli/src/main/java/org/apache/sling/cli/impl/release/ReleaseCLIGroup.java,28,,public class ReleaseCLIGroup implements CLIGroup {
+743,./TargetProjects/sling-org-apache-sling-junit-core/src/main/java/org/apache/sling/junit/annotations/AutoDetect.java,24,,public class AutoDetect {
+744,./TargetProjects/sling-org-apache-sling-scripting-core/src/test/java/org/apache/sling/scripting/core/it/ExcludeScriptEngineIT.java,53,,public class ExcludeScriptEngineIT {
+745,./TargetProjects/sling-org-apache-sling-scripting-core/src/test/java/org/apache/sling/scripting/core/it/SLING_10147IT.java,79,,public class SLING_10147IT {
+746,./TargetProjects/struts/core/src/test/java/com/opensymphony/xwork2/config/providers/PrivateConstructorAction.java,32,,public class PrivateConstructorAction implements Action {
+747,./TargetProjects/syncope/client/idrepo/console/src/main/java/org/apache/syncope/client/console/panels/search/AnyObjectSelectionDirectoryPanel.java,31,,public final class AnyObjectSelectionDirectoryPanel
+748,./TargetProjects/syncope/client/idrepo/console/src/main/java/org/apache/syncope/client/console/panels/search/GroupSelectionDirectoryPanel.java,31,,"public final class GroupSelectionDirectoryPanel extends AnySelectionDirectoryPanel<GroupTO, GroupRestClient> {"
+749,./TargetProjects/syncope/client/idrepo/console/src/main/java/org/apache/syncope/client/console/panels/search/UserSelectionDirectoryPanel.java,31,,"public final class UserSelectionDirectoryPanel extends AnySelectionDirectoryPanel<UserTO, UserRestClient> {"
+750,./TargetProjects/tapestry-5/tapestry-ioc/src/test/java/org/apache/tapestry5/ioc/test/UnbuildablePingable.java,20,,public class UnbuildablePingable implements Pingable
+751,./TargetProjects/tapestry-5/tapestry-ioc/src/test/java/org/apache/tapestry5/ioc/test/internal/PrivateConstructorModule.java,21,,public class PrivateConstructorModule
+752,./TargetProjects/tapestry-5/tapestry-ioc/src/test/java/org/apache/tapestry5/ioc/test/internal/RunnableServiceImpl.java,20,,public class RunnableServiceImpl implements Runnable
+753,./TargetProjects/tapestry3/junit/src/org/apache/tapestry/junit/mock/c21/PrivateService.java,36,,public class PrivateService implements IEngineService
+754,./TargetProjects/tapestry4/tapestry-framework/src/test/org/apache/tapestry/junit/mock/c21/PrivateService.java,29,,public class PrivateService implements IEngineService
+755,./TargetProjects/tinkerpop/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/process/traversal/SackFunctions.java,33,,public final class SackFunctions {
+756,./TargetProjects/tinkerpop/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/structure/io/graphml/GraphMLWriterHelper.java,29,,final class GraphMLWriterHelper {
+757,./TargetProjects/tinkerpop/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/structure/io/graphson/JavaTimeSerializersV1d0.java,47,,final class JavaTimeSerializersV1d0 {
+758,./TargetProjects/tinkerpop/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/structure/io/graphson/JavaTimeSerializersV2d0.java,47,,final class JavaTimeSerializersV2d0 {
+759,./TargetProjects/tinkerpop/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/structure/io/graphson/JavaTimeSerializersV3d0.java,47,,final class JavaTimeSerializersV3d0 {
+760,./TargetProjects/tinkerpop/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/structure/io/graphson/JavaUtilSerializersV3d0.java,43,,final class JavaUtilSerializersV3d0 {
+761,./TargetProjects/tinkerpop/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/structure/io/graphson/TraversalSerializersV2d0.java,56,,final class TraversalSerializersV2d0 {
+762,./TargetProjects/tinkerpop/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/structure/io/graphson/TraversalSerializersV3d0.java,63,,final class TraversalSerializersV3d0 {
+763,./TargetProjects/tinkerpop/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/structure/io/gryo/JavaTimeSerializers.java,44,,final class JavaTimeSerializers {
+764,./TargetProjects/tinkerpop/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/structure/io/gryo/UtilSerializers.java,49,,final class UtilSerializers {
+765,./TargetProjects/tinkerpop/hadoop-gremlin/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopCombine.java,38,,"public final class HadoopCombine extends Reducer<ObjectWritable, ObjectWritable, ObjectWritable, ObjectWritable> {"
+766,./TargetProjects/tinkerpop/hadoop-gremlin/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopMap.java,41,,"public final class HadoopMap extends Mapper<NullWritable, VertexWritable, ObjectWritable, ObjectWritable> {"
+767,./TargetProjects/tinkerpop/hadoop-gremlin/src/main/java/org/apache/tinkerpop/gremlin/hadoop/process/computer/HadoopReduce.java,38,,"public final class HadoopReduce extends Reducer<ObjectWritable, ObjectWritable, ObjectWritable, ObjectWritable> {"
+768,./TargetProjects/wicket/wicket-core/src/main/java/org/apache/wicket/MarkupContainer.java,2165,,"		class ChildrenIterator<C> implements Iterator<C>"
+769,./TargetProjects/wicket/wicket-core/src/test/java/org/apache/wicket/OnComponentTagListenerTest.java,77,,"		class DoesntCallSuper extends WebMarkupContainer {"
+770,./TargetProjects/wicket/wicket-core/src/test/java/org/apache/wicket/core/util/tester/MockResourceLinkPage.java,28,,public class MockResourceLinkPage extends WebPage
+771,./TargetProjects/xmlgraphics-fop/fop-core/src/main/java/org/apache/fop/fo/properties/FontFamilyProperty.java,29,,public final class FontFamilyProperty extends ListProperty {
+772,./TargetProjects/xmlgraphics-fop/fop-core/src/main/java/org/apache/fop/render/intermediate/IFRendererConfig.java,34,,public final class IFRendererConfig implements RendererConfig {
+773,./TargetProjects/zookeeper/zookeeper-server/src/main/java/org/apache/zookeeper/common/BCFKSFileLoader.java,25,,class BCFKSFileLoader extends StandardTypeFileKeyStoreLoader {
+774,./TargetProjects/zookeeper/zookeeper-server/src/main/java/org/apache/zookeeper/common/JKSFileLoader.java,25,,class JKSFileLoader extends StandardTypeFileKeyStoreLoader {
+775,./TargetProjects/zookeeper/zookeeper-server/src/main/java/org/apache/zookeeper/common/PEMFileLoader.java,31,,class PEMFileLoader extends FileKeyStoreLoader {
+776,./TargetProjects/zookeeper/zookeeper-server/src/main/java/org/apache/zookeeper/common/PKCS12FileLoader.java,25,,class PKCS12FileLoader extends StandardTypeFileKeyStoreLoader {

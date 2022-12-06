@@ -1,0 +1,41 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,public boolean equals(Object obj) {,"Name n1=new Name(){
+  public String getLocalName(){
+    return t.jcrName;
+  }
+  public String getNamespaceURI(){
+    return t.prefix;
+  }
+  public int compareTo(  Object o){
+    throw new UnsupportedOperationException();
+  }
+  public String toString(){
+    return ""{"" + t.prefix + ""}""+ t.jcrName;
+  }
+  public boolean equals(  Object obj){
+    if (obj instanceof Name) {
+      Name n=(Name)obj;
+      return n.getLocalName().equals(t.jcrName) && n.getNamespaceURI().equals(t.prefix);
+    }
+    return false;
+  }
+}
+;
+",0,0,5,7,"Modifier(MethodDeclaration-modifiers, ),
+PrimitiveType(MethodDeclaration-returnType2, ),
+SimpleName(MethodDeclaration-name, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, MethodDeclaration-parameters, ),
+SimpleName(SingleVariableDeclaration-name, MethodDeclaration-parameters, ),
+"
+2,public boolean equals(final Object o) {,"class LANG1261ParentObject {
+  @Override public boolean equals(  final Object o){
+    return true;
+  }
+}
+",2,5,6,,"Modifier(),
+PrimitiveType(),
+SimpleName(),
+Modifier(SingleVariableDeclaration-modifiers, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, ),
+SimpleName(SingleVariableDeclaration-name, ),
+"

@@ -1,0 +1,85 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"assertThat(actual, Matchers.containsInAnyOrder((M[]) expected.toArray()));","assertThat(actual,Matchers.containsInAnyOrder((M[])expected.toArray()));
+",0,2,8,59,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, CastExpression-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,"TreeMap<?, ?>[]  mapArray  = (TreeMap[])lazyList.toArray();","TreeMap<?,?>[] mapArray=(TreeMap[])lazyList.toArray();
+",0,5,9,,"SimpleName(SimpleType-name, ParameterizedType-type, ArrayType-elementType, VariableDeclarationStatement-type, ),
+WildcardType(ParameterizedType-typeArguments, ArrayType-elementType, VariableDeclarationStatement-type, ),
+WildcardType(ParameterizedType-typeArguments, ArrayType-elementType, VariableDeclarationStatement-type, ),
+Dimension(ArrayType-dimensions, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, CastExpression-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+3,this.set = ( E[] ) set.toArray();,"this.set=(E[])set.toArray();
+",0,5,6,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+4,Set<Integer> set = Sets.newHashSet((Integer[]) integerSet.toArray());,"Set<Integer> set=Sets.newHashSet((Integer[])integerSet.toArray());
+",0,0,9,,"SimpleName(SimpleType-name, ParameterizedType-type, VariableDeclarationStatement-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, CastExpression-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+5,tlc.putEntities((TimelineEntity[])entitySet.toArray());,"tlc.putEntities((TimelineEntity[])entitySet.toArray());
+",0,0,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+Dimension(ArrayType-dimensions, CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+6,DoubleMatrix res = new DenseDoubleMatrix((DoubleVector[])slices.toArray());,"DoubleMatrix res=new DenseDoubleMatrix((DoubleVector[])slices.toArray());
+",0,0,7,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+Dimension(ArrayType-dimensions, CastExpression-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+7,"this((E[]) oldL.toArray(), (E[]) newL.toArray(), measure);","this((E[])oldL.toArray(),(E[])newL.toArray(),measure);
+",1,5,9,,"SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, ConstructorInvocation-arguments, ),
+Dimension(ArrayType-dimensions, CastExpression-type, ConstructorInvocation-arguments, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, ConstructorInvocation-arguments, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ConstructorInvocation-arguments, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, ConstructorInvocation-arguments, ),
+Dimension(ArrayType-dimensions, CastExpression-type, ConstructorInvocation-arguments, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, ConstructorInvocation-arguments, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ConstructorInvocation-arguments, ),
+SimpleName(ConstructorInvocation-arguments, ),
+"
+8,final V[] vs = (V[]) list.toArray();,"@SuppressWarnings(""unchecked"") final V[] vs=(V[])list.toArray();
+",1,3,8,,"Modifier(),
+SimpleName(SimpleType-name, ArrayType-elementType, ),
+Dimension(ArrayType-dimensions, ),
+SimpleName(VariableDeclarationFragment-name, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, VariableDeclarationFragment-initializer, ),
+Dimension(ArrayType-dimensions, CastExpression-type, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, VariableDeclarationFragment-initializer, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, VariableDeclarationFragment-initializer, ),
+"
+9,return (E[]) list.toArray();,"return (E[])list.toArray();
+",27,27,4,,"SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, CastExpression-type, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ReturnStatement-expression, ),
+"

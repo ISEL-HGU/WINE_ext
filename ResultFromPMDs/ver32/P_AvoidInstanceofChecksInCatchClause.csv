@@ -1,0 +1,1308 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"assertTrue(""Exception should be SOAPFaultException. Found "" +e.getClass() + "" ""+ e.getMessage(), e instanceof SOAPFaultException);","assertTrue(""Exception should be SOAPFaultException. Found "" + e.getClass() + "" ""+ e.getMessage(),e instanceof SOAPFaultException);
+",0,1110,9,4501,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,if ((t.isClosing() || t.isClosed()) && e instanceof IllegalStateException) {,"if ((t.isClosing() || t.isClosed()) && e instanceof IllegalStateException) {
+  log.debug(""Failed to unload tablet {}... it was already closing or closed : {}"",extent,e.getMessage());
+}
+ else {
+  log.error(""Failed to close tablet {}... Aborting migration"",extent,e);
+  server.enqueueManagerMessage(new TabletStatusMessage(TabletLoadState.UNLOAD_ERROR,extent));
+}
+",0,1,6,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+3,if (e instanceof MissingOptionException && Stream.of(fields).anyMatch(IS_HELP_OPT)) {,"if (e instanceof MissingOptionException && Stream.of(fields).anyMatch(IS_HELP_OPT)) {
+}
+ else {
+  ++exitCode;
+  printException(e);
+}
+",0,4,7,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+4,"LOG.error(""Fatal {} in container {}"", e instanceof Error ? ""error"" : ""exception"", containerId, e);","LOG.error(""Fatal {} in container {}"",e instanceof Error ? ""error"" : ""exception"",containerId,e);
+",0,26,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ConditionalExpression-elseExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+5,if (e instanceof ActiveMQAddressDoesNotExistException && getAddressInfo(address) == null) {,"if (e instanceof ActiveMQAddressDoesNotExistException && getAddressInfo(address) == null) {
+  logger.debug(e.getMessage(),e);
+}
+ else {
+  ActiveMQServerLogger.LOGGER.errorRemovingAutoCreatedQueue(e,address);
+}
+",0,4,5,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+6,assert !(t instanceof AssertionError) : t.getMessage();,"assert !(t instanceof AssertionError) : t.getMessage();
+",0,6,4,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, AssertStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, AssertStatement-expression, ),
+SimpleName(MethodInvocation-expression, AssertStatement-message, ),
+SimpleName(MethodInvocation-name, AssertStatement-message, ),
+"
+7,if (!(notConnected instanceof ActiveMQException) || ActiveMQExceptionType.INTERNAL_ERROR.equals(((ActiveMQException) notConnected).getType())) {,"if (!(notConnected instanceof ActiveMQException) || ActiveMQExceptionType.INTERNAL_ERROR.equals(((ActiveMQException)notConnected).getType())) {
+  ActiveMQServerLogger.LOGGER.failedConnectingToCluster(notConnected);
+}
+",0,16,7,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+8,Throwable t = e instanceof InvocationTargetException ? ((InvocationTargetException) e).getTargetException() : e;,"Throwable t=e instanceof InvocationTargetException ? ((InvocationTargetException)e).getTargetException() : e;
+",0,17,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+9,assertTrue(ex instanceof VerificationException || ExceptionUtils.getRootCause(ex) instanceof VerificationException);,"assertTrue(ex instanceof VerificationException || ExceptionUtils.getRootCause(ex) instanceof VerificationException);
+",0,2,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InstanceofExpression-leftOperand, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InstanceofExpression-leftOperand, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InstanceofExpression-leftOperand, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+10,Assert.assertTrue(!(e instanceof HyracksDataException) || (e.getCause() != null));,"Assert.assertTrue(!(e instanceof HyracksDataException) || (e.getCause() != null));
+",0,9,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+11,suppressedInterrupted = suppressedInterrupted || t instanceof InterruptedException;,"suppressedInterrupted=suppressedInterrupted || t instanceof InterruptedException;
+",0,3,4,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+12,"logger.error(""Fatal {} in container!"", (e instanceof Error) ? ""Error"" : ""Exception"", e);","logger.error(""Fatal {} in container!"",(e instanceof Error) ? ""Error"" : ""Exception"",e);
+",0,6,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ConditionalExpression-elseExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+13,"assertEquals(true, e instanceof KubernetesClientException);","assertEquals(true,e instanceof KubernetesClientException);
+",0,0,4,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+14,if (e instanceof BKException.BKNoSuchEntryException && lastEntryId == -1) {,"if (e instanceof BKException.BKNoSuchEntryException && lastEntryId == -1) {
+  close();
+  return false;
+}
+",0,0,4,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+15,if (!(e instanceof MetadataException) && null != e.getCause()) {,"if (!(e instanceof MetadataException) && null != e.getCause()) {
+  cause=e.getCause();
+}
+",0,0,5,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+16,boolean logStackTrace = !(e instanceof ConfigurationException) || ((ConfigurationException) e).logStackTrace;,"boolean logStackTrace=!(e instanceof ConfigurationException) || ((ConfigurationException)e).logStackTrace;
+",0,8,7,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, FieldAccess-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, FieldAccess-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(FieldAccess-name, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+17,e instanceof ConfigurationException ? ((ConfigurationException)e).logStackTrace : true;,"boolean logStackTrace=e instanceof ConfigurationException ? ((ConfigurationException)e).logStackTrace : true;
+",0,0,6,,"SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, FieldAccess-expression, ConditionalExpression-thenExpression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, FieldAccess-expression, ConditionalExpression-thenExpression, ),
+SimpleName(FieldAccess-name, ConditionalExpression-thenExpression, ),
+BooleanLiteral(ConditionalExpression-elseExpression, ),
+"
+18,if (e instanceof KrbException && ((KrbException) e).getKrbErrorCode() != null) {,"if (e instanceof KrbException && ((KrbException)e).getKrbErrorCode() != null) {
+  errorCode=((KrbException)e).getKrbErrorCode();
+}
+",0,13,6,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+19,"final IOException ioe = (t instanceof IOException) ? (IOException) t : new IOException(""Failed to create journal file "" + journalFile, t);","final IOException ioe=(t instanceof IOException) ? (IOException)t : new IOException(""Failed to create journal file "" + journalFile,t);
+",0,3,11,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, CastExpression-type, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(CastExpression-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-leftOperand, ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-rightOperand, ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+20,"unit.getErrorCollector().addError(new ExceptionMessage(e instanceof Exception ? (Exception) e : new RuntimeException(e), unit.debug, unit));","unit.getErrorCollector().addError(new ExceptionMessage(e instanceof Exception ? (Exception)e : new RuntimeException(e),unit.debug,unit));
+",0,6,12,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+21,if ( ( e instanceof KeeperException.ConnectionLossException ||,"if ((e instanceof KeeperException.ConnectionLossException || !(e instanceof KeeperException)) && protectedMode.doProtected()) {
+  new FindAndDeleteProtectedNodeInBackground(client,ZKPaths.getPathAndNode(adjustedPath).getPath(),protectedMode.protectedId()).execute();
+  protectedMode.resetProtectedId();
+}
+",0,0,2,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+22,if ( (client.getZookeeperClient().getRetryPolicy().allowRetry(e) || (e instanceof InterruptedException)) && guaranteed ),"if ((client.getZookeeperClient().getRetryPolicy().allowRetry(e) || (e instanceof InterruptedException)) && guaranteed) {
+  client.getFailedDeleteManager().addFailedOperation(unfixedPath);
+}
+",0,0,8,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, IfStatement-expression, ),
+"
+23,if (e instanceof UncheckedException && LOG.isLoggable(Level.FINE)) {,"if (e instanceof UncheckedException && LOG.isLoggable(Level.FINE)) {
+  LOG.log(Level.FINE,e.getLocalizedMessage(),e);
+}
+",0,0,5,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+24,if ((t instanceof StandardException) && (((StandardException) t).getSeverity() == ExceptionSeverity.DATABASE_SEVERITY)),"if ((t instanceof StandardException) && (((StandardException)t).getSeverity() == ExceptionSeverity.DATABASE_SEVERITY)) se=(StandardException)t;
+ else se=Monitor.exceptionStartingModule(t);
+",0,1,6,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+25,if ((ioe instanceof EOFException) && (columnId == 0)),"if ((ioe instanceof EOFException) && (columnId == 0)) {
+  close();
+  return false;
+}
+",0,0,4,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+26,"if ( !( t instanceof EOFException ) )   { addWarning( formatThrowable( t, true ), t ); }","if (!(t instanceof EOFException)) {
+  addWarning(formatThrowable(t,true),t);
+}
+",0,0,7,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, IfStatement-thenStatement, ),
+BooleanLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, IfStatement-thenStatement, ),
+"
+27,"assertTrue( ""Didn't expect to see a "" + se.getClass().getName(), (se instanceof SQLTimeoutException) );","assertTrue(""Didn't expect to see a "" + se.getClass().getName(),(se instanceof SQLTimeoutException));
+",0,0,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+28,if (e instanceof NoSuchFileException && !new File(parentDirectory).exists()) {,"if (e instanceof NoSuchFileException && !new File(parentDirectory).exists()) {
+  throw new ISE(""java.io.tmpdir (%s) does not exist"",parentDirectory);
+}
+ else if ((e instanceof FileSystemException && e.getMessage().contains(""Read-only file system"")) || (e instanceof AccessDeniedException)) {
+  throw new ISE(""java.io.tmpdir (%s) is not writable, check permissions"",parentDirectory);
+}
+ else {
+  throw new ISE(e,""Failed to create temporary directory in java.io.tmpdir (%s)"",parentDirectory);
+}
+",0,0,5,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+29,"} else if ((e instanceof FileSystemException && e.getMessage().contains(""Read-only file system""))","if ((e instanceof FileSystemException && e.getMessage().contains(""Read-only file system"")) || (e instanceof AccessDeniedException)) {
+  throw new ISE(""java.io.tmpdir (%s) is not writable, check permissions"",parentDirectory);
+}
+ else {
+  throw new ISE(e,""Failed to create temporary directory in java.io.tmpdir (%s)"",parentDirectory);
+}
+",0,2,6,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+30,"throw new RpcException(e instanceof RpcException ? ((RpcException) e).getCode() : 0,","throw new RpcException(e instanceof RpcException ? ((RpcException)e).getCode() : 0,""Failfast invoke providers "" + invoker.getUrl() + "" ""+ loadbalance.getClass().getSimpleName()+ "" for service ""+ getInterface().getName()+ "" method ""+ invocation.getMethodName()+ "" on consumer ""+ NetUtils.getLocalHost()+ "" use dubbo version ""+ Version.getVersion()+ "", but no luck to perform the invocation. Last error is: ""+ e.getMessage(),e.getCause() != null ? e.getCause() : e);
+",0,0,7,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ThrowStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, ThrowStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, ThrowStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, ThrowStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, ThrowStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, ThrowStatement-expression, ),
+NumberLiteral(ConditionalExpression-elseExpression, ClassInstanceCreation-arguments, ThrowStatement-expression, ),
+"
+31,if ((e instanceof IllegalStateException) && SESSION_CLOSED.equals(e.getMessage())),"if ((e instanceof IllegalStateException) && SESSION_CLOSED.equals(e.getMessage())) {
+  out.println(""gosh: "" + e);
+  quit=true;
+}
+",0,0,6,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+32,Exception e = t instanceof Exception ? (Exception) t : new Exception(t);,"Exception e=t instanceof Exception ? (Exception)t : new Exception(t);
+",0,0,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, CastExpression-type, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(CastExpression-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+33,if (e instanceof IllegalArgumentException && !(setterType.isAssignableFrom(String.class)),"if (e instanceof IllegalArgumentException && !(setterType.isAssignableFrom(String.class)) && argArray[0] != null && argArray[0] instanceof String) {
+  desc.tip(""This problem is often caused by unnecessary parameter quotation. Paramters "" + ""aren't quoted in FTL, similarly as they aren't quoted in most languages. "" + ""For example, these parameter assignments are wrong: "",""<@my.tag p1=\""true\"" p2=\""10\"" p3=\""${someVariable}\"" p4=\""${x+1}\"" />"","". The correct form is: "",""<@my.tag p1=true p2=10 p3=someVariable p4=x+1 />"","". Only string literals are quoted (regardless of where they occur): "",""<@my.box style=\""info\"" message=\""Hello ${name}!\"" width=200 />"",""."");
+}
+",0,0,5,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+34,if (!((illegal instanceof IllegalStateException) && (illegal.getMessage(),"if (!((illegal instanceof IllegalStateException) && (illegal.getMessage().contains(""can not be specified in PartitionAttributesFactory"")))) {
+  Assert.fail(""Expected IllegalStateException "",illegal);
+}
+",0,0,4,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+"
+35,if (logger.isTraceEnabled(LogMarker.DM_VERBOSE) && t instanceof RuntimeException) {,"if (logger.isTraceEnabled(LogMarker.DM_VERBOSE) && t instanceof RuntimeException) {
+  logger.trace(LogMarker.DM_VERBOSE,""Exception caught while processing message: {}"",t.getMessage(),t);
+}
+",0,0,5,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+36,"if ((!(e.getMessage().contains(""InterruptedException""))) || (e instanceof BlobStorageException","if ((!(e.getMessage().contains(""InterruptedException""))) || (e instanceof BlobStorageException && (!((BlobStorageException)e).getErrorCode().equals(404)))) {
+  throw new IgniteSpiException(""Failed to delete entry [containerName="" + containerName + "", entry=""+ key+ ']',e);
+}
+",0,4,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ParenthesizedExpression-expression, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ParenthesizedExpression-expression, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ParenthesizedExpression-expression, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+37,"if (""file"".equalsIgnoreCase(url.getProtocol()) && e instanceof UnknownServiceException) {","if (""file"".equalsIgnoreCase(url.getProtocol()) && e instanceof UnknownServiceException) {
+  out=new FileOutputStream(new File(url.getFile()));
+}
+ else {
+  throw e;
+}
+",0,0,6,,"StringLiteral(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+38,"workException = (WorkException) (e instanceof WorkCompletedException ? e : new WorkCompletedException(""Unknown error"", WorkCompletedException.UNDEFINED).initCause(e));","workException=(WorkException)(e instanceof WorkCompletedException ? e : new WorkCompletedException(""Unknown error"",WorkCompletedException.UNDEFINED).initCause(e));
+",0,4,10,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-expression, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+39,if (t instanceof GroovySyntaxError && GroovySyntaxError.LEXER == ((GroovySyntaxError) t).getSource()) {,"if (t instanceof GroovySyntaxError && GroovySyntaxError.LEXER == ((GroovySyntaxError)t).getSource()) {
+  throw t;
+}
+",0,0,6,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+40,if (ex instanceof InterruptedException) interrupted = true;,"if (ex instanceof InterruptedException) interrupted=true;
+",0,0,4,,"SimpleName(InstanceofExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, IfStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+BooleanLiteral(Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+41,if (ioe instanceof SecretManager.InvalidToken,"if (ioe instanceof SecretManager.InvalidToken && dttr.maxDate < Time.now() && evt instanceof DelegationTokenRenewerAppRecoverEvent && token.getKind().equals(HDFS_DELEGATION_KIND)) {
+  LOG.info(""Failed to renew hdfs token "" + dttr + "" on recovery as it expired, requesting new hdfs token for ""+ applicationId+ "", user=""+ evt.getUser(),ioe);
+  requestNewHdfsDelegationTokenAsProxyUser(Arrays.asList(applicationId),evt.getUser(),evt.shouldCancelAtEnd());
+  continue;
+}
+",0,0,2,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+42,(e instanceof WrappedRpcServerException) ? null : e);,"LOG.info(Thread.currentThread().getName() + "": readAndProcess from client "" + c.getHostAddress()+ "" threw exception [""+ e+ ""]"",(e instanceof WrappedRpcServerException) ? null : e);
+",0,0,4,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+NullLiteral(ConditionalExpression-thenExpression, ),
+SimpleName(ConditionalExpression-elseExpression, ),
+"
+43,switch (ioe instanceof SCMException ? ((SCMException) ioe).getResult() :,"switch (ioe instanceof SCMException ? ((SCMException)ioe).getResult() : IO_EXCEPTION) {
+case SAFE_MODE_EXCEPTION:
+  resultCode=ScmBlockLocationProtocolProtos.DeleteScmBlockResult.Result.safeMode;
+break;
+case FAILED_TO_FIND_BLOCK:
+resultCode=ScmBlockLocationProtocolProtos.DeleteScmBlockResult.Result.errorNotFound;
+break;
+default :
+resultCode=ScmBlockLocationProtocolProtos.DeleteScmBlockResult.Result.unknownFailure;
+}
+",0,0,5,,"SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, SwitchStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, SwitchStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, SwitchStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, SwitchStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, SwitchStatement-expression, ),
+"
+44,if (e instanceof LinkageError) throw new DoNotRetryIOException(e);,"if (e instanceof LinkageError) throw new DoNotRetryIOException(e);
+",0,0,4,,"SimpleName(InstanceofExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ThrowStatement-expression, IfStatement-thenStatement, ),
+SimpleName(ClassInstanceCreation-arguments, ThrowStatement-expression, IfStatement-thenStatement, ),
+"
+45,if (e instanceof RetriesExhaustedException && (cause instanceof NotServingRegionException,"if (e instanceof RetriesExhaustedException && (cause instanceof NotServingRegionException || cause instanceof ConnectException || cause instanceof SocketTimeoutException)) {
+  LOG.warn(""Resigning, can't connect to target regionserver splitting WAL {}"",filename,e);
+  return Status.RESIGNED;
+}
+ else if (cause instanceof InterruptedException) {
+  LOG.warn(""Resigning, interrupted splitting WAL {}"",filename,e);
+  return Status.RESIGNED;
+}
+",0,0,4,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+46,if (e instanceof HelixRollbackException || (e.getCause() != null && e,"if (e instanceof HelixRollbackException || (e.getCause() != null && e.getCause() instanceof HelixRollbackException)) {
+  logger.info(""Rollback happened of state transition on resource \"""" + _message.getResourceName() + ""\"" partition \""""+ _message.getPartitionName()+ ""\"" from \""""+ _message.getFromState()+ ""\"" to \""""+ _message.getToState()+ ""\"""");
+  taskResult.setCancelled(true);
+}
+ else {
+  _statusUpdateUtil.logError(message,HelixStateTransitionHandler.class,e,errorMessage,manager);
+  taskResult.setSuccess(false);
+  taskResult.setMessage(e.toString());
+  taskResult.setException(e);
+  taskResult.setInterrupted(e instanceof InterruptedException);
+}
+",0,0,6,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InstanceofExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+47,String detailedMsg = e instanceof java.lang.reflect.InvocationTargetException ?,"String detailedMsg=e instanceof java.lang.reflect.InvocationTargetException ? e.getCause().getMessage() : e.getMessage();
+",0,0,4,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+48,if (e instanceof SQLTransactionRollbackException && deadlockCnt++ < 5) {,"if (e instanceof SQLTransactionRollbackException && deadlockCnt++ < 5) {
+  LOG.warn(""Caught deadlock, retrying db creation"");
+  prepDb(conf);
+}
+ else {
+  throw e;
+}
+",0,0,4,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(PostfixExpression-operand, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+49,node = e instanceof ClusterTopologyCheckedException ? null : ctx.discovery().node(nodeId);,"node=e instanceof ClusterTopologyCheckedException ? null : ctx.discovery().node(nodeId);
+",0,0,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+50,boolean deadNode = e instanceof ClusterTopologyCheckedException || isDeadNode(res.getNode().id());,"boolean deadNode=e instanceof ClusterTopologyCheckedException || isDeadNode(res.getNode().id());
+",0,0,8,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+51,"assertTrue(""Unexptected exception "" + X.getFullStackTrace(e), e instanceof TransactionHeuristicException);","assertTrue(""Unexptected exception "" + X.getFullStackTrace(e),e instanceof TransactionHeuristicException);
+",0,0,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+52,(!(e instanceof IgniteSQLException) ||,"if (tx != null && tx.mvccSnapshot() != null && (!(e instanceof IgniteSQLException) || ((IgniteSQLException)e).sqlState() != SqlStateCode.PARSING_EXCEPTION)) tx.setRollbackOnly();
+",0,0,2,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ),
+"
+53,if (e instanceof ConstraintViolationException && wspFilter.getImportMode(path) != ImportMode.REPLACE) {,"if (e instanceof ConstraintViolationException && wspFilter.getImportMode(path) != ImportMode.REPLACE) {
+  log.warn(""Error during processing of {}: {}, skip node due to import mode {}"",path,e.toString(),wspFilter.getImportMode(path));
+  importInfo.onNop(path);
+}
+ else {
+  log.error(""Error during processing of {}: {}"",path,e.toString());
+  importInfo.onError(path,e);
+}
+",0,0,6,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+54,return e instanceof CompletionException,"return e instanceof CompletionException && e.getCause() instanceof CancellationException;
+",0,0,2,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+"
+55,"+ ""\nMessage: "" + (e instanceof ResolutionException ? e.getMessage() : e.toString())","throw new MojoExecutionException(""Feature resolution failed for "" + features + ""\nMessage: ""+ (e instanceof ResolutionException ? e.getMessage() : e.toString())+ ""\nRepositories: ""+ toString(new TreeSet<>(repositories.keySet()))+ ""\nResources: ""+ toString(new TreeSet<>(manager.getProviders().keySet())),e);
+",0,1,7,,"StringLiteral(),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, ParenthesizedExpression-expression, ),
+"
+56,if ((e instanceof WindowClosedException) && (!closedState.getAndSet(true))) {,"if ((e instanceof WindowClosedException) && (!closedState.getAndSet(true))) {
+  if (debugEnabled) {
+    log.debug(""write({})[len={}] closing due to window closed"",this,l);
+  }
+}
+",0,0,5,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+57,Integer statusCode = e instanceof ScpException ? ((ScpException) e).getExitStatus() : null;,"Integer statusCode=e instanceof ScpException ? ((ScpException)e).getExitStatus() : null;
+",0,0,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+58,int errorCode = (e instanceof AMQException) ? ((AMQException)e).getErrorCode() : 0;,"int errorCode=(e instanceof AMQException) ? ((AMQException)e).getErrorCode() : 0;
+",0,1,8,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+59,if (!authentication && x instanceof HttpRetryException && ((HttpRetryException) x).responseCode() == HttpURLConnection.HTTP_FORBIDDEN) {,"if (!authentication && x instanceof HttpRetryException && ((HttpRetryException)x).responseCode() == HttpURLConnection.HTTP_FORBIDDEN) {
+  forbidden=true;
+}
+",0,0,7,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-extendedOperands, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-extendedOperands, IfStatement-expression, ),
+"
+60,t = (ex instanceof IOException && ex.getCause() != null) ? ex.getCause() : ex;,"t=(ex instanceof IOException && ex.getCause() != null) ? ex.getCause() : ex;
+",0,0,9,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+61,if (ex instanceof BindException) System.err.println(CONNECTION_EXCEPTION_BIND_MSG);,"if (ex instanceof BindException) System.err.println(CONNECTION_EXCEPTION_BIND_MSG);
+",0,0,5,,"SimpleName(InstanceofExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+62,if (e instanceof ProtocolException && e.getCause() instanceof ConnectException && nodeId.equals(msg.getNodeId())) {,"if (e instanceof ProtocolException && e.getCause() instanceof ConnectException && nodeId.equals(msg.getNodeId())) {
+  logger.warn(""Failed to send Node Status Change message to {} because unable to connect to node. Will not retry."",nodeId,e);
+  return;
+}
+",0,0,9,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-extendedOperands, IfStatement-expression, ),
+"
+63,if (e instanceof KeeperException && KeeperException.Code.NODEEXISTS.equals(((KeeperException) e).code())) {,"if (e instanceof KeeperException && KeeperException.Code.NODEEXISTS.equals(((KeeperException)e).code())) {
+  logger.debug(""Attempting to create an already existing ZNode at path {} : {}"",zNodePath,e);
+}
+ else {
+  logger.error(""Error when creating ZNode for path {} : {}"",zNodePath,e.getMessage());
+  throw e;
+}
+",0,0,7,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+64,.completeExceptionally((e instanceof RuntimeException && e.getCause() != null) ? e.getCause() : e);,"pendingTopic.getRight().completeExceptionally((e instanceof RuntimeException && e.getCause() != null) ? e.getCause() : e);
+",0,0,9,,"SimpleName(),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ),
+SimpleName(ConditionalExpression-elseExpression, ),
+"
+65,if (e instanceof InvocationTargetException && null != e.getCause()) {,"if (e instanceof InvocationTargetException && null != e.getCause()) {
+  cause=e.getCause();
+}
+ else {
+  cause=e;
+}
+",0,0,5,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+66,"!(ex instanceof SocketException && ex.getMessage().equalsIgnoreCase(""socket closed"")))","if (Trace.error && !(ex instanceof SocketException && ex.getMessage().equalsIgnoreCase(""socket closed""))) {
+  ex.printStackTrace();
+}
+",0,0,6,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, ),
+"
+67,msg.append(ex instanceof JMSException ? JmsUtils.buildExceptionMessage(fixForSpring5470((JMSException) ex)) : ex.getMessage());,"msg.append(ex instanceof JMSException ? JmsUtils.buildExceptionMessage(fixForSpring5470((JMSException)ex)) : ex.getMessage());
+",0,2,11,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, MethodInvocation-arguments, MethodInvocation-arguments, ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, MethodInvocation-arguments, ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-elseExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+68,if (!isTestingInverse || e instanceof AssertionError || isFailure(expected)) {,"if (!isTestingInverse || e instanceof AssertionError || isFailure(expected)) {
+  out.printf(""Test failure at line %d: %s%n"" + ""The values provided in the test file are:%n"" + ""(φ₁,λ₁) = %16.12f %16.12f%n""+ ""(φ₂,λ₂) = %16.12f %16.12f%n""+ ""The values computed by the geodesic calculator are:%n"",reader.getLineNumber(),e.getLocalizedMessage(),expected[0],expected[1],expected[3],expected[4]);
+  out.println(c);
+  throw e;
+}
+",0,0,5,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-extendedOperands, IfStatement-expression, ),
+"
+69,if (!((t instanceof AssertionError && t.getMessage(),"if (!((t instanceof AssertionError && t.getMessage().contains(ASSERT_SPECULATIONS_COUNT_MSG)) || (t instanceof Exception && t.getMessage().contains(UNIT_EXCEPTION_MESSAGE)))) {
+  throw caughtThrowable;
+}
+",0,0,4,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+"
+70,if (x instanceof ChannelException) cx.addFaultyMember( ( (ChannelException) x).getFaultyMembers());,"if (x instanceof ChannelException) cx.addFaultyMember(((ChannelException)x).getFaultyMembers());
+",0,0,7,,"SimpleName(InstanceofExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+71,if (e instanceof InvocationTargetException && ((InvocationTargetException)e).getTargetException() instanceof FaultException) {,"if (e instanceof InvocationTargetException && ((InvocationTargetException)e).getTargetException() instanceof FaultException) {
+  responseXML=""DECLAREDEXCEPTION:"" + getResponseXML(domHelper,((FaultException)((InvocationTargetException)e).getTargetException()).getFaultInfo());
+}
+ else {
+  responseXML=""EXCEPTION: "" + e.getClass() + "":""+ e.getMessage();
+}
+",0,0,6,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+72,if ( ee.getCause() != null && ee instanceof java.net.ConnectException ) {,"if (ee.getCause() != null && ee instanceof java.net.ConnectException) {
+  logger.error(""start"",null,""JP Process Unable To Connect to the JD Using Provided URL:"" + jdURL + "" Unable to Continue - Shutting Down JP"");
+}
+",0,0,5,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+73,if (lastException == null || !(t instanceof ActiveMQNonExistentQueueException)) {,"if (lastException == null || !(t instanceof ActiveMQNonExistentQueueException)) {
+  lastException=t;
+  ActiveMQRALogger.LOGGER.awaitingTopicQueueCreation(getActivationSpec().getDestination());
+}
+",1,13,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+74,while (t instanceof InvocationTargetException || t instanceof UndeclaredThrowableException) {,"while (t instanceof InvocationTargetException || t instanceof UndeclaredThrowableException) {
+  Throwable cause=t.getCause();
+  if (cause != null) {
+    t=cause;
+  }
+}
+",1,7,4,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, WhileStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, WhileStatement-expression, ),
+"
+75,if (t instanceof Error && SystemFailure.isJVMFailureError(err = (Error) t)) {,"if (t instanceof Error && SystemFailure.isJVMFailureError(err=(Error)t)) {
+  SystemFailure.initiateFailure(err);
+  throw err;
+}
+",1,2,7,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(Assignment-leftHandSide, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, Assignment-rightHandSide, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(CastExpression-expression, Assignment-rightHandSide, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+76,if (e instanceof RunNodesException && ((RunNodesException)e).getNodeErrors().size() > 0) {,"if (e instanceof RunNodesException && ((RunNodesException)e).getNodeErrors().size() > 0) {
+  node=Iterables.get(((RunNodesException)e).getNodeErrors().keySet(),0);
+}
+",1,16,7,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+77,if (!(e instanceof DataConversionException) && !(e.getCause() instanceof DataConversionException)) {,"if (!(e instanceof DataConversionException) && !(e.getCause() instanceof DataConversionException)) {
+  LOG.error(""Processing record incurs an unexpected exception: "",e);
+  throw new RuntimeException(e.getCause());
+}
+",1,8,5,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+78,if (abortOnError && e instanceof Error) throw e;,"if (abortOnError && e instanceof Error) throw e;
+",1,1,4,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(ThrowStatement-expression, IfStatement-thenStatement, ),
+"
+79,"(e instanceof XAException ? (""Error Code ="" + ((XAException) e).errorCode) : """");","String addon=(e instanceof XAException ? (""Error Code ="" + ((XAException)e).errorCode) : """");
+",1,3,7,,"SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ),
+StringLiteral(InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, FieldAccess-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, FieldAccess-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ),
+StringLiteral(ConditionalExpression-elseExpression, ParenthesizedExpression-expression, ),
+"
+80,(e instanceof IllegalArgumentException && Strings.isNonEmpty(e.getMessage())) ? e.getMessage() :,"return Maybe.absent(new IllegalArgumentException(""Cannot parse string as map with flexible YAML parsing; "" + (e instanceof ClassCastException ? ""yaml treats it as a string"" : (e instanceof IllegalArgumentException && Strings.isNonEmpty(e.getMessage())) ? e.getMessage() : """" + e)));
+",1,2,8,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ),
+"
+81,"Assert.assertEquals( e instanceof KeeperException.NoNodeException, true);","Assert.assertEquals(e instanceof KeeperException.NoNodeException,true);
+",1,37,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+82,if (!((e instanceof RequestValidationException) || (e instanceof RequestExecutionException))),"if (!((e instanceof RequestValidationException) || (e instanceof RequestExecutionException))) logger.error(""Unexpected error during query"",e);
+",1,4,4,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+"
+83,while (!(t instanceof FSWriteError)),"while (!(t instanceof FSWriteError)) t=t.getCause();
+",1,1,2,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, WhileStatement-expression, ),
+"
+84,flush = !(e instanceof IOException);,"flush=!(e instanceof IOException);
+",1,1,3,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+85,listener.handleError(t instanceof Exception ? (Exception) t : new Exception(t));,"listener.handleError(t instanceof Exception ? (Exception)t : new Exception(t));
+",1,1,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+86,"new Object[] {e, "" "" + (e instanceof XAException","String exception=String.format(""GlobalTransaction::commit:Error in committing the transaction. Transaction rolled back.Exception, %s %s"",new Object[]{e,"" "" + (e instanceof XAException ? (""Error Code ="" + ((XAException)e).errorCode) : """")});
+",1,2,6,,"SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, ),
+StringLiteral(InfixExpression-leftOperand, ArrayInitializer-expressions, ArrayCreation-initializer, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, ArrayInitializer-expressions, ArrayCreation-initializer, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, ArrayInitializer-expressions, ArrayCreation-initializer, ),
+"
+87,"if ( e instanceof JMSException && e.getMessage().indexOf(""Connection refused"") > 0) {","if (e instanceof JMSException && e.getMessage().indexOf(""Connection refused"") > 0) {
+  log=false;
+  System.out.println(""Uima AS Client:"" + e.getMessage() + "" Retrying every 5 seconds until successfull"");
+}
+ else {
+  e.printStackTrace();
+}
+",1,2,7,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+88,"String prefix = t instanceof YouAreDeadException? """": ""Unhandled: "";","String prefix=t instanceof YouAreDeadException ? """" : ""Unhandled: "";
+",1,2,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+89,if (!(e instanceof KeeperException) || ((KeeperException)e).code() != KeeperException.Code.NODEEXISTS) {,"if (!(e instanceof KeeperException) || ((KeeperException)e).code() != KeeperException.Code.NODEEXISTS) {
+  LOG.warn(""Unexpected ZK exception when creating parent node /"" + parent,e);
+}
+",1,1,6,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+90,Throwable exception = e instanceof IllegalArgumentException ? null : e;,"Throwable exception=e instanceof IllegalArgumentException ? null : e;
+",1,1,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+91,"if (!X.hasCause(e, ClusterTopologyCheckedException.class) && !(e instanceof CachePartialUpdateException))","if (!X.hasCause(e,ClusterTopologyCheckedException.class) && !(e instanceof CachePartialUpdateException)) throw e;
+",1,7,6,,"SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+92,assert e instanceof NoSuchMethodException || e instanceof IllegalAccessException : e.getClass().getName();,"assert e instanceof NoSuchMethodException || e instanceof IllegalAccessException : e.getClass().getName();
+",1,6,7,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, AssertStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, AssertStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, AssertStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, AssertStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, AssertStatement-message, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, AssertStatement-message, ),
+SimpleName(MethodInvocation-name, AssertStatement-message, ),
+"
+93,asyncResponse.resume(new RestException(e instanceof ExecutionException ? e.getCause() : e));,"asyncResponse.resume(new RestException(e instanceof ExecutionException ? e.getCause() : e));
+",1,2,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+94,if ((ioe instanceof InterruptedIOException) && (!(ioe instanceof java.net.SocketTimeoutException))),"if ((ioe instanceof InterruptedIOException) && (!(ioe instanceof java.net.SocketTimeoutException))) return;
+",1,2,4,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+95,"LOG.log(ex instanceof TransportException ? Level.FINE : Level.INFO, null, ex);","LOG.log(ex instanceof TransportException ? Level.FINE : Level.INFO,null,ex);
+",1,1,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(ConditionalExpression-elseExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+96,final Throwable cause = (e instanceof InvocationTargetException) ? e.getCause() : e;,"final Throwable cause=(e instanceof InvocationTargetException) ? e.getCause() : e;
+",1,1,8,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+97,e = e1 instanceof SQLException ? (SQLException)e1 : new SQLException(e1);,"e=e1 instanceof SQLException ? (SQLException)e1 : new SQLException(e1);
+",1,1,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+98,if (!(e instanceof XMLParseException) && fErrorHandler != null) {,"if (!(e instanceof XMLParseException) && fErrorHandler != null) {
+  DOMErrorImpl error=new DOMErrorImpl();
+  error.fException=e;
+  error.fMessage=e.getMessage();
+  error.fSeverity=DOMError.SEVERITY_FATAL_ERROR;
+  fErrorHandler.getErrorHandler().handleError(error);
+}
+",1,1,4,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+99,"if (!(e instanceof IgniteException && e.getMessage().contains(""while statistics usage state is OFF."")))","if (!(e instanceof IgniteException && e.getMessage().contains(""while statistics usage state is OFF.""))) fail(""Unknown error: "" + e);
+",2,3,6,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+"
+100,if (op == Op.WRITE_BLOCK && t instanceof ReplicaAlreadyExistsException) {,"if (op == Op.WRITE_BLOCK && t instanceof ReplicaAlreadyExistsException) {
+  if (LOG.isTraceEnabled()) {
+    LOG.trace(s,t);
+  }
+ else {
+    LOG.info(""{}; {}"",s,t.toString());
+  }
+}
+ else if (op == Op.READ_BLOCK && t instanceof SocketTimeoutException) {
+  String s1=""Likely the client has stopped reading, disconnecting it"";
+  s1+="" ("" + s + "")"";
+  if (LOG.isTraceEnabled()) {
+    LOG.trace(s1,t);
+  }
+ else {
+    LOG.info(""{}; {}"",s1,t.toString());
+  }
+}
+ else if (t instanceof InvalidToken || t.getCause() instanceof InvalidToken) {
+  LOG.trace(s,t);
+}
+ else {
+  LOG.error(s,t);
+}
+",2,2,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+101,e = e instanceof RemoteException ? ((RemoteException) e).unwrapRemoteException() : e;,"e=e instanceof RemoteException ? ((RemoteException)e).unwrapRemoteException() : e;
+",2,2,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+102,(e instanceof HiveException && e.getCause() instanceof InterruptedException)) {,"if (e instanceof InterruptedException || (e instanceof HiveException && e.getCause() instanceof InterruptedException)) {
+  finalException=new HiveException(e,ErrorMsg.SPARK_JOB_INTERRUPTED);
+  LOG.warn(""Interrupted while monitoring the Hive on Spark application, exiting"");
+}
+ else {
+  String msg="" with exception '"" + Utilities.getNameMessage(e) + ""' Last known state = ""+ (state != null ? state.name() : ""UNKNOWN"");
+  msg=""Failed to monitor Job["" + sparkJobStatus.getJobId() + ""]""+ msg;
+  console.printError(msg,""\n"" + org.apache.hadoop.util.StringUtils.stringifyException(e));
+}
+",2,2,5,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ),
+SimpleName(MethodInvocation-expression, InstanceofExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ),
+SimpleName(MethodInvocation-name, InstanceofExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ),
+"
+103,"if (e instanceof ClusterTopologyCheckedException || X.hasCause(e, ClusterTopologyException.class)) {","if (e instanceof ClusterTopologyCheckedException || X.hasCause(e,ClusterTopologyException.class)) {
+  if (log.isDebugEnabled())   log.debug(""Failed to get affinity from node, node failed [cache="" + cacheName + "", node=""+ node.id()+ "", msg=""+ e.getMessage()+ ']');
+  getAffinityFromNextNode();
+  return;
+}
+",2,2,6,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+104,"Mercurial.LOG.log(ex instanceof HgException.HgCommandCanceledException ? Level.FINE : Level.INFO, null, ex);","Mercurial.LOG.log(ex instanceof HgException.HgCommandCanceledException ? Level.FINE : Level.INFO,null,ex);
+",2,3,8,,"QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(ConditionalExpression-thenExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(ConditionalExpression-elseExpression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+105,(e instanceof ExecutionException) ? e.getCause().getMessage() : e.getMessage());,"throw new RestException(Status.INTERNAL_SERVER_ERROR,(e instanceof ExecutionException) ? e.getCause().getMessage() : e.getMessage());
+",2,2,7,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, ConditionalExpression-thenExpression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ConditionalExpression-thenExpression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-elseExpression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, ),
+"
+106,if (e instanceof ExecutionException && (e.getCause()) instanceof AlreadyExistsException) {,"if (e instanceof ExecutionException && (e.getCause()) instanceof AlreadyExistsException) {
+}
+ else {
+  log.warn(""Failed to write to metadata-store {}"",path,e);
+  fail(""failed while creating broker znodes"");
+}
+",2,2,5,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ParenthesizedExpression-expression, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+107,if ( x instanceof ChannelException ) cx = (ChannelException)x;,"if (x instanceof ChannelException) cx=(ChannelException)x;
+ else cx=new ChannelException(x);
+",2,2,5,,"SimpleName(InstanceofExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, IfStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(SimpleType-name, CastExpression-type, Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+SimpleName(CastExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, IfStatement-thenStatement, ),
+"
+108,"} else if (ex instanceof ConfigurationException && ex.getCause() instanceof BundleException && ex.getCause().getMessage().contains(""Error creating bundle cache."")) {","if (ex instanceof ConfigurationException && ex.getCause() instanceof BundleException && ex.getCause().getMessage().contains(""Error creating bundle cache."")) {
+  LOG.warn(""Felix cache directory could not be populated (possible environment issue).  Skipping rest of the test.  Exception message: [{}], Cause message: [{}]"",ex.getMessage(),ex.getCause().getMessage());
+  return;
+}
+",3,2366,10,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, IfStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-extendedOperands, IfStatement-expression, ),
+"
+109,if (!(e instanceof java.net.ConnectException || e instanceof IOException)) {,"if (!(e instanceof java.net.ConnectException || e instanceof IOException)) {
+  throw new IllegalStateException(e);
+}
+ else {
+  return """";
+}
+",3,259,4,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+"
+110,if ((e instanceof InterruptedException || e instanceof IllegalStateException) && !activeMQServer.isStarted()),"if ((e instanceof InterruptedException || e instanceof IllegalStateException) && !activeMQServer.isStarted()) return;
+",3,28,6,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+111,if (!(e instanceof ConnectException) && !(e instanceof BindException) && !(e instanceof NoRouteToHostException) && !(e instanceof PortUnreachableException)) {,"if (!(e instanceof ConnectException) && !(e instanceof BindException) && !(e instanceof NoRouteToHostException)&& !(e instanceof PortUnreachableException)) {
+  resultCode=""TIKASERVERSOCKETEXCEPTION"";
+  description=""Socket exception while processing document "" + documentURI + "" : ""+ e.getMessage();
+  tikaServerResultCode=handleTikaServerError(description);
+  retryWithoutAbort(e);
+}
+ else {
+  resultCode=""TIKASERVEREXCEPTION"";
+  description=""Tika seemed to be down when requested to process document "" + documentURI + "" : ""+ e.getMessage();
+  tikaServerResultCode=handleTikaServerError(description);
+  triggerServiceInterruption(documentURI,e);
+}
+",3,8,8,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-extendedOperands, IfStatement-expression, ),
+"
+112,if (expectingException != null && angryRhino instanceof JavaScriptException) {,"if (expectingException != null && angryRhino instanceof JavaScriptException) {
+  JavaScriptException jse=(JavaScriptException)angryRhino;
+  Assert.assertEquals(jse.getValue(),expectingException);
+  return null;
+}
+",3,3,4,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+113,if (Thread.currentThread().isInterrupted() || t instanceof InterruptedException || t instanceof Error) {,"if (Thread.currentThread().isInterrupted() || t instanceof InterruptedException || t instanceof Error) {
+  throw new RuntimeException(t);
+}
+",3,3,7,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-extendedOperands, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-extendedOperands, IfStatement-expression, ),
+"
+114,if ((e instanceof RMIException) || (e instanceof SQLException)) {,"if ((e instanceof RMIException) || (e instanceof SQLException)) {
+  vm0.invoke(() -> disconnectFromDS());
+}
+",3,3,4,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+115,} else if (logger.isTraceEnabled(LogMarker.DM_VERBOSE) && (t instanceof RuntimeException)) {,"if (logger.isTraceEnabled(LogMarker.DM_VERBOSE) && (t instanceof RuntimeException)) {
+  logger.trace(LogMarker.DM_VERBOSE,""Exception caught while processing message"",t);
+}
+",3,3,5,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+116,"if (e instanceof SocketException && ""Socket closed"".equalsIgnoreCase(e.getMessage())) {","if (e instanceof SocketException && ""Socket closed"".equalsIgnoreCase(e.getMessage())) {
+  if (!socket.isClosed()) {
+    logger.warn(""ServerSocket threw 'socket closed' exception but says it is not closed"",e);
+    try {
+      socket.close();
+      createServerSocket();
+    }
+ catch (    IOException ioe) {
+      logger.fatal(""Unable to close and recreate server socket"",ioe);
+      try {
+        Thread.sleep(5000);
+      }
+ catch (      InterruptedException ie) {
+        logger.info(""Interrupted and exiting while trying to recreate listener sockets"");
+        return;
+      }
+    }
+  }
+}
+ else if (""Too many open files"".equals(e.getMessage())) {
+  getConTable().fileDescriptorsExhausted();
+}
+ else {
+  logger.warn(e.getMessage(),e);
+}
+",3,5,6,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+StringLiteral(MethodInvocation-expression, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+117,if (!(t instanceof IgniteInterruptedCheckedException || t instanceof InterruptedException)) {,"if (!(t instanceof IgniteInterruptedCheckedException || t instanceof InterruptedException)) {
+  if (isCancelled)   return;
+  err=t;
+}
+",3,3,4,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+"
+118,"assert e instanceof IllegalStateException : ""Wrong exception type."";","assert e instanceof IllegalStateException : ""Wrong exception type."";
+",3,3,3,,"SimpleName(InstanceofExpression-leftOperand, AssertStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, AssertStatement-expression, ),
+StringLiteral(AssertStatement-message, ),
+"
+119,if (!(e2 instanceof KeeperException.ConnectionLossException) && !(e2 instanceof KeeperException.SessionExpiredException)),"if (!(e2 instanceof KeeperException.ConnectionLossException) && !(e2 instanceof KeeperException.SessionExpiredException)) throw new ManifoldCFException(e2.getMessage(),e2);
+",3,3,4,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+120,Level level = t instanceof FatalError ? Level.FINEST : Level.WARNING;,"Level level=t instanceof FatalError ? Level.FINEST : Level.WARNING;
+",3,3,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+121,assertTrue(ce instanceof PulsarClientException.ProducerBlockedQuotaExceededException,"assertTrue(ce instanceof PulsarClientException.ProducerBlockedQuotaExceededException || ce instanceof PulsarClientException.TimeoutException,ce.getMessage());
+",3,3,3,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+122,"|| ce instanceof PulsarClientException.TimeoutException, ce.getMessage());","assertTrue(ce instanceof PulsarClientException.ProducerBlockedQuotaExceededException || ce instanceof PulsarClientException.TimeoutException,ce.getMessage());
+",3,3,4,,"SimpleName(InstanceofExpression-leftOperand, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, ),
+SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+"
+123,if (e instanceof UniformInterfaceException || i == providers.length - 1),"if (e instanceof UniformInterfaceException || i == providers.length - 1) throw e;
+ else continue;
+",4,4,5,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+124,while(se instanceof org.apache.xml.utils.WrappedRuntimeException),"while (se instanceof org.apache.xml.utils.WrappedRuntimeException) {
+  Exception e=((org.apache.xml.utils.WrappedRuntimeException)se).getException();
+  if (null != e)   se=e;
+}
+",5,5,2,,"SimpleName(InstanceofExpression-leftOperand, WhileStatement-expression, ),
+QualifiedName(SimpleType-name, InstanceofExpression-rightOperand, WhileStatement-expression, ),
+"
+125,if (!(e instanceof ToolException && e.toString(),"if (!(e instanceof ToolException && e.toString().indexOf(""Input service and port already exist in imported contract"") >= 0)) {
+  fail(""Do not catch tool exception for service and port exist, "" + ""catch other unexpected exception!"");
+}
+",6,6,4,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, PrefixExpression-operand, IfStatement-expression, ),
+"
+126,if (e instanceof YarnException && e.getCause() != null &&,"if (e instanceof YarnException && e.getCause() != null && e.getCause() instanceof InterruptedException) {
+  isInterrupted=true;
+}
+",6,6,5,,"SimpleName(InstanceofExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, InfixExpression-leftOperand, IfStatement-expression, ),
+"
+127,final Throwable cause = e instanceof InvocationTargetException ? e.getCause() : e;,"final Throwable cause=e instanceof InvocationTargetException ? e.getCause() : e;
+",7,7,8,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+128,throw e instanceof ValidationException ? (ValidationException) e : new ValidationException(e);,"throw e instanceof ValidationException ? (ValidationException)e : new ValidationException(e);
+",17,17,6,,"SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, ThrowStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, ThrowStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ConditionalExpression-thenExpression, ThrowStatement-expression, ),
+SimpleName(CastExpression-expression, ConditionalExpression-thenExpression, ThrowStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, ThrowStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, ThrowStatement-expression, ),
+"
+129,throw (e instanceof AvroRuntimeException) ? (AvroRuntimeException) e : new AvroRuntimeException(e);,"throw (e instanceof AvroRuntimeException) ? (AvroRuntimeException)e : new AvroRuntimeException(e);
+",21,36,6,,"SimpleName(InstanceofExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ThrowStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ThrowStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ConditionalExpression-thenExpression, ThrowStatement-expression, ),
+SimpleName(CastExpression-expression, ConditionalExpression-thenExpression, ThrowStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, ThrowStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, ThrowStatement-expression, ),
+"
+130,if (e instanceof ContextException) throw (ContextException) e;,"if (e instanceof ContextException) throw (ContextException)e;
+ else throw new ContextException(""Deployment failed within the engine. "" + e.getMessage(),e);
+",33,79,4,,"SimpleName(InstanceofExpression-leftOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, IfStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, ThrowStatement-expression, IfStatement-thenStatement, ),
+SimpleName(CastExpression-expression, ThrowStatement-expression, IfStatement-thenStatement, ),
+"

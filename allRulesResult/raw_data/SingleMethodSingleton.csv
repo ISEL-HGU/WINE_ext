@@ -1,0 +1,352 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/accumulo/core/src/main/java/org/apache/accumulo/core/client/mapreduce/RangeInputSplit.java,57,,public class RangeInputSplit extends InputSplit implements Writable {
+2,./TargetProjects/ambari-metrics/ambari-metrics-host-aggregator/src/main/java/org/apache/hadoop/metrics2/host/aggregator/TimelineMetricsHolder.java,38,,public class TimelineMetricsHolder {
+3,./TargetProjects/asterixdb/asterixdb/asterix-om/src/main/java/org/apache/asterix/om/types/hierachy/DoubleToInt64TypeConvertComputer.java,33,,public class DoubleToInt64TypeConvertComputer implements ITypeConvertComputer {
+4,./TargetProjects/attic-apex-core/api/src/main/java/com/datatorrent/api/StringCodec.java,233,,"  class Object2String<T> implements StringCodec<T>, Serializable"
+5,./TargetProjects/attic-onami/persist/src/test/java/org/apache/onami/persist/test/multipersistenceunits/BaseMultiplePuTest.java,32,,public abstract class BaseMultiplePuTest
+6,./TargetProjects/brooklyn-server/locations/jclouds/src/main/java/org/apache/brooklyn/location/jclouds/networking/JcloudsLocationSecurityGroupCustomizer.java,92,,public class JcloudsLocationSecurityGroupCustomizer extends BasicJcloudsLocationCustomizer {
+7,./TargetProjects/cassandra/src/java/org/apache/cassandra/db/marshal/CompositeType.java,63,,public class CompositeType extends AbstractCompositeType
+8,./TargetProjects/cassandra/src/java/org/apache/cassandra/db/marshal/DynamicCompositeType.java,59,,public class DynamicCompositeType extends AbstractCompositeType
+9,./TargetProjects/cassandra/src/java/org/apache/cassandra/db/marshal/ListType.java,36,,public class ListType<T> extends CollectionType<List<T>>
+10,./TargetProjects/cassandra/src/java/org/apache/cassandra/db/marshal/MapType.java,36,,"public class MapType<K, V> extends CollectionType<Map<K, V>>"
+11,./TargetProjects/cassandra/src/java/org/apache/cassandra/db/marshal/ReversedType.java,32,,public class ReversedType<T> extends AbstractType<T>
+12,./TargetProjects/cassandra/src/java/org/apache/cassandra/db/marshal/SetType.java,34,,public class SetType<T> extends CollectionType<Set<T>>
+13,./TargetProjects/cayenne/cayenne-di/src/main/java/org/apache/cayenne/di/Injector.java,30,,public interface Injector {
+14,./TargetProjects/cayenne/cayenne-di/src/main/java/org/apache/cayenne/di/spi/DefaultInjector.java,37,,public class DefaultInjector implements Injector {
+15,./TargetProjects/cloudstack/server/src/main/java/com/cloud/server/StatsCollector.java,156,,"public class StatsCollector extends ManagerBase implements ComponentMethodInterceptable, Configurable {"
+16,./TargetProjects/cocoon/blocks/cocoon-ojb/cocoon-ojb-impl/src/main/java/org/apache/cocoon/ojb/odmg/components/ODMG.java,31,,public interface ODMG extends Component {
+17,./TargetProjects/cocoon/blocks/cocoon-ojb/cocoon-ojb-impl/src/main/java/org/apache/cocoon/ojb/odmg/components/ODMGImpl.java,40,,public class ODMGImpl extends AbstractLogEnabled
+18,./TargetProjects/commons-bcel/src/main/java/org/apache/bcel/classfile/ConstantUtf8.java,57,,public final class ConstantUtf8 extends Constant {
+19,./TargetProjects/commons-bcel/src/main/java/org/apache/bcel/util/SyntheticRepository.java,34,,public class SyntheticRepository extends MemorySensitiveClassPathRepository {
+20,./TargetProjects/commons-codec/src/main/java/org/apache/commons/codec/language/bm/Languages.java,55,,public class Languages {
+21,./TargetProjects/commons-codec/src/main/java/org/apache/commons/codec/language/bm/Rule.java,81,,public class Rule {
+22,./TargetProjects/commons-jcs/commons-jcs-core/src/main/java/org/apache/commons/jcs3/JCS.java,41,,public abstract class JCS
+23,./TargetProjects/commons-jcs/commons-jcs-core/src/main/java/org/apache/commons/jcs3/engine/control/CompositeCacheManager.java,76,,public class CompositeCacheManager
+24,./TargetProjects/commons-jcs/commons-jcs-sandbox/yajcache/src/main/java/org/apache/commons/jcs/yajcache/file/CacheFileContent.java,43,,public class CacheFileContent {
+25,./TargetProjects/commons-lang/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java,72,,"public class FastDateFormat extends Format implements DateParser, DatePrinter {"
+26,./TargetProjects/commons-lang/src/main/java/org/apache/commons/lang3/time/FormatCache.java,37,,abstract class FormatCache<F extends Format> {
+27,./TargetProjects/commons-lang/src/test/java/org/apache/commons/lang3/time/FastDateParserTest.java,54,,public class FastDateParserTest {
+28,./TargetProjects/commons-lang/src/test/java/org/apache/commons/lang3/time/FastDatePrinterTest.java,43,,public class FastDatePrinterTest {
+29,./TargetProjects/commons-logging/src/main/java/org/apache/commons/logging/LogFactory.java,45,,public abstract class LogFactory {
+30,./TargetProjects/commons-logging/src/main/java/org/apache/commons/logging/LogSource.java,56,,public class LogSource {
+31,./TargetProjects/commons-logging/src/main/java/org/apache/commons/logging/impl/LogFactoryImpl.java,64,,public class LogFactoryImpl extends LogFactory {
+32,./TargetProjects/commons-logging/src/test/java/org/apache/commons/logging/tccl/custom/MyLogFactoryImpl.java,24,,public class MyLogFactoryImpl extends LogFactory {
+33,./TargetProjects/commons-math/commons-math-legacy/src/main/java/org/apache/commons/math4/legacy/linear/RealMatrixFormat.java,54,,public class RealMatrixFormat {
+34,./TargetProjects/commons-math/commons-math-legacy/src/main/java/org/apache/commons/math4/legacy/linear/RealVectorFormat.java,43,,public class RealVectorFormat {
+35,./TargetProjects/commons-math/commons-math-legacy/src/main/java/org/apache/commons/math4/legacy/util/ComplexFormat.java,38,,public class ComplexFormat {
+36,./TargetProjects/commons-validator/src/main/java/org/apache/commons/validator/routines/DomainValidator.java,65,,public class DomainValidator implements Serializable {
+37,./TargetProjects/commons-validator/src/main/java/org/apache/commons/validator/routines/EmailValidator.java,36,,public class EmailValidator implements Serializable {
+38,./TargetProjects/commons-validator/src/main/java/org/apache/commons/validator/routines/ISBNValidator.java,67,,public class ISBNValidator implements Serializable {
+39,./TargetProjects/cxf/rt/frontend/jaxrs/src/main/java/org/apache/cxf/jaxrs/provider/ServerProviderFactory.java,75,,public final class ServerProviderFactory extends ProviderFactory {
+40,./TargetProjects/cxf/rt/rs/client/src/main/java/org/apache/cxf/jaxrs/client/ClientProviderFactory.java,38,,public final class ClientProviderFactory extends ProviderFactory {
+41,./TargetProjects/cxf/rt/rs/microprofile-client/src/main/java/org/apache/cxf/microprofile/client/MicroProfileClientProviderFactory.java,42,,public final class MicroProfileClientProviderFactory extends ProviderFactory {
+42,./TargetProjects/db-jdo/api/src/main/java/javax/jdo/spi/I18NHelper.java,48,,public class I18NHelper {
+43,./TargetProjects/directory-kerby/kerby-common/kerby-config/src/main/java/org/apache/kerby/config/Conf.java,36,,public class Conf implements Config {
+44,./TargetProjects/directory-kerby/kerby-common/kerby-config/src/main/java/org/apache/kerby/config/Config.java,30,,public interface Config {
+45,./TargetProjects/directory-kerby/kerby-common/kerby-config/src/main/java/org/apache/kerby/config/ConfigImpl.java,32,,public class ConfigImpl implements Config {
+46,./TargetProjects/eagle/eagle-core/eagle-app/eagle-app-base/src/main/java/org/apache/eagle/app/test/ApplicationSimulator.java,30,,public abstract class ApplicationSimulator {
+47,./TargetProjects/eagle/eagle-core/eagle-embed/eagle-embed-hbase/src/main/java/org/apache/eagle/service/hbase/EmbeddedHBase.java,29,,public class EmbeddedHBase {
+48,./TargetProjects/falcon/common/src/main/java/org/apache/falcon/util/ReflectionUtils.java,29,,public final class ReflectionUtils {
+49,./TargetProjects/flume/flume-ng-sdk/src/main/java/org/apache/flume/api/RpcClientFactory.java,34,,public class RpcClientFactory {
+50,./TargetProjects/freemarker/src/main/java/freemarker/core/InvalidReferenceException.java,28,,public class InvalidReferenceException extends TemplateException {
+51,./TargetProjects/geode/geode-core/src/main/java/org/apache/geode/internal/cache/tier/sockets/CacheClientNotifier.java,122,,public class CacheClientNotifier {
+52,./TargetProjects/geode/geode-core/src/main/java/org/apache/geode/internal/cache/tier/sockets/ClientHealthMonitor.java,60,,public class ClientHealthMonitor {
+53,./TargetProjects/geode/geode-core/src/main/java/org/apache/geode/internal/net/SocketCreatorFactory.java,28,,public class SocketCreatorFactory {
+54,./TargetProjects/geode/geode-gfsh/src/main/java/org/apache/geode/management/internal/cli/LogWrapper.java,41,,public class LogWrapper {
+55,./TargetProjects/geode/geode-junit/src/main/java/org/apache/geode/codeAnalysis/decode/CompiledClass.java,42,,public class CompiledClass implements Comparable {
+56,./TargetProjects/geode/geode-junit/src/main/java/org/apache/geode/test/version/VersionManager.java,52,,public class VersionManager {
+57,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/ASN1OctetString.java,25,,public abstract class ASN1OctetString
+58,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/ASN1Sequence.java,24,,public abstract class ASN1Sequence
+59,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/ASN1Set.java,25,,abstract public class ASN1Set
+60,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERBMPString.java,25,,public class DERBMPString
+61,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERBitString.java,23,,public class DERBitString
+62,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERBoolean.java,22,,public class DERBoolean
+63,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DEREnumerated.java,23,,public class DEREnumerated
+64,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERGeneralString.java,22,,public class DERGeneralString
+65,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERGeneralizedTime.java,29,,public class DERGeneralizedTime
+66,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERIA5String.java,25,,public class DERIA5String
+67,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERInteger.java,23,,public class DERInteger
+68,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERNumericString.java,25,,public class DERNumericString
+69,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERObjectIdentifier.java,24,,public class DERObjectIdentifier
+70,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERPrintableString.java,25,,public class DERPrintableString
+71,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERT61String.java,25,,public class DERT61String
+72,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERUTCTime.java,28,,public class DERUTCTime
+73,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERUTF8String.java,26,,public class DERUTF8String
+74,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERUniversalString.java,26,,public class DERUniversalString
+75,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/DERVisibleString.java,25,,public class DERVisibleString
+76,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/pkcs/PrivateKeyInfo.java,39,,public class PrivateKeyInfo
+77,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/pkcs/RSAPrivateKeyStructure.java,31,,public class RSAPrivateKeyStructure
+78,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/AlgorithmIdentifier.java,29,,public class AlgorithmIdentifier
+79,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/AttCertIssuer.java,27,,public class AttCertIssuer
+80,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/AttributeCertificateInfo.java,29,,public class AttributeCertificateInfo
+81,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/BasicConstraints.java,31,,public class BasicConstraints
+82,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/CRLDistPoint.java,27,,public class CRLDistPoint
+83,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/CertificateList.java,42,,public class CertificateList
+84,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/CertificatePolicies.java,31,,public class CertificatePolicies
+85,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/DSAParameter.java,31,,public class DSAParameter
+86,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/DigestInfo.java,39,,public class DigestInfo
+87,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/DisplayText.java,46,,public class DisplayText
+88,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/DistributionPoint.java,39,,public class DistributionPoint
+89,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/DistributionPointName.java,37,,public class DistributionPointName
+90,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/ExtendedKeyUsage.java,37,,public class ExtendedKeyUsage
+91,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/GeneralName.java,56,,public class GeneralName
+92,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/GeneralNames.java,26,,public class GeneralNames
+93,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/GeneralSubtree.java,31,,public class GeneralSubtree
+94,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/IssuerSerial.java,29,,public class IssuerSerial
+95,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/IssuingDistributionPoint.java,35,,public class IssuingDistributionPoint
+96,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/ObjectDigestInfo.java,32,,public class ObjectDigestInfo
+97,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/RSAPublicKeyStructure.java,31,,public class RSAPublicKeyStructure
+98,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/SubjectPublicKeyInfo.java,40,,public class SubjectPublicKeyInfo
+99,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/TBSCertList.java,50,,public class TBSCertList
+100,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/TBSCertificateStructure.java,49,,public class TBSCertificateStructure
+101,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/Time.java,32,,public class Time
+102,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/V2Form.java,28,,public class V2Form
+103,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/X509CertificateStructure.java,38,,public class X509CertificateStructure
+104,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/X509Extensions.java,34,,public class X509Extensions
+105,./TargetProjects/geronimo/framework/modules/geronimo-crypto/src/main/java/org/apache/geronimo/crypto/asn1/x509/X509Name.java,38,,public class X509Name
+106,./TargetProjects/geronimo-metrics/geronimo-metrics/src/main/java/org/apache/geronimo/microprofile/metrics/cdi/MetricsExtension.java,87,,public class MetricsExtension implements Extension { // must not explicitly depend on jaxrs since it is dropped in nojaxrs bundle
+107,./TargetProjects/geronimo-specs/geronimo-javamail_1.4_spec/src/main/java/javax/mail/Session.java,59,,public final class Session {
+108,./TargetProjects/geronimo-specs/geronimo-javamail_1.5_spec/src/main/java/javax/mail/Session.java,59,,public final class Session {
+109,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/crypto/CryptoCodec.java,46,,"public abstract class CryptoCodec implements Configurable, Closeable {"
+110,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/crypto/OpensslCipher.java,43,,public final class OpensslCipher {
+111,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/fs/TrashPolicy.java,34,,public abstract class TrashPolicy extends Configured {
+112,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/fs/shell/CommandFactory.java,37,,public class CommandFactory extends Configured {
+113,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/io/erasurecode/rawcoder/util/GaloisField.java,31,,public class GaloisField {
+114,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/net/NetworkTopology.java,48,,public class NetworkTopology {
+115,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/DiskValidatorFactory.java,32,,public final class DiskValidatorFactory {
+116,./TargetProjects/hadoop/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/hash/Hash.java,33,,public abstract class Hash {
+117,./TargetProjects/hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java/org/apache/hadoop/mapreduce/Job.java,85,,"public class Job extends JobContextImpl implements JobContext, AutoCloseable {"
+118,./TargetProjects/hadoop-common/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/crypto/CryptoCodec.java,43,,public abstract class CryptoCodec implements Configurable {
+119,./TargetProjects/hadoop-common/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/fs/shell/CommandFactory.java,37,,public class CommandFactory extends Configured {
+120,./TargetProjects/hadoop-common/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/hash/Hash.java,30,,public abstract class Hash {
+121,./TargetProjects/hadoop-common/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java/org/apache/hadoop/mapreduce/Job.java,77,,"public class Job extends JobContextImpl implements JobContext {  "
+122,./TargetProjects/hadoop-mapreduce/src/contrib/raid/src/java/org/apache/hadoop/raid/GaloisField.java,28,,public class GaloisField {
+123,./TargetProjects/hadoop-mapreduce/src/java/org/apache/hadoop/mapreduce/Job.java,87,,"public class Job extends JobContextImpl implements JobContext {  "
+124,./TargetProjects/hadoop-ozone/hadoop-hdds/server-scm/src/main/java/org/apache/hadoop/hdds/scm/ha/MockSCMHAManager.java,48,,public final class MockSCMHAManager implements SCMHAManager {
+125,./TargetProjects/harmony/classlib/modules/awt/src/main/java/common/java/awt/AlphaComposite.java,31,,public final class AlphaComposite implements Composite {
+126,./TargetProjects/harmony/classlib/modules/awt/src/main/java/common/java/awt/color/ICC_Profile.java,42,,public class ICC_Profile implements Serializable {
+127,./TargetProjects/harmony/classlib/modules/awt/src/main/java/common/java/awt/color/ICC_ProfileStub.java,30,,final class ICC_ProfileStub extends ICC_Profile {
+128,./TargetProjects/harmony/classlib/modules/crypto/src/main/java/javax/crypto/Cipher.java,69,,public class Cipher {
+129,./TargetProjects/harmony/classlib/modules/crypto/src/main/java/javax/crypto/ExemptionMechanism.java,38,,public class ExemptionMechanism {
+130,./TargetProjects/harmony/classlib/modules/crypto/src/main/java/javax/crypto/KeyAgreement.java,42,,public class KeyAgreement {
+131,./TargetProjects/harmony/classlib/modules/crypto/src/main/java/javax/crypto/KeyGenerator.java,40,,public class KeyGenerator {
+132,./TargetProjects/harmony/classlib/modules/crypto/src/main/java/javax/crypto/Mac.java,42,,public class Mac implements Cloneable {
+133,./TargetProjects/harmony/classlib/modules/crypto/src/main/java/javax/crypto/SecretKeyFactory.java,48,,public class SecretKeyFactory {
+134,./TargetProjects/harmony/classlib/modules/luni/src/main/java/java/util/Calendar.java,286,,"public abstract class Calendar implements Serializable, Cloneable,"
+135,./TargetProjects/harmony/classlib/modules/luni/src/main/java/java/util/Currency.java,26,,public final class Currency implements Serializable {
+136,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/AlgorithmParameterGenerator.java,29,,public class AlgorithmParameterGenerator {
+137,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/AlgorithmParameters.java,32,,public class AlgorithmParameters {
+138,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/KeyFactory.java,32,,public class KeyFactory {
+139,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/KeyPairGenerator.java,33,,public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
+140,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/KeyStore.java,52,,public class KeyStore {
+141,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/MessageDigest.java,32,,public abstract class MessageDigest extends MessageDigestSpi {
+142,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/SecureRandom.java,34,,public class SecureRandom extends Random {
+143,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/Signature.java,38,,public abstract class Signature extends SignatureSpi {
+144,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/cert/CertPathBuilder.java,35,,public class CertPathBuilder {
+145,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/cert/CertPathValidator.java,36,,public class CertPathValidator {
+146,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/cert/CertStore.java,37,,public class CertStore {
+147,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/java/security/cert/CertificateFactory.java,40,,public class CertificateFactory {
+148,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/javax/security/cert/X509Certificate.java,54,,public abstract class X509Certificate extends Certificate {
+149,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/org/apache/harmony/security/fortress/Engine.java,36,,public class Engine {
+150,./TargetProjects/harmony/classlib/modules/security/src/main/java/common/org/apache/harmony/security/provider/cert/X509CertPathImpl.java,75,,public class X509CertPathImpl extends CertPath {
+151,./TargetProjects/harmony/classlib/modules/text/src/main/java/java/text/Collator.java,112,,"public abstract class Collator implements Comparator<Object>, Cloneable {"
+152,./TargetProjects/harmony/classlib/modules/text/src/main/java/java/text/NumberFormat.java,141,,public abstract class NumberFormat extends Format {
+153,./TargetProjects/harmony/classlib/modules/x-net/src/main/java/javax/net/ssl/KeyManagerFactory.java,36,,public class KeyManagerFactory {
+154,./TargetProjects/harmony/classlib/modules/x-net/src/main/java/javax/net/ssl/SSLContext.java,34,,public class SSLContext {
+155,./TargetProjects/harmony/classlib/modules/x-net/src/main/java/javax/net/ssl/TrustManagerFactory.java,36,,public class TrustManagerFactory {
+156,./TargetProjects/harmony-classlib/modules/awt/src/main/java/common/java/awt/AlphaComposite.java,31,,public final class AlphaComposite implements Composite {
+157,./TargetProjects/harmony-classlib/modules/awt/src/main/java/common/java/awt/color/ICC_Profile.java,42,,public class ICC_Profile implements Serializable {
+158,./TargetProjects/harmony-classlib/modules/awt/src/main/java/common/java/awt/color/ICC_ProfileStub.java,30,,final class ICC_ProfileStub extends ICC_Profile {
+159,./TargetProjects/harmony-classlib/modules/crypto/src/main/java/javax/crypto/Cipher.java,69,,public class Cipher {
+160,./TargetProjects/harmony-classlib/modules/crypto/src/main/java/javax/crypto/ExemptionMechanism.java,38,,public class ExemptionMechanism {
+161,./TargetProjects/harmony-classlib/modules/crypto/src/main/java/javax/crypto/KeyAgreement.java,42,,public class KeyAgreement {
+162,./TargetProjects/harmony-classlib/modules/crypto/src/main/java/javax/crypto/KeyGenerator.java,40,,public class KeyGenerator {
+163,./TargetProjects/harmony-classlib/modules/crypto/src/main/java/javax/crypto/Mac.java,42,,public class Mac implements Cloneable {
+164,./TargetProjects/harmony-classlib/modules/crypto/src/main/java/javax/crypto/SecretKeyFactory.java,48,,public class SecretKeyFactory {
+165,./TargetProjects/harmony-classlib/modules/luni/src/main/java/java/util/Calendar.java,286,,"public abstract class Calendar implements Serializable, Cloneable,"
+166,./TargetProjects/harmony-classlib/modules/luni/src/main/java/java/util/Currency.java,26,,public final class Currency implements Serializable {
+167,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/AlgorithmParameterGenerator.java,29,,public class AlgorithmParameterGenerator {
+168,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/AlgorithmParameters.java,32,,public class AlgorithmParameters {
+169,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/KeyFactory.java,32,,public class KeyFactory {
+170,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/KeyPairGenerator.java,33,,public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
+171,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/KeyStore.java,52,,public class KeyStore {
+172,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/MessageDigest.java,32,,public abstract class MessageDigest extends MessageDigestSpi {
+173,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/SecureRandom.java,34,,public class SecureRandom extends Random {
+174,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/Signature.java,38,,public abstract class Signature extends SignatureSpi {
+175,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/cert/CertPathBuilder.java,35,,public class CertPathBuilder {
+176,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/cert/CertPathValidator.java,36,,public class CertPathValidator {
+177,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/cert/CertStore.java,37,,public class CertStore {
+178,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/java/security/cert/CertificateFactory.java,40,,public class CertificateFactory {
+179,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/javax/security/cert/X509Certificate.java,54,,public abstract class X509Certificate extends Certificate {
+180,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/org/apache/harmony/security/fortress/Engine.java,36,,public class Engine {
+181,./TargetProjects/harmony-classlib/modules/security/src/main/java/common/org/apache/harmony/security/provider/cert/X509CertPathImpl.java,75,,public class X509CertPathImpl extends CertPath {
+182,./TargetProjects/harmony-classlib/modules/text/src/main/java/java/text/Collator.java,112,,"public abstract class Collator implements Comparator<Object>, Cloneable {"
+183,./TargetProjects/harmony-classlib/modules/text/src/main/java/java/text/NumberFormat.java,141,,public abstract class NumberFormat extends Format {
+184,./TargetProjects/harmony-classlib/modules/x-net/src/main/java/javax/net/ssl/KeyManagerFactory.java,36,,public class KeyManagerFactory {
+185,./TargetProjects/harmony-classlib/modules/x-net/src/main/java/javax/net/ssl/SSLContext.java,34,,public class SSLContext {
+186,./TargetProjects/harmony-classlib/modules/x-net/src/main/java/javax/net/ssl/TrustManagerFactory.java,36,,public class TrustManagerFactory {
+187,./TargetProjects/hbase/hbase-common/src/main/java/org/apache/hadoop/hbase/util/Hash.java,31,,public abstract class Hash {
+188,./TargetProjects/hbase/hbase-rest/src/main/java/org/apache/hadoop/hbase/rest/RESTServlet.java,40,,public class RESTServlet implements Constants {
+189,./TargetProjects/hbase/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/compactions/OffPeakHours.java,26,,public abstract class OffPeakHours {
+190,./TargetProjects/hcatalog/server-extensions/src/main/java/org/apache/hcatalog/messaging/MessageFactory.java,32,,public abstract class MessageFactory {
+191,./TargetProjects/helix/helix-rest/src/main/java/org/apache/helix/rest/metadatastore/ZkMetadataStoreDirectory.java,55,,"public class ZkMetadataStoreDirectory implements MetadataStoreDirectory, RoutingDataListener {"
+192,./TargetProjects/hive/hcatalog/server-extensions/src/main/java/org/apache/hive/hcatalog/messaging/MessageFactory.java,40,,public abstract class MessageFactory {
+193,./TargetProjects/hive/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/MetadataListStructObjectInspector.java,40,,public class MetadataListStructObjectInspector extends
+194,./TargetProjects/hive/standalone-metastore/metastore-common/src/main/java/org/apache/hadoop/hive/metastore/ReplChangeManager.java,63,,public class ReplChangeManager {
+195,./TargetProjects/incubator-atlas/repository/src/main/java/org/apache/atlas/repository/graph/GraphHelper.java,91,,public final class GraphHelper {
+196,./TargetProjects/incubator-brooklyn/brooklyn-server/locations/jclouds/src/main/java/org/apache/brooklyn/location/jclouds/networking/JcloudsLocationSecurityGroupCustomizer.java,90,,public class JcloudsLocationSecurityGroupCustomizer extends BasicJcloudsLocationCustomizer {
+197,./TargetProjects/incubator-gobblin/gobblin-api/src/main/java/org/apache/gobblin/password/PasswordManager.java,67,,public class PasswordManager {
+198,./TargetProjects/incubator-gobblin/gobblin-modules/gobblin-kafka-common/src/main/java/org/apache/gobblin/source/extractor/extract/kafka/workunit/packer/KafkaWorkUnitPacker.java,58,,public abstract class KafkaWorkUnitPacker {
+199,./TargetProjects/incubator-heron/heron/packing/src/java/org/apache/heron/packing/builder/Container.java,34,,public class Container {
+200,./TargetProjects/incubator-tajo/tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/webapp/StaticHttpServer.java,31,,public class StaticHttpServer extends HttpServer {
+201,./TargetProjects/incubator-tamaya-extensions/modules/events/src/main/java/org/apache/tamaya/events/ConfigEventManager.java,33,,public final class ConfigEventManager {
+202,./TargetProjects/incubator-tamaya-extensions/modules/formats/base/src/main/java/org/apache/tamaya/format/ConfigurationFormats.java,42,,public final class ConfigurationFormats {
+203,./TargetProjects/incubator-tamaya-extensions/modules/injection/standalone/src/main/java/org/apache/tamaya/inject/ConfigurationInjector.java,30,,public interface ConfigurationInjector {
+204,./TargetProjects/incubator-tamaya-extensions/modules/mutable-config/src/main/java/org/apache/tamaya/mutableconfig/MutableConfigurationProvider.java,36,,public final class MutableConfigurationProvider {
+205,./TargetProjects/incubator-tamaya-extensions/modules/resolver/src/main/java/org/apache/tamaya/resolver/Resolver.java,33,,public final class Resolver {
+206,./TargetProjects/incubator-tamaya-extensions/modules/resources/src/main/java/org/apache/tamaya/resource/ResourceResolver.java,48,,public interface ResourceResolver {
+207,./TargetProjects/incubator-tamaya-sandbox/documentation/src/main/java/org/apache/tamaya/doc/ConfigDocumenter.java,47,,public class ConfigDocumenter {
+208,./TargetProjects/incubator-tamaya-sandbox/usagetracker/src/main/java/org/apache/tamaya/usagetracker/ConfigUsage.java,33,,public final class ConfigUsage {
+209,./TargetProjects/incubator-tamaya-sandbox/validation/src/main/java/org/apache/tamaya/validation/ConfigValidation.java,34,,public final class ConfigValidation {
+210,./TargetProjects/incubator-tamaya-sandbox/validation/src/main/java/org/apache/tamaya/validation/internal/ConfigValidationDocumentationReader.java,40,,public class ConfigValidationDocumentationReader implements ClassloaderAware {
+211,./TargetProjects/incubator-tez/tez-common/src/main/java/org/apache/tez/dag/records/TezDAGID.java,43,,public class TezDAGID extends TezID {
+212,./TargetProjects/jackrabbit/jackrabbit-core/src/main/java/org/apache/jackrabbit/core/security/authorization/PrivilegeBits.java,26,,public class PrivilegeBits {
+213,./TargetProjects/jackrabbit/jackrabbit-core/src/main/java/org/apache/jackrabbit/core/value/BLOBInDataStore.java,34,,class BLOBInDataStore extends BLOBFileValue implements ReferenceBinary {
+214,./TargetProjects/jackrabbit/jackrabbit-core/src/main/java/org/apache/jackrabbit/core/value/BLOBInMemory.java,30,,class BLOBInMemory extends BLOBFileValue {
+215,./TargetProjects/jackrabbit/jackrabbit-core/src/main/java/org/apache/jackrabbit/core/value/BLOBInTempFile.java,36,,class BLOBInTempFile extends BLOBFileValue {
+216,./TargetProjects/jackrabbit-oak/oak-blob-plugins/src/main/java/org/apache/jackrabbit/oak/plugins/blob/datastore/InMemoryDataRecord.java,34,,public class InMemoryDataRecord implements DataRecord {
+217,./TargetProjects/jackrabbit-oak/oak-security-spi/src/main/java/org/apache/jackrabbit/oak/spi/security/privilege/PrivilegeBits.java,37,,public final class PrivilegeBits implements PrivilegeConstants {
+218,./TargetProjects/jackrabbit-oak/oak-store-document/src/main/java/org/apache/jackrabbit/oak/plugins/document/ClusterNodeInfo.java,56,,public class ClusterNodeInfo {
+219,./TargetProjects/jena/jena-permissions/src/main/java/org/apache/jena/permissions/Factory.java,30,,public class Factory {
+220,./TargetProjects/jena/jena-permissions/src/main/java/org/apache/jena/permissions/graph/impl/Factory.java,28,,public class Factory {
+221,./TargetProjects/jena/jena-permissions/src/main/java/org/apache/jena/permissions/model/impl/SecuredModelImpl.java,101,,public class SecuredModelImpl extends SecuredItemImpl implements SecuredModel {
+222,./TargetProjects/jmeter/src/core/src/main/java/org/apache/jmeter/gui/util/JSyntaxTextArea.java,50,,public class JSyntaxTextArea extends RSyntaxTextArea {
+223,./TargetProjects/jmeter/src/core/src/main/java/org/apache/jmeter/gui/util/JTextScrollPane.java,28,,public class JTextScrollPane extends RTextScrollPane {
+224,./TargetProjects/jmeter/src/core/src/main/java/org/apache/jmeter/util/keystore/JmeterKeyStore.java,52,,public final class JmeterKeyStore {
+225,./TargetProjects/jspwiki/jspwiki-main/src/main/java/org/apache/wiki/WikiEngine.java,95,,public class WikiEngine implements Engine {
+226,./TargetProjects/juneau/juneau-core/juneau-marshall/src/main/java/org/apache/juneau/ContextProperties.java,193,,public final class ContextProperties {
+227,./TargetProjects/log4j/src/main/java/org/apache/log4j/Category.java,89,,public class Category implements AppenderAttachable {
+228,./TargetProjects/logging-log4j2/log4j-1.2-api/src/main/java/org/apache/log4j/Category.java,46,,public class Category {
+229,./TargetProjects/logging-log4j2/log4j-core/src/main/java/org/apache/logging/log4j/core/time/internal/format/FastDateFormat.java,75,,"public class FastDateFormat extends Format implements DateParser, DatePrinter {"
+230,./TargetProjects/logging-log4j2/log4j-core/src/main/java/org/apache/logging/log4j/core/time/internal/format/FormatCache.java,38,,abstract class FormatCache<F extends Format> {
+231,./TargetProjects/logging-log4j2/log4j-core/src/main/java/org/apache/logging/log4j/core/util/datetime/FastDateFormat.java,33,,"public class FastDateFormat extends Format implements DateParser, DatePrinter {"
+232,./TargetProjects/logging-log4j2/log4j-core/src/test/java/org/apache/logging/log4j/core/time/internal/format/FastDateParserTest.java,49,,public class FastDateParserTest {
+233,./TargetProjects/logging-log4j2/log4j-jcl/src/main/java/org/apache/logging/log4j/jcl/LogFactoryImpl.java,32,,public class LogFactoryImpl extends LogFactory {
+234,./TargetProjects/maven-sandbox/plexus-utils-commons-bridge/plexus-utils-tck/src/test/java/org/codehaus/plexus/util/reflection/ReflectorTestHelper.java,30,,class ReflectorTestHelper
+235,./TargetProjects/maven-sandbox/shared/maven-shared-java-parser/src/main/java/org/apache/maven/shared/parser/java/JavaQNameImpl.java,29,,public class JavaQNameImpl
+236,./TargetProjects/maven-shared/maven-shared-utils/src/test/java/org/apache/maven/shared/utils/reflection/ReflectorTestHelper.java,25,,class ReflectorTestHelper
+237,./TargetProjects/myfaces/impl/src/main/java/org/apache/myfaces/cdi/clientwindow/ClientWindowScopeContextualStorageHolder.java,37,,public class ClientWindowScopeContextualStorageHolder
+238,./TargetProjects/myfaces/impl/src/main/java/org/apache/myfaces/cdi/util/AbstractContextualStorageHolder.java,38,,public abstract class AbstractContextualStorageHolder<T extends ContextualStorage> implements Serializable
+239,./TargetProjects/myfaces/impl/src/main/java/org/apache/myfaces/cdi/view/ViewScopeContextualStorageHolder.java,34,,public class ViewScopeContextualStorageHolder
+240,./TargetProjects/myfaces/impl/src/main/java/org/apache/myfaces/flow/cdi/FlowScopeContextualStorageHolder.java,52,,"public class FlowScopeContextualStorageHolder "
+241,./TargetProjects/myfaces-tobago/tobago-core/src/main/java/org/apache/myfaces/tobago/config/TobagoConfig.java,47,,public class TobagoConfig {
+242,./TargetProjects/myfaces-trinidad/trinidad-api/src/main/java/org/apache/myfaces/trinidad/util/RequestStateMap.java,49,," public class RequestStateMap extends HashMap<String, Object>"
+243,./TargetProjects/netbeans/apisupport/apisupport.project/src/org/netbeans/modules/apisupport/project/api/ManifestManager.java,52,,public final class ManifestManager {
+244,./TargetProjects/netbeans/enterprise/glassfish.tooling/src/org/netbeans/modules/glassfish/tooling/admin/AdminFactory.java,37,,public abstract class AdminFactory {
+245,./TargetProjects/netbeans/enterprise/javaee.specs.support/src/org/netbeans/modules/javaee/specs/support/api/JaxRsStackSupport.java,38,,public final class JaxRsStackSupport {
+246,./TargetProjects/netbeans/enterprise/payara.tooling/src/org/netbeans/modules/payara/tooling/admin/AdminFactory.java,38,,public abstract class AdminFactory {
+247,./TargetProjects/netbeans/enterprise/web.beans/src/org/netbeans/modules/web/beans/hints/EditorAnnotationsHelper.java,60,,public final class EditorAnnotationsHelper implements PropertyChangeListener {
+248,./TargetProjects/netbeans/ide/editor.search/src/org/netbeans/modules/editor/search/SearchBar.java,69,,public final class SearchBar extends JPanel implements PropertyChangeListener {
+249,./TargetProjects/netbeans/ide/xml.retriever/src/org/netbeans/modules/xml/retriever/catalog/impl/CatalogFileWrapperDOMImpl.java,73,,"public class CatalogFileWrapperDOMImpl  implements EntityResolver, CatalogFileWrapper, DocumentListener{"
+250,./TargetProjects/netbeans/php/php.refactoring/src/org/netbeans/modules/refactoring/php/findusages/WhereUsedSupport.java,75,,public final class WhereUsedSupport {
+251,./TargetProjects/netbeans/platform/masterfs/src/org/netbeans/modules/masterfs/filebasedfs/fileobjects/FileObjectFactory.java,59,,public final class FileObjectFactory {
+252,./TargetProjects/netbeans/profiler/profiler.heapwalker/src/org/netbeans/modules/profiler/heapwalk/details/jdk/image/FieldAccessor.java,34,,public class FieldAccessor {
+253,./TargetProjects/ofbiz/applications/accounting/src/main/java/org/apache/ofbiz/accounting/thirdparty/valuelink/ValueLinkApi.java,73,,public class ValueLinkApi {
+254,./TargetProjects/ofbiz/framework/base/src/main/java/org/apache/ofbiz/base/metrics/MetricsFactory.java,44,,public final class MetricsFactory {
+255,./TargetProjects/ofbiz/framework/base/src/main/java/org/apache/ofbiz/base/util/ObjectType.java,43,,public class ObjectType {
+256,./TargetProjects/ofbiz/framework/base/src/main/java/org/apache/ofbiz/base/util/string/FlexibleStringExpander.java,53,,"public abstract class FlexibleStringExpander implements Serializable, IsEmpty {"
+257,./TargetProjects/ofbiz-framework/applications/accounting/src/main/java/org/apache/ofbiz/accounting/thirdparty/valuelink/ValueLinkApi.java,75,,public class ValueLinkApi {
+258,./TargetProjects/ofbiz-framework/framework/base/src/main/java/org/apache/ofbiz/base/metrics/MetricsFactory.java,45,,public final class MetricsFactory {
+259,./TargetProjects/ofbiz-framework/framework/base/src/main/java/org/apache/ofbiz/base/util/string/FlexibleStringExpander.java,54,,"public abstract class FlexibleStringExpander implements Serializable, IsEmpty {"
+260,./TargetProjects/olingo-odata2/odata2-lib/odata-core/src/main/java/org/apache/olingo/odata2/core/exception/MessageService.java,38,,public class MessageService {
+261,./TargetProjects/olingo-odata4/ext/client-proxy/src/main/java/org/apache/olingo/ext/proxy/commons/ComplexInvocationHandler.java,40,,public class ComplexInvocationHandler extends AbstractStructuredInvocationHandler {
+262,./TargetProjects/olingo-odata4/ext/client-proxy/src/main/java/org/apache/olingo/ext/proxy/commons/EntityInvocationHandler.java,54,,public class EntityInvocationHandler extends AbstractStructuredInvocationHandler implements Annotatable {
+263,./TargetProjects/olingo-odata4/ext/client-proxy/src/main/java/org/apache/olingo/ext/proxy/commons/EntitySetInvocationHandler.java,50,,public class EntitySetInvocationHandler<
+264,./TargetProjects/olingo-odata4/ext/client-proxy/src/main/java/org/apache/olingo/ext/proxy/commons/OperationInvocationHandler.java,49,,final class OperationInvocationHandler extends AbstractInvocationHandler {
+265,./TargetProjects/olingo-odata4/lib/server-core-ext/src/main/java/org/apache/olingo/server/core/responses/EntityResponse.java,52,,public class EntityResponse extends ServiceResponse {
+266,./TargetProjects/olingo-odata4/lib/server-core-ext/src/main/java/org/apache/olingo/server/core/responses/PrimitiveValueResponse.java,37,,public class PrimitiveValueResponse extends ServiceResponse {
+267,./TargetProjects/openejb/openejb/container/openejb-core/src/main/java/org/apache/openejb/util/Logger.java,32,,public class Logger {
+268,./TargetProjects/openjpa/openjpa-slice/src/main/java/org/apache/openjpa/slice/jdbc/DistributedJDBCBrokerFactory.java,45,,public class DistributedJDBCBrokerFactory extends JDBCBrokerFactory
+269,./TargetProjects/opennlp-sandbox/opennlp-similarity/src/main/java/opennlp/tools/textsimilarity/chunker2matcher/ParserChunker2MatcherProcessor.java,56,,public class ParserChunker2MatcherProcessor {
+270,./TargetProjects/openwebbeans/webbeans-impl/src/test/java/org/apache/webbeans/test/AbstractUnitTest.java,55,,public abstract class AbstractUnitTest
+271,./TargetProjects/phoenix/phoenix-core/src/main/java/org/apache/phoenix/cache/JodaTimezoneCache.java,32,,public class JodaTimezoneCache {
+272,./TargetProjects/pig/src/org/apache/pig/data/SchemaTupleFactory.java,32,,public class SchemaTupleFactory implements TupleMaker<SchemaTuple<?>> {
+273,./TargetProjects/poi/poi/src/main/java/org/apache/poi/ss/format/CellFormat.java,94,,public class CellFormat {
+274,./TargetProjects/ranger/agents-common/src/main/java/org/apache/ranger/plugin/client/HadoopConfigHolder.java,35,,public class HadoopConfigHolder  {
+275,./TargetProjects/reef/lang/java/reef-tang/tang/src/main/java/org/apache/reef/tang/Injector.java,27,,public interface Injector {
+276,./TargetProjects/reef/lang/java/reef-tang/tang/src/main/java/org/apache/reef/tang/implementation/java/InjectorImpl.java,34,,public class InjectorImpl implements Injector {
+277,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/remote/DefaultRemoteManagerFactory.java,35,,final class DefaultRemoteManagerFactory implements RemoteManagerFactory {
+278,./TargetProjects/reef/lang/java/reef-wake/wake/src/main/java/org/apache/reef/wake/remote/RemoteManagerFactory.java,32,,public interface RemoteManagerFactory {
+279,./TargetProjects/rya/extras/indexing/src/main/java/org/apache/rya/indexing/accumulo/ConfigUtils.java,75,,public class ConfigUtils {
+280,./TargetProjects/santuario-java/src/main/java/org/apache/xml/security/encryption/XMLCipher.java,85,,public class XMLCipher {
+281,./TargetProjects/santuario-xml-security-java/src/main/java/org/apache/xml/security/encryption/XMLCipher.java,85,,public class XMLCipher {
+282,./TargetProjects/servicemix-specs/javamail-api-1.4/src/main/java/javax/mail/Session.java,56,,public final class Session {
+283,./TargetProjects/servicemix4-bundles/xmlsec-1.4.3/src/main/java/org/apache/xml/security/transforms/Transform.java,54,,public final class Transform extends SignatureElementProxy {
+284,./TargetProjects/servicemix4-specs/javamail-api-1.4/src/main/java/javax/mail/Session.java,56,,public final class Session {
+285,./TargetProjects/sis/core/sis-utility/src/main/java/org/apache/sis/math/StatisticsFormat.java,70,,public class StatisticsFormat extends TabularFormat<Statistics> {
+286,./TargetProjects/sis/core/sis-utility/src/main/java/org/apache/sis/measure/AngleFormat.java,130,,public class AngleFormat extends Format implements Localized {
+287,./TargetProjects/storm/storm-client/src/jvm/org/apache/storm/container/cgroup/CgroupCoreFactory.java,29,,public class CgroupCoreFactory {
+288,./TargetProjects/streams/streams-components/streams-converters/src/main/java/org/apache/streams/converter/ActivityConverterUtil.java,64,,public class ActivityConverterUtil {
+289,./TargetProjects/streams/streams-components/streams-converters/src/main/java/org/apache/streams/converter/ActivityObjectConverterUtil.java,62,,public class ActivityObjectConverterUtil {
+290,./TargetProjects/streams/streams-components/streams-converters/src/main/java/org/apache/streams/converter/LineReadWriteUtil.java,44,,public class LineReadWriteUtil {
+291,./TargetProjects/streams/streams-contrib/streams-processor-fullcontact/src/main/java/org/apache/streams/fullcontact/FullContact.java,47,,"public class FullContact implements CompanyEnrichment, PersonEnrichment {"
+292,./TargetProjects/streams/streams-contrib/streams-processor-peopledatalabs/src/main/java/org/apache/streams/peopledatalabs/PeopleDataLabs.java,52,,public class PeopleDataLabs implements PersonEnrichment {
+293,./TargetProjects/streams/streams-contrib/streams-processor-pipl/src/main/java/org/apache/streams/pipl/Pipl.java,44,,public class Pipl implements Search {
+294,./TargetProjects/streams/streams-contrib/streams-processor-thedatagroup/src/main/java/org/apache/streams/thedatagroup/TheDataGroup.java,49,,"public class TheDataGroup implements SyncAppend, SyncLookup {"
+295,./TargetProjects/streams/streams-contrib/streams-provider-sprinklr/src/main/java/org/apache/streams/sprinklr/Sprinklr.java,52,,"public class Sprinklr implements Bootstrap, Profiles {"
+296,./TargetProjects/streams/streams-contrib/streams-provider-twitter/src/main/java/org/apache/streams/twitter/api/Twitter.java,67,,public class Twitter implements
+297,./TargetProjects/streams/streams-pojo-extensions/src/main/java/org/apache/streams/pojo/extensions/ExtensionUtil.java,34,,public class ExtensionUtil {
+298,./TargetProjects/streams/streams-pojo/src/main/java/org/apache/streams/jackson/StreamsJacksonMapper.java,46,,public class StreamsJacksonMapper extends ObjectMapper {
+299,./TargetProjects/streams/streams-util/src/main/java/org/apache/streams/util/PropertyUtil.java,42,,public class PropertyUtil {
+300,./TargetProjects/struts/core/src/main/java/com/opensymphony/xwork2/inject/Container.java,71,,public interface Container extends Serializable {
+301,./TargetProjects/struts/core/src/main/java/com/opensymphony/xwork2/inject/ContainerImpl.java,33,,class ContainerImpl implements Container {
+302,./TargetProjects/struts/core/src/main/java/com/opensymphony/xwork2/mock/MockContainer.java,29,,public class MockContainer implements Container {
+303,./TargetProjects/struts/core/src/main/java/org/apache/struts2/dispatcher/Dispatcher.java,97,,public class Dispatcher {
+304,./TargetProjects/struts/core/src/test/java/com/opensymphony/xwork2/util/fs/DefaultFileManagerFactoryTest.java,79,,class DummyContainer implements Container {
+305,./TargetProjects/struts/core/src/test/java/org/apache/struts2/views/util/DefaultUrlHelperTest.java,438,,"    class StubContainer implements Container {"
+306,./TargetProjects/struts/plugins/convention/src/test/java/org/apache/struts2/convention/PackageBasedActionConfigBuilderTest.java,821,,"    public class DummyContainer implements Container {"
+307,./TargetProjects/struts/plugins/gxp/src/main/java/org/apache/struts2/views/gxp/Gxp.java,34,,public class Gxp extends AbstractGxp<HtmlClosure> {
+308,./TargetProjects/struts/plugins/gxp/src/main/java/org/apache/struts2/views/gxp/GxpInstance.java,37,,public class GxpInstance extends Gxp {
+309,./TargetProjects/struts/plugins/rest/src/test/java/org/apache/struts2/rest/DefaultContentTypeHandlerManagerTest.java,131,,class DummyContainer implements Container {
+310,./TargetProjects/struts-sandbox/ti/phase2/jars/core/src/java/org/apache/ti/pageflow/internal/URIContextFactory.java,29,,public final class URIContextFactory {
+311,./TargetProjects/struts-sandbox/ti/phase2/jars/core/src/java/org/apache/ti/script/ExpressionEvaluatorFactory.java,32,,public class ExpressionEvaluatorFactory {
+312,./TargetProjects/syncope/core/persistence-api/src/main/java/org/apache/syncope/core/persistence/api/entity/AnyUtilsFactory.java,23,,public interface AnyUtilsFactory {
+313,./TargetProjects/syncope/core/persistence-api/src/main/java/org/apache/syncope/core/persistence/api/entity/auth/ClientAppUtilsFactory.java,24,,public interface ClientAppUtilsFactory {
+314,./TargetProjects/syncope/core/persistence-api/src/main/java/org/apache/syncope/core/persistence/api/entity/policy/PolicyUtilsFactory.java,24,,public interface PolicyUtilsFactory {
+315,./TargetProjects/syncope/core/persistence-api/src/main/java/org/apache/syncope/core/persistence/api/entity/task/TaskUtilsFactory.java,24,,public interface TaskUtilsFactory {
+316,./TargetProjects/syncope/core/persistence-jpa/src/main/java/org/apache/syncope/core/persistence/jpa/entity/JPAAnyUtilsFactory.java,34,,public class JPAAnyUtilsFactory implements AnyUtilsFactory {
+317,./TargetProjects/syncope/core/persistence-jpa/src/main/java/org/apache/syncope/core/persistence/jpa/entity/auth/JPAClientAppUtilsFactory.java,35,,public class JPAClientAppUtilsFactory implements ClientAppUtilsFactory {
+318,./TargetProjects/syncope/core/persistence-jpa/src/main/java/org/apache/syncope/core/persistence/jpa/entity/policy/JPAPolicyUtilsFactory.java,43,,public class JPAPolicyUtilsFactory implements PolicyUtilsFactory {
+319,./TargetProjects/syncope/core/persistence-jpa/src/main/java/org/apache/syncope/core/persistence/jpa/entity/task/JPATaskUtilsFactory.java,42,,public class JPATaskUtilsFactory implements TaskUtilsFactory {
+320,./TargetProjects/syncope/core/spring/src/main/java/org/apache/syncope/core/spring/security/Encryptor.java,44,,public final class Encryptor {
+321,./TargetProjects/tajo/tajo-core/src/main/java/org/apache/tajo/webapp/StaticHttpServer.java,30,,public class StaticHttpServer extends HttpServer {
+322,./TargetProjects/tez/tez-common/src/main/java/org/apache/tez/dag/records/TezDAGID.java,43,,public class TezDAGID extends TezID {
+323,./TargetProjects/tomcat/java/jakarta/mail/Session.java,22,,public class Session {
+324,./TargetProjects/tomcat/java/org/apache/juli/logging/LogFactory.java,67,,public class LogFactory {
+325,./TargetProjects/tomcat55/connectors/util/java/org/apache/tomcat/util/net/SSLImplementation.java,28,,abstract public class SSLImplementation {
+326,./TargetProjects/tomcat80/java/javax/mail/Session.java,22,,public class Session {
+327,./TargetProjects/tomcat80/java/org/apache/juli/logging/LogFactory.java,64,,public class LogFactory {
+328,./TargetProjects/tomcat80/java/org/apache/tomcat/util/net/SSLImplementation.java,30,,public abstract class SSLImplementation {
+329,./TargetProjects/tomee/container/openejb-core/src/main/java/org/apache/openejb/util/Logger.java,35,,public class Logger {
+330,./TargetProjects/turbine-fulcrum/factory/src/java/org/apache/fulcrum/factory/DefaultFactoryService.java,51,,public class DefaultFactoryService extends AbstractLogEnabled
+331,./TargetProjects/turbine-fulcrum/factory/src/java/org/apache/fulcrum/factory/Factory.java,34,,public interface Factory<T>
+332,./TargetProjects/turbine-fulcrum/factory/src/java/org/apache/fulcrum/factory/FactoryService.java,32,,public interface FactoryService
+333,./TargetProjects/turbine-fulcrum/pool/src/java/org/apache/fulcrum/pool/DefaultPoolService.java,53,,public class DefaultPoolService extends AbstractLogEnabled
+334,./TargetProjects/turbine-fulcrum/pool/src/java/org/apache/fulcrum/pool/PoolService.java,39,,"public interface PoolService "
+335,./TargetProjects/turbine-fulcrum/yaafi-crypto/src/java/org/apache/fulcrum/jce/crypto/CryptoStreamFactoryImpl.java,52,,public class CryptoStreamFactoryImpl extends CryptoStreamFactoryTemplate implements CryptoStreamFactory
+336,./TargetProjects/turbine-fulcrum/yaafi-crypto/src/java/org/apache/fulcrum/jce/crypto/CryptoUtil.java,42,,public class CryptoUtil {
+337,./TargetProjects/turbine-fulcrum/yaafi-crypto/src/java/org/apache/fulcrum/jce/crypto/PasswordFactory.java,39,,public class PasswordFactory implements PasswordParameters
+338,./TargetProjects/turbine-fulcrum/yaafi-crypto/src/java/org/apache/fulcrum/jce/crypto/extended/CryptoStreamFactoryJ8Template.java,46,,public abstract class CryptoStreamFactoryJ8Template /*  extends CryptoStreamFactoryImpl*/ implements CryptoStreamFactoryJ8
+339,./TargetProjects/turbine-fulcrum/yaafi-crypto/src/java/org/apache/fulcrum/jce/crypto/extended/CryptoUtilJ8.java,40,,public final class CryptoUtilJ8 extends CryptoUtil {
+340,./TargetProjects/tuscany-sca-1/modules/implementation-osgi/src/main/java/org/apache/tuscany/sca/implementation/osgi/runtime/OSGiInstanceWrapper.java,59,,public class OSGiInstanceWrapper<T> implements InstanceWrapper<T> {
+341,./TargetProjects/tuscany-sca-2/modules/extensibility/src/main/java/org/apache/tuscany/sca/extensibility/ServiceDiscovery.java,49,,public final class ServiceDiscovery implements ServiceDiscoverer {
+342,./TargetProjects/tuscany-sdo/sdo-api/src/main/java/commonj/sdo/impl/HelperProvider.java,46,,public abstract class HelperProvider {
+343,./TargetProjects/uima-ducc/uima-ducc-common/src/main/java/org/apache/uima/ducc/common/internationalization/Messages.java,25,,public class Messages {
+344,./TargetProjects/ws-wss4j/ws-security-common/src/main/java/org/apache/wss4j/common/crypto/CryptoFactory.java,34,,public abstract class CryptoFactory {
+345,./TargetProjects/xerces2-j/src/org/apache/xerces/impl/dv/DTDDVFactory.java,33,,public abstract class DTDDVFactory {
+346,./TargetProjects/xerces2-j/src/org/apache/xerces/impl/dv/SchemaDVFactory.java,41,,public abstract class SchemaDVFactory {
+347,./TargetProjects/xmlgraphics-batik/batik-transcoder/src/main/java/org/apache/batik/transcoder/wmf/tosvg/TextureFactory.java,39,,public final class TextureFactory {
+348,./TargetProjects/xmlgraphics-fop/fop-core/src/main/java/org/apache/fop/fo/properties/FixedLength.java,27,,public final class FixedLength extends LengthProperty {
+349,./TargetProjects/xmlgraphics-fop/fop-core/src/main/java/org/apache/fop/fo/properties/NumberProperty.java,36,,public final class NumberProperty extends Property implements Numeric {
+350,./TargetProjects/xmlgraphics-fop/fop-core/src/main/java/org/apache/fop/traits/MinOptMax.java,33,,public final class MinOptMax implements Serializable {
+351,./TargetProjects/zookeeper/zookeeper-server/src/main/java/org/apache/zookeeper/cli/CommandFactory.java,26,,public class CommandFactory {

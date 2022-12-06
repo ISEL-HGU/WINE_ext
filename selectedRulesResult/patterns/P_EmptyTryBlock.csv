@@ -1,0 +1,407 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,try {,"try {
+}
+ catch (Exception e) {
+  logger.warn(""Failed to clean up message: "" + copyRedistribute);
+}
+",0,0,0,62,
+2,try {,"try {
+}
+  finally {
+  System.clearProperty(featureProperty);
+}
+",0,0,0,,
+3,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+4,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+5,{,"try {
+}
+ catch (Exception ex) {
+  log.error(""Can't fix "" + ex.getMessage());
+  throw new IOException(""Can't fix "" + ex.getMessage());
+}
+",0,0,0,,
+6,{,"try {
+}
+ catch (Exception ex) {
+  log.error(""Can't fix "" + ex.getMessage());
+  throw new IOException(""Can't fix "" + ex.getMessage());
+}
+",0,0,0,,
+7,try {,"try {
+}
+  finally {
+  in.close();
+}
+",0,0,0,,
+8,try {,"try {
+}
+ catch (ConstructionException expected) {
+}
+",0,0,0,,
+9,try {,"try {
+}
+  finally {
+  System.clearProperty(featureProperty);
+}
+",0,0,0,,
+10,try {,"try {
+}
+  finally {
+  super.tearDown();
+}
+",0,0,0,,
+11,{,"try {
+}
+ catch (Exception e) {
+  throw new Maven1xIntegrationException(""Error executing Maven 1.x"",e);
+}
+",0,0,0,,
+12,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+13,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+14,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+15,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+16,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+17,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+18,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+19,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+20,try {,"try {
+}
+ catch (final AssertionFailedError afe) {
+  throw new TestFailureException(afe);
+}
+",0,0,0,,
+21,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+22,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+23,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+24,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+25,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+26,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+27,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+28,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+29,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+30,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+31,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+32,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+33,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+34,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+35,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+36,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+37,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+38,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+39,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+40,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+41,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+42,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+43,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+44,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+45,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+46,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+47,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+48,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+49,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+50,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+51,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+52,try {,"try {
+}
+ catch (final Exception e) {
+  fail(""Received Exception "" + e.getClass() + "" : ""+ e.getMessage());
+}
+",0,0,0,,
+53,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+54,try {,"try {
+}
+ catch (final Exception e) {
+  throw e;
+}
+ finally {
+  super.tearDown();
+}
+",0,0,0,,
+55,try {,"try {
+}
+ catch (Exception e) {
+  throw new ServiceRuntimeException(e);
+}
+",0,0,0,,
+56,try {,"try {
+}
+ catch (Exception ex) {
+  ex.printStackTrace();
+}
+",0,0,0,,
+57,try {,"try {
+}
+ catch (Exception e) {
+  e.printStackTrace();
+}
+",0,0,0,,
+58,try {,"try {
+}
+ catch (Throwable e) {
+  logger.log(Level.SEVERE,e.getMessage(),e);
+}
+",0,0,0,,
+59,try {,"try {
+}
+  finally {
+  node.stop();
+}
+",0,0,0,,
+60,try {,"try {
+}
+ catch (Exception exception) {
+  StatusImpl.appendStatus(""Exception caught on node.stopComposite"",""LifecycleTestCase.testConstructorExceptionShutdownCE"");
+}
+",0,0,0,,
+61,try {,"try {
+}
+ catch (Exception exception) {
+  StatusImpl.appendStatus(""Exception caught on node.stopComposite"",""LifecycleTestCase.testInitExceptionShutdownCE"");
+}
+",0,0,0,,
+62,try {,"try {
+}
+ catch (Exception exception) {
+  StatusImpl.appendStatus(""Exception caught on node.stopComposite"",""LifecycleTestCase.testDestroyExceptionShutdownCE"");
+}
+",0,0,0,,

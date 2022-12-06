@@ -1,0 +1,9 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/internal/LocalSubscriptionManager.java,346,,"                        synchronized (((EntityInternal)s.subscriber).getManagementSupport()) {}"
+2,./TargetProjects/brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/rebind/PeriodicDeltaChangeListener.java,515,,"                synchronized (new Object()) {}"
+3,./TargetProjects/cxf/core/src/test/java/org/apache/cxf/workqueue/AutomaticWorkQueueTest.java,101,,"                            synchronized (lock) {"
+4,./TargetProjects/cxf/rt/transports/http-netty/netty-client/src/main/java/org/apache/cxf/transport/http/netty/client/NettyHttpConduit.java,386,,"                    synchronized (entity) {"
+5,./TargetProjects/incubator-brooklyn/brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/rebind/ImmediateDeltaChangeListener.java,130,,"                synchronized (new Object()) {}"
+6,./TargetProjects/incubator-brooklyn/brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/rebind/ImmediateDeltaChangeListener.java,152,,"        synchronized (new Object()) {}"
+7,./TargetProjects/incubator-brooklyn/brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/rebind/PeriodicDeltaChangeListener.java,435,,"                synchronized (new Object()) {}"
+8,./TargetProjects/logging-log4j2/log4j-api/src/test/java/org/apache/logging/log4j/message/ThreadDumpMessageTest.java,137,,"            synchronized (obj) {"

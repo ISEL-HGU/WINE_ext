@@ -1,0 +1,360 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,case 3: {,"case 3:
+",0,0,1,8,"NumberLiteral(SwitchCase-expression, ),
+"
+2,Files.createDirectories(file.toPath());{,"Files.createDirectories(file.toPath());
+",0,0,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+3,{,"switch (LA(1)) {
+case '.':
+{
+    match('.');
+{
+      _loop367:       do {
+        if (((LA(1) >= '0' && LA(1) <= '9'))) {
+          mDIGIT(false);
+        }
+ else {
+          break _loop367;
+        }
+      }
+ while (true);
+    }
+{
+switch (LA(1)) {
+case 'E':
+case 'e':
+{
+{
+{
+switch (LA(1)) {
+case 'e':
+{
+                  match('e');
+                  break;
+                }
+case 'E':
+{
+                match('E');
+                break;
+              }
+default :
+{
+              throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+            }
+        }
+      }
+{
+switch (LA(1)) {
+case '+':
+{
+            match('+');
+            break;
+          }
+case '-':
+{
+          match('-');
+          break;
+        }
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+{
+        break;
+      }
+default :
+{
+      throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+    }
+}
+}
+{
+int _cnt373=0;
+_loop373: do {
+  if (((LA(1) >= '0' && LA(1) <= '9'))) {
+    mDIGIT(false);
+  }
+ else {
+    if (_cnt373 >= 1) {
+      break _loop373;
+    }
+    throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+  }
+  _cnt373++;
+}
+ while (true);
+}
+}
+_ttype=FLOAT;
+break;
+}
+case 'D':
+case 'd':
+{
+{
+switch (LA(1)) {
+case 'd':
+{
+match('d');
+break;
+}
+case 'D':
+{
+match('D');
+break;
+}
+default :
+{
+throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+}
+}
+}
+_ttype=FIXED;
+break;
+}
+default :
+{
+_ttype=FLOAT;
+}
+}
+}
+break;
+}
+case 'E':
+case 'e':
+{
+{
+switch (LA(1)) {
+case 'e':
+{
+match('e');
+break;
+}
+case 'E':
+{
+match('E');
+break;
+}
+default :
+{
+throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+}
+}
+}
+{
+switch (LA(1)) {
+case '+':
+{
+match('+');
+break;
+}
+case '-':
+{
+match('-');
+break;
+}
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+{
+break;
+}
+default :
+{
+throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+}
+}
+}
+{
+int _cnt378=0;
+_loop378: do {
+if (((LA(1) >= '0' && LA(1) <= '9'))) {
+mDIGIT(false);
+}
+ else {
+if (_cnt378 >= 1) {
+break _loop378;
+}
+throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+}
+_cnt378++;
+}
+ while (true);
+}
+_ttype=FLOAT;
+break;
+}
+case 'D':
+case 'd':
+{
+{
+switch (LA(1)) {
+case 'd':
+{
+match('d');
+break;
+}
+case 'D':
+{
+match('D');
+break;
+}
+default :
+{
+throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+}
+}
+}
+_ttype=FIXED;
+break;
+}
+default :
+{
+}
+}
+",0,0,0,,
+4,{,"switch (LA(1)) {
+case 'E':
+case 'e':
+{
+{
+switch (LA(1)) {
+case 'e':
+{
+          match('e');
+          break;
+        }
+case 'E':
+{
+        match('E');
+        break;
+      }
+default :
+{
+      throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+    }
+}
+}
+{
+switch (LA(1)) {
+case '+':
+{
+    match('+');
+    break;
+  }
+case '-':
+{
+  match('-');
+  break;
+}
+case '0':
+case '1':
+case '2':
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+{
+break;
+}
+default :
+{
+throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+}
+}
+}
+{
+int _cnt392=0;
+_loop392: do {
+if (((LA(1) >= '0' && LA(1) <= '9'))) {
+mDIGIT(false);
+}
+ else {
+if (_cnt392 >= 1) {
+break _loop392;
+}
+throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+}
+_cnt392++;
+}
+ while (true);
+}
+break;
+}
+case 'D':
+case 'd':
+{
+{
+switch (LA(1)) {
+case 'd':
+{
+match('d');
+break;
+}
+case 'D':
+{
+match('D');
+break;
+}
+default :
+{
+throw new NoViableAltForCharException(LA(1),getFilename(),getLine(),getColumn());
+}
+}
+}
+_ttype=FIXED;
+break;
+}
+default :
+{
+}
+}
+",0,0,0,,
+5,{,"switch (currChar) {
+case 'y':
+  if (!inQuotes) {
+    if (firstYIndex < 0)     firstYIndex=currCharIndex;
+    yCount++;
+  }
+break;
+case '\'':
+if (inQuotes) {
+int nextCharIndex=currCharIndex + 1;
+if ((nextCharIndex < patternLen) && ('\'' == formatPattern.charAt(nextCharIndex))) {
+  currCharIndex++;
+}
+ else {
+  inQuotes=false;
+}
+}
+ else {
+inQuotes=true;
+}
+default :
+{
+}
+}
+",0,0,0,,
+6,case SPACE: {,"case SPACE:
+",2,2,1,,"SimpleName(SwitchCase-expression, ),
+"

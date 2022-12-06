@@ -1,0 +1,1219 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,return new SimpleDateFormat(field.getDateFormat()).parse(value);,"return new SimpleDateFormat(field.getDateFormat()).parse(value);
+",0,75,5,3169,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+2,final String facebookDate = new SimpleDateFormat(FacebookConstants.FACEBOOK_DATE_FORMAT).format(new Date());,"final String facebookDate=new SimpleDateFormat(FacebookConstants.FACEBOOK_DATE_FORMAT).format(new Date());
+",0,63,7,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+3,private static ThreadLocal<DateFormat> formatter = ThreadLocal.withInitial(() -> new SimpleDateFormat(DATE_FORMAT));,"private static ThreadLocal<DateFormat> formatter=ThreadLocal.withInitial(() -> new SimpleDateFormat(DATE_FORMAT));
+",0,47,9,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, ParameterizedType-type, FieldDeclaration-type, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, LambdaExpression-body, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, LambdaExpression-body, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+4,"String uid = new SimpleDateFormat(""yyyyMMdd.HHmmss.SSS"").format(Calendar.getInstance().getTime())","String uid=new SimpleDateFormat(""yyyyMMdd.HHmmss.SSS"").format(Calendar.getInstance().getTime()) + ""-"" + String.format(""%03d"",(int)(Math.random() * 999));
+",0,3,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+5,"DateFormat df = new SimpleDateFormat(""yyyy-MM-dd-HH:"" + ""mm:ss"");","DateFormat df=new SimpleDateFormat(""yyyy-MM-dd-HH:"" + ""mm:ss"");
+",0,2,5,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-leftOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-rightOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+6,"this.name = new SimpleDateFormat(""yyyyMMdd_HHmmss.SSS"").format(new Date());","this.name=new SimpleDateFormat(""yyyyMMdd_HHmmss.SSS"").format(new Date());
+",0,9,6,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+7,"File log = new File(new File(LOGS_PATH), new SimpleDateFormat(""yyyy-MM-dd_HH-mm-ss-"").format(new Date()) +","File log=new File(new File(LOGS_PATH),new SimpleDateFormat(""yyyy-MM-dd_HH-mm-ss-"").format(new Date()) + ManagementFactory.getRuntimeMXBean().getName() + "".log"");
+",0,5,9,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-leftOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-leftOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+8,dateFormat = new SimpleDateFormat(mgmt.getConfig().getConfig(LOGBOOK_LOG_STORE_DATEFORMAT));,"dateFormat=new SimpleDateFormat(mgmt.getConfig().getConfig(LOGBOOK_LOG_STORE_DATEFORMAT));
+",0,15,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+9,expiration = new SimpleDateFormat(AWS_EXPIRATION_DATE_FORMAT).parse(node.path(EXPIRATION).asText());,"expiration=new SimpleDateFormat(AWS_EXPIRATION_DATE_FORMAT).parse(node.path(EXPIRATION).asText());
+",0,10,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+10,"final Date reviewed = new SimpleDateFormat(""yyyy-MM-dd"").parse(""2012-01-05"");","final Date reviewed=new SimpleDateFormat(""yyyy-MM-dd"").parse(""2012-01-05"");
+",0,2,7,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+11,"final String target = ""Hallo\r\n-- [[Hanno]], "" + (new SimpleDateFormat(format)).format(cal.getTime());","final String target=""Hallo\r\n-- [[Hanno]], "" + (new SimpleDateFormat(format)).format(cal.getTime());
+",0,66,9,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+12,"String since = ""RAW("" + new SimpleDateFormat(FacebookConstants.FACEBOOK_DATE_FORMAT).format(","String since=""RAW("" + new SimpleDateFormat(FacebookConstants.FACEBOOK_DATE_FORMAT).format(new Date(System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(30,TimeUnit.DAYS))) + "")"";
+",0,0,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+13,Instant expectedTimestamp = new SimpleDateFormat(format).parse(timestamp).toInstant();,"Instant expectedTimestamp=new SimpleDateFormat(format).parse(timestamp).toInstant();
+",0,1,7,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+14,"this.date = new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").parse(""1969-07-24 16:50:35"");","this.date=new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").parse(""1969-07-24 16:50:35"");
+",0,3,6,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+15,return (new SimpleDateFormat(pattern)).format(date);,"return (new SimpleDateFormat(pattern)).format(date);
+",0,0,4,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ParenthesizedExpression-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ParenthesizedExpression-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+16,this.defaultFormatter = new SimpleDateFormat(this.defaultFormat);,"this.defaultFormatter=new SimpleDateFormat(this.defaultFormat);
+",0,25,5,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+ThisExpression(FieldAccess-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+17,"final String target = ""Hallo\r\n-- [[Hanno]], "" + (new SimpleDateFormat(""dd/MM/yyyy"")).format(cal.getTime());","final String target=""Hallo\r\n-- [[Hanno]], "" + (new SimpleDateFormat(""dd/MM/yyyy"")).format(cal.getTime());
+",0,1,9,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, ParenthesizedExpression-expression, MethodInvocation-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+18,dtParsed = new SimpleDateFormat(DateAnnotator.DATE_FORMAT).parse(sParsed);,"dtParsed=new SimpleDateFormat(DateAnnotator.DATE_FORMAT).parse(sParsed);
+",0,2,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+19,return format != null ? format : new SimpleDateFormat(pattern);,"return format != null ? format : new SimpleDateFormat(pattern);
+",0,0,5,,"SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+20,return new SimpleDateFormat(dfProperty == null ? DEFAULT_DATE_FORMAT : dfProperty);,"return new SimpleDateFormat(dfProperty == null ? DEFAULT_DATE_FORMAT : dfProperty);
+",0,0,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+21,"date = timestampFromString(new SimpleDateFormat(TIMESTAMP_NO_TIMEZONE), value);","date=timestampFromString(new SimpleDateFormat(TIMESTAMP_NO_TIMEZONE),value);
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+22,"ret = String.format(format, (new SimpleDateFormat(""ddMMyy-hhmmss.SSS"").format(new Date())));","ret=String.format(format,(new SimpleDateFormat(""ddMMyy-hhmmss.SSS"").format(new Date())));
+",0,2,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ParenthesizedExpression-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ParenthesizedExpression-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ParenthesizedExpression-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+23,"assertEquals(new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").parse(""2011-12-11 12:24:12""), (Date) result);","assertEquals(new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").parse(""2011-12-11 12:24:12""),(Date)result);
+",0,0,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+24,"System.out.println(new SimpleDateFormat(""[yyyy-MM-dd HH:mm:ss]"").format(new Date()) + "" Dubbo service server started!"");","System.out.println(new SimpleDateFormat(""[yyyy-MM-dd HH:mm:ss]"").format(new Date()) + "" Dubbo service server started!"");
+",0,2,7,,"QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+25,"buf.append(""\r\nmodified:"" + (new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"")","buf.append(""\r\nmodified:"" + (new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").format(new Date(file.lastModified()))));
+",0,0,5,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ParenthesizedExpression-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+26,"System.out.println(""["" + new SimpleDateFormat(""HH:mm:ss"").format(new Date()) + ""] Hello "" + name + "", request from consumer: "" + RpcContext.getContext().getRemoteAddress());","System.out.println(""["" + new SimpleDateFormat(""HH:mm:ss"").format(new Date()) + ""] Hello ""+ name+ "", request from consumer: ""+ RpcContext.getContext().getRemoteAddress());
+",0,35,13,,"QualifiedName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+27,"return ""Changed: "" + new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").format(new Date());","return ""Changed: "" + new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").format(new Date());
+",0,2,5,,"StringLiteral(InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+28,process.out().println(new SimpleDateFormat(toJavaDateFormat(output)).format(input));,"process.out().println(new SimpleDateFormat(toJavaDateFormat(output)).format(input));
+",0,2,8,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+29,"DateFormat format = new SimpleDateFormat(member.get(""dateFormat"").getAsString());","DateFormat format=new SimpleDateFormat(member.get(""dateFormat"").getAsString());
+",0,0,7,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+30,: new SimpleDateFormat(StringUtils.hasText(dateFormatPattern) ? dateFormatPattern,"return (dateTime == null ? null : new SimpleDateFormat(StringUtils.hasText(dateFormatPattern) ? dateFormatPattern : DEFAULT_BIRTH_DATE_FORMAT_PATTERN).format(dateTime));
+",0,0,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+SimpleName(ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+"
+31,"String filename = ""uddi-tck-results-"" + new SimpleDateFormat(""yyyyMMddhhmm"").format(new Date()) + "".txt"";","String filename=""uddi-tck-results-"" + new SimpleDateFormat(""yyyyMMddhhmm"").format(new Date()) + "".txt"";
+",0,1,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-extendedOperands, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+32,"+ new SimpleDateFormat(""yyyy-MM-dd_HH-mm-ss"").format(new java.util.Date()) + "".log"";","String mergeLog=dirName + File.separator + ""merge_""+ new SimpleDateFormat(""yyyy-MM-dd_HH-mm-ss"").format(new java.util.Date())+ "".log"";
+",0,0,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+QualifiedName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ),
+StringLiteral(),
+"
+33,"date = new SimpleDateFormat(""dd/MM/yyyy"").parse(userReservationBean.getReservationDate());","date=new SimpleDateFormat(""dd/MM/yyyy"").parse(userReservationBean.getReservationDate());
+",0,0,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+34,"ms = new SimpleDateFormat(""yyyy-MM-dd'T'HH:mm:ss.SS"").parse(val).getTime();","ms=new SimpleDateFormat(""yyyy-MM-dd'T'HH:mm:ss.SS"").parse(val).getTime();
+",0,1,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+35,long timeInMs = new SimpleDateFormat(format).parse(value).getTime();,"long timeInMs=new SimpleDateFormat(format).parse(value).getTime();
+",0,0,7,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+36,evalString(new SimpleDateFormat(format).format(new Date(epoch * 1000)));,"evalString(new SimpleDateFormat(format).format(new Date(epoch * 1000)));
+",0,2,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+37,"taDeadline.setValue(new SimpleDateFormat(""yyyy-MM-dd"").format(new Date(System.currentTimeMillis() + (24*60*60*1000))));","taDeadline.setValue(new SimpleDateFormat(""yyyy-MM-dd"").format(new Date(System.currentTimeMillis() + (24 * 60 * 60* 1000))));
+",0,1,12,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-extendedOperands, ParenthesizedExpression-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-extendedOperands, ParenthesizedExpression-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+38,"assertEquals(new java.sql.Date(new SimpleDateFormat(""yyyy-MM-dd"").parse(""2016-12-02"").getTime()), res.sqlDateCol);","assertEquals(new java.sql.Date(new SimpleDateFormat(""yyyy-MM-dd"").parse(""2016-12-02"").getTime()),res.sqlDateCol);
+",0,2,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+39,final SimpleDateFormat inputFormat = new SimpleDateFormat(this.watermarkFormat);,"final SimpleDateFormat inputFormat=new SimpleDateFormat(this.watermarkFormat);
+",0,0,6,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+ThisExpression(FieldAccess-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(FieldAccess-name, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+40,"return profileService.loadSession(sessionId, dateHint != null ? new SimpleDateFormat(""yyyy-MM"").parse(dateHint) : null);","return profileService.loadSession(sessionId,dateHint != null ? new SimpleDateFormat(""yyyy-MM"").parse(dateHint) : null);
+",0,1,10,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ConditionalExpression-thenExpression, MethodInvocation-arguments, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ConditionalExpression-thenExpression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-thenExpression, MethodInvocation-arguments, ReturnStatement-expression, ),
+NullLiteral(ConditionalExpression-elseExpression, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+41,"String timestamp = (new SimpleDateFormat(""yyyyMMddHHmmss"").format(new java.util.Date()));","String timestamp=(new SimpleDateFormat(""yyyyMMddHHmmss"").format(new java.util.Date()));
+",0,0,6,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ParenthesizedExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ParenthesizedExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ParenthesizedExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+42,private final String timePartitionValue = new SimpleDateFormat(timePartitionFormat).format(new Date(fieldValue1));,"private final String timePartitionValue=new SimpleDateFormat(timePartitionFormat).format(new Date(fieldValue1));
+",0,1,9,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+43,time = new SimpleDateFormat(RFC_2822).parse(elements.get(0).text()),"time=new SimpleDateFormat(RFC_2822).parse(elements.get(0).text()).getTime();
+",0,0,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+44,new SimpleDateFormat(RFC_2822).parse(elements.get(1).text()).getTime();,"time=new SimpleDateFormat(RFC_2822).parse(elements.get(1).text()).getTime();
+",0,0,8,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+"
+45,"return new SimpleDateFormat(""yyyy-MM-dd"").format((Date)input);","return new SimpleDateFormat(""yyyy-MM-dd"").format((Date)input);
+",0,0,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+46,"String year = new SimpleDateFormat( ""yyyy"" ).format( ( outputDate == null ) ? new Date() : outputDate );","String year=new SimpleDateFormat(""yyyy"").format((outputDate == null) ? new Date() : outputDate);
+",0,1,9,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-thenExpression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ConditionalExpression-elseExpression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+47,((DateFieldDefinition) fielddecl).setDateFormat(new SimpleDateFormat(,"((DateFieldDefinition)fielddecl).setDateFormat(new SimpleDateFormat(dateformat_field));
+",0,0,4,,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+48,new File(filename + new SimpleDateFormat(pattern).format(new Date()));,"File firstFile=new File(filename + new SimpleDateFormat(pattern).format(new Date()));
+",0,0,6,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ),
+SimpleName(InfixExpression-leftOperand, ClassInstanceCreation-arguments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ClassInstanceCreation-arguments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-rightOperand, ClassInstanceCreation-arguments, ),
+"
+49,File block1 = new File(filename + new SimpleDateFormat(pattern).format(start));,"File block1=new File(filename + new SimpleDateFormat(pattern).format(start));
+",0,3,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+50,"props.setProperty( key, new SimpleDateFormat( ""yyyy-MM-dd HH:mm:ss"" ).format( (Date) value ) );","props.setProperty(key,new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").format((Date)value));
+",0,0,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+51,softRef = new SoftReference<SimpleDateFormat>( new SimpleDateFormat( dateFormat ) );,"softRef=new SoftReference<SimpleDateFormat>(new SimpleDateFormat(dateFormat));
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+52,"getIfNewer( new SimpleDateFormat( ""yyyy-MM-dd"" ).parse( ""2006-01-01"" ).getTime(), true, expectedSize );","getIfNewer(new SimpleDateFormat(""yyyy-MM-dd"").parse(""2006-01-01"").getTime(),true,expectedSize);
+",0,1,8,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+53,"timeFormat = new SimpleDateFormat(TimeAxisUtils.getFormatString(1, 1, 1));","timeFormat=new SimpleDateFormat(TimeAxisUtils.getFormatString(1,1,1));
+",0,1,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+54,this(new SimpleDateFormat(datePattern));,"this(new SimpleDateFormat(datePattern));
+",0,0,2,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ConstructorInvocation-arguments, ),
+SimpleName(ClassInstanceCreation-arguments, ConstructorInvocation-arguments, ),
+"
+55,format = new SimpleDateFormat(BulkLoadOptions.AS_OF_TIME_FORMAT.get(cli));,"format=new SimpleDateFormat(BulkLoadOptions.AS_OF_TIME_FORMAT.get(cli));
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+56,"private static String index = SENSOR_NAME + ""_index_"" + new SimpleDateFormat(dateFormat).format(new Date());","private static String index=SENSOR_NAME + ""_index_"" + new SimpleDateFormat(dateFormat).format(new Date());
+",0,0,10,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+StringLiteral(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-extendedOperands, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-extendedOperands, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-extendedOperands, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+57,"return SENSOR_NAME + ""_index_"" + new SimpleDateFormat(dateFormat).format(new Date());","return SENSOR_NAME + ""_index_"" + new SimpleDateFormat(dateFormat).format(new Date());
+",0,0,6,,"SimpleName(InfixExpression-leftOperand, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+"
+58,"private String index = ""yaf_index_"" + new SimpleDateFormat(dateFormat).format(new Date());","private String index=""yaf_index_"" + new SimpleDateFormat(dateFormat).format(new Date());
+",0,0,8,,"Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+StringLiteral(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-rightOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+59,"SimpleDateFormat sdf = locale != null ? new SimpleDateFormat(pattern, locale) : new SimpleDateFormat(pattern);","SimpleDateFormat sdf=locale != null ? new SimpleDateFormat(pattern,locale) : new SimpleDateFormat(pattern);
+",0,0,9,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+60,"assertEquals(new SimpleDateFormat(""yyyy-MM-dd"").format(new Date(System.currentTimeMillis() + (24*60*60*1000))), ta.getValue());","assertEquals(new SimpleDateFormat(""yyyy-MM-dd"").format(new Date(System.currentTimeMillis() + (24 * 60 * 60* 1000))),ta.getValue());
+",0,0,13,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-extendedOperands, ParenthesizedExpression-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(InfixExpression-extendedOperands, ParenthesizedExpression-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+61,this(new SimpleDateFormat (TimestampType.DEFAULT_FORMAT_PATTERN));,"this(new SimpleDateFormat(TimestampType.DEFAULT_FORMAT_PATTERN));
+",0,0,2,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ConstructorInvocation-arguments, ),
+QualifiedName(ClassInstanceCreation-arguments, ConstructorInvocation-arguments, ),
+"
+62,this.dateFormat = dateFormat != null ? dateFormat : new SimpleDateFormat (TimestampType.DEFAULT_FORMAT_PATTERN);,"this.dateFormat=dateFormat != null ? dateFormat : new SimpleDateFormat(TimestampType.DEFAULT_FORMAT_PATTERN);
+",0,1,7,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+63,"startTime = startTimeProp != null ? new SimpleDateFormat(""yyyy-MM-dd'T'HH:mm:ss.SSSZ"").parse(startTimeProp) : null;","startTime=startTimeProp != null ? new SimpleDateFormat(""yyyy-MM-dd'T'HH:mm:ss.SSSZ"").parse(startTimeProp) : null;
+",0,0,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+64,DateFormat df = new SimpleDateFormat(QueryCassandra.TIMESTAMP_FORMAT_PATTERN.getDefaultValue());,"DateFormat df=new SimpleDateFormat(QueryCassandra.TIMESTAMP_FORMAT_PATTERN.getDefaultValue());
+",0,0,5,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(MethodInvocation-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+65,"final String stringValue = DataTypeUtils.toString(coercedValue, () -> new SimpleDateFormat(dateFormat));","final String stringValue=DataTypeUtils.toString(coercedValue,() -> new SimpleDateFormat(dateFormat));
+",0,0,8,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, LambdaExpression-body, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, LambdaExpression-body, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+66,"long epoch = new SimpleDateFormat(""EEE, d MMM yyyy HH:mm:ss z"").parse(ifNullString(metadata.get(Metadata.LAST_MODIFIED))).getTime();","long epoch=new SimpleDateFormat(""EEE, d MMM yyyy HH:mm:ss z"").parse(ifNullString(metadata.get(Metadata.LAST_MODIFIED))).getTime();
+",0,0,10,,"PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+67,SimpleDateFormat format = new SimpleDateFormat(config,"SimpleDateFormat format=new SimpleDateFormat(config.getFormatProperties().getProperty(keyString).trim());
+",0,0,4,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+68,return new SimpleDateFormat(this.conf.getPgeSpecificGroups().get(,"return new SimpleDateFormat(this.conf.getPgeSpecificGroups().get(PRODUCTION_DATE_TIME_GROUP).getScalar(DATETIME_SCALAR).getValue());
+",0,0,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(FieldAccess-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+69,"String id = new SimpleDateFormat(""HH:mm:ss"").format(Calendar.getInstance().getTime())+"" "";","String id=new SimpleDateFormat(""HH:mm:ss"").format(Calendar.getInstance().getTime()) + "" "";
+",0,0,9,,"SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+StringLiteral(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+70,"return getDate(k, new SimpleDateFormat(format), defaultValue);","return getDate(k,new SimpleDateFormat(format),defaultValue);
+",0,0,5,,"SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+71,"this.callTime = new SimpleDateFormat(""HH:mm:ss"").format(now);","this.callTime=new SimpleDateFormat(""HH:mm:ss"").format(now);
+",0,0,6,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+72,cal.setTime(new SimpleDateFormat(dateFormats.get(type)).parse(value));,"cal.setTime(new SimpleDateFormat(dateFormats.get(type)).parse(value));
+",0,0,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+73,df = new SimpleDateFormat(dfmt.toPattern() + MILLISECOND_FORMAT);,"df=new SimpleDateFormat(dfmt.toPattern() + MILLISECOND_FORMAT);
+",0,0,5,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+74,DateFormat formatter = (json != null) && (json.format().length() > 0) ? new SimpleDateFormat(json,"DateFormat formatter=(json != null) && (json.format().length() > 0) ? new SimpleDateFormat(json.format()) : this.formatter;
+",0,0,10,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+75,"assertEquals(new SimpleDateFormat(SyncopeConstants.DEFAULT_DATE_PATTERN).format(date),","assertEquals(new SimpleDateFormat(SyncopeConstants.DEFAULT_DATE_PATTERN).format(date),FormatUtils.format(date));
+",0,0,5,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+76,value = new SimpleDateFormat(getDateFormat(dateString)).parse(dateString).getTime();,"value=new SimpleDateFormat(getDateFormat(dateString)).parse(dateString).getTime();
+",0,0,7,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+77,"return name.substring(0, name.length() - "".jar"".length()) + ""tomee-monkey-"" + new SimpleDateFormat(""yyyyMMdd"").format(new Date()) + "".jar"";","return name.substring(0,name.length() - "".jar"".length()) + ""tomee-monkey-"" + new SimpleDateFormat(""yyyyMMdd"").format(new Date())+ "".jar"";
+",0,0,13,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+StringLiteral(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, ReturnStatement-expression, ),
+"
+78,"new SimpleDateFormat(""long"".equals(format)?""EEE 'the' d:MMM:yyyy"":""d:MM:yy"")","String formatted=new SimpleDateFormat(""long"".equals(format) ? ""EEE 'the' d:MMM:yyyy"" : ""d:MM:yy"").format(new Date());
+",0,0,6,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ),
+StringLiteral(MethodInvocation-expression, ConditionalExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+StringLiteral(ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+StringLiteral(ConditionalExpression-elseExpression, ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+"
+79,"DateFormat dateFormat = new SimpleDateFormat(ISO_8601_DATE_PATTERN + ""Z"");","DateFormat dateFormat=new SimpleDateFormat(ISO_8601_DATE_PATTERN + ""Z"");
+",0,0,5,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(InfixExpression-rightOperand, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+80,"return ""replication-dump-"" + Identifiers.makeRandomId(8) + ""-"" + new SimpleDateFormat(""yyyy-MM-dd--HH-mm-ss"").format(new Date());","return ""replication-dump-"" + Identifiers.makeRandomId(8) + ""-""+ new SimpleDateFormat(""yyyy-MM-dd--HH-mm-ss"").format(new Date());
+",1,57,9,,"StringLiteral(InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+"
+81,"logger.info(""["" + new SimpleDateFormat(""HH:mm:ss"").format(new Date()) + ""] Hello "" + name + "", request from consumer: "" + RpcContext","logger.info(""["" + new SimpleDateFormat(""HH:mm:ss"").format(new Date()) + ""] Hello ""+ name+ "", request from consumer: ""+ RpcContext.getContext().getRemoteAddress());
+",1,68,11,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+82,"dateOfBirth = (dob == null || """".equals(dob)) ? null : new SimpleDateFormat(""yyyy-MM-dd"").parse(dob);","dateOfBirth=(dob == null || """".equals(dob)) ? null : new SimpleDateFormat(""yyyy-MM-dd"").parse(dob);
+",1,100,11,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+83,super.setInternalDateFormat(new SimpleDateFormat(dateFormat));,"super.setInternalDateFormat(new SimpleDateFormat(dateFormat));
+",1,1,3,,"SimpleName(SuperMethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, SuperMethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, SuperMethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+84,"message = new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss,SSS"").format(timeStamp) + ""\t"" + operatorName + ""\t""","message=new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss,SSS"").format(timeStamp) + ""\t"" + operatorName+ ""\t""+ this.getElapsedTime()+ ""\t""+ this.getElapsedTimeSecs()+ ""\t""+ this.getElapsedTimeStamp()+ ""\t""+ this.getElapsedTimeStampSecs()+ ""\n"";
+",1,1,8,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+85,"final Date date = new SimpleDateFormat(""yyyyMMdd"").parse(this.date);","final Date date=new SimpleDateFormat(""yyyyMMdd"").parse(this.date);
+",1,24,8,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+ThisExpression(FieldAccess-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(FieldAccess-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+86,"return prefix + ""-"" + new SimpleDateFormat(""yyyyMMdd-HHmmss"").format(new Date()) + ""-"" + Identifiers.makeRandomId(randomSuffixLength);","return prefix + ""-"" + new SimpleDateFormat(""yyyyMMdd-HHmmss"").format(new Date())+ ""-""+ Identifiers.makeRandomId(randomSuffixLength);
+",1,1,10,,"SimpleName(InfixExpression-leftOperand, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+"
+87,protected DateFormat dateFormat = new SimpleDateFormat(getDateFormat());,"protected DateFormat dateFormat=new SimpleDateFormat(getDateFormat());
+",1,1,5,,"Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+88,"assertRows(execute(""SELECT k, timestampval FROM %s WHERE k = ?"", 0), row(0, new SimpleDateFormat(""y-M-d"").parse(""2014-01-01"")));","assertRows(execute(""SELECT k, timestampval FROM %s WHERE k = ?"",0),row(0,new SimpleDateFormat(""y-M-d"").parse(""2014-01-01"")));
+",1,8,10,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+89,"format2.setFormat(0, new SimpleDateFormat(date.toPattern()));","format2.setFormat(0,new SimpleDateFormat(date.toPattern()));
+",1,10,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+90,calendar.setTime(new SimpleDateFormat(format).parse((String) value));,"calendar.setTime(new SimpleDateFormat(format).parse((String)value));
+",1,10,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+91,return new SimpleDateFormat(format).parse((String) value);,"return new SimpleDateFormat(format).parse((String)value);
+",1,1,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+92,"final SimpleDateFormat format = new SimpleDateFormat(options.get(""date-format"", ""HH:mm:ss""));","final SimpleDateFormat format=new SimpleDateFormat(options.get(""date-format"",""HH:mm:ss""));
+",1,2,8,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+93,return (dateTime != null ? new SimpleDateFormat(formatPattern).format(dateTime) : null);,"return (dateTime != null ? new SimpleDateFormat(formatPattern).format(dateTime) : null);
+",1,1,7,,"SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-thenExpression, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+NullLiteral(ConditionalExpression-elseExpression, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+"
+94,SimpleDateFormat format = (start == 0 && end == 0) ? null : new SimpleDateFormat(ACCESS_LOG_DATE_FORMAT);,"SimpleDateFormat format=(start == 0 && end == 0) ? null : new SimpleDateFormat(ACCESS_LOG_DATE_FORMAT);
+",1,1,9,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+95,"this.dateFormat = new SimpleDateFormat(portletPreferences.getValue(""datePattern"", null));","this.dateFormat=new SimpleDateFormat(portletPreferences.getValue(""datePattern"",null));
+",1,2,7,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+96,"receivedTime.set(Calendar.HOUR_OF_DAY, Integer.parseInt(new SimpleDateFormat(""HH"").format(outputDate)));","receivedTime.set(Calendar.HOUR_OF_DAY,Integer.parseInt(new SimpleDateFormat(""HH"").format(outputDate)));
+",1,1,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+97,return DatumFactory.createInt8(new SimpleDateFormat(dateFormat),"return DatumFactory.createInt8(new SimpleDateFormat(dateFormat).parse(params.get(0).asChars()).getTime());
+",1,1,4,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+98,"io.write( ""=\"""" + new SimpleDateFormat( DATE_FORMAT ).format( group.getCreated() ) + ""\"" "" );","io.write(""=\"""" + new SimpleDateFormat(DATE_FORMAT).format(group.getCreated()) + ""\"" "");
+",1,1,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+99,bufEntry.setDate( new Date( ms + new SimpleDateFormat( currentPattern ).parse( bufData ).getTime() ) );,"bufEntry.setDate(new Date(ms + new SimpleDateFormat(currentPattern).parse(bufData).getTime()));
+",1,1,9,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+100,DateTimePickerCellEditor dateEditor = new DateTimePickerCellEditor(new SimpleDateFormat (DateType.DEFAULT_FOMAT_PATTERN));,"DateTimePickerCellEditor dateEditor=new DateTimePickerCellEditor(new SimpleDateFormat(DateType.DEFAULT_FOMAT_PATTERN));
+",1,1,5,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+101,final DateFormat df = dateFormat == null ? null : new SimpleDateFormat(dateFormat);,"final DateFormat df=dateFormat == null ? null : new SimpleDateFormat(dateFormat);
+",1,1,8,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NullLiteral(ConditionalExpression-thenExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-elseExpression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+102,"setDisplayTextContent((new SimpleDateFormat(formatStr)).format(date.getTime()), null);","setDisplayTextContent((new SimpleDateFormat(formatStr)).format(date.getTime()),null);
+",1,2,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+103,"columnConverters.add(new DateConverter(new SimpleDateFormat(""yyyyMMdd""), new SimpleDateFormat(""yyyy-MM-dd"")));","columnConverters.add(new DateConverter(new SimpleDateFormat(""yyyyMMdd""),new SimpleDateFormat(""yyyy-MM-dd"")));
+",1,1,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+104,"assertEquals(new SimpleDateFormat(""yyyy"").parse(""2011""), validator.getMin());","assertEquals(new SimpleDateFormat(""yyyy"").parse(""2011""),validator.getMin());
+",1,1,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+105,"return new SimpleDateFormat(""yyyy"").parse(""2011"");","return new SimpleDateFormat(""yyyy"").parse(""2011"");
+",1,1,4,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+106,"""|"" + new SimpleDateFormat(""d MMM yyyy"").format(Date.from(LocalDateTime.parse(d.date, RFC_1123_DATE_TIME).toInstant(ZoneOffset.UTC))) +","System.out.println("""" + ""|"" + d.mirrorUrl + ""[icon:download[] ""+ d.name.replace(""Apache "","""")+ "" ""+ d.format.toUpperCase()+ ""] ""+ ""|""+ d.version+ ""|""+ new SimpleDateFormat(""d MMM yyyy"").format(Date.from(LocalDateTime.parse(d.date,RFC_1123_DATE_TIME).toInstant(ZoneOffset.UTC)))+ ""|""+ d.size+ "" MB ""+ ""|""+ d.asc+ ""[icon:download[] PGP] ""+ hash);
+",1,1,12,,"StringLiteral(),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-arguments, MethodInvocation-arguments, ),
+"
+107,"SimpleDateFormat outFormat = new SimpleDateFormat(strip(yearSymbols + monthSymbols, pattern));","SimpleDateFormat outFormat=new SimpleDateFormat(strip(yearSymbols + monthSymbols,pattern));
+",1,1,7,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(InfixExpression-rightOperand, MethodInvocation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+108,dfs[i] = new SimpleDateFormat(formats[i]);,"dfs[i]=new SimpleDateFormat(formats[i]);
+",2,95,5,,"SimpleName(ArrayAccess-array, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-index, ClassInstanceCreation-arguments, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+109,return new SimpleDateFormat(ModelUtils.STANDARD_DATE_FORMAT).parse(value);,"return new SimpleDateFormat(ModelUtils.STANDARD_DATE_FORMAT).parse(value);
+",2,5,4,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+110,protected final static FormatStringValue DATETIME_TO_STRING = new FormatStringValue(new SimpleDateFormat (TimestampType.DEFAULT_FORMAT_PATTERN));,"protected final static FormatStringValue DATETIME_TO_STRING=new FormatStringValue(new SimpleDateFormat(TimestampType.DEFAULT_FORMAT_PATTERN));
+",2,8,8,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+QualifiedName(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"
+111,"assertEquals(new SimpleDateFormat(""yyyy-MM-dd"").format((java.sql.Date) result), ""2011-12-11"");","assertEquals(new SimpleDateFormat(""yyyy-MM-dd"").format((java.sql.Date)result),""2011-12-11"");
+",2,2,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(SimpleType-name, CastExpression-type, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+112,"DateFormat dateFormat = new SimpleDateFormat(dateStringFormat.substring(0, dateString.length()));","DateFormat dateFormat=new SimpleDateFormat(dateStringFormat.substring(0,dateString.length()));
+",2,4,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+NumberLiteral(MethodInvocation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+113,"final long time = new SimpleDateFormat(""yyyyMMdd"").parse(""20210513"").getTime();","final long time=new SimpleDateFormat(""yyyyMMdd"").parse(""20210513"").getTime();
+",2,13,8,,"Modifier(VariableDeclarationStatement-modifiers, ),
+PrimitiveType(VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+114,"return new SchemaAndValue(Time.SCHEMA, new SimpleDateFormat(ISO_8601_TIME_FORMAT_PATTERN).parse(token));","return new SchemaAndValue(Time.SCHEMA,new SimpleDateFormat(ISO_8601_TIME_FORMAT_PATTERN).parse(token));
+",2,2,6,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+115,"(new SimpleDateFormat(""yyyyMMddHHmmsszzz"")).format(new Date());","String timeStr=(new SimpleDateFormat(""yyyyMMddHHmmsszzz"")).format(new Date());
+",2,2,4,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ParenthesizedExpression-expression, MethodInvocation-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, ParenthesizedExpression-expression, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ),
+"
+116,return new SimpleDateFormat(DATE_FORMAT_STAMP).format(new Date(date));,"return new SimpleDateFormat(DATE_FORMAT_STAMP).format(new Date(date));
+",3,9,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+117,"assertEquals(dateTimeStr, new SimpleDateFormat(dateFormat[0]).format(date));","assertEquals(dateTimeStr,new SimpleDateFormat(dateFormat[0]).format(date));
+",3,3,7,,"SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(ArrayAccess-array, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+NumberLiteral(ArrayAccess-index, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+118,"+ (new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss.SSS"").format(new Date(start))) + "", end time: ""","return (sent > 0 ? ""Waiting server-side response timeout"" : ""Sending request timeout in client-side"") + (scan ? "" by scan timer"" : """") + "". start time: ""+ (new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss.SSS"").format(new Date(start)))+ "", end time: ""+ (new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss.SSS"").format(new Date(nowTimestamp)))+ "",""+ (sent > 0 ? "" client elapsed: "" + (sent - start) + "" ms, server elapsed: ""+ (nowTimestamp - sent) : "" elapsed: "" + (nowTimestamp - start))+ "" ms, timeout: ""+ timeout+ "" ms, request: ""+ (logger.isDebugEnabled() ? request : getRequestWithoutData())+ "", channel: ""+ channel.getLocalAddress()+ "" -> ""+ channel.getRemoteAddress();
+",3,5,6,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ParenthesizedExpression-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ParenthesizedExpression-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ParenthesizedExpression-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ParenthesizedExpression-expression, ),
+StringLiteral(),
+"
+119,"LOGGER.info(""Current time is "" + new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").format(currentTime.toDate()));","LOGGER.info(""Current time is "" + new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").format(currentTime.toDate()));
+",3,3,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+120,"return new Time(new SimpleDateFormat(""HH:mm"").parse(value).getTime());","return new Time(new SimpleDateFormat(""HH:mm"").parse(value).getTime());
+",3,4,6,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+121,"return new SimpleDateFormat(""hh,mm,a,z"").format(now.getTime());","return new SimpleDateFormat(""hh,mm,a,z"").format(now.getTime());
+",3,3,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+122,return new SimpleDateFormat(RFC_2822).parse(elements.get(1).text()).getTime();,"return new SimpleDateFormat(RFC_2822).parse(elements.get(1).text()).getTime();
+",3,7,8,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+"
+123,"String timeStamp = new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").format(Calendar.getInstance().getTime());","String timeStamp=new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").format(Calendar.getInstance().getTime());
+",3,3,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+124,"final String REGION_NAME = new SimpleDateFormat(""yyyy-MM-dd-HH-mm-ss"").format(new Date());","final String REGION_NAME=new SimpleDateFormat(""yyyy-MM-dd-HH-mm-ss"").format(new Date());
+",4,247,7,,"Modifier(VariableDeclarationStatement-modifiers, ),
+SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+125,"status.append("" Finished: "").append(new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").format(exResult.getFinishedAt()) + "" after ""","status.append("" Finished: "").append(new SimpleDateFormat(""yyyy-MM-dd HH:mm:ss"").format(exResult.getFinishedAt()) + "" after "" + msHumanReadable(exResult.getElapsedTimeInMs()));
+",4,6,10,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-leftOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+126,SimpleDateFormat  sdt = new SimpleDateFormat(timeFormats[i]);,"SimpleDateFormat sdt=new SimpleDateFormat(timeFormats[i]);
+",4,4,5,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ArrayAccess-array, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(ArrayAccess-index, ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+127,"return new SimpleDateFormat(""yyyyMMdd'T'HHmmssZ"").format(new Date(ts));","return new SimpleDateFormat(""yyyyMMdd'T'HHmmssZ"").format(new Date(ts));
+",4,4,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+128,"String expected = new SimpleDateFormat(""yyyyMMdd"").format(new Date(file.lastModified()));","String expected=new SimpleDateFormat(""yyyyMMdd"").format(new Date(file.lastModified()));
+",5,1345,8,,"SimpleName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+129,"ThreadLocal.withInitial(() -> new SimpleDateFormat(""yyyy-MM-dd'T'HH:mm:ss.SSS""));","private static final ThreadLocal<DateFormat> DATE_FORMAT=ThreadLocal.withInitial(() -> new SimpleDateFormat(""yyyy-MM-dd'T'HH:mm:ss.SSS""));
+",5,5,4,,"SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, LambdaExpression-body, MethodInvocation-arguments, ),
+StringLiteral(ClassInstanceCreation-arguments, LambdaExpression-body, MethodInvocation-arguments, ),
+"
+130,this.dateFormat = useTimestamp ? new SimpleDateFormat(messageFormat) : null;,"this.dateFormat=useTimestamp ? new SimpleDateFormat(messageFormat) : null;
+",5,5,6,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+131,".append(new SimpleDateFormat(""yyyyMMddHHmm"").format(record.getDateValue())).append(System.getProperty(""line.separator""));","builder.append(record.getStringValue()).append(';').append(record.getLongValue()).append(';').append(record.getEnumValue().getCode()).append(';').append(new SimpleDateFormat(""yyyyMMddHHmm"").format(record.getDateValue())).append(System.getProperty(""line.separator""));
+",5,5,10,,"SimpleName(),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ),
+SimpleName(),
+SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+StringLiteral(MethodInvocation-arguments, ),
+"
+132,"return new RegionsAtTime(time, regions, new SimpleDateFormat(InvalidListPruningDebugTool.DATE_FORMAT));","return new RegionsAtTime(time,regions,new SimpleDateFormat(InvalidListPruningDebugTool.DATE_FORMAT));
+",5,5,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+133,renderer.setDateFormatter(new SimpleDateFormat(Constants.ISO8601_PATTERN));,"renderer.setDateFormatter(new SimpleDateFormat(Constants.ISO8601_PATTERN));
+",7,7,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+134,java.util.Date expected = new SimpleDateFormat(Values.ISO_8601_TIMESTAMP_FORMAT_PATTERN).parse(str);,"java.util.Date expected=new SimpleDateFormat(Values.ISO_8601_TIMESTAMP_FORMAT_PATTERN).parse(str);
+",12,12,6,,"QualifiedName(SimpleType-name, VariableDeclarationStatement-type, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationStatement-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+QualifiedName(ClassInstanceCreation-arguments, MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+SimpleName(MethodInvocation-arguments, VariableDeclarationFragment-initializer, VariableDeclarationStatement-fragments, ),
+"
+135,"one.setHireDate(new SimpleDateFormat(""MMddyyyy"").parse(""10012009""));","one.setHireDate(new SimpleDateFormat(""MMddyyyy"").parse(""10012009""));
+",18,19,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+136,"public final static SimpleDateFormat dateFormat = new SimpleDateFormat(""yyyy-MM-dd'T'HH:mm:ss'Z'Z"");","public final static SimpleDateFormat dateFormat=new SimpleDateFormat(""yyyy-MM-dd'T'HH:mm:ss'Z'Z"");
+",154,419,7,,"Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+Modifier(FieldDeclaration-modifiers, ),
+SimpleName(SimpleType-name, FieldDeclaration-type, ),
+SimpleName(VariableDeclarationFragment-name, FieldDeclaration-fragments, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+StringLiteral(ClassInstanceCreation-arguments, VariableDeclarationFragment-initializer, FieldDeclaration-fragments, ),
+"

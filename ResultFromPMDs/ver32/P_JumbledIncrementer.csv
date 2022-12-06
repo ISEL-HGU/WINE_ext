@@ -1,0 +1,508 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,for (j = 0; j < children.getLength() && localType == null; j++) {,"for (j=0; j < children.getLength() && localType == null; j++) {
+  if (isXSDNode(children.item(j),""simpleType"")) {
+    localType=children.item(j);
+  }
+}
+",0,37,8,327,"SimpleName(Assignment-leftHandSide, ForStatement-initializers, ),
+NumberLiteral(Assignment-rightHandSide, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+2,for (int i = 0; i < POST_DATA.length / (128 * 1024); i++) {,"for (int i=0; i < POST_DATA.length / (128 * 1024); i++) {
+  os.write(POST_DATA,0,1024 * 128);
+  Thread.sleep(10);
+}
+",0,10,8,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+QualifiedName(InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+3,for (int i = 0; i < getReceivedExchanges().size(); i++) {,"for (int i=0; i < getReceivedExchanges().size(); i++) {
+  assertOnIndex(i);
+}
+",0,0,7,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+4,for (i++; i < cmds.length; i++) {,"for (i++; i < cmds.length; i++) {
+  answers[i]=new Answer(cmds[i],false,""Stopped by previous failure"");
+}
+",0,0,4,,"SimpleName(PostfixExpression-operand, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+5,"for (int i = 0, eventsSize = events.size(); i < eventsSize; i++) {","for (int i=0, eventsSize=events.size(); i < eventsSize; i++) {
+  event.index=events.getInt(i);
+  eventBatches.add(emitter.emitAndReturnBatch(event));
+  if (i % 16 == 0) {
+    try {
+      Thread.sleep(10);
+    }
+ catch (    InterruptedException e) {
+      throw new RuntimeException(e);
+    }
+  }
+}
+",0,2,9,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(MethodInvocation-expression, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(MethodInvocation-name, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+6,"for (int k = 64; i < this.numFields && k > 0; --k, i++, currMask >>>= 1) {","for (int k=64; i < this.numFields && k > 0; --k, i++, currMask>>>=1) {
+  if ((currMask & 0x1) != 0) {
+    internallySetField(i,null);
+  }
+}
+",0,4,12,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+ThisExpression(FieldAccess-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PrefixExpression-operand, ForStatement-updaters, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+SimpleName(Assignment-leftHandSide, ForStatement-updaters, ),
+NumberLiteral(Assignment-rightHandSide, ForStatement-updaters, ),
+"
+7,"for (int i = 0; i < 8 && field < numFields; i++, field++) {","for (int i=0; i < 8 && field < numFields; i++, field++) {
+  if ((mask & 0x1) == 0x1) {
+    if (lastNonNullField >= 0) {
+      int start=data[pos--] & 0xff;
+      if (start >= MAX_BIT) {
+        int shift=7;
+        int curr;
+        start=start & 0x7f;
+        while ((curr=data[pos--] & 0xff) >= MAX_BIT) {
+          start|=(curr & 0x7f) << shift;
+          shift+=7;
+        }
+        start|=curr << shift;
+      }
+      this.offsets[field]=start + begin;
+      this.lengths[lastNonNullField]=start + begin - this.offsets[lastNonNullField];
+    }
+ else {
+      this.offsets[field]=begin;
+    }
+    lastNonNullField=field;
+  }
+ else {
+    this.offsets[field]=NULL_INDICATOR_OFFSET;
+  }
+  mask>>=1;
+}
+",0,0,9,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+8,for (int i = (offset * calls); i < calls; i++) {,"for (int i=(offset * calls); i < calls; i++) {
+  trr.includeTimestamp(i);
+}
+",0,1,7,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+9,for(; i < files.length && files[i].isPaused(); i++);,"for (; i < files.length && files[i].isPaused(); i++) ;
+",0,0,7,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+EmptyStatement(ForStatement-body, ),
+"
+10,for (int i = 0; !done.get() && i < 1000000; i++) {,"for (int i=0; !done.get() && i < 1000000; i++) {
+  editLog.logEdit(getSetOwnerOp(cache,""g""));
+  if (i % 2048 == 0) {
+    LOG.info(""thread["" + ii + ""] edits=""+ i);
+  }
+}
+",0,0,8,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+11,for (int i = base + calls; i >= base; i--) {,"for (int i=base + calls; i >= base; i--) {
+  trr.includeTimestamp(i);
+}
+",0,0,7,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+12,for (int key = keys + 1000; i < keys + 1010; i++) {,"for (int key=keys + 1000; i < keys + 1010; i++) {
+  assertNull(cache.localPeek(key));
+  assertNull(cache.get(key));
+}
+",0,0,8,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+13,for (int j = 0; i < bucketThresholds[i].length; i++) {,"for (int j=0; i < bucketThresholds[i].length; i++) {
+  if (Math.abs(mdl.getBucketThresholds()[i][j] - bucketThresholds[i][j]) > PRECISION)   return false;
+}
+",0,0,8,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-array, FieldAccess-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-index, FieldAccess-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(FieldAccess-name, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+14,"for (; i < lines.size() && lines.get(i).trim().endsWith(""\\"") ; i++) ;","for (; i < lines.size() && lines.get(i).trim().endsWith(""\\""); i++) ;
+",0,0,11,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ForStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+EmptyStatement(ForStatement-body, ),
+"
+15,for (; i + 1 < splitStrings.length,"for (; i + 1 < splitStrings.length && curLine.length() + splitStrings[i + 1].length() <= (endIndex - startIndex); i++) {
+  curLine.append(splitStrings[i + 1]).append("" "");
+}
+",0,0,3,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+"
+16,for (int i = 0; i < max / ((evenOnly ? 2 : 1) * numThreads); i++) {,"for (int i=0; i < max / ((evenOnly ? 2 : 1) * numThreads); i++) {
+  int j=i * numThreads + threadid;
+  if (evenOnly) {
+    j*=2;
+  }
+  out.onNext(new TupleEvent(j,j + """"));
+}
+",0,0,10,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(ConditionalExpression-expression, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(ConditionalExpression-thenExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(ConditionalExpression-elseExpression, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+17,for( ; j<aix[apos+j2]; j++ ),"for (; j < aix[apos + j2]; j++) out.writeDouble(0);
+",0,0,5,,"SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ArrayAccess-index, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ArrayAccess-index, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+18,"for (int j = i - 1; j >= 0; i--, j--) {","for (int j=i - 1; j >= 0; i--, j--) {
+  final Step previousStep=steps.get(j);
+  if (legalCurrentStep(previousStep)) {
+    connectiveTraversal.addStep(0,previousStep);
+    traversal.removeStep(previousStep);
+  }
+ else   break;
+}
+",0,0,8,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(InfixExpression-rightOperand, VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+19,for (j = group1.length-1; j >= 0; j--) {,"for (j=group1.length - 1; j >= 0; j--) {
+  dSubMethod=(short)(dMethod | group1[j].dMethod);
+  bSubMethod=(short)(bMethod | group1[j].bMethod);
+  if ((dSubMethod & bSubMethod) != 0)   continue;
+  newGroup.addElement(new OneSubGroup(group1[j].sub,dSubMethod,bSubMethod));
+}
+",0,0,6,,"SimpleName(Assignment-leftHandSide, ForStatement-initializers, ),
+QualifiedName(InfixExpression-leftOperand, Assignment-rightHandSide, ForStatement-initializers, ),
+NumberLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+20,for (sameCount = 1; i < len && current[i] == seed; i++) {,"for (sameCount=1; i < len && current[i] == seed; i++) {
+  sameCount++;
+}
+",0,0,8,,"SimpleName(Assignment-leftHandSide, ForStatement-initializers, ),
+NumberLiteral(Assignment-rightHandSide, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+21,for (sameCount = 0; i < len && current[i] == seed[i]; i++) {,"for (sameCount=0; i < len && current[i] == seed[i]; i++) {
+  sameCount++;
+}
+",1,2,9,,"SimpleName(Assignment-leftHandSide, ForStatement-initializers, ),
+NumberLiteral(Assignment-rightHandSide, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-array, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+22,for (i = i + 1; i < args.length && args[i].charAt(0) != '-'; i++) {,"for (i=i + 1; i < args.length && args[i].charAt(0) != '-'; i++) {
+  includeList.add(WaveId.deserialise(args[i]));
+}
+",1,6,11,,"SimpleName(Assignment-leftHandSide, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, Assignment-rightHandSide, ForStatement-initializers, ),
+NumberLiteral(InfixExpression-rightOperand, Assignment-rightHandSide, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+23,for (int k = 3; (i <= hi) && (--k >= 0); i++) {,"for (int k=3; (i <= hi) && (--k >= 0); i++) {
+  final int v=fmap[i];
+  final int vd=v + d;
+  int j=i;
+  boolean onceRun=false;
+  int a=0;
+  HAMMER:   while (true) {
+    if (onceRun) {
+      fmap[j]=a;
+      if ((j-=h) <= mj) {
+        break;
+      }
+    }
+ else {
+      onceRun=true;
+    }
+    a=fmap[j - h];
+    int i1=a + d;
+    int i2=vd;
+    if (block[i1 + 1] == block[i2 + 1]) {
+      if (block[i1 + 2] == block[i2 + 2]) {
+        if (block[i1 + 3] == block[i2 + 3]) {
+          if (block[i1 + 4] == block[i2 + 4]) {
+            if (block[i1 + 5] == block[i2 + 5]) {
+              if (block[(i1+=6)] == block[(i2+=6)]) {
+                int x=lastShadow;
+                while (x > 0) {
+                  x-=4;
+                  if (block[i1 + 1] == block[i2 + 1]) {
+                    if (quadrant[i1] == quadrant[i2]) {
+                      if (block[i1 + 2] == block[i2 + 2]) {
+                        if (quadrant[i1 + 1] == quadrant[i2 + 1]) {
+                          if (block[i1 + 3] == block[i2 + 3]) {
+                            if (quadrant[i1 + 2] == quadrant[i2 + 2]) {
+                              if (block[i1 + 4] == block[i2 + 4]) {
+                                if (quadrant[i1 + 3] == quadrant[i2 + 3]) {
+                                  if ((i1+=4) >= lastPlus1) {
+                                    i1-=lastPlus1;
+                                  }
+                                  if ((i2+=4) >= lastPlus1) {
+                                    i2-=lastPlus1;
+                                  }
+                                  workDoneShadow++;
+                                }
+ else                                 if ((quadrant[i1 + 3] > quadrant[i2 + 3])) {
+                                  continue HAMMER;
+                                }
+ else {
+                                  break HAMMER;
+                                }
+                              }
+ else                               if ((block[i1 + 4] & 0xff) > (block[i2 + 4] & 0xff)) {
+                                continue HAMMER;
+                              }
+ else {
+                                break HAMMER;
+                              }
+                            }
+ else                             if ((quadrant[i1 + 2] > quadrant[i2 + 2])) {
+                              continue HAMMER;
+                            }
+ else {
+                              break HAMMER;
+                            }
+                          }
+ else                           if ((block[i1 + 3] & 0xff) > (block[i2 + 3] & 0xff)) {
+                            continue HAMMER;
+                          }
+ else {
+                            break HAMMER;
+                          }
+                        }
+ else                         if ((quadrant[i1 + 1] > quadrant[i2 + 1])) {
+                          continue HAMMER;
+                        }
+ else {
+                          break HAMMER;
+                        }
+                      }
+ else                       if ((block[i1 + 2] & 0xff) > (block[i2 + 2] & 0xff)) {
+                        continue HAMMER;
+                      }
+ else {
+                        break HAMMER;
+                      }
+                    }
+ else                     if ((quadrant[i1] > quadrant[i2])) {
+                      continue HAMMER;
+                    }
+ else {
+                      break HAMMER;
+                    }
+                  }
+ else                   if ((block[i1 + 1] & 0xff) > (block[i2 + 1] & 0xff)) {
+                    continue HAMMER;
+                  }
+ else {
+                    break HAMMER;
+                  }
+                }
+                break;
+              }
+ else               if ((block[i1] & 0xff) <= (block[i2] & 0xff)) {
+                break;
+              }
+            }
+ else             if ((block[i1 + 5] & 0xff) <= (block[i2 + 5] & 0xff)) {
+              break;
+            }
+          }
+ else           if ((block[i1 + 4] & 0xff) <= (block[i2 + 4] & 0xff)) {
+            break;
+          }
+        }
+ else         if ((block[i1 + 3] & 0xff) <= (block[i2 + 3] & 0xff)) {
+          break;
+        }
+      }
+ else       if ((block[i1 + 2] & 0xff) <= (block[i2 + 2] & 0xff)) {
+        break;
+      }
+    }
+ else     if ((block[i1 + 1] & 0xff) <= (block[i2 + 1] & 0xff)) {
+      break;
+    }
+  }
+  fmap[j]=v;
+}
+",3,83,8,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+24,"for (i++; (i < nChars) && ((c = pat.charAt(i)) != '\""'); i++);","for (i++; (i < nChars) && ((c=pat.charAt(i)) != '\""'); i++) ;
+",3,4,10,,"SimpleName(PostfixExpression-operand, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(Assignment-leftHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-arguments, Assignment-rightHandSide, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+EmptyStatement(ForStatement-body, ),
+"
+25,for(; (i < stringLength) && io.hasMore(8); i++) {,"for (; (i < stringLength) && io.hasMore(8); i++) {
+  io.readByte();
+}
+",3,3,6,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ForStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+26,"for (int tupleCounter = 0; tupleCounter < BLAST_SIZE && total < DATABASE_SIZE; tupleCounter++, total++) {","for (int tupleCounter=0; tupleCounter < BLAST_SIZE && total < DATABASE_SIZE; tupleCounter++, total++) {
+  fsRolling.input.process(""2014-12-1"" + tupleCounter);
+}
+",6,121,9,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"
+27,"for (int lastNameIndex = 0; lastNameIndex < LAST_NAMES.size(); lastNameIndex++, multiplier++) {","for (int lastNameIndex=0; lastNameIndex < LAST_NAMES.size(); lastNameIndex++, multiplier++) {
+  final String lastName=LAST_NAMES.get(lastNameIndex);
+  for (int index=1; index <= dataCount; index++) {
+    final int num=index * multiplier;
+    if (currentBatchSize == 0) {
+      final TupleMetadata inputSchema=buildInputSchema(minorType,dataMode);
+      inputRowSetBuilder=new RowSetBuilder(operatorFixture.allocator(),inputSchema);
+    }
+    inputRowSetBuilder.addRow(firstName,lastName,num);
+    currentBatchSize++;
+    if (currentBatchSize == maxBatchSize) {
+      final RowSet rowSet=inputRowSetBuilder.build();
+      inputRowSets.add(rowSet);
+      currentBatchSize=0;
+    }
+  }
+}
+",9,10,8,,"PrimitiveType(VariableDeclarationExpression-type, ForStatement-initializers, ),
+SimpleName(VariableDeclarationFragment-name, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+NumberLiteral(VariableDeclarationFragment-initializer, VariableDeclarationExpression-fragments, ForStatement-initializers, ),
+SimpleName(InfixExpression-leftOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ForStatement-expression, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+SimpleName(PostfixExpression-operand, ForStatement-updaters, ),
+"

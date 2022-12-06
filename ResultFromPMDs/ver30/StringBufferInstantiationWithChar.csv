@@ -1,0 +1,12 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/attic-stratos/components/org.apache.stratos.cloud.controller/src/main/java/org/apache/stratos/cloud/controller/domain/FloatingNetwork.java,71,,"        StringBuilder sb = new StringBuilder('{');"
+2,./TargetProjects/attic-stratos/components/org.apache.stratos.cloud.controller/src/main/java/org/apache/stratos/cloud/controller/domain/NetworkInterface.java,100,,"        StringBuilder sb = new StringBuilder('{');"
+3,./TargetProjects/attic-stratos/components/org.apache.stratos.common/src/main/java/org/apache/stratos/common/beans/cartridge/FloatingNetworkBean.java,56,,"        StringBuilder sb = new StringBuilder('{');"
+4,./TargetProjects/attic-stratos/components/org.apache.stratos.common/src/main/java/org/apache/stratos/common/beans/cartridge/NetworkInterfaceBean.java,80,,"        StringBuilder sb = new StringBuilder('{');"
+5,./TargetProjects/marmotta/libraries/ldpath/ldpath-core/src/test/java/org/apache/marmotta/ldpath/parser/StringTestingBackend.java,72,,"        StringBuilder sb = new StringBuilder('""');"
+6,./TargetProjects/netbeans/enterprise/web.monitor/src/org/netbeans/modules/web/monitor/client/TransactionNode.java,244,,"	    StringBuilder buf = new StringBuilder('['); //NOI18N"
+7,./TargetProjects/netbeans/ide/git/src/org/netbeans/modules/git/ui/commit/CommitAction.java,354,,"            StringBuilder sb = new StringBuilder('\n');"
+8,./TargetProjects/netbeans/ide/libs.git/src/org/netbeans/libs/git/jgit/commands/IgnoreUnignoreCommand.java,107,,"        StringBuilder sb = new StringBuilder('/');"
+9,./TargetProjects/tuscany-sca-1/modules/binding-jsonrpc-runtime/src/main/java/org/apache/tuscany/sca/binding/jsonrpc/provider/JSONRPCServiceServlet.java,388,,"            StringBuffer sb = new StringBuffer('0');"
+10,./TargetProjects/tuscany-sca-2/modules/common-http/src/main/java/org/apache/tuscany/sca/common/http/HTTPUtils.java,101,,"            StringBuffer sb = new StringBuffer('0');"
+11,./TargetProjects/velocity-tools/velocity-tools-generic/src/main/java/org/apache/velocity/tools/XmlUtils.java,465,,"        StringBuffer buffer = new StringBuffer('/');"

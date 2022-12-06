@@ -1,0 +1,42 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,if (lbVal.equals(Double.NaN) || lbVal == null),"if (lbVal.equals(Double.NaN) || lbVal == null) throw new UndefinedLabelException(row);
+ else if (lbVal instanceof String) strVal=(String)lbVal;
+ else if (lbVal instanceof Double) strVal=String.valueOf(lbVal);
+ else throw new RuntimeException(""The type "" + lbVal.getClass() + "" is not supported for the feature values."");
+",0,0,5,6,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, IfStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+2,return ((uriInfo.getQueryParameters().isEmpty() && body.getQueryString() == null) || body == null) ?,"return ((uriInfo.getQueryParameters().isEmpty() && body.getQueryString() == null) || body == null) ? new PostRequest(headers,body,uriInfo,resource) : new QueryPostRequest(headers,body,uriInfo,resource);
+",0,0,8,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+"
+3,|| value.equals (Constants.NS_DTD))) || value == null) {,"if ((value instanceof String && (value.equals(Constants.NS_XMLSCHEMA) || value.equals(Constants.NS_DTD))) || value == null) {
+  return true;
+}
+",0,0,5,,"SimpleName(MethodInvocation-expression, ),
+SimpleName(MethodInvocation-name, ),
+QualifiedName(MethodInvocation-arguments, ),
+SimpleName(InfixExpression-leftOperand, ),
+NullLiteral(InfixExpression-rightOperand, ),
+"
+4,if ((!useDefaults || !fg.equals(getDefaultColor())) && fg != null) {,"if ((!useDefaults || !fg.equals(getDefaultColor())) && fg != null) {
+  sb.append(ST_COLOR);
+  sb.append(getHtmlColor(fg));
+  first=false;
+}
+",2,2,6,,"SimpleName(PrefixExpression-operand, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, PrefixExpression-operand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, IfStatement-expression, ),
+"

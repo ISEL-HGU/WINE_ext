@@ -1,0 +1,208 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,} catch (final IllegalAccessException | InvocationTargetException | ClassNotFoundException | NoSuchMethodException e) {,"try {
+  Thread.currentThread().getContextClassLoader().loadClass(""org.apache.openejb.client.EjbObjectInputStream"").getMethod(""reloadResolverConfig"").invoke(null);
+}
+ catch (final IllegalAccessException|InvocationTargetException|ClassNotFoundException|NoSuchMethodException e) {
+}
+",0,4,6,17550,"Modifier(SingleVariableDeclaration-modifiers, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+"
+2,catch (java.io.IOException e1) { },"try {
+  curChar=input_stream.readChar();
+  continue;
+}
+ catch (java.io.IOException e1) {
+}
+",0,0,3,,"QualifiedName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+Block(CatchClause-body, ),
+"
+3,} catch (final RuntimeException | NoSuchMethodException | IllegalAccessException |,"try {
+  final Method method=obj.getClass().getMethod(""iterator"",(Class[])null);
+  if (Iterator.class.isAssignableFrom(method.getReturnType())) {
+    final Iterator<?> it=(Iterator<?>)method.invoke(obj,(Object[])null);
+    if (it != null) {
+      return it;
+    }
+  }
+}
+ catch (final RuntimeException|NoSuchMethodException|IllegalAccessException|InvocationTargetException e) {
+}
+",0,0,4,,"Modifier(SingleVariableDeclaration-modifiers, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+"
+4,try { answerString = answer.toString(); } catch(Exception ex) {},"try {
+  answerString=answer.toString();
+}
+ catch (Exception ex) {
+}
+",0,0,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-expression, Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+5,} catch (VerifyException ve) {} catch (PlanningException e) {,"try {
+  evalNode=exprAnnotator.createEvalNode(plan,block,namedExpr.getExpr());
+  if (LogicalPlanner.checkIfBeEvaluatedAtJoin(block,evalNode,joinNode,stack.peek().getType() != OpType.Join)) {
+    block.namedExprsMgr.markAsEvaluated(namedExpr.getAlias(),evalNode);
+    newlyEvaluatedExprs.add(namedExpr.getAlias());
+  }
+}
+ catch (VerifyException ve) {
+}
+catch (PlanningException e) {
+  e.printStackTrace();
+}
+",0,0,5,,"SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+Block(CatchClause-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+"
+6,} catch (final NullPointerException | IllegalArgumentException ex) {},"try {
+  getMap().put(null,values[0]);
+  fail(""put(null, value) should throw NPE/IAE"");
+}
+ catch (final NullPointerException|IllegalArgumentException ex) {
+}
+",1,16556,5,,"Modifier(SingleVariableDeclaration-modifiers, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+Block(CatchClause-body, ),
+"
+7,try { props.getConfig(aMisstyped); workedWhenShouldntHave = true; } catch (Exception e) {},"try {
+  props.getConfig(aMisstyped);
+  workedWhenShouldntHave=true;
+}
+ catch (Exception e) {
+}
+",1,114,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+BooleanLiteral(Assignment-rightHandSide, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+8,} catch (ClassNotFoundException | LinkageError | InstantiationException | IllegalAccessException e) {,"try {
+  Class<?> dcc=ClassUtils.forName(""org.eclipse.jetty.util.DecoratedObjectFactory"",getClass().getClassLoader());
+  handler.getServletContext().setAttribute(""org.eclipse.jetty.util.DecoratedObjectFactory"",dcc.newInstance());
+}
+ catch (ClassNotFoundException|LinkageError|InstantiationException|IllegalAccessException e) {
+}
+",1,1,5,,"SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+"
+9,if (outO!=null) try { outO.flush(); } catch (IOException e) {},"if (outO != null) try {
+  outO.flush();
+}
+ catch (IOException e) {
+}
+",1,1,7,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, IfStatement-thenStatement, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, IfStatement-thenStatement, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, IfStatement-thenStatement, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, IfStatement-thenStatement, ),
+Block(CatchClause-body, TryStatement-catchClauses, IfStatement-thenStatement, ),
+"
+10,catch (Exception e) {};,";
+",2,2,1,,"EmptyStatement(),
+"
+11,try { Thread.sleep(3100); } catch(Exception e) {},"try {
+  Thread.sleep(3100);
+}
+ catch (Exception e) {
+}
+",2,2,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+NumberLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+12,} catch (javax.jms.TransactionInProgressException | javax.jms.IllegalStateException ex) {,"try {
+  session.commit();
+}
+ catch (javax.jms.TransactionInProgressException|javax.jms.IllegalStateException ex) {
+}
+",3,364,3,,"QualifiedName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+QualifiedName(SimpleType-name, UnionType-types, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+"
+13,try { Streams.readFully(connection.getInputStream()); } catch (Exception e) {},"try {
+  Streams.readFully(connection.getInputStream());
+}
+ catch (Exception e) {
+}
+",3,3,7,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+14,try { if (rset != null) rset.close(); } catch(Exception e) { },"try {
+  if (rset != null)   rset.close();
+}
+ catch (Exception e) {
+}
+",8,8,7,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, Block-statements, TryStatement-body, ),
+NullLiteral(InfixExpression-rightOperand, IfStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, IfStatement-thenStatement, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, IfStatement-thenStatement, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+15,try { connection.getInputStream().close(); } catch (Exception e) {},"try {
+  connection.getInputStream().close();
+}
+ catch (Exception e) {
+}
+",11,11,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+16,"try { x1.remove(""x""); Assert.fail(); } catch (Exception e) {  }","try {
+  x1.remove(""x"");
+  Assert.fail();
+}
+ catch (Exception e) {
+}
+",11,13,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-expression, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, Block-statements, TryStatement-body, ),
+SimpleName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, TryStatement-catchClauses, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, TryStatement-catchClauses, ),
+Block(CatchClause-body, TryStatement-catchClauses, ),
+"
+17,} catch (final java.util.NoSuchElementException nse) {,"try {
+  ze.removeExtraField(ExtraFieldUtilsTest.UNRECOGNIZED_HEADER);
+  fail(""should be no such element"");
+}
+ catch (final java.util.NoSuchElementException nse) {
+}
+",32,32,3,,"Modifier(SingleVariableDeclaration-modifiers, CatchClause-exception, ),
+QualifiedName(SimpleType-name, SingleVariableDeclaration-type, CatchClause-exception, ),
+SimpleName(SingleVariableDeclaration-name, CatchClause-exception, ),
+"

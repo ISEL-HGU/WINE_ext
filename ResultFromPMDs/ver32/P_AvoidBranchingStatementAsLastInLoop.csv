@@ -1,0 +1,577 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"return new IpAddr(tokens[0], tokens[1], tokens[2]);","return new IpAddr(tokens[0],tokens[1],tokens[2]);
+",0,355,7,2716,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-array, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NumberLiteral(ArrayAccess-index, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-array, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NumberLiteral(ArrayAccess-index, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-array, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NumberLiteral(ArrayAccess-index, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+2,"return TypeUtils.Pair.of(GraphHelper.getTypeName(vertex), GraphHelper.getGuid(vertex));","return TypeUtils.Pair.of(GraphHelper.getTypeName(vertex),GraphHelper.getGuid(vertex));
+",0,163,8,,"QualifiedName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+3,"return isJaccardFuncCompatible(optFuncExpr.getFuncExpr().getArguments().get(i).getValue(),","return isJaccardFuncCompatible(optFuncExpr.getFuncExpr().getArguments().get(i).getValue(),optFuncExpr.getFieldType(i).getTypeTag(),index.getIndexType());
+",0,42,7,,"SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+4,return o instanceof NullReturn ? null : o;,"return o instanceof NullReturn ? null : o;
+",0,28,4,,"SimpleName(InstanceofExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, InstanceofExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NullLiteral(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+5,return JDOHelper.getClassNameFromURL((URL)urls.nextElement());,"return JDOHelper.getClassNameFromURL((URL)urls.nextElement());
+",0,14,5,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, CastExpression-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+6,return (value != null) ? value : defaultValue;,"return (value != null) ? value : defaultValue;
+",0,1,4,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+7,return JsonProvider.class.cast(tccl.loadClass(l).newInstance());,"return JsonProvider.class.cast(tccl.loadClass(l).newInstance());
+",0,1,6,,"SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+8,"return files.size() == Integer.parseInt(matcher.group(""numshards""));","return files.size() == Integer.parseInt(matcher.group(""numshards""));
+",0,19,7,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+9,"return line.startsWith(""select"")","return line.startsWith(""select"") || line.startsWith(""values"") || line.startsWith(""explain"");
+",0,0,3,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ReturnStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+"
+10,"return c <= 0 ? Pair.of(v0, v1) : Pair.of(v1, v0);","return c <= 0 ? Pair.of(v0,v1) : Pair.of(v1,v0);
+",0,5,10,,"SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+11,return USERNAME.equals(values[0]) && PASSWORD.equals(values[1]);,"return USERNAME.equals(values[0]) && PASSWORD.equals(values[1]);
+",0,3,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-arguments, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+NumberLiteral(ArrayAccess-index, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+12,return (byte1 & 0xFF) < (byte2 & 0xFF) ? -1 : 1;,"return (byte1 & 0xFF) < (byte2 & 0xFF) ? -1 : 1;
+",0,11,6,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+NumberLiteral(ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+13,return lower.openDeletionTime(reversed).supersedes(def) ? lower.openDeletionTime(reversed) : def;,"return lower.openDeletionTime(reversed).supersedes(def) ? lower.openDeletionTime(reversed) : def;
+",0,0,9,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+14,return p.getPoint().length;,"return p.getPoint().length;
+",0,0,3,,"SimpleName(MethodInvocation-expression, FieldAccess-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, FieldAccess-expression, ReturnStatement-expression, ),
+SimpleName(FieldAccess-name, ReturnStatement-expression, ),
+"
+15,"return c.lookup( dn, SchemaConstants.ALL_USER_ATTRIBUTES, SchemaConstants.ENTRY_UUID_AT );","return c.lookup(dn,SchemaConstants.ALL_USER_ATTRIBUTES,SchemaConstants.ENTRY_UUID_AT);
+",0,5,5,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ReturnStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+16,return record.get(1).trim() + File.separator + record.get(2).trim() +,"return record.get(1).trim() + File.separator + record.get(2).trim()+ File.separator+ record.get(3).trim();
+",0,2,9,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ReturnStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+"
+17,return statDesc.getStatistic().selectivity((Object[])null);,"return statDesc.getStatistic().selectivity((Object[])null);
+",0,0,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, CastExpression-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, CastExpression-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+NullLiteral(CastExpression-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+18,"return ErrorDescriptionFactory.forTree(ctx, clazz.getParentPath(), d.getMessage(null), new FixImpl(ctx.getInfo(), ctx.getPath()).toEditorFix());","return ErrorDescriptionFactory.forTree(ctx,clazz.getParentPath(),d.getMessage(null),new FixImpl(ctx.getInfo(),ctx.getPath()).toEditorFix());
+",0,5,14,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+19,"return new NameSample(sentence.toArray(new String[sentence.size()]),","return new NameSample(sentence.toArray(new String[sentence.size()]),names.toArray(new Span[names.size()]),clearData);
+",0,1,7,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ArrayCreation-dimensions, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayCreation-dimensions, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+20,return ((Comparable) record1.get(deltaFieldName)).compareTo(record2.get(deltaFieldName));,"return ((Comparable)record1.get(deltaFieldName)).compareTo(record2.get(deltaFieldName));
+",0,2,8,,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+21,"return new DNSLookupContinuation(new DNSRequest(mx, isIPv6 ? DNSRequest.AAAA : DNSRequest.A), MXMechanism.this);","return new DNSLookupContinuation(new DNSRequest(mx,isIPv6 ? DNSRequest.AAAA : DNSRequest.A),MXMechanism.this);
+",0,2,7,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ClassInstanceCreation-type, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-expression, ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+QualifiedName(ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+QualifiedName(ConditionalExpression-elseExpression, ClassInstanceCreation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ThisExpression-qualifier, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+22,"return (Class<? extends WorkloadMapper<?, ?, ?, ?>>) mapperClass;","return (Class<? extends WorkloadMapper<?,?,?,?>>)mapperClass;
+",0,0,7,,"SimpleName(SimpleType-name, ParameterizedType-type, CastExpression-type, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, WildcardType-bound, ParameterizedType-typeArguments, CastExpression-type, ReturnStatement-expression, ),
+WildcardType(ParameterizedType-typeArguments, WildcardType-bound, ParameterizedType-typeArguments, CastExpression-type, ReturnStatement-expression, ),
+WildcardType(ParameterizedType-typeArguments, WildcardType-bound, ParameterizedType-typeArguments, CastExpression-type, ReturnStatement-expression, ),
+WildcardType(ParameterizedType-typeArguments, WildcardType-bound, ParameterizedType-typeArguments, CastExpression-type, ReturnStatement-expression, ),
+WildcardType(ParameterizedType-typeArguments, WildcardType-bound, ParameterizedType-typeArguments, CastExpression-type, ReturnStatement-expression, ),
+SimpleName(CastExpression-expression, ReturnStatement-expression, ),
+"
+23,return shardingKeys.size() == 1 && shardingKeys.get(0).equals(DELIMITER);,"return shardingKeys.size() == 1 && shardingKeys.get(0).equals(DELIMITER);
+",0,0,8,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+24,"return artifactResolver.resolveArtifact( pbr, coordinate ).getArtifact().getFile();","return artifactResolver.resolveArtifact(pbr,coordinate).getArtifact().getFile();
+",0,1,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+"
+25,"return allocateWithSplit(freeListIx, dest, null, ix, dest.length, size, -1);","return allocateWithSplit(freeListIx,dest,null,ix,dest.length,size,-1);
+",0,0,8,,"SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+NullLiteral(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+26,return partitionSpecs.size() == counter ? counter : -1;,"return partitionSpecs.size() == counter ? counter : -1;
+",0,0,5,,"SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+27,return a.getInvalidWriteIds()[i] > b.getInvalidWriteIds()[i]?1:-1;,"return a.getInvalidWriteIds()[i] > b.getInvalidWriteIds()[i] ? 1 : -1;
+",0,0,8,,"SimpleName(MethodInvocation-expression, ArrayAccess-array, InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayAccess-array, InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ArrayAccess-array, InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayAccess-array, InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+NumberLiteral(PrefixExpression-operand, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+28,"return new Problem(true, NbBundle.getMessage(ExtractInterfaceRefactoringPlugin.class, ""ERR_ExtractInterface_WrongModifiers"", elm.getSimpleName().toString()));","return new Problem(true,NbBundle.getMessage(ExtractInterfaceRefactoringPlugin.class,""ERR_ExtractInterface_WrongModifiers"",elm.getSimpleName().toString()));
+",0,2,9,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+BooleanLiteral(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+29,return !(new TupleFilterNode(filter).checkSeg(seg));,"return !(new TupleFilterNode(filter).checkSeg(seg));
+",0,1,4,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, MethodInvocation-expression, ParenthesizedExpression-expression, PrefixExpression-operand, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, MethodInvocation-expression, ParenthesizedExpression-expression, PrefixExpression-operand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ParenthesizedExpression-expression, PrefixExpression-operand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ParenthesizedExpression-expression, PrefixExpression-operand, ReturnStatement-expression, ),
+"
+30,return changed ? newVer : null;,"return changed ? newVer : null;
+",0,0,3,,"SimpleName(ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+NullLiteral(ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+31,"return new QueryField(name, typeClsName, nullable == 1);","return new QueryField(name,typeClsName,nullable == 1);
+",0,0,5,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+32,"return ""<a href=\"""" + path + fullyQClsName + "".html"" +","return ""<a href=\"""" + path + fullyQClsName+ "".html""+ (tokens.length > 1 ? (""#"" + tokens[1].replace(""[]"",""..."")) : """")+ ""\""><code>""+ simpleClsName+ (tokens.length > 1 ? (""."" + tokens[1]) : """")+ ""</code></a>"";
+",0,0,4,,"StringLiteral(InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, ReturnStatement-expression, ),
+"
+33,return this.values[i] - other.values[i];,"return this.values[i] - other.values[i];
+",0,0,5,,"ThisExpression(FieldAccess-expression, ArrayAccess-array, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(FieldAccess-name, ArrayAccess-array, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-leftOperand, ReturnStatement-expression, ),
+QualifiedName(ArrayAccess-array, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+34,return (i * 8) + Integer.numberOfLeadingZeros(b & 0xFF) - 3 * 8;,"return (i * 8) + Integer.numberOfLeadingZeros(b & 0xFF) - 3 * 8;
+",0,2,8,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-rightOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, InfixExpression-rightOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, InfixExpression-rightOperand, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+35,return (size * 8) - (i * 8) - (Integer.numberOfLeadingZeros(b & 0xFF) - 3 * 8);,"return (size * 8) - (i * 8) - (Integer.numberOfLeadingZeros(b & 0xFF) - 3 * 8);
+",0,0,10,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-leftOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+"
+36,"return this.getJcrNameFromDescendants(descendant, fieldName);","return this.getJcrNameFromDescendants(descendant,fieldName);
+",0,1,4,,"ThisExpression(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+37,"return tag.accept(new SimpleDocTreeVisitor<String, Void>("""")","return tag.accept(new SimpleDocTreeVisitor<String,Void>(""""){
+  @Override public String visitSince(  SinceTree node,  Void aVoid){
+    return node.getBody().toString();
+  }
+}
+,null);
+",0,1,6,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ClassInstanceCreation-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+StringLiteral(ClassInstanceCreation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+38,"Arrays.fill(result, String.class); return result;","Arrays.fill(result,String.class);
+",0,0,4,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+39,return idx1 == 0 ? 1 : stty.charAt(idx1 - 1) == '-' ? 0 : 1;,"return idx1 == 0 ? 1 : stty.charAt(idx1 - 1) == '-' ? 0 : 1;
+",0,0,10,,"SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-leftOperand, ConditionalExpression-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ConditionalExpression-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, InfixExpression-leftOperand, ConditionalExpression-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, MethodInvocation-arguments, InfixExpression-leftOperand, ConditionalExpression-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+CharacterLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+NumberLiteral(ConditionalExpression-thenExpression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+NumberLiteral(ConditionalExpression-elseExpression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+40,"return readBlockToken(e.getValue(), BLOCK_TOKEN_END.get(e.getValue()));","return readBlockToken(e.getValue(),BLOCK_TOKEN_END.get(e.getValue()));
+",0,2,7,,"SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+41,"return new Seq(version, bag.getHighlights(startOffset, endOffset));","return new Seq(version,bag.getHighlights(startOffset,endOffset));
+",0,0,6,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+42,"return exceptionMessage.substring(idxL + errorMessage.length(), idxR);","return exceptionMessage.substring(idxL + errorMessage.length(),idxR);
+",0,0,6,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+43,"return copy.getTreeUtilities().translate(modifiers, Collections.singletonMap(expression, newAssignment));","return copy.getTreeUtilities().translate(modifiers,Collections.singletonMap(expression,newAssignment));
+",0,0,8,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+44,return results.values().toArray(new FileObject[0]);,"return results.values().toArray(new FileObject[0]);
+",0,0,6,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, ArrayType-elementType, ArrayCreation-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, MethodInvocation-arguments, ReturnStatement-expression, ),
+NumberLiteral(ArrayCreation-dimensions, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+45,"return defineClass (name, data, 0, data.length, src.getProtectionDomain());","return defineClass(name,data,0,data.length,src.getProtectionDomain());
+",0,0,7,,"SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, ReturnStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+46,"return new Result(Grade.FAIL, ""Value '"" + value","return new Result(Grade.FAIL,""Value '"" + value + ""' is not allowed for option ""+ optionInst.getOption()+ "" - Allowed values = ""+ getAllowedArgs());
+",0,0,4,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+QualifiedName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+47,return order.isAscending() ? cmp : -cmp;,"return order.isAscending() ? cmp : -cmp;
+",0,0,4,,"SimpleName(MethodInvocation-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-expression, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(PrefixExpression-operand, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+48,"return new int[] { x, y };","return new int[]{x,y};
+",0,0,4,,"PrimitiveType(ArrayType-elementType, ArrayCreation-type, ReturnStatement-expression, ),
+Dimension(ArrayType-dimensions, ArrayCreation-type, ReturnStatement-expression, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, ReturnStatement-expression, ),
+SimpleName(ArrayInitializer-expressions, ArrayCreation-initializer, ReturnStatement-expression, ),
+"
+49,return cap.getAttributes().get(BundleNamespace.BUNDLE_NAMESPACE).toString();,"return cap.getAttributes().get(BundleNamespace.BUNDLE_NAMESPACE).toString();
+",0,0,5,,"SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ReturnStatement-expression, ),
+QualifiedName(MethodInvocation-arguments, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+"
+50,return (result < 1.0) ? 1.0 : result;,"return (result < 1.0) ? 1.0 : result;
+",0,0,4,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, ConditionalExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+51,return new MethodSignatureImpl(props[i].getReadMethod() != null ? props[i].getReadMethod() : props[i].getWriteMethod());,"return new MethodSignatureImpl(props[i].getReadMethod() != null ? props[i].getReadMethod() : props[i].getWriteMethod());
+",0,1,11,,"SimpleName(SimpleType-name, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, InfixExpression-leftOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, InfixExpression-leftOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-thenExpression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, ConditionalExpression-elseExpression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, ConditionalExpression-elseExpression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+52,return buffer == null ? null : buffer.toString();,"return buffer == null ? null : buffer.toString();
+",0,0,5,,"SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, ReturnStatement-expression, ),
+NullLiteral(ConditionalExpression-thenExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ConditionalExpression-elseExpression, ReturnStatement-expression, ),
+"
+53,"return nkcfProvider.getNormalizedKeyComputerFactory(type, true);","return nkcfProvider.getNormalizedKeyComputerFactory(type,true);
+",1,255,4,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+BooleanLiteral(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+54,return Optional.of(m.group(1));,"return Optional.of(m.group(1));
+",1,12,5,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+NumberLiteral(MethodInvocation-arguments, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+55,return storagePoolVO != null &&,"return storagePoolVO != null && storagePoolVO.getPoolType() == Storage.StoragePoolType.NetworkFilesystem;
+",1,1,2,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+"
+56,"for (DocTree dt : node.getContent()) { return dt.accept(this, null); }","for (DocTree dt : node.getContent()) {
+  return dt.accept(this,null);
+}
+",1,3,8,,"SimpleName(SimpleType-name, SingleVariableDeclaration-type, EnhancedForStatement-parameter, ),
+SimpleName(SingleVariableDeclaration-name, EnhancedForStatement-parameter, ),
+SimpleName(MethodInvocation-expression, EnhancedForStatement-expression, ),
+SimpleName(MethodInvocation-name, EnhancedForStatement-expression, ),
+SimpleName(MethodInvocation-expression, ReturnStatement-expression, Block-statements, EnhancedForStatement-body, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, Block-statements, EnhancedForStatement-body, ),
+ThisExpression(MethodInvocation-arguments, ReturnStatement-expression, Block-statements, EnhancedForStatement-body, ),
+NullLiteral(MethodInvocation-arguments, ReturnStatement-expression, Block-statements, EnhancedForStatement-body, ),
+"
+57,return (umul8(i) + firstSet(v));,"return (umul8(i) + firstSet(v));
+",1,1,4,,"SimpleName(MethodInvocation-name, InfixExpression-leftOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-leftOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+"
+58,return (i * 32) + Integer.numberOfLeadingZeros(this.ints[i]);,"return (i * 32) + Integer.numberOfLeadingZeros(this.ints[i]);
+",1,2,7,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+ThisExpression(FieldAccess-expression, ArrayAccess-array, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(FieldAccess-name, ArrayAccess-array, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-arguments, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+59,return Block.getGenerationStamp(listdir[j].getName());,"return Block.getGenerationStamp(listdir[j].getName());
+",1,1,5,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+60,return ((HRegion) region).getStores().iterator().next();,"return ((HRegion)region).getStores().iterator().next();
+",1,2,5,,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+"
+61,return (INTS_SIZE * 32) - (i * 32) - Integer.numberOfLeadingZeros(this.ints[i]);,"return (INTS_SIZE * 32) - (i * 32) - Integer.numberOfLeadingZeros(this.ints[i]);
+",1,2,9,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+NumberLiteral(InfixExpression-rightOperand, ParenthesizedExpression-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+ThisExpression(FieldAccess-expression, ArrayAccess-array, MethodInvocation-arguments, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(FieldAccess-name, ArrayAccess-array, MethodInvocation-arguments, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-arguments, InfixExpression-extendedOperands, ReturnStatement-expression, ),
+"
+62,return params.size();,"err=""Cannot find "" + name + ""(""+ className+ "", Exception) method in this class"";
+",1,1,6,,"SimpleName(Assignment-leftHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-leftOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-rightOperand, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+StringLiteral(InfixExpression-extendedOperands, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+63,"return (m_docHandle | nodes.specialFind(axisContextHandle, nodeHandle));","return (m_docHandle | nodes.specialFind(axisContextHandle,nodeHandle));
+",1,1,5,,"SimpleName(InfixExpression-leftOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, InfixExpression-rightOperand, ParenthesizedExpression-expression, ReturnStatement-expression, ),
+"
+64,"return new Pair<>(username, password);","return new Pair<>(username,password);
+",2,3,3,,"SimpleName(SimpleType-name, ParameterizedType-type, ClassInstanceCreation-type, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+SimpleName(ClassInstanceCreation-arguments, ReturnStatement-expression, ),
+"
+65,"return (PluginInstaller) kernel.getProxyManager().createProxy(name, PluginInstaller.class);","return (PluginInstaller)kernel.getProxyManager().createProxy(name,PluginInstaller.class);
+",2,7,6,,"SimpleName(SimpleType-name, CastExpression-type, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(SimpleType-name, TypeLiteral-type, MethodInvocation-arguments, CastExpression-expression, ReturnStatement-expression, ),
+"
+66,"return ""ill-formed: "" + v.description();","return ""ill-formed: "" + v.description();
+",2,2,3,,"StringLiteral(InfixExpression-leftOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, InfixExpression-rightOperand, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, InfixExpression-rightOperand, ReturnStatement-expression, ),
+"
+67,case 3: continue;,"case 3:
+",2,2,1,,"NumberLiteral(SwitchCase-expression, ),
+"
+68,return (Class)interfaceType.getActualTypeArguments()[0];,"return (Class)interfaceType.getActualTypeArguments()[0];
+",3,3,4,,"SimpleName(SimpleType-name, CastExpression-type, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-expression, ArrayAccess-array, CastExpression-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ArrayAccess-array, CastExpression-expression, ReturnStatement-expression, ),
+NumberLiteral(ArrayAccess-index, CastExpression-expression, ReturnStatement-expression, ),
+"
+69,return parts1[i].compareTo(parts2[i]);,"return parts1[i].compareTo(parts2[i]);
+",5,12,5,,"SimpleName(ArrayAccess-array, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-array, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(ArrayAccess-index, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+70,continue;,"continue;
+",57,57,1,,"ContinueStatement(),
+"
+71,continue retry;,"continue retry;
+",59,59,1,,"SimpleName(ContinueStatement-label, ),
+"
+72,return;,"return;
+",106,106,1,,"ReturnStatement(),
+"
+73,break loop_dest_op_nested_plans;,"break loop_dest_op_nested_plans;
+",501,501,1,,"SimpleName(BreakStatement-label, ),
+"
+74,break;,"break;
+",915,915,1,,"BreakStatement(),
+"

@@ -1,0 +1,9 @@
+Detection ID,Path,Start Line Num,End Line Num,Code
+1,./TargetProjects/activemq-artemis/artemis-protocols/artemis-stomp-protocol/src/main/java/org/apache/activemq/artemis/core/protocol/stomp/StompDecoder.java,327,,"            case SPACE: {"
+2,./TargetProjects/camel/tooling/camel-util-json/src/main/java/org/apache/camel/util/json/Yylex.java,648,,"                case 3: {"
+3,./TargetProjects/cxf/distribution/src/main/release/samples/jaxws_graalvm_dynamic/client/src/main/java/demo/jaxws/client/DumpingClassLoaderCapturer.java,39,,"            Files.createDirectories(file.toPath());{"
+4,./TargetProjects/cxf/tools/corba/src/main/generated/org/apache/cxf/tools/corba/processors/idl/IDLLexer.java,1512,,"			{"
+5,./TargetProjects/cxf/tools/corba/src/main/generated/org/apache/cxf/tools/corba/processors/idl/IDLLexer.java,1702,,"			{"
+6,./TargetProjects/isis/incubator/viewers/vaadin/ui/src/main/java/org/apache/isis/incubator/viewer/vaadin/ui/components/temporal/TemporalFieldFactory.java,81,,"        case TIME_ONLY:{"
+7,./TargetProjects/isis/incubator/viewers/vaadin/ui/src/main/java/org/apache/isis/incubator/viewer/vaadin/ui/components/temporal/TemporalFieldFactory.java,84,,"        case DATE_TIME:{"
+8,./TargetProjects/myfaces-trinidad/trinidad-api/src/main/java/org/apache/myfaces/trinidad/convert/DateTimeConverter.java,1684,,"        {"

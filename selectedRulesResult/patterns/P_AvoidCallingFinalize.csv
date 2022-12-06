@@ -1,0 +1,68 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,"((RedundantResource) element).finalize(network,success);","((RedundantResource)element).finalize(network,success);
+",0,6,5,22,"SimpleName(SimpleType-name, CastExpression-type, ParenthesizedExpression-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(CastExpression-expression, ParenthesizedExpression-expression, MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+2,"log.debug(""SetEndOffsets task[%s] endOffsets[%s] finalize[%s]"", id, endOffsets, finalize);","log.debug(""SetEndOffsets task[%s] endOffsets[%s] finalize[%s]"",id,endOffsets,finalize);
+",0,1,6,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+StringLiteral(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+3,"return doAsync(() -> setEndOffsets(id, endOffsets, finalize));","return doAsync(() -> setEndOffsets(id,endOffsets,finalize));
+",0,2,5,,"SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, LambdaExpression-body, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, LambdaExpression-body, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, LambdaExpression-body, MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, LambdaExpression-body, MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+4,if (finalize && !finalizers.isEmpty()) {,"if (finalize && !finalizers.isEmpty()) {
+  final ResultRow finalizedCopy=row.copy();
+  for (  Int2ObjectMap.Entry<Function<Object,Object>> entry : finalizers.int2ObjectEntrySet()) {
+    finalizedCopy.set(entry.getIntKey(),entry.getValue().apply(row.get(entry.getIntKey())));
+  }
+  rowSupplier.set(finalizedCopy);
+}
+ else {
+  rowSupplier.set(row);
+}
+",0,1,3,,"SimpleName(InfixExpression-leftOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-expression, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+SimpleName(MethodInvocation-name, PrefixExpression-operand, InfixExpression-rightOperand, IfStatement-expression, ),
+"
+5,"Assert.assertEquals(finalize, MetricManipulatorFns.finalizing().manipulate(aggregatorFactory, agg));","Assert.assertEquals(finalize,MetricManipulatorFns.finalizing().manipulate(aggregatorFactory,agg));
+",0,1,8,,"SimpleName(MethodInvocation-expression, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-expression, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-expression, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-name, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+SimpleName(MethodInvocation-arguments, MethodInvocation-arguments, ExpressionStatement-expression, ),
+"
+6,this.finalize = finalize == null ? DEFAULT_FINALIZE : finalize;,"this.finalize=finalize == null ? DEFAULT_FINALIZE : finalize;
+",0,1,6,,"ThisExpression(FieldAccess-expression, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(FieldAccess-name, Assignment-leftHandSide, ExpressionStatement-expression, ),
+SimpleName(InfixExpression-leftOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+NullLiteral(InfixExpression-rightOperand, ConditionalExpression-expression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-thenExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+SimpleName(ConditionalExpression-elseExpression, Assignment-rightHandSide, ExpressionStatement-expression, ),
+"
+7,return finalize == that.finalize &&,"return finalize == that.finalize && Objects.equals(dimFilter,that.dimFilter);
+",0,0,2,,"SimpleName(InfixExpression-leftOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+QualifiedName(InfixExpression-rightOperand, InfixExpression-leftOperand, ReturnStatement-expression, ),
+"
+8,"return Objects.hash(dimFilter, finalize);","return Objects.hash(dimFilter,finalize);
+",0,0,4,,"SimpleName(MethodInvocation-expression, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-name, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+SimpleName(MethodInvocation-arguments, ReturnStatement-expression, ),
+"
+9,super.finalize();,"super.finalize();
+",1,1,1,,"SimpleName(SuperMethodInvocation-name, ExpressionStatement-expression, ),
+"

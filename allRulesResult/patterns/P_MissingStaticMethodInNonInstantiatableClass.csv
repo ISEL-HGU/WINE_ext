@@ -1,0 +1,139 @@
+Pattern ID,Pattern,Context,"# of Eq list","# of Frq",complexity,Num of Warnings in Method,NCL
+1,class WrongBuilder extends NodeBuilderBaseImpl<MapReduceActionBuilder> implements Builder<MapReduceAction> {,"class WrongBuilder extends NodeBuilderBaseImpl<MapReduceActionBuilder> implements Builder<MapReduceAction> {
+  private WrongBuilder(){
+    super();
+  }
+  public MapReduceActionBuilder getRuntimeSelfReference(){
+    return MapReduceActionBuilder.create();
+  }
+  @Override public MapReduceAction build(){
+    return null;
+  }
+}
+",0,11,5,42,"SimpleName(TypeDeclaration-name, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-type, TypeDeclaration-superclassType, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, TypeDeclaration-superclassType, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-type, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+"
+2,class TestClosure implements CI1<IgniteFuture<Integer>> {,"class TestClosure implements CI1<IgniteFuture<Integer>> {
+  private final CountDownLatch latch;
+  private TestClosure(  CountDownLatch latch){
+    this.latch=latch;
+  }
+  @Override public void apply(  IgniteFuture<Integer> fut){
+    assertEquals(CUSTOM_THREAD_NAME,Thread.currentThread().getName());
+    assertEquals(10,(int)fut.get());
+    latch.countDown();
+  }
+}
+",0,6,4,,"SimpleName(TypeDeclaration-name, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-type, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-type, ParameterizedType-typeArguments, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, ParameterizedType-typeArguments, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+"
+3,final class DebugAction extends AbstractAction implements Presenter.Popup {,"final class DebugAction extends AbstractAction implements Presenter.Popup {
+  private final Project project;
+  private DebugAction(  Lookup actionContext){
+    project=actionContext.lookup(Project.class);
+    assert project != null : ""Project expected in lookup: "" + actionContext;
+    putValue(NAME,Bundle.DebugKarmaServerAction_name());
+  }
+  @Override public void actionPerformed(  ActionEvent e){
+    boolean originalDebug=KarmaPreferences.isDebug(project);
+    if (!originalDebug && !KarmaPreferences.isDebugBrowserIdSet(project)) {
+      DialogDisplayer.getDefault().notify(new NotifyDescriptor.Message(Bundle.DebugKarmaServerAction_browser_none()));
+      project.getLookup().lookup(CustomizerProvider2.class).showCustomizer(JsTestingProviders.CUSTOMIZER_IDENT,null);
+      return;
+    }
+    KarmaPreferences.setDebug(project,!originalDebug);
+  }
+  @Override public JMenuItem getPopupPresenter(){
+    JCheckBoxMenuItem debugMenuItem=new JCheckBoxMenuItem(this);
+    debugMenuItem.setSelected(KarmaPreferences.isDebug(project));
+    return debugMenuItem;
+  }
+}
+",0,1,4,,"Modifier(TypeDeclaration-modifiers, TypeDeclarationStatement-declaration, ),
+SimpleName(TypeDeclaration-name, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, TypeDeclaration-superclassType, TypeDeclarationStatement-declaration, ),
+QualifiedName(SimpleType-name, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+"
+4,class ChildrenIterator<C> implements Iterator<C>,"class ChildrenIterator<C> implements Iterator<C> {
+  private Iterator<C> currentIterator;
+  private Deque<Iterator<C>> iteratorStack=new ArrayDeque<>();
+  private ChildrenIterator(  Iterator<C> iterator){
+    currentIterator=iterator;
+  }
+  @Override public boolean hasNext(){
+    while (!currentIterator.hasNext() && !iteratorStack.isEmpty()) {
+      currentIterator=iteratorStack.pop();
+    }
+    return currentIterator.hasNext();
+  }
+  @Override public C next(){
+    C child=currentIterator.next();
+    if (child instanceof Iterable) {
+      iteratorStack.push(currentIterator);
+      currentIterator=((Iterable<C>)child).iterator();
+    }
+    return child;
+  }
+}
+",0,0,4,,"SimpleName(TypeDeclaration-name, TypeDeclarationStatement-declaration, ),
+SimpleName(TypeParameter-name, TypeDeclaration-typeParameters, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-type, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+SimpleName(SimpleType-name, ParameterizedType-typeArguments, TypeDeclaration-superInterfaceTypes, TypeDeclarationStatement-declaration, ),
+"
+5,class BloomExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr,"class BloomExpr extends ExprMacroTable.BaseScalarUnivariateMacroFunctionExpr {
+  private BloomExpr(  Expr arg){
+    super(FN_NAME,arg);
+  }
+  @Nonnull @Override public ExprEval eval(  final ObjectBinding bindings){
+    ExprEval evaluated=arg.eval(bindings);
+    boolean matches=false;
+switch (evaluated.type()) {
+case STRING:
+      String stringVal=(String)evaluated.value();
+    if (stringVal == null) {
+      matches=nullMatch();
+    }
+ else {
+      matches=filter.testString(stringVal);
+    }
+  break;
+case DOUBLE:
+Double doubleVal=(Double)evaluated.value();
+if (doubleVal == null) {
+matches=nullMatch();
+}
+ else {
+matches=filter.testDouble(doubleVal);
+}
+break;
+case LONG:
+Long longVal=(Long)evaluated.value();
+if (longVal == null) {
+matches=nullMatch();
+}
+ else {
+matches=filter.testLong(longVal);
+}
+break;
+}
+return ExprEval.ofLongBoolean(matches);
+}
+private boolean nullMatch(){
+return filter.testBytes(null,0,0);
+}
+@Override public Expr visit(Shuttle shuttle){
+Expr newArg=arg.visit(shuttle);
+return shuttle.visit(new BloomExpr(newArg));
+}
+@Nullable @Override public ExprType getOutputType(InputBindingInspector inspector){
+return ExprType.LONG;
+}
+}
+",10,10,2,,"SimpleName(TypeDeclaration-name, TypeDeclarationStatement-declaration, ),
+QualifiedName(SimpleType-name, TypeDeclaration-superclassType, TypeDeclarationStatement-declaration, ),
+"

@@ -154,9 +154,9 @@ public class CliOptions {
 	}
 	
 	private void printHelp(HelpFormatter formatter, Options options) {
-		formatter.printHelp("only SAResultMiner: ./FC-Miner -s -R <PMD Rule Context> -t <TargetAddress.txt Path> -p <pmd runfile path>\n"+
-				"only FPCollector  : ./FC-Miner -f -e <SAResultMiner_Result.csv Path>\n" +
-				"Both              : ./FC-Miner -m -R <PMD Rule Context> -t <TargetAddress.txt Path -p <pmd runfile path>\n\n", options);
+		formatter.printHelp("only SAResultMiner: ./WINE_ext -s -R <PMD Rule Context> -t <TargetAddress.txt Path> -p <pmd runfile path>\n"+
+				"only FPCollector  : ./WINE_ext -f -e <SAResultMiner_Result.csv Path>\n" +
+				"Both              : ./WINE_ext -m -R <PMD Rule Context> -t <TargetAddress.txt Path -p <pmd runfile path>\n\n", options);
 		System.exit(-1);
 	}
 }
